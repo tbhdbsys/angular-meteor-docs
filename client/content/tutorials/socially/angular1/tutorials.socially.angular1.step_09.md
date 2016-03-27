@@ -116,7 +116,7 @@ Add this ng-repeat list to the end of `party-details.html`:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.10"}}
 
-Also, let's add a subscription to the `parties` in this Component as well, in case we will laod the app directly from this Component before loading the parties-list Component:
+Also, let's add a subscription to the `parties` in this Component as well, in case we will load the app directly from this Component before loading the parties-list Component:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.9"}}
 
