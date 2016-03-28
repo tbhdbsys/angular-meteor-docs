@@ -1,4 +1,4 @@
-{{#template name="tutorials.socially.angular1.step_18.md"}}
+    {{#template name="tutorials.socially.angular1.step_18.md"}}
 {{> downloadPreviousStep stepName="step_17"}}
 
 
@@ -142,7 +142,7 @@ Open the `client/routes.js` and insert following routes below the `$stateProvide
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="18.17"}}
 
-So we have the routes and state defined, now let's go ahead and create them. Create a subfolder `users` in the `client/` folder, and in the `users` subfolder for each component we will create: login, reset password and sign-up.
+So we have the routes and state defined, now let's go ahead and create them. Create a subfolder `auth` in the `client/` folder, and in the `auth` subfolder for each component we will create: login, reset password and sign-up.
 
 Create the `.js` file for the login component:
 
