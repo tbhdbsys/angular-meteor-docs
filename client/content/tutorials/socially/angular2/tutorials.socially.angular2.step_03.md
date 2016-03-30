@@ -42,7 +42,7 @@ In a separate folder called "collections", add a file called "parties.ts". Inclu
 We've just created not only a file called "parties.ts", but also a System.js module
 called "collections/parties". This work is done by the TypeScript compiler behind the scenes.
 
-The TypeScript compiler coverts `.ts` files to ES5, then registers a System.js module with the same name as
+The TypeScript compiler converts `.ts` files to ES5, then registers a System.js module with the same name as
 the relative path to the file in the app.
 
 That's why we use the special word `export`. By this way, we tell System.js what we are allowing to be exported from this module into the outside world.
