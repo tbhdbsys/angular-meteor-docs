@@ -52,7 +52,7 @@ If you need to validate your form, you can still combine `ngModel` directives wi
       <label for="description">Description</label>
       <input type="text" ngControl="description" [(ngModel)]="party.description">
 
-      label for="location">Location</label>
+      <label for="location">Location</label>
       <input type="text" ngControl="location" [(ngModel)]="party.location">
 
       <button type="submit">Save</button>
