@@ -20,7 +20,7 @@ The first thing we should do is to remove the "insecure" package. By removing th
 
 Execute this command in the command line:
 
-    meteor remove insecure
+    $ meteor remove insecure
     > insecure removed from your project
 
 Let's try to change the parties array or a specific party. Nothing's working.
@@ -39,24 +39,20 @@ One of Meteor's most powerful packages is the [Meteor accounts](https://www.mete
 
 Add the "accounts-password" Meteor package. It's a very powerful package for all the user operations you can think of: login, signup, change password, password recovery, email confirmation and more.
 
-    meteor add accounts-password
+    $ meteor add accounts-password
 
 If Socially were just a Meteor app without Angular 2, the next step would be to add the ["accounts-ui"](https://atmospherejs.com/meteor/accounts-ui) package, which is a standard Meteor package that contains all the HTML and CSS we need for the user operation forms. But "accounts-ui" is a Blaze-related package and will not work in Angular 2.
 
 It's not wrong to say as well that we'd appreciate using Angular 2 components in Angular 2 where possible.
-So, we are going to add ["barbatus:ng2-meteor-accounts-ui"](https://atmospherejs.com/barbatus/ng2-meteor-accounts-ui) instead which is a simple wrapper over the standard "accounts-ui" that exports a Blaze-based LoginButtons view as an Angular 2 component and, besides, does some necessary cleanup behind the scenes.
+So, we are going to add `angular2-meteor-accounts-ui` instead which is a simple wrapper over the standard "accounts-ui" that exports a Blaze-based LoginButtons view as an Angular 2 component and, besides, does some necessary cleanup behind the scenes.
 
-    meteor add barbatus:ng2-meteor-accounts-ui
+    $ meteor npm install --save angular2-meteor-accounts-ui
 
-Let's add the `<accounts-ui>` tag to the right of the party form in the PartiesList's template:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.1"}}
-
-Then, import the dependencies:
+Let's add the `<login-buttons>` tag to the right of the party form in the PartiesList's template:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.2"}}
 
-And typings:
+Then, import the dependencies:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.3"}}
 
@@ -70,7 +66,7 @@ Now that we have our account system, we can start defining our security rules fo
 
 Let's go to the "collection" folder and specify what actions are allowed:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.5"}}
 
 In only 10 lines of code we've specified that inserts, updates and removes can only be completed if a user is logged in.
 
@@ -88,13 +84,13 @@ use, [`Meteor.user()`](http://docs.meteor.com/#/full/meteor_user) and [`Meteor.u
 For now, we are going to keep it simple in this app and allow every logged-in user to change a party.
 Change the click handler of the "Add" button in the `parties-form.ts`, `addParty`, to save the user ID as well. Also, it'd be useful to add an alert prompting the user to log in if she wants to add or update a party:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.6"}}
 
 > Notice that you'll need to update the Party type in the `party.d.ts` definition file with the optional new property: `owner?: string`.
 
 Let's do the user check in `party-details.ts`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.7"}}
 
 > Notice that you should also update your `tsconfig.json` to include the declaration file.
 
@@ -104,15 +100,12 @@ Not to mention that there is no way to use these functions in the component temp
 
 # RequireUser
 
-How can you simply life here? You can try out "barbatus:ng2-meteor-accounts" package, which
-wraps around all Meteor Accounts API (login with password and social logins features)
+How can you simply life here? You can try out the decorators that comes with the accounts package, which wraps around all Meteor Accounts API (login with password and social logins features)
 and exports two services for the usage in Angular 2. Besides that, it has two convenient annotations: `InjectUser` and `RequireUser`.
-
-    meteor add barbatus:ng2-meteor-accounts
 
 Now you can specify if a component can be accessed only when a user is logged in using the `@RequireUser` annotation.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.9"}}
 
 # InjectUser
 
@@ -126,9 +119,7 @@ __`client/parties-form/parties-form.ts`__:
     import {InjectUser} from 'meteor-accounts';
 
     @Component({
-      selector: 'parties-form'
-    })
-    @View({
+      selector: 'parties-form',
       templateUrl: 'client/parties-form/parties-form.html',
       directives: [AccountsUI]
     })
@@ -160,29 +151,6 @@ As you can see, we've added a label "Please, login to change party" that is
 conditioned to be shown if `user` is not defined with help of an `ngIf` attribute, and
 will be hidden otherwise.
 
-# Social Login
-
-We also want to let users be able to login quickly with their Facebook or Twitter accounts.
-
-To do this, we simply need to add the right packages in the console:
-
-    meteor add accounts-facebook
-    meteor add accounts-twitter
-
-Now run the app. When you first press the login buttons of the social login, meteor will show you a wizard that will help you configure your OAuth logins.
-
-You can also skip the wizard and configure it manually like the explanation here: [http://docs.meteor.com/#meteor_loginwithexternalservice](http://docs.meteor.com/#meteor_loginwithexternalservice)
-
-There are additional social login services you can use:
-
-* Facebook
-* Github
-* Google
-* Meetup
-* Twitter
-* Weibo
-* Meteor developer account
-
 # Routing Permissions
 
 Let's imagine now that we allow to see and change party details only for logged-in users.
@@ -192,11 +160,6 @@ someone clicks on a party link. In this case, we don't need to check access manu
 This can be easily done again with help of "barbatus:ng2-meteor-accounts" package
 that has a simple `RequireUser` annotation. Just place it above `PartyDetails`
 and you will see if a user is not logged-in to the system, that user won't be able to access the route.
-Let's add the package and then implement restricted access:
-
-    meteor add barbatus:ng2-meteor-accounts
-
-  {{> DiffBox tutorialName="meteor-angular2-socially" step="8.8"}}
 
 Now log out and try to click on any party link. See, links don't work!
 

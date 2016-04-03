@@ -10,7 +10,7 @@ In this step we will:
 
 As you have probably noticed, our tutorial app has a strict modular structure at this point:
 there are no pure JavaScript files that are being bundled together and auto-executed, so Meteor's file loading conventions doesn't have any effect.
-Even more, every `.ts` file is being compiled into a separate System.js module, which we can then import whenever we need to.
+Even more, every `.ts` file is being compiled into a separate CommonJS module, which we can then import whenever we need to.
 
 There is another thing worth mentioning once more. As you know, Meteor has two special folders: _client_ and _server_.
 We can benefit from them (and have already done so in this app) by allowing access to the client side modules from the client side only and, accordingly, to server side modules from the server side.
@@ -96,11 +96,6 @@ a general compilation. At the same time, Angular2-Meteor's TypeScript compiler, 
 compilation options internally to fit our needs. To fix plugins, let's set up our _tsconfig.json_
 properly with the options that will make plugins understand our needs and the structure of our app.
 
-We are going to point out that we are using System.js and decorators, also
-we'll need to include entry point files of the client and server sides to let plugins know what to compile:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.6"}}
-
 Now, let's go to any of the `.ts` files and check if all that annoying redness has disappeared.
 
 > Note: you may need to reload you IDE to pick up the latest changes to the config.
@@ -115,25 +110,25 @@ They can be included in the "meteorCompilerOptions" section of _tsconfig.json_ a
 
 If you are using [Atom](atom.io) as your editor with the [Atom-TypeScript plugin](https://github.com/TypeStrong/atom-typescript), use the following configuration to automatically generate your `tsconfig.json` file:
 
-```js
-{
- "atom": {
-    "rewriteTsconfig": true
-  },
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "compilerOptions": {
-    "target": "es5",
-    "module": "system",
-    "moduleResolution": "classic",
-    "experimentalDecorators": true
-  },
-  "filesGlob": [
-    "**/*.ts"
-  ],
-  "files": []
-}
-```
+    ```js
+    {
+     "atom": {
+        "rewriteTsconfig": true
+      },
+      "compileOnSave": false,
+      "buildOnSave": false,
+      "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "classic",
+        "experimentalDecorators": true
+      },
+      "filesGlob": [
+        "**/*.ts"
+      ],
+      "files": []
+    }
+    ```
 
 # Challange
 
