@@ -39,13 +39,13 @@ In a separate folder called "collections", add a file called "parties.ts". Inclu
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.1"}}
 
-We've just created not only a file called "parties.ts", but also a System.js module
+We've just created not only a file called "parties.ts", but also a CommonJS module
 called "collections/parties". This work is done by the TypeScript compiler behind the scenes.
 
-The TypeScript compiler converts `.ts` files to ES5, then registers a System.js module with the same name as
+The TypeScript compiler converts `.ts` files to ES5, then registers a CommonJS module with the same name as
 the relative path to the file in the app.
 
-That's why we use the special word `export`. By this way, we tell System.js what we are allowing to be exported from this module into the outside world.
+That's why we use the special word `export`. By this way, we tell CommonJS what we are allowing to be exported from this module into the outside world.
 
 Meteor has a series of special folder names, including the "client" folder. All files within a folder named "client" are loaded on the client only. Likewise, files in a folder called "server" are loaded on the server only.
 
@@ -90,17 +90,12 @@ Our `app.ts` file should now look like this:
 
 __`client/app.ts`:__
 
-    import {NgZone, Component, View} from 'angular2/core';
-
+    import {NgZone, Component} from 'angular2/core';
     import {bootstrap} from 'angular2/bootstrap';
-
     import {Parties} from 'collections/parties';
 
     @Component({
-      selector: 'app'
-    })
-
-    @View({
+      selector: 'app',
       templateUrl: "client/app.html"
     })
 
@@ -124,11 +119,13 @@ Every change that happens to the `this.parties` variable will automatically be s
 One thing is left before we can start manipulating data and be able to check if changes are reactive.
 
 We need to initialize the `Parties` collection for the server side. Since our collection file
-`collection/parties` is turned into a System.js module by Typescript, we'll need to import it manually in order to execute code inside.
+`collection/parties` is turned into a CommonJS module by Typescript, we'll need to import it manually in order to execute code inside.
 
-It's worth mentioning that System.js modules work on the server side the same way as on the client.
+It's worth mentioning that CommonJS modules work on the server side the same way as on the client.
+
 There is one special case where the package helps you. Similar to the client's `app.ts`,
-if you call your main server file `main.ts`, a System.js module will be created out of this file and loaded automatically.
+
+If you call your main server file `main.ts`, a CommonJS module will be created out of this file and loaded automatically.
 
 Let's create a new folder called "server" and add a file `main.ts` inside of it. As mentioned earlier, "server" is another special folder name in Meteor: it's contents will only run on the server.
 
@@ -189,19 +186,20 @@ The Angular2-Meteor package implements a special differ class for Mongo cursors.
 
 The Angular2-Meteor package has its own `bootstrap` that overrides the basic bootstrap method from `angular2/bootstrap` and adds some additional new providers. These include a provider for the differ class mentioned above.
 
+To use it, we need to install it from NPM:
+
+    meteor npm install angular2-meteor-auto-bootstrap --save
+
 Let's change `bootstrap` to load from `angular2-meteor` instead of `angular2/bootstrap` as follows:
 
-    import {Component, View, NgZone} from 'angular2/core';
-
-    import {bootstrap} from 'angular2-meteor';
+    import {Component, NgZone} from 'angular2/core';
+    import {bootstrap} from 'angular2-meteor-auto-bootstrap';
 
     bootstrap(Socially);
 
-`angular2-meteor` is an alias of the System.js module that contains all components that come with the Angular2-Meteor package.
-
 Now, change `app.ts` to:
 
-  {{> DiffBox tutorialName="meteor-angular2-socially" step="3.6"}}
+  {{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
 
 Run your app again and manipulate the documents in the Mongo console.
 You will see that it works as before — it loads the same data as before and all changes to the `this.parties` that
@@ -218,11 +216,11 @@ let's initialize our server with the same parties as we had before.
 Let's add a file called `load-parties.ts` inside of "server" folder
 and implement `loadParties` method inside to load parties:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.8"}}
 
 Then change `main.ts` to run this method on Meteor startup:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.9"}}
 
 Now run the app and you should see the list of parties on the screen.
 If not, please, run
@@ -240,6 +238,5 @@ In this chapter you saw how easy and fast it is:
 - to create a full connection between our client data and the server using Meteor
 - to create a simple Angular 2 UI and render a Mongo collection on the page with the help of `Angular2-Meteor`
 - to load initial parties on the server side when the app launches
-- and how well-structured everything looks with the help of System.js modules
 
 {{/template}}

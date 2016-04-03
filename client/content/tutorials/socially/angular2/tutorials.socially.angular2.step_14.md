@@ -16,7 +16,7 @@ This is one of the great Meteor concepts that allows for rapid UI changes.
 
 Let's create a new file `collections/methods.ts`, and add the following `invite` Meteor Method:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="14.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="14.0"}}
 
 We used a special API method `Meteor.methods` to register
 a new Meteor Method. Again, don't forget to import your created `methods.ts` module

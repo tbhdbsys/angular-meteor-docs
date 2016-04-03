@@ -55,7 +55,7 @@ to make changes of the current variable reactive.
 
 Reactive variables go in a separate Meteor core package. Don't forget to add it:
 
-    meteor add reactive-var
+    $ meteor add reactive-var
 
 We'll need to re-subscribe with new options each time the page number changes.
 Thanks to Meteor, we can easily update subscriptions with the help of Meteor's reactive variables and MeteorComponent's reactive API. Particularly, we are going to use the
@@ -73,7 +73,7 @@ Creating a pagination component is not a trivial task and not one of the primary
 so we are going to make use of an already existing package with Angular 2 pagination components.
 Run the following line to add this package:
 
-    meteor add barbatus:ng2-pagination
+    $ meteor npm install angular2-pagination --save
 
 > This package's pagination mark-up follows the structure of
 > the [Bootstrap pagination component](http://getbootstrap.com/components/#pagination),
@@ -102,15 +102,11 @@ pretty much the same if we were to use a pagination filter in Angular 1.
 First, let's import all of the pagination parts into the `PartiesList` component, and then
 set them up to be available in the component's view as follows:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.8"}}
 
-Don't forget to include typings added by the pagination package:
+Now, add the pagination pipe and controls to the `parties-list.html` template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.6"}}
-
-Second, add the pagination pipe and controls to the `parties-list.html` template:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.9"}}
 
 In the pipe definition, we provided the current page number, the page size and a new value of total items in the list to paginate.
 
@@ -126,12 +122,12 @@ The final part is to handle user clicks on the page links. The pagination contro
 fires a special event when the user clicks on a page link, causing the current page to update.
 Let's handle this event in the template first and then add a method to the `PartiesList` component itself:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.10"}}
 
 As you can see, the pagination controls component fires the `onChange` event, calling the `onPageChanged` method with
 a special event object that contains the new page number to set. Add the `onPageChanged` method:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.11"}}
 
 At this moment, we have almost everything in place. Let's check if everything is working.
 We are going to have to add a lot of parties, at least, a couple of pages.
@@ -141,7 +137,7 @@ But, since we've chosen quite a large default page size (10), it would be tediou
 
 Thankfully, we have a helpful package called [_anti:fake_](https://atmospherejs.com/anti/fake), which will help us out with the generation of names, locations and other properties of new fake parties.
 
-    meteor add anti:fake
+    $ meteor add anti:fake
 
 So, with the following lines of code we are going to have 30 parties in total
 (given that we already have three):
@@ -183,7 +179,7 @@ This suggests that we have to add a new publication to publish only the current 
 This task looks quite common and, thankfully, it's already been
 implemented. We can use the [tmeasday:publish-counts](https://github.com/percolatestudio/publish-counts) package.
 
-    meteor add tmeasday:publish-counts
+    $ meteor add tmeasday:publish-counts
 
 This package exports a `Counts` object with all of the API methods we will need.
 
@@ -193,7 +189,7 @@ This package exports a `Counts` object with all of the API methods we will need.
 
 Let's publish the total number of parties as follows:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.13"}}
 
 > Notice that we are passing `{ noReady: true }` in the last argument so
 > that the publication will be ready only after our main cursor is loads.
@@ -202,11 +198,11 @@ We've just created the new _numberOfParties_ publication.
 Let's get it reactively on the client side using the `Counts` object, and, at the same time,
 introduce a new `partiesSize` property in the `PartiesList` component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.14"}}
 
 Then, we use this new property in the template to set up pagination properly:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.15"}}
 
 Let's verify that the Socially app works the same as before.
 Run the app. There should be same three pages of parties.
@@ -224,11 +220,11 @@ respectively. Then, as you can see, we assign `nameOrder` to the party property 
 
 We'll add a new dropdown UI control with two orders to change, ascending and descending. Let's add it in front of our parties list:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.13"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.16"}}
 
 In the `PartiesList` component, we change the `nameOrder` property to be a reactive variable and add a `changeSortOrder` event handler, where we set the new sort order:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.17"}}
 
 That's just it! Run the app and change the sort order back and forth.
 What's important here is that pagination updates properly, i.e. according to a new sort order.
@@ -244,11 +240,11 @@ Having that fixed, it should work properly in accordance with the added paginati
 So, let's add filtering parties by the location with the help of Mongo's regex API.
 It is going to look like this:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.18"}}
 
 On the client side, we are going to add a new reactive variable and set it to update when a user clicks on the search button:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.16"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="12.19"}}
 
 > Notice that we don't know what size to expect from the search
 > that's why we are re-setting the current page to 1.

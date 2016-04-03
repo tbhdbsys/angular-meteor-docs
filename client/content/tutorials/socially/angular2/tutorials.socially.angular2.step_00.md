@@ -71,40 +71,28 @@ So in our case, Meteor found our `index.html` file, recognized it was meant for 
 
 > (right-click -> inspect element on the page to see the generated file)
 
-# Adding Angular 2
+# NPM
 
-It's time to add Angular 2 to our stack!
+Npm stands for Node Packages Manager, which manages your dependencies and external packages.
 
-First things first, let's add the Angular 2 package to Meteor (we will discuss Meteor packages later in this tutorial)
+To init a new project with NPM, run in the command line:
 
-Back in the command line, launch this command:
+    $ npm init
 
-    $ meteor add urigo:angular2-meteor
+You'll be asked a few questions about some metadata related to your project, and then `package.js` file will be created, which later hold the versions of the packages that required by your app.
 
-This package takes care of connecting Angular 2 to Meteor and includes the latest Angular 2 library code into our app.
+The `package.json` looks like that:
 
-That's it! Now we can use Angular 2's power in our Meteor app.
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.3" filename="package.json"}}
 
-## HTML
+## CommonJS
 
-As you already know, Meteor processes all HTML files for you out of the box. Files will be concatenated into one page.
+Meteor 1.3 comes with CommonJS implementation which provides the ability to use `import` / `export` statements and gives you a full solution for modules loading.
 
-From the other side, regular Angular (Angular 1 or Angular 2) apps have a modular structure, i.e., consist of a set of template HTML files and JavaScript component files. Each template file might belong to some component, for example, to a custom directive.
+Note that Angular 2.0 examples and tutorials mostly uses SystemJS - which is another modules loader.
 
-It means we would rather avoid concatenating all of them to let Angular 2 components to load template files at the moment they need to.
+You can also use SystemJS, but we recommend to use CommonJS because it is built-in in Meteor 1.3.
 
-That's why `urigo:angular2-meteor` overrides standard Meteor HTML processor.
-Lets remove the standard HTML processor by:
-
-    $ meteor remove blaze-html-templates
-
-This package has its own HTML processor that recognizes two types of HTML files: one type — files that contain `<HEAD>` and `<BODY>` tags, everything else — considered as template files.
-
-If you have multiple HTML files with, say, `<BODY>` tags, they will be concatenated together into one file in the same way as the standard HTML processor.
-
-At the same time, template files are not touched by the processor at all and won't appear on the page initially.
-
-They will be loaded by appropriate Angular 2 components at the time they are going to be rendered on the page.
 
 ## TypeScript
 
@@ -123,24 +111,56 @@ Besides decorator and ES6 support, TypeScript offers an opt-in type system with 
 
 The Angular2-Meteor packages comes with a built-in TypeScript compiler plugin, which means you don't need to worry about installing additional compiler packages.
 
-As of Meteor 1.2, Meteor supports ES6 by default. In order to avoid conflicts between TypeScript and Meteor ECMAScript package, you'll need to remove it:
-
-    $ meteor remove ecmascript
-
 As you might already know, there are new `import` and `export` statements in ES6 to help structure your app into isolated modules.
 
 TypeScript can compile each file into a separate module. Lets learn how we are going use modules in our app.
 
-## System.js
+TypeScript uses a file called `tsconfig.json`, so let's create it and use some default configuration:
 
-Before `import`/`export` standards were defined in ES6, the JS community had come up with different implementations for module loading. These module loading solutions continue to be used as ES6 support hasn't fully landed in modern browsers.
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.4"}}
 
-We are going to use [System.js](https://github.com/systemjs/systemjs), which is supported out of the box in the `urigo:angular2-meteor` package.
 
-Most of the time you won't need to worry much about ES6 modules — TypeScript and System.js will do everything for you behind the scenes. TypeScript will compile a `ts`-file into a separate System.js module by default in this package
-and System.js will load the module and its dependencies on demand.
+# Adding Angular 2
 
-There is only one small thing you'll need to potentially do to bootstrap your app. That will be explained a bit later.
+It's time to add Angular 2 to our stack!
+
+First things first, let's understand a few things:
+
+Angular2-Meteor is splitted to two packages: an Atmosphere package that contains compilers (HTML compiler and TypeScript compiler) and NPM package which contains Angular2-Meteor data solution and the actual connection to Meteor's data solution.
+
+So first, we need to add the compilers package, back in the command line, launch this command:
+
+    $ meteor add angular2-compilers
+
+And then add the meteor package, by running:
+
+    $ meteor npm install --save angular2-meteor
+
+> Note that this will update your `package.json` with a new dependency.
+
+That's it! Now we can use Angular 2's power in our Meteor app.
+
+## HTML
+
+As you already know, Meteor processes all HTML files for you out of the box. Files will be concatenated into one page.
+
+From the other side, regular Angular (Angular 1 or Angular 2) apps have a modular structure, i.e., consist of a set of template HTML files and JavaScript component files. Each template file might belong to some component, for example, to a custom directive.
+
+It means we would rather avoid concatenating all of them to let Angular 2 components to load template files at the moment they need to.
+
+That's why `angular2-compilers` overrides standard Meteor HTML processor.
+
+Lets remove the standard HTML processor by:
+
+    $ meteor remove blaze-html-templates
+
+This package has its own HTML processor that recognizes two types of HTML files: one type — files that contain `<HEAD>` and `<BODY>` tags, everything else — considered as template files.
+
+If you have multiple HTML files with, say, `<BODY>` tags, they will be concatenated together into one file in the same way as the standard HTML processor.
+
+At the same time, template files are not touched by the processor at all and won't appear on the page initially.
+
+They will be loaded by appropriate Angular 2 components at the time they are going to be rendered on the page.
 
 # Root Component
 
@@ -154,7 +174,11 @@ Now you can see another example of Meteor's power and simplicity - no need to in
 
 Let's continue defining our Angular 2 application module.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.8"}}
+
+And let's create the `.html` file:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.9"}}
 
 First we're importing the dependencies we needed from `angular2/core` and `angular2/platform/browser`. This is not a folder and files in your directory, but a reference to System.js modules aliased as `angular2/core` and `angular2/platform/browser`.
 They are some of the Angular 2 main modules that are available as part of the `urigo:angular2-meteor` package.
@@ -170,7 +194,7 @@ For now, consider Annotations an elegant way to add metadata to classes.
 
 Also notice, the Component's selector matches the `<app>` tag we will provide in `index.html` below, and the View template creates the view.
 
-The class, Socially, inherits from `@Component` and `@View`.
+The class, Socially, inherits from `@Component` which is part of Angular 2.
 
 Finally, we `bootstrap` our component, thus, marking it as the root component. An Angular 2 app can have multiple root components, but components must exist together within the same root in order to communicate with each other.
 
@@ -180,10 +204,11 @@ The only thing left before we can run our app is to import the root module and
 add the `<app>` tag to `index.html`.
 
 As you've already learned, the package uses System.js to manage ES6 modules, but System.js
-doesn't know anything about our `app` module.
+does npt know anything about our `app` module.
+
 So lets manually import our `app` module and add the `<app>` tag to `index.html` as follows:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.10"}}
 
 This will load HTML and JavaScript code necessary to launch our app.
 
@@ -207,6 +232,9 @@ The package adds default layout with the `<app>` tag automatically as follows:
 So lets remove `index.html` for now and run the app:
 
     $ meteor
+
+> If the template doesn't change, it may be because your browser is caching the original template.
+> Learn [how to disable caching during development](https://developer.chrome.com/devtools/docs/settings) in Chrome.
 
 ## TypeScript Typings
 
@@ -235,13 +263,9 @@ step 7, including how to configure TypeScript properly to automatically generate
 Let's make use of the typings in the second way. Angular 2 and the Meteor API will be
 used in pretty much every file of our app, so adding declaration files manually might become repetitive.
 
-Now create `tsconfig.json` and add path to `angular2-meteor.d.ts` as follows:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.8"}}
-
 If you look into `angular2-meteor.d.ts`, you'll see there references to Angular 2 and Meteor API.
 It means that we'll need their definition files as well to pull everything together.
-Luckily, besides its own declaration file, Angular2-Meteor installs also Angular 2 definition files as well into the _typings_ folder. 
+Luckily, besides its own declaration file, Angular2-Meteor installs also Angular 2 definition files as well into the _typings_ folder.
 These files are distributed via the Angular 2 NPM and Angular2-Meteor uses that NPM internally.
 
 > You only need to periodically remove .d.ts-files in the _typings_ folder, thus, letting the package know that the files need to be updated.
@@ -263,34 +287,8 @@ In our case, we'll need to execute commands as follows to install all dependenci
         typings install es6-shim --ambient
 
 If you look into the typings folder after the execution, you'll find there a definition file called `main.d.ts`.
+
 This is a top level definition file that links all other definition files installed by `typings`.
-Let's add it to the config as well:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.9"}}
-
-# Templates
-
-Let's make one change. Create a new file called `app.html` under the `client` folder, this will be our main HTML template page:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.10"}}
-
-Change your template in `app.ts` to target `app.html`:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.11"}}
-
-Now our component template will load from the given path specified by `templateUrl`.
-As you can see, we are using an Angular expression inside of `app.html` to check if it works:
-
-    <p>Nothing here {{dstache}} "yet" + "!" }}</p>
-
-Run the app again and the screen should look like this:
-
-    Nothing here yet!
-
-Angular interpreted the expression like any other Angular application.
-
-> If the template doesn't change, it may be because your browser is caching the original template.
-> Learn [how to disable caching during development](https://developer.chrome.com/devtools/docs/settings) in Chrome.
 
 # Experiments
 

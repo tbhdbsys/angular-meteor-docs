@@ -56,22 +56,20 @@ works as before.
 Now is the time to upgrade above mentioned components to feature Google Maps.
 Let's add a Meteor package that wraps around that Google Maps NPM package:
 
-    meteor add barbatus:ng2-google-maps
+    $ meteor npm install angular2-google-maps --save
 
 As everything in Angular 2 now is based on the dependency injection's providers,
 this package is not an exception, and has some providers that make sense to install
 globally.
 
-Don't forget to add `"typings/ng2-google-maps/ng2-google-maps.d.ts"` to the tsconfig.json file.
-
 Setting up global dependencies:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="16.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.6"}}
 
 The maps package contains two major directives: one is to render a HTML container with Google Maps,
 another one is to visualize a map marker. Let's add a maps markup to the PartyDetails component's template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="16.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.7"}}
 
 It needs some explanation. Our markup now contains these two directives.
 As you can see, parent map container directive has a party marker directive as a child element, so that it can be
@@ -83,7 +81,7 @@ In addition, location property binding has been corrected to reflect new type ch
 
 Here come changes to the component itself, including imports, new coordinates properties, and maps click event handler:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="16.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.8"}}
 
 It's going to work in a scenario as follows:
 
@@ -102,7 +100,7 @@ The last change will be about CSS styles. To show the map container of a specifi
 we'll have to set element styles. Since we'll need styles for that for two pages, let's create
 a separate CSS file for the whole app, which is, anyways, will be useful on the next steps:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="16.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.9"}}
 
 As usual, having introduced new feature, we are finishing it up with testing.
 Let's create a new party with the location name set to some existing place you know, and go to the details page. Click on the maps at the
@@ -115,7 +113,7 @@ the point you've just pointed out.
 Adding multiple markers on the parties front page should be straightforward now.
 Here is the markup:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="16.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.10"}}
 
 As you can see, we are looping through the all parties and adding a new marker for each party,
 having checked if the current party has location coordinates available.
@@ -123,7 +121,7 @@ We are also setting the minimum zoom and zero central coordinates on the map to 
 
 Lastly, import dependecies:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="16.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.11"}}
 
 # Summary
 

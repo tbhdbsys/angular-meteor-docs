@@ -22,7 +22,7 @@ These were the two main reasons for adding routing to the package.
 
 Let's import routing dependencies into our app. We'll need router providers ([`ROUTER_PROVIDERS`](https://angular.io/docs/ts/latest/api/router/ROUTER_PROVIDERS-let.html)), directives ([`ROUTER_DIRECTIVES`](https://angular.io/docs/ts/latest/api/router/ROUTER_DIRECTIVES-let.html)), and configuration ([`RouteConfig`](https://angular.io/docs/ts/latest/api/router/RouteConfig-var.html)). More on what each of these does later.
 
-Be sure to add `ROUTER_DIRECTIVES` to the View decorator itself to import all directive dependencies into the template. `ROUTER_PROVIDERS` should be added as a dependency to the bootstrapped application in order to make them available throughout the app.
+Be sure to add `ROUTER_DIRECTIVES` to the Component decorator itself to import all directive dependencies into the template. `ROUTER_PROVIDERS` should be added as a dependency to the bootstrapped application in order to make them available throughout the app.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.1"}}
 
@@ -68,11 +68,11 @@ Since it's not possible yet to get party details in this component, we are only 
 
 When we're finished, clicking on a party in the list should route to the `PartyDetails` component for more information.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.6"}}
 
 And add a simple template outline for the party details:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.7"}}
 
 At this point our front-end app structure should look like this:
 
@@ -87,7 +87,7 @@ At this point, your app will not run until our routes are configured.
 
 Let's configure our routes. This is how we map url paths to components.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.8"}}
 
 We've added multiple things here. Firstly, we've imported
 our two main views `PartiesList` and `PartyDetails`,
@@ -137,11 +137,11 @@ There is a special directive called `routerLink` that will help us to compose ea
 
 First we'll import the directive and specify it as a view directive in the `PartiesList`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.10"}}
 
 Now we can wrap our party in a `routerLink` and pass in the `_id` as a parameter. Note that the id is auto-generated when an item is inserted into a Mongo Collection.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.11"}}
 
 `routerLink` takes an array of URL parts as it was defined in the configuration and
 then composes a full URL. By the first `/PartyDetails` item we instruct `routerLink` to
@@ -158,7 +158,7 @@ The next thing is to grab the `partyId` route parameter in order to load the cor
 
 In Angular 2, it's as simple as passing the [`RouteParams`](https://angular.io/docs/ts/latest/api/router/RouteParams-class.html) argument to the `PartyDetails` constructor:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.12"}}
 
 Dependency injection is employed heavily here by Angular 2 to do all the work behind the scenes.
 TypeScript first compiles this class with the class metadata that says what argument types this class expects in the constructor (i.e. `RouteParams`),
@@ -172,11 +172,11 @@ If you are curious about class metadata read more about it [here](http://blog.th
 
 Let's now load a party instance using a received ID parameter:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.13"}}
 
 And render the party details on the page:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.14"}}
 
 # Challenge
 
