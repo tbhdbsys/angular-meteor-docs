@@ -38,7 +38,7 @@ We can attach data with the context `this`, referring to the Socially class.
 
 Run the app again.
 
-    meteor
+    $ meteor
 
 At this moment you will see a message in the console: _Property "parties" does not exist on type "Socially"_.
 These kind of messages can be annoying, but they provide important information that can help keep our code less buggy.
