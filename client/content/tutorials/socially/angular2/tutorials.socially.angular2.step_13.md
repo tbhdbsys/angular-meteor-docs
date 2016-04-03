@@ -35,7 +35,7 @@ Now, let's load the uninvited users of a particular party into the `PartyDetails
 
 Then, render the uninvited users on the `PartyDetails`'s page:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="13.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.5"}}
 
 # Implementing Pipes
 
@@ -45,7 +45,7 @@ For that purpose we could create a private component method and call it each tim
 
 Let's add a new folder "client/lib" and place a new file `pipes.ts`. We'll add our new `displayName` pipe inside of it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="13.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.6"}}
 
 As you can see, there are a couple of things to remember in order to create a pipe:
 
@@ -54,23 +54,13 @@ As you can see, there are a couple of things to remember in order to create a pi
 
 To make use of the created pipe, change the markup of the `PartyDetails`'s template to:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="13.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.7"}}
 
 And, finally, import the new pipe into the component and add it to the view decorator:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="13.7"}}
-
-If you were familiar with Angular 1's filters concept, you might believe that Angular 2's pipes are very similar. This is both true and not. While the view syntax and aims they are used for are the same, there are some important differences. The main one is that Angular 2 can now efficiently handle _stateful_ pipes, whereas stateful filters were discouraged in Angular 1. Another thing to note is that Angular 2 pipes are defined in the unique and elegant Angular 2 way, i.e., using classes and class metadata, the same as for components and their views.
-
-# Configuring Accounts-ui
-
-To test that user names are displayed properly along with emails, we'll need to re-configure the user creation form of the accounts dialog to contain the user name property as well.
-
-According to the accounts API, it can be configured via the [`Accounts.ui.config`](http://docs.meteor.com/#/full/accounts_ui_config) method. Specify the kind of `passwordSignupFields` we will use in our accounts-ui:
-
 {{> DiffBox tutorialName="meteor-angular2-socially" step="13.8"}}
 
-Now, let's test it! Add a couple of new users with names and emails, login as some already existing user and check that the party's users to invite are shown with the proper user IDs (either the username if it exists, or an email address).
+If you were familiar with Angular 1's filters concept, you might believe that Angular 2's pipes are very similar. This is both true and not. While the view syntax and aims they are used for are the same, there are some important differences. The main one is that Angular 2 can now efficiently handle _stateful_ pipes, whereas stateful filters were discouraged in Angular 1. Another thing to note is that Angular 2 pipes are defined in the unique and elegant Angular 2 way, i.e., using classes and class metadata, the same as for components and their views.
 
 # Challenge
 
