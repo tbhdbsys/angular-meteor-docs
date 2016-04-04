@@ -119,12 +119,24 @@ TypeScript uses a file called `tsconfig.json`, so let's create it and use some d
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.4"}}
 
+Now let's understand some of the configuration we just added:
+
+* `module` - we will use `commonjs` because that is the modules loader that Meteor 1.3 implements, so we want our TypeScript code to compile into CommonJS modules.
+* `target` - specify `es5` because that's the ECMAScript version that Meteor knows how to use.
+* `moduleResolution` - Meteor 1.3 supports NPM, so we will use it to get our dependencies.
+* `emitDecoratorMetadata`, `experimentalDecorators` - we use these because Angular 2.0 uses decorators.
+
+We use some more compiler options - if you want to enrich your TypeScript knowledge, you can read [here](http://www.typescriptlang.org/docs/handbook/compiler-options.html).
 
 # Adding Angular 2
 
 It's time to add Angular 2 to our stack!
 
 First things first, let's understand a few things:
+
+Meteor 1.3 comes with support for NPM packages - which means that we can just add Angular 2 from NPM.
+
+Note that Meteor 1.3 still supports it's own packages system - Atmosphere - and it is still required because there are some Meteor features (such as custom files compiler and packages isolation) that available only when using Atmopshere package.
 
 Angular2-Meteor is splitted to two packages: an Atmosphere package that contains compilers (HTML compiler and TypeScript compiler) and NPM package which contains Angular2-Meteor data solution and the actual connection to Meteor's data solution.
 
@@ -138,7 +150,7 @@ And then add the meteor package, by running:
 
 > Note that this will update your `package.json` with a new dependency.
 
-That's it! Now we can use Angular 2's power in our Meteor app.
+That's it! Now we can use Angular 2's power in our Meteor app!
 
 ## HTML
 
@@ -250,8 +262,7 @@ We'll need to link `app.ts` and `angular2-meteor.d.ts` together. There are two w
 
         /// <reference path="typings/angular2-meteor/angular2-meteor.d.ts" />
 
-        import {Component, View} from 'angular2/core';
-
+        import {Component} from 'angular2/core';
         import {bootstrap} from 'angular2/platform/browser';
 
  - another way is to create a custom [TypeScript configuration file](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) with the "files" property set to include all required typings files.
@@ -276,19 +287,24 @@ There is least one global repository for typings of such libraries called [Defin
 In order to install them — thus adding full type-checking support at this stage — we'll use a special tool for typings installation
 and management called `typings`. What's great about this tool is that it can install typings from different locations whether it's a Github repo, local folder, a NPM or even some HTTP path.
 You can find more information about it [here](https://github.com/typings/typings).
+
 In our case, we'll need to execute commands as follows to install all dependencies:
 
-        npm install typings -g
-
-        typings install meteor --ambient
-
-        typings install es6-promise --ambient
-
-        typings install es6-shim --ambient
+        $ npm install typings -g
+        $ typings install es6-promise --ambient
+        $ typings install es6-shim --ambient
 
 If you look into the typings folder after the execution, you'll find there a definition file called `main.d.ts`.
 
 This is a top level definition file that links all other definition files installed by `typings`.
+
+So now only one Typing is missing - which is the Meteor typings file - you can gran it from here: [https://gist.github.com/tomitrescak/8366ce98f1857e202ea8](https://gist.github.com/tomitrescak/8366ce98f1857e202ea8), since it is not released as a final version in the open-source community.
+
+> Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - there will not prevent you from running your app, but it is highly recommended to resolve those errors.
+
+> We recommend to try and find typings for all of your packages.
+
+**As a best practice, we recommend to add `"moduleResolution": "node"` to you `tsconfig.json` file, so TypeScript will automatically find typings and `.d.ts` files in your `node_modules` directory.**
 
 # Experiments
 
