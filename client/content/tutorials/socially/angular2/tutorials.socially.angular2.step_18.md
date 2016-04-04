@@ -27,7 +27,7 @@ Now we will import it in the main page, we also need to declare that we are goin
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.4"}}
 
-> Note that our import in the main page is from `ng2-material/all.webpack' which have the CSS stylesheet bundled inside, and the next import is from another path without the CSS because it is needed to load only once!
+> Note that our import in the main page is from `ng2-material/all.webpack` which have the CSS stylesheet bundled inside, and the next import is from another path without the CSS because it is needed to load only once!
 
 And let's update our fonts to the Material official fonts:
 
