@@ -92,7 +92,7 @@ __`client/app.ts`:__
 
     import {NgZone, Component} from 'angular2/core';
     import {bootstrap} from 'angular2/bootstrap';
-    import {Parties} from 'collections/parties';
+    import {Parties} from '../collections/parties';
 
     @Component({
       selector: 'app',
