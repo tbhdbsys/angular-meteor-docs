@@ -75,11 +75,11 @@ So in our case, Meteor found our `index.html` file, recognized it was meant for 
 
 Npm stands for Node Packages Manager, which manages your dependencies and external packages.
 
-To init a new project with NPM, run in the command line:
+To initialize a new project with NPM, run in the command line:
 
     $ npm init
 
-You'll be asked a few questions about some metadata related to your project, and then `package.js` file will be created, which later hold the versions of the packages that required by your app.
+You'll be asked a few questions about some metadata related to your project, and then the `package.json` file will be created, which will hold the versions of the packages that are required by your app.
 
 The `package.json` looks like that:
 
