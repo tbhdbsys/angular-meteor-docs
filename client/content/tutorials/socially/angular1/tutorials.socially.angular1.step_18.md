@@ -1,4 +1,4 @@
-    {{#template name="tutorials.socially.angular1.step_18.md"}}
+{{#template name="tutorials.socially.angular1.step_18.md"}}
 {{> downloadPreviousStep stepName="step_17"}}
 
 
