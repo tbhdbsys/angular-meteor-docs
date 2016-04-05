@@ -13,7 +13,7 @@ Run the following command in your Terminal:
 
     $ meteor npm install bootstrap4-webpack-package --save
 
-> At this time, you cannot use the original Boostrap 4 package from NPM, and a wrapper is needed. Meteor 1.3.1 should resolve this issue. [Click for more information about this issue](https://github.com/meteor/meteor/issues/6098).
+> At this time, you cannot use the original Boostrap 4 package from NPM, and a wrapper is needed. Meteor 1.3.2 may resolve this issue. [Click for more information about this issue](https://github.com/meteor/meteor/issues/6098).
 
 To import it into the project, add the following line in the top of you `app.ts`:
 
