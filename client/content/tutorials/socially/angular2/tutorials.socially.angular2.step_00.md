@@ -290,7 +290,7 @@ If you look into the typings folder after the execution, you'll find there a def
 
 This is a top level definition file that links all other definition files installed by `typings`.
 
-So now only one Typing is missing - which is the Meteor typings file - you can gran it from here: [https://gist.github.com/tomitrescak/8366ce98f1857e202ea8](https://gist.github.com/tomitrescak/8366ce98f1857e202ea8), since it is not released as a final version in the open-source community.
+So now only one Typing is missing - which is the Meteor typings file - you can grab it from here: [https://gist.github.com/tomitrescak/8366ce98f1857e202ea8](https://gist.github.com/tomitrescak/8366ce98f1857e202ea8), since it is not released as a final version in the open-source community.
 
 > Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - there will not prevent you from running your app, but it is highly recommended to resolve those errors.
 
