@@ -231,17 +231,7 @@ Importing the root module every time looks like a repetitive task.
 Here comes some good news — the Angular 2 package recognizes the file named `app.ts`.
 If you have one in the app root folder, the package will import it for you without even having to ask.
 
-Even more, if you called your app selector — `app`, you can get rid of `index.html` altogether.
-The package adds default layout with the `<app>` tag automatically as follows:
-
-    <body>
-        <app></app>
-    </body>
-
-> Note: default layout is added only when there are no any other HTML files
-> with `head` or `body` tags.
-
-So lets remove `index.html` for now and run the app:
+Let's run the app:
 
     $ meteor
 
