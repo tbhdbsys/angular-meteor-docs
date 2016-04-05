@@ -5938,10 +5938,10 @@ index b3c49f0..dffc2ea 100644
 2.6.4
 
 
-From a5701218064c1dfef7c0783652a7bc4f20b87297 Mon Sep 17 00:00:00 2001
+From 08136a2818c92e07b21aa3bbbeadf7270e474b7f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:06:25 +0200
-Subject: [PATCH 146/174] Step 17.5: Import LoginButtons
+Subject: [PATCH 146/174] Step 17.7: Import LoginButtons
 
 ---
  client/app.ts | 3 ++-
@@ -5969,7 +5969,7 @@ index fcae584..8c5aa6d 100644
 2.6.4
 
 
-From 1a9e2b8b34fa7c494c3967c65a698f8badce979b Mon Sep 17 00:00:00 2001
+From 9cb5cb671a788f549a94d663fbea52624de1689e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:07:00 +0200
 Subject: [PATCH 147/174] Step 17.8: Add fonts and font awesome
@@ -5996,7 +5996,7 @@ index 2662e56..8a56f1a 100644
 2.6.4
 
 
-From 8f52edc0e429e7bcaa890c52b6bb614d329ac4d7 Mon Sep 17 00:00:00 2001
+From f57ecac3675a4c97fa282f446a4b6c6da0f4938f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 14:24:13 +0200
 Subject: [PATCH 148/174] Step 17.9: Update the add new party form layout
@@ -6046,7 +6046,7 @@ index 1dc86c7..3d07605 100644
 2.6.4
 
 
-From 630fb3f2357b4a7fbf9bec5088a0c901b2cb155c Mon Sep 17 00:00:00 2001
+From 828baef5f29267db867ed932cfcc5fc85ef332d4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 14:24:29 +0200
 Subject: [PATCH 149/174] Step 17.10: Update parties list layout
@@ -6199,7 +6199,7 @@ index 76f0bc4..16d0de6 100644
 2.6.4
 
 
-From ee632637f2d83821a424982dced6d191d319f2e6 Mon Sep 17 00:00:00 2001
+From 557b02390d6c2cfe826405775b488ef1507cb354 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 14:25:08 +0200
 Subject: [PATCH 150/174] Step 17.11: Use LESS and add some style
@@ -6407,7 +6407,7 @@ index 0000000..be3061e
 2.6.4
 
 
-From 3d25f2051a928a9dc3747d0f6185712087a7b689 Mon Sep 17 00:00:00 2001
+From 873f19f1e87ce88424140c869f3007857fb75af7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 5 Feb 2016 16:16:26 +0200
 Subject: [PATCH 151/174] Step 17.12: Add style file for the party details page
@@ -6460,7 +6460,7 @@ index 0000000..82dcfc3
 2.6.4
 
 
-From 53199fe71a97b6f55fae5c1275b21d7b62bd9949 Mon Sep 17 00:00:00 2001
+From abfe69b730fdd8f58100052f757f7128cca4cea5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 5 Feb 2016 16:16:43 +0200
 Subject: [PATCH 152/174] Step 17.13: Update the layout of the party details
@@ -6575,7 +6575,7 @@ index b896d47..a484a5b 100644
 2.6.4
 
 
-From 328333c03958c160322c80dc00a158412b78bd41 Mon Sep 17 00:00:00 2001
+From e5d10ec50fe21e4411abca907966ba227893c8cb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 5 Feb 2016 18:08:11 +0200
 Subject: [PATCH 153/174] Step 18.1: Remove bootstrap package from the project
@@ -6601,7 +6601,7 @@ index fd7dcb7..4e40604 100644
 2.6.4
 
 
-From 58ea1a57128f057d53af20d163035fbbad1ffb42 Mon Sep 17 00:00:00 2001
+From 1c0901c8299561d46f183aed98b2423de4d05ec5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 5 Feb 2016 18:08:25 +0200
 Subject: [PATCH 154/174] Step 18.2: Remove bootstrap import from the project
@@ -6625,7 +6625,7 @@ index 8c5aa6d..3351486 100644
 2.6.4
 
 
-From adbe3fa8a819287a5b2da66ce805eb336fa78574 Mon Sep 17 00:00:00 2001
+From 49cabbcc210941e481b8d2d35816317c05438267 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:32:42 +0200
 Subject: [PATCH 155/174] Step 18.3: Add ng2 material package
@@ -6651,7 +6651,7 @@ index 4e40604..8628edc 100644
 2.6.4
 
 
-From 179153962d255f72308aad16fbaf1f23ddf63146 Mon Sep 17 00:00:00 2001
+From d96d4ebff4c462da768cc46d23479809ce0a7353 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:32:57 +0200
 Subject: [PATCH 156/174] Step 18.4: Import ng2 material components to the main
@@ -6694,7 +6694,7 @@ index 3351486..d83ae5a 100644
 2.6.4
 
 
-From d36c9d205ba69f243ad82e9dec2491fc0c07bcb9 Mon Sep 17 00:00:00 2001
+From 920ed70a805273d5c52a85b9f35dea031bdb0f15 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:33:22 +0200
 Subject: [PATCH 157/174] Step 18.5: Import the fonts for material
@@ -6723,7 +6723,7 @@ index 8a56f1a..c6c91b2 100644
 2.6.4
 
 
-From 4270324ca197aaa0d380ed4d8565be0801c3b2c9 Mon Sep 17 00:00:00 2001
+From 5bd822b2a5854055cfda68bb1e4cfb072e45e0a2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:33:40 +0200
 Subject: [PATCH 158/174] Step 18.6: Change the nav bar and the layout
@@ -6760,7 +6760,7 @@ index dffc2ea..abfc8de 100644
 2.6.4
 
 
-From 086694ba41e8a26644bb4ef6146abea7df6b64da Mon Sep 17 00:00:00 2001
+From 89a74099ff78f4284378292a5cddb0cc2e7e20c3 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:02:13 +0200
 Subject: [PATCH 159/174] Step 18.7: Import the components into the parties
@@ -6793,7 +6793,7 @@ index cb1cf94..a462c11 100644
 2.6.4
 
 
-From 86ac33dfc25c1b4a7003296faf25cf2e5f993199 Mon Sep 17 00:00:00 2001
+From f381fe235d0a82c819c7fca665d6d91137570c39 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:02:27 +0200
 Subject: [PATCH 160/174] Step 18.8: Change the layout of the parties form
@@ -6854,7 +6854,7 @@ index 3d07605..af0c995 100644
 2.6.4
 
 
-From ea69b407f6be622c885e54bb4de25ec0f4d61cea Mon Sep 17 00:00:00 2001
+From 124026311c23cb9c8320462a825e9145bbba5e6f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:14:41 +0200
 Subject: [PATCH 161/174] Step 18.9: Add the import to the parties list
@@ -6886,7 +6886,7 @@ index 9d63667..dcc7173 100644
 2.6.4
 
 
-From ecbc93b8ba7bf2f001731e860736d565c658fa33 Mon Sep 17 00:00:00 2001
+From 1217a73c5950d8f974112b483ff7d86d6ecad10b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:15:01 +0200
 Subject: [PATCH 162/174] Step 18.10: Change that layout of the parties list
@@ -7073,7 +7073,7 @@ index 16d0de6..f0d51a4 100644
 2.6.4
 
 
-From 7cab1c09cb29fdb42ccb96258fe464c18b0b1310 Mon Sep 17 00:00:00 2001
+From 687116f810257243f10e9b8ecc29eb2a867da837 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:15:12 +0200
 Subject: [PATCH 163/174] Step 18.11: Add some style and css
@@ -7260,7 +7260,7 @@ index f9b7bbc..02d53a3 100644
 2.6.4
 
 
-From fdf68cff09939ec4099f6507c319b21ddc81d8e6 Mon Sep 17 00:00:00 2001
+From 57b8ed58dc08753d51db1f1f3a5e4ce93aca82fc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:22:54 +0200
 Subject: [PATCH 164/174] Step 18.12: Import the directives in the party
@@ -7292,7 +7292,7 @@ index 1c01945..f293028 100644
 2.6.4
 
 
-From 8dd7f68fe1f9614fcdfae12a02273ea70e465b59 Mon Sep 17 00:00:00 2001
+From 20170fea5d1a04632bb0edcab90877efb939ae59 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:23:20 +0200
 Subject: [PATCH 165/174] Step 18.13: Update the layout of the party details
@@ -7422,7 +7422,7 @@ index a484a5b..45286ef 100644
 2.6.4
 
 
-From fb2d1ab167120c65d832b12a5bd2fde0d18c67fc Mon Sep 17 00:00:00 2001
+From 27f027c63bd1d7d7cc2b71c6bfd395ccec321b90 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 13:38:10 +0200
 Subject: [PATCH 166/174] Step 18.14: Replace login buttons with custom buttons
@@ -7456,7 +7456,7 @@ index abfc8de..a5bb6b8 100644
 2.6.4
 
 
-From 7a9f378123b1c959b2568d927c82f2b5533415cf Mon Sep 17 00:00:00 2001
+From d005aae67d9c94d931efec08c1dd0068ded97800 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 13:38:32 +0200
 Subject: [PATCH 167/174] Step 18.15: Add logic to support custom login
@@ -7518,7 +7518,7 @@ index d83ae5a..a69d184 100644
 2.6.4
 
 
-From 607f3370df43b25d30b03c5a00afdba7e09a5c42 Mon Sep 17 00:00:00 2001
+From ae33cbc500f7408e4e034ae0ff13fc9b43c89ac5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:11:40 +0200
 Subject: [PATCH 168/174] Step 18.16: Create the login component
@@ -7581,7 +7581,7 @@ index 0000000..f37bc30
 2.6.4
 
 
-From 8dce9073274d64aa962df61e46cfcc0343095ede Mon Sep 17 00:00:00 2001
+From 776866c0915f59ad972ac5617c30a3a91bfbec4c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:11:48 +0200
 Subject: [PATCH 169/174] Step 18.17: Create the login view
@@ -7656,7 +7656,7 @@ index 0000000..19fa9de
 2.6.4
 
 
-From 67bf3be0f5e2de0ab7e02841cb1c79128c68bbfe Mon Sep 17 00:00:00 2001
+From 89215f34ccf7d0411ff98ce9eafceddba79390b3 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:12:04 +0200
 Subject: [PATCH 170/174] Step 18.18: Create the signup component
@@ -7719,7 +7719,7 @@ index 0000000..f3483d5
 2.6.4
 
 
-From 237ba1ced9c41d86ae01056f81eceff5729c9b21 Mon Sep 17 00:00:00 2001
+From 405ede095ecd6d623a80634bdb0259bcfa1d1427 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:12:12 +0200
 Subject: [PATCH 171/174] Step 18.19: Create the signup view
@@ -7790,7 +7790,7 @@ index 0000000..6222883
 2.6.4
 
 
-From 979777aeb8b3f41b15eb9b00f534806aa0a9db4e Mon Sep 17 00:00:00 2001
+From c3a4c71fc461b50537666d5f75bf0feeefb37fa6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:15:27 +0200
 Subject: [PATCH 172/174] Step 18.20: Create the recover component
@@ -7852,7 +7852,7 @@ index 0000000..55c48ce
 2.6.4
 
 
-From aeb5791d4712edf30734edad56c02ad1a22ad666 Mon Sep 17 00:00:00 2001
+From 850763cb4fb0dbb0433e5274e143603510fe885d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:15:37 +0200
 Subject: [PATCH 173/174] Step 18.21: Create the recover view
@@ -7903,7 +7903,7 @@ index 0000000..5f0c5cb
 2.6.4
 
 
-From c39f7ea1c47e067fccd7092d2b37e6fdf45850db Mon Sep 17 00:00:00 2001
+From 59e78e04713a5737e126b809ba4db7119592e04b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:16:57 +0200
 Subject: [PATCH 174/174] Step 18.22: Add the logout method to the main
