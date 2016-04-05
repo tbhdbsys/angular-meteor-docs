@@ -291,8 +291,10 @@ You can find more information about it [here](https://github.com/typings/typings
 In our case, we'll need to execute commands as follows to install all dependencies:
 
         $ npm install typings -g
-        $ typings install es6-promise --ambient
+        $ typings install es6-promise
         $ typings install es6-shim --ambient
+
+> Note that "es6-shim" for "npm" is not found in the registry now. You need install it with the ambient flag.
 
 If you look into the typings folder after the execution, you'll find there a definition file called `main.d.ts`.
 
