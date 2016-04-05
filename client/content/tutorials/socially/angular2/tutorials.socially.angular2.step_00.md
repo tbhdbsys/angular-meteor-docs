@@ -216,7 +216,7 @@ The only thing left before we can run our app is to import the root module and
 add the `<app>` tag to `index.html`.
 
 As you've already learned, the package uses System.js to manage ES6 modules, but System.js
-does npt know anything about our `app` module.
+does not know anything about our `app` module.
 
 So lets manually import our `app` module and add the `<app>` tag to `index.html` as follows:
 
