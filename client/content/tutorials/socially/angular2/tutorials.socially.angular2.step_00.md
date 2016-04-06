@@ -148,6 +148,10 @@ And then add the meteor package, by running:
 
     $ meteor npm install --save angular2-meteor
 
+And we also need to install the Meteor stubs:
+
+    $ meteor npm install --save meteor-node-stubs
+
 > Note that this will update your `package.json` with a new dependency.
 
 That's it! Now we can use Angular 2's power in our Meteor app!
