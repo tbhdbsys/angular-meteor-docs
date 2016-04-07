@@ -27,11 +27,11 @@ Thanks to minimongo, Meteor's client-side Mongo emulator, `Mongo.Collection` can
 
 So first, let's define the parties collection that will store all our parties.
 
-Add to the beginning of the `app.js` file:
+Create new file, like this:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="3.1"}}
 
-> Note that the `Mongo.Collection` line is outside the `Meteor.isClient` code block because we want this line to work in both client and server, and AngularJS files are loaded in the client side only.
+> Note that the `Mongo.Collection` has been used in a file that is outside /client or /server folders. This is because we want this file to be loaded in both client and server, and AngularJS files are loaded in the client side only.
 
 > That means that this collection and the actions on it will run both on the client (minimongo) and the server (Mongo), you only have to write it once, and Meteor will take care of syncing both of them.
 
@@ -39,10 +39,10 @@ Add to the beginning of the `app.js` file:
 
 Now that we've created the collection, our client needs to subscribe to its changes and bind it to our parties array.
 
-To bind them we are going to use the built-in angular-meteor feature called [helpers](/api/1.3.2/helpers). 
+To bind them we are going to use the built-in angular-meteor feature called [helpers](/api/1.3.2/helpers).
 
 Those of you who used Meteor before, should be familiar with the concept of Helpers - these are definitions that will be available in the view, and will also have [reactive](http://docs.meteor.com/#/full/reactivity).
- 
+
 We are going to replace the declaration of `$scope.parties` with the following command inside the `PartiesListCtrl` controller:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="3.2"}}
@@ -54,7 +54,7 @@ So you can access that `$scope.parties` exactly like you did before.
 In this example, we return a MongoDB Cursor (the return value of `find`), which is a function, and Angular-Meteor wraps it as array, so when we will use `$scope.parties` (in view or in a controller) - it would be a regular JavaScript array!
 
 A `helper` could be a function or any other variable type.
- 
+
 * Functions will re-run every time something inside has changed and will bind the returned value to a scope variable and to the view
 * Regular values but be declared both as [Reactive Vars](http://docs.meteor.com/#/full/reactivevar_pkg) and scope variable. That means that they will bind directly to the view with Angular and also fire a Meteor change event to trigger a re-run if they are used inside a helper function or a Meteor.autorun  
 
@@ -64,7 +64,7 @@ Now every change that happens to the `$scope.parties` variable will automaticall
 
 But we still don't have data in that collection, so let's add some by initializing our server with the same parties we had before.
 
-Let's create a file named `server.js` in the project's root folder, and add this content:
+Let's create a file named `startup.js` in the server folder, and add this content:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="3.3"}}
 
@@ -131,32 +131,86 @@ This is a better pattern that let's you reuse code more easily but you can conti
 
 You can find some more information about this approach [here](http://teropa.info/blog/2015/10/18/refactoring-angular-apps-to-components.html).
 
-First, let's convert our Controller into a Component:
+First, let's create a template for our Component:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="3.8"}}
 
-* We changed `controller` into `directive`
+* We copied the code from `main.html`
+* We removed the `ng-controller` because we no longer need it
+* We renamed `vm` to `partiesList` which we defined in the Component
+
+Now, let's convert our Controller into a Component:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.6"}}
+
+* We used `component` method to define new Component
+* We named the Component very similar to the previous Controller
 * We connect the Component to a template with `templateUrl`
 * We named the Component's controller like we did with `controllerAs`
 * We copied the same controller code into`controller`  
 
-> In Angular 1.5 there is a new `component` object that is shorter then the `directive` syntax
+> In Angular 1.5 there is a new `component` function that is not exactly the same thing as a `directive`. You should [read more](https://docs.angularjs.org/guide/component) about it in the official guide.
 
-Now let's create our Component's HTML in a new file we places in the `templateUrl`:
+We can now just delete the code in `main.html` and instead call out Component:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="3.7"}}
-
-* We copied the code from `main.html`
-* We removed the `ng-controller` because we no longer need it
-* We renamed `vm` to `partiesList` which we defined in the Component 
-
-So now let's just delete the code in `main.html` and instead call out Component:
-
-{{> DiffBox tutorialName="meteor-angular1-socially" step="3.6"}}
 
 That's it!
 
 Now we can use `<parties-list>` tag anywhere, and we will get the list of parties!
+
+# Full advantage of ES2015 support in Meteor 1.3
+
+Since we're serious developers and Meteor gives us ability to use things from the future, let's move Socially to the next level!
+
+To make Socially easier to maintainable we can use es6 classes and modules.
+
+Let's create a `imports` folder. It allows us to lazy-load modules.
+
+To fully move PartiesList component we have to create space for it.
+
+This is a structure of Socially app:
+
+    client/
+    imports/
+      ui/
+        components/ - put here every component
+          partiesList/
+          .../
+    server/
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.9"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.10"}}
+
+* We transformed Controller to be a es6 class instead of just a function (it will be easier to move things to Angular2 in the future)
+* We create angular module with the same name as the Component
+* We export angular module
+* We changed `templateUrl`
+
+
+Because `PartiesList` module is in `imports` and it's lazy-loaded we have to import it into Socially:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.11"}}
+
+
+As you can see in your browser, template is missing. It's also lazy-loaded.
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.14"}}
+
+Since we want to use components in Socially we still have to create a main component, just like we had a main controller.
+
+Let's do the same steps as we did with PartiesList.
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.15"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.16"}}
+
+Now we can update main view in index.html file and load Socially in main.js
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.17"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.18"}}
 
 # Summary
 

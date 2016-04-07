@@ -12,22 +12,27 @@ In this step, we are going to combine Meteor's and Angular 1's standard ways of 
 
 From the `docs.meteor.com` site:
 
-> A Meteor application is a mix of JavaScript that runs inside a client web browser, JavaScript that runs on the Meteor server inside a Node.js container, and all the supporting HTML fragments, CSS rules, and static assets.
-> Meteor automates the packaging and transmission of these different components. And, it is quite flexible about how you choose to structure those components in your file tree.
->
-> Files outside the **client**, **server** and **tests** subdirectories are loaded on both the client and the server!
-> That's the place for model definitions and other functions.
->
-> CSS files are gathered together as well: the client will get a bundle with all the CSS in your tree (excluding the server, public, and private subdirectories).
->
-> In development mode, JavaScript and CSS files are sent individually to make debugging easier.
+> Before the release of Meteor 1.3, the only way to share values between files in an application was to assign them to global variables or communicate through shared variables like Session (variables which, while not technically global, sure do feel syntactically identical to global variables). With the introduction of modules, one module can refer precisely to the exports of any other specific module, so global variables are no longer necessary.
+
+> If you are familiar with modules in Node, you might expect modules not to be evaluated until the first time you import them. However, because earlier versions of Meteor evaluated all of your code when the application started, and we care about backwards compatibility, eager evaluation is still the default behavior.
+
+> If you would like a module to be evaluated lazily (in other words: on demand, the first time you import it, just like Node does it), then you should put that module in an imports/ directory (anywhere in your app, not just the root directory), and include that directory when you import the module: import {stuff} from "./imports/lazy". Note: files contained by node_modules/ directories will also be evaluated lazily (more on that below).
+
+> Lazy evaluation will very likely become the default behavior in a future version of Meteor, but if you want to embrace it as fully as possible in the meantime, we recommend putting all your modules inside either client/imports/ or server/imports/ directories, with just a single entry point for each architecture: client/main.js and server/main.js. The main.js files will be evaluated eagerly, giving your application a chance to import modules from the imports/ directories.
 
 ## Load order
 
-It is best to write your application in such a way that it is insensitive to the order in which files are loaded. This can be achieved by using, for example, Meteor.startup or by moving load order sensitive code into packages, which can explicitly control both the load order of their contents and their load order with respect to other packages.
-However, sometimes load order dependencies in your application are unavoidable.
+Before Meteor 1.3, the order in which application files were evaluated was dictated by a set of rules described in the Structuring Your Application section of the docs (see File Load Order subheading). These rules could become frustrating when one file depended on a variable defined by another file, particularly when the first file was evaluated after the second file.
 
-The JavaScript and CSS files in an application are loaded according to these rules:
+Thanks to modules, any load-order dependency you might imagine can be resolved by adding an import statement. So if a.js loads before b.js because of their file names, but a.js needs something defined by b.js, then a.js can simply import that value from b.js:
+
+    // a.js
+    import {bThing} from "./b";
+    console.log(bThing, "in a.js");
+
+    // b.js
+    export var bThing = "a thing defined in b.js";
+    console.log(bThing, "in b.js");
 
 ### server
 
@@ -44,6 +49,10 @@ There are more assets to consider on the client side. Meteor gathers all JavaScr
 ### public
 
 Lastly, the Meteor server will serve any files under the public directory. This is the place for images, favicon.ico, robots.txt, and anything else.
+
+### imports
+
+Files inside the **imports** are being lazy-loaded.
 
 ### More rules
 
@@ -69,36 +78,5 @@ The second approach seems to work better for large scale applications.
 As we are working close with the Meteor collections, we believe a better approach will be based on functionality, which also correlates to the Meteor's collection structure.
 
 For more Angular 1 structuring and best practices please read this amazing [style-guide](https://github.com/johnpapa/angularjs-styleguide#application-structure) and for best practices for Meteor apps read Meteor's [official guide](http://guide.meteor.com/).
-
-# Re-structuring our app
-
-So now let's re-structure our app (to see the end result and all the steps in git diff you can click [here](https://github.com/Urigo/meteor-angular-socially/compare/step_06...step_07)):
-
-1. Create a folder named `client` under the root folder.  This is where all the code inside `Meteor.isClient` will go (without the need of Meteor.isClient anymore)
-2. The first thing that needs to be loaded in the `client` folder is the Angular 1 app declaration. After that, the rest of the client code can be loaded in any order. So create a `lib` folder inside the `client` folder and create `app.js` file inside. Everything inside the `client` folder runs only on the browser so we don't need `if (Meteor.isClient)` conditions anymore.  Move the Angular module declaration to that `app.js`:
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.1"}}
-3. The parties Mongo collection needs to run on both client and server. Create a folder called `model` under the root folder. Inside create a file called `parties.js` and cut this line from `app.js` - `Parties = new Mongo.Collection("parties");` - and place it in `parties.js`.
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.2"}}
-4. Create a `server` folder under the root folder. Everything inside that folder will run only on the server. Now create a folder called `startup` under the `server` folder. Now move `server.js` under that folder and rename it to `loadParties.js`. Now remove the `if (Meteor.isServer)` statement because there is no need for the if statement anymore because all the code inside the `server` folder runs only on the server.
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.3"}}
-5. Create a file called `routes.js` under the `client` folder. Cut the `.config` code that defines the routes and paste it inside that file.
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.4"}}
-6. Create a folder called `parties` inside the `client` folder. and inside it create another two folders - one for each component we have. one called `parties-list` and one called `party-details`.
-7. Create a new file inside the `client/parties/parties-list` folder called `parties-list.component.js`. Cut the code for the `partiesList` component from `app.js` and place it in there.
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.5"}}
-8. Now move `parties-list.html` into `client/parties/parties-list`.
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.6"}}
-9. Create a new file inside the `client/parties/party-details` folder called `party-details.component.js`. Cut the code for the `partyDetails` component from `app.js` and place it in there.
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.7"}}
-10. Now move `party-details.html` into `client/parties/party-details`.
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.8"}}
-11. We need to update the `templateUrl` in our components to support the new path, because that paths are absolute and not relative:
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.9" filename="client/parties/parties-list/parties-list.component.js"}}
-{{> DiffBox tutorialName="meteor-angular1-socially" step="7.9" filename="client/parties/party-details/party-details.component.js"}}
-13. Move `index.html` inside the client folder
-14. Don't forget to delete the original `app.js` files from the project's root folder.
-
-As you can see, everything is still working as before.
-We haven't needed to change any references in `index.html` like other frameworks. Meteor just takes care of all this.
 
 {{/template}}

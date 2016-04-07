@@ -7,36 +7,43 @@ The most popular maps widget is Google Maps so let's use that.
 
 First, let's add the angular-google-maps Meteor package:
 
-    meteor add angularui:angular-google-maps
+    meteor npm install --save angular-google-maps
 
+We also have to install another package:
 
-Then let's define the module dependency in our app. go to `app.js` inside the `client/lib` folder:
+    meteor npm install --save angular-simple-logger
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="16.2"}}
-
-Now let's add a map to `party-details.html` , first add this HTML snippet to the end of the template:
+Then let's create a `PartyMap` component:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="16.3"}}
 
-Here we created the google-map directive with attributes for binding the center, handling events and zoom of the map.
-So let's define those variables in our component. Go to `partyDetails` component.
-
-Inside we will create the `this.map` variable to hold the properties on the map:
-
 {{> DiffBox tutorialName="meteor-angular1-socially" step="16.4"}}
 
+Here we created the google-map directive with attributes for binding the center, handling events and zoom of the map.
+We created the `this.map` variable to hold the properties on the map.
+
 To display a Google Map widget we have to define it's height and width. Let's do that now.
-Create a new file named `google-maps.css` inside a new folder called `styles` placed like this `client->parties->styles` and place to following CSS code inside:
+Create a new file named `partyMap.css` inside a the same folder as the component.
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="16.5"}}
+
+We still have to import this file:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.6"}}
+
+Now we have to add it to the PartyDetails:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.7"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.8"}}
 
 Now run the app and go to the party details page. You should see a new Google Map widget, but it doesn't do anything yet.
 
 Let's add a marker that will be bound to the party's location.
 
-Inside `party-details.html`:
+Inside `PartyMap` template:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="16.6"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.3"}}
 
 The `ui-gmap-marker` directive represents a marker inside the map. We use the following attributes:
 
@@ -45,34 +52,40 @@ The `ui-gmap-marker` directive represents a marker inside the map. We use the fo
 * events - handling the events on the marker. We will use the click event.
 * idKey - where in the scope there exists the unique id of the object that the marker represent.
 
-Let's extend our `this.map` variable to include handling those options:
+We already extended `this.map` variable to include handling those options.
 
-Inside `partyDetails` component:
+Inside `PartyMap` component:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="16.7"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.9"}}
 
 What happened here:
 
+* We created method to set a new value of location binding.
 * We added the click event to the map. Every time the user clicks the map, we take the location from the click event's params and save it as the party's new location.
 * We defined the options object under the marker to specify the marker is draggable.
 * We handled the dragend event that happens when the marker is dropped to a new location. We take the location from the event's params and save it as the party's new location.
+
+Now is the time to use it in the PartyDetails.
+
+Insert `location` value:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.10"}}
 
 Again, with the great Meteor platform there is no need for sync or save function. We just set it and it syncs in all other clients.
 
 Test it to see clicking and dragging works.
 
-
 # Multiple markers
 
 Now let's add a map to the parties list to show all the parties on the map.
 
-So let's add the directives to `parties-list.html`:
+So let's create the `PartiesMap` component:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="16.8"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.11"}}
 
-Add it under the search and sorting div.
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.12"}}
 
-You can see that the difference between the directive we used in `party-details.html` is that `ui-gmap-markers` is plural.
+You can see that the difference between the directive we used in `PartyMap` is that `ui-gmap-markers` is plural.
 
 The attributes we use:
 
@@ -83,14 +96,11 @@ The attributes we use:
 * idKey - the property that holds the unique id of the array
 * doRebuildAll - a refresh option, will help us to refresh the markers in search
 
-Now, inside `partiesList` component let's add the following code:
+And use it in the `PartiesList`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="16.9"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.13"}}
 
-What we just did?
-
-* Adding to each party a function that handles a click event with the party's specific information
-* Initializing the map object
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.14"}}
 
 # Summary
 

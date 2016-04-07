@@ -5,9 +5,17 @@ Now that we have full data binding from server to client, let's interact with th
 
 In this chapter you will add the ability to insert a new party and delete an existing one from the UI.
 
-First, let's create a simple form with a button that will add a new party, we will add it above the list, inside the `partiesList` Component view:
+First, let's create a simple `PartyAdd` component with a form and a button that will add a new party, we will add it above the list, inside the `PartiesList` Component view.
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="4.1"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.2"}}
+
+Add `PartyAdd` to the `PartiesList` component
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.3"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.4"}}
 
 Now we need to make this form functional.
 
@@ -19,47 +27,89 @@ To do that we'll use the simple and powerful [ng-model](https://docs.angularjs.o
 
 Add `ng-model` to the form like this:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="4.2"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.5"}}
 
-Now each time the user types inside these inputs, the value of the newParty component variable will be automatically updated.  Conversely, if `partiesList.newParty` is changed outside of the HTML, the input values will be updated accordingly.
+Now each time the user types inside these inputs, the value of the `party` variable will be automatically updated.  Conversely, if `partyAdd.party` is changed outside of the HTML, the input values will be updated accordingly.
 
 ## ng-click
 
 Now let's bind a click event to the add button with Angular 1's [ng-click](https://docs.angularjs.org/api/ng/directive/ngClick) directive.
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="4.3"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.6"}}
 
-`ng-click` binds the click event to an expression - we just call a method that we will implement soon on the `partiesList`!
+`ng-click` binds the click event to an expression - we just call a method that we will implement soon on the `PartyAdd`!
 
 Now let's implement the logic on the controller of the Component:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="4.4"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.7"}}
+
+Since we're using modules, let's take care of `Parties` collection:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.8"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.10"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.11"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.12"}}
 
 > Parties is a Mongo.Collection object, and the [insert method](http://docs.meteor.com/#/full/insert) inserts a new object to the collection and assign an id for the new object.
 
-> Meteor support Javascript ES2015 as default so we can take advantage of that and define our `addParty` function as an [Arrow Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+> Meteor supports Javascript ES2015 by default so we can take advantage of that and define our `save` method as a method of PartyAdd class.
 
 Open a different browser, click the button and see how the party is added on both clients. So simple!
 
 Now, let's add the ability to delete parties.
 
-Let's add an X button to each party:
+First, we have to create a Component, let's call it `PartyRemove`!
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="4.5"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.13"}}
 
-This time we are binding `ng-click` to a controller function that gets the current party as a parameter.
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.14"}}
 
-Let's go into the controller and add that function.
+Use one-way binding since this is available in AngularJS 1.5
 
-Add the function inside the `partiesList` component in `app.js`:
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.15"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="4.6"}}
+Now, we can add some logic to remove() method:
 
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.16"}}
 
-Now try to delete a few parties and also watch them being removed from other browser clients.
+It's not yet available in `PartiesList`:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.17"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.18"}}
 
 # Summary
 
 So now you've seen how easy it is to manipulate the data using Angular 1's powerful directives and sync that data with Meteor's powerful Mongo.Collection API.
+
+## Testing
+
+One of the new features of Meteor 1.3 is support for testing. In Socially we want to use Jasmine. Let's add it to our app!
+
+    $ meteor add sanjo:jasmine
+
+You probably want to see result of tests:
+
+    $ meteor add velocity:html-reporter
+    $ meteor add velocity:console-reporter
+
+We also have to use `angular-mocks`:
+
+    $ meteor npm install --save-dev angular-mocks
+
+Now, add a script to run unit-tests:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.20"}}
+
+Use this command to run tests:
+
+    $ meteor npm run test:watch
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.22"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="4.23"}}
 
 {{/template}}

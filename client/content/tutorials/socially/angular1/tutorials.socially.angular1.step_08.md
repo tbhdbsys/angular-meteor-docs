@@ -18,10 +18,10 @@ Execute this command in the command line:
 
     $ meteor remove insecure
 
-Now let's try to change the parties array or a specific party.  We get 
+Now let's try to change the parties array or a specific party.  We get
 
     remove failed: Access denied
-    
+
 In the console because we don't have permissions to do that.    
 
 Now, we need to write an explicit security rule for each operation we want to allow the client to do on the Mongo collection.
@@ -41,9 +41,9 @@ Now let's add dependency to the `accounts.ui` module in our module definition:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="8.4"}}
 
-Now let's add the `login-buttons` directive (part of `accounts.ui` module) into our app, into index.html.
+Now let's add the `login-buttons` directive (part of `accounts.ui` module) into Socially.
 
-So the `index.html` will look like this:
+So the `socially.html` will look like this:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="8.5"}}
 
@@ -94,7 +94,7 @@ OK, right now none of the parties has an owner so we can't change any of them.
 
 So let's add the following simple code to define an owner for each party that gets created.
 
-We can use `Meteor.userId()` method which returns the current user id. 
+We can use `Meteor.userId()` method which returns the current user id.
 
 We will use this id that add it to our new party:
 
@@ -152,11 +152,13 @@ on the top of the routes file, let's add these lines (the `run` block), and we w
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="8.10"}}
 
+{{> DiffBox tutorialName="meteor-angular1-socially" step="8.11"}}
+
 # Summary
 
 Amazing, only a few lines of code and we have a secure application!
 
-Please note it is possible for someone with malicious intent to override your route on the client (in the client/routes.js). 
+Please note it is possible for someone with malicious intent to override your route on the client (in the client/routes.js).
 As that is where we are validating the user is authenticated, they can remove the check and get access.
 You should never restrict access to sensitive data, sensitive areas, using the client router.  
 This is the reason we also made restrictions on the server using the allow/deny functionality, so even if someone gets in they cannot make updates.

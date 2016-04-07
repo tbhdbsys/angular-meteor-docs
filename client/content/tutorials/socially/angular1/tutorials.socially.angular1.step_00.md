@@ -34,7 +34,7 @@ Run the app like so:
     => Started proxy
     => Started MongoDB.
     => Started your app.
-    
+
     => App running at: http://localhost:3000/
 
 Now go to [http://localhost:3000/](http://localhost:3000/)
@@ -42,13 +42,14 @@ and look at the amazing app that's running on your computer!
 
 We now have a fully functional app which includes both a server and a client!
 
-The default Meteor app starts life with three files, one `js`, one `html` and one `css` file. Each named with the application name you used in the `create` command above. In our case this is `socially`.
+The default Meteor app starts life with four files, two `js`, one `html` and one `css` file.
 
 We are going to add our own files for this tutorial. So let's start by deleting the following files:
 
-    - socially.css    (delete)
-    - socially.html   (delete)
-    - socially.js     (delete)
+    - client/main.css    (delete)
+    - client/main.html   (delete)
+    - client/main.js     (delete)
+    - server/main.js     (delete)
 
 Now we can start building our app.
 
@@ -85,9 +86,8 @@ So let's remove it by running:
 
 Now let's add the Angular 1 package to Meteor, back in the command line, launch this command:
 
-    $ meteor add angular
-
-This package takes care of connecting Angular 1 to Meteor and includes the latest Angular 1 library code into our app.
+    $ meteor npm install --save angular angular-meteor
+    $ meteor add angular-templates pbastowski:angular-babel
 
 That's it! Now we can use Angular 1's power in our Meteor app.
 
@@ -97,26 +97,26 @@ To start simple, create a new file called `main.html` under the project's root f
 
 Then move the `p` tag from `index.html` into it:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="0.6"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="0.7"}}
 
 Now let's include that file into our main `index.html` file:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="0.7"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="0.8"}}
 
 
 But if you load this in your browser, **you won't see anything**. That's because we still need to **create the actual Angular app**, which we'll do next.
 
-> It's very important to note - the **paths are always absolute, not relative!**  so if `main.html` was inside a folder named `client`, you would have to place the whole path from the route app, doesn't matter where you're calling the file from.
+> It's very important to note - the **paths are always absolute, not relative!**  so if `main.html` was inside a root folder of your app, you would have to place the whole path from the route app, doesn't matter where you're calling the file from.
 
-> E.g. if `main.html` was in a folder named `client` your include would look like:
+> E.g. if `main.html` was in a root folder your include would look like:
 
-    <div ng-include="'client/main.html'"></div>
+    <div ng-include="'main.html'"></div>
 
 # Building The Angular 1 App
 
-Angular 1 apps are actually individual modules. So let's create our app module.
+Angular 1 apps are actually individual modules. So let's create our main module.
 
-Create a new `app.js` file on the project's root folder.
+Create a new `main.js` file on the project's root folder.
 
 Here you see another example of Meteor's power and simplicity - no need to write boilerplate code to include that file anywhere. Meteor will take care of it by going through all the files in the `socially` folder and including them automatically.
 
@@ -129,17 +129,20 @@ Everything inside this `if` statement will only run on the client side.
 
 And let's continue defining our Angular 1 application module. Give it the name `socially` and add `angular-meteor` module as a dependency:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="0.8"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="0.9"}}
+
+As you can see, we imported two modules, `angular` and `angular-meteor`.
+Since the second one exports the name of angular module it easier to add it as a dependency.
 
 And use the same application name in the `ng-app` directive in `index.html`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="0.9"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="0.10"}}
 
 Now run the app.
 
 Everything is the same, so now inside our `main.html` let's add an Angular 1 expression:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="0.10"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="0.11"}}
 
 Run the app again and the screen should look like this:
 

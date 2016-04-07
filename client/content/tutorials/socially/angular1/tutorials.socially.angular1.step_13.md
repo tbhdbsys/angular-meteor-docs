@@ -20,14 +20,14 @@ And here is a 3rd party library with many more filters:
 
 Now let's create a custom filter that will filter out users that are the owners of a certain party and that are already invited to it.
 
-Create a new folder named `filters` under the `client->parties` folder.
+Create a new folder named `filters` under the `imports/ui` folder.
 
-Under that folder create a new file named `uninvited.js` and place that code inside:
+Under that folder create a new file named `uninvitedFilter.js` and place that code inside:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="13.1"}}
 
-* First we define a filter to the 'socially' module (our app)
-* The filter is named `uninvited`
+* First we create a module named `uninvitedFilter`
+* Then we define a filter to the module with the same name
 * Filters always get at least one parameter and the first parameter is always the object or array that we are filtering (like the parties in the previous example)
 Here we are filtering the users array, so that's the first parameter
 * The second parameter is the party we want to check
@@ -35,16 +35,41 @@ Here we are filtering the users array, so that's the first parameter
 
 At this point we need to return the filtered array.
 
-The great thing here is that thanks to Meteor we have access to the great [underscore](http://docs.meteor.com/#underscore) library.
+We use `filter` method to remove each user that neither is the party's owner nor hasn't been invited.
 
-So we use underscore's `filter` method to remove each user that either isn't the party's owner or that
-is not already `_contains` (another underscore method) in the invited list.
+To make our lives easier, we can just use `underscore` package.
 
-So now let's use our new filter
+    $ meteor npm install --save underscore
 
-Simply add the filter to the list of users and send the current party to the party parameter, inside `party-details.html`:
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.3"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="13.2"}}
+So now let's use our new filter.
+
+We will create a component to display list of uninvited users. Let's call it `PartyUninvited`.
+
+First, we need a template. Use already exist one view from PartyDetails and move it to a separate file:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.4"}}
+
+Then, create the actual component:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.5"}}
+
+PartyUninvited has a one-way binding called `party`. Without a party we can't say who hasn't been invited!
+
+Since we have `users` helper we have also add `UninvitedFilter`:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.6"}}
+
+Let's use the filter:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.7"}}
+
+And add it to the PartyDetails component
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.8"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.9"}}
 
 Run the app and see the users in each party.
 
@@ -54,49 +79,45 @@ But some of the users don't have emails (maybe some of them may have signed in w
 
 But it's only in the display so its perfect for a filter.
 
-We want the list to simply look like this:
+So let's create another custom filter `DisplayNameFilter`.
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="13.4"}}
+Create a new file under the filters folder named `displayNameFiler.js` and place that code inside:
 
-and that the filter `displayName` will handle to logic and display the user's name in the best way possible.
-
-So let's create another custom filter `displayName`.
-
-Create a new file under the filters folder named `displayName.js` and place that code inside:
-
-{{> DiffBox tutorialName="meteor-angular1-socially" step="13.3"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.10"}}
 
 Pretty simple logic but it's so much nicer to put it here and make the HTML shorter and more readable.
 
 AngularJS can also display the return value of a function in the HTML.
 
-To demonstrate let's add to each party in the parties list the creator's name:
+To demonstrate let's use DisplayNameFilter in PartyUninvited:
 
-Add a line that displays the user information to the parties list in `parties-list.html`,
-so it will look like this:
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.11"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="13.5"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.12"}}
 
-And define `getPartyCreator` function in the `partiesList` component:
+We have now list of uninvited users but we don't have an information about owner of each party.
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="13.6"}}
+Let's create `PartyCreator` component:
 
-As you can see, we are using the `Meteor.users` collection here but we haven't made sure that we are subscribing to it
-(If we visited the `partyDetails` controller before getting here, `partyDetails` controller would subscribe to the Meteor.users collection,
-but if we weren't, we would get an empty array in Meteor.users).
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.13"}}
 
-So let's add a subscription to `users` in the list component as well:
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.14"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="13.7"}}
+We created a `creator` helper that tell the viewer who the owner is.
+Now we have to implement it in the PartiesList component:
 
-Now we get the user object to the HTML. But we want his name, so let's put the `displayName` filter on that as well:
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.15"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="13.8"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.16"}}
 
 # Summary
 
 In this chapter we learned about Angular 1 filters and how easy they are to use and to read from the HTML.
 
 In the next step we will learn about Meteor methods, which enables us to run custom logic in the server, beyond the Mongo API and the allow/deny methods.
+
+# Testing
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="13.17"}}
 
 {{/template}}
