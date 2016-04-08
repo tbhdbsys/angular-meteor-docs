@@ -12,13 +12,13 @@ The goals for this step:
 
 The routing functionality added by this step is provided by the [ui-router](https://github.com/angular-ui/ui-router) module, which is distributed separately from the core Angular 1 framework.
 
-We will install ui-router with the help of [the official Meteor package](https://atmospherejs.com/angularui/angular-ui-router).
-
 Type in the command line:
 
-    meteor add angularui:angular-ui-router
+    meteor npm install --save angular-ui-router
 
-Then add the ui-router as a dependency to our angular app in `app.js`:
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.1"}}
+
+Then add the ui-router as a dependency to our Socially app in `socially.js`:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="5.2"}}
 
@@ -45,28 +45,47 @@ The `$state` service is normally used in conjunction with the uiView directive.
 The role of the `ui-view` directive is to include the view template for the current route into the layout template.
 This makes it a perfect fit for our `main.html` file.
 
-Now let's go back to `index.html` and replace the content with the `ui-view` directive:
+Now let's go back to `index.html` to add base tag to our main html file:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="5.3"}}
 
+We still need to add uiView directive, Socially is the best place for it:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.4"}}
+
+Let's define a default route and use html5 mode to make urls look a lot fancier:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.6"}}
+
+It would be nice to have a navigation. Create one! Let's call our new component `Navigation`:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.7"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.8"}}
+
+And implement it in `Socially`:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.9"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.10"}}
+
 Notice we did 3 things:
 
-1. Replaced all the content with ui-view (this will be responsible for including the right content according to the current URL).
-2. Added a `h1` header with a link to the main parties page.
-3. We also added a `base` tag in the head (required when using HTML5 location mode - would be explained a bit further).
+1. Replaced all the content inside Socially component with ui-view (this will be responsible for including the right content according to the current URL).
+2. Defined default route.
+3. Created navigation.
+4. We also added a `base` tag in the head (required when using HTML5 location mode - would be explained a bit further).
 
 > Note that you can remove `main.html` now, because it's no longer in use!
 
 # Routes definition
 
 Now let's configure our routes.
-Add this config code in `app.js`, after the Angular 1 app has been defined:
+There are no states at this stage, so let's add `parties` inside `PartiesList` component:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="5.4"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.5"}}
 
-And we will also add a state for a new page that will display the party details:
-
-{{> DiffBox tutorialName="meteor-angular1-socially" step="5.6"}}
+And we will also add a state for a new page that will display the party details.
 
 Our application routes are defined as follows:
 
@@ -82,19 +101,25 @@ All variables defined with the : notation are passed into the Component through 
 
 # Components
 
-But we still need to define our `partyDetails` component.
+I mentioned a state with party details. We have to define our `partyDetails` component.
 
-Add this new Component code under the existing component:
+Let's create the view for this Component in a new file:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="5.7"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.11"}}
 
-And let's create the view for this Component in a new file:
+Now we can create actual component:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="5.8"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.12"}}
+
+And also define new route which was mentioned before as `/parties/:partyId`:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.13"}}
 
 Now let's add a link from each party in the parties list to it's details page:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="5.9"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.14"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="5.15"}}
 
 Now all is in place.  Run the app and you'll notice a few things:
 
