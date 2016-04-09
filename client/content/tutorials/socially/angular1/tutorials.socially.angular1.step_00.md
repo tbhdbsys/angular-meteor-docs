@@ -93,7 +93,7 @@ That's it! Now we can use Angular 1's power in our Meteor app.
 
 # HTML
 
-To start simple, create a new file called `main.html` under the project's root folder, this will be our main `HTML` template page.
+To start simple, create a new file called `main.html` under the project's client folder, this will be our main `HTML` template page.
 
 Then move the `p` tag from `index.html` into it:
 
