@@ -138,7 +138,7 @@ First, let's create a template for our Component:
 * We copied the code from `main.html`
 * We removed the `ng-controller` because we no longer need it
 * We renamed `vm` to `partiesList` which we defined in the Component
-* here, we removed all contecnts from `main.html`
+* here, we removed all contents from `main.html`
 
 Now, let's convert our Controller into a Component:
 
