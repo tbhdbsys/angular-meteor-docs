@@ -1,108 +1,300 @@
-From 2f220afab41a20b12e44dab15606a1eba156b6a4 Mon Sep 17 00:00:00 2001
+From 89ddc93a2bfdf339e68c0425ce1edef6fbc91b08 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:30:20 +0200
-Subject: [PATCH 01/98] Step 1.1: Setup base packages
+Date: Fri, 1 Apr 2016 18:04:49 +0300
+Subject: [PATCH 001/114] Step 1.0: Create project
 
 ---
- .meteor/packages |  4 ++--
- .meteor/versions | 14 ++++++++++++--
- 2 files changed, 14 insertions(+), 4 deletions(-)
+ .gitignore                  |  1 +
+ .meteor/.finished-upgraders | 13 +++++++++
+ .meteor/.gitignore          |  1 +
+ .meteor/.id                 |  7 +++++
+ .meteor/packages            | 21 ++++++++++++++
+ .meteor/platforms           |  2 ++
+ .meteor/release             |  1 +
+ .meteor/versions            | 69 +++++++++++++++++++++++++++++++++++++++++++++
+ package.json                | 10 +++++++
+ 9 files changed, 125 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .meteor/.finished-upgraders
+ create mode 100644 .meteor/.gitignore
+ create mode 100644 .meteor/.id
+ create mode 100644 .meteor/packages
+ create mode 100644 .meteor/platforms
+ create mode 100644 .meteor/release
+ create mode 100644 .meteor/versions
+ create mode 100644 package.json
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..40b878d
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1 @@
++node_modules/
+\ No newline at end of file
+diff --git a/.meteor/.finished-upgraders b/.meteor/.finished-upgraders
+new file mode 100644
+index 0000000..dacc2c0
+--- /dev/null
++++ b/.meteor/.finished-upgraders
+@@ -0,0 +1,13 @@
++# This file contains information which helps Meteor properly upgrade your
++# app when you run 'meteor update'. You should check it into version control
++# with your project.
++
++notices-for-0.9.0
++notices-for-0.9.1
++0.9.4-platform-file
++notices-for-facebook-graph-api-2
++1.2.0-standard-minifiers-package
++1.2.0-meteor-platform-split
++1.2.0-cordova-changes
++1.2.0-breaking-changes
++1.3.0-split-minifiers-package
+diff --git a/.meteor/.gitignore b/.meteor/.gitignore
+new file mode 100644
+index 0000000..4083037
+--- /dev/null
++++ b/.meteor/.gitignore
+@@ -0,0 +1 @@
++local
+diff --git a/.meteor/.id b/.meteor/.id
+new file mode 100644
+index 0000000..c94ddbf
+--- /dev/null
++++ b/.meteor/.id
+@@ -0,0 +1,7 @@
++# This file contains a token that is unique to your project.
++# Check it into your repository along with the rest of this directory.
++# It can be used for purposes such as:
++#   - ensuring you don't accidentally deploy one app on top of another
++#   - providing package authors with aggregated statistics
++
++1t61tt4fa7omu1iengix
+diff --git a/.meteor/packages b/.meteor/packages
+new file mode 100644
+index 0000000..d4c8001
+--- /dev/null
++++ b/.meteor/packages
+@@ -0,0 +1,21 @@
++# Meteor packages used by this project, one per line.
++# Check this file (and the other files in this directory) into your repository.
++#
++# 'meteor add' and 'meteor remove' will edit this file for you,
++# but you can also edit it by hand.
++
++meteor-base             # Packages every Meteor app needs to have
++mobile-experience       # Packages for a great mobile UX
++mongo                   # The database Meteor supports right now
++blaze-html-templates    # Compile .html files into Meteor Blaze views
++reactive-var            # Reactive variable for tracker
++jquery                  # Helpful client-side library
++tracker                 # Meteor's client-side reactive programming library
++
++standard-minifier-css   # CSS minifier run for production mode
++standard-minifier-js    # JS minifier run for production mode
++es5-shim                # ECMAScript 5 compatibility for older browsers.
++ecmascript              # Enable ECMAScript2015+ syntax in app code
++
++autopublish             # Publish all data to the clients (for prototyping)
++insecure                # Allow all DB writes from clients (for prototyping)
+diff --git a/.meteor/platforms b/.meteor/platforms
+new file mode 100644
+index 0000000..efeba1b
+--- /dev/null
++++ b/.meteor/platforms
+@@ -0,0 +1,2 @@
++server
++browser
+diff --git a/.meteor/release b/.meteor/release
+new file mode 100644
+index 0000000..4fd7a93
+--- /dev/null
++++ b/.meteor/release
+@@ -0,0 +1 @@
++METEOR@1.3
+diff --git a/.meteor/versions b/.meteor/versions
+new file mode 100644
+index 0000000..1430419
+--- /dev/null
++++ b/.meteor/versions
+@@ -0,0 +1,69 @@
++allow-deny@1.0.2
++autopublish@1.0.5
++autoupdate@1.2.6
++babel-compiler@6.5.2
++babel-runtime@0.1.6
++base64@1.0.6
++binary-heap@1.0.6
++blaze@2.1.5
++blaze-html-templates@1.0.2
++blaze-tools@1.0.6
++boilerplate-generator@1.0.6
++caching-compiler@1.0.2
++caching-html-compiler@1.0.4
++callback-hook@1.0.6
++check@1.1.2
++ddp@1.2.3
++ddp-client@1.2.3
++ddp-common@1.2.3
++ddp-server@1.2.4
++deps@1.0.10
++diff-sequence@1.0.3
++ecmascript@0.4.1
++ecmascript-runtime@0.2.8
++ejson@1.0.9
++es5-shim@4.5.8
++fastclick@1.0.9
++geojson-utils@1.0.6
++hot-code-push@1.0.2
++html-tools@1.0.7
++htmljs@1.0.7
++http@1.1.3
++id-map@1.0.5
++insecure@1.0.5
++jquery@1.11.6
++launch-screen@1.0.8
++livedata@1.0.16
++logging@1.0.10
++meteor@1.1.12
++meteor-base@1.0.2
++minifier-css@1.1.9
++minifier-js@1.1.9
++minimongo@1.0.12
++mobile-experience@1.0.2
++mobile-status-bar@1.0.10
++modules@0.5.1
++modules-runtime@0.6.1
++mongo@1.1.5
++mongo-id@1.0.2
++npm-mongo@1.4.41
++observe-sequence@1.0.9
++ordered-dict@1.0.5
++promise@0.6.5
++random@1.0.7
++reactive-var@1.0.7
++reload@1.1.6
++retry@1.0.5
++routepolicy@1.0.8
++spacebars@1.0.9
++spacebars-compiler@1.0.9
++standard-minifier-css@1.0.4
++standard-minifier-js@1.0.4
++templating@1.1.7
++templating-tools@1.0.2
++tracker@1.0.11
++ui@1.0.9
++underscore@1.0.6
++url@1.0.7
++webapp@1.2.6
++webapp-hashing@1.0.7
+diff --git a/package.json b/package.json
+new file mode 100644
+index 0000000..4277e98
+--- /dev/null
++++ b/package.json
+@@ -0,0 +1,10 @@
++{
++  "name": "whatsapp",
++  "private": true,
++  "scripts": {
++    "start": "meteor run"
++  },
++  "dependencies": {
++    "meteor-node-stubs": "~0.2.0"
++  }
++}
+-- 
+2.5.0
+
+
+From de5d0b9573f565cc528f37c27cc3c4e3d5797730 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Fri, 1 Apr 2016 18:06:19 +0300
+Subject: [PATCH 002/114] Step 1.1: Initial setup
+
+---
+ .meteor/packages | 3 ++-
+ .meteor/versions | 4 ++--
+ package.json     | 6 ++++++
+ 3 files changed, 10 insertions(+), 3 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index a9f8340..7c87fba 100644
+index d4c8001..244a1d8 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -7,14 +7,14 @@
+@@ -7,7 +7,6 @@
  meteor-base             # Packages every Meteor app needs to have
  mobile-experience       # Packages for a great mobile UX
  mongo                   # The database Meteor supports right now
 -blaze-html-templates    # Compile .html files into Meteor Blaze views
- session                 # Client-side reactive dictionary for your app
+ reactive-var            # Reactive variable for tracker
  jquery                  # Helpful client-side library
  tracker                 # Meteor's client-side reactive programming library
- 
- standard-minifiers      # JS/CSS minifiers run for production mode
- es5-shim                # ECMAScript 5 compatibility for older browsers.
--ecmascript              # Enable ECMAScript2015+ syntax in app code
+@@ -19,3 +18,5 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
  
  autopublish             # Publish all data to the clients (for prototyping)
  insecure                # Allow all DB writes from clients (for prototyping)
-+angular@1.3.0
-+driftyco:ionic
++dab0mb:ionic-assets
++angular-templates
 diff --git a/.meteor/versions b/.meteor/versions
-index 17859ef..28a102c 100644
+index 1430419..bf91a90 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -1,3 +1,10 @@
-+angular@1.3.0
-+angular-meteor-data@0.0.7
-+angular-templates@0.0.2
-+angular:angular@1.4.8
-+angular:angular-animate@1.4.8
-+angular:angular-sanitize@1.4.8
-+angularui:angular-ui-router@0.2.15
- autopublish@1.0.4
- autoupdate@1.2.4
- babel-compiler@5.8.24_1
-@@ -5,19 +12,20 @@ babel-runtime@0.1.4
- base64@1.0.4
- binary-heap@1.0.4
- blaze@2.1.3
--blaze-html-templates@1.0.1
- blaze-tools@1.0.4
- boilerplate-generator@1.0.4
- caching-compiler@1.0.0
- caching-html-compiler@1.0.2
- callback-hook@1.0.4
- check@1.1.0
-+dburles:mongo-collection-instances@0.3.4
- ddp@1.2.2
- ddp-client@1.2.1
- ddp-common@1.2.2
- ddp-server@1.2.2
- deps@1.0.9
- diff-sequence@1.0.1
-+driftyco:ionic@1.1.0_2
- ecmascript@0.1.6
- ecmascript-runtime@0.2.6
- ejson@1.0.7
-@@ -31,6 +39,7 @@ http@1.1.1
- id-map@1.0.4
- insecure@1.0.4
- jquery@1.11.4
-+lai:collection-extensions@0.1.4
- launch-screen@1.0.4
- livedata@1.0.15
- logging@1.0.8
-@@ -45,6 +54,7 @@ mongo-id@1.0.1
- npm-mongo@1.4.39_1
- observe-sequence@1.0.7
- ordered-dict@1.0.4
-+pbastowski:angular-babel@1.0.7
- promise@0.5.1
- random@1.0.5
- reactive-dict@1.1.3
-@@ -56,11 +66,11 @@ session@1.1.1
- spacebars@1.0.7
- spacebars-compiler@1.0.7
- standard-minifiers@1.0.2
--templating@1.1.5
- templating-tools@1.0.0
- tracker@1.0.9
- ui@1.0.8
- underscore@1.0.4
-+urigo:cancel-fastclick@0.0.2
- url@1.0.5
- webapp@1.2.3
- webapp-hashing@1.0.5
+@@ -1,4 +1,5 @@
+ allow-deny@1.0.2
++angular-templates@1.0.2
+ autopublish@1.0.5
+ autoupdate@1.2.6
+ babel-compiler@6.5.2
+@@ -6,13 +7,13 @@ babel-runtime@0.1.6
+ base64@1.0.6
+ binary-heap@1.0.6
+ blaze@2.1.5
+-blaze-html-templates@1.0.2
+ blaze-tools@1.0.6
+ boilerplate-generator@1.0.6
+ caching-compiler@1.0.2
+ caching-html-compiler@1.0.4
+ callback-hook@1.0.6
+ check@1.1.2
++dab0mb:ionic-assets@1.2.4
+ ddp@1.2.3
+ ddp-client@1.2.3
+ ddp-common@1.2.3
+@@ -59,7 +60,6 @@ spacebars@1.0.9
+ spacebars-compiler@1.0.9
+ standard-minifier-css@1.0.4
+ standard-minifier-js@1.0.4
+-templating@1.1.7
+ templating-tools@1.0.2
+ tracker@1.0.11
+ ui@1.0.9
+diff --git a/package.json b/package.json
+index 4277e98..141c29d 100644
+--- a/package.json
++++ b/package.json
+@@ -5,6 +5,12 @@
+     "start": "meteor run"
+   },
+   "dependencies": {
++    "angular": "^1.5.3",
++    "angular-animate": "^1.5.3",
++    "angular-meteor": "^1.3.9",
++    "angular-sanitize": "^1.5.3",
++    "angular-ui-router": "^0.2.18",
++    "ionic-scripts": "0.0.1",
+     "meteor-node-stubs": "~0.2.0"
+   }
+ }
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 08e9dde4de48781b21299efa5a8065eec072d5c3 Mon Sep 17 00:00:00 2001
+From 6a512fade6df51f8d9e364a324c1ea254e7c1854 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:42:16 +0200
-Subject: [PATCH 02/98] Step 1.2: Create index.html
+Date: Fri, 1 Apr 2016 18:11:10 +0300
+Subject: [PATCH 003/114] Step 1.2: Create main html file
 
 ---
  client/index.html | 22 ++++++++++++++++++++++
@@ -139,32 +331,42 @@ index 0000000..a27b518
 +</body>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From d4227b1516878819c3f4bb5efbe64c9bcef090d2 Mon Sep 17 00:00:00 2001
+From 0aebaaafc42c8335f00a2aeaa1d7ce9a0816a3a2 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:43:18 +0200
-Subject: [PATCH 03/98] Step 1.3: Create app.js file with the module
- initialization
+Date: Fri, 1 Apr 2016 18:21:27 +0300
+Subject: [PATCH 004/114] Step 1.3: Create main app file
 
 ---
- client/scripts/lib/app.js | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ client/scripts/lib/app.js | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
  create mode 100644 client/scripts/lib/app.js
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
 new file mode 100644
-index 0000000..5bd91a1
+index 0000000..4733783
 --- /dev/null
 +++ b/client/scripts/lib/app.js
-@@ -0,0 +1,16 @@
-+angular
-+  .module('Whatsapp', [
-+    'angular-meteor',
-+    'ionic'
-+  ]);
+@@ -0,0 +1,27 @@
++// Libs
++import angular from 'angular';
++import 'angular-animate';
++import 'angular-meteor';
++import 'angular-sanitize';
++import 'angular-ui-router';
++import 'ionic-scripts';
 +
++// Modules
++
++// App
++const App = angular.module('Whatsapp', [
++  'angular-meteor',
++  'ionic'
++]);
++
++// Startup
 +if (Meteor.isCordova) {
 +  angular.element(document).on('deviceready', onReady);
 +}
@@ -174,71 +376,328 @@ index 0000000..5bd91a1
 +
 +function onReady() {
 +  angular.bootstrap(document, ['Whatsapp']);
-+} 
++}
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 0544f831b9992518376d54a0a097b9c47ed81ec1 Mon Sep 17 00:00:00 2001
+From 895b084ef7e3e45d20af03f800fecc0c0fab998b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:46:22 +0200
-Subject: [PATCH 04/98] Step 1.4: Create the routes file and define basic
- routes
+Date: Fri, 1 Apr 2016 18:32:04 +0300
+Subject: [PATCH 005/114] Step 1.4: Add angular es6 class helpers
 
 ---
- client/scripts/routes.js | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ client/scripts/entities.js | 62 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 62 insertions(+)
+ create mode 100644 client/scripts/entities.js
+
+diff --git a/client/scripts/entities.js b/client/scripts/entities.js
+new file mode 100644
+index 0000000..81b0c61
+--- /dev/null
++++ b/client/scripts/entities.js
+@@ -0,0 +1,62 @@
++class Injectable {
++  constructor() {
++    this.constructor.$inject.forEach((name, i) => {
++      this[name] = arguments[i];
++    });
++  }
++}
++
++export class Controller extends Injectable {
++  constructor() {
++    super(...arguments);
++
++    const createViewModel = this.$scope &&
++      (this.$scope.viewModel || this.$scope.$viewModel);
++
++    if (createViewModel) {
++      createViewModel.call(this.$scope, this);
++    }
++  }
++}
++
++export class Provider extends Injectable {
++}
++
++export class Service extends Injectable {
++}
++
++export class Directive extends Injectable {
++  compile() {
++    return this.link.bind(this);
++  }
++}
++
++export class Decorator extends Injectable {
++  decorate() {
++    throw Error('Decorator#decorate() must be implemented');
++  }
++}
++
++export class Factory extends Injectable {
++  create() {
++    throw Error('Factory#create() must be implemented');
++  }
++}
++
++export class Filter extends Injectable {
++  filter() {
++    throw Error('Filter#filter() must be implemented');
++  }
++}
++
++export class Config extends Injectable {
++  configure() {
++    throw Error('Config#configure() must be implemented');
++  }
++}
++
++export class Runner extends Injectable {
++  run() {
++    throw Error('Runner#run() must be implemented');
++  }
++}
+-- 
+2.5.0
+
+
+From 0f5ddbd76251c2ef6099edbf021d007c81cbfaa5 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Fri, 1 Apr 2016 18:33:09 +0300
+Subject: [PATCH 006/114] Step 1.5: Add modules definer
+
+---
+ client/scripts/definer.js | 116 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 116 insertions(+)
+ create mode 100644 client/scripts/definer.js
+
+diff --git a/client/scripts/definer.js b/client/scripts/definer.js
+new file mode 100644
+index 0000000..2300350
+--- /dev/null
++++ b/client/scripts/definer.js
+@@ -0,0 +1,116 @@
++import angular from 'angular';
++import * as Entities from './entities';
++
++export default class Definer {
++  constructor(module, dependencies) {
++    if (_.isString(module)) {
++      module = angular.module(module, dependencies);
++    }
++
++    this.module = module;
++  }
++
++  define(Entity, ...args) {
++    if (_.isFunction(Entity)) {
++      const proto = Entity.prototype;
++      Entity.$inject = Entity.$inject || [];
++
++      if (proto instanceof Entities.Controller)
++        this._defineController(Entity);
++      else if (proto instanceof Entities.Provider)
++        this._defineProvider(Entity);
++      else if (proto instanceof Entities.Service)
++        this._defineService(Entity);
++      else if (proto instanceof Entities.Decorator)
++        this._defineDecorator(Entity);
++      else if (proto instanceof Entities.Directive)
++        this._defineDirective(Entity);
++      else if (proto instanceof Entities.Factory)
++        this._defineFactory(Entity);
++      else if (proto instanceof Entities.Filter)
++        this._defineFilter(Entity);
++      else if (proto instanceof Entities.Config)
++        this._defineConfig(Entity);
++      else if (proto instanceof Entities.Runner)
++        this._defineRunner(Entity);
++      else
++        throw Error("can't define unknown entity type");
++    }
++    else {
++      this.module[Entity](...args);
++    }
++
++    return this;
++  }
++
++  _defineProvider(Provider) {
++    this.module.provider(Provider.name, Provider);
++  }
++
++  _defineController(Controller) {
++    this.module.controller(Controller.name, Controller);
++  }
++
++  _defineService(Service) {
++    this.module.service(Service.name, Service)
++  }
++
++  _defineDecorator(Decorator) {
++    function handler() {
++      const decorator = new Decorator(...arguments);
++      return decorator.decorate.bind(decorator);
++    }
++
++    handler.$inject = Decorator.$inject;
++    this.module.decorator(Decorator.name, handler);
++  }
++
++  _defineDirective(Directive) {
++    function handler() {
++      return new Directive(...arguments);
++    }
++
++    handler.$inject = Directive.$inject;
++    this.module.directive(Directive.name, handler);
++  }
++
++  _defineFactory(Factory) {
++    function handler() {
++      const factory = new Factory(...arguments);
++      return factory.create.bind(factory);
++    }
++
++    handler.$inject = Factory.$inject;
++    this.module.factory(Factory.name, handler);
++  }
++
++  _defineFilter(Filter) {
++    function handler() {
++      const filter = new Filter(...arguments);
++      return filter.filter.bind(filter);
++    }
++
++    handler.$inject = Filter.$inject;
++    this.module.filter(Filter.name, handler);
++  }
++
++  _defineConfig(Config) {
++    function handler() {
++      const config = new Config(...arguments);
++      return config.configure();
++    }
++
++    handler.$inject = Config.$inject;
++    this.module.config(handler);
++  }
++
++  _defineRunner(Runner) {
++    function handler() {
++      const runner = new Runner(...arguments);
++      return runner.run();
++    }
++
++    handler.$inject = Runner.$inject;
++    this.module.run(handler);
++  }
++}
+\ No newline at end of file
+-- 
+2.5.0
+
+
+From 703bc08191e0c1b6cea8737f05419c20fcaaa52f Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Fri, 1 Apr 2016 18:40:40 +0300
+Subject: [PATCH 007/114] Step 1.6: Add initial routes
+
+---
+ client/scripts/routes.js | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
  create mode 100644 client/scripts/routes.js
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
 new file mode 100644
-index 0000000..6875ef0
+index 0000000..ceb9e83
 --- /dev/null
 +++ b/client/scripts/routes.js
-@@ -0,0 +1,22 @@
-+angular
-+  .module('Whatsapp')
-+  .config(config);
+@@ -0,0 +1,24 @@
++import { Config } from './entities';
 +
-+function config($stateProvider, $urlRouterProvider) {
-+  $stateProvider
-+    .state('tab', {
-+      url: '/tab',
-+      abstract: true,
-+      templateUrl: 'client/templates/tabs.html'
-+    })
-+    .state('tab.chats', {
-+      url: '/chats',
-+      views: {
-+        'tab-chats': {
-+          templateUrl: 'client/templates/chats.html'
++export default class RoutesConfig extends Config {
++  configure() {
++    this.$stateProvider
++      .state('tab', {
++        url: '/tab',
++        abstract: true,
++        templateUrl: 'client/templates/tabs.html'
++      })
++      .state('tab.chats', {
++        url: '/chats',
++        views: {
++          'tab-chats': {
++            templateUrl: 'client/templates/chats.html'
++          }
 +        }
-+      }
-+    });
++      });
 +
-+  $urlRouterProvider.otherwise('tab/chats');
++    this.$urlRouterProvider.otherwise('tab/chats');
++  }
 +}
++
++RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 855f42c894717d3a374959a5a0f4784fc2107da4 Mon Sep 17 00:00:00 2001
+From fa54a1e103880f214330827959f21bc9ab997992 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:47:32 +0200
-Subject: [PATCH 05/98] Step 1.5: Create the tabs view using ionic's tabs
+Date: Fri, 1 Apr 2016 18:44:59 +0300
+Subject: [PATCH 008/114] Step 1.7: Load routes config
 
 ---
- client/templates/tabs.html | 23 +++++++++++++++++++++++
- 1 file changed, 23 insertions(+)
+ client/scripts/lib/app.js | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 4733783..c5a26ec 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -7,6 +7,8 @@ import 'angular-ui-router';
+ import 'ionic-scripts';
+ 
+ // Modules
++import Definer from '../definer';
++import RoutesConfig from '../routes';
+ 
+ // App
+ const App = angular.module('Whatsapp', [
+@@ -14,6 +16,9 @@ const App = angular.module('Whatsapp', [
+   'ionic'
+ ]);
+ 
++new Definer(App)
++  .define(RoutesConfig);
++
+ // Startup
+ if (Meteor.isCordova) {
+   angular.element(document).on('deviceready', onReady);
+-- 
+2.5.0
+
+
+From 8e0991dc68f6080ed261678a907d0d3a6328370e Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sat, 2 Apr 2016 11:13:21 +0300
+Subject: [PATCH 009/114] Step 1.8: Create tabs view
+
+---
+ client/templates/tabs.html | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
  create mode 100644 client/templates/tabs.html
 
 diff --git a/client/templates/tabs.html b/client/templates/tabs.html
 new file mode 100644
-index 0000000..14ec5fb
+index 0000000..ece5253
 --- /dev/null
 +++ b/client/templates/tabs.html
-@@ -0,0 +1,23 @@
+@@ -0,0 +1,24 @@
++
 +<ion-tabs class="tabs-stable tabs-icon-top tabs-color-positive" ng-cloak>
 +
 +  <ion-tab title="Favorites" icon-on="ion-ios-star" icon-off="ion-ios-star-outline" href="#/tab/favorites">
@@ -264,13 +723,13 @@ index 0000000..14ec5fb
 +</ion-tabs>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From f25f05b38dae095daa45cc1a4c8dfee05bb709fb Mon Sep 17 00:00:00 2001
+From 9189aae8c58ce3aafc5a69a8145ed66cdfc500dc Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:48:57 +0200
-Subject: [PATCH 06/98] Step 1.6: Create basic view for the chats list
+Date: Sat, 2 Apr 2016 11:15:22 +0300
+Subject: [PATCH 010/114] Step 1.9: Create chats view
 
 ---
  client/templates/chats.html | 5 +++++
@@ -290,206 +749,232 @@ index 0000000..b1d926f
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From e3ee52c61c71d5b23b974c22ac4bf59e08229a55 Mon Sep 17 00:00:00 2001
+From e13e6bd8aec58da27bc0d6b10674189d398c1079 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:50:13 +0200
-Subject: [PATCH 07/98] Step 1.7: Add meteor platform for running on iOS
- emulator
+Date: Sat, 2 Apr 2016 11:16:27 +0300
+Subject: [PATCH 011/114] Step 1.10: Add IOS platform
 
 ---
- .meteor/platforms | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ .meteor/platforms | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/.meteor/platforms b/.meteor/platforms
-index efeba1b..7f24822 100644
+index efeba1b..cc0f96a 100644
 --- a/.meteor/platforms
 +++ b/.meteor/platforms
 @@ -1,2 +1,3 @@
--server
+ server
  browser
 +ios
-+server
-\ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 16a4a0b7ccf36bf5ad5641b73ef1077cd6237b4a Mon Sep 17 00:00:00 2001
+From 6f11c4e01cb8444429c89f221ae9ce0203c909b4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:51:21 +0200
-Subject: [PATCH 08/98] Step 1.8: Create ChatsCtrl
+Date: Sat, 2 Apr 2016 11:19:07 +0300
+Subject: [PATCH 012/114] Step 1.11: Create chats controller
 
 ---
- client/scripts/controllers/chats.controller.js | 7 +++++++
- 1 file changed, 7 insertions(+)
+ client/scripts/controllers/chats.controller.js | 6 ++++++
+ 1 file changed, 6 insertions(+)
  create mode 100644 client/scripts/controllers/chats.controller.js
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
 new file mode 100644
-index 0000000..068d404
+index 0000000..9e58909
 --- /dev/null
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -0,0 +1,7 @@
-+angular
-+  .module('Whatsapp')
-+  .controller('ChatsCtrl', ChatsCtrl);
+@@ -0,0 +1,6 @@
++import { Controller } from '../entities';
 +
-+function ChatsCtrl ($scope, $reactive) {
-+  $reactive(this).attach($scope);
++export default class ChatsCtrl extends Controller {
 +}
++
++ChatsCtrl.$inject = ['$scope'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 654a214a41b1209289b7619536dba7744be5b41d Mon Sep 17 00:00:00 2001
+From aa9579518496c209f25792418b4f058713c7585e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:52:05 +0200
-Subject: [PATCH 09/98] Step 1.9: Add moment package
+Date: Sat, 2 Apr 2016 11:20:52 +0300
+Subject: [PATCH 013/114] Step 1.12: Load chats controller
 
 ---
- .meteor/packages | 1 +
- .meteor/versions | 1 +
- 2 files changed, 2 insertions(+)
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/.meteor/packages b/.meteor/packages
-index 7c87fba..8b71ed1 100644
---- a/.meteor/packages
-+++ b/.meteor/packages
-@@ -18,3 +18,4 @@ autopublish             # Publish all data to the clients (for prototyping)
- insecure                # Allow all DB writes from clients (for prototyping)
- angular@1.3.0
- driftyco:ionic
-+momentjs:moment
-diff --git a/.meteor/versions b/.meteor/versions
-index 28a102c..712ab1c 100644
---- a/.meteor/versions
-+++ b/.meteor/versions
-@@ -49,6 +49,7 @@ minifiers@1.1.7
- minimongo@1.0.10
- mobile-experience@1.0.1
- mobile-status-bar@1.0.6
-+momentjs:moment@2.10.6
- mongo@1.1.3
- mongo-id@1.0.1
- npm-mongo@1.4.39_1
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index c5a26ec..b90b89c 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -8,6 +8,7 @@ import 'ionic-scripts';
+ 
+ // Modules
+ import Definer from '../definer';
++import ChatsCtrl from '../controllers/chats.controller';
+ import RoutesConfig from '../routes';
+ 
+ // App
+@@ -17,6 +18,7 @@ const App = angular.module('Whatsapp', [
+ ]);
+ 
+ new Definer(App)
++  .define(ChatsCtrl)
+   .define(RoutesConfig);
+ 
+ // Startup
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 29a1a5761acb9eb1a921b9b05d64075ff3429f47 Mon Sep 17 00:00:00 2001
+From 7e7b1cd4adcb50fd3ea266f6d22dfe32eaebe2c7 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:55:42 +0200
-Subject: [PATCH 10/98] Step 1.10: Add stub data to the ChatsCtrl to enrich the
- view
+Date: Sat, 2 Apr 2016 11:24:25 +0300
+Subject: [PATCH 014/114] Step 1.13: Add moment npm package
 
 ---
- client/scripts/controllers/chats.controller.js | 48 ++++++++++++++++++++++++++
- 1 file changed, 48 insertions(+)
+ package.json | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/package.json b/package.json
+index 141c29d..9085e95 100644
+--- a/package.json
++++ b/package.json
+@@ -11,6 +11,7 @@
+     "angular-sanitize": "^1.5.3",
+     "angular-ui-router": "^0.2.18",
+     "ionic-scripts": "0.0.1",
+-    "meteor-node-stubs": "~0.2.0"
++    "meteor-node-stubs": "~0.2.0",
++    "moment": "^2.12.0"
+   }
+ }
+-- 
+2.5.0
+
+
+From 732d3183a3865cbd299fab05f4e02cd19a6efa9e Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sat, 2 Apr 2016 11:27:54 +0300
+Subject: [PATCH 015/114] Step 1.14: Add data stub to chats controller
+
+---
+ client/scripts/controllers/chats.controller.js | 54 +++++++++++++++++++++++++-
+ 1 file changed, 53 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index 068d404..d263e4e 100644
+index 9e58909..dab9f27 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -4,4 +4,52 @@ angular
+@@ -1,6 +1,58 @@
++import moment from 'moment';
+ import { Controller } from '../entities';
  
- function ChatsCtrl ($scope, $reactive) {
-   $reactive(this).attach($scope);
+ export default class ChatsCtrl extends Controller {
++  constructor() {
++    super(...arguments);
 +
-+  this.data = [
-+    {
-+      _id: 0,
-+      name: 'Ethan Gonzalez',
-+      picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
-+      lastMessage: {
-+        text: 'You on your way?',
-+        timestamp: moment().subtract(1, 'hours').toDate()
++    this.data = [
++      {
++        _id: 0,
++        name: 'Ethan Gonzalez',
++        picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
++        lastMessage: {
++          text: 'You on your way?',
++          timestamp: moment().subtract(1, 'hours').toDate()
++        }
++      },
++      {
++        _id: 1,
++        name: 'Bryan Wallace',
++        picture: 'https://randomuser.me/api/portraits/thumb/lego/1.jpg',
++        lastMessage: {
++          text: 'Hey, it\'s me',
++          timestamp: moment().subtract(2, 'hours').toDate()
++        }
++      },
++      {
++        _id: 2,
++        name: 'Avery Stewart',
++        picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg',
++        lastMessage: {
++          text: 'I should buy a boat',
++          timestamp: moment().subtract(1, 'days').toDate()
++        }
++      },
++      {
++        _id: 3,
++        name: 'Katie Peterson',
++        picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg',
++        lastMessage: {
++          text: 'Look at my mukluks!',
++          timestamp: moment().subtract(4, 'days').toDate()
++        }
++      },
++      {
++        _id: 4,
++        name: 'Ray Edwards',
++        picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg',
++        lastMessage: {
++          text: 'This is wicked good ice cream.',
++          timestamp: moment().subtract(2, 'weeks').toDate()
++        }
 +      }
-+    },
-+    {
-+      _id: 1,
-+      name: 'Bryan Wallace',
-+      picture: 'https://randomuser.me/api/portraits/thumb/lego/1.jpg',
-+      lastMessage: {
-+        text: 'Hey, it\'s me',
-+        timestamp: moment().subtract(2, 'hours').toDate()
-+      }
-+    },
-+    {
-+      _id: 2,
-+      name: 'Avery Stewart',
-+      picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg',
-+      lastMessage: {
-+        text: 'I should buy a boat',
-+        timestamp: moment().subtract(1, 'days').toDate()
-+      }
-+    },
-+    {
-+      _id: 3,
-+      name: 'Katie Peterson',
-+      picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg',
-+      lastMessage: {
-+        text: 'Look at my mukluks!',
-+        timestamp: moment().subtract(4, 'days').toDate()
-+      }
-+    },
-+    {
-+      _id: 4,
-+      name: 'Ray Edwards',
-+      picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg',
-+      lastMessage: {
-+        text: 'This is wicked good ice cream.',
-+        timestamp: moment().subtract(2, 'weeks').toDate()
-+      }
-+    }
-+  ];
++    ];
++  }
  }
+ 
+-ChatsCtrl.$inject = ['$scope'];
 \ No newline at end of file
++ChatsCtrl.$inject = ['$scope'];
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 73060a11dc0df8cf8766552f41c04957c4819dca Mon Sep 17 00:00:00 2001
+From 914c93b131eebc1cd5cd7253e7b6c0ef7065ada8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Thu, 10 Dec 2015 23:57:06 +0200
-Subject: [PATCH 11/98] Step 1.11: Connect the controller to the Chats view
+Date: Sat, 2 Apr 2016 11:30:19 +0300
+Subject: [PATCH 016/114] Step 1.15: Connect chats controller to chats view
 
 ---
  client/scripts/routes.js | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index 6875ef0..71d9479 100644
+index ceb9e83..a40a32c 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
-@@ -13,7 +13,8 @@ function config($stateProvider, $urlRouterProvider) {
-       url: '/chats',
-       views: {
-         'tab-chats': {
--          templateUrl: 'client/templates/chats.html'
-+          templateUrl: 'client/templates/chats.html',
-+          controller: 'ChatsCtrl as chats'
+@@ -12,7 +12,8 @@ export default class RoutesConfig extends Config {
+         url: '/chats',
+         views: {
+           'tab-chats': {
+-            templateUrl: 'client/templates/chats.html'
++            templateUrl: 'client/templates/chats.html',
++            controller: 'ChatsCtrl as chats'
+           }
          }
-       }
-     });
+       });
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From ae3d7fa6589b51ae679f3c3192d16b915c01078c Mon Sep 17 00:00:00 2001
+From cb9379ca371a1f97bd21f9a24bf6f1365c933d82 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:00:18 +0200
-Subject: [PATCH 12/98] Step 1.12: Create the chats list with some stub details
+Date: Sat, 2 Apr 2016 11:32:46 +0300
+Subject: [PATCH 017/114] Step 1.16: Add data stub to chats view
 
 ---
  client/templates/chats.html | 13 ++++++++++++-
  1 file changed, 12 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index b1d926f..bf0d40d 100644
+index b1d926f..a9caadc 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
 @@ -1,5 +1,16 @@
@@ -501,10 +986,10 @@ index b1d926f..bf0d40d 100644
 +              ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
 +              class="item-chat item-remove-animate item-avatar item-icon-right"
 +              type="item-text-wrap">
-+        <img ng-src="{{chat.picture}}">
-+        <h2>{{chat.name}}</h2>
-+        <p>{{chat.lastMessage.text}}</p>
-+        <span class="last-message-timestamp">{{chat.lastMessage.timestamp}}</span>
++        <img ng-src="{{ chat.picture }}">
++        <h2>{{ chat.name }}</h2>
++        <p>{{ chat.lastMessage.text }}</p>
++        <span class="last-message-timestamp">{{ chat.lastMessage.timestamp }}</span>
 +        <i class="icon ion-chevron-right icon-accessory"></i>
 +      </ion-item>
 +    </ion-list>
@@ -512,31 +997,30 @@ index b1d926f..bf0d40d 100644
  </ion-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 442714eda2427c4e7e60421f5c5d41749a0580f8 Mon Sep 17 00:00:00 2001
+From 8b6a228952149974ab3f01adbbb401d04bc4af23 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:04:05 +0200
-Subject: [PATCH 13/98] Step 1.13: Create calendar filter
+Date: Sat, 2 Apr 2016 11:53:13 +0300
+Subject: [PATCH 018/114] Step 1.17: Create calendar filter
 
 ---
- client/scripts/filters/calendar.filter.js | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ client/scripts/filters/calendar.filter.js | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
  create mode 100644 client/scripts/filters/calendar.filter.js
 
 diff --git a/client/scripts/filters/calendar.filter.js b/client/scripts/filters/calendar.filter.js
 new file mode 100644
-index 0000000..645d510
+index 0000000..ade0bfc
 --- /dev/null
 +++ b/client/scripts/filters/calendar.filter.js
-@@ -0,0 +1,16 @@
-+angular
-+  .module('Whatsapp')
-+  .filter('calendar', calendar);
+@@ -0,0 +1,15 @@
++import moment from 'moment';
++import { Filter } from '../entities';
 +
-+function calendar () {
-+  return function (time) {
++export default class calendar extends Filter {
++  filter(time) {
 +    if (!time) return;
 +
 +    return moment(time).calendar(null, {
@@ -545,55 +1029,88 @@ index 0000000..645d510
 +      lastWeek : 'dddd',
 +      sameElse : 'DD/MM/YY'
 +    });
-+  };
++  }
 +}
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 5eeb35abc7b8bad82a1601073746ce82bb33ffca Mon Sep 17 00:00:00 2001
+From 39dc2f4d9e1bbba96c869b33b265ef15636cd943 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:05:08 +0200
-Subject: [PATCH 14/98] Step 1.14: Use calendar filter inside the chats list
+Date: Sat, 2 Apr 2016 11:54:53 +0300
+Subject: [PATCH 019/114] Step 1.18: Load calendar filter
+
+---
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index b90b89c..73db909 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -9,6 +9,7 @@ import 'ionic-scripts';
+ // Modules
+ import Definer from '../definer';
+ import ChatsCtrl from '../controllers/chats.controller';
++import CalendarFilter from '../filters/calendar.filter';
+ import RoutesConfig from '../routes';
+ 
+ // App
+@@ -19,6 +20,7 @@ const App = angular.module('Whatsapp', [
+ 
+ new Definer(App)
+   .define(ChatsCtrl)
++  .define(CalendarFilter)
+   .define(RoutesConfig);
+ 
+ // Startup
+-- 
+2.5.0
+
+
+From 698211dac723ff39016bc672da2ff0d3756ce737 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sat, 2 Apr 2016 11:57:54 +0300
+Subject: [PATCH 020/114] Step 1.19: Apply calendar filter to chats view
 
 ---
  client/templates/chats.html | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index bf0d40d..80fe960 100644
+index a9caadc..a158175 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
 @@ -8,7 +8,7 @@
-         <img ng-src="{{chat.picture}}">
-         <h2>{{chat.name}}</h2>
-         <p>{{chat.lastMessage.text}}</p>
--        <span class="last-message-timestamp">{{chat.lastMessage.timestamp}}</span>
-+        <span class="last-message-timestamp">{{chat.lastMessage.timestamp | calendar}}</span>
+         <img ng-src="{{ chat.picture }}">
+         <h2>{{ chat.name }}</h2>
+         <p>{{ chat.lastMessage.text }}</p>
+-        <span class="last-message-timestamp">{{ chat.lastMessage.timestamp }}</span>
++        <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
          <i class="icon ion-chevron-right icon-accessory"></i>
        </ion-item>
      </ion-list>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 23fef3e3d00c553befc0d8a54e0f52b09af89246 Mon Sep 17 00:00:00 2001
+From 10a60b49a813b4d360aee81d62425fa789d56450 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:06:26 +0200
-Subject: [PATCH 15/98] Step 1.15: Add delete button to the chats list view
+Date: Sat, 2 Apr 2016 12:00:13 +0300
+Subject: [PATCH 021/114] Step 1.20: Add delete button to chats view
 
 ---
  client/templates/chats.html | 3 +++
  1 file changed, 3 insertions(+)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index 80fe960..976b45c 100644
+index a158175..7a08b34 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
 @@ -10,6 +10,9 @@
-         <p>{{chat.lastMessage.text}}</p>
-         <span class="last-message-timestamp">{{chat.lastMessage.timestamp | calendar}}</span>
+         <p>{{ chat.lastMessage.text }}</p>
+         <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
          <i class="icon ion-chevron-right icon-accessory"></i>
 +        <ion-option-button class="button-assertive" ng-click="chats.remove(chat)">
 +          Delete
@@ -602,51 +1119,44 @@ index 80fe960..976b45c 100644
      </ion-list>
    </ion-content>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 6c569f11c9eadd72b7c97601b9d3ec1a766c18b2 Mon Sep 17 00:00:00 2001
+From dd6adbc0205c230ce8bcca56386881fd816754d8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:07:58 +0200
-Subject: [PATCH 16/98] Step 1.16: Add delete button logic into the controller
+Date: Sat, 2 Apr 2016 15:21:42 +0300
+Subject: [PATCH 022/114] Step 1.21: Add delete button logic to chats
+ controller
 
 ---
- client/scripts/controllers/chats.controller.js | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ client/scripts/controllers/chats.controller.js | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index d263e4e..cad710b 100644
+index dab9f27..42aae98 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -5,6 +5,8 @@ angular
- function ChatsCtrl ($scope, $reactive) {
-   $reactive(this).attach($scope);
- 
-+  this.remove = remove;
-+
-   this.data = [
-     {
-       _id: 0,
-@@ -52,4 +54,10 @@ function ChatsCtrl ($scope, $reactive) {
+@@ -53,6 +53,10 @@ export default class ChatsCtrl extends Controller {
        }
-     }
-   ];
+     ];
+   }
 +
-+  ////////////
-+
-+  function remove (chat) {
++  remove(chat) {
 +    this.data.splice(this.data.indexOf(chat), 1);
 +  }
  }
+ 
+-ChatsCtrl.$inject = ['$scope'];
++ChatsCtrl.$inject = ['$scope'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 0433295941388d11cf727b5b80012e5bf9378622 Mon Sep 17 00:00:00 2001
+From 6e32f49179da294144a30413d0adaeabc713e001 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:08:48 +0200
-Subject: [PATCH 17/98] Step 1.17: Add SASS package to the project
+Date: Sat, 2 Apr 2016 15:22:46 +0300
+Subject: [PATCH 023/114] Step 1.22: Add sass meteor package
 
 ---
  .meteor/packages | 1 +
@@ -654,35 +1164,34 @@ Subject: [PATCH 17/98] Step 1.17: Add SASS package to the project
  2 files changed, 2 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 8b71ed1..dc2aa28 100644
+index 244a1d8..934f644 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -19,3 +19,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
- angular@1.3.0
- driftyco:ionic
- momentjs:moment
+@@ -20,3 +20,4 @@ autopublish             # Publish all data to the clients (for prototyping)
+ insecure                # Allow all DB writes from clients (for prototyping)
+ dab0mb:ionic-assets
+ angular-templates
 +fourseven:scss
 diff --git a/.meteor/versions b/.meteor/versions
-index 712ab1c..e70c8cd 100644
+index bf91a90..fc2fc94 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -31,6 +31,7 @@ ecmascript-runtime@0.2.6
- ejson@1.0.7
- es5-shim@4.1.14
- fastclick@1.0.7
+@@ -25,6 +25,7 @@ ecmascript-runtime@0.2.8
+ ejson@1.0.9
+ es5-shim@4.5.8
+ fastclick@1.0.9
 +fourseven:scss@3.4.1
- geojson-utils@1.0.4
- hot-code-push@1.0.0
- html-tools@1.0.5
+ geojson-utils@1.0.6
+ hot-code-push@1.0.2
+ html-tools@1.0.7
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 579c61660a89c42ff51c37e6b39db678d1bc0487 Mon Sep 17 00:00:00 2001
+From cd8a579ed47d2927c864b638430a762c6dea65c5 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:10:53 +0200
-Subject: [PATCH 18/98] Step 1.18: Create chats.scss file and add some style to
- the chats list
+Date: Sat, 2 Apr 2016 15:25:03 +0300
+Subject: [PATCH 024/114] Step 1.23: Add chats stylesheet
 
 ---
  client/styles/chats.scss | 9 +++++++++
@@ -706,14 +1215,13 @@ index 0000000..7c1b8d5
 +}
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From a42871858d5a786064350b7bf4006c7bfc6fb030 Mon Sep 17 00:00:00 2001
+From af27953afece6b6d78d7134b031b9d04e5004562 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:14:16 +0200
-Subject: [PATCH 19/98] Step 2.1: Add Meteor collections for handling chats and
- messages
+Date: Sat, 2 Apr 2016 15:31:05 +0300
+Subject: [PATCH 025/114] Step 2.0: Add meteor collections
 
 ---
  lib/collections.js | 2 ++
@@ -730,13 +1238,13 @@ index 0000000..b08a877
 +Messages = new Mongo.Collection('messages');
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From a44697d8eaea3e82001fe57e6cfdebcb7027af1c Mon Sep 17 00:00:00 2001
+From be5035f97fe1a1d9d201e205fd99da7dd90ba6ac Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:18:47 +0200
-Subject: [PATCH 20/98] Step 2.2: Create the server's bootstrap file
+Date: Sat, 2 Apr 2016 15:33:05 +0300
+Subject: [PATCH 026/114] Step 2.1: Create server bootstrap
 
 ---
  server/bootstrap.js | 3 +++
@@ -745,38 +1253,40 @@ Subject: [PATCH 20/98] Step 2.2: Create the server's bootstrap file
 
 diff --git a/server/bootstrap.js b/server/bootstrap.js
 new file mode 100644
-index 0000000..4fb6ca4
+index 0000000..948f7b0
 --- /dev/null
 +++ b/server/bootstrap.js
 @@ -0,0 +1,3 @@
-+Meteor.startup(function () {
++Meteor.startup(function() {
 +
 +});
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From e7559731c204b6d8634be0d37f569f01abb06e71 Mon Sep 17 00:00:00 2001
+From a73ab57c7e82f94141379cb7efb7d66e9007d611 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:21:27 +0200
-Subject: [PATCH 21/98] Step 2.3: Add the stub data to the server
+Date: Sat, 2 Apr 2016 15:36:58 +0300
+Subject: [PATCH 027/114] Step 2.2: Add chats collection data stub
 
 ---
- server/bootstrap.js | 59 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 59 insertions(+)
+ server/bootstrap.js | 61 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 61 insertions(+)
 
 diff --git a/server/bootstrap.js b/server/bootstrap.js
-index 4fb6ca4..0a8579f 100644
+index 948f7b0..d136ab6 100644
 --- a/server/bootstrap.js
 +++ b/server/bootstrap.js
-@@ -1,3 +1,62 @@
- Meteor.startup(function () {
+@@ -1,3 +1,64 @@
++import moment from 'moment';
++
+ Meteor.startup(function() {
 +  if (Chats.find().count() !== 0) return;
- 
++
 +  Messages.remove({});
-+   
-+  let messages = [
++
++  const messages = [
 +    {
 +      text: 'You on your way?',
 +      timestamp: moment().subtract(1, 'hours').toDate()
@@ -803,7 +1313,7 @@ index 4fb6ca4..0a8579f 100644
 +    Messages.insert(m);
 +  });
 +
-+  let chats = [
++  const chats = [
 +    {
 +      name: 'Ethan Gonzalez',
 +      picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg'
@@ -825,159 +1335,163 @@ index 4fb6ca4..0a8579f 100644
 +      picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg'
 +    }
 +  ];
-+
+ 
 +  chats.forEach((chat) => {
-+    let message = Messages.findOne({chatId: {$exists: false}});
++    const message = Messages.findOne({ chatId: { $exists: false } });
 +    chat.lastMessage = message;
-+    let chatId = Chats.insert(chat);
-+    Messages.update(message._id, {$set: {chatId: chatId}})
++    const chatId = Chats.insert(chat);
++    Messages.update(message._id, { $set: { chatId } });
 +  });
  });
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From eb0f1e1fcf3ff5a7931da07ebf996d59bb3e09e0 Mon Sep 17 00:00:00 2001
+From 8610c2aa76fe4d6676d772bb2f5a549942429371 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:30:36 +0200
-Subject: [PATCH 22/98] Step 2.4: Use angular-meteor collection to fetch the
- data from the server
+Date: Sat, 2 Apr 2016 15:41:36 +0300
+Subject: [PATCH 028/114] Step 2.3: Add chats collection helper to chats
+ controller
 
 ---
- client/scripts/controllers/chats.controller.js | 50 +++-----------------------
- 1 file changed, 4 insertions(+), 46 deletions(-)
+ client/scripts/controllers/chats.controller.js | 51 ++------------------------
+ 1 file changed, 4 insertions(+), 47 deletions(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index cad710b..5ec3b22 100644
+index 42aae98..79f5866 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -7,53 +7,11 @@ function ChatsCtrl ($scope, $reactive) {
+@@ -1,57 +1,14 @@
+-import moment from 'moment';
+ import { Controller } from '../entities';
  
-   this.remove = remove;
+ export default class ChatsCtrl extends Controller {
+   constructor() {
+     super(...arguments);
  
--  this.data = [
--    {
--      _id: 0,
--      name: 'Ethan Gonzalez',
--      picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
--      lastMessage: {
--        text: 'You on your way?',
--        timestamp: moment().subtract(1, 'hours').toDate()
--      }
--    },
--    {
--      _id: 1,
--      name: 'Bryan Wallace',
--      picture: 'https://randomuser.me/api/portraits/thumb/lego/1.jpg',
--      lastMessage: {
--        text: 'Hey, it\'s me',
--        timestamp: moment().subtract(2, 'hours').toDate()
--      }
--    },
--    {
--      _id: 2,
--      name: 'Avery Stewart',
--      picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg',
--      lastMessage: {
--        text: 'I should buy a boat',
--        timestamp: moment().subtract(1, 'days').toDate()
--      }
--    },
--    {
--      _id: 3,
--      name: 'Katie Peterson',
--      picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg',
--      lastMessage: {
--        text: 'Look at my mukluks!',
--        timestamp: moment().subtract(4, 'days').toDate()
--      }
--    },
--    {
--      _id: 4,
--      name: 'Ray Edwards',
--      picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg',
--      lastMessage: {
--        text: 'This is wicked good ice cream.',
--        timestamp: moment().subtract(2, 'weeks').toDate()
--      }
-+  this.helpers({
-+    data() {
-+      return Chats.find();
-     }
--  ];
-+  });
+-    this.data = [
+-      {
+-        _id: 0,
+-        name: 'Ethan Gonzalez',
+-        picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
+-        lastMessage: {
+-          text: 'You on your way?',
+-          timestamp: moment().subtract(1, 'hours').toDate()
+-        }
+-      },
+-      {
+-        _id: 1,
+-        name: 'Bryan Wallace',
+-        picture: 'https://randomuser.me/api/portraits/thumb/lego/1.jpg',
+-        lastMessage: {
+-          text: 'Hey, it\'s me',
+-          timestamp: moment().subtract(2, 'hours').toDate()
+-        }
+-      },
+-      {
+-        _id: 2,
+-        name: 'Avery Stewart',
+-        picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg',
+-        lastMessage: {
+-          text: 'I should buy a boat',
+-          timestamp: moment().subtract(1, 'days').toDate()
+-        }
+-      },
+-      {
+-        _id: 3,
+-        name: 'Katie Peterson',
+-        picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg',
+-        lastMessage: {
+-          text: 'Look at my mukluks!',
+-          timestamp: moment().subtract(4, 'days').toDate()
+-        }
+-      },
+-      {
+-        _id: 4,
+-        name: 'Ray Edwards',
+-        picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg',
+-        lastMessage: {
+-          text: 'This is wicked good ice cream.',
+-          timestamp: moment().subtract(2, 'weeks').toDate()
+-        }
++    this.helpers({
++      data() {
++        return Chats.find();
+       }
+-    ];
++    });
+   }
  
-   ////////////
- 
+   remove(chat) {
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From a8586b7c1796a93c20fe3e343bfc75918c25ee3c Mon Sep 17 00:00:00 2001
+From 6da439a045da7d574f46456679e8a6ab8e23d3ec Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:38:08 +0200
-Subject: [PATCH 23/98] Step 2.5: Update logic of delete chat function to use
- angular-meteor collection API
+Date: Sat, 2 Apr 2016 15:51:05 +0300
+Subject: [PATCH 029/114] Step 2.4: Update delete button logic to use
+ controller helper
 
 ---
  client/scripts/controllers/chats.controller.js | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index 5ec3b22..b4dca9b 100644
+index 79f5866..20111a3 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -16,6 +16,6 @@ function ChatsCtrl ($scope, $reactive) {
-   ////////////
+@@ -12,7 +12,7 @@ export default class ChatsCtrl extends Controller {
+   }
  
-   function remove (chat) {
+   remove(chat) {
 -    this.data.splice(this.data.indexOf(chat), 1);
 +    this.data.remove(chat);
    }
  }
-\ No newline at end of file
+ 
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 867f80f4aa95299f00a2f2347803ed4b7ee89d15 Mon Sep 17 00:00:00 2001
+From f57ce3d4b0044fc9274221c6ff7186ec192f4376 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:39:38 +0200
-Subject: [PATCH 24/98] Step 3.1: Add state and route for chat view
+Date: Sat, 2 Apr 2016 16:05:22 +0300
+Subject: [PATCH 030/114] Step 3.0: Add chat route state
 
 ---
  client/scripts/routes.js | 9 +++++++++
  1 file changed, 9 insertions(+)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index 71d9479..3fe0d1b 100644
+index a40a32c..dffab9f 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
-@@ -17,6 +17,15 @@ function config($stateProvider, $urlRouterProvider) {
-           controller: 'ChatsCtrl as chats'
+@@ -16,6 +16,15 @@ export default class RoutesConfig extends Config {
+             controller: 'ChatsCtrl as chats'
+           }
          }
-       }
-+    })
-+    .state('tab.chat', {
-+      url: '/chats/:chatId',
-+      views: {
-+        'tab-chats': {
-+          templateUrl: 'client/templates/chat.html',
-+          controller: 'ChatCtrl as chat'
++      })
++      .state('tab.chat', {
++        url: '/chats/:chatId',
++        views: {
++          'tab-chats': {
++            templateUrl: 'client/templates/chat.html',
++            controller: 'ChatCtrl as chat'
++          }
 +        }
-+      }
-     });
+       });
  
-   $urlRouterProvider.otherwise('tab/chats');
+     this.$urlRouterProvider.otherwise('tab/chats');
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From fc241a744eded6081322ff01aa435cbfeb98c57c Mon Sep 17 00:00:00 2001
+From ae8400ee9da4971c3b56299a307c278e8bdf9f23 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:41:16 +0200
-Subject: [PATCH 25/98] Step 3.2: Add chat basic view with some info
+Date: Sat, 2 Apr 2016 16:07:19 +0300
+Subject: [PATCH 031/114] Step 3.1: Add chat view
 
 ---
  client/templates/chat.html | 5 +++++
@@ -997,57 +1511,91 @@ index 0000000..a2c5625
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From e8738592bf1b401d5be75d467ee6590e90617efb Mon Sep 17 00:00:00 2001
+From 92f95714b23b02d0f4a54e066a64e3af1f663289 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:45:17 +0200
-Subject: [PATCH 26/98] Step 3.3: Add ChatCtrl
+Date: Sat, 2 Apr 2016 16:16:44 +0300
+Subject: [PATCH 032/114] Step 3.2: Add chat controller
 
 ---
- client/scripts/controllers/chat.controller.js | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ client/scripts/controllers/chat.controller.js | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
  create mode 100644 client/scripts/controllers/chat.controller.js
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
 new file mode 100644
-index 0000000..bb70d00
+index 0000000..626f6ee
 --- /dev/null
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -0,0 +1,15 @@
-+angular
-+  .module('Whatsapp')
-+  .controller('ChatCtrl', ChatCtrl);
+@@ -0,0 +1,17 @@
++import { Controller } from '../entities';
 +
-+function ChatCtrl ($scope, $reactive, $stateParams) {
-+  $reactive(this).attach($scope);
++export default class ChatCtrl extends Controller {
++  constructor() {
++    super(...arguments);
 +
-+  let chatId = $stateParams.chatId;
++    this.chatId = this.$stateParams.chatId;
 +
-+  this.helpers({
-+    data() {
-+      return Chats.findOne(chatId);
-+    }
-+  });
++    this.helpers({
++      data() {
++        return Chats.findOne(this.chatId);
++      }
++    });
++  }
 +}
++
++ChatCtrl.$inject = ['$scope', '$stateParams'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 8618d212bdf7e99d550a0909132fefb77341dfd2 Mon Sep 17 00:00:00 2001
+From a66c17b46dfc0086e608ed3f5cc0e02c6f2c973b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:47:02 +0200
-Subject: [PATCH 27/98] Step 3.4: Add link from the chats list view to the chat
- details view
+Date: Sat, 2 Apr 2016 16:18:32 +0300
+Subject: [PATCH 033/114] Step 3.3: Load chat controller
+
+---
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 73db909..6f28d0f 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -9,6 +9,7 @@ import 'ionic-scripts';
+ // Modules
+ import Definer from '../definer';
+ import ChatsCtrl from '../controllers/chats.controller';
++import ChatCtrl from '../controllers/chat.controller';
+ import CalendarFilter from '../filters/calendar.filter';
+ import RoutesConfig from '../routes';
+ 
+@@ -20,6 +21,7 @@ const App = angular.module('Whatsapp', [
+ 
+ new Definer(App)
+   .define(ChatsCtrl)
++  .define(ChatCtrl)
+   .define(CalendarFilter)
+   .define(RoutesConfig);
+ 
+-- 
+2.5.0
+
+
+From bc40dd7bbfac157fd4cc1a2b028d9497f984f684 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sat, 2 Apr 2016 16:22:17 +0300
+Subject: [PATCH 034/114] Step 3.4: Add reference to chat view in chats view
 
 ---
  client/templates/chats.html | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index 976b45c..6ed2537 100644
+index 7a08b34..dada8ed 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
 @@ -4,7 +4,8 @@
@@ -1056,19 +1604,18 @@ index 976b45c..6ed2537 100644
                class="item-chat item-remove-animate item-avatar item-icon-right"
 -              type="item-text-wrap">
 +              type="item-text-wrap"
-+              href="#/tab/chats/{{chat._id}}">
-         <img ng-src="{{chat.picture}}">
-         <h2>{{chat.name}}</h2>
-         <p>{{chat.lastMessage.text}}</p>
++              href="#/tab/chats/{{ chat._id }}">
+         <img ng-src="{{ chat.picture }}">
+         <h2>{{ chat.name }}</h2>
+         <p>{{ chat.lastMessage.text }}</p>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 4ed612fb45f086cdd34d6b6e7c3a9a517dee2620 Mon Sep 17 00:00:00 2001
+From 358e135e5e7f6c7c4fa94c2455696ac9957d6532 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:47:58 +0200
-Subject: [PATCH 28/98] Step 3.5: Add some CSS styles to make the view look
- better
+Date: Sat, 2 Apr 2016 16:24:03 +0300
+Subject: [PATCH 035/114] Step 3.5: Add chat stylesheet
 
 ---
  client/styles/chat.scss | 7 +++++++
@@ -1090,45 +1637,40 @@ index 0000000..2637ff1
 +}
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From e59598fa4b7fe380d444cd296c7e7d86ad850914 Mon Sep 17 00:00:00 2001
+From 66886b11c32b539a2d791918416925a4c1e4d3e4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:49:21 +0200
-Subject: [PATCH 29/98] Step 3.6: Add the chat messages collection on the
- ChatCtrl
+Date: Sat, 2 Apr 2016 16:28:02 +0300
+Subject: [PATCH 036/114] Step 3.6: Add messages helper to chat controller
 
 ---
- client/scripts/controllers/chat.controller.js | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ client/scripts/controllers/chat.controller.js | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index bb70d00..365f8b4 100644
+index 626f6ee..5911c34 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -8,8 +8,11 @@ function ChatCtrl ($scope, $reactive, $stateParams) {
-   let chatId = $stateParams.chatId;
+@@ -7,6 +7,9 @@ export default class ChatCtrl extends Controller {
+     this.chatId = this.$stateParams.chatId;
  
-   this.helpers({
-+    messages() {
-+      return Messages.find({ chatId: chatId });
-+    },
-     data() {
-       return Chats.findOne(chatId);
--    }
-+    },
-   });
- }
-\ No newline at end of file
+     this.helpers({
++      messages() {
++        return Messages.find({ chatId: this.chatId });
++      },
+       data() {
+         return Chats.findOne(this.chatId);
+       }
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 21fae1d035944c45f4dde7c41f6c26e4f09000b2 Mon Sep 17 00:00:00 2001
+From 463b55e1865139381bf1b7623fad7b4b63192eb1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:51:25 +0200
-Subject: [PATCH 30/98] Step 3.7: Add the view of the chat messages
+Date: Sat, 2 Apr 2016 16:30:19 +0300
+Subject: [PATCH 037/114] Step 3.7: Add messages to chat view
 
 ---
  client/templates/chat.html | 14 ++++++++++++--
@@ -1158,13 +1700,13 @@ index a2c5625..139aeae 100644
  </ion-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From d0bf6434aa9d18d00a3bc5642fee269ee2ee5343 Mon Sep 17 00:00:00 2001
+From 19e208ef8f0e454b92aa9f2c75c7d6bd93f1e63a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:53:05 +0200
-Subject: [PATCH 31/98] Step 3.8: Add CSS rules to the chat view
+Date: Sat, 2 Apr 2016 17:12:43 +0300
+Subject: [PATCH 038/114] Step 3.8: Add message style to chat stylesheet
 
 ---
  client/styles/chat.scss | 79 +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1260,22 +1802,24 @@ index 2637ff1..aefef95 100644
  }
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 1e19d9f8164d216be10cf31e01f1e6f156fa9335 Mon Sep 17 00:00:00 2001
+From 3d41324e396fcf8f05539c8aaf1392373ef3319c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:54:15 +0200
-Subject: [PATCH 32/98] Step 3.9: Add image to get WhatsApp look and feel
+Date: Sat, 2 Apr 2016 16:35:24 +0300
+Subject: [PATCH 039/114] Step 3.9: Add assets
 
 ---
  public/chat-background.jpg | Bin 0 -> 29275 bytes
  public/message-mine.png    | Bin 0 -> 564 bytes
  public/message-other.png   | Bin 0 -> 500 bytes
- 3 files changed, 0 insertions(+), 0 deletions(-)
+ public/user-default.svg    |   1 +
+ 4 files changed, 1 insertion(+)
  create mode 100644 public/chat-background.jpg
  create mode 100644 public/message-mine.png
  create mode 100644 public/message-other.png
+ create mode 100644 public/user-default.svg
 
 diff --git a/public/chat-background.jpg b/public/chat-background.jpg
 new file mode 100644
@@ -1883,77 +2427,80 @@ qN*NA^r>p|kbr%HJPhiTo00RK`eVB$<^o=V30000<MNUMnLSTZ-*wiHe
 literal 0
 HcmV?d00001
 
+diff --git a/public/user-default.svg b/public/user-default.svg
+new file mode 100644
+index 0000000..64093ae
+--- /dev/null
++++ b/public/user-default.svg
+@@ -0,0 +1 @@
++<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 512 512" height="512px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M257.107,5C118.473,5,6.109,117.365,6.109,255.998C6.109,394.631,118.473,507,257.107,507  s250.998-112.37,250.998-251.002C508.105,117.365,395.74,5,257.107,5z M257.107,25.917c126.868,0,230.082,103.214,230.082,230.082  c0,55.815-19.997,107.043-53.19,146.926c-22.939-9.58-77.089-28.372-110.609-38.269c-2.859-0.898-3.309-1.042-3.309-12.94  c0-9.826,4.044-19.721,7.987-28.096c4.269-9.1,9.334-24.399,11.153-38.126c5.086-5.904,12.01-17.547,16.463-39.739  c3.901-19.559,2.083-26.677-0.51-33.357c-0.266-0.705-0.552-1.399-0.756-2.094c-0.981-4.586,0.367-28.413,3.718-46.899  c2.308-12.685-0.593-39.658-18.057-61.972c-11.03-14.105-32.131-31.416-70.675-33.826l-21.141,0.02  c-37.891,2.391-59.012,19.701-70.042,33.806c-17.464,22.315-20.364,49.288-18.056,61.963c3.37,18.495,4.698,42.322,3.738,46.816  c-0.204,0.786-0.49,1.481-0.776,2.186c-2.574,6.68-4.412,13.798-0.49,33.357c4.432,22.192,11.357,33.836,16.463,39.739  c1.798,13.726,6.864,29.026,11.153,38.126c3.125,6.659,4.596,15.718,4.596,28.525c0,11.898-0.45,12.042-3.126,12.889  c-34.663,10.234-89.834,30.17-110.404,39.178c-33.846-40.066-54.293-91.785-54.293-148.212  C27.025,129.13,130.239,25.917,257.107,25.917z M96.474,420.516c23.552-9.615,70.512-26.365,101.355-35.475  c17.935-5.658,17.935-20.763,17.935-32.896c0-10.06-0.694-24.89-6.577-37.431c-4.045-8.589-8.662-23.317-9.682-34.847  c-0.225-2.696-1.491-5.188-3.534-6.965c-2.962-2.595-8.988-12.093-12.828-31.252c-3.043-15.167-1.756-18.486-0.51-21.693  c0.531-1.369,1.042-2.717,1.451-4.239c2.512-9.181-0.287-39.341-3.33-56.07c-1.327-7.272,0.347-27.933,13.951-45.337  c12.194-15.595,30.659-24.287,54.211-25.788l19.834-0.021c24.185,1.522,42.65,10.214,54.865,25.809  c13.604,17.404,15.259,38.065,13.93,45.346c-3.023,16.72-5.842,46.879-3.33,56.05c0.43,1.532,0.919,2.88,1.451,4.249  c1.247,3.206,2.533,6.526-0.49,21.693c-3.839,19.16-9.886,28.658-12.848,31.252c-2.022,1.777-3.288,4.269-3.534,6.965  c-1.001,11.53-5.617,26.258-9.661,34.847c-4.637,9.856-9.968,22.98-9.968,37.002c0,12.134,0,27.239,18.118,32.948  c29.516,8.722,76.701,24.93,101.621,34.73c-41.608,41.199-98.781,66.691-161.797,66.691  C194.664,486.084,137.981,461.042,96.474,420.516z" fill="#37404D"/></svg>
+\ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 472e5010bef127f20157930ef87673a9af841e4b Mon Sep 17 00:00:00 2001
+From 1805f9b164eb27655def4b754b66977d16e6c68d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:55:11 +0200
-Subject: [PATCH 33/98] Step 3.10: Add angular-moment package
+Date: Sat, 2 Apr 2016 16:37:12 +0300
+Subject: [PATCH 040/114] Step 3.10: Add angular-moment npm package
 
 ---
- .meteor/packages | 1 +
- .meteor/versions | 1 +
- 2 files changed, 2 insertions(+)
+ package.json | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/.meteor/packages b/.meteor/packages
-index dc2aa28..13b9b9b 100644
---- a/.meteor/packages
-+++ b/.meteor/packages
-@@ -20,3 +20,4 @@ angular@1.3.0
- driftyco:ionic
- momentjs:moment
- fourseven:scss
-+jasonaibrahim:angular-moment
-diff --git a/.meteor/versions b/.meteor/versions
-index e70c8cd..4452946 100644
---- a/.meteor/versions
-+++ b/.meteor/versions
-@@ -39,6 +39,7 @@ htmljs@1.0.5
- http@1.1.1
- id-map@1.0.4
- insecure@1.0.4
-+jasonaibrahim:angular-moment@0.10.2
- jquery@1.11.4
- lai:collection-extensions@0.1.4
- launch-screen@1.0.4
+diff --git a/package.json b/package.json
+index 9085e95..6eb6f1e 100644
+--- a/package.json
++++ b/package.json
+@@ -8,6 +8,7 @@
+     "angular": "^1.5.3",
+     "angular-animate": "^1.5.3",
+     "angular-meteor": "^1.3.9",
++    "angular-moment": "^1.0.0-beta.5",
+     "angular-sanitize": "^1.5.3",
+     "angular-ui-router": "^0.2.18",
+     "ionic-scripts": "0.0.1",
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 05b13b839a7926d2a05c6fdf614c2313edbe6768 Mon Sep 17 00:00:00 2001
+From 70813365986e3fbfae7912bfa628465757c1f1ce Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:56:17 +0200
-Subject: [PATCH 34/98] Step 3.11: Add angularMoment dependency
+Date: Sat, 2 Apr 2016 16:39:18 +0300
+Subject: [PATCH 041/114] Step 3.11: Load angular-meteor
 
 ---
- client/scripts/lib/app.js | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 5bd91a1..6f9364d 100644
+index 6f28d0f..2c36626 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -1,7 +1,8 @@
- angular
-   .module('Whatsapp', [
-     'angular-meteor',
--    'ionic'
-+    'ionic',
-+    'angularMoment'
-   ]);
+@@ -2,6 +2,7 @@
+ import angular from 'angular';
+ import 'angular-animate';
+ import 'angular-meteor';
++import 'angular-moment';
+ import 'angular-sanitize';
+ import 'angular-ui-router';
+ import 'ionic-scripts';
+@@ -16,6 +17,7 @@ import RoutesConfig from '../routes';
+ // App
+ const App = angular.module('Whatsapp', [
+   'angular-meteor',
++  'angularMoment',
+   'ionic'
+ ]);
  
- if (Meteor.isCordova) {
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 76ac0d017bf250af2a258939fe293e9dc71a054d Mon Sep 17 00:00:00 2001
+From 8bc8592a9582f54d8039aaf431a440cbc2e6df4e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:57:05 +0200
-Subject: [PATCH 35/98] Step 3.12: Add usage of angular-moment filter to the
- chat details view
+Date: Sat, 2 Apr 2016 16:40:58 +0300
+Subject: [PATCH 042/114] Step 3.12: Add moment filter to chat view
 
 ---
  client/templates/chat.html | 2 +-
@@ -1973,13 +2520,13 @@ index 139aeae..f35bd17 100644
        </div>
      </div>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From f745197c6933cb04ee3e13c64a8f3e07883d9694 Mon Sep 17 00:00:00 2001
+From 364e2f8f0ade107084df23fd97308892e0b2b5ff Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 00:59:51 +0200
-Subject: [PATCH 36/98] Step 3.13: Add send new message view and input
+Date: Sat, 2 Apr 2016 16:43:27 +0300
+Subject: [PATCH 043/114] Step 3.13: Add chatbox to chat view
 
 ---
  client/templates/chat.html | 19 +++++++++++++++++++
@@ -2015,102 +2562,87 @@ index f35bd17..f344481 100644
  </ion-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From aaa3fb34a53ce8077a877bb1269428c7b8462f99 Mon Sep 17 00:00:00 2001
+From d3c84c6c9a7d0945549e7e1ea1821d9bc5b0c090 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:02:36 +0200
-Subject: [PATCH 37/98] Step 3.14: Add logic to the controller
+Date: Sat, 2 Apr 2016 16:45:55 +0300
+Subject: [PATCH 044/114] Step 3.14: Add chatbox logic to chat controller
 
 ---
- client/scripts/controllers/chat.controller.js | 7 +++++++
- 1 file changed, 7 insertions(+)
+ client/scripts/controllers/chat.controller.js | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index 365f8b4..132289e 100644
+index 5911c34..23a2f3f 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -6,6 +6,7 @@ function ChatCtrl ($scope, $reactive, $stateParams) {
-   $reactive(this).attach($scope);
- 
-   let chatId = $stateParams.chatId;
-+  this.sendMessage = sendMessage;
- 
-   this.helpers({
-     messages() {
-@@ -15,4 +16,10 @@ function ChatCtrl ($scope, $reactive, $stateParams) {
-       return Chats.findOne(chatId);
-     },
-   });
+@@ -15,6 +15,9 @@ export default class ChatCtrl extends Controller {
+       }
+     });
+   }
 +
-+  ////////////
-+
-+  function sendMessage () {
-+    // TODO: implement
++  sendMessage() {
 +  }
  }
+ 
+ ChatCtrl.$inject = ['$scope', '$stateParams'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 04376c9a73e081909f47070757afc3b6bed2f2bb Mon Sep 17 00:00:00 2001
+From f9fd9ef698c275c80797abb9a0fa68d2d2474725 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:14:43 +0200
-Subject: [PATCH 38/98] Step 3.15: Add the input directive to get move events
- and better mobile experience
+Date: Sat, 2 Apr 2016 16:47:56 +0300
+Subject: [PATCH 045/114] Step 3.15: Add input directive
 
 ---
- client/scripts/directives/input.directive.js | 53 ++++++++++++++++++++++++++++
- 1 file changed, 53 insertions(+)
+ client/scripts/directives/input.directive.js | 50 ++++++++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
  create mode 100644 client/scripts/directives/input.directive.js
 
 diff --git a/client/scripts/directives/input.directive.js b/client/scripts/directives/input.directive.js
 new file mode 100644
-index 0000000..aeb7f2f
+index 0000000..7396f77
 --- /dev/null
 +++ b/client/scripts/directives/input.directive.js
-@@ -0,0 +1,53 @@
-+angular
-+  .module('Whatsapp')
-+  .directive('input', input);
+@@ -0,0 +1,50 @@
++import { Directive } from '../entities';
 +
-+// The directive enable sending message when tapping return
-+// and expose the focus and blur events to adjust the view
-+// when the keyboard opens and closes
-+function input ($timeout) {
-+  return {
-+    restrict: 'E',
-+    scope: {
++export default class input extends Directive {
++  constructor() {
++    super(...arguments);
++
++    this.restrict = 'E';
++
++    this.scope = {
 +      'returnClose': '=',
 +      'onReturn': '&',
 +      'onFocus': '&',
 +      'onBlur': '&'
-+    },
-+    link: link
-+  };
++    };
++  }
 +
-+  ////////////
-+
-+  function link (scope, element, attrs) {
-+    element.bind('focus', function (e) {
++  link(scope, element) {
++    element.bind('focus', (e) => {
 +      if (!scope.onFocus) return;
 +
-+      $timeout(function () {
++      this.$timeout(() => {
 +        scope.onFocus();
 +      });
 +    });
 +
-+    element.bind('blur', function (e) {
++    element.bind('blur', (e) => {
 +      if (!scope.onBlur) return;
 +
-+      $timeout(function () {
++      this.$timeout(() => {
 +        scope.onBlur();
 +      });
 +    });
 +
-+    element.bind('keydown', function (e) {
++    element.bind('keydown', (e) => {
 +      if (e.which != 13) return;
 +
 +      if (scope.returnClose) {
@@ -2118,28 +2650,115 @@ index 0000000..aeb7f2f
 +      }
 +
 +      if (scope.onReturn) {
-+        $timeout(function () {
++        this.$timeout(() => {
 +          scope.onReturn();
 +        });
 +      }
 +    });
 +  }
 +}
++
++input.$inject = ['$timeout'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 436fe52a2d04a33655d59ecca773ecccd2c2202f Mon Sep 17 00:00:00 2001
+From 5eb27155f16f05456cbd566b6a5388e08b372eaf Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:36:27 +0200
-Subject: [PATCH 39/98] Step 3.16: Add usage of input directive events to the
- view
+Date: Sat, 2 Apr 2016 16:49:05 +0300
+Subject: [PATCH 046/114] Step 3.16: Load input directive
 
 ---
- client/templates/chat.html | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
 
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 2c36626..69e1891 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -11,6 +11,7 @@ import 'ionic-scripts';
+ import Definer from '../definer';
+ import ChatsCtrl from '../controllers/chats.controller';
+ import ChatCtrl from '../controllers/chat.controller';
++import InputDirective from '../directives/input.directive';
+ import CalendarFilter from '../filters/calendar.filter';
+ import RoutesConfig from '../routes';
+ 
+@@ -24,6 +25,7 @@ const App = angular.module('Whatsapp', [
+ new Definer(App)
+   .define(ChatsCtrl)
+   .define(ChatCtrl)
++  .define(InputDirective)
+   .define(CalendarFilter)
+   .define(RoutesConfig);
+ 
+-- 
+2.5.0
+
+
+From b98eba8e64821d8af6ef90937578f4caaef603e3 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sat, 2 Apr 2016 16:51:39 +0300
+Subject: [PATCH 047/114] Step 3.17: Use input directive in chat view
+
+---
+ client/scripts/controllers/chat.controller.js | 29 ++++++++++++++++++++++++++-
+ client/templates/chat.html                    |  5 ++++-
+ 2 files changed, 32 insertions(+), 2 deletions(-)
+
+diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
+index 23a2f3f..e20800e 100644
+--- a/client/scripts/controllers/chat.controller.js
++++ b/client/scripts/controllers/chat.controller.js
+@@ -1,3 +1,4 @@
++import ionic from 'ionic-scripts';
+ import { Controller } from '../entities';
+ 
+ export default class ChatCtrl extends Controller {
+@@ -5,6 +6,8 @@ export default class ChatCtrl extends Controller {
+     super(...arguments);
+ 
+     this.chatId = this.$stateParams.chatId;
++    this.isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
++    this.isCordova = Meteor.isCordova;
+ 
+     this.helpers({
+       messages() {
+@@ -18,6 +21,30 @@ export default class ChatCtrl extends Controller {
+ 
+   sendMessage() {
+   }
++
++  inputUp () {
++    if (this.isIOS) {
++      this.keyboardHeight = 216;
++    }
++
++    this.$timeout(() => {
++      this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(true);
++    }, 300);
++  }
++
++  inputDown () {
++    if (this.isIOS) {
++      this.keyboardHeight = 0;
++    }
++
++    this.$ionicScrollDelegate.$getByHandle('chatScroll').resize();
++  }
++
++  closeKeyboard () {
++    if (this.isCordova) {
++      cordova.plugins.Keyboard.close();
++    }
++  }
+ }
+ 
+-ChatCtrl.$inject = ['$scope', '$stateParams'];
+\ No newline at end of file
++ChatCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$ionicScrollDelegate'];
+\ No newline at end of file
 diff --git a/client/templates/chat.html b/client/templates/chat.html
 index f344481..2185326 100644
 --- a/client/templates/chat.html
@@ -2157,86 +2776,64 @@ index f344481..2185326 100644
  
      <span ng-if="chat.message.length > 0">
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From deecbe864f11edb180f1dcbb4716e12ab1ea340a Mon Sep 17 00:00:00 2001
+From 3ff8842592f554af7fe13ae0a90158c47518071d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:39:04 +0200
-Subject: [PATCH 40/98] Step 3.17: Add logic in the ChatCtrl for better
- experience
+Date: Sat, 2 Apr 2016 17:19:14 +0300
+Subject: [PATCH 048/114] Step 3.18: Implement chatbox logic
 
 ---
- client/scripts/controllers/chat.controller.js | 29 ++++++++++++++++++++++++++-
- 1 file changed, 28 insertions(+), 1 deletion(-)
+ client/scripts/controllers/chat.controller.js | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index 132289e..97246f0 100644
+index e20800e..fae0f77 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -2,11 +2,16 @@ angular
-   .module('Whatsapp')
-   .controller('ChatCtrl', ChatCtrl);
- 
--function ChatCtrl ($scope, $reactive, $stateParams) {
-+function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout) {
-   $reactive(this).attach($scope);
- 
-   let chatId = $stateParams.chatId;
-+  let isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
-+
-   this.sendMessage = sendMessage;
-+  this.inputUp = inputUp;
-+  this.inputDown = inputDown;
-+  this.closeKeyboard = closeKeyboard;
- 
-   this.helpers({
-     messages() {
-@@ -22,4 +27,26 @@ function ChatCtrl ($scope, $reactive, $stateParams) {
-   function sendMessage () {
-     // TODO: implement
+@@ -20,6 +20,15 @@ export default class ChatCtrl extends Controller {
    }
+ 
+   sendMessage() {
++    if (_.isEmpty(this.message)) return;
 +
-+  function inputUp () {
-+    if (isIOS) {
-+      this.keyboardHeight = 216;
-+    }
++    this.callMethod('newMessage', {
++      text: this.message,
++      type: 'text',
++      chatId: this.chatId
++    });
 +
-+    $timeout(function() {
-+      $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(true);
-+    }, 300);
-+  }
-+
-+  function inputDown () {
-+    if (isIOS) {
-+      this.keyboardHeight = 0;
-+    }
-+
-+    $ionicScrollDelegate.$getByHandle('chatScroll').resize();
-+  }
-+
-+  function closeKeyboard () {
-+    // cordova.plugins.Keyboard.close();
-+  }
- }
-\ No newline at end of file
++    delete this.message;
+   }
+ 
+   inputUp () {
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From b6d7b85a290554ea646cd07db421e32bf31d6087 Mon Sep 17 00:00:00 2001
+From a2f94668b63bddefbac0272c94ad342a881389eb Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:42:00 +0200
-Subject: [PATCH 41/98] Step 3.18: Add CSS rules to make the footer look better
+Date: Sat, 2 Apr 2016 17:17:20 +0300
+Subject: [PATCH 049/114] Step 3.19: Add footer style to chat stylesheet
 
 ---
- client/styles/chat.scss | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ client/styles/chat.scss | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
 
 diff --git a/client/styles/chat.scss b/client/styles/chat.scss
-index aefef95..8d1226a 100644
+index aefef95..77f09da 100644
 --- a/client/styles/chat.scss
 +++ b/client/styles/chat.scss
+@@ -45,7 +45,7 @@
+     background-color: #FFF;
+   }
+ 
+-  &.message-other::before, &.message-mine::before, {
++  &.message-other::before, &.message-mine::before {
+     content: "";
+     position: absolute;
+     bottom: 3px;
 @@ -83,4 +83,20 @@
      color: gray;
      font-size: 12px;
@@ -2260,47 +2857,13 @@ index aefef95..8d1226a 100644
  }
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 9d745c306166b8bc690a07995d1c4db4e5a0908d Mon Sep 17 00:00:00 2001
+From 7751d7f29e0f3f20fdffa1d6f1244931795e06f6 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:43:13 +0200
-Subject: [PATCH 42/98] Step 3.19: Add client logic for sending messages
-
----
- client/scripts/controllers/chat.controller.js | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
-
-diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index 97246f0..7bcc5ba 100644
---- a/client/scripts/controllers/chat.controller.js
-+++ b/client/scripts/controllers/chat.controller.js
-@@ -25,7 +25,15 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
-   ////////////
- 
-   function sendMessage () {
--    // TODO: implement
-+    if (_.isEmpty(this.message)) return;
-+
-+    Meteor.call('newMessage', {
-+      text: this.message,
-+      type: 'text',
-+      chatId: chatId
-+    });
-+
-+    delete this.message;
-   }
- 
-   function inputUp () {
--- 
-2.5.4 (Apple Git-61)
-
-
-From 38f578c1d1f965ae9ac535a26ab72090c27a1021 Mon Sep 17 00:00:00 2001
-From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:45:02 +0200
-Subject: [PATCH 43/98] Step 3.20: Add sendMessage method to the server
+Date: Sat, 2 Apr 2016 17:20:51 +0300
+Subject: [PATCH 050/114] Step 3.20: Add new message method
 
 ---
  lib/methods.js | 10 ++++++++++
@@ -2309,15 +2872,15 @@ Subject: [PATCH 43/98] Step 3.20: Add sendMessage method to the server
 
 diff --git a/lib/methods.js b/lib/methods.js
 new file mode 100644
-index 0000000..b2b0064
+index 0000000..820e4a9
 --- /dev/null
 +++ b/lib/methods.js
 @@ -0,0 +1,10 @@
 +Meteor.methods({
-+  newMessage (message) {
++  newMessage(message) {
 +    message.timestamp = new Date();
 +
-+    let messageId = Messages.insert(message);
++    const messageId = Messages.insert(message);
 +    Chats.update(message.chatId, { $set: { lastMessage: message } });
 +
 +    return messageId;
@@ -2325,48 +2888,47 @@ index 0000000..b2b0064
 +});
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 755636de2c9db8fcb6d7ab17c20393192cd8f659 Mon Sep 17 00:00:00 2001
+From d89643dae811e6b5427eeb57177bf22c58d67d1f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:24:22 +0200
-Subject: [PATCH 44/98] Step 3.21: Add check package to the project
+Date: Sat, 2 Apr 2016 17:22:22 +0300
+Subject: [PATCH 051/114] Step 3.21: Add check meteor package
 
 ---
  .meteor/packages | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 13b9b9b..6507abe 100644
+index 934f644..b39011c 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -21,3 +21,4 @@ driftyco:ionic
- momentjs:moment
+@@ -21,3 +21,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
+ dab0mb:ionic-assets
+ angular-templates
  fourseven:scss
- jasonaibrahim:angular-moment
 +check
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From e5ceeec2a4bfb83aef2e1bc320b8241edcc9afc2 Mon Sep 17 00:00:00 2001
+From 90375ddfa0f65f62f29b43fc8d5e300601074a01 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:25:04 +0200
-Subject: [PATCH 45/98] Step 3.22: Add usage of check package to the newMessage
- method
+Date: Sat, 2 Apr 2016 17:23:23 +0300
+Subject: [PATCH 052/114] Step 3.22: Validate new message method params
 
 ---
  lib/methods.js | 5 +++++
  1 file changed, 5 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index b2b0064..cbec6d9 100644
+index 820e4a9..9b996dd 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
 @@ -1,5 +1,10 @@
  Meteor.methods({
-   newMessage (message) {
+   newMessage(message) {
 +    check(message, {
 +      text: String,
 +      chatId: String
@@ -2374,15 +2936,15 @@ index b2b0064..cbec6d9 100644
 +
      message.timestamp = new Date();
  
-     let messageId = Messages.insert(message);
+     const messageId = Messages.insert(message);
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 781ead3970b235341a524f6c929d5c06dc5bc64b Mon Sep 17 00:00:00 2001
+From 12b8c6c53db24eba6d6a25c60c85a70b2c9cd331 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:45:57 +0200
-Subject: [PATCH 46/98] Step 4.1: Add Meteor's Accounts to the project
+Date: Sat, 2 Apr 2016 23:46:33 +0300
+Subject: [PATCH 053/114] Step 4.0: Add accounts meteor package
 
 ---
  .meteor/packages |  1 +
@@ -2390,83 +2952,136 @@ Subject: [PATCH 46/98] Step 4.1: Add Meteor's Accounts to the project
  2 files changed, 11 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 6507abe..1ca9b1e 100644
+index b39011c..4c151a5 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -22,3 +22,4 @@ momentjs:moment
+@@ -22,3 +22,4 @@ dab0mb:ionic-assets
+ angular-templates
  fourseven:scss
- jasonaibrahim:angular-moment
  check
 +okland:accounts-phone
 diff --git a/.meteor/versions b/.meteor/versions
-index 4452946..fbd5c3a 100644
+index fc2fc94..9cf6152 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,3 +1,4 @@
-+accounts-base@1.2.2
- angular@1.3.0
- angular-meteor-data@0.0.7
- angular-templates@0.0.2
-@@ -22,6 +23,7 @@ dburles:mongo-collection-instances@0.3.4
- ddp@1.2.2
- ddp-client@1.2.1
- ddp-common@1.2.2
-+ddp-rate-limiter@1.0.0
- ddp-server@1.2.2
- deps@1.0.9
- diff-sequence@1.0.1
-@@ -29,6 +31,7 @@ driftyco:ionic@1.1.0_2
- ecmascript@0.1.6
- ecmascript-runtime@0.2.6
- ejson@1.0.7
-+email@1.0.8
- es5-shim@4.1.14
- fastclick@1.0.7
++accounts-base@1.2.4
+ allow-deny@1.0.2
+ angular-templates@1.0.2
+ autopublish@1.0.5
+@@ -17,12 +18,14 @@ dab0mb:ionic-assets@1.2.4
+ ddp@1.2.3
+ ddp-client@1.2.3
+ ddp-common@1.2.3
++ddp-rate-limiter@1.0.2
+ ddp-server@1.2.4
+ deps@1.0.10
+ diff-sequence@1.0.3
+ ecmascript@0.4.1
+ ecmascript-runtime@0.2.8
+ ejson@1.0.9
++email@1.0.10
+ es5-shim@4.5.8
+ fastclick@1.0.9
  fourseven:scss@3.4.1
-@@ -44,6 +47,7 @@ jquery@1.11.4
- lai:collection-extensions@0.1.4
- launch-screen@1.0.4
- livedata@1.0.15
-+localstorage@1.0.5
- logging@1.0.8
- meteor@1.1.10
- meteor-base@1.0.1
-@@ -54,20 +58,26 @@ mobile-status-bar@1.0.6
- momentjs:moment@2.10.6
- mongo@1.1.3
- mongo-id@1.0.1
+@@ -36,6 +39,7 @@ insecure@1.0.5
+ jquery@1.11.6
+ launch-screen@1.0.8
+ livedata@1.0.16
++localstorage@1.0.7
+ logging@1.0.10
+ meteor@1.1.12
+ meteor-base@1.0.2
+@@ -48,17 +52,23 @@ modules@0.5.1
+ modules-runtime@0.6.1
+ mongo@1.1.5
+ mongo-id@1.0.2
 +npm-bcrypt@0.7.8_2
- npm-mongo@1.4.39_1
- observe-sequence@1.0.7
+ npm-mongo@1.4.41
+ observe-sequence@1.0.9
 +okland:accounts-phone@0.0.21
- ordered-dict@1.0.4
- pbastowski:angular-babel@1.0.7
- promise@0.5.1
- random@1.0.5
-+rate-limit@1.0.0
- reactive-dict@1.1.3
- reactive-var@1.0.6
- reload@1.1.4
- retry@1.0.4
- routepolicy@1.0.6
-+service-configuration@1.0.5
- session@1.1.1
-+sha@1.0.4
- spacebars@1.0.7
- spacebars-compiler@1.0.7
-+srp@1.0.4
- standard-minifiers@1.0.2
- templating-tools@1.0.0
- tracker@1.0.9
+ ordered-dict@1.0.5
+ promise@0.6.5
+ random@1.0.7
++rate-limit@1.0.2
+ reactive-var@1.0.7
+ reload@1.1.6
+ retry@1.0.5
+ routepolicy@1.0.8
++service-configuration@1.0.7
++sha@1.0.5
+ spacebars@1.0.9
+ spacebars-compiler@1.0.9
++srp@1.0.6
+ standard-minifier-css@1.0.4
+ standard-minifier-js@1.0.4
+ templating-tools@1.0.2
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From c93c626cb905ae3c41132ec4bc72e65734c56474 Mon Sep 17 00:00:00 2001
+From b315e163394390c806f43ff49b2dbc047198b906 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:46:42 +0200
-Subject: [PATCH 47/98] Step 4.2: Add SMS configuration for Accounts-Phone
- package
+Date: Fri, 8 Apr 2016 12:26:21 +0300
+Subject: [PATCH 054/114] Step 4.1: Add angular-meteor-auth npm package
+
+---
+ package.json | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/package.json b/package.json
+index 6eb6f1e..a06bb06 100644
+--- a/package.json
++++ b/package.json
+@@ -8,6 +8,7 @@
+     "angular": "^1.5.3",
+     "angular-animate": "^1.5.3",
+     "angular-meteor": "^1.3.9",
++    "angular-meteor-auth": "^1.0.1",
+     "angular-moment": "^1.0.0-beta.5",
+     "angular-sanitize": "^1.5.3",
+     "angular-ui-router": "^0.2.18",
+-- 
+2.5.0
+
+
+From 93a7d7cdd9e3582c64ae90a8de2d1bbd036a7fff Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Fri, 8 Apr 2016 12:27:31 +0300
+Subject: [PATCH 055/114] Step 4.2: Load angular-meteor-auth module
+
+---
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 69e1891..7948039 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -2,6 +2,7 @@
+ import angular from 'angular';
+ import 'angular-animate';
+ import 'angular-meteor';
++import 'angular-meteor-auth';
+ import 'angular-moment';
+ import 'angular-sanitize';
+ import 'angular-ui-router';
+@@ -18,6 +19,7 @@ import RoutesConfig from '../routes';
+ // App
+ const App = angular.module('Whatsapp', [
+   'angular-meteor',
++  'angular-meteor.auth',
+   'angularMoment',
+   'ionic'
+ ]);
+-- 
+2.5.0
+
+
+From a63abb03215fe34210b16ee6ebb3376928c935e1 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sat, 2 Apr 2016 23:50:40 +0300
+Subject: [PATCH 056/114] Step 4.3: Add SMS configuration
 
 ---
  server/sms.js | 4 ++++
@@ -2485,53 +3100,52 @@ index 0000000..db3cf5d
 +}
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 36d1681a1e39f740d2c2e90e327c9e82c5de9a98 Mon Sep 17 00:00:00 2001
+From 79b6b5693af8d80c4e5bf45134814f7f7d8e9027 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:54:09 +0200
-Subject: [PATCH 48/98] Step 4.3: Create states and routes for the
- authentication flow
+Date: Sat, 2 Apr 2016 23:54:37 +0300
+Subject: [PATCH 057/114] Step 4.4: Create auth route states
 
 ---
  client/scripts/routes.js | 15 +++++++++++++++
  1 file changed, 15 insertions(+)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index 3fe0d1b..54dc648 100644
+index dffab9f..699e738 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
-@@ -26,6 +26,21 @@ function config($stateProvider, $urlRouterProvider) {
-           controller: 'ChatCtrl as chat'
+@@ -25,6 +25,21 @@ export default class RoutesConfig extends Config {
+             controller: 'ChatCtrl as chat'
+           }
          }
-       }
-+    })
-+    .state('login', {
-+      url: '/login',
-+      templateUrl: 'client/templates/login.html',
-+      controller: 'LoginCtrl as logger'
-+    })
-+    .state('confirmation', {
-+      url: '/confirmation/:phone',
-+      templateUrl: 'client/templates/confirmation.html',
-+      controller: 'ConfirmationCtrl as confirmation'
-+    })
-+    .state('profile', {
-+      url: '/profile',
-+      templateUrl: 'client/templates/profile.html',
-+      controller: 'ProfileCtrl as profile'
-     });
++      })
++      .state('login', {
++        url: '/login',
++        templateUrl: 'client/templates/login.html',
++        controller: 'LoginCtrl as logger'
++      })
++      .state('confirmation', {
++        url: '/confirmation/:phone',
++        templateUrl: 'client/templates/confirmation.html',
++        controller: 'ConfirmationCtrl as confirmation'
++      })
++      .state('profile', {
++        url: '/profile',
++        templateUrl: 'client/templates/profile.html',
++        controller: 'ProfileCtrl as profile'
+       });
  
-   $urlRouterProvider.otherwise('tab/chats');
+     this.$urlRouterProvider.otherwise('tab/chats');
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 0e0c5371f761c2afd618717851853371e06643b7 Mon Sep 17 00:00:00 2001
+From 688275afc5fa258a57d2bd06eff3c220d4295e08 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 01:55:14 +0200
-Subject: [PATCH 49/98] Step 4.4: Create the login view
+Date: Sat, 2 Apr 2016 23:57:33 +0300
+Subject: [PATCH 058/114] Step 4.5: Add login view
 
 ---
  client/templates/login.html | 15 +++++++++++++++
@@ -2561,41 +3175,32 @@ index 0000000..c9758d0
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From f5c075f9f8f9a05b7cf27d35198eefa4dcfb6740 Mon Sep 17 00:00:00 2001
+From 23e2942549c4d73aca96f9bb30b2e70e2f4aed15 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 02:01:13 +0200
-Subject: [PATCH 50/98] Step 4.5: Add the login controller with Accounts API
- usages and
+Date: Sun, 3 Apr 2016 00:17:17 +0300
+Subject: [PATCH 059/114] Step 4.6: Add login controller
 
 ---
- client/scripts/controllers/login.controller.js | 53 ++++++++++++++++++++++++++
- 1 file changed, 53 insertions(+)
+ client/scripts/controllers/login.controller.js | 43 ++++++++++++++++++++++++++
+ 1 file changed, 43 insertions(+)
  create mode 100644 client/scripts/controllers/login.controller.js
 
 diff --git a/client/scripts/controllers/login.controller.js b/client/scripts/controllers/login.controller.js
 new file mode 100644
-index 0000000..205c8e4
+index 0000000..dd24702
 --- /dev/null
 +++ b/client/scripts/controllers/login.controller.js
-@@ -0,0 +1,53 @@
-+angular
-+  .module('Whatsapp')
-+  .controller('LoginCtrl', LoginCtrl);
+@@ -0,0 +1,43 @@
++import { Controller } from '../entities';
 +
-+function LoginCtrl($scope, $reactive, $state, $ionicLoading, $ionicPopup, $log) {
-+  $reactive(this).attach($scope);
-+
-+  this.login = login;
-+
-+  ////////////
-+
-+  function login() {
++export default class LoginCtrl extends Controller {
++  login() {
 +    if (_.isEmpty(this.phone)) return;
 +
-+    let confirmPopup = $ionicPopup.confirm({
++    const confirmPopup = this.$ionicPopup.confirm({
 +      title: 'Number confirmation',
 +      template: '<div>' + this.phone + '</div><div>Is your phone number above correct?</div>',
 +      cssClass: 'text-center',
@@ -2608,132 +3213,216 @@ index 0000000..205c8e4
 +    confirmPopup.then((res) => {
 +      if (!res) return;
 +
-+      $ionicLoading.show({
++      this.$ionicLoading.show({
 +        template: 'Sending verification code...'
 +      });
 +
 +      Accounts.requestPhoneVerification(this.phone, (err) => {
-+        $ionicLoading.hide();
-+
-+        if (err) {
-+          return handleError(err);
-+        }
-+
-+        $state.go('confirmation', {phone: this.phone});
++        this.$ionicLoading.hide();
++        if (err) return this.handleError(err);
++        this.$state.go('confirmation', { phone: this.phone });
 +      });
 +    });
 +  }
 +
-+  function handleError(err) {
-+    $log.error('Login error ', err);
++  handleError(err) {
++    this.$log.error('Login error ', err);
 +
-+    $ionicPopup.alert({
++    this.$ionicPopup.alert({
 +      title: err.reason || 'Login failed',
 +      template: 'Please try again',
 +      okType: 'button-positive button-clear'
 +    });
 +  }
 +}
++
++LoginCtrl.$inject = ['$scope', '$state', '$ionicLoading', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From c1791839c42f41689ad3e475bffd900f0c22be7d Mon Sep 17 00:00:00 2001
+From e780045795fca8b87244c84b68a6fc5ebbf8cb78 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:07:14 +0200
-Subject: [PATCH 51/98] Step 4.6: Add a requirement for user to be logged in
+Date: Sun, 3 Apr 2016 00:43:16 +0300
+Subject: [PATCH 060/114] Step 4.7: Load login controller
 
 ---
- client/scripts/routes.js | 23 +++++++++++++++++++++--
- 1 file changed, 21 insertions(+), 2 deletions(-)
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 7948039..310012d 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -12,6 +12,7 @@ import 'ionic-scripts';
+ import Definer from '../definer';
+ import ChatsCtrl from '../controllers/chats.controller';
+ import ChatCtrl from '../controllers/chat.controller';
++import LoginCtrl from '../controllers/login.controller';
+ import InputDirective from '../directives/input.directive';
+ import CalendarFilter from '../filters/calendar.filter';
+ import RoutesConfig from '../routes';
+@@ -27,6 +28,7 @@ const App = angular.module('Whatsapp', [
+ new Definer(App)
+   .define(ChatsCtrl)
+   .define(ChatCtrl)
++  .define(LoginCtrl)
+   .define(InputDirective)
+   .define(CalendarFilter)
+   .define(RoutesConfig);
+-- 
+2.5.0
+
+
+From f11ee1ef9f2c805d9807da525874bffd69e71b93 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sun, 3 Apr 2016 00:34:22 +0300
+Subject: [PATCH 061/114] Step 4.8: Add resolve to auth routes
+
+---
+ client/scripts/routes.js | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index 54dc648..9f070ea 100644
+index 699e738..4e805d3 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
-@@ -7,7 +7,10 @@ function config($stateProvider, $urlRouterProvider) {
-     .state('tab', {
-       url: '/tab',
-       abstract: true,
--      templateUrl: 'client/templates/tabs.html'
-+      templateUrl: 'client/templates/tabs.html',
-+      resolve: {
-+        user: isAuthorized
-+      }
-     })
-     .state('tab.chats', {
-       url: '/chats',
-@@ -40,8 +43,24 @@ function config($stateProvider, $urlRouterProvider) {
-     .state('profile', {
-       url: '/profile',
-       templateUrl: 'client/templates/profile.html',
--      controller: 'ProfileCtrl as profile'
-+      controller: 'ProfileCtrl as profile',
-+      resolve: {
-+        user: isAuthorized
-+      }
-     });
+@@ -1,12 +1,21 @@
+ import { Config } from './entities';
  
-   $urlRouterProvider.otherwise('tab/chats');
+ export default class RoutesConfig extends Config {
++  constructor() {
++    super(...arguments);
 +
-+  ////////////
++    this.isAuthorized = ['$auth', this.isAuthorized.bind(this)];
++  }
 +
-+  function isAuthorized($q) {
-+    let deferred = $q.defer();
+   configure() {
+     this.$stateProvider
+       .state('tab', {
+         url: '/tab',
+         abstract: true,
+-        templateUrl: 'client/templates/tabs.html'
++        templateUrl: 'client/templates/tabs.html',
++        resolve: {
++          user: this.isAuthorized
++        }
+       })
+       .state('tab.chats', {
+         url: '/chats',
+@@ -39,11 +48,18 @@ export default class RoutesConfig extends Config {
+       .state('profile', {
+         url: '/profile',
+         templateUrl: 'client/templates/profile.html',
+-        controller: 'ProfileCtrl as profile'
++        controller: 'ProfileCtrl as profile',
++        resolve: {
++          user: this.isAuthorized
++        }
+       });
+ 
+     this.$urlRouterProvider.otherwise('tab/chats');
+   }
 +
-+    if (_.isEmpty(Meteor.user()))
-+      deferred.reject('AUTH_REQUIRED');
-+    else
-+      deferred.resolve();
-+
-+    return deferred.promise;
++  isAuthorized($auth) {
++    return $auth.awaitUser();
 +  }
  }
+ 
+ RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From bd434959cd1c496d85e8724dd47404bdfcbc62ee Mon Sep 17 00:00:00 2001
+From 9cb67993556addde337a244a2c98ebbb34a9710e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:08:29 +0200
-Subject: [PATCH 52/98] Step 4.7: Add to transition to the login view in case
- the user is not logged in
+Date: Sun, 3 Apr 2016 21:42:50 +0300
+Subject: [PATCH 062/114] Step 4.9: Add routes runner
 
 ---
- client/scripts/auth.js | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
- create mode 100644 client/scripts/auth.js
+ client/scripts/routes.js | 19 ++++++++++++++++---
+ 1 file changed, 16 insertions(+), 3 deletions(-)
 
-diff --git a/client/scripts/auth.js b/client/scripts/auth.js
-new file mode 100644
-index 0000000..9bb4205
---- /dev/null
-+++ b/client/scripts/auth.js
-@@ -0,0 +1,13 @@
-+angular
-+  .module('Whatsapp')
-+  .run(run);
+diff --git a/client/scripts/routes.js b/client/scripts/routes.js
+index 4e805d3..8f0ee5c 100644
+--- a/client/scripts/routes.js
++++ b/client/scripts/routes.js
+@@ -1,6 +1,6 @@
+-import { Config } from './entities';
++import { Config, Runner } from './entities';
+ 
+-export default class RoutesConfig extends Config {
++export class RoutesConfig extends Config {
+   constructor() {
+     super(...arguments);
+ 
+@@ -62,4 +62,17 @@ export default class RoutesConfig extends Config {
+   }
+ }
+ 
+-RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+\ No newline at end of file
++export class RoutesRunner extends Runner {
++  run() {
++    this.$rootScope.$on('$stateChangeError', (...args) => {
++      const err = _.last(args);
 +
-+function run($rootScope, $state) {
-+  $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
-+    // We can catch the error thrown when the $requireUser promise is rejected
-+    // and redirect the user back to the main page
-+    if (error === 'AUTH_REQUIRED') {
-+      $state.go('login');
-+    }
-+  });
++      if (err === 'AUTH_REQUIRED') {
++        this.$state.go('login');
++      }
++    });
++  }
 +}
++
++RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
++RoutesRunner.$inject = ['$rootScope', '$state'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 152f67b6dd08f58737cab0fd4003c4d250932585 Mon Sep 17 00:00:00 2001
+From 93471c73166a9fe4f8f265d36ad881375ad582dd Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:09:31 +0200
-Subject: [PATCH 53/98] Step 4.8: Add some CSS for better login view
+Date: Sun, 3 Apr 2016 21:44:46 +0300
+Subject: [PATCH 063/114] Step 4.10: Create routes runner
+
+---
+ client/scripts/lib/app.js | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 310012d..3a00d00 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -15,7 +15,7 @@ import ChatCtrl from '../controllers/chat.controller';
+ import LoginCtrl from '../controllers/login.controller';
+ import InputDirective from '../directives/input.directive';
+ import CalendarFilter from '../filters/calendar.filter';
+-import RoutesConfig from '../routes';
++import { RoutesConfig, RoutesRunner } from '../routes';
+ 
+ // App
+ const App = angular.module('Whatsapp', [
+@@ -31,7 +31,8 @@ new Definer(App)
+   .define(LoginCtrl)
+   .define(InputDirective)
+   .define(CalendarFilter)
+-  .define(RoutesConfig);
++  .define(RoutesConfig)
++  .define(RoutesRunner);
+ 
+ // Startup
+ if (Meteor.isCordova) {
+-- 
+2.5.0
+
+
+From f064b6227482c57cf42019bdd88feb07807dc9f5 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sun, 3 Apr 2016 21:47:03 +0300
+Subject: [PATCH 064/114] Step 4.11: Add login stylesheet
 
 ---
  client/styles/login.scss | 6 ++++++
@@ -2754,13 +3443,13 @@ index 0000000..a6c2a96
 +}
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From c86d41a2b1e9f93f214fd178945a3605930f047f Mon Sep 17 00:00:00 2001
+From a24c61ab947fb60f4365a0732a10951f5851e87d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:11:08 +0200
-Subject: [PATCH 54/98] Step 4.9: Add the account confirmation view
+Date: Sun, 3 Apr 2016 21:48:42 +0300
+Subject: [PATCH 065/114] Step 4.12: Add confirmation view
 
 ---
  client/templates/confirmation.html | 20 ++++++++++++++++++++
@@ -2769,11 +3458,11 @@ Subject: [PATCH 54/98] Step 4.9: Add the account confirmation view
 
 diff --git a/client/templates/confirmation.html b/client/templates/confirmation.html
 new file mode 100644
-index 0000000..aca3c67
+index 0000000..23f4be1
 --- /dev/null
 +++ b/client/templates/confirmation.html
 @@ -0,0 +1,20 @@
-+<ion-view title="{{confirmation.phone}}">
++<ion-view title="{{ confirmation.phone }}">
 +  <ion-nav-buttons side="right">
 +    <button ng-click="confirmation.confirm()" ng-disabled="!confirmation.code || confirmation.code.length === 0" class="button button-clear button-positive">Done</button>
 +  </ion-nav-buttons>
@@ -2795,65 +3484,97 @@ index 0000000..aca3c67
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 768098a801e371e31a99c756b53dae96393ba855 Mon Sep 17 00:00:00 2001
+From 92223dbbefdde625b9d14daf6735cdcb9ccf14a1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:12:57 +0200
-Subject: [PATCH 55/98] Step 4.10: Add the user confirmation controller
+Date: Sun, 3 Apr 2016 21:50:37 +0300
+Subject: [PATCH 066/114] Step 4.13: Create confirmation controller
 
 ---
- .../scripts/controllers/confirmation.controller.js | 31 ++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ .../scripts/controllers/confirmation.controller.js | 30 ++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
  create mode 100644 client/scripts/controllers/confirmation.controller.js
 
 diff --git a/client/scripts/controllers/confirmation.controller.js b/client/scripts/controllers/confirmation.controller.js
 new file mode 100644
-index 0000000..9f35a43
+index 0000000..43ffa26
 --- /dev/null
 +++ b/client/scripts/controllers/confirmation.controller.js
-@@ -0,0 +1,31 @@
-+angular
-+  .module('Whatsapp')
-+  .controller('ConfirmationCtrl', ConfirmationCtrl);
+@@ -0,0 +1,30 @@
++import { Controller } from '../entities';
 +
-+function ConfirmationCtrl($scope, $reactive, $state, $ionicPopup, $log) {
-+  $reactive(this).attach($scope);
++export default class ConfirmationCtrl extends Controller {
++  constructor() {
++    super(...arguments);
 +
-+  this.phone = $state.params.phone;
-+  this.confirm = confirm;
++    this.phone = this.$state.params.phone;
++  }
 +
-+  ////////////
-+
-+  function confirm() {
++  confirm() {
 +    if (_.isEmpty(this.code)) return;
 +
-+    Accounts.verifyPhone(this.phone, this.code, function (err) {
-+      if (err) return handleError(err);
-+      $state.go('profile');
++    Accounts.verifyPhone(this.phone, this.code, (err) => {
++      if (err) return this.handleError(err);
++      this.$state.go('profile');
 +    });
 +  }
 +
-+  function handleError(err) {
-+    $log.error('Verfication error ', err);
++  handleError(err) {
++    this.$log.error('Confirmation error ', err);
 +
-+    $ionicPopup.alert({
-+      title: err.reason || 'Verfication failed',
++    this.$ionicPopup.alert({
++      title: err.reason || 'Confirmation failed',
 +      template: 'Please try again',
 +      okType: 'button-positive button-clear'
 +    });
 +  }
 +}
++
++ConfirmationCtrl.$inject = ['$scope', '$state', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From e687c3b27fc002001c6c9cf58d62c46b0f2a2baf Mon Sep 17 00:00:00 2001
+From 30a2249a4c81a3e9d5d061f0a3d99e9a07972c07 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:17:59 +0200
-Subject: [PATCH 56/98] Step 4.11: Add the profile settings view
+Date: Sun, 3 Apr 2016 21:52:28 +0300
+Subject: [PATCH 067/114] Step 4.14: Load confirmation controller
+
+---
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 3a00d00..907399c 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -12,6 +12,7 @@ import 'ionic-scripts';
+ import Definer from '../definer';
+ import ChatsCtrl from '../controllers/chats.controller';
+ import ChatCtrl from '../controllers/chat.controller';
++import ConfirmationCtrl from '../controllers/confirmation.controller';
+ import LoginCtrl from '../controllers/login.controller';
+ import InputDirective from '../directives/input.directive';
+ import CalendarFilter from '../filters/calendar.filter';
+@@ -28,6 +29,7 @@ const App = angular.module('Whatsapp', [
+ new Definer(App)
+   .define(ChatsCtrl)
+   .define(ChatCtrl)
++  .define(ConfirmationCtrl)
+   .define(LoginCtrl)
+   .define(InputDirective)
+   .define(CalendarFilter)
+-- 
+2.5.0
+
+
+From cc3ab209fdfbe16a362d0dc8941b2d8d80eaadc4 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sun, 3 Apr 2016 21:53:56 +0300
+Subject: [PATCH 068/114] Step 4.15: Add profile view
 
 ---
  client/templates/profile.html | 23 +++++++++++++++++++++++
@@ -2891,68 +3612,98 @@ index 0000000..c18fe20
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From cc7fa62607e9e161e1e52d0b80d47baeb43eafd6 Mon Sep 17 00:00:00 2001
+From a0b5848a419d668638e4df234bf91fd131041542 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:16:23 +0200
-Subject: [PATCH 57/98] Step 4.12: Add profile settings controller
+Date: Sun, 3 Apr 2016 22:03:23 +0300
+Subject: [PATCH 069/114] Step 4.16: Create profile controller
 
 ---
- client/scripts/controllers/profile.controller.js | 34 ++++++++++++++++++++++++
- 1 file changed, 34 insertions(+)
+ client/scripts/controllers/profile.controller.js | 31 ++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
  create mode 100644 client/scripts/controllers/profile.controller.js
 
 diff --git a/client/scripts/controllers/profile.controller.js b/client/scripts/controllers/profile.controller.js
 new file mode 100644
-index 0000000..ffe585d
+index 0000000..77f956e
 --- /dev/null
 +++ b/client/scripts/controllers/profile.controller.js
-@@ -0,0 +1,34 @@
-+angular
-+  .module('Whatsapp')
-+  .controller('ProfileCtrl', ProfileCtrl);
+@@ -0,0 +1,31 @@
++import { Controller } from '../entities';
 +
-+function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log) {
-+  $reactive(this).attach($scope);
++export default class ProfileCtrl extends Controller {
++  constructor() {
++    super(...arguments);
 +
-+  let user = Meteor.user();
-+  let name = user && user.profile ? user.profile.name : '';
++    const profile = this.currentUser && this.currentUser.profile;
++    this.name = profile ? profile.name : '';
++  }
 +
-+  this.name = name;
-+  this.updateName = updateName;
-+
-+  ////////////
-+
-+  function updateName () {
++  updateName() {
 +    if (_.isEmpty(this.name)) return;
 +
-+    Meteor.call('updateName', this.name, (err) => {
-+      if (err) return handleError(err);
-+      $state.go('tab.chats');
++    this.callMethod('updateName', this.name, (err) => {
++      if (err) return this.handleError(err);
++      this.$state.go('tab.chats');
 +    });
 +  }
 +
-+  function handleError (err) {
-+    $log.error('profile save error ', err);
++  handleError(err) {
++    this.$log.error('Profile save error ', err);
 +
-+    $ionicPopup.alert({
++    this.$ionicPopup.alert({
 +      title: err.reason || 'Save failed',
 +      template: 'Please try again',
 +      okType: 'button-positive button-clear'
 +    });
 +  }
 +}
++
++ProfileCtrl.$inject = ['$scope', '$state', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 66b7ce7fb2e9f06fe264b5d9b9490e18666a16f8 Mon Sep 17 00:00:00 2001
+From d738ecaedadf390a9d4562935306cf8bfd336a52 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:19:48 +0200
-Subject: [PATCH 58/98] Step 4.13: Add CSS for the profile settings view
+Date: Sun, 3 Apr 2016 22:06:29 +0300
+Subject: [PATCH 070/114] Step 4.17: Load profile controller
+
+---
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 907399c..9560b48 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -14,6 +14,7 @@ import ChatsCtrl from '../controllers/chats.controller';
+ import ChatCtrl from '../controllers/chat.controller';
+ import ConfirmationCtrl from '../controllers/confirmation.controller';
+ import LoginCtrl from '../controllers/login.controller';
++import ProfileCtrl from '../controllers/profile.controller';
+ import InputDirective from '../directives/input.directive';
+ import CalendarFilter from '../filters/calendar.filter';
+ import { RoutesConfig, RoutesRunner } from '../routes';
+@@ -31,6 +32,7 @@ new Definer(App)
+   .define(ChatCtrl)
+   .define(ConfirmationCtrl)
+   .define(LoginCtrl)
++  .define(ProfileCtrl)
+   .define(InputDirective)
+   .define(CalendarFilter)
+   .define(RoutesConfig)
+-- 
+2.5.0
+
+
+From 8df0b7061d30a2ce3e255702e4b958c1f3ec13b8 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sun, 3 Apr 2016 22:08:01 +0300
+Subject: [PATCH 071/114] Step 4.18: Add profile stylesheet
 
 ---
  client/styles/profile.scss | 40 ++++++++++++++++++++++++++++++++++++++++
@@ -2961,7 +3712,7 @@ Subject: [PATCH 58/98] Step 4.13: Add CSS for the profile settings view
 
 diff --git a/client/styles/profile.scss b/client/styles/profile.scss
 new file mode 100644
-index 0000000..c7f082f
+index 0000000..ef4c6cc
 --- /dev/null
 +++ b/client/styles/profile.scss
 @@ -0,0 +1,40 @@
@@ -3004,26 +3755,26 @@ index 0000000..c7f082f
 +  .profile-name {
 +    margin-top: 20px;
 +  }
-+} 
++}
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 08c4e85dd2b2c65deaa03a343553411c2b4d2ded Mon Sep 17 00:00:00 2001
+From 18aa3d79955e728efe13040daa6ccbbf84ac7c95 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:20:42 +0200
-Subject: [PATCH 59/98] Step 4.14: Add updateName method to the server
+Date: Sun, 3 Apr 2016 23:25:48 +0300
+Subject: [PATCH 072/114] Step 4.19: Add update name method
 
 ---
- lib/methods.js | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ lib/methods.js | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index cbec6d9..a30d606 100644
+index 9b996dd..0c0ddb0 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -11,5 +11,18 @@ Meteor.methods({
+@@ -11,5 +11,19 @@ Meteor.methods({
      Chats.update(message.chatId, { $set: { lastMessage: message } });
  
      return messageId;
@@ -3035,8 +3786,9 @@ index cbec6d9..a30d606 100644
 +    }
 +
 +    check(name, String);
++
 +    if (name.length === 0) {
-+      throw Meteor.Error('name-required', 'Must proive user name');
++      throw Meteor.Error('name-required', 'Must provide a user name');
 +    }
 +
 +    return Meteor.users.update(this.userId, { $set: { 'profile.name': name } });
@@ -3044,27 +3796,26 @@ index cbec6d9..a30d606 100644
  });
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 08f26f6351bd542b490a6075cd640d6e098a42c2 Mon Sep 17 00:00:00 2001
+From fa0c8bbc9282fceec50cf83b35803486bc4e8514 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:27:46 +0200
-Subject: [PATCH 60/98] Step 4.15: Verify and add userId for each message that
- sent
+Date: Sun, 3 Apr 2016 23:49:24 +0300
+Subject: [PATCH 073/114] Step 4.20: Bind user to any new message
 
 ---
  lib/methods.js | 6 ++++++
  1 file changed, 6 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index a30d606..082eba5 100644
+index 0c0ddb0..c990546 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
 @@ -1,11 +1,17 @@
  Meteor.methods({
-   newMessage (message) {
-+    if (! this.userId) {
+   newMessage(message) {
++    if (!this.userId) {
 +      throw new Meteor.Error('not-logged-in',
 +        'Must be logged in to send message.');
 +    }
@@ -3077,49 +3828,49 @@ index a30d606..082eba5 100644
      message.timestamp = new Date();
 +    message.userId = this.userId;
  
-     let messageId = Messages.insert(message);
+     const messageId = Messages.insert(message);
      Chats.update(message.chatId, { $set: { lastMessage: message } });
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 9b4600de078c4f9dbc33a73f4870246d91ee7d84 Mon Sep 17 00:00:00 2001
+From ffc083c19b1cc5d87a5472082376666af44ad959 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:29:55 +0200
-Subject: [PATCH 61/98] Step 4.16: Add settings route definition
+Date: Sun, 3 Apr 2016 23:51:43 +0300
+Subject: [PATCH 074/114] Step 4.21: Add settings route state
 
 ---
  client/scripts/routes.js | 9 +++++++++
  1 file changed, 9 insertions(+)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index 9f070ea..92f2657 100644
+index 8f0ee5c..d824d70 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
-@@ -47,6 +47,15 @@ function config($stateProvider, $urlRouterProvider) {
-       resolve: {
-         user: isAuthorized
-       }
-+    })
-+    .state('tab.settings', {
-+      url: '/settings',
-+      views: {
-+        'tab-settings': {
-+          templateUrl: 'client/templates/settings.html',
-+          controller: 'SettingsCtrl as settings',
+@@ -52,6 +52,15 @@ export class RoutesConfig extends Config {
+         resolve: {
+           user: this.isAuthorized
+         }
++      })
++      .state('tab.settings', {
++        url: '/settings',
++        views: {
++          'tab-settings': {
++            templateUrl: 'client/templates/settings.html',
++            controller: 'SettingsCtrl as settings',
++          }
 +        }
-+      }
-     });
+       });
  
-   $urlRouterProvider.otherwise('tab/chats');
+     this.$urlRouterProvider.otherwise('tab/chats');
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 9210bd4529a152d1d3fc98aee5f382b3d8155f3e Mon Sep 17 00:00:00 2001
+From 4b511aaa61d95e9bc32f89335cdc6d2d0fd9e31d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:32:11 +0200
-Subject: [PATCH 62/98] Step 4.17: Add settings view with logout button
+Date: Sun, 3 Apr 2016 23:54:20 +0300
+Subject: [PATCH 075/114] Step 4.22: Add settings view
 
 ---
  client/templates/settings.html | 7 +++++++
@@ -3141,117 +3892,122 @@ index 0000000..eadaf50
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From b273622b304f56d89d261648f33409961a8b9eff Mon Sep 17 00:00:00 2001
+From 7f096216e85d726ea61e9f0b024febbf20d477f9 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:33:13 +0200
-Subject: [PATCH 63/98] Step 4.18: Add settings controller with logout login
+Date: Sun, 3 Apr 2016 23:55:04 +0300
+Subject: [PATCH 076/114] Step 4.23: Add settings controller
 
 ---
- client/scripts/controllers/settings.controller.js | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
+ client/scripts/controllers/settings.controller.js | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
  create mode 100644 client/scripts/controllers/settings.controller.js
 
 diff --git a/client/scripts/controllers/settings.controller.js b/client/scripts/controllers/settings.controller.js
 new file mode 100644
-index 0000000..237e8fe
+index 0000000..66ada04
 --- /dev/null
 +++ b/client/scripts/controllers/settings.controller.js
-@@ -0,0 +1,17 @@
-+angular
-+  .module('Whatsapp')
-+  .controller('SettingsCtrl', SettingsCtrl);
+@@ -0,0 +1,22 @@
++import { Controller } from '../entities';
 +
-+function SettingsCtrl($scope, $reactive, $state) {
-+  $reactive(this).attach($scope);
-+
-+  this.logout = logout;
-+
-+  ////////////
-+
-+  function logout() {
++export default class SettingsCtrl extends Controller {
++  logout() {
 +    Meteor.logout((err) => {
-+      $state.go('login');
++      if (err) return this.handleError(err);
++      this.$state.go('login');
++    })
++  }
++
++  handleError (err) {
++    this.$log.error('Settings modification error', err);
++
++    this.$ionicPopup.alert({
++      title: err.reason || 'Settings modification failed',
++      template: 'Please try again',
++      okType: 'button-positive button-clear'
 +    });
 +  }
 +}
++
++SettingsCtrl.$inject = ['$scope', '$state', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From f340596279644adc080bca9b97103bbb1e488a0c Mon Sep 17 00:00:00 2001
+From 1f5d9b8dd93eb1a94f83c72ad7a64159def6bd0f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:34:39 +0200
-Subject: [PATCH 64/98] Step 4.19: Update user's identity when viewing messages
+Date: Fri, 8 Apr 2016 12:53:42 +0300
+Subject: [PATCH 077/114] Step 4.24: Load settings controller
 
 ---
- client/templates/chat.html | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 9560b48..d46bf55 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -15,6 +15,7 @@ import ChatCtrl from '../controllers/chat.controller';
+ import ConfirmationCtrl from '../controllers/confirmation.controller';
+ import LoginCtrl from '../controllers/login.controller';
+ import ProfileCtrl from '../controllers/profile.controller';
++import SettingsCtrl from '../controllers/settings.controller';
+ import InputDirective from '../directives/input.directive';
+ import CalendarFilter from '../filters/calendar.filter';
+ import { RoutesConfig, RoutesRunner } from '../routes';
+@@ -33,6 +34,7 @@ new Definer(App)
+   .define(ConfirmationCtrl)
+   .define(LoginCtrl)
+   .define(ProfileCtrl)
++  .define(SettingsCtrl)
+   .define(InputDirective)
+   .define(CalendarFilter)
+   .define(RoutesConfig)
+-- 
+2.5.0
+
+
+From 2d053f67d1c62c542248f355aa8199142c7f16bc Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Sun, 3 Apr 2016 23:59:09 +0300
+Subject: [PATCH 078/114] Step 4.25: Classify message ownership
+
+---
+ client/templates/chat.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index 2185326..1d11276 100644
+index 2185326..847ee55 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
-@@ -5,9 +5,9 @@
+@@ -5,7 +5,7 @@
    <ion-content class="chat" delegate-handle="chatScroll">
      <div class="message-list">
        <div ng-repeat="message in chat.messages" class="message-wrapper">
 -        <div class="message" ng-class-even="'message-mine'" ng-class-odd="'message-other'">
--          <div class="message-text">{{ message.text }}</div>
--          <span class="message-timestamp">{{ message.timestamp | amDateFormat: 'HH:MM' }}</span>
 +        <div class="message" ng-class="message.userId === $root.currentUser._id ? 'message-mine' : 'message-other'">
-+          <div class="message-text">{{message.text}}</div>
-+          <span class="message-timestamp">{{message.timestamp | amDateFormat: 'HH:MM'}}</span>
+           <div class="message-text">{{ message.text }}</div>
+           <span class="message-timestamp">{{ message.timestamp | amDateFormat: 'HH:MM' }}</span>
          </div>
-       </div>
-     </div>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From d223d2ea4a3bf67ec552f71b5aa277da03ab4964 Mon Sep 17 00:00:00 2001
+From 25e4f531da80fff382d04ebb6c50695bc2b76388 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:35:56 +0200
-Subject: [PATCH 65/98] Step 4.20: Add auto scroll when new messages arrives
-
----
- client/scripts/controllers/chat.controller.js | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index 7bcc5ba..24e92e2 100644
---- a/client/scripts/controllers/chat.controller.js
-+++ b/client/scripts/controllers/chat.controller.js
-@@ -22,6 +22,11 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
-     },
-   });
- 
-+  $scope.$watchCollection('chat.messages', (oldVal, newVal) => {
-+    let animate = oldVal.length !== newVal.length;
-+    $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
-+  });
-+
-   ////////////
- 
-   function sendMessage () {
--- 
-2.5.4 (Apple Git-61)
-
-
-From c756b7eeddb1f7bc0cecce6cc1a09e4dcea6bcb7 Mon Sep 17 00:00:00 2001
-From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:37:22 +0200
-Subject: [PATCH 66/98] Step 5.1: Add button for opening the users list modal
+Date: Mon, 4 Apr 2016 00:09:27 +0300
+Subject: [PATCH 079/114] Step 5.0: Add new chat button
 
 ---
  client/templates/chats.html | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index 6ed2537..d2f8aca 100644
+index dada8ed..d9e2271 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
 @@ -1,4 +1,8 @@
@@ -3264,53 +4020,47 @@ index 6ed2537..d2f8aca 100644
      <ion-list>
        <ion-item
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From ca44a66afb3e0fed2084da92293df2a5d32621df Mon Sep 17 00:00:00 2001
+From 396b4170fff9e795fbb6efe575e58f6ee6af18b8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:40:33 +0200
-Subject: [PATCH 67/98] Step 5.2: Add logic for opening the modal
+Date: Mon, 4 Apr 2016 00:13:08 +0300
+Subject: [PATCH 080/114] Step 5.1: Add new chat button logic
 
 ---
- client/scripts/controllers/chats.controller.js | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+ client/scripts/controllers/chats.controller.js | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index b4dca9b..e5e0806 100644
+index 20111a3..64111ec 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -2,9 +2,10 @@ angular
-   .module('Whatsapp')
-   .controller('ChatsCtrl', ChatsCtrl);
+@@ -11,9 +11,13 @@ export default class ChatsCtrl extends Controller {
+     });
+   }
  
--function ChatsCtrl ($scope, $reactive) {
-+function ChatsCtrl ($scope, $reactive, NewChat) {
-   $reactive(this).attach($scope);
- 
-+  this.showNewChatModal = showNewChatModal;
-   this.remove = remove;
- 
-   this.helpers({
-@@ -15,6 +16,10 @@ function ChatsCtrl ($scope, $reactive) {
- 
-   ////////////
- 
-+  function showNewChatModal() {
-+    NewChat.showModal();
++  showNewChatModal() {
++    this.NewChat.showModal();
 +  }
 +
-   function remove (chat) {
+   remove(chat) {
      this.data.remove(chat);
    }
+ }
+ 
+-ChatsCtrl.$inject = ['$scope'];
+\ No newline at end of file
++ChatsCtrl.$inject = ['$scope', 'NewChat'];
+\ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From a127ff0215848d0765a98993874f92b970f6e16a Mon Sep 17 00:00:00 2001
+From a77e77097ec2cb22a47de05bb36656d71dc7025f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:42:01 +0200
-Subject: [PATCH 68/98] Step 5.3: Add the view of the new chat modal
+Date: Mon, 4 Apr 2016 00:14:52 +0300
+Subject: [PATCH 081/114] Step 5.2: Add new chat modal view
 
 ---
  client/templates/new-chat.html | 19 +++++++++++++++++++
@@ -3344,13 +4094,13 @@ index 0000000..a571aa7
 +</ion-modal-view>
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From d82f6a809382a0a2db231f2d5eacc05eb92da78f Mon Sep 17 00:00:00 2001
+From eb165c6829fc6decb1090c1a006799212d155e49 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:43:37 +0200
-Subject: [PATCH 69/98] Step 5.4: Add NewChat service
+Date: Mon, 4 Apr 2016 00:18:07 +0300
+Subject: [PATCH 082/114] Step 5.3: Create new chat service
 
 ---
  client/scripts/services/new-chat.service.js | 28 ++++++++++++++++++++++++++++
@@ -3359,114 +4109,192 @@ Subject: [PATCH 69/98] Step 5.4: Add NewChat service
 
 diff --git a/client/scripts/services/new-chat.service.js b/client/scripts/services/new-chat.service.js
 new file mode 100644
-index 0000000..0937d8e
+index 0000000..c0c95a6
 --- /dev/null
 +++ b/client/scripts/services/new-chat.service.js
 @@ -0,0 +1,28 @@
-+angular
-+  .module('Whatsapp')
-+  .service('NewChat', NewChat);
++import { Service } from '../entities';
 +
-+function NewChat($rootScope, $ionicModal) {
-+  let templateUrl = 'client/templates/new-chat.html';
++export default class NewChat extends Service {
++  constructor() {
++    super(...arguments);
 +
-+  this.showModal = showModal;
-+  this.hideModal = hideModal;
++    this.templateUrl = 'client/templates/new-chat.html';
++  }
 +
-+  ////////////
++  showModal() {
++    this.scope = this.$rootScope.$new();
 +
-+  function showModal () {
-+    this._scope = $rootScope.$new();
-+
-+    $ionicModal.fromTemplateUrl(templateUrl, {
-+      scope: this._scope
-+    }).then((modal) => {
-+      this._modal = modal;
-+      modal.show();
++    this.$ionicModal.fromTemplateUrl(this.templateUrl, {
++      scope: this.scope
++    })
++    .then((modal) => {
++      this.modal = modal;
++      this.modal.show();
 +    });
 +  }
 +
-+  function hideModal () {
-+    this._scope.$destroy();
-+    this._modal.remove();
++  hideModal() {
++    this.scope.$destroy();
++    this.modal.remove();
 +  }
 +}
++
++NewChat.$inject = ['$rootScope', '$ionicModal'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From d52bb21871c7a371cfc5c2a19bc9b30136e72a80 Mon Sep 17 00:00:00 2001
+From 04d8aa03b2368fbde079642015de8b0199456d42 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:44:57 +0200
-Subject: [PATCH 70/98] Step 5.5: Add NewChatCtrl controller
+Date: Mon, 4 Apr 2016 00:20:05 +0300
+Subject: [PATCH 083/114] Step 5.4: Load new chat service
 
 ---
- client/scripts/controllers/new-chat.controller.js | 36 +++++++++++++++++++++++
- 1 file changed, 36 insertions(+)
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index d46bf55..5f219e8 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -18,6 +18,7 @@ import ProfileCtrl from '../controllers/profile.controller';
+ import SettingsCtrl from '../controllers/settings.controller';
+ import InputDirective from '../directives/input.directive';
+ import CalendarFilter from '../filters/calendar.filter';
++import NewChatService from '../services/new-chat.service';
+ import { RoutesConfig, RoutesRunner } from '../routes';
+ 
+ // App
+@@ -37,6 +38,7 @@ new Definer(App)
+   .define(SettingsCtrl)
+   .define(InputDirective)
+   .define(CalendarFilter)
++  .define(NewChatService)
+   .define(RoutesConfig)
+   .define(RoutesRunner);
+ 
+-- 
+2.5.0
+
+
+From 9ce99c4965bf807c271ed25127f6b28895670cd1 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Mon, 4 Apr 2016 00:27:03 +0300
+Subject: [PATCH 084/114] Step 5.5: Add new chat controller
+
+---
+ client/scripts/controllers/new-chat.controller.js | 48 +++++++++++++++++++++++
+ 1 file changed, 48 insertions(+)
  create mode 100644 client/scripts/controllers/new-chat.controller.js
 
 diff --git a/client/scripts/controllers/new-chat.controller.js b/client/scripts/controllers/new-chat.controller.js
 new file mode 100644
-index 0000000..0a51726
+index 0000000..976501e
 --- /dev/null
 +++ b/client/scripts/controllers/new-chat.controller.js
-@@ -0,0 +1,36 @@
-+angular
-+  .module('Whatsapp')
-+  .controller('NewChatCtrl', NewChatCtrl);
+@@ -0,0 +1,48 @@
++import { Controller } from '../entities';
 +
-+function NewChatCtrl($scope, $reactive, $state, NewChat) {
-+  $reactive(this).attach($scope);
++export default class NewChatCtrl extends Controller {
++  constructor() {
++    super(...arguments);
 +
-+  this.hideNewChatModal = hideNewChatModal;
-+  this.newChat = newChat;
-+
-+  this.helpers({
-+    users() {
-+      return Meteor.users.find({ _id: { $ne: Meteor.userId() } });
-+    }
-+  });
-+
-+  ////////////
-+
-+  function hideNewChatModal() {
-+    NewChat.hideModal();
++    this.helpers({
++      users() {
++        return Meteor.users.find({ _id: { $ne: this.currentUserId } });
++      }
++    });
 +  }
 +
-+  function newChat(userId) {
-+    let chat = Chats.findOne({ type: 'chat', userIds: { $all: [Meteor.userId(), userId] } });
++  newChat(userId) {
++    let chat = Chats.findOne({ userIds: { $all: [this.currentUserId, userId] } });
++
 +    if (chat) {
-+      return goToChat(chat._id);
++      this.hideNewChatModal();
++      return this.goToChat(chat._id);
 +    }
 +
-+    Meteor.call('newChat', userId, goToChat);
++    this.callMethod('newChat', userId, (err, chatId) => {
++      this.hideNewChatModal();
++      if (err) return this.handleError(err);
++      this.goToChat(chatId);
++    });
 +  }
 +
-+  function goToChat(chatId) {
-+    hideNewChatModal();
-+    return $state.go('tab.chat', { chatId: chatId });
++  hideNewChatModal() {
++    this.NewChat.hideModal();
++  }
++
++  goToChat(chatId) {
++    this.$state.go('tab.chat', { chatId });
++  }
++
++  handleError(err) {
++    this.$log.error('New chat creation error ', err);
++
++    this.$ionicPopup.alert({
++      title: err.reason || 'New chat creation failed',
++      template: 'Please try again',
++      okType: 'button-positive button-clear'
++    });
 +  }
 +}
++
++NewChatCtrl.$inject = ['$scope', '$state', 'NewChat', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From f03c3e59cefe1feb3a2ef2099e919be6afe2879e Mon Sep 17 00:00:00 2001
+From edd5b843306da5d9d33f4682ff7078255be27f16 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:48:38 +0200
-Subject: [PATCH 71/98] Step 5.6: Add server side logic for creating new chat
+Date: Fri, 8 Apr 2016 12:50:34 +0300
+Subject: [PATCH 085/114] Step 5.6: Load new chat controller
+
+---
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 5f219e8..16ce5cc 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -14,6 +14,7 @@ import ChatsCtrl from '../controllers/chats.controller';
+ import ChatCtrl from '../controllers/chat.controller';
+ import ConfirmationCtrl from '../controllers/confirmation.controller';
+ import LoginCtrl from '../controllers/login.controller';
++import NewChatCtrl from '../controllers/new-chat.controller';
+ import ProfileCtrl from '../controllers/profile.controller';
+ import SettingsCtrl from '../controllers/settings.controller';
+ import InputDirective from '../directives/input.directive';
+@@ -34,6 +35,7 @@ new Definer(App)
+   .define(ChatCtrl)
+   .define(ConfirmationCtrl)
+   .define(LoginCtrl)
++  .define(NewChatCtrl)
+   .define(ProfileCtrl)
+   .define(SettingsCtrl)
+   .define(InputDirective)
+-- 
+2.5.0
+
+
+From 4f3c319145f3e5f5801452eaed451bffa9e7e9b9 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Mon, 4 Apr 2016 00:31:07 +0300
+Subject: [PATCH 086/114] Step 5.7: Add new chat method
 
 ---
  lib/methods.js | 23 +++++++++++++++++++++++
  1 file changed, 23 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index 082eba5..85630e3 100644
+index c990546..30c78fc 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -30,5 +30,28 @@ Meteor.methods({
+@@ -31,5 +31,28 @@ Meteor.methods({
      }
  
      return Meteor.users.update(this.userId, { $set: { 'profile.name': name } });
@@ -3478,69 +4306,69 @@ index 082eba5..85630e3 100644
 +    }
 +
 +    check(otherId, String);
++    const otherUser = Meteor.users.findOne(otherId);
 +
-+    let otherUser = Meteor.users.findOne(otherId);
-+    if (! otherUser) {
++    if (!otherUser) {
 +      throw new Meteor.Error('user-not-exists',
 +        'Chat\'s user not exists');
 +    }
 +
-+    let chat = {
++    const chat = {
 +      userIds: [this.userId, otherId],
 +      createdAt: new Date()
 +    };
 +
-+    let chatId = Chats.insert(chat);
++    const chatId = Chats.insert(chat);
 +
 +    return chatId;
    }
  });
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 4de45fecb6893adcefeb7f835ecdd39fe8ebef9b Mon Sep 17 00:00:00 2001
+From 58b5cff1325bd27cf0053d4ae5de5c2428cf2ce5 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:52:25 +0200
-Subject: [PATCH 72/98] Step 5.7: Change the logic of client side removeChat
+Date: Fri, 8 Apr 2016 00:00:10 +0300
+Subject: [PATCH 087/114] Step 5.8: Call remove chat method
 
 ---
  client/scripts/controllers/chats.controller.js | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index e5e0806..01f6d68 100644
+index 64111ec..6713400 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -21,6 +21,6 @@ function ChatsCtrl ($scope, $reactive, NewChat) {
+@@ -16,7 +16,7 @@ export default class ChatsCtrl extends Controller {
    }
  
-   function remove (chat) {
+   remove(chat) {
 -    this.data.remove(chat);
-+    Meteor.call('removeChat', chat._id);
++    this.callMethod('removeChat', chat._id);
    }
  }
-\ No newline at end of file
+ 
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From ad6e694da3c61dd800c11ed9a404aec523cf9d8b Mon Sep 17 00:00:00 2001
+From 070d274986c0d82a562b484b1ba0641ff3fa51c1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:54:16 +0200
-Subject: [PATCH 73/98] Step 5.8: Add server side logic for removing chats
+Date: Fri, 8 Apr 2016 00:01:59 +0300
+Subject: [PATCH 088/114] Step 5.9: Add remove chat method
 
 ---
- lib/methods.js | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ lib/methods.js | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index 85630e3..47237ac 100644
+index 30c78fc..4bd9d8e 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -53,5 +53,23 @@ Meteor.methods({
-     let chatId = Chats.insert(chat);
+@@ -54,5 +54,24 @@ Meteor.methods({
+     const chatId = Chats.insert(chat);
  
      return chatId;
 +  },
@@ -3552,7 +4380,8 @@ index 85630e3..47237ac 100644
 +
 +    check(chatId, String);
 +
-+    let chat = Chats.findOne(chatId);
++    const chat = Chats.findOne(chatId);
++
 +    if (!chat || !_.include(chat.userIds, this.userId)) {
 +      throw new Meteor.Error('chat-not-exists',
 +        'Chat not exists');
@@ -3565,32 +4394,29 @@ index 85630e3..47237ac 100644
  });
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From c24496e256a6514b91d7c284dd9a814381a40596 Mon Sep 17 00:00:00 2001
+From e522b4510a23f3a97dc7f8b33b285686fe87868b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:55:41 +0200
-Subject: [PATCH 74/98] Step 5.9: Add filter to get the user information by its
- id
+Date: Fri, 8 Apr 2016 00:06:30 +0300
+Subject: [PATCH 089/114] Step 5.10: Create chat name filter
 
 ---
- client/scripts/filters/chat-name.filter.js | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ client/scripts/filters/chat-name.filter.js | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
  create mode 100644 client/scripts/filters/chat-name.filter.js
 
 diff --git a/client/scripts/filters/chat-name.filter.js b/client/scripts/filters/chat-name.filter.js
 new file mode 100644
-index 0000000..53c8136
+index 0000000..9be07ca
 --- /dev/null
 +++ b/client/scripts/filters/chat-name.filter.js
-@@ -0,0 +1,15 @@
-+angular
-+  .module('Whatsapp')
-+  .filter('chatName', chatName);
+@@ -0,0 +1,13 @@
++import { Filter } from '../entities';
 +
-+function chatName() {
-+  return function (chat) {
++export default class chatName extends Filter {
++  filter(chat) {
 +    if (!chat) return;
 +
 +    let otherId = _.without(chat.userIds, Meteor.userId())[0];
@@ -3598,34 +4424,65 @@ index 0000000..53c8136
 +    let hasName = otherUser && otherUser.profile && otherUser.profile.name;
 +
 +    return hasName ? otherUser.profile.name : chat.name || 'NO NAME';
-+  };
++  }
 +}
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 3ed9e7da1c80333d8a3da5348caecadd89c0f220 Mon Sep 17 00:00:00 2001
+From c1a3990334ce9e118190c7ccee6efd35c6c774fd Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:56:42 +0200
-Subject: [PATCH 75/98] Step 5.10: Add filter to get the user image by its id
+Date: Fri, 8 Apr 2016 18:01:46 +0300
+Subject: [PATCH 090/114] Step 5.11: Load chat name filter
 
 ---
- client/scripts/filters/chat-picture.filter.js | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 16ce5cc..8f72e2d 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -19,6 +19,7 @@ import ProfileCtrl from '../controllers/profile.controller';
+ import SettingsCtrl from '../controllers/settings.controller';
+ import InputDirective from '../directives/input.directive';
+ import CalendarFilter from '../filters/calendar.filter';
++import ChatNameFilter from '../filters/chat-name.filter';
+ import NewChatService from '../services/new-chat.service';
+ import { RoutesConfig, RoutesRunner } from '../routes';
+ 
+@@ -40,6 +41,7 @@ new Definer(App)
+   .define(SettingsCtrl)
+   .define(InputDirective)
+   .define(CalendarFilter)
++  .define(ChatNameFilter)
+   .define(NewChatService)
+   .define(RoutesConfig)
+   .define(RoutesRunner);
+-- 
+2.5.0
+
+
+From 9af68cc8d2544df4fbdac33bf88de12a3e9d546c Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Fri, 8 Apr 2016 00:10:10 +0300
+Subject: [PATCH 091/114] Step 5.12: Create chat picture filter
+
+---
+ client/scripts/filters/chat-picture.filter.js | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
  create mode 100644 client/scripts/filters/chat-picture.filter.js
 
 diff --git a/client/scripts/filters/chat-picture.filter.js b/client/scripts/filters/chat-picture.filter.js
 new file mode 100644
-index 0000000..2834ca6
+index 0000000..dafc7bb
 --- /dev/null
 +++ b/client/scripts/filters/chat-picture.filter.js
-@@ -0,0 +1,15 @@
-+angular
-+  .module('Whatsapp')
-+  .filter('chatPicture', chatPicture);
+@@ -0,0 +1,13 @@
++import { Filter } from '../entities';
 +
-+function chatPicture () {
-+  return function (chat) {
++export default class chatPicture extends Filter {
++  filter(chat) {
 +    if (!chat) return;
 +
 +    let otherId = _.without(chat.userIds, Meteor.userId())[0];
@@ -3637,48 +4494,81 @@ index 0000000..2834ca6
 +}
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 372e42f4de563c0a4c078f3c47bc7d6f9faeb7e1 Mon Sep 17 00:00:00 2001
+From 1b69da9173b95e5d0cd9c1312c02785f3b12d799 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:57:46 +0200
-Subject: [PATCH 76/98] Step 5.11: Add filters usage in the chats list
+Date: Fri, 8 Apr 2016 18:11:54 +0300
+Subject: [PATCH 092/114] Step 5.13: Load chat picture filter
+
+---
+ client/scripts/lib/app.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
+index 8f72e2d..d2e6ebd 100644
+--- a/client/scripts/lib/app.js
++++ b/client/scripts/lib/app.js
+@@ -20,6 +20,7 @@ import SettingsCtrl from '../controllers/settings.controller';
+ import InputDirective from '../directives/input.directive';
+ import CalendarFilter from '../filters/calendar.filter';
+ import ChatNameFilter from '../filters/chat-name.filter';
++import ChatPictureFilter from '../filters/chat-picture.filter';
+ import NewChatService from '../services/new-chat.service';
+ import { RoutesConfig, RoutesRunner } from '../routes';
+ 
+@@ -42,6 +43,7 @@ new Definer(App)
+   .define(InputDirective)
+   .define(CalendarFilter)
+   .define(ChatNameFilter)
++  .define(ChatPictureFilter)
+   .define(NewChatService)
+   .define(RoutesConfig)
+   .define(RoutesRunner);
+-- 
+2.5.0
+
+
+From ec756a6c2211bbdd09fd325477b3f10d97b7a95a Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Fri, 8 Apr 2016 00:11:53 +0300
+Subject: [PATCH 093/114] Step 5.14: Apply chat filters in chats view
 
 ---
  client/templates/chats.html | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index d2f8aca..2218128 100644
+index d9e2271..17a5503 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
 @@ -10,8 +10,8 @@
                class="item-chat item-remove-animate item-avatar item-icon-right"
                type="item-text-wrap"
-               href="#/tab/chats/{{chat._id}}">
--        <img ng-src="{{chat.picture}}">
--        <h2>{{chat.name}}</h2>
-+        <img ng-src="{{chat | chatPicture}}">
-+        <h2>{{chat | chatName}}</h2>
-         <p>{{chat.lastMessage.text}}</p>
-         <span class="last-message-timestamp">{{chat.lastMessage.timestamp | calendar}}</span>
+               href="#/tab/chats/{{ chat._id }}">
+-        <img ng-src="{{ chat.picture }}">
+-        <h2>{{ chat.name }}</h2>
++        <img ng-src="{{ chat | chatPicture }}">
++        <h2>{{ chat | chatName }}</h2>
+         <p>{{ chat.lastMessage.text }}</p>
+         <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
          <i class="icon ion-chevron-right icon-accessory"></i>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 308e6d886d876851a6be9daea57c1c4d873e159d Mon Sep 17 00:00:00 2001
+From 323547e86d081c67f17584510c1d4aaf87e70b19 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 15:59:41 +0200
-Subject: [PATCH 77/98] Step 5.12: Add filters usage in the chat details view
+Date: Fri, 8 Apr 2016 00:13:20 +0300
+Subject: [PATCH 094/114] Step 5.15: Apply chat filters in chat view
 
 ---
  client/templates/chat.html | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index 1d11276..e197bbc 100644
+index 847ee55..80fc3d8 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
 @@ -1,6 +1,6 @@
@@ -3691,31 +4581,32 @@ index 1d11276..e197bbc 100644
    <ion-content class="chat" delegate-handle="chatScroll">
      <div class="message-list">
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 6cd78828d0727b9ded4d68883b01f0b2d787c4da Mon Sep 17 00:00:00 2001
+From 95560c84d68715dffd85fd64ca1df909c8b3f9dd Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:01:21 +0200
-Subject: [PATCH 78/98] Step 5.13: Change the server bootstrap to create real
- users objects
+Date: Fri, 8 Apr 2016 00:16:52 +0300
+Subject: [PATCH 095/114] Step 5.16: Create users with phone data stub
 
 ---
  server/bootstrap.js | 68 ++++++++++++-----------------------------------------
  1 file changed, 15 insertions(+), 53 deletions(-)
 
 diff --git a/server/bootstrap.js b/server/bootstrap.js
-index 0a8579f..bc3a3c7 100644
+index d136ab6..fdf13b4 100644
 --- a/server/bootstrap.js
 +++ b/server/bootstrap.js
-@@ -1,62 +1,24 @@
- Meteor.startup(function () {
+@@ -1,64 +1,26 @@
+ import moment from 'moment';
+ 
+ Meteor.startup(function() {
 -  if (Chats.find().count() !== 0) return;
 +  if (Meteor.users.find().count() != 0) return;
  
 -  Messages.remove({});
--   
--  let messages = [
+-
+-  const messages = [
 -    {
 -      text: 'You on your way?',
 -      timestamp: moment().subtract(1, 'hours').toDate()
@@ -3746,7 +4637,7 @@ index 0a8579f..bc3a3c7 100644
 -    Messages.insert(m);
    });
  
--  let chats = [
+-  const chats = [
 -    {
 -      name: 'Ethan Gonzalez',
 -      picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg'
@@ -3775,10 +4666,10 @@ index 0a8579f..bc3a3c7 100644
 +  });
  
 -  chats.forEach((chat) => {
--    let message = Messages.findOne({chatId: {$exists: false}});
+-    const message = Messages.findOne({ chatId: { $exists: false } });
 -    chat.lastMessage = message;
--    let chatId = Chats.insert(chat);
--    Messages.update(message._id, {$set: {chatId: chatId}})
+-    const chatId = Chats.insert(chat);
+-    Messages.update(message._id, { $set: { chatId } });
 +  Accounts.createUserWithPhone({
 +    phone: '+972501234569',
 +    profile: {
@@ -3788,13 +4679,13 @@ index 0a8579f..bc3a3c7 100644
  });
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From f702d1d7d4efe870f2e1f72a3172de459300a0d1 Mon Sep 17 00:00:00 2001
+From b8aa1797ad78f2f54f90d6642c2c11e92b146bf3 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:02:08 +0200
-Subject: [PATCH 79/98] Step 5.14: remove insecure package
+Date: Fri, 8 Apr 2016 00:17:42 +0300
+Subject: [PATCH 096/114] Step 5.17: Remove insecure meteor package
 
 ---
  .meteor/packages | 1 -
@@ -3802,37 +4693,37 @@ Subject: [PATCH 79/98] Step 5.14: remove insecure package
  2 files changed, 2 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 1ca9b1e..a03e236 100644
+index 4c151a5..28e749c 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -15,7 +15,6 @@ standard-minifiers      # JS/CSS minifiers run for production mode
- es5-shim                # ECMAScript 5 compatibility for older browsers.
+@@ -17,7 +17,6 @@ es5-shim                # ECMAScript 5 compatibility for older browsers.
+ ecmascript              # Enable ECMAScript2015+ syntax in app code
  
  autopublish             # Publish all data to the clients (for prototyping)
 -insecure                # Allow all DB writes from clients (for prototyping)
- angular@1.3.0
- driftyco:ionic
- momentjs:moment
+ dab0mb:ionic-assets
+ angular-templates
+ fourseven:scss
 diff --git a/.meteor/versions b/.meteor/versions
-index fbd5c3a..3ff50d6 100644
+index 9cf6152..9145a90 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -41,7 +41,6 @@ html-tools@1.0.5
- htmljs@1.0.5
- http@1.1.1
- id-map@1.0.4
--insecure@1.0.4
- jasonaibrahim:angular-moment@0.10.2
- jquery@1.11.4
- lai:collection-extensions@0.1.4
+@@ -35,7 +35,6 @@ html-tools@1.0.7
+ htmljs@1.0.7
+ http@1.1.3
+ id-map@1.0.5
+-insecure@1.0.5
+ jquery@1.11.6
+ launch-screen@1.0.8
+ livedata@1.0.16
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 1f2abd3c3e667228383d26cc94f783d0dee239f6 Mon Sep 17 00:00:00 2001
+From 7aa5e8e195e1a6f051e3b07a2e36871f2ae7de5c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:03:18 +0200
-Subject: [PATCH 80/98] Step 6.1: remove autopublish package
+Date: Fri, 8 Apr 2016 00:18:22 +0300
+Subject: [PATCH 097/114] Step 6.0: Remove autopublish meteor package
 
 ---
  .meteor/packages | 1 -
@@ -3840,37 +4731,37 @@ Subject: [PATCH 80/98] Step 6.1: remove autopublish package
  2 files changed, 2 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index a03e236..d3fb6c4 100644
+index 28e749c..8faaa53 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -14,7 +14,6 @@ tracker                 # Meteor's client-side reactive programming library
- standard-minifiers      # JS/CSS minifiers run for production mode
+@@ -16,7 +16,6 @@ standard-minifier-js    # JS minifier run for production mode
  es5-shim                # ECMAScript 5 compatibility for older browsers.
+ ecmascript              # Enable ECMAScript2015+ syntax in app code
  
 -autopublish             # Publish all data to the clients (for prototyping)
- angular@1.3.0
- driftyco:ionic
- momentjs:moment
+ dab0mb:ionic-assets
+ angular-templates
+ fourseven:scss
 diff --git a/.meteor/versions b/.meteor/versions
-index 3ff50d6..1f71335 100644
+index 9145a90..ecbcce7 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -6,7 +6,6 @@ angular:angular@1.4.8
- angular:angular-animate@1.4.8
- angular:angular-sanitize@1.4.8
- angularui:angular-ui-router@0.2.15
--autopublish@1.0.4
- autoupdate@1.2.4
- babel-compiler@5.8.24_1
- babel-runtime@0.1.4
+@@ -1,7 +1,6 @@
+ accounts-base@1.2.4
+ allow-deny@1.0.2
+ angular-templates@1.0.2
+-autopublish@1.0.5
+ autoupdate@1.2.6
+ babel-compiler@6.5.2
+ babel-runtime@0.1.6
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 414daa7efa8c7b2192cf770fb13e22a62d6a3e8a Mon Sep 17 00:00:00 2001
+From 548f6842a6b7a842f0d5db16c257979a2e647e2e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:04:07 +0200
-Subject: [PATCH 81/98] Step 6.2: Add publish-composite to the project
+Date: Fri, 8 Apr 2016 00:19:34 +0300
+Subject: [PATCH 098/114] Step 6.1: Add publish-composite meteor package
 
 ---
  .meteor/packages | 1 +
@@ -3878,34 +4769,34 @@ Subject: [PATCH 81/98] Step 6.2: Add publish-composite to the project
  2 files changed, 2 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index d3fb6c4..b2a490c 100644
+index 8faaa53..0b9c507 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -21,3 +21,4 @@ fourseven:scss
- jasonaibrahim:angular-moment
+@@ -21,3 +21,4 @@ angular-templates
+ fourseven:scss
  check
  okland:accounts-phone
 +reywood:publish-composite
 diff --git a/.meteor/versions b/.meteor/versions
-index 1f71335..75a46f2 100644
+index ecbcce7..ece495e 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -69,6 +69,7 @@ reactive-dict@1.1.3
- reactive-var@1.0.6
- reload@1.1.4
- retry@1.0.4
+@@ -61,6 +61,7 @@ rate-limit@1.0.2
+ reactive-var@1.0.7
+ reload@1.1.6
+ retry@1.0.5
 +reywood:publish-composite@1.4.2
- routepolicy@1.0.6
- service-configuration@1.0.5
- session@1.1.1
+ routepolicy@1.0.8
+ service-configuration@1.0.7
+ sha@1.0.5
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 3601cfdfd21d42b3e7ca9062b674c43425ae9f4e Mon Sep 17 00:00:00 2001
+From be5c800be68be242f2601470e6023ffee77edd20 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:05:35 +0200
-Subject: [PATCH 82/98] Step 6.3: Add publication to the users
+Date: Fri, 8 Apr 2016 00:20:53 +0300
+Subject: [PATCH 099/114] Step 6.2: Add users publication
 
 ---
  server/publications.js | 3 +++
@@ -3914,64 +4805,64 @@ Subject: [PATCH 82/98] Step 6.3: Add publication to the users
 
 diff --git a/server/publications.js b/server/publications.js
 new file mode 100644
-index 0000000..f70f7cf
+index 0000000..984f411
 --- /dev/null
 +++ b/server/publications.js
 @@ -0,0 +1,3 @@
-+Meteor.publish('users', function () {
++Meteor.publish('users', function() {
 +  return Meteor.users.find({}, { fields: { profile: 1 } });
 +});
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 291dfda8d36226f1f34ffc189c7df3108b3683d6 Mon Sep 17 00:00:00 2001
+From ef50e6c93f54ab6622f8790f0c90d0fdb488411e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:09:37 +0200
-Subject: [PATCH 83/98] Step 6.4: Subscribe to users in the new chat modal
+Date: Fri, 8 Apr 2016 00:22:13 +0300
+Subject: [PATCH 100/114] Step 6.3: Add users subscription
 
 ---
  client/scripts/controllers/new-chat.controller.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/controllers/new-chat.controller.js b/client/scripts/controllers/new-chat.controller.js
-index 0a51726..545cf3c 100644
+index 976501e..1641f0f 100644
 --- a/client/scripts/controllers/new-chat.controller.js
 +++ b/client/scripts/controllers/new-chat.controller.js
-@@ -8,6 +8,8 @@ function NewChatCtrl($scope, $reactive, $state, NewChat) {
-   this.hideNewChatModal = hideNewChatModal;
-   this.newChat = newChat;
+@@ -4,6 +4,8 @@ export default class NewChatCtrl extends Controller {
+   constructor() {
+     super(...arguments);
  
-+  this.subscribe('users');
++    this.subscribe('users');
 +
-   this.helpers({
-     users() {
-       return Meteor.users.find({ _id: { $ne: Meteor.userId() } });
+     this.helpers({
+       users() {
+         return Meteor.users.find({ _id: { $ne: this.currentUserId } });
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 41a2e3accb8a15556fb7a5847bc5e86514e08d7d Mon Sep 17 00:00:00 2001
+From 3477898016e846cef1fbc71e2b477a454195061c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:10:37 +0200
-Subject: [PATCH 84/98] Step 6.5: Add publication to chats and messages data
+Date: Fri, 8 Apr 2016 00:26:21 +0300
+Subject: [PATCH 101/114] Step 6.4: Add chats publication
 
 ---
  server/publications.js | 25 +++++++++++++++++++++++++
  1 file changed, 25 insertions(+)
 
 diff --git a/server/publications.js b/server/publications.js
-index f70f7cf..bac6201 100644
+index 984f411..1d3ea3e 100644
 --- a/server/publications.js
 +++ b/server/publications.js
 @@ -1,3 +1,28 @@
- Meteor.publish('users', function () {
+ Meteor.publish('users', function() {
    return Meteor.users.find({}, { fields: { profile: 1 } });
 +});
 +
-+Meteor.publishComposite('chats', function () {
-+  if (! this.userId) return;
++Meteor.publishComposite('chats', function() {
++  if (!this.userId) return;
 +
 +  return {
 +    find() {
@@ -3985,8 +4876,8 @@ index f70f7cf..bac6201 100644
 +      },
 +      {
 +        find(chat) {
-+          let query = { _id: { $in: chat.userIds } };
-+          let options = { fields: { profile: 1 } };
++          const query = { _id: { $in: chat.userIds } };
++          const options = { fields: { profile: 1 } };
 +
 +          return Meteor.users.find(query, options);
 +        }
@@ -3996,108 +4887,118 @@ index f70f7cf..bac6201 100644
  });
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From c2ef87beea5d6ca9fc2997c85d6374ab4da65b78 Mon Sep 17 00:00:00 2001
+From 30c5df789c4982d54df9a08ce00c98f3edd60964 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:11:30 +0200
-Subject: [PATCH 85/98] Step 6.6: Add subscription to the chats and messages in
- the client side
+Date: Fri, 8 Apr 2016 00:32:44 +0300
+Subject: [PATCH 102/114] Step 6.5: Add chats subscription
 
 ---
  client/scripts/routes.js | 5 ++++-
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index 92f2657..2b43a85 100644
+index d824d70..f2438ae 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
-@@ -9,7 +9,10 @@ function config($stateProvider, $urlRouterProvider) {
-       abstract: true,
-       templateUrl: 'client/templates/tabs.html',
-       resolve: {
--        user: isAuthorized
-+        user: isAuthorized,
-+        chats() {
-+          return Meteor.subscribe('chats');
-+        }
-       }
-     })
-     .state('tab.chats', {
+@@ -14,7 +14,10 @@ export class RoutesConfig extends Config {
+         abstract: true,
+         templateUrl: 'client/templates/tabs.html',
+         resolve: {
+-          user: this.isAuthorized
++          user: this.isAuthorized,
++          chats() {
++            return Meteor.subscribe('chats');
++          }
+         }
+       })
+       .state('tab.chats', {
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From fd02121f354c04363709005d59f030a5c060c45a Mon Sep 17 00:00:00 2001
+From dd437aa6c35621026540757bfcb0feb362cc4134 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:12:18 +0200
-Subject: [PATCH 86/98] Step 7.1: Add camera-ui package to the project
+Date: Fri, 8 Apr 2016 00:37:10 +0300
+Subject: [PATCH 103/114] Step 7.0: Add camera-ui meteor package
 
 ---
  .meteor/packages | 1 +
- .meteor/versions | 4 ++++
- 2 files changed, 5 insertions(+)
+ .meteor/versions | 6 ++++++
+ 2 files changed, 7 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index b2a490c..7927a3f 100644
+index 0b9c507..3a7f7d0 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -22,3 +22,4 @@ jasonaibrahim:angular-moment
+@@ -22,3 +22,4 @@ fourseven:scss
  check
  okland:accounts-phone
  reywood:publish-composite
 +okland:camera-ui
 diff --git a/.meteor/versions b/.meteor/versions
-index 75a46f2..7459822 100644
+index ece495e..b287660 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -44,9 +44,11 @@ jasonaibrahim:angular-moment@0.10.2
- jquery@1.11.4
- lai:collection-extensions@0.1.4
- launch-screen@1.0.4
-+less@2.5.1
- livedata@1.0.15
- localstorage@1.0.5
- logging@1.0.8
+@@ -36,9 +36,11 @@ http@1.1.3
+ id-map@1.0.5
+ jquery@1.11.6
+ launch-screen@1.0.8
++less@2.5.6
+ livedata@1.0.16
+ localstorage@1.0.7
+ logging@1.0.10
 +mdg:camera@1.1.5
- meteor@1.1.10
- meteor-base@1.0.1
- minifiers@1.1.7
-@@ -60,6 +62,7 @@ npm-bcrypt@0.7.8_2
- npm-mongo@1.4.39_1
- observe-sequence@1.0.7
+ meteor@1.1.12
+ meteor-base@1.0.2
+ minifier-css@1.1.9
+@@ -54,22 +56,26 @@ npm-bcrypt@0.7.8_2
+ npm-mongo@1.4.41
+ observe-sequence@1.0.9
  okland:accounts-phone@0.0.21
 +okland:camera-ui@0.0.2
- ordered-dict@1.0.4
- pbastowski:angular-babel@1.0.7
- promise@0.5.1
-@@ -78,6 +81,7 @@ spacebars@1.0.7
- spacebars-compiler@1.0.7
- srp@1.0.4
- standard-minifiers@1.0.2
-+templating@1.1.5
- templating-tools@1.0.0
- tracker@1.0.9
- ui@1.0.8
+ ordered-dict@1.0.5
+ promise@0.6.5
+ random@1.0.7
+ rate-limit@1.0.2
++reactive-dict@1.1.5
+ reactive-var@1.0.7
+ reload@1.1.6
+ retry@1.0.5
+ reywood:publish-composite@1.4.2
+ routepolicy@1.0.8
+ service-configuration@1.0.7
++session@1.1.3
+ sha@1.0.5
+ spacebars@1.0.9
+ spacebars-compiler@1.0.9
+ srp@1.0.6
+ standard-minifier-css@1.0.4
+ standard-minifier-js@1.0.4
++templating@1.1.7
+ templating-tools@1.0.2
+ tracker@1.0.11
+ ui@1.0.9
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 165abf8ad92fe39f15ede3dba84b90603471eb08 Mon Sep 17 00:00:00 2001
+From 943cb4f109f74b19cf933e95f937aa5d024b1ab7 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:13:45 +0200
-Subject: [PATCH 87/98] Step 7.2: Add updatePicture method to the server
+Date: Fri, 8 Apr 2016 00:39:17 +0300
+Subject: [PATCH 104/114] Step 7.1: Add update picture method
 
 ---
  lib/methods.js | 10 ++++++++++
  1 file changed, 10 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index 47237ac..fb001c7 100644
+index 4bd9d8e..e32e0f6 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -71,5 +71,15 @@ Meteor.methods({
+@@ -73,5 +73,15 @@ Meteor.methods({
      Messages.remove({ chatId: chatId });
  
      return Chats.remove({ _id: chatId });
@@ -4115,13 +5016,13 @@ index 47237ac..fb001c7 100644
  });
 \ No newline at end of file
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From fa5090bf13f7a756200cbfea3b4f560aa3296467 Mon Sep 17 00:00:00 2001
+From 1142afc66e39817c35618ecfac9275ad863b316d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:18:05 +0200
-Subject: [PATCH 88/98] Step 7.3: Update profile creation page to use camera
+Date: Fri, 8 Apr 2016 00:43:58 +0300
+Subject: [PATCH 105/114] Step 7.2: Add update picture button to profile view
 
 ---
  client/templates/profile.html | 8 ++++++--
@@ -4147,79 +5048,68 @@ index c18fe20..2cbd896 100644
        </div>
      </a>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From b9a92fd47bb50ae08ebb675622b81f7624584327 Mon Sep 17 00:00:00 2001
+From e69271cd219774a069cdf0ab477c05bb960b622b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:19:31 +0200
-Subject: [PATCH 89/98] Step 7.4: Add controller logic for uploading and
- updating user image
+Date: Fri, 8 Apr 2016 00:48:51 +0300
+Subject: [PATCH 106/114] Step 7.3: Add update picture logic to profile
+ controller
 
 ---
- client/scripts/controllers/profile.controller.js | 24 +++++++++++++++++++++++-
- 1 file changed, 23 insertions(+), 1 deletion(-)
+ client/scripts/controllers/profile.controller.js | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
 diff --git a/client/scripts/controllers/profile.controller.js b/client/scripts/controllers/profile.controller.js
-index ffe585d..6d51c54 100644
+index 77f956e..6420234 100644
 --- a/client/scripts/controllers/profile.controller.js
 +++ b/client/scripts/controllers/profile.controller.js
-@@ -2,7 +2,7 @@ angular
-   .module('Whatsapp')
-   .controller('ProfileCtrl', ProfileCtrl);
+@@ -8,6 +8,21 @@ export default class ProfileCtrl extends Controller {
+     this.name = profile ? profile.name : '';
+   }
  
--function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log) {
-+function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log, $ionicLoading) {
-   $reactive(this).attach($scope);
- 
-   let user = Meteor.user();
-@@ -10,9 +10,31 @@ function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log) {
- 
-   this.name = name;
-   this.updateName = updateName;
-+  this.updatePicture = updatePicture;
- 
-   ////////////
- 
-+  function updatePicture () {
-+    MeteorCameraUI.getPicture({ width: 60, height: 60 }, function (err, data) {
-+      if (err && err.error == 'cancel') {
-+        return;
-+      }
++  updatePicture () {
++    MeteorCameraUI.getPicture({ width: 60, height: 60 }, (err, data) => {
++      if (err) return this.handleError(err);
 +
-+      if (err) {
-+        return handleError(err);
-+      }
-+
-+      $ionicLoading.show({
++      this.$ionicLoading.show({
 +        template: 'Updating picture...'
 +      });
 +
-+      Meteor.call('updatePicture', data, (err) => {
-+        $ionicLoading.hide();
-+        handleError(err);
++      this.callMethod('updatePicture', data, (err) => {
++        this.$ionicLoading.hide();
++        this.handleError(err);
 +      });
 +    });
 +  }
 +
-   function updateName () {
+   updateName() {
      if (_.isEmpty(this.name)) return;
  
+@@ -18,6 +33,7 @@ export default class ProfileCtrl extends Controller {
+   }
+ 
+   handleError(err) {
++    if (err.error == 'cancel') return;
+     this.$log.error('Profile save error ', err);
+ 
+     this.$ionicPopup.alert({
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 0220b3f0736c5ec3e48fbc6bd504f79b82095537 Mon Sep 17 00:00:00 2001
+From f52381521695a2f266f8dd23634032a9a901a364 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:20:40 +0200
-Subject: [PATCH 90/98] Step 7.5: Add some CSS style to the profile page
+Date: Fri, 8 Apr 2016 00:50:43 +0300
+Subject: [PATCH 107/114] Step 7.4: Update profile stylesheet
 
 ---
  client/styles/profile.scss | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/styles/profile.scss b/client/styles/profile.scss
-index c7f082f..6ffc54f 100644
+index ef4c6cc..41d7455 100644
 --- a/client/styles/profile.scss
 +++ b/client/styles/profile.scss
 @@ -11,6 +11,8 @@
@@ -4232,21 +5122,20 @@ index c7f082f..6ffc54f 100644
        height: 100%;
        border-radius: 50%;
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 7b66a8e63c4659a62ba494651c3e0d643065ef78 Mon Sep 17 00:00:00 2001
+From 8e63a673495d4ff37e148ee27ae1b4675f87bfce Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:22:20 +0200
-Subject: [PATCH 91/98] Step 7.6: Add link to the profile page from the
- settings page
+Date: Fri, 8 Apr 2016 00:53:13 +0300
+Subject: [PATCH 108/114] Step 7.5: Add reference to profile from settings view
 
 ---
- client/templates/settings.html | 6 ++++++
- 1 file changed, 6 insertions(+)
+ client/templates/settings.html | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/settings.html b/client/templates/settings.html
-index eadaf50..12604a1 100644
+index eadaf50..05b4deb 100644
 --- a/client/templates/settings.html
 +++ b/client/templates/settings.html
 @@ -3,5 +3,11 @@
@@ -4260,108 +5149,80 @@ index eadaf50..12604a1 100644
 +      </ion-item>
 +    </ion-list>
    </ion-content>
- </ion-view>
+-</ion-view>
 \ No newline at end of file
++</ion-view>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From a71f35a88f0adac2035b7c98214125f2dd772e2f Mon Sep 17 00:00:00 2001
+From 40e5ee076447dab71fe59f40534f2334df120154 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Tue, 5 Jan 2016 23:58:08 +0200
-Subject: [PATCH 92/98] Step 7.7: Add default profile picture
-
----
- public/user-default.svg | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 public/user-default.svg
-
-diff --git a/public/user-default.svg b/public/user-default.svg
-new file mode 100644
-index 0000000..64093ae
---- /dev/null
-+++ b/public/user-default.svg
-@@ -0,0 +1 @@
-+<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 512 512" height="512px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M257.107,5C118.473,5,6.109,117.365,6.109,255.998C6.109,394.631,118.473,507,257.107,507  s250.998-112.37,250.998-251.002C508.105,117.365,395.74,5,257.107,5z M257.107,25.917c126.868,0,230.082,103.214,230.082,230.082  c0,55.815-19.997,107.043-53.19,146.926c-22.939-9.58-77.089-28.372-110.609-38.269c-2.859-0.898-3.309-1.042-3.309-12.94  c0-9.826,4.044-19.721,7.987-28.096c4.269-9.1,9.334-24.399,11.153-38.126c5.086-5.904,12.01-17.547,16.463-39.739  c3.901-19.559,2.083-26.677-0.51-33.357c-0.266-0.705-0.552-1.399-0.756-2.094c-0.981-4.586,0.367-28.413,3.718-46.899  c2.308-12.685-0.593-39.658-18.057-61.972c-11.03-14.105-32.131-31.416-70.675-33.826l-21.141,0.02  c-37.891,2.391-59.012,19.701-70.042,33.806c-17.464,22.315-20.364,49.288-18.056,61.963c3.37,18.495,4.698,42.322,3.738,46.816  c-0.204,0.786-0.49,1.481-0.776,2.186c-2.574,6.68-4.412,13.798-0.49,33.357c4.432,22.192,11.357,33.836,16.463,39.739  c1.798,13.726,6.864,29.026,11.153,38.126c3.125,6.659,4.596,15.718,4.596,28.525c0,11.898-0.45,12.042-3.126,12.889  c-34.663,10.234-89.834,30.17-110.404,39.178c-33.846-40.066-54.293-91.785-54.293-148.212  C27.025,129.13,130.239,25.917,257.107,25.917z M96.474,420.516c23.552-9.615,70.512-26.365,101.355-35.475  c17.935-5.658,17.935-20.763,17.935-32.896c0-10.06-0.694-24.89-6.577-37.431c-4.045-8.589-8.662-23.317-9.682-34.847  c-0.225-2.696-1.491-5.188-3.534-6.965c-2.962-2.595-8.988-12.093-12.828-31.252c-3.043-15.167-1.756-18.486-0.51-21.693  c0.531-1.369,1.042-2.717,1.451-4.239c2.512-9.181-0.287-39.341-3.33-56.07c-1.327-7.272,0.347-27.933,13.951-45.337  c12.194-15.595,30.659-24.287,54.211-25.788l19.834-0.021c24.185,1.522,42.65,10.214,54.865,25.809  c13.604,17.404,15.259,38.065,13.93,45.346c-3.023,16.72-5.842,46.879-3.33,56.05c0.43,1.532,0.919,2.88,1.451,4.249  c1.247,3.206,2.533,6.526-0.49,21.693c-3.839,19.16-9.886,28.658-12.848,31.252c-2.022,1.777-3.288,4.269-3.534,6.965  c-1.001,11.53-5.617,26.258-9.661,34.847c-4.637,9.856-9.968,22.98-9.968,37.002c0,12.134,0,27.239,18.118,32.948  c29.516,8.722,76.701,24.93,101.621,34.73c-41.608,41.199-98.781,66.691-161.797,66.691  C194.664,486.084,137.981,461.042,96.474,420.516z" fill="#37404D"/></svg>
-\ No newline at end of file
--- 
-2.5.4 (Apple Git-61)
-
-
-From 683dcf7306487dc9abde607c4439f05ed9ee169c Mon Sep 17 00:00:00 2001
-From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:24:21 +0200
-Subject: [PATCH 93/98] Step 8.1: Add logic for sending image message
+Date: Fri, 8 Apr 2016 10:33:36 +0300
+Subject: [PATCH 109/114] Step 8.0: Add send picture logic
 
 ---
  client/scripts/controllers/chat.controller.js | 25 ++++++++++++++++++++++++-
  1 file changed, 24 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index 24e92e2..41932d9 100644
+index fae0f77..ed2e70e 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -2,7 +2,7 @@ angular
-   .module('Whatsapp')
-   .controller('ChatCtrl', ChatCtrl);
+@@ -19,6 +19,18 @@ export default class ChatCtrl extends Controller {
+     });
+   }
  
--function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout) {
-+function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout, $ionicPopup, $log) {
-   $reactive(this).attach($scope);
- 
-   let chatId = $stateParams.chatId;
-@@ -12,6 +12,7 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
-   this.inputUp = inputUp;
-   this.inputDown = inputDown;
-   this.closeKeyboard = closeKeyboard;
-+  this.sendPicture = sendPicture;
- 
-   this.helpers({
-     messages() {
-@@ -29,6 +30,28 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
- 
-   ////////////
- 
-+  function sendPicture () {
++  sendPicture() {
 +    MeteorCameraUI.getPicture({}, (err, data) => {
-+      if (err && err.error == 'cancel') return;
-+      if (err) return handleError(err);
++      if (err) return this.handleError(err);
 +
-+      Meteor.call('newMessage', {
++      this.callMethod('newMessage', {
 +        picture: data,
 +        type: 'picture',
-+        chatId: chatId
++        chatId: this.chatId
 +      });
 +    });
 +  }
 +
-+  function handleError (err) {
-+    $log.error('profile save error ', err);
-+    $ionicPopup.alert({
+   sendMessage() {
+     if (_.isEmpty(this.message)) return;
+ 
+@@ -54,6 +66,17 @@ export default class ChatCtrl extends Controller {
+       cordova.plugins.Keyboard.close();
+     }
+   }
++
++  handleError(err) {
++    if (err.error == 'cancel') return;
++    this.$log.error('Profile save error ', err);
++
++    this.$ionicPopup.alert({
 +      title: err.reason || 'Save failed',
 +      template: 'Please try again',
 +      okType: 'button-positive button-clear'
 +    });
 +  }
-+
-   function sendMessage () {
-     if (_.isEmpty(this.message)) return;
+ }
  
+-ChatCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$ionicScrollDelegate'];
+\ No newline at end of file
++ChatCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$ionicScrollDelegate', '$ionicPopup', '$log'];
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From fcf5a76af69f65efd5a10db191eb7577e2f5f499 Mon Sep 17 00:00:00 2001
+From 1b20a28f3454a47c7b56de1b6af8156497282519 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:25:22 +0200
-Subject: [PATCH 94/98] Step 8.2: Add ng-click for the image button on the view
+Date: Fri, 8 Apr 2016 11:10:09 +0300
+Subject: [PATCH 110/114] Step 8.1: Invoke send picture logic on click
 
 ---
  client/templates/chat.html | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index e197bbc..1c3551e 100644
+index 80fc3d8..09e402e 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
 @@ -29,7 +29,7 @@
@@ -4374,21 +5235,20 @@ index e197bbc..1c3551e 100644
        <button class="button button-clear button-icon button-positive icon ion-ios-mic-outline"></button>
      </span>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 90608b64161d468eeafd8d0ce3c2f3357c1ec2bc Mon Sep 17 00:00:00 2001
+From 7a51374796cbb028cc36b12877923219c2dfcb29 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:26:19 +0200
-Subject: [PATCH 95/98] Step 8.3: Add validation for image messages in the
- sendMessage method
+Date: Fri, 8 Apr 2016 11:12:36 +0300
+Subject: [PATCH 111/114] Step 8.2: Add picture message validation
 
 ---
  lib/methods.js | 16 ++++++++++++----
  1 file changed, 12 insertions(+), 4 deletions(-)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index fb001c7..df0180c 100644
+index e32e0f6..18a371a 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
 @@ -5,10 +5,18 @@ Meteor.methods({
@@ -4415,52 +5275,51 @@ index fb001c7..df0180c 100644
      message.timestamp = new Date();
      message.userId = this.userId;
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 4a6f7dc486fa95f9a439a8cddb86e5e6f2b267fd Mon Sep 17 00:00:00 2001
+From 1fb6e441272b1e565ba4106c2cb25a8948017d40 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:27:46 +0200
-Subject: [PATCH 96/98] Step 8.4: Add image message view to the chat detail
- page
+Date: Fri, 8 Apr 2016 11:15:58 +0300
+Subject: [PATCH 112/114] Step 8.3: Add picture message type to chat view
 
 ---
  client/templates/chat.html | 7 ++++++-
  1 file changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index 1c3551e..5d9cfe3 100644
+index 09e402e..30b6fd0 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
 @@ -6,7 +6,12 @@
      <div class="message-list">
        <div ng-repeat="message in chat.messages" class="message-wrapper">
          <div class="message" ng-class="message.userId === $root.currentUser._id ? 'message-mine' : 'message-other'">
--          <div class="message-text">{{message.text}}</div>
+-          <div class="message-text">{{ message.text }}</div>
 +          <ng-switch on="message.type">
-+            <div ng-switch-when="text" class="text">{{message.text}}</div>
++            <div ng-switch-when="text" class="text">{{ message.text }}</div>
 +            <div ng-switch-when="picture" class="picture">
-+              <img ng-src="{{message.picture}}">
++              <img ng-src="{{ message.picture }}">
 +            </div>
 +          </ng-switch>
-           <span class="message-timestamp">{{message.timestamp | amDateFormat: 'HH:MM'}}</span>
+           <span class="message-timestamp">{{ message.timestamp | amDateFormat: 'HH:MM' }}</span>
          </div>
        </div>
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 01e9fc544a3474bb0a3784b99b5ed4df8e496edc Mon Sep 17 00:00:00 2001
+From d3799e95bf29f9bc2607f1e6189dd4b8a654f360 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:29:32 +0200
-Subject: [PATCH 97/98] Step 8.5: Add some CSS style for image messages
+Date: Fri, 8 Apr 2016 11:18:24 +0300
+Subject: [PATCH 113/114] Step 8.4: Add picture style to chat stylesheet
 
 ---
  client/styles/chat.scss | 12 +++++++++++-
  1 file changed, 11 insertions(+), 1 deletion(-)
 
 diff --git a/client/styles/chat.scss b/client/styles/chat.scss
-index 8d1226a..d0b5362 100644
+index 77f09da..e35382c 100644
 --- a/client/styles/chat.scss
 +++ b/client/styles/chat.scss
 @@ -66,7 +66,7 @@
@@ -4490,35 +5349,35 @@ index 8d1226a..d0b5362 100644
      position: absolute;
      bottom: 2px;
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
 
-From 0fe0578a783e75171db5f8896d5aae5297262cd6 Mon Sep 17 00:00:00 2001
+From 20d574ccf9a6bfc23fec916c5e1faeb9aa99f768 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 11 Dec 2015 16:30:31 +0200
-Subject: [PATCH 98/98] Step 8.6: Add indication for image message in the chats
- list
+Date: Fri, 8 Apr 2016 11:22:15 +0300
+Subject: [PATCH 114/114] Step 8.5: Add picture message indication in chats
+ view
 
 ---
  client/templates/chats.html | 5 ++++-
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index 2218128..8eb0ba6 100644
+index 17a5503..60c0147 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
 @@ -12,7 +12,10 @@
-               href="#/tab/chats/{{chat._id}}">
-         <img ng-src="{{chat | chatPicture}}">
-         <h2>{{chat | chatName}}</h2>
--        <p>{{chat.lastMessage.text}}</p>
+               href="#/tab/chats/{{ chat._id }}">
+         <img ng-src="{{ chat | chatPicture }}">
+         <h2>{{ chat | chatName }}</h2>
+-        <p>{{ chat.lastMessage.text }}</p>
 +        <ng-switch on="chat.lastMessage.type">
-+          <p ng-switch-when="text">{{chat.lastMessage.text}}</p>
++          <p ng-switch-when="text">{{ chat.lastMessage.text }}</p>
 +          <p ng-switch-when="picture">image</p>
 +        </ng-switch>
-         <span class="last-message-timestamp">{{chat.lastMessage.timestamp | calendar}}</span>
+         <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
          <i class="icon ion-chevron-right icon-accessory"></i>
          <ion-option-button class="button-assertive" ng-click="chats.remove(chat)">
 -- 
-2.5.4 (Apple Git-61)
+2.5.0
 
