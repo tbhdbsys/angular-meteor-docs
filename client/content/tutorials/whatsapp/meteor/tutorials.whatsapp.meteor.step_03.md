@@ -111,7 +111,7 @@ And now we can use those events in our view:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="3.17"}}
 
-And implement the controller method that handles those events:
+And implement the controller methods which handle those events:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="3.18"}}
 
@@ -143,7 +143,7 @@ Add it by running:
 
 And now let’s use it in the `newMessage()` method:
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="3.22"}}
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="3.23"}}
 
 Now that it's ready you can go ahead and send a message and view it on the screen.
 
