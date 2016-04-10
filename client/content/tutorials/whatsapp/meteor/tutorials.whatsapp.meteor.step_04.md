@@ -118,17 +118,19 @@ Now let’s implement this method inside the `SettingsCtrl`:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.23"}}
 
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.24"}}
+
 And this is our settings view:
 
 {{tutorialImage 'whatsapp-meteor' '14.png' 500}}
 
 We also need to modify the way we identify our users inside the messages list, so let’s do it:
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.24"}}
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.25"}}
 
 And the last missing feature is about adding auto-scroll to the messages list in order to keep the view scrolled down when new messages arrive.
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.25"}}
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.26"}}
 
 
 {{/template}}
