@@ -49,6 +49,8 @@ Since we're using modules, let's take care of `Parties` collection:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="4.10"}}
 
+* here, we removed all contents from `collections/parties.js`
+
 {{> DiffBox tutorialName="meteor-angular1-socially" step="4.11"}}
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="4.12"}}
