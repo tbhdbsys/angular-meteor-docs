@@ -89,7 +89,7 @@ The `package.json` looks like that:
 
 Meteor 1.3 comes with CommonJS implementation which provides the ability to use `import` / `export` statements and gives you a full solution for modules loading.
 
-Note that Angular 2.0 examples and tutorials mostly uses SystemJS - which is another modules loader.
+Note that Angular 2.0 examples and tutorials mostly use SystemJS - which is another modules loader.
 
 You can also use SystemJS, but we recommend to use CommonJS because it is built-in in Meteor 1.3.
 
@@ -102,7 +102,7 @@ TypeScript just adds more optional features to JavaScript such as types & interf
 
 An Angular 2 app can be written in regular JavaScript (ES5), the new JavaScript (ES2015 aka ES6) or TypeScript.
 
-If you've chosen ES6 or TypeScript, it will eventually need to compile code into ES5 — the only language currently fully supported in modern browsers (see the [ES6 compatibility table](https://kangax.github.io/compat-table/es6/)). ES6 can be compiled to ES5 using [Babel](https://babeljs.io/) or [Traceur](https://github.com/google/traceur-compiler/wiki/Getting-Started), while Typescript has it's own compiler.
+If you've chosen ES6 or TypeScript, it will eventually need to compile code into ES5 — the only language currently fully supported in modern browsers (see the [ES6 compatibility table](https://kangax.github.io/compat-table/es6/)). ES6 can be compiled to ES5 using [Babel](https://babeljs.io/) or [Traceur](https://github.com/google/traceur-compiler/wiki/Getting-Started), while Typescript has its own compiler.
 
 TypeScript is the recommended choice by the Angular team. This is due to several reasons, one of them being that TypeScript provides the most advanced support of [decorators](http://rbuckton.github.io/ReflectDecorators/typescript.html) compared with other compilers. Decorators are still considered an experimental feature that will likely appear only in ES7, so most compilers
 don't fully support them. What are decorators and how are they used in Angular 2? You'll learn more a bit later.
@@ -113,7 +113,7 @@ The Angular2-Meteor packages comes with a built-in TypeScript compiler plugin, w
 
 As you might already know, there are new `import` and `export` statements in ES6 to help structure your app into isolated modules.
 
-TypeScript can compile each file into a separate module. Lets learn how we are going use modules in our app.
+TypeScript can compile each file into a separate module. Let's learn how we are going to use modules in our app.
 
 TypeScript uses a file called `tsconfig.json`, so let's create it and use some default configuration:
 
@@ -136,7 +136,7 @@ First things first, let's understand a few things:
 
 Meteor 1.3 comes with support for NPM packages - which means that we can just add Angular 2 from NPM.
 
-Note that Meteor 1.3 still supports it's own packages system - Atmosphere - and it is still required because there are some Meteor features (such as custom files compiler and packages isolation) that available only when using Atmopshere package.
+Note that Meteor 1.3 still supports it's own packages system - Atmosphere - and it is still required because there are some Meteor features (such as custom files compiler and packages isolation) that are available only when using Atmopshere package.
 
 Angular2-Meteor is splitted to two packages: an Atmosphere package that contains compilers (HTML compiler and TypeScript compiler) and NPM package which contains Angular2-Meteor data solution and the actual connection to Meteor's data solution.
 
@@ -168,7 +168,7 @@ It means we would rather avoid concatenating all of them to let Angular 2 compon
 
 That's why `angular2-compilers` overrides standard Meteor HTML processor.
 
-Lets remove the standard HTML processor by:
+Let's remove the standard HTML processor by:
 
     $ meteor remove blaze-html-templates
 
@@ -225,7 +225,7 @@ add the `<app>` tag to `index.html`.
 As you've already learned, the package uses System.js to manage ES6 modules, but System.js
 does not know anything about our `app` module.
 
-So lets manually import our `app` module and add the `<app>` tag to `index.html` as follows:
+So let's manually import our `app` module and add the `<app>` tag to `index.html` as follows:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.10"}}
 
@@ -253,7 +253,7 @@ But soon, it a few steps forward, we will might encounter warnings from the Type
 
 To avoid those errors - we need to add Typings for packages that aren't built with TypeScript or for packages that does not share it's Typings by default.
 
-> Angular2-Meteor and Angular 2 provides it's own typings inside the NPM folder, and you do no need to install the typings from external sources.
+> Angular2-Meteor and Angular 2 provides its own typings inside the NPM folder, and you do no need to install the typings from external sources.
 
 You will need to reference and let the TypeScript compiler know about external packages that in use - there are 2 ways of doing that:
 
