@@ -110,7 +110,6 @@ They can be included in the "meteorCompilerOptions" section of _tsconfig.json_ a
 
 If you are using [Atom](atom.io) as your editor with the [Atom-TypeScript plugin](https://github.com/TypeStrong/atom-typescript), use the following configuration to automatically generate your `tsconfig.json` file:
 
-    ```js
     {
      "atom": {
         "rewriteTsconfig": true
@@ -128,7 +127,6 @@ If you are using [Atom](atom.io) as your editor with the [Atom-TypeScript plugin
       ],
       "files": []
     }
-    ```
 
 # Challange
 
