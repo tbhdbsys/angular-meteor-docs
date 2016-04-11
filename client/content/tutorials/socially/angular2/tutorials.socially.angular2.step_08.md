@@ -114,17 +114,16 @@ If you place `@InjectUser` above the PartiesForm it will inject a new user prope
 __`client/parties-form/parties-form.ts`__:
 
     ...
-    import {MeteorComponent} from 'angular2-meteor';
-    import {AccountsUI} from 'meteor-accounts-ui'
-    import {InjectUser} from 'meteor-accounts';
+    import {MeteorComponent} from 'angular2-meteor/meteor_component';
+    import {InjectUser} from 'angular2-meteor-accounts-ui';
 
     @Component({
       selector: 'parties-form',
       templateUrl: 'client/parties-form/parties-form.html',
-      directives: [AccountsUI]
     })
     @InjectUser()
     export class PartiesForm extends MeteorComponent {
+      user: Meteor.User;
       constructor() {
         super();
         ...
