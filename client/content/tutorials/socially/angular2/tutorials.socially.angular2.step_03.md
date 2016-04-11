@@ -90,6 +90,8 @@ Our `app.ts` file should now look like this:
 
 __`client/app.ts`:__
 
+    import 'reflect-metadata';
+    import 'zone.js/dist/zone';
     import {NgZone, Component} from 'angular2/core';
     import {bootstrap} from 'angular2/bootstrap';
     import {Parties} from '../collections/parties';

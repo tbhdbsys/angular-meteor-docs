@@ -154,6 +154,8 @@ And we also need to install the Meteor stubs:
 
 > Note that this will update your `package.json` with a new dependency.
 
+> You might see a lot of warning messages if you are using NPM v2, it is okay and if you are interested to know more about these warning, you can [read here](http://blog.npmjs.org/post/110924823920/npm-weekly-5).
+
 That's it! Now we can use Angular 2's power in our Meteor app!
 
 ## HTML
@@ -196,11 +198,12 @@ And let's create the `.html` file:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.9"}}
 
-First we're importing the dependencies we needed from `angular2/core` and `angular2/platform/browser`. This is not a folder and files in your directory, but a reference to System.js modules aliased as `angular2/core` and `angular2/platform/browser`.
+First we're importing the dependencies we needed from `angular2/core` and `angular2/platform/browser`. This is not a folder and files in your directory, but a reference to CommonJS modules aliased as `angular2/core` and `angular2/platform/browser`, which in fact located under you `node_modules` directory.
+
 They are some of the Angular 2 main modules that are available as part of the `urigo:angular2-meteor` package.
 
 One of the great architectural innovation of Angular 2 is that an app written with Angular 2 can run on different
-platforms. As you can see in our case, we are bootstrapping using the bootstrap from the "browser" platform since our app is a regular Web app to run in a browser.
+platforms - as you can see in our case, we are bootstrapping using the bootstrap from the "browser" platform since our app is a regular Web app to run in a browser.
 
 Notice the `@` syntax. In Angular 2, these are called Annotations. They are similar to a new feature coming to ES7 called Decorators.
 From a consumers point of view, they are almost the same except Decorators are a proposed standard allowing us to add class metadata while Angular 2's Annotations are a realization of that metadata, implemented with the help of Decorators in TypeScript.
@@ -244,42 +247,46 @@ Let's run the app:
 
 ## TypeScript Typings
 
-At this moment you've likely noticed a message in the console saying that `angular2/core` and `angular2/platform/browser` are not found.
+At this moment you might see no errors from the TypeScript compiler because of the `tsconfig.json` we created earlier.
 
-It occurs because the TypeScript compiler is configured in the package with diagnostics messages turned on by default and
-the TypeScript compiler doesn't know anything about the location of the `angular2/core` and `angular2/platform/browser` modules. To fix this, you will need to make use of TypeScript declaration files, which is a TypeScript way to inform the compiler about third-party API modules.
+But soon, it a few steps forward, we will might encounter warnings from the TypeScript compiler regarding Meteor packages (such as `meteor/meteor` or `meteor/tracker`).
 
-After the first run, a folder called "typings" is created and a new definition file called `angular2-meteor.d.ts` is copied there into a folder with the same name.
-We'll need to link `app.ts` and `angular2-meteor.d.ts` together. There are two ways to achieve that:
+To avoid those errors - we need to add Typings for packages that aren't built with TypeScript or for packages that does not share it's Typings by default.
 
- - one way is to directly reference `angular2-meteor.d.ts` using a special sugared syntax at the top of `app.ts` as follows:
+> Angular2-Meteor and Angular 2 provides it's own typings inside the NPM folder, and you do no need to install the typings from external sources.
+
+You will need to reference and let the TypeScript compiler know about external packages that in use - there are 2 ways of doing that:
+
+ - One way is to directly reference typings files (`.d.ts` extension) using a special sugared syntax at the top of your TypeScript code file, for example:
 
         /// <reference path="typings/angular2-meteor/angular2-meteor.d.ts" />
 
         import {Component} from 'angular2/core';
         import {bootstrap} from 'angular2/platform/browser';
 
- - another way is to create a custom [TypeScript configuration file](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) with the "files" property set to include all required typings files.
+ - Another way is to create a custom [TypeScript configuration file](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) with the "files" (or "filesGlob") property set to include all required typings files.
 
 This configuration file should be called `tsconfig.json` and placed at
-the app root folder. We'll also take a close look at the configuration itself during
-step 7, including how to configure TypeScript properly to automatically generate your `tsconfig.json` file in different IDEs.
+the app root folder.
+
+We will see more examples and usage with the `tsconfig.json` file later in the tutorial.
 
 Let's make use of the typings in the second way. Angular 2 and the Meteor API will be
 used in pretty much every file of our app, so adding declaration files manually might become repetitive.
 
-If you look into `angular2-meteor.d.ts`, you'll see there references to Angular 2 and Meteor API.
-It means that we'll need their definition files as well to pull everything together.
-Luckily, besides its own declaration file, Angular2-Meteor installs also Angular 2 definition files as well into the _typings_ folder.
-These files are distributed via the Angular 2 NPM and Angular2-Meteor uses that NPM internally.
+Let's dive into an example for typings (`.d.ts`) file - you can see Angular2-Meteor file, inside `node_modules/angular2-meteor/meteor_component.d.ts`.
 
-> You only need to periodically remove .d.ts-files in the _typings_ folder, thus, letting the package know that the files need to be updated.
+You notice that this file contain only declaration and does not have code inside - the code is inside the corresponding compiled `.js` file, and this file required for lint and type-checks only.
 
-From other side, libraries like Meteor, ES6 Promise etc are so called ambient dependencies, which
+If you look into, you'll see there references to Angular 2 and Meteor API.
+
+Libraries like ES6 Promise etc are so called ambient dependencies, which
 means they provide information about the environment and should be available globally.
-There is least one global repository for typings of such libraries called [DefinitelyTyped](http://definitelytyped.org/).
+
 In order to install them — thus adding full type-checking support at this stage — we'll use a special tool for typings installation
-and management called `typings`. What's great about this tool is that it can install typings from different locations whether it's a Github repo, local folder, a NPM or even some HTTP path.
+and management called `typings`.
+
+What's great about this tool is that it can install typings from different locations whether it's a Github repo, local folder, a NPM or even some HTTP path.
 You can find more information about it [here](https://github.com/typings/typings).
 
 In our case, we'll need to execute commands as follows to install all dependencies:
