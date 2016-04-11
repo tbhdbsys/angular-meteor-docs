@@ -1,121 +1,173 @@
 {{#template name="tutorials.socially.angular1.step_17.md"}}
 {{> downloadPreviousStep stepName="step_16"}}
 
-Meteor has a great support for CSS.
+In this chapter we will add Twitter's bootstrap to our project, and add some style and layout to the project.
 
-Like other types of files, Meteor gathers all CSS files for the client will get a bundle with all the CSS in your app.
+At the moment, this tutorial we will use only Bootstrap's CSS file and not the JavaScript - but note that you can use all the features of Boostrap 4.
 
-Meteor also pre-process the CSS files and minifies them (in development it doesn't for easier debugging).
+# Adding and importing Bootstrap 4
 
-Meteor also supports [LESS](http://lesscss.org/) as its default CSS pre-processor (the package is maintained by the Meteor team themselves).
+First, we need to add Boostrap 4 to our project - so let's do that.
 
-LESS extends CSS with dynamic behavior such as variables, mixins, operations and functions. It allows for more compact stylesheets and helps reduce code duplication in CSS files.
+Run the following command in your Terminal:
 
-With the less package installed, .less files in your application are automatically compiled to CSS and the results are included in the client CSS bundle.
+    $ meteor npm install bootstrap4-webpack-package --save
 
-# Adding simple styling
+> At this time, you cannot use the original Boostrap 4 package from NPM, and a wrapper is needed. Meteor 1.3.2 may resolve this issue. [Click for more information about this issue](https://github.com/meteor/meteor/issues/6098).
 
-Create a new folder called 'styles' under the 'client' folder and add a new file - main.css under that folder.
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.4"}}
 
-Then change the background color of our app:
+And it will import Boostrap's CSS to your project.
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="17.1"}}
-
-Run the app and see your background color changed.
-
-# CSS Frameworks
-
-There are many CSS frameworks that help us write less CSS.
-
-Right now the most popular one is [Bootstrap](http://getbootstrap.com/) so we are going to use that in this tutorial.
-
-* We are also keeping close watch on [Polymer](https://www.polymer-project.org/) and [Famo.us/angular](http://famo.us/integrations/angular) and might  update the tutorial to use those instead of Bootstrap in the future.
-
-Let's add Bootstrap Meteor package to our project:
-
-    meteor add twbs:bootstrap
-
-
-Now let's start organizing by putting the Home link and the login buttons inside a navbar and the rest of the content inside a Bootstrap .container class.
-
-Inside `index.html` surround the `h1` and the `login-buttons` with a header like that:
-
-{{> DiffBox tutorialName="meteor-angular1-socially" step="17.3"}}
-
-Converting to Bootstrap doesn't stop here. By applying bootstrap styles to various other parts of our Socially app, our website will look better on different screens. Have a look at [Code Diff](https://github.com/Urigo/meteor-angular-socially/compare/step_16...step_17) to see how we changed the structure of the main files.
-
-# Less
+# Add LESS
 
 OK, simple styling works, but we want to be able to use [LESS](http://lesscss.org/).
 
-First change the file name from main.css to `main.less`.  Now add the LESS package in the command line:
+We can't add LESS from NPM because it is a compiler and we want it to be a part of Meteor build - so we will add it from Atmosphere:
 
-    meteor add less
+    $ meteor add less
 
-Test that everything still works as before.
+We will use LESS in a few steps!
 
-Now go to `main.less` and add a different background color to the navbar:
+# First touch of style
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="17.5"}}
+Now let's add some style! We will set just a background color.
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.3"}}
 
 
-Notice that we nested the `.navbar` inside the body. This is part of the [LESS syntax for nested rules](http://lesscss.org/features/#features-overview-feature-nested-rules).
+Let's move loginButton to Navigation and set .container-fluid to the uiView directive.
 
-# Designing the parties list
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.6"}}
 
-Now we are going to design the parties list.
+Converting to Bootstrap doesn't stop here. By applying bootstrap styles to various other parts of our Socially app, our website will look better on different screens. Have a look at [Code Diff](https://github.com/Urigo/meteor-angular-socially/compare/step_16...step_17) to see how we changed the structure of the main files.
 
-Now we can start writing specific LESS code inside that file.
-
-We will make some changes in the code now to make the code more readable, and and some CSS rules to take advantage of the power of Bootstrap.
-
-First, `angular-ui-bootstrap`, in order to to that, let's run this commands:
-
-    meteor add angularui:angular-ui-bootstrap
-
-Now, let's start with some cool fonts and some CSS changes to make the `index.html` look better:
+Now we can create .less file for Socially:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.7"}}
 
-And verify that we have `ui.bootstrap` dependency in the module definition, because we will use `$modal` service later.
+And apply it to main less file:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.5"}}
+
+To make bootstrap working with all sizes of screens:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.8"}}
 
-Now, we will move the logic of new party creation into a new component, so lets create it first:
+# Navigation
+
+Move loginButtons under Navigation and set as a bootstrap's navbar:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.9"}}
 
-And it's view:
-
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.10"}}
 
-Now we will make some changes in the `partiesList` component view in order to match the new structure with the `$modal`, and add some style to the Google Maps object.
+# PartiesList
+
+We will use bootstrap's grid system and make all warnings look a lot better:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.11"}}
 
-Now, let's update the view of the parties list and match the new logic - we will use `$modal` to open the new party page, and change some of the layout using Bootstrap's grid system.
-
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.12"}}
 
-I will add new some CSS rules to make all that new structure look better.
+We will no longer be using PartyUnanswered, time to remove it:
 
-Now, let's add some variables to defined our colors in the `main.less` file:
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.42"}}
+
+# PartyAdd
+
+Let's use .form-group and .form-control classes:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.13"}}
 
-Now let's make some changes in the party details view to use Bootstrap:
-
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.14"}}
-
-And let's add the missing `currentUserId` helper:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.15"}}
 
-The style rules are located in `.less` files for each component, and the actual changes that make are available in [this commit to view](https://github.com/Urigo/meteor-angular-socially/commit/a261d7f1126cdde64194dc2fdcc7946940c9a56d), because the CSS is not the most relevant part in this tutorial.
+# PartiesMap
 
-And now let's include those file in the `main.less`:
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.16"}}
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.17"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.18"}}
+
+
+# PartiesSort
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.19"}}
+
+# PartyCreator
+
+Let's add a icon:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.20"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.21"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.22"}}
+
+# PartyRemove
+
+We will use icon of X provided by bootstrap v4:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.23"}}
+
+# PartyRsvp
+
+Let's make RSVP a lot prettier! User will be able to see how he responded:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.24"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.25"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.26"}}
+
+And create few methods to check the answer:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.39"}}
+
+# PartyRsvpsList
+
+We will no longer use PartyRsvpUsers, so we can remove it:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.43"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.27"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.28"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.29"}}
+
+# PartyUninvited
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.30"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.31"}}
+
+# PartyDetails
+
+Let's do pretty much the same as we did with PartyAdd and PartyDetails:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.32"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.33"}}
+
+# PartyMap
+
+We will remove partyMap.css and replace it with partyMap.less:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.34"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.35"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.37"}}
+
+# Update Socially
+
+Now we can import all less files of direct Socially dependencies:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="17.38"}}
 
 That's it! Now we have a nice style with a better looking CSS using Bootstrap and LESS!
 
