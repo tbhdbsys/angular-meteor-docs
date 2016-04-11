@@ -211,6 +211,8 @@ Now we can update main view in index.html file and load Socially in main.js
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="3.17"}}
 
+Here, change the main.js file like this : (remove "import { name as PartiesList } ..." and "angular.module('socially', [...")
+
 {{> DiffBox tutorialName="meteor-angular1-socially" step="3.18"}}
 
 # Summary
