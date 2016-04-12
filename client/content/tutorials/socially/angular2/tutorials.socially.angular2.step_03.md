@@ -1,7 +1,7 @@
 {{#template name="tutorials.socially.angular2.step_03.md"}}
 {{> downloadPreviousStep stepName="step_02"}}
 
-Now we have a client side application that creates and renders it's own data.
+Now we have a client side application that creates and renders its own data.
 
 So, if we were in any framework other than Meteor, we would likely start implementing a series of REST endpoints to connect the server to the client.
 We would also need to create a database and functions to connect to it.
@@ -129,7 +129,7 @@ There is one special case where the package helps you. Similar to the client's `
 
 If you call your main server file `main.ts`, a CommonJS module will be created out of this file and loaded automatically.
 
-Let's create a new folder called "server" and add a file `main.ts` inside of it. As mentioned earlier, "server" is another special folder name in Meteor: it's contents will only run on the server.
+Let's create a new folder called "server" and add a file `main.ts` inside of it. As mentioned earlier, "server" is another special folder name in Meteor: its contents will only run on the server.
 
   {{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
 
@@ -158,7 +158,7 @@ Now let's do the same but with "remove". At the prompt, type the following comma
 
     db.parties.find({});
 
-Choose one party you want to remove and copy it's 'id' property.
+Choose one party you want to remove and copy its 'id' property.
 Then, remove it using that id (replace 'N4KzMEvtm4dYvk2TF' with your party's id value):
 
     db.parties.remove({"_id": ObjectId("N4KzMEvtm4dYvk2TF")});
