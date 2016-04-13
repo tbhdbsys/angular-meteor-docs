@@ -10,7 +10,7 @@ Angular-material is an Angular 1 implementation of Google's [Material Design spe
 
 To start, first we have to remove bootstrap from our application. Type in the console:
 
-    meteor npm uninstall bootstrap4-webpack-package --save
+    meteor npm uninstall bootstrap --save
 
 We should also remove dependency from the main.js file:
 
