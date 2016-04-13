@@ -84,7 +84,7 @@ Everything that happens in the zone will be checked by Angular 2 for changes and
 The `zone` parameter appears in the constructor via the dependency injection resolution mechanism, which
 has a new look in Angular 2. Don't worry if you're unclear about how it works — you'll learn more about the nuances in the next chapters.
 
-The [fat arrow syntax](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) `=>` is also a new syntax that comes in ES2015, and tells the function to run in it's parents context. In this case, it sets `this` as the context of the class Socially.
+The [fat arrow syntax](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) `=>` is also a new syntax that comes in ES2015, and tells the function to run in its parents context. In this case, it sets `this` as the context of the class Socially.
 
 Our `app.ts` file should now look like this:
 
