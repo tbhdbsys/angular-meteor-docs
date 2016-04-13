@@ -111,6 +111,8 @@ Create a new file under the `api` folder named `users.js` and place the followin
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.11"}}
 
 And make it available on the server side:
+* Before, here : move server/startup.js to import/startup/fixtures.js
+* Then, import/startup/fixtures.js change this "import { Parties } from '../imports/api/parties';" to "import { Parties } from '../api/parties';"
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.12"}}
 
