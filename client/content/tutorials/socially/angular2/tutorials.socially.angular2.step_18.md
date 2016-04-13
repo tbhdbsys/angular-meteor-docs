@@ -69,7 +69,7 @@ Now let's add the import in the party details component:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.12"}}
 
-And update it's layout:
+And update its layout:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.13"}}
 
@@ -111,7 +111,7 @@ We also have "Recover" button in the login page, so let's create a component tha
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.20"}}
 
-And it's view:
+And its view:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.21"}}
 
