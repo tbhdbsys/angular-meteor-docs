@@ -303,6 +303,8 @@ This is a top level definition file that links all other definition files instal
 
 So now only one Typing is missing - which is the Meteor typings file - you can grab it from here: [https://gist.github.com/tomitrescak/8366ce98f1857e202ea8](https://gist.github.com/tomitrescak/8366ce98f1857e202ea8), since it is not released as a final version in the open-source community.
 
+Download and put this **meteor.d.ts** file in your **typings** folder, then add `/// <reference path="meteor.d.ts" />` in your **typings/main.d.ts** file.
+
 > Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - there will not prevent you from running your app, but it is highly recommended to resolve those errors.
 
 > We recommend to try and find typings for all of your packages.
