@@ -10,7 +10,7 @@ We used `helpers` in the previous Component we implemented, but now we will demo
 
 # Implement the component
 
-We'll expand the `partyDetails` by using `helpers` method, and we will use [findOne](http://docs.meteor.com/#/full/findone) method from the Mongo.Collection, which returns a single object.
+We'll expand the `PartyDetails` by using `helpers` method, and we will use [findOne](http://docs.meteor.com/#/full/findone) method from the Mongo.Collection, which returns a single object.
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="6.1"}}
 
@@ -20,7 +20,7 @@ So after declaring this helper, we can just use `this.party` in our Component's 
 
 # Component template
 
-In `party-details.html` let's replace the binding to the `partyDetails.partyId` with a binding to `partyDetails.party.name` and `partyDetails.party.description`:
+In `partyDetails.html` let's replace the binding to the `partyDetails.partyId` with a binding to `partyDetails.party.name` and `partyDetails.party.description`:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="6.2"}}
 
@@ -38,7 +38,7 @@ And now let's implement the logic of the "Save" button on the controller:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="6.4"}}
 
-We used [Parties.update](http://docs.meteor.com/#/full/update) method which is a method that comes from the Mongo.Collection object. 
+We used [Parties.update](http://docs.meteor.com/#/full/update) method which is a method that comes from the Mongo.Collection object.
 
 The first parameter is the parties we want to update, in this case, we send the specific party's id, just like we did with `findOne`.
 
@@ -47,6 +47,10 @@ In the second parameter we specify the action we want to perform, in our case we
 We can also handle success or fail when using `Parties.update` by adding a callback as the third argument, for example:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="6.5"}}
+
+# Testing
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="6.6"}}
 
 
 # Summary

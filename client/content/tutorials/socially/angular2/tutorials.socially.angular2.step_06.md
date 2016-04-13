@@ -20,7 +20,7 @@ Let's change `party-details.html` into a form, so that we can edit the party det
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="6.2"}}
 
-Notice we have a routerLink button on the page that redirects back to the list (from our previous step's challenge). Don't forget to load all required dependencies.
+Notice we have a routerLink button on the page that redirects back to the list (from our previous step's challenge). Don't forget to load the required dependency: adding `import {RouterLink} from 'angular2/router';` on the top of **party-details.ts** and then adding `directives: [RouterLink]` inside of the `@Component`.
 
 ## ngModel
 
@@ -46,13 +46,13 @@ But unlike a form Control, NgModel has some limitations, e.g., it doesn't suppor
 If you need to validate your form, you can still combine `ngModel` directives with a form model assigned to the `ngFormModel` directive, like this:
 
     <form #f="ngForm" [ngFormModel]="partyForm">
-      <label for="name">Name</label>
+      <label>Name</label>
       <input type="text" ngControl="name" [(ngModel)]="party.name">
 
-      <label for="description">Description</label>
+      <label>Description</label>
       <input type="text" ngControl="description" [(ngModel)]="party.description">
 
-      <label for="location">Location</label>
+      <label>Location</label>
       <input type="text" ngControl="location" [(ngModel)]="party.location">
 
       <button type="submit">Save</button>

@@ -2,7 +2,7 @@
 {{> downloadPreviousStep stepName="step_08"}}
 
 
-Publish and subscribe to data is very different from other methods, such as using REST APIs. So don't miss the articles in the section below for deeper understanding how they work. 
+Publish and subscribe to data is very different from other methods, such as using REST APIs. So don't miss the articles in the section below for deeper understanding how they work.
 
 
 Right now our app has no privacy, every user can see all the parties on the screen.
@@ -19,7 +19,7 @@ Write this command in the console:
     meteor remove autopublish
 
 
-Now run the app.   You can't see any parties.
+Now run the app. You can't see any parties.
 
 So now we need to tell Meteor what parties should it publish to the clients.
 
@@ -27,17 +27,27 @@ To do that we will use Meteor's [publish function](http://docs.meteor.com/#/full
 
 Publish functions should go only in the server so the client won't have access to them.
 
-Let's create a new file named `parties.js` inside the server folder.
+Let's create a new file named `publish.js` inside the *imports/api/parties* folder.
 
 Inside the file insert this code:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.2"}}
 
-Let's see what's happening here:
+Let's also move collection to separate file:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.3"}}
+
+Replace `parties.js` with `index.js`:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.4"}}
+
+Let's see what has been changed:
 
 * We have `Meteor.publish` - a function to define what to publish from the server to the client
 * The first parameter is the name of the subscription. The client will subscribe to that name
 * The second parameter is a function that defines what will be returned in the subscription
+* We moved everything to separate files
+* We removed parties.js and create index.js (it allows us to control what should or not be exported and imported)
 
 You can find out more about MongoDB `find()` method [here](http://docs.mongodb.org/manual/reference/method/db.collection.find/)
 
@@ -45,7 +55,7 @@ That function will determine what data will be returned and the permissions need
 
 In our case the first name parameter is **"parties"**. So we will need to subscribe to the **"parties"** collection in the client, so let's do it, using `this.subscribe` method:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="9.3"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.6"}}
 
 > Our publish function can also take parameters.  In that case, we would also need to pass the parameters from the client.
 
@@ -61,19 +71,23 @@ Either that the owner parameter exists and it's the current logged in user (whic
 
 So now let's add the public flag to the parties and see how it affects the parties the client gets.
 
-Let's add a checkbox to the new party form in `parties-list.html`:
+Let's add a checkbox to the new party form in `ParyAdd`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="9.4"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.7"}}
 
 Notice how easy it is to bind a checkbox to a model with Angular 1!
 
-Let's add the same to the `party-details.html` page:
+Let's add the same to the `PartyDetails` component:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="9.5"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.8"}}
 
 And we will add the ability to set this flag when updating a party details:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="9.6"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.9"}}
+
+Have you noticed that PartiesDetails is missing something? Yes, it is!
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.10"}}
 
 Now let's run the app.
 
@@ -92,9 +106,15 @@ Notice the we don't need to create a new Meteor collection like we did with part
 
 So let's start with defining our publish function.
 
-Create a new file under the `server` folder named `users.js` and place the following code in:
+Create a new file under the `api` folder named `users.js` and place the following code in:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="9.7"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.11"}}
+
+And make it available on the server side:
+* Before, here : move server/startup.js to import/startup/fixtures.js
+* Then, import/startup/fixtures.js change this "import { Parties } from '../imports/api/parties';" to "import { Parties } from '../api/parties';"
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.12"}}
 
 So here again we use the Mongo API to return all the users (find with an empty object) but we select to return only the emails and profile fields.
 
@@ -103,22 +123,24 @@ So here again we use the Mongo API to return all the users (find with an empty o
 The emails field holds all the user's email addresses, and the profile might hold more optional information like the user's name
 (in our case, if the user logged in with the Facebook login, the accounts-facebook package puts the user's name from Facebook automatically into that field).
 
-Now let's subscribe to that publish Method.  In the `partyDetails` component file add the following line inside the controller:
+Now let's subscribe to that publish Method.  In the `PartyDetails` component file add the following line inside the controller:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="9.8"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.13"}}
 
 * We subscribed to the `users` publication
 * We added a helper function to the `users` collection
 
 Now let's add the list of users to the view to make sure it works.
 
-Add this ng-repeat list to the end of `party-details.html`:
+Add this ng-repeat list to the end of the template:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="9.10"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.14"}}
 
-Also, let's add a subscription to the `parties` in this Component as well, in case we will load the app directly from this Component before loading the parties-list Component:
+# Testing
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="9.9"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.15"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="9.16"}}
 
 Run the app and see the list of all the users' emails that created a login and password and did not use a service to login.
 

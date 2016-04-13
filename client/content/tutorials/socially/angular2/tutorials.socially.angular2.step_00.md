@@ -75,11 +75,11 @@ So in our case, Meteor found our `index.html` file, recognized it was meant for 
 
 Npm stands for Node Packages Manager, which manages your dependencies and external packages.
 
-To init a new project with NPM, run in the command line:
+To initialize a new project with NPM, run in the command line:
 
     $ npm init
 
-You'll be asked a few questions about some metadata related to your project, and then `package.js` file will be created, which later hold the versions of the packages that required by your app.
+You'll be asked a few questions about some metadata related to your project, and then the `package.json` file will be created, which will hold the versions of the packages that are required by your app.
 
 The `package.json` looks like that:
 
@@ -89,7 +89,7 @@ The `package.json` looks like that:
 
 Meteor 1.3 comes with CommonJS implementation which provides the ability to use `import` / `export` statements and gives you a full solution for modules loading.
 
-Note that Angular 2.0 examples and tutorials mostly uses SystemJS - which is another modules loader.
+Note that Angular 2.0 examples and tutorials mostly use SystemJS - which is another modules loader.
 
 You can also use SystemJS, but we recommend to use CommonJS because it is built-in in Meteor 1.3.
 
@@ -102,7 +102,7 @@ TypeScript just adds more optional features to JavaScript such as types & interf
 
 An Angular 2 app can be written in regular JavaScript (ES5), the new JavaScript (ES2015 aka ES6) or TypeScript.
 
-If you've chosen ES6 or TypeScript, it will eventually need to compile code into ES5 — the only language currently fully supported in modern browsers (see the [ES6 compatibility table](https://kangax.github.io/compat-table/es6/)). ES6 can be compiled to ES5 using [Babel](https://babeljs.io/) or [Traceur](https://github.com/google/traceur-compiler/wiki/Getting-Started), while Typescript has it's own compiler.
+If you've chosen ES6 or TypeScript, it will eventually need to compile code into ES5 — the only language currently fully supported in modern browsers (see the [ES6 compatibility table](https://kangax.github.io/compat-table/es6/)). ES6 can be compiled to ES5 using [Babel](https://babeljs.io/) or [Traceur](https://github.com/google/traceur-compiler/wiki/Getting-Started), while Typescript has its own compiler.
 
 TypeScript is the recommended choice by the Angular team. This is due to several reasons, one of them being that TypeScript provides the most advanced support of [decorators](http://rbuckton.github.io/ReflectDecorators/typescript.html) compared with other compilers. Decorators are still considered an experimental feature that will likely appear only in ES7, so most compilers
 don't fully support them. What are decorators and how are they used in Angular 2? You'll learn more a bit later.
@@ -113,18 +113,30 @@ The Angular2-Meteor packages comes with a built-in TypeScript compiler plugin, w
 
 As you might already know, there are new `import` and `export` statements in ES6 to help structure your app into isolated modules.
 
-TypeScript can compile each file into a separate module. Lets learn how we are going use modules in our app.
+TypeScript can compile each file into a separate module. Let's learn how we are going to use modules in our app.
 
 TypeScript uses a file called `tsconfig.json`, so let's create it and use some default configuration:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.4"}}
 
+Now let's understand some of the configuration we just added:
+
+* `module` - we will use `commonjs` because that is the modules loader that Meteor 1.3 implements, so we want our TypeScript code to compile into CommonJS modules.
+* `target` - specify `es5` because that's the ECMAScript version that Meteor knows how to use.
+* `moduleResolution` - Meteor 1.3 supports NPM, so we will use it to get our dependencies.
+* `emitDecoratorMetadata`, `experimentalDecorators` - we use these because Angular 2.0 uses decorators.
+
+We use some more compiler options - if you want to enrich your TypeScript knowledge, you can read [here](http://www.typescriptlang.org/docs/handbook/compiler-options.html).
 
 # Adding Angular 2
 
 It's time to add Angular 2 to our stack!
 
 First things first, let's understand a few things:
+
+Meteor 1.3 comes with support for NPM packages - which means that we can just add Angular 2 from NPM.
+
+Note that Meteor 1.3 still supports it's own packages system - Atmosphere - and it is still required because there are some Meteor features (such as custom files compiler and packages isolation) that are available only when using Atmopshere package.
 
 Angular2-Meteor is splitted to two packages: an Atmosphere package that contains compilers (HTML compiler and TypeScript compiler) and NPM package which contains Angular2-Meteor data solution and the actual connection to Meteor's data solution.
 
@@ -136,9 +148,15 @@ And then add the meteor package, by running:
 
     $ meteor npm install --save angular2-meteor
 
+And we also need to install the Meteor stubs:
+
+    $ meteor npm install --save meteor-node-stubs
+
 > Note that this will update your `package.json` with a new dependency.
 
-That's it! Now we can use Angular 2's power in our Meteor app.
+> You might see a lot of warning messages if you are using NPM v2, it is okay and if you are interested to know more about these warning, you can [read here](http://blog.npmjs.org/post/110924823920/npm-weekly-5).
+
+That's it! Now we can use Angular 2's power in our Meteor app!
 
 ## HTML
 
@@ -150,7 +168,7 @@ It means we would rather avoid concatenating all of them to let Angular 2 compon
 
 That's why `angular2-compilers` overrides standard Meteor HTML processor.
 
-Lets remove the standard HTML processor by:
+Let's remove the standard HTML processor by:
 
     $ meteor remove blaze-html-templates
 
@@ -180,11 +198,12 @@ And let's create the `.html` file:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.9"}}
 
-First we're importing the dependencies we needed from `angular2/core` and `angular2/platform/browser`. This is not a folder and files in your directory, but a reference to System.js modules aliased as `angular2/core` and `angular2/platform/browser`.
+First we're importing the dependencies we needed from `angular2/core` and `angular2/platform/browser`. This is not a folder and files in your directory, but a reference to CommonJS modules aliased as `angular2/core` and `angular2/platform/browser`, which in fact located under you `node_modules` directory.
+
 They are some of the Angular 2 main modules that are available as part of the `urigo:angular2-meteor` package.
 
 One of the great architectural innovation of Angular 2 is that an app written with Angular 2 can run on different
-platforms. As you can see in our case, we are bootstrapping using the bootstrap from the "browser" platform since our app is a regular Web app to run in a browser.
+platforms - as you can see in our case, we are bootstrapping using the bootstrap from the "browser" platform since our app is a regular Web app to run in a browser.
 
 Notice the `@` syntax. In Angular 2, these are called Annotations. They are similar to a new feature coming to ES7 called Decorators.
 From a consumers point of view, they are almost the same except Decorators are a proposed standard allowing us to add class metadata while Angular 2's Annotations are a realization of that metadata, implemented with the help of Decorators in TypeScript.
@@ -204,9 +223,9 @@ The only thing left before we can run our app is to import the root module and
 add the `<app>` tag to `index.html`.
 
 As you've already learned, the package uses System.js to manage ES6 modules, but System.js
-does npt know anything about our `app` module.
+does not know anything about our `app` module.
 
-So lets manually import our `app` module and add the `<app>` tag to `index.html` as follows:
+So let's manually import our `app` module and add the `<app>` tag to `index.html` as follows:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.10"}}
 
@@ -219,17 +238,7 @@ Importing the root module every time looks like a repetitive task.
 Here comes some good news — the Angular 2 package recognizes the file named `app.ts`.
 If you have one in the app root folder, the package will import it for you without even having to ask.
 
-Even more, if you called your app selector — `app`, you can get rid of `index.html` altogether.
-The package adds default layout with the `<app>` tag automatically as follows:
-
-    <body>
-        <app></app>
-    </body>
-
-> Note: default layout is added only when there are no any other HTML files
-> with `head` or `body` tags.
-
-So lets remove `index.html` for now and run the app:
+Let's run the app:
 
     $ meteor
 
@@ -238,57 +247,69 @@ So lets remove `index.html` for now and run the app:
 
 ## TypeScript Typings
 
-At this moment you've likely noticed a message in the console saying that `angular2/core` and `angular2/platform/browser` are not found.
+At this moment you might see no errors from the TypeScript compiler because of the `tsconfig.json` we created earlier.
 
-It occurs because the TypeScript compiler is configured in the package with diagnostics messages turned on by default and
-the TypeScript compiler doesn't know anything about the location of the `angular2/core` and `angular2/platform/browser` modules. To fix this, you will need to make use of TypeScript declaration files, which is a TypeScript way to inform the compiler about third-party API modules.
+But soon, it a few steps forward, we will might encounter warnings from the TypeScript compiler regarding Meteor packages (such as `meteor/meteor` or `meteor/tracker`).
 
-After the first run, a folder called "typings" is created and a new definition file called `angular2-meteor.d.ts` is copied there into a folder with the same name.
-We'll need to link `app.ts` and `angular2-meteor.d.ts` together. There are two ways to achieve that:
+To avoid those errors - we need to add Typings for packages that aren't built with TypeScript or for packages that does not share it's Typings by default.
 
- - one way is to directly reference `angular2-meteor.d.ts` using a special sugared syntax at the top of `app.ts` as follows:
+> Angular2-Meteor and Angular 2 provides its own typings inside the NPM folder, and you do no need to install the typings from external sources.
+
+You will need to reference and let the TypeScript compiler know about external packages that in use - there are 2 ways of doing that:
+
+ - One way is to directly reference typings files (`.d.ts` extension) using a special sugared syntax at the top of your TypeScript code file, for example:
 
         /// <reference path="typings/angular2-meteor/angular2-meteor.d.ts" />
 
-        import {Component, View} from 'angular2/core';
-
+        import {Component} from 'angular2/core';
         import {bootstrap} from 'angular2/platform/browser';
 
- - another way is to create a custom [TypeScript configuration file](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) with the "files" property set to include all required typings files.
+ - Another way is to create a custom [TypeScript configuration file](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) with the "files" (or "filesGlob") property set to include all required typings files.
 
 This configuration file should be called `tsconfig.json` and placed at
-the app root folder. We'll also take a close look at the configuration itself during
-step 7, including how to configure TypeScript properly to automatically generate your `tsconfig.json` file in different IDEs.
+the app root folder.
+
+We will see more examples and usage with the `tsconfig.json` file later in the tutorial.
 
 Let's make use of the typings in the second way. Angular 2 and the Meteor API will be
 used in pretty much every file of our app, so adding declaration files manually might become repetitive.
 
-If you look into `angular2-meteor.d.ts`, you'll see there references to Angular 2 and Meteor API.
-It means that we'll need their definition files as well to pull everything together.
-Luckily, besides its own declaration file, Angular2-Meteor installs also Angular 2 definition files as well into the _typings_ folder.
-These files are distributed via the Angular 2 NPM and Angular2-Meteor uses that NPM internally.
+Let's dive into an example for typings (`.d.ts`) file - you can see Angular2-Meteor file, inside `node_modules/angular2-meteor/meteor_component.d.ts`.
 
-> You only need to periodically remove .d.ts-files in the _typings_ folder, thus, letting the package know that the files need to be updated.
+You notice that this file contain only declaration and does not have code inside - the code is inside the corresponding compiled `.js` file, and this file required for lint and type-checks only.
 
-From other side, libraries like Meteor, ES6 Promise etc are so called ambient dependencies, which
+If you look into, you'll see there references to Angular 2 and Meteor API.
+
+Libraries like ES6 Promise etc are so called ambient dependencies, which
 means they provide information about the environment and should be available globally.
-There is least one global repository for typings of such libraries called [DefinitelyTyped](http://definitelytyped.org/).
+
 In order to install them — thus adding full type-checking support at this stage — we'll use a special tool for typings installation
-and management called `typings`. What's great about this tool is that it can install typings from different locations whether it's a Github repo, local folder, a NPM or even some HTTP path.
+and management called `typings`.
+
+What's great about this tool is that it can install typings from different locations whether it's a Github repo, local folder, a NPM or even some HTTP path.
 You can find more information about it [here](https://github.com/typings/typings).
+
 In our case, we'll need to execute commands as follows to install all dependencies:
 
-        npm install typings -g
+        $ npm install typings -g
+        $ typings install es6-promise
+        $ typings install es6-shim --ambient
 
-        typings install meteor --ambient
-
-        typings install es6-promise --ambient
-
-        typings install es6-shim --ambient
+> Note that "es6-shim" for "npm" is not found in the registry now. You need install it with the ambient flag.
 
 If you look into the typings folder after the execution, you'll find there a definition file called `main.d.ts`.
 
 This is a top level definition file that links all other definition files installed by `typings`.
+
+So now only one Typing is missing - which is the Meteor typings file - you can grab it from here: [https://gist.github.com/tomitrescak/8366ce98f1857e202ea8](https://gist.github.com/tomitrescak/8366ce98f1857e202ea8), since it is not released as a final version in the open-source community.
+
+Download and put this **meteor.d.ts** file in your **typings** folder, then add `/// <reference path="meteor.d.ts" />` in your **typings/main.d.ts** file.
+
+> Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - there will not prevent you from running your app, but it is highly recommended to resolve those errors.
+
+> We recommend to try and find typings for all of your packages.
+
+**As a best practice, we recommend to add `"moduleResolution": "node"` to you `tsconfig.json` file, so TypeScript will automatically find typings and `.d.ts` files in your `node_modules` directory.**
 
 # Experiments
 

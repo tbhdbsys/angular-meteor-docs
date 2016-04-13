@@ -1,85 +1,70 @@
 {{#template name="tutorials.whatsapp.meteor.step_04.md"}}
 
+
 On this step we will authenticate and identify users in our app.
 
-We will use Meteor’s authentication packages, the basic package called Accounts and it has many extensions for Google, Facebook, Phone and many more.
+Before we go ahead and start to extend our app, we will add few packages which will make our lives a bit less complex when it comes to authentication and users management.
 
-We will use Accounts-phone package that verifies the user using a phone number with SMS messages.
-
-To add this package, run this command:
+Firt we will add a meteor package called `accounts-phone` which gives us the ability to verify a user using an SMS code:
 
     $ meteor add okland:accounts-phone
 
-We just need to add some configuration to the server side in order to make it work, so let’s create `server/sms.js` and this is his content:
+And second, we will add `angular-meteor-auth` which provides us wit authantication related functions:
+
+    $ meteor npm install angular-meteor-auth
+
+Ofcourse, don't forget to load the relevant modules:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.2"}}
 
-Let’s add configuration is for debug purposes:
+Inorder to make the SMS verification work we will need to create a file locaed in `server/sms.js` with the following contents:
 
-    // Add in order to use with a real twilio account
-    // SMS.twilio = {
-    //   ACCOUNT_SID: Meteor.settings.TWILIO.SID,
-    //   AUTH_TOKEN: Meteor.settings.TWILIO.TOKEN
-    // };
-    if (Meteor.isServer) {
-      if (Meteor.settings && Meteor.settings.ACCOUNTS_PHONE) {
-        Accounts._options.adminPhoneNumbers = Meteor.settings.ACCOUNTS_PHONE.ADMIN_NUMBERS;
-        Accounts._options.phoneVerificationMasterCode = Meteor.settings.ACCOUNTS_PHONE.MASTER_CODE;
-      }
-    }
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.3"}}
 
-and the `json` settings themselves:
+If you would like to test the verification with a real phone number, `accouts-phone` provides an easy access for [twilio's API](https://www.twilio.com/), for more information see [accounts-phone's repo](https://github.com/okland/accounts-phone).
+
+For debugging purposes if you'd like to add admin phone numbers and mater verification codes which will always pass the verification stage, you may add a `settings.json` file at the root folder with the following fields:
 
     {
-      "TWILIO": {
-        "FROM": "meteor-whatsapp",
-        "SID": "",
-        "TOKEN": ""
-      },
       "ACCOUNTS_PHONE": {
         "ADMIN_NUMBERS": ["123456789", "987654321"],
         "MASTER_CODE": "1234"
       }
     }
 
-
-* This means we can use the numbers `123456789` and `987654321` and they won’t send real SMS message, and then in the confirmation modal, we can always use `1234` and it will work.
-
-* When using real numbers - You should enter a valid phone number - which means a phone number with country code, prefix and the number. for example, for Israel it would be (+972) (54) (554-54-54) so the number is +972545545454, if you need more help, try to get your country code here: https://countrycode.org/ 
- 
-
-* While running Meteor and the server in the development stage - you do not need to see the twilio's SMS settings - and every SMS the should be sent to the phone number is actualy just printed to the Meteor's log... so take a look there to get the verification code. 
-More info is in the package's page : [https://github.com/okland/accounts-phone](https://github.com/okland/accounts-phone)
-
 Now let’s create the same flow of WhatsApp for authentication: first we need to ask for the user’s phone number, verify it with SMS message and then ask the user to pick his name.
 
-So these flow is created by 3 new views: login, confirmation and profile.
+So these flows are created by 3 views: login, confirmation and profile.
 
 Let’s add these states, each with HTML template and controller:
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.3"}}
-
-We will now add the view of login state - it includes an input and a save button and later we will add a modal dialog to verify the user’s phone:
-
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.4"}}
 
-And the controller - the logic is simple - we ask the user to check again his phone number, and then we will use Accounts API in order to ask for SMS verification:
+We will now add the view of login state which includes an input and a save button and later we will add a modal dialog to verify the user’s phone:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.5"}}
 
-Note the we did not provide all the settings for Account-Phone - so it will run in debug mode - so real SMS won’t be sent now - but to check your app you can see the confirmation in the Meteor’s app log.
-
-Our next step is limit the current views to logged in users only - we will use angular-meteor’s API for that - we will limit the `tab` and `profile` states using `Meteor.user()` which returns the user objct only if the user is logged in:
+And the controller - the logic is simple, we ask the user to check again his phone number, and then we will use Accounts API in order to ask for SMS verification:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.6"}}
 
-And now we want to handle a case that this promise does not resolves (in case that the user is not logged in), so let’s create new file - `client/scripts/auth.js` that uses Angular’s config phase:
-
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.7"}}
+
+Note the we did not provide all the settings for Account-Phone, so it will run in debug mode. It means that a real SMS won’t be sent now, but if you'd like to recieve the verification code just open your terminal and view Meteor's logs.
+
+Our next step would be preventing unauthorized users to view contents which they have no permission to. Inorder to do that we will add a pre-requirement to the relevant routes which will require the user to log-in first. `angular-meteor-auth` provides us with a service which is called `$auth`, and it has a method called `$awaitUser()` which returns a promise that will be resolved only once the user has logged in. For more information about `angular-meteor-auth` see [reference](http://www.angular-meteor.com/api/1.3.6/auth).
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.8"}}
+
+And now we want to handle a case that this promise does not resolves (in case that the user is not logged in), so let’s create new file `client/scripts/auth.js` that uses Angular’s config phase:
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.9"}}
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.10"}}
 
 And now let’s add some CSS:
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.8"}}
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.11"}}
 
 And this is how it looks like:
 
@@ -87,47 +72,53 @@ And this is how it looks like:
 
 The next step is to add the confirmation view, starting with the HTML:
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.9"}}
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.12"}}
 
 And the controller:
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.10"}}
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.13"}}
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.14"}}
 
 We will use Accounts API again to verify the user and in case of successful authentication we will transition to the `profile` state, which we add in the next step.
 
 This is the `profile` view, which provides the ability to enter the user’s nickname and profile picture (which we will add in the next step).
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.11"}}
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.15"}}
 
 And the controller:
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.12"}}
-
-And some CSS:
-
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.13"}}
-
-As you can see, the controller uses a server method - `updateName` which we need to implement in the `lib/methods.js`:
-
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.14"}}
-
-Meteor sets the user identity in case of a logged in user into the `this.userId` variable, so we can check if this variable exists in order to verify that the user is logged in.
-
-Now let’s add this validation to the `newMessage` we created earlier, and also add the identity of the user to each message he sends.
-
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.15"}}
-
-Great, now the last missing feature is logout - let’s add a state for the settings view:
-
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.16"}}
-
-And create the view - it only contains the logout button which calls a method we implemted on the controller:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.17"}}
 
-And let’s implement this method inside the `SettingsCtrl`:
+And some CSS:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.18"}}
+
+As you can see, the controller uses the server method `updateName` which we need to implement in the `lib/methods.js`:
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.19"}}
+
+Meteor sets the user identity in case of a logged in user into the `this.userId` variable, so we can check if this variable exists in order to verify that the user is logged in.
+
+Now let’s add this validation to the `newMessage()` method we created earlier, and also add the identity of the user to each message he sends.
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.20"}}
+
+Great, now the last missing feature is logout. Let’s add a state for the settings view:
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.21"}}
+
+And create the view which contains the logout button:
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.22"}}
+
+Now let’s implement this method inside the `SettingsCtrl`:
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.23"}}
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.24"}}
 
 And this is our settings view:
 
@@ -135,11 +126,11 @@ And this is our settings view:
 
 We also need to modify the way we identify our users inside the messages list, so let’s do it:
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.19"}}
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.25"}}
 
-And the last missing feature is about adding auto-scroll to the messages list in order to keep the view scrolled down when new message arrives!
+And the last missing feature is about adding auto-scroll to the messages list in order to keep the view scrolled down when new messages arrive.
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.20"}}
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="4.26"}}
 
 
 {{/template}}

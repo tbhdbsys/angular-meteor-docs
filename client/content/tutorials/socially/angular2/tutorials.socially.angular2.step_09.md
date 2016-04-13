@@ -109,6 +109,8 @@ Firstly, we'll add a new `public` field to the party data several steps:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.6"}}
 
+Note that since `public` is a reserved word, if we want to use it as field name, we need add quote around like this `'public'`.
+
 Next, we are limiting data sent to the client. A simple check is to verify that either
 the party is public or the "owner" field exists and is equal to the currently logged-in user:
 

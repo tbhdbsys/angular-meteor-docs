@@ -1,4 +1,4 @@
-var gitPatchParser = Npm.require("am-git-patch-parser");
+var gitPatchParser = Npm.require("git-patch-parser");
 
 Plugin.registerSourceHandler("multi.patch", {isTemplate: true}, multiPatchHandler);
 
@@ -39,12 +39,16 @@ function parseOutStepNumberAndComment(parsedPatch) {
 
   if (splitMessage.length > 1) {
     var stepNumber = splitMessage[0].split(" ")[1];
+
     if (!stepNumber) {
       stepNumber = splitMessage[0].split(" ")[0];
     }
+
     parsedPatch.stepNumber = stepNumber.trim();
+
     if (splitMessage[1]) {
-      parsedPatch.summary = prepareSummary(splitMessage[1]); 
+      parsedPatch.summary = prepareSummary(splitMessage[1]);
     }
   }
 }
+

@@ -8,8 +8,8 @@ Therefore, we want to have `pagination` support.
 With pagination we can break the array of parties down to pages so the user won't have to scroll down to find a party,
 but also, and even more importantly, we can fetch only a few parties at a time instead of the entire parties collection for better performance.
 
-The interesting thing about pagination is that it is dependent on the filters we want to put on top of the collection. 
-For example, if we are in page 3, but we change how we sort the collection, we should get different results. 
+The interesting thing about pagination is that it is dependent on the filters we want to put on top of the collection.
+For example, if we are in page 3, but we change how we sort the collection, we should get different results.
 Same thing with search: if we start a search, there might not be enough results for 3 pages.
 
 For Angular 1 developers this chapter will show how powerful Meteor is.
@@ -25,7 +25,7 @@ To achieve server-based reactive pagination we need to have support for paginati
 This means that our publish function for the parties collection would have to change and so does the way that we subscribe to that publication.
 So first let's take care of our server-side:
 
-In our `parties.js` file in the server directory we are going to add the `options` variable to the publish method like this:
+In our `publish.js` file in the parties directory we are going to add the `options` variable to the publish method like this:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="12.1"}}
 
@@ -35,7 +35,7 @@ contain properties like `skip`, `sort` and `limit` which we will shortly use our
 
 Let's get back to our client code. We now need to change our subscribe call with options we want to set for pagination.
 What are those parameters that we want to set on the options argument? In order to have pagination in our
-parties list we will need to save the current page, the number of parties per page and the sort order. So let's add these parameters to our component in `parties-list.component.js` file.
+parties list we will need to save the current page, the number of parties per page and the sort order. So let's add these parameters to our PartiesList component.
 
 We will `perPage`, `page` and `sort` variables will later effect our subscription and we want the subscription to re-run every time one of them changes.
 
@@ -49,7 +49,7 @@ We will use `getReactively` in order to get the current value, and this will als
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="12.3"}}
 
-That means that `this.page` and `this.sort` are now reactive and Meteor will re-run the subscription every time one of them will change. 
+That means that `this.page` and `this.sort` are now reactive and Meteor will re-run the subscription every time one of them will change.
 
 Now we've built an object that contains 3 properties:
 
@@ -75,13 +75,13 @@ Our personal favorite is [angular-utils-pagination](https://github.com/michaelbr
 
 To add the directive add its Meteor package to the project:
 
-    meteor add angularutils:pagination
+    meteor npm install --save angular-utils-pagination
 
-Add it as a dependency to our Angular app in `app.js`:
+Add it as a dependency to our Socially app:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="12.6"}}
 
-Now let's add the directive in `parties-list.html`, change the `ng-repeat` of parties to this:
+Now let's add the directive in `PartiesList`, change the `ng-repeat` of parties to this:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="12.7"}}
 
@@ -96,7 +96,7 @@ On the `dir-pagination-controls` directive there is a method `on-page-change` an
 
 So we call the `pageChanged` function with the new selection as a parameter.
 
-Let's create the `pageChanged` function inside the `partiesList` component:
+Let's create the `pageChanged` function inside the `PartiesList` component:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="12.9"}}
 
@@ -111,14 +111,14 @@ The client only holds the number of objects that it subscribed to. This means th
 
 So we need access on the client to the total count even if we are not subscribed to the whole collection.
 
-For that we can use the [tmeasday:publish-counts](https://github.com/percolatestudio/publish-counts) package. 
+For that we can use the [tmeasday:publish-counts](https://github.com/percolatestudio/publish-counts) package.
 On the command line:
 
     meteor add tmeasday:publish-counts
 
 This package helps to publish the count of a cursor in real-time, without any dependency on the subscribe method.
 
-Inside the `server/parties.js` file, add the code that handles the count inside the `Meteor.publish("parties")` function, at the beginning of the function, before the existing return statement.
+Inside the `imports/api/parties/publish.js` file, add the code that handles the count inside the `Meteor.publish('parties')` function, at the beginning of the function, before the existing return statement.
 So the file should look like this now:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="12.11"}}
@@ -133,7 +133,7 @@ So let's create another helper that uses `Counts`:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="12.12"}}
 
-Now the `partiesCount` will hold the number of parties and will send it to the directive in `parties-list.html` (which we've already defined earlier).
+Now the `partiesCount` will hold the number of parties and will send it to the directive in `PartiesList` (which we've already defined earlier).
 
 # Reactive variables
 
@@ -148,19 +148,37 @@ For that, angular-meteor provides the `helpers`, and each time you will defined 
 
 # Changing the sort order reactively
 
-We haven't placed a way to change sorting anywhere in the UI, so let's do that right now:
+We haven't placed a way to change sorting anywhere in the UI, so let's do that right now.
 
-In our HTML template, let's add a sorting dropdown inside the UL:
+Create template for the new Component called `PartiesSort`:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="12.13"}}
 
-In the component, let's implement the `updateSort` method:
+Now we can create actual component:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="12.14"}}
 
-> Note that we also created `orderProperty` in order to make sure it's available from the beginning.
+Binding? Methods? Don't worry. Let me explain it.
 
-And we don't have to do anything other than that, because we defined `sort` variable as helper, and when we will change it, Angular-Meteor will take care of updating the subscription for us. 
+PartiesSort uses 3 bindings:
+
+* onChange - an expression that is called on every sort change
+* property - a value with field's name that will be used in sorting
+* order - a value with default order (1 or -1)
+
+As you can see there is a changed() method. It is called when user changes sorting order. It calls onChange expression with one argument wich is the *sort* object. It contains just one property (you can expend it in the future!) with name of the sorted field as a key and the order as a value.
+
+Let's now add our component to the PartiesList:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="12.15"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="12.16"}}
+
+We made PartiesSort to use *name* field with ASC order by default. We also added onChange expression. It is just to handle changes.
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="12.17"}}
+
+And we don't have to do anything other than that, because we defined `sort` variable as helper, and when we will change it, Angular-Meteor will take care of updating the subscription for us.
 
 So all we have left is to sit back and enjoy our pagination working like a charm.
 
@@ -175,29 +193,31 @@ let's get started!
 As before, let's add the server-side support. We need to add a new argument to our publish method which will hold the
 requested search string. We will call it... `searchString`! Here it goes:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="12.15"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="12.18"}}
 
 Now we are going to filter the correct results using mongo's regex ability. We are going to add this
 line in those two places where we are using `find`: in publish Counts and in the return of the parties cursor:
 
-    'name' : { '$regex' : '.*' + searchString || '' + '.*', '$options' : 'i' },
-
-So `server/parties.js` should look like this:
-
-{{> DiffBox tutorialName="meteor-angular1-socially" step="12.16"}}
+    'name' : { '$regex' : `.*${searchString}.*`, '$options' : 'i' },
 
 As you can see, this will filter all the parties whose name contains the searchString.
 
-> We added also `if (searchString == null) searchString = '';`  so that, if we don't get that parameter, we will just return the whole collection.
+> We added also `if (typeof searchString === 'string' && searchString.length)` so that, if we don't get that parameter, we will just return the whole collection.
 
 Now let's move on to the client-side.
 First let's place a search input into our template and bind it to a 'searchText' component variable:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="12.17"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="12.20"}}
 
 And all we have left to do is call the subscribe method with our reactive variable, and add the `searchText` as reactive helper:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="12.18"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="12.19"}}
+
+# Testing
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="12.21"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="12.22"}}
 
 Wow, that is all that's needed to have a fully reactive search with pagination! Quite amazing, right?
 

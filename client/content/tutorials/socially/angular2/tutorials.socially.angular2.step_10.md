@@ -1,14 +1,19 @@
 {{#template name="tutorials.socially.angular2.step_10.md"}}
 
 Now that we have a working app, we can go public!
-Meteor makes it really easy to put an app up on the internet where other people can use it.
+
+One way to operate your app with confidence is to use Galaxy, the service built by Meteor Development Group specifically to run Meteor apps.
+
+In order to deploy to Galaxy, you’ll need to sign up for an account [here](https://www.meteor.com/galaxy/signup), and separately provision a MongoDB database later.
 
 Simply type in the command line of your app directory
-(replace `myappname` with your own name and make sure there is no existing site already deployed in the same address):
+(replace `your-app` with your own name):
 
-    meteor deploy myappname.meteor.com
+    DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy your-app.com
 
-Once you answer all of the prompts and the upload completes, you can go to `http://myappname.meteor.com` and use your app from anywhere.
+In order for Galaxy to work with your custom domain (your-app.com in this case), you need to [set up your DNS to point at Galaxy](https://galaxy.meteor.com/help/configuring-dns). Once you’ve done this, you should be able to reach your site from a browser.
+
+For full Galaxy deployment tutorial, please follow [here](http://guide.meteor.com/deployment.html#deployment-options).
 
 Now try to play around with the deployed app on different devices.
 This might be in a browser on your mobile phone, a laptop or a desktop computer.

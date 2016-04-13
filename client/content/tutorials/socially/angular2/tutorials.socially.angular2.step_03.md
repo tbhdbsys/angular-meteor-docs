@@ -1,7 +1,7 @@
 {{#template name="tutorials.socially.angular2.step_03.md"}}
 {{> downloadPreviousStep stepName="step_02"}}
 
-Now we have a client side application that creates and renders it's own data.
+Now we have a client side application that creates and renders its own data.
 
 So, if we were in any framework other than Meteor, we would likely start implementing a series of REST endpoints to connect the server to the client.
 We would also need to create a database and functions to connect to it.
@@ -84,15 +84,17 @@ Everything that happens in the zone will be checked by Angular 2 for changes and
 The `zone` parameter appears in the constructor via the dependency injection resolution mechanism, which
 has a new look in Angular 2. Don't worry if you're unclear about how it works — you'll learn more about the nuances in the next chapters.
 
-The [fat arrow syntax](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) `=>` is also a new syntax that comes in ES2015, and tells the function to run in it's parents context. In this case, it sets `this` as the context of the class Socially.
+The [fat arrow syntax](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) `=>` is also a new syntax that comes in ES2015, and tells the function to run in its parents context. In this case, it sets `this` as the context of the class Socially.
 
 Our `app.ts` file should now look like this:
 
 __`client/app.ts`:__
 
+    import 'reflect-metadata';
+    import 'zone.js/dist/zone';
     import {NgZone, Component} from 'angular2/core';
     import {bootstrap} from 'angular2/bootstrap';
-    import {Parties} from 'collections/parties';
+    import {Parties} from '../collections/parties';
 
     @Component({
       selector: 'app',
@@ -127,7 +129,7 @@ There is one special case where the package helps you. Similar to the client's `
 
 If you call your main server file `main.ts`, a CommonJS module will be created out of this file and loaded automatically.
 
-Let's create a new folder called "server" and add a file `main.ts` inside of it. As mentioned earlier, "server" is another special folder name in Meteor: it's contents will only run on the server.
+Let's create a new folder called "server" and add a file `main.ts` inside of it. As mentioned earlier, "server" is another special folder name in Meteor: its contents will only run on the server.
 
   {{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
 
@@ -156,7 +158,7 @@ Now let's do the same but with "remove". At the prompt, type the following comma
 
     db.parties.find({});
 
-Choose one party you want to remove and copy it's 'id' property.
+Choose one party you want to remove and copy its 'id' property.
 Then, remove it using that id (replace 'N4KzMEvtm4dYvk2TF' with your party's id value):
 
     db.parties.remove({"_id": ObjectId("N4KzMEvtm4dYvk2TF")});

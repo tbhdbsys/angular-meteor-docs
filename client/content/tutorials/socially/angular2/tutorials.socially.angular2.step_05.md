@@ -93,7 +93,7 @@ We've added multiple things here. Firstly, we've imported
 our two main views `PartiesList` and `PartyDetails`,
 then we tied them to URLs using `@RouteConfig` annotation.
 
-Notice also that we've added just one line for our template:
+Also, we need change our template file **client/app.html** to this:
 
     <router-outlet></router-outlet>
 
