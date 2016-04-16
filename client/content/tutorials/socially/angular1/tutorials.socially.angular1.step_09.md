@@ -41,6 +41,14 @@ Replace `parties.js` with `index.js`:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.4"}}
 
+Update the following files which use `parties` in import to `index`
+
+* imports/ui/components/partiesList/partiesList.js
+* imports/ui/components/partyAdd/partyAdd.js
+* imports/ui/components/partyDetails/partyDetails.js
+* imports/ui/components/partyRemove/partyRemove.js
+* server/startup.js
+
 Let's see what has been changed:
 
 * We have `Meteor.publish` - a function to define what to publish from the server to the client
