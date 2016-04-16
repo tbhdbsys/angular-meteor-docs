@@ -11,9 +11,7 @@ First, we need to add Boostrap 4 to our project - so let's do that.
 
 Run the following command in your Terminal:
 
-    $ meteor npm install bootstrap4-webpack-package --save
-
-> At this time, you cannot use the original Boostrap 4 package from NPM, and a wrapper is needed. Meteor 1.3.2 may resolve this issue. [Click for more information about this issue](https://github.com/meteor/meteor/issues/6098).
+    $ meteor npm install bootstrap@4.0.0-alpha.2 --save
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="17.4"}}
 
