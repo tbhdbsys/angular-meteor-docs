@@ -43,7 +43,7 @@ and look at the amazing app that's running on your computer!
 
 We now have a fully functional app which includes both a server and a client!
 
-The default Meteor app starts life with three files, one `js`, one `html` and one `css` file. Each named with the application name you used in the `create` command above. In our case this is `socially`.
+The default Meteor app starts life with three files, one `js`, one `html` and one `css` file in the `client` directory. Each named with the application name you used in the `create` command above. In our case this is `socially`.
 
 We are going to add our own files for this tutorial. So let's start by deleting the following files:
 
@@ -52,8 +52,6 @@ We are going to add our own files for this tutorial. So let's start by deleting 
     - socially.js     (delete)
 
 Now we can start building our app.
-
-Create a directory called `client`. It is important that the name is `client`, because Meteor will run files inside this directory only on the client. More about that in step 7.
 
 Create a new `index.html` file in the client folder, and place this code inside. Then run the app again.
 
