@@ -114,7 +114,7 @@ If you place `@InjectUser` above the PartiesForm it will inject a new user prope
 __`client/parties-form/parties-form.ts`__:
 
     ...
-    import {MeteorComponent} from 'angular2-meteor/meteor_component';
+    import {MeteorComponent} from 'angular2-meteor';
     import {InjectUser} from 'angular2-meteor-accounts-ui';
 
     @Component({
