@@ -123,9 +123,12 @@ Here you see another example of Meteor's power and simplicity - no need to write
 One of Meteor's goals is to break down the barrier between client and server, so the code you write can run everywhere! (more on that later).
 But we need Angular 1's power only in the client side, so how can we do that?
 
-There are a few ways to tell Meteor to run code only on the client/server/mobile side, let's start with the simplest way - [Meteor.isClient](http://docs.meteor.com/#/full/meteor_isclient) variable.
+There are a few ways to tell Meteor to run code only on the client/server/mobile side.
 
+The simplest way is to use - [Meteor.isClient](http://docs.meteor.com/#/full/meteor_isclient) variable.
 Everything inside this `if` statement will only run on the client side.
+
+We recommend you to use special directories to keep files in the right place. To read more about it, you can go to [*"Application structure"*](http://guide.meteor.com/structure.html#special-directories) chapter of The Official Meteor Guide.
 
 And let's continue defining our Angular 1 application module. Give it the name `socially` and add `angular-meteor` module as a dependency:
 
