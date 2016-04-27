@@ -58,9 +58,11 @@ Let's resize every file to 32x32:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="20.6"}}
 
-We used `gm` module, let's install it:
+We used [`gm`](https://github.com/aheckmann/gm) module, let's install it:
 
     $ meteor npm install gm --save
+
+> Be aware that this module requires at least one of these libraries: [GraphicsMagick](http://www.graphicsmagick.org/), [ImageMagick](http://www.imagemagick.org/).
 
 ### Image upload
 
