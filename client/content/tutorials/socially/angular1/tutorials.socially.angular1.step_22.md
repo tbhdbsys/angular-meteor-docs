@@ -17,21 +17,17 @@ To use ionic in our app we have to install `angular-sanitize`:
 
     $ meteor npm install angular-sanitize --save
 
-Ionic doesn't support yet alpha version of `angular-ui-router`, we need to install the latest stable:
-
-    $ meteor npm install angular-ui-router@^0.2.18 --save
-
 Now we've got all of modules. Let's add the first module to Socially:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.4"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.3"}}
 
 The second one is Ionic. We need to import not one but two files. It should look like this:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.5"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.4"}}
 
 Now's the time to add some style:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.6"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.5"}}
 
 
 ### Separate the Socially view
@@ -40,11 +36,11 @@ We will do the same thing as we did in previous chapter with `Login` component.
 
 Let's create a view for the web. We can achieve this by copying the content of `socially.html`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.7"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.6"}}
 
 Now let's take care of mobile view:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.8"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.7"}}
 
 This is a simple navigation layout. As you can see it is pretty similar to the web view.
 
@@ -52,13 +48,13 @@ This is a simple navigation layout. As you can see it is pretty similar to the w
 
 Last thing to do is to implement these views:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.9"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.8"}}
 
 We will no longer use `socially.html`, so let's remove it!
 
 By now, the navigation bar is empty, we can change this by adding `ionNavTitle`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.11"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.10"}}
 
 
 ### Running mobile app
@@ -73,21 +69,21 @@ Socially is working but the list of parties looks terrible!
 
 The web view stays the same so let's just copy `partiesList.html` to `web.html`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.12"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.11"}}
 
 For the purpose of tutorial we want to keep mobile version of Socially as simple as possible.
 
 Let's display only name, description, image and list of RSVPs.
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.14"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.13"}}
 
 Ok! We have both views. It's time to implement them and remove the old `partiesList.html` file:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.15"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.14"}}
 
 There is a terribly looking margin at the top of the first party. This will fix it:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.16"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.15"}}
 
 You've probably noticed an issue with images. It happens because `jalik:ufs` package saves an absolute path of a file. So if you uploaded an image in the browser its path will contain `http://localhost:3000`.
 
@@ -95,13 +91,13 @@ But hey! We're on the mobile app so the port is different.
 
 We can fix it by creating a filter. Let's call it `DisplayImageFilter`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.17"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.16"}}
 
 Done, we have it! Now we want to use it:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.18"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.17"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="22.19"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="22.18"}}
 
 And... we're done!
 
