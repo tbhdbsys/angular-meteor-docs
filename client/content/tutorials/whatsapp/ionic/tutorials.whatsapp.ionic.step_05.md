@@ -1,107 +1,165 @@
 {{#template name="tutorials.whatsapp.ionic.step_05.md"}}
-We will add now the ability to create new chats with new users and remove existing chats.
 
-Let’s add the open-new-chat button to the chat’s list:
+On this step we will authenticate and identify users in our app.
 
-{{> DiffBox tutorialName="ionic-tutorial" step="5.1"}}
+Before we go ahead and start extending our app, we will add few packages which will make our lives a bit less complex when it comes to authentication and users management.
 
-Add simple logic to the Chats controller to open a modal to choose the users to add to the chat:
+Firt we will update our `api` and add a meteor package called `accounts-phone` which gives us the ability to verify a user using an SMS code:
 
-{{> DiffBox tutorialName="ionic-tutorial" step="5.2"}}
+    $ meteor add okland:accounts-phone
 
-Create the new modal view in a new file called `new-chat.html` inside the `www/templates/` folder:
+And second, we will update the client, and add authentication packages to it. We will add `accounts-phone` which is the same package we installed in our `api`, only this time it's for the client, and `angular-meteor-auth` which is an extension for `Angular` based on `angular-meteor`, and it contains different utility functions to help us implement authentication.
+
+In terminal, type:
+
+    $ bower install accounts-phone --save
+    $ bower install angular-meteor --save
+
+And import them in our `index.js`:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.3"}}
 
-Add the controller for the modal in file named `new-chat.controller.js`:
+And since `angular-meteor-auth` is an `Angular` extension we will need to add it as a module dependency in our app:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.4"}}
 
-The controller brings the users who are not the current user.
-
-Now add the logic to create a new chat to the controller:
+Inorder to make the SMS verification work we will need to create a file locaed in `api/server/sms.js` with the following contents:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.5"}}
 
-the controller checks if there is already a chat with the same user and direct to that chat or creates a new one in case there is non.
+If you would like to test the verification with a real phone number, `accouts-phone` provides an easy access for [twilio's API](https://www.twilio.com/), for more information see [accounts-phone's repo](https://github.com/okland/accounts-phone).
 
-Don’t forget to add the controller to `index.html`:
+For debugging purposes if you'd like to add admin phone numbers and mater verification codes which will always pass the verification stage, you may add a `settings.json` file at the root folder with the following fields:
+
+    {
+      "ACCOUNTS_PHONE": {
+        "ADMIN_NUMBERS": ["123456789", "987654321"],
+        "MASTER_CODE": "1234"
+      }
+    }
+
+We're going to create the same flow of whatsapp for authentication using 3 views:
+
+- `Login` - Asks for the user's phone number.
+- `Confirmation` - Verifies a user's phone number by an SMS authentication.
+- `Profile` - Asks a user to pickup its name.
+
+Before we jump into implementing them, we will add a pre-requirement to the relevant routes which require the user to log-in first. `angular-meteor-auth` provides us with a service which is called `$auth`, and it has a method called `$awaitUser()` which returns a promise that will be resolved only once the user has logged in. For more information about `angular-meteor-auth` see [reference](http://www.angular-meteor.com/api/1.3.6/auth).
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.6"}}
 
-Now let’s add a server method to create a new chat:
+And now we want to handle a case where this promise does not resolve (In case the user is not logged in), so let’s create new `RouteConfig` that uses `Angular`'s config phase:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.7"}}
 
-And an Optimistic UI one:
-
 {{> DiffBox tutorialName="ionic-tutorial" step="5.8"}}
 
-Now let’s name the chat’s by the users using it.
+Cool, now that we're set, let's start implementing the views we mentioned earlier. We will start with the login view.
 
-Let’s create an Angular filter for that:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="5.11"}}
-
-Don’t forget to update `index.html`:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="5.12"}}
-
-And add it to chat’s list:
+The login view contains an input and a save button, and after the save button has been saved, we should be forwarded to the confirmation view, right after an SMS has been sent to the entered phone number:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.9"}}
 
-And chat details:
+And for the controller - the logic is simple. We ask the user to check again his phone number, and then we will use `accounts` API in order to ask for SMS verification:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.10"}}
 
-And let’s a chat picture of the users using it or a default picture in case they don’t have profile pictures:
+{{> DiffBox tutorialName="ionic-tutorial" step="5.11"}}
 
-{{> DiffBox tutorialName="ionic-tutorial" step="5.15"}}
+Let's add its route state:
 
-Don’t forget to update `index.html`:
+{{> DiffBox tutorialName="ionic-tutorial" step="5.12"}}
 
-{{> DiffBox tutorialName="ionic-tutorial" step="5.16"}}
-
-And add it to chat’s list:
+And some style:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.13"}}
 
-And chat details:
-
 {{> DiffBox tutorialName="ionic-tutorial" step="5.14"}}
 
-Add this svg file to the `www/img` folder as the default chat image:
+Up next, would be the confirmation view.
 
-[user-default.svg](https://raw.githubusercontent.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/08a077852d1e42df538fcb20b7719cd33e90c535/www/img/user-default.svg)
+We will use `accounts` API again to verify the user and in case of successful authentication we will transition to the profile view. The same routine of implementation goes on.
 
-{{tutorialImage 'ionic' '10.png' 500}}
+Template:
 
+{{> DiffBox tutorialName="ionic-tutorial" step="5.15"}}
 
-# Removing chat
+Controller:
 
-Right now anyone can remove a chat and that’s not so secure…
+{{> DiffBox tutorialName="ionic-tutorial" step="5.16"}}
 
-That’s because we are using a client side function for that action and not securing it.
+{{> DiffBox tutorialName="ionic-tutorial" step="5.17"}}
 
-To start securing our server from client side actions we need to remove the `insecure` package.
+And a route state:
 
-In the Meteor command line type:
+{{> DiffBox tutorialName="ionic-tutorial" step="5.18"}}
 
-    $ meteor remove insecure
+Let's proceed to the last view in the authentication flow. The `Profile` view provides the ability to enter the user's nickname and profile picture (Which, unfortunately, is not implemented in this tutorial yet).
 
-Now let’s create a secure server method:
+Template:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.19"}}
 
-And an Optimistic UI one:
+Controller:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="5.20"}}
 
-And change the Chats controllers to use that method instead of the client side action:
-
 {{> DiffBox tutorialName="ionic-tutorial" step="5.21"}}
 
-You can download a ZIP file with the project at this point [here](https://github.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/archive/6bc532ea61616bdf691205da0f9a133e5147822d.zip).
+Route state:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.22"}}
+
+Style:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.23"}}
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.24"}}
+
+The authentication flow is complete. Now once we start our application for the first time this is what we should see:
+
+{{tutorialImage 'ionic' '7.png' 500}}
+
+If you will take a look at step 5.20, the `ProfileCtrl` uses a server method called `updateName` which is yet to be implemented. Let's implement it in our `api`:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.25"}}
+
+`Meteor` sets `this.userId` to contain some information about the current logged in user, so by checking for this variable's existence we know if there is a user logged in or not.
+
+Now let's add this validation to the `newMessage()` method we've just created, and attach the user's id to each message he sends:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.26"}}
+
+Great, now the last missing feature is logout. Let’s add the settings view which contains the logout button:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.27"}}
+
+Let's implement the `SettingsCtrl` containing the logic for logging out:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.28"}}
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.29"}}
+
+And to make things work, we need to add the appropriate route state:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.30"}}
+
+And this is how our settings page should look like:
+
+Now anytime we press the settings button, we should be navigating to the settings page:
+
+{{tutorialImage 'ionic' '8.png' 500}}
+
+So far our messages were identified by their index, meaning that even messages will be mine, and odd messages would be other's:
+
+{{tutorialImage 'ionic' '9.png' 500}}
+
+Now that we have our user id bounded to each message, we can determine the real ownership of each message. So, let's update our chat view accordingly:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.31"}}
+
+Great! Everything works well now, but let's take our chatting experience one step further. Let's add an auto-scrolling feature, so our conversation would look more fluent and we won't have to scroll down any time our chat space is full:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="5.32"}}
 
 {{/template}}

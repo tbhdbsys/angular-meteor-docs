@@ -1,130 +1,112 @@
 {{#template name="tutorials.whatsapp.ionic.step_03.md"}}
 
-Now let’s change with chat view to look and work like WhatsApp.
+Now that we have the layout and some dummy data, let’s create a Meteor server and connect to it to make our app real.
 
-Let’s start with the HTML template:
+First download Meteor from the Meteor site: [https://www.meteor.com/](https://www.meteor.com/)
 
-{{> DiffBox tutorialName="ionic-tutorial" step="3.1"}}
+Now let’s create a new Meteor server inside our project.
 
-Change the timestamp of the message to be like WhatsApp by displaying the time passed since the message received. we will use and `angular-moment` filter for that:
+Open the command line in our app’s root folder and type:
 
-{{> DiffBox tutorialName="ionic-tutorial" step="3.2"}}
+    $ meteor create api
 
-Don’t forget to add the dependency with Bower:
+We just created a live and ready example Meteor app inside an `api` folder.
 
-    $ bower install angular-moment --save
+As you can see `Meteor` provides with an exmaple app. Since non of it is relevant to us, you can go ahead and delete:
 
-And update index.html:
+    $ cd api
+    $ rm .gitignore
+    $ rm package.json
+    $ rm -rf node_modules
+    $ rm -rf client
+    $ rm -rf server
+
+By now you probably noticed that `Meteor` uses `npm`, just like the our `Ionic` project. Since we don't want our client and server to be seperated and require a duplicated installation for each package we decide to add, we'll need to find a way to make them share the same resource.
+
+We will acheive that by symbolic linking the `node_modules` dir:
+
+    $ cd api
+    $ ln -s ../node_modules
+
+> *NOTE*: Our symbolic link needs to be relative, otherwise it won't work on other machines cloning the project.
+
+Don't forget to reinstall `Meteor`'s node dependencies after we deleted the `node_modules` dir:
+
+    $ npm install meteor-node-stubs --save
+
+Our `package.json` should look like this:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="3.3"}}
+
+Now we are ready to write some server code.
+
+Let’s define two data collections, one for our `Chats` and one for their `Messages`.
+
+We will define them inside a dir called `server` in the `api`, since code written under this dir will be bundled only for server side by `Meteor`'s build system. We have no control of it and therefore we can't change this layout. This is one of `Meteor`'s disadvantages, that it's not configurable, so we will have to fit ourselves into this build strategy.
+
+Let's go ahead and create the `collections.js` file:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="3.4"}}
 
-And our Angular app’s dependencies:
+Now we will update our `webpack.config.js` to handle some server logic:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="3.5"}}
 
-Now let’s add styles to our chat details view. Create a `sass` file named `chat-detail.scss` and paste this code in there:
+We simply added an alias for the `api/server` folder and a custom handler for resolving `Meteor` packages. This gives us the effect of combining client side code with server side code, something that is already built-in in `Meteor`'s cli, only this time we created it.
+
+Now that the server side is connected to the client side, we will also need to watch for changes over there and re-build our client code accordingly.
+
+To do so, we will have to update the watched paths in the `gulpfile.js`:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="3.6"}}
 
-Don’t forget to import that `sass` file to your main `sass` app file:
+Let’s bring `Meteor`'s powerful client side tools that will help us easily sync to the `Meteor` server in real time.
 
-{{> DiffBox tutorialName="ionic-tutorial" step="3.7" filename="scss/ionic.app.scss"}}
+Navigate the command line into your project’s root folder and type:
 
-Also copy the following images to the `www/img` folder with their names:
+    $ bower install meteor-client-side --save
+    $ bower install angular-meteor --save
 
-[chat-background.jpg](https://raw.githubusercontent.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/6bc38ead9ec5d18f38314f7ce6ff091ec903e2c1/www/img/chat-background.jpg)
-[message-mine.png](https://raw.githubusercontent.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/6bc38ead9ec5d18f38314f7ce6ff091ec903e2c1/www/img/message-mine.png)
-[message-other.png](https://raw.githubusercontent.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/6bc38ead9ec5d18f38314f7ce6ff091ec903e2c1/www/img/message-other.png)
+Notice that we also installed `angular-meteor` package which will help us bring `Meteor`'s benefits into an `Angular` project.
 
-This is how it should look now:
+Our `bower.json` should look like so:
 
-{{tutorialImage 'ionic' '4.png' 500}}
+{{> DiffBox tutorialName="ionic-tutorial" step="3.7"}}
 
-Now that our view is ready, let’s bind the real Messages from the server to our chat details controller:
+Don't forget to import the packages we've just installed in the `index.js` file:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="3.8"}}
+
+We will also need to load `anular-meteor` into our app as a module dependency, since that's how `Angular`'s module system works:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="3.9"}}
 
-Notice that we are using Mongo’s query language to get only the Messages for this particular chat.
+Now instead of mocking a static data in the controller, we can mock it in the server.
 
-We can use the same API on the server and the client thanks to Meteor’s [Minimongo](https://www.meteor.com/mini-databases).
-
-Now let’s add an input directive so we could send messages with.
-
-We need an input directive that will handle all the event on mobile.
-
-Here is a prepared one that handles the `focus`, `blur` and `keydown` events.
+Create a file named `bootstrap.js` inside the `api/server` dir and place the following initialization code inside:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="3.10"}}
 
-Add it to a new `input.directive.js` file under a `www/js/directives` folder.
+The code is pretty easy and self explanatory.
 
-Don’t forget to add the file to `index.html`:
+Let’s bind the collections to our `ChatsCtrl`.
+
+We will use `Scope.helpers()`, each key will be available on the template and will be updated when it changes. Read more about helpers in our [API](http://www.angular-meteor.com/api/helpers).
 
 {{> DiffBox tutorialName="ionic-tutorial" step="3.11"}}
 
-Now add that input directive into our chat details template:
+> *NOTE*: These are exactly the same collections as the server's. Adding `meteor-client-side` to our project has created a `Minimongo` on our client side. `Minimongo` is a client side cache with exactly the same API as [Mongo](https://www.mongodb.org/)'s API. `Minimongo` will take care of syncing the data automatically with the server.
 
-{{> DiffBox tutorialName="ionic-tutorial" step="3.12"}}
+> *NOTE*: `meteor-client-side` will try to connect to `localhost:3000` by default. To change it, simply set a global object named `__meteor_runtime_config__` with a property called `DDP_DEFAULT_CONNECTION_URL` and set whatever server url you'd like to connect to.
 
-Now add the following logic to the `ChatDetailsCtrl` to handle scrolling of the chat according to the state of the mobile keyboard:
+> *TIP*: You can have a static separate front end app that works with a `Meteor` server. you can use `Meteor` as a back end server to any front end app without changing anything in your app structure or build process.
 
-{{> DiffBox tutorialName="ionic-tutorial" step="3.13"}}
+Now our app with all its clients is synced with our server in real time!
 
-Now let’s add a send button and event to our view:
+To test it, you can open another browser, or another window in incognito mode, open another client side by side and delete a chat (by swiping the chat to the left and clicking `delete`).
 
-{{> DiffBox tutorialName="ionic-tutorial" step="3.14"}}
+See the chat is being deleted and updated in all the connected client in real time!
 
-and add the controller logic to handle that change:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="3.15"}}
-
-And this is what we got so far:
-
-{{tutorialImage 'ionic' '5.png' 500}}
-
-We are calling a Meteor server method named `newMessage`.
-
-Let’s create that server method - create a new file on the server folder named `methods` and add the code inside:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="3.16"}}
-
-We are first checking to see if the parameters are correct using Meteor’s `check` function.
-(Add the `check` package but running this command in the command line of the server):
-
-    $ meteor add check
-
-Then we are inserting a new message to the Messages collection and last message field in the containing Chat inside the Chats collection.
-
-Then we are returning the message id to the client.
-
-Notice how easy it is to declare and call server function in Meteor. no need to define end points and http calls. as easy as calling a function on the client.
-
-So now we can call our server method and why for it to work.
-
-But let’s introduce a new concept by Meteor called “[Optimistic UI](http://info.meteor.com/blog/optimistic-ui-with-meteor-latency-compensation)”.
-
-Thanks to the fact the Meteor not only uses Javascript on the backend but also uses the same Database API on the client and the server, we can call the same method on the client first to get an instant response and then call the same function on the server.
-
-Meteor is smart enough to sync the results after the method happened on the server with the connected clients.
-
-For more information, read that blog about Optimistic UI:
-
-[http://info.meteor.com/blog/optimistic-ui-with-meteor-latency-compensation](http://info.meteor.com/blog/optimistic-ui-with-meteor-latency-compensation)
-
-So let’s add Optimistic UI method to newMessage. create a new file in `www/js/stubs.js` and paste the method in:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="3.18"}}
-
-Don’t forget to add the file to `index.html:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="3.19"}}
-
-Notice that we don’t need to change anything in our method call, Meteor already knows to call the Optimistic UI first and then the server one.
-
-In Meteor we don’t need to create that method twice, Meteor’s build process does that for us.
-
-{{tutorialImage 'ionic' '6.png' 500}}
-
-You can download a ZIP file with the project at this point [here](https://github.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/archive/c5039ed596ff07bf9101630823d655ad4e5281c1.zip).
+{{tutorialImage 'ionic' '3.png' 500}}
 
 {{/template}}
