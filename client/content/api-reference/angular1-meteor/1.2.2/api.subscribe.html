@@ -1,6 +1,6 @@
 <template name="api.1.2.2.subscribe">
   <div>
-    {{> improveBtn href="https://github.com/Urigo/angular-meteor/edit/master/docs/angular-meteor/client/content/api-reference/angular1-meteor/1.2.2/api.subscribe.html"}}
+    {{> improveBtn href="https://github.com/Urigo/angular-meteor-docs/edit/master/client/content/api-reference/angular1-meteor/1.2.2/api.subscribe.html"}}
 
     <do-nothing>
         {{#markdown}}
@@ -16,11 +16,18 @@ Calling $scope.$meteorSubscribe will automatically stop the subscription when th
 
 ----
 
-## Usage
+## Old code
 
     $meteor.subscribe(name, publisherArguments)
 
     $scope.$meteorSubscribe(name, publisherArguments)
+
+## New code
+
+This would require the [angular-meteor-promiser](https://github.com/jellyjs/angular-meteor-promiser) package to work.
+
+    $promiser.subscribe(name, publisherArguments)
+
 
 ### Arguments
 
