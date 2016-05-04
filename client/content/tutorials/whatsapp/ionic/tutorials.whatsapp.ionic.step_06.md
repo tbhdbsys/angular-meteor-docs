@@ -1,60 +1,89 @@
 {{#template name="tutorials.whatsapp.ionic.step_06.md"}}
-Right now all the chats are published to all the clients. that not very private…
 
-Let’s fix that.
+Our next step is about adding the ability to create new chats. So far we had the chats list and the users feature, we just need to connect them.
 
-First thing we need to do to stop all the automatic publication of information is to remove the `autopublish` package from the Meteor server. in the Meteor command line:
+We will open the new chat view using `Ionic`'s modal dialog, so first let's add a button that opens this dialog to the chats list:
 
-    $ meteor remove autopublish
+{{> DiffBox tutorialName="ionic-tutorial" step="6.1"}}
 
-Now we need to explicitly define our publications.
-
-Let’s start with sending the Users information.
-
-Create a file named `publications.js` under the `server` folder and define the query we want to send to our clients inside:
+This button calls a controller method, which we will implement now in the controller:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="6.2"}}
 
-Meteor will use that `[Live Query](https://www.meteor.com/livequery)` to publish changes to the connected clients every time that query updates automatically.
+Note that we first create the modal dialog with a template, and then later we open it in the button function.
 
-Now let’s do a more complex publication, let’s send each client only the Chats and Messages he is a part of:
+Inorder to open this modal, we will create a service that takes care of that:
 
-```
-  Meteor.publish('chats', function () {
-       if (! this.userId) {
-         return;
-       }
-       return Chats.find({ userIds: this.userId });
-  });
-```
-
-And now, let’s add the Messages from the those chats into the publication.
-
-To do that, we need to do a joined collections publication.
-
-To do it more easily, let’s use the `reywood:publish-composite` package.  in the Meteor command line type:
-
-    $ meteor add reywood:publish-composite
-
-And now let’s change the publication to add the Messages and the Users that are related to the Chats the users in participating in:
+{{> DiffBox tutorialName="ionic-tutorial" step="6.3"}}
 
 {{> DiffBox tutorialName="ionic-tutorial" step="6.4"}}
 
-And again, even with this complex query, Meteor will update all the connected client in real time whenever there is a change in the database.
-
-Now that we have the publications ready, we can subscribe to them.
-
-We can subscribe in a route’s resolve to make sure all of the information is there before entering the route.
-Let’s add that to our parent `tab` state:
+Now let's add the view of this modal dialog, which is just a list of users:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="6.5"}}
 
-And we can subscribe inside a controller so it will load faster without waiting for the information.
-
-Let’s do that inside the NewChat controller to subscribe to the users we can add to that chat:
+And now we will add the controller of this view, and use the `NewChat` service:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="6.6"}}
 
-You can download a ZIP file with the project at this point [here](https://github.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/archive/dbb4b9cc0e3e98ef8e431f9fcc2c0c78d499fc8e.zip).
+{{> DiffBox tutorialName="ionic-tutorial" step="6.7"}}
+
+The controller includes a server method for creating a chat which is not yet implemented, so let's create it:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="6.8"}}
+
+We will also rewrite the logic of `removeChat()` function in the `ChatsCtrl` and we will call a server method instead (which we will explain why further in this tutorial):
+
+{{> DiffBox tutorialName="ionic-tutorial" step="6.9"}}
+
+And we will implement the method on the server:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="6.10"}}
+
+The next messages won't include the username, only the user id, so we need to change the logic of username display. We will add a filter that fetches the user object from the `Users` collection according to the `userId` property of the chat object:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="6.11"}}
+
+And we will also create the same logic for fetching the user's image:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="6.12"}}
+
+And we will load our filters:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="6.13"}}
+
+And we will add the usage of these filters in the chats list view:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="6.14"}}
+
+And in the chat view:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="6.15"}}
+
+Now we want to get rid of the current data we have, which is just a static data.
+
+So let's stop our `Meteor`'s server and reset the whole app by running:
+
+    $ meteor reset
+
+Let's add some users to the server instead of the old static data:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="6.16"}}
+
+Run it again, and this should be the result of the new Modal we created:
+
+{{tutorialImage 'ionic' '10.png' 500}}
+
+Cool! Now once we click a user a new chat should be created with it.
+
+Our last part of this step is to remove `Meteor`'s package named `insecure`.
+
+This package provides the ability to run `remove()` method from the client side in our collection. This is a behavior we do not want to use because removing data and creating data should be done in the server and only after certain validations, and this is the reason for implementing the `removeChat()` method in the server.
+
+`Meteor` includes this package only for development purposes and it should be removed once our app is ready for production.
+
+So removing this package by running this command:
+
+    $ meteor remove insecure
 
 {{/template}}

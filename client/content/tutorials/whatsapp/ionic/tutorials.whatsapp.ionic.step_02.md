@@ -1,127 +1,125 @@
 {{#template name="tutorials.whatsapp.ionic.step_02.md"}}
-Now that we have the layout and some dummy data, let’s create a Meteor server and connect to it to make our app real.
 
-First download Meteor from the Meteor site: [https://www.meteor.com/](https://www.meteor.com/)
+Now that we've finished making our initial setup, let's dive into the code of our app.
 
-Now let’s create a new Meteor server inside our project..
-Open the command line in our app’s root folder and type:
+First, we shall create some helpers which will help us write some `Angular` code using es6's class system.
 
-    $ meteor create server
+> *NOTE*: As for now there is no best pratice for writing `Angular` es6 code. There are many methods to do so, but in this tutorial we will use our helpers.
 
-We just created a live and ready example Meteor app inside a `server` folder.
+Let's add some class helpers which will help us define some basic behaviours for each entity type we write for our app, like controllers, directives, filters and so on:
 
-Delete the example app by deleting the following files from the `server` folder:
+{{> DiffBox tutorialName="ionic-tutorial" step="2.1"}}
 
-* `server.css`
-* `server.html`
-* `server.js`
+As you can probably notice there is a parent class called `Injector`, which will take care of injecting the dependencies into our instance, so there is no need in [ng-anotate](https://github.com/olov/ng-annotate) (A pre-processor which takes care of automatically writing our dependencies before we minifiy our scripts).
 
-Now we are ready to write some server code.
+In addition, if you will take a closer look at our `Controller` class you can see that once an instance is created it will invoke a function called `Scope.viewModel()` with it. This function binds the controller to the scope and uses it as the view model, and it should match the same controller specified by `controllerAs` attribute in the view.
 
-Let’s define two data collections, one for our Chats and one for Messages inside those chats.
+We will cover up the rest of the class helpers as we make progress with the tutorial.
 
-Create a `lib` folder inside our `server` folder and add a `collections.js` file which initialize those collections:
+Let's add a `Loader`, which knows how to approach our helper classes and load them in `Angular`'s modules:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.2"}}
 
+Now that our helpers are ready, let's inherit from the `Config` helper and create a `RoutesConfig`:
+
 {{> DiffBox tutorialName="ionic-tutorial" step="2.3"}}
 
-> We place those collections inside a `lib` folder because Meteor loads the `lib` folder prior to other folders!
+This will be our main app router which is implemented using [angular-ui-router](https://atmospherejs.com/angularui/angular-ui-router), and anytime we would like to add some new routes and configure them, this is where we do so.
 
-Now we have the collections defined, let’s add the dummy data to the collection, so the client will be able to get them from the server, instead from a static file (`Chats` service).
-
-Create a file named `bootstrap.js` inside the `server` folder and place that initialization code inside:
+After we define a helper, we shall always load it in the main app file. Let's do so:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.4"}}
 
-The code is pretty easy and self explanatory.
+As you can see there is only one route state defined as for now, called `tabs`, which is connected to the `tabs` view. Let's add it:
 
-> Notice the we used `Meteor.isServer`, that’s because Meteor has the ability to run the same code on both client and server. We won’t use this ability here because we are using a separate frontend, but it’s important to know about that ability
+{{> DiffBox tutorialName="ionic-tutorial" step="2.5"}}
 
-You can see we are using the `moment` library inside this code, so let’s add the `moment` package to our server with Meteor’s package manager.
+In our app we will have 5 tabs: `Favorites`, `Recents`, `Contacts`, `Chats`, and `Settings`. In this tutorial we will only focus on implementing the `Chats` and the `Settings` tabs, but your'e more than free to continue on with this tutorial and implement the rest of the tabs.
 
-Navigate the command line to the `server` folder in our app and type:
+Let's create `Chats` view which will appear one we click on the `Chats` tab. But first, let's install an npm package called `Moment` which is a utility library for manipulating date object. It will soon come in handy:
 
-    $ meteor add momentjs:moment
+    $ npm install moment --save
 
-Another interesting thing about Meteor, is that it comes with `ES2015` support out of the box for all Javascript files.
-
-So let’s use `ES2015` on this file as well:
+Our `package.json` should look like so:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.6"}}
 
-We our server is ready!
-All we have to do is to start it is to write `meteor` inside the `server` directory command line:
+Now that we have installed `Moment`, we need to expose it to our environment, since some libraries we load which are not using es6's module system rely on it being defined as a global variable. For these purposes we shall use the `expose-loader`. Simply, add to our `index.js` file:
 
-    $ meteor
+{{> DiffBox tutorialName="ionic-tutorial" step="2.7"}}
 
-Now let’s connect our client to our Meteor server.
+After the `?` comes the variable name which shuold be defined on the global scope, and after the `!` comes the library we would like to load. In this case we load the `Moment` library and we would like to expose it as `window.global`.
 
-First let’s bring Meteor’s powerful client side tools that will help us easily sync to the Meteor server in real time.
-Navigate the command line into your project’s root folder and type:
+> *NOTE*: Altough `Moment` is defined on the global scope, we will keep importing it in every module we wanna use it, since it's more declerative and clearer.
 
-    $ bower install meteor-client-side --save
-
-Update the new dependencies in the `index.html` file:
+Now that we have `Moment` lock and loaded, we will create our `Chats` controller and we will use it to create some data stubs:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.8"}}
 
-Now let’s add the `angular-meteor` package to help us sync Meteor to our Angular app.
+And we will load it:
 
-Type in the command line:
+{{> DiffBox tutorialName="ionic-tutorial" step="2.9"}}
 
-    $ bower install angular-meteor --save
+> *NOTE*: From now on any component we create we will also load it right after, without any further explenations.
 
-Update the new dependencies in the `index.html` file:
+The data stubs are just a temporary fabricated data which will be used to test our application and how it reacts with it. You can also look at our scheme and figure out how our application is gonna look like.
+
+Now that we have the controller with the data, we need a view to present it. We will use `ion-list` and `ion-item` directives, which provides us a list layout, and we will iterate our static data using `ng-repeat` and we will display the chat's name, image and timestamp.
+
+Let's create it:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.10"}}
 
-and add the `angular-meteor dependency to our Angular app:
+We also need to define the appropriate route state which will be navigated any time we press the `Chats` tab. Let's do so:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.11"}}
 
-Now let’s create the same collections we defined on our server in our client app.
+If you look closely we used the `controllerAs` syntax, which means that our data models should be stored on the controller and not on the scope.
 
-Create a new file named `collections.js` under the `www/js` folder and app the collections there:
+We also used the `$urlRouterProvider.otherwise()` which defines our `Chats` state as the default one, so any unrecognized route state we navigate to our router will automatically redirect us to this state.
+
+As for now, our chats' dates are presented in a very messy format which is not very informative for the every-day user. We wanna present it in a calendar format. Inorder to do that we need to define a `Filter`, which is provided by `Angular` and responsibe for projecting our data presented in the view. Let's add the `CalendarFilter`:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.12"}}
 
-And don’t forget to update the `index.html` with the new file:
-
 {{> DiffBox tutorialName="ionic-tutorial" step="2.13"}}
 
-Now let’s bind those collections to Angular `ChatsCtrl` controller.
-
-We will use `$scope.helpers`, each key will be available on the template and will be updated when it changes [read more about helpers in the API](http://www.angular-meteor.com/api/helpers).
+And now let's apply it to the view:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.14"}}
 
-Now our app with all its clients is synced with our server in real time!
+As you can see, inorder to apply a filter in the view we simply pipe it next to our data model.
 
-To test it, you can open another browser, or another window in incognito mode, open another client side by side and delete a chat (by swiping the chat to the left and clicking `delete`).
-
-See the chat is being deleted and updated in all the connected client in real time!
-
-{{tutorialImage 'ionic' '3.png' 500}}
-
-Now let’s bind a specific chat to to server inside the `ChatDetailsCtrl` controller:
+We would also like to be able to remove a chat, let's add a delete button for each chat:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.15"}}
 
-> Notice this is exactly the same collections as the server. adding `meteor-client-side` to our project has created `Minimongo` on our client side. `Minimongo` is a client side cache with exactly the same API as the Mongo database.
-
-> Meteor will take care of syncing the data automatically with the server
-
-> On the Meteor platform you won’t have to write that code twice, with Meteor’s build process you can write that code once and run that code everywhere.
-
-> Notice that we have a static separate Front End app that works with a Meteor server. you can use Meteor as a backend server to any Front End app without changing anything in your app structure or build process
-
-We can now remove the client side mock data service we used before:
+And implement its logic in the controller:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="2.16"}}
 
+Now everything is ready, but it looks a bit dull. Let's add some style to it:
+
 {{> DiffBox tutorialName="ionic-tutorial" step="2.17"}}
 
-You can download a ZIP file with the project at this point [here](https://github.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/archive/3f74094749b2ccef9e03fb32903c676b6176d915.zip).
+Since the stylesheet was written in `SASS`, we need to import it into our main `scss` file:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="2.18"}}
+
+> *NOTE*: From now on every `scss` file we write will be imported right after without any further explenations.
+
+Our `Chats` tab is now ready. You can run it inside a browser, or if you prefer to see it in a mobile layout, you should use `Ionic`'s simulator. Just follow the following instructions:
+
+    $ npm install -g ios-sim
+    $ cordova platform add ios
+    $ ionic emulate
+
+And it should look like that:
+
+{{tutorialImage 'ionic' '1.png' 500}}
+
+And if you swipe a menu item to the left:
+
+{{tutorialImage 'ionic' '2.png' 400}}
 
 {{/template}}

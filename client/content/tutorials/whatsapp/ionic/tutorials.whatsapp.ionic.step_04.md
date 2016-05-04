@@ -1,190 +1,140 @@
 {{#template name="tutorials.whatsapp.ionic.step_04.md"}}
-Our app needs Users and authentication.
 
-Meteor’s authentication system has many possible authentication providers like Facebook, Google Account and [more](http://docs.meteor.com/#/full/meteor_loginwithexternalservice)).
+In this step we will add the chat view and the ability to send messages.
 
-WhatsApp uses SMS authentication so we are going to do the same.
+We still don’t have an identity for each user, we will add it later, but we can still send messages to existing chats.
 
-We will use the [accounts-phone](https://github.com/okland/accounts-phone) package for that.
+So just like any other page, let’s begin by adding a very basic view with the chat's details:
 
-Let’s add that package to our Meteor server by running the following command on the Meteor command line:
+{{> DiffBox tutorialName="ionic-tutorial" step="4.1"}}
 
-    $ meteor add okland:accounts-phone
-
-So save time and not use real SMS in development we can configure the package to have admin numbers that will always work without actually sending SMS message and a token that will always work.
-
-To do that, create a `settings.json` file under the `server` folder and enter the following settings inside:
+Now we need to implement the logic in the controller, so let’s create it:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.2"}}
 
-This means we can use the numbers `123456789` and `987654321` and they won’t send real SMS message, and then in the confirmation modal, we can always use `1234` and it will work.
-
-And create `sms.js` file under `server` to define the `accounts` package to use those settings:
-
 {{> DiffBox tutorialName="ionic-tutorial" step="4.3"}}
 
-Now when you run the Meteor server, use the following command line:
+We used the `$statePrams` provider to get the id of the chat, and then we used the `Chats` collection to find the data related to the it. The function `findOne()` takes a query as a parameter and returns a single document. Just like collections in `MongoDB`.
 
-    $ meteor run --settings settings.json
+Now that we have the view and the controller let's connect them by adding the appropriate route state:
 
-Now let’s add Accounts-Phone to our client app. in the client command line type:
+{{> DiffBox tutorialName="ionic-tutorial" step="4.4"}}
 
-    $ bower install accounts-phone --save
-
-Don’t forget to update `index.html`:
+And all is left to do is to link these two:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.5"}}
 
-Now let’s create our login flow.
+Now each time we will click on a chat item from the menu, we should be navigating to it.
 
-We will start from a login screen where the user can type in its phone number. Then we move the user to a confirmation screen where he can type his confirmation number.
-
-From there we transfer the user to his profile page.
-
-So let’s start with the logic screen.
-
-Add the login state to our routes.js file:
+Let’s create a new `scss` file to our `Chat` and fix the image style so it won't look silly:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.6"}}
 
-and the login view:
-
 {{> DiffBox tutorialName="ionic-tutorial" step="4.7"}}
 
-and controller:
+Our next step is about getting the chat messages on the controller, we will add another helper, but instead of using the whole collection we will fetch only the relevant messages for the current chat:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.8"}}
 
-Don’t forget to update `index.html`:
+And now to add it to the view, we use `ng-repeat` to iterate the messages:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.9"}}
 
-In our Login controller we poping up a modal for the user to include his phone number. then sending that number to the `Accounts.requestPhoneVerification` function. After it sends the SMS, we are redirecting the user to the `confirmation` state.
-
-Let’s add the `confirmation` state to our `routes.js` file:
+Now that it is well functioning, let's polish our `Chats`'s looking by adding some style to our newly created messages:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.10"}}
 
-The confirmation view:
+Also, this stylesheet uses some assets located in the `www/img` dir, so inorder for the stylesheet to work properly you'll need to copy the files located [here](https://github.com/DAB0mB/ionic-meteor-whatsapp/tree/master/www/img).
 
-{{> DiffBox tutorialName="ionic-tutorial" step="4.11"}}
+After doing so, our app should look like this:
 
-And the controller:
+{{tutorialImage 'ionic' '4.png' 500}}
+
+Now we just need to take care of the message timestamp and format it.
+
+We will use `Moment` like before, but now let's add another package called [angular-moment](https://github.com/urish/angular-moment) that provides us the UI filters.
+
+So adding the package is just like any other package we added so far. First, we will install it:
+
+    $ bower install angular-moment --save
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.12"}}
 
-Don’t forget to update `index.html`: 
+And then we will load it:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.13"}}
 
-On the conformation controller we pass the phone number and the verification code to the `Accounts.verifyPhone` function and if successful, we redirect the user to his profile page.
-
-Let’s add the `profile` state to our `routes.js` file:
-
 {{> DiffBox tutorialName="ionic-tutorial" step="4.14"}}
 
-The profile view where the user can update his name:
+> *NOTE*: Because it’s an `Angular` extension, we loaded its dependency in our module definition.
+
+Now that we have `angular-moment` ready to use, we will use a filter provided by it in our view:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.15"}}
 
-And the controller:
+Our messages are set, but there is one really important feature missing and that's sending messages. Let's implement our message editor.
+
+We will start with the view itself. We will add an input for editing our messages, a `send` button and some icons for sending images and sound recordings, whom logic won't be implemented in this tutorial since we only wanna focus on the messaging system.
+
+The `ionic-footer-bar` directive provides a perfect solution for placing stuff under our content, let's use it:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.16"}}
 
-Don’t forget to update `index.html`:
+To improve the user experience in our app, we want some extra events to our input because we want to move it up when the keyboard comes from the bottom of the screen and we want to know if `return` (aka `Enter`) was pressed.
+
+We will implement a new directive that extends the regular `input` tag and add those events to the directive:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.17"}}
 
-The profile controller is calling the `updateName` Meteor method so let’s create that:
-
 {{> DiffBox tutorialName="ionic-tutorial" step="4.18"}}
 
-Now let’s add some styles to login:
+And now we can use those events in our view:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.19"}}
 
-And profile:
+And implement the controller methods which handle those events:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="4.20"}}
+
+We will also add some `css` to this view:
+
+{{> DiffBox tutorialName="ionic-tutorial" step="4.21"}}
+
+So now when the user focuses on the input, it should pop up.
+
+This is what we got so far:
+
+{{tutorialImage 'ionic' '5.png' 500}}
+
+So now it’s time to implement the `sendMessage()` in our controller, which is responsible for the logic of sending a message.
+
+We will use `Scope.callMethod()` in order to call that method on the server side:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.22"}}
 
-and import them to our main `sass` file:
+Now let’s create our `api` method in a file called `methods.js`:
 
-{{> DiffBox tutorialName="ionic-tutorial" step="4.23" filename="scss/ionic.app.scss"}}
+{{> DiffBox tutorialName="ionic-tutorial" step="4.23"}}
 
-
-Now that we have a login process, we can stop unlogged users from going into the app.
-
-{{tutorialImage 'ionic' '7.png' 500}}
-
-`angular-meteor-auth` provides us with the [$auth.requireUser](http://www.angular-meteor.com/api/auth) function that we can use in the `resolve` of ui-router to make sure unlogged user can’t go inside that route:
-
-Update the `angular-meteor-auth` bundle dependency in the `index.html` file:
+And we also need to load them in our client, since they are called twice, once in our client (As a validation and smoother experience without refreshing) and once in our server (For security and data handling):
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.24"}}
 
-and add the `angular-meteor.auth` dependency to our Angular app:
+We would also like to validate some data sent to methods we define. `Meteor` provides us with a useful package named `check` that validates data types and scheme.
 
-{{> DiffBox tutorialName="ionic-tutorial" step="4.25"}}
+We will add it to our server using the following commands:
 
-Resolve the user at the routes:
+    $ cd api
+    $ meteor add check
+
+> *NOTE*: `meteor-client-side` is already provided with the `check` package so no need to require it again.
+
+Now let’s use it in the `newMessage()` method:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.26"}}
 
-And let’s handle those unlogged users and redirect them to the `login` state.
+Now that it's ready you can go ahead and send a message and view it on the screen. It should look like this:
 
-Create an `auth.js` file and place this code inside:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.27"}}
-
-And don’t forget to update `index.html`:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.28"}}
-
-But of course that client side authentication is not enough and we need to protect our server as well.
-
-Let’s add security checks inside our server methods:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.29"}}
-
-Also, now that we know the logged-in user we can distinguish the message he sent and the messages others has sent.
-
-We will use `$auth.currentUser` an `angular-meteor-auth` extension to the `$rootScope`.
-
-Let’s update the chat-details view to handle that:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.32"}}
-
-and add that information to our messages in the “newMessage” method:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.30"}}
-
-and the Optimistic UI one as well:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.31"}}
-
-One last things for this chapter - the ability to Logout.
-
-Let’s add a settings view inside a new file called `tab-settings.html` inside the `www/templates/` folder:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.33"}}
-
-Add a state for it:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.34"}}
-
-A controller that simple call the `Meteor.logout`:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.35"}}
-
-Don’t forget to update `index.html`:
-
-{{> DiffBox tutorialName="ionic-tutorial" step="4.36"}}
-
-{{tutorialImage 'ionic' '8.png' 500}}
-
-{{tutorialImage 'ionic' '9.png' 500}}
-
-
-You can download a ZIP file with the project at this point [here](https://github.com/idanwe/ionic-cli-meteor-whatsapp-tutorial/archive/20252b19bb04ad71a3974835acacfe06034dfc6f.zip).
+{{tutorialImage 'ionic' '6.png' 500}}
 
 {{/template}}

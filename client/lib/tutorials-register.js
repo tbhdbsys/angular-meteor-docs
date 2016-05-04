@@ -9,7 +9,7 @@ DiffBox.registerTutorial('meteor-angular2-socially', {
 });
 
 DiffBox.registerTutorial('ionic-tutorial', {
-  gitHubRepoName: 'idanwe/ionic-cli-meteor-whatsapp-tutorial',
+  gitHubRepoName: 'DAB0mB/ionic-meteor-whatsapp',
   patchFilename: 'client/content/tutorials/whatsapp/patches/ionic-tutorial.multi.patch'
 });
 

@@ -33,7 +33,7 @@ PAGES = [
     route: "tutorials.whatsapp.ionic",
     path: "/tutorials/whatsapp/ionic",
     pathRedirect: "/tutorials/whatsapp/ionic/bootstrapping",
-    ghRepoName: "https://github.com/idanwe/ionic-cli-meteor-whatsapp-tutorial",
+    ghRepoName: "https://github.com/DAB0mB/ionic-meteor-whatsapp",
     seoTitlePrefix: "Angular-Meteor and Ionic | ",
     subHead: "Angular-Meteor and Ionic",
     stepbarHide: true,
