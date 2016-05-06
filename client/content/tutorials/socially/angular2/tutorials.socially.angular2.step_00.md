@@ -69,19 +69,14 @@ So in our case, Meteor found our `index.html` file, recognized it was meant for 
 
 > (right-click -> inspect element on the page to see the generated file)
 
-# NPM
+In the following steps we will go through some basics you should know, if you already familiar with them - you can skip the following.
+
+
+# npm
 
 Npm stands for Node Packages Manager, which manages your dependencies and external packages.
 
-To initialize a new project with NPM, run in the command line:
-
-    $ npm init
-
-You'll be asked a few questions about some metadata related to your project, and then the `package.json` file will be created, which will hold the versions of the packages that are required by your app.
-
-The `package.json` looks like that:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.3" filename="package.json"}}
+Meteor support NPM packages (starting from 1.3), and when we created our project - a file named `package.json` created - this file contains the dependencies and some other metadata regarding the project.
 
 ## CommonJS
 
@@ -115,7 +110,7 @@ TypeScript can compile each file into a separate module. Let's learn how we are 
 
 TypeScript uses a file called `tsconfig.json`, so let's create it and use some default configuration:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.3"}}
 
 Now let's understand some of the configuration we just added:
 
@@ -126,7 +121,7 @@ Now let's understand some of the configuration we just added:
 
 We use some more compiler options - if you want to enrich your TypeScript knowledge, you can read [here](http://www.typescriptlang.org/docs/handbook/compiler-options.html).
 
-# Adding Angular 2
+# Getting started with Angular 2
 
 It's time to add Angular 2 to our stack!
 
@@ -138,17 +133,16 @@ Note that Meteor 1.3 still supports it's own packages system - Atmosphere - and 
 
 Angular2-Meteor is splitted to two packages: an Atmosphere package that contains compilers (HTML compiler and TypeScript compiler) and NPM package which contains Angular2-Meteor data solution and the actual connection to Meteor's data solution.
 
+Angular2-Meteor also provied a package named `barbatus:angular2-runtime` which add the core dependencies of Angular 2 by default - it's optional and you can add the dependencies by yourself - but we recommend to add it as well.
+
 So first, we need to add the compilers package, back in the command line, launch this command:
 
     $ meteor add angular2-compilers
+    $ meteor add barbatus:angular2-runtime
 
 And then add the meteor package, by running:
 
     $ meteor npm install --save angular2-meteor
-
-And we also need to install the Meteor stubs:
-
-    $ meteor npm install --save meteor-node-stubs
 
 > Note that this will update your `package.json` with a new dependency.
 
@@ -190,11 +184,11 @@ Now you can see another example of Meteor's power and simplicity - no need to in
 
 Let's continue defining our Angular 2 application module.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.6"}}
 
 And let's create the `.html` file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.7"}}
 
 First we're importing the dependencies we needed from `angular2/core` and `angular2/platform/browser`. This is not a folder and files in your directory, but a reference to CommonJS modules aliased as `angular2/core` and `angular2/platform/browser`, which in fact located under you `node_modules` directory.
 
@@ -225,11 +219,10 @@ does not know anything about our `app` module.
 
 So let's manually import our `app` module and add the `<app>` tag to `index.html` as follows:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.8"}}
 
 This will load HTML and JavaScript code necessary to launch our app.
 
-> Note that it's better to wrap this importing line of code in the `Meteor.start`, which
 > guarantees app loading at the appropriate time, when all necessary parts are ready.
 
 Importing the root module every time looks like a repetitive task.
@@ -290,8 +283,9 @@ You can find more information about it [here](https://github.com/typings/typings
 In our case, we'll need to execute commands as follows to install all dependencies:
 
         $ npm install typings -g
-        $ typings install es6-promise
-        $ typings install es6-shim --ambient
+        $ typings init
+        $ typings install es6-promise --save
+        $ typings install es6-shim --ambient --save
 
 > Note that "es6-shim" for "npm" is not found in the registry now. You need install it with the ambient flag.
 
@@ -308,12 +302,6 @@ So now only one Typing is missing - which is the Meteor typings file - you need 
 > We recommend to try and find typings for all of your packages.
 
 **As a best practice, we recommend to add `"moduleResolution": "node"` to you `tsconfig.json` file, so TypeScript will automatically find typings and `.d.ts` files in your `node_modules` directory.**
-
-# Experiments
-
-Try adding a new expression to the `app.html` that will do some math:
-
-    <p>1 + 2 = {{dstache}} 1 + 2 }}</p>
 
 # Summary
 

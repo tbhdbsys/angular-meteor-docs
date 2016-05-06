@@ -52,14 +52,10 @@ Let's create our `party.d.ts` file and place it inside the _typings_ folder with
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="7.1"}}
 
-Then, we add this file to the app's _tsconfig.json_ to be compiled along with other TypeScript file:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.2"}}
-
 Wherever Party is used, we can declare the type. Let's start by clarifying the parties collection in `collections/parties.ts`.
 Change the code to:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="7.2"}}
 
 As you can see, we used a generic type `Mongo.Collection<>` with the class parameter set to `Party` instead of just basic
 `Mongo.Collection` class.
@@ -76,9 +72,9 @@ Isn’t it cool?! We’ve made our app more bug resistant with only a few change
 
 Finally, let’s change `Object` to `Party` in the `PartiesList` and `PartyDetails` components to make our code look right:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="7.3"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="7.4"}}
 
 ## TypeScript Configuration and IDEs
 
