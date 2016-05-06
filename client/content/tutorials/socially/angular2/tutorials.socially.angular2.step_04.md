@@ -18,7 +18,7 @@ In Angular 2, we build a tree of components with the root `Socially` component a
 child components stemming out of it down to the leaves. This is one of the principal
 architectural differences between Angular 1 & 2.
 
-Let's make a new component called `PartiesForm`, and put it inside it's own directory ("client/imports/parties-form").
+Let's make a new component called `PartiesForm`, and put it inside it's own directory ("client/parties-form").
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.1"}}
 
