@@ -21,3 +21,11 @@ Template.layout.events({
     $(".navbar-collapse").removeClass("in");
   }
 });
+
+Template.layout.helpers({
+  currentApi: function (api) {
+    var route = Router.current().data().route.replace('api.', '');
+
+    return route.substr(0, route.lastIndexOf('.')) === api;
+  }
+});

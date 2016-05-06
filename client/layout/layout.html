@@ -22,6 +22,8 @@
   <meta property="os:rcs_type" content="git" />
   <meta property="os:src" content="git@github.com:urigo/angular-meteor.git" />
 
+  <!-- DocSearch -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
 </head>
 
 <template name="layout">
@@ -33,6 +35,23 @@
       {{> twitterSocialButton showCount='true'}}
     </div>
   </div>
+
+  {{ currentApi this }}
+
+  <!-- DocSearch -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+  <script type="text/javascript">
+  docsearch({
+    apiKey: '00f07033c9d7df6aa64eafbe2ce7ce8c',
+    indexName: 'angular-metor',
+    inputSelector: '#searchDocSearch',
+    algoliaOptions: {
+      'hitsPerPage': 5,
+      'facetFilters': '(angular_version:angular1)'
+    }
+  });
+  </script>
+  <!-- DocSearch end -->
 
   <script type="text/javascript">
     window.twttr = (function (d, s, id) {
