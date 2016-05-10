@@ -17,7 +17,7 @@ BrowserPolicy.content.allowScriptOrigin("tag.perfectaudience.com");
 BrowserPolicy.content.allowScriptOrigin("pixel-geo.prfct.co");
 BrowserPolicy.content.allowScriptOrigin("js.hsforms.net");
 BrowserPolicy.content.allowScriptOrigin("forms.hubspot.com");
-
+BrowserPolicy.content.allowOriginForAll("cdn.jsdelivr.net")
 
 // let phantomjs run for up to 60 seconds when googlebot crawls our
 // page. a lower ranking because of slow pageload is better than not
