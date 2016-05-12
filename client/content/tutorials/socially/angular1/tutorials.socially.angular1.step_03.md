@@ -199,21 +199,61 @@ As you can see in your browser, template is missing. It's also lazy-loaded.
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="3.14"}}
 
+Let me explain to you what happened there.
+
+You could just import html file but with the latest version of `angular-templates` it's possible to get a full path of a used file. See the example below:
+
+```js
+// You're inside: imports/ui/button.js
+
+import templateUrl from './button.html';
+
+console.log(templateUrl); // outputs: imports/ui/button.html
+```
+
+# Templates as a strings
+
+There is no component without a template so instead of asynchronously loading a html file we can use `urigo:static-templates` package. It allows you to import template as a string.
+
+Okay, so first step will be to remove `angular-templates`:
+
+```bash
+$ meteor remove angular-templates
+```
+
+Then we can add `urigo:static-templates` package:
+
+```bash
+$ meteor add urigo:static-templates
+```
+
+Let me show you how it works:
+
+```js
+import template from './button.html';
+
+console.log(template); // outputs: contents of button.html as a minified string
+```
+
+Okay, now you understand what's going on, so we can move on and implement it inside PartiesList:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.16"}}
+
 Since we want to use components in Socially we still have to create a main component, just like we had a main controller.
 
 Let's do the same steps as we did with PartiesList.
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="3.15"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.17"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="3.16"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.18"}}
 
 Now we can update main view in index.html file and load Socially in main.js
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="3.17"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.19"}}
 
 Here, change the main.js file like this : (remove "import { name as PartiesList } ..." and "angular.module('socially', [...")
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="3.18"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="3.20"}}
 
 # Summary
 
