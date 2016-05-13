@@ -271,7 +271,7 @@ You will need to reference and let the TypeScript compiler know about external p
 
  - Another way is to create a custom [TypeScript configuration file](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) with the "files" (or "filesGlob") property set to include all required typings files.
 
-This configuration is the `tsconfig.json` file tat we created earlier and was placed at
+This configuration is the `tsconfig.json` file that we created earlier and was placed at
 the app root folder.
 
 We will see more examples and usage with the `tsconfig.json` file later in the tutorial.
