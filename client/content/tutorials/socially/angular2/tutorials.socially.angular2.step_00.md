@@ -50,6 +50,7 @@ We are going to add our own files for this tutorial. So let's start by deleting 
     - /client/main.css    (delete)
     - /client/main.html   (delete)
     - /client/main.js     (delete)
+    - /server/main.js     (delete)
 
 Now we can start building our app.
 
@@ -84,7 +85,7 @@ Meteor 1.3 comes with CommonJS implementation which provides the ability to use 
 
 Note that Angular 2.0 examples and tutorials mostly use SystemJS - which is another modules loader.
 
-You can also use SystemJS, but we recommend to use CommonJS because it is built-in in Meteor 1.3.
+You can also use SystemJS, but we recommend to use CommonJS because it is built into Meteor 1.3.
 
 
 ## TypeScript
@@ -129,9 +130,9 @@ First things first, let's understand a few things:
 
 Meteor 1.3 comes with support for NPM packages - which means that we can just add Angular 2 from NPM.
 
-Note that Meteor 1.3 still supports it's own packages system - Atmosphere - and it is still required because there are some Meteor features (such as custom files compiler and packages isolation) that are available only when using Atmopshere package.
+Note that Meteor 1.3 still supports it's own packages system - Atmosphere - and it is still required because there are some Meteor features (such as custom files compiler and packages isolation) that are available only when using Atmosphere package.
 
-Angular2-Meteor is splitted to two packages: an Atmosphere package that contains compilers (HTML compiler and TypeScript compiler) and NPM package which contains Angular2-Meteor data solution and the actual connection to Meteor's data solution.
+Angular2-Meteor is split into two packages: an Atmosphere package that contains compilers (HTML compiler and TypeScript compiler) and NPM package which contains Angular2-Meteor data solution and the actual connection to Meteor's data solution.
 
 Angular2-Meteor also provied a package named `barbatus:angular2-runtime` which add the core dependencies of Angular 2 by default - it's optional and you can add the dependencies by yourself - but we recommend to add it as well.
 
@@ -185,6 +186,19 @@ Now you can see another example of Meteor's power and simplicity - no need to in
 Let's continue defining our Angular 2 application module.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.6"}}
+
+> NOTE: Since Angular2 went to RC, make the following changes:
+
+    $ npm uninstall --save angular2
+    $ npm install --save @angular/core @angular/common @angular/platform-browser @angular/platform-browser-dynamic @angular/router-deprecated
+
+  Then replace all `angular2/` import statements with `@angular/`
+  For example, replace:
+
+      import { Component } from 'angular2/core';
+  with
+
+      import { Component } from '@angular/core';
 
 And let's create the `.html` file:
 
@@ -242,11 +256,11 @@ At this moment you might see no errors from the TypeScript compiler because of t
 
 But soon, it a few steps forward, we will might encounter warnings from the TypeScript compiler regarding Meteor packages (such as `meteor/meteor` or `meteor/tracker`).
 
-To avoid those errors - we need to add Typings for packages that aren't built with TypeScript or for packages that does not share it's Typings by default.
+To avoid those errors - we need to add Typings for packages that aren't built with TypeScript or for packages that do not share it's Typings by default.
 
 > Angular2-Meteor and Angular 2 provides its own typings inside the NPM folder, and you do no need to install the typings from external sources.
 
-You will need to reference and let the TypeScript compiler know about external packages that in use - there are 2 ways of doing that:
+You will need to reference and let the TypeScript compiler know about external packages that are in use. There are 2 ways of doing that:
 
  - One way is to directly reference typings files (`.d.ts` extension) using a special sugared syntax at the top of your TypeScript code file, for example:
 
@@ -257,7 +271,7 @@ You will need to reference and let the TypeScript compiler know about external p
 
  - Another way is to create a custom [TypeScript configuration file](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) with the "files" (or "filesGlob") property set to include all required typings files.
 
-This configuration file should be called `tsconfig.json` and placed at
+This configuration is the `tsconfig.json` file tat we created earlier and was placed at
 the app root folder.
 
 We will see more examples and usage with the `tsconfig.json` file later in the tutorial.
@@ -271,7 +285,7 @@ You notice that this file contain only declaration and does not have code inside
 
 If you look into, you'll see there references to Angular 2 and Meteor API.
 
-Libraries like ES6 Promise etc are so called ambient dependencies, which
+Libraries like ES6 Promise etc are called ambient dependencies, which
 means they provide information about the environment and should be available globally.
 
 In order to install them — thus adding full type-checking support at this stage — we'll use a special tool for typings installation
@@ -297,7 +311,7 @@ So now only one Typing is missing - which is the Meteor typings file - you need 
 
         $ typings install registry:env/meteor --ambient
 
-> Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - there will not prevent you from running your app, but it is highly recommended to resolve those errors.
+> Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - this will not prevent you from running your app, but it is highly recommended to resolve those errors.
 
 > We recommend to try and find typings for all of your packages.
 
