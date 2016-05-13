@@ -45,11 +45,11 @@ called "collections/parties". This work is done by the TypeScript compiler behin
 The TypeScript compiler converts `.ts` files to ES5, then registers a CommonJS module with the same name as
 the relative path to the file in the app.
 
-That's why we use the special word `export`. By this way, we tell CommonJS what we are allowing to be exported from this module into the outside world.
+That's why we use the special word `export`. We are telling CommonJS what we are allowing to be exported from this module into the outside world.
 
 Meteor has a series of special folder names, including the "client" folder. All files within a folder named "client" are loaded on the client only. Likewise, files in a folder called "server" are loaded on the server only.
 
-Because this file is located outside of any special folder name, like "client" or "server", this collection and the actions on it will run both on the client (minimongo) and the server (Mongo).
+Placing the `collection` folder outside of any special folder, like "client" or "server", makes its contents available to both the client and the server. Therefore, the `parties` collection (and the actions on it) will run on both the client (minimongo) and the server (Mongo).
 
 Though we only declared our model once, we have two modules that declare two versions of our parties collection:
 one for client-side and one for server-side. This is often referred to as "isomorphic" or "universal javascript". All synchronization between these two versions of collections is handled by Meteor.
@@ -72,7 +72,7 @@ Then, change `client/app.ts` to load parties from Mongo:
 
 But what happens if the parties data changes on the server-side? How can we tell parties to update itself?
 
-For now, we can use Meteor [Tracker](https://www.meteor.com/tracker), a reactive wrapper that will run data when a change occurs:
+For now, we can use Meteor [Tracker](http://docs.meteor.com/#/full/tracker), a reactive wrapper that will run data when a change occurs:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.4"}}
 
@@ -180,7 +180,7 @@ the `ngFor` directive to provide information about what has been changed in a co
 this collection efficiently.
 
 This concept is similar to "dirty checking" in Angular 1.x but with some differences.
-Thanks to some advanced algorithms Angular 2 now computes the difference between two arrays much more efficiently. We are not going to dive into those details in this tutorial. But you can read this [blog post](http://info.meteor.com/blog/comparing-performance-of-blaze-react-angular-meteor-and-angular-2-with-meteor),
+Thanks to some advanced algorithms, Angular 2 now computes the difference between two arrays much more efficiently. We are not going to dive into those details in this tutorial. But you can read this [blog post](http://info.meteor.com/blog/comparing-performance-of-blaze-react-angular-meteor-and-angular-2-with-meteor),
 which compares the speed of Angular 1 with Angular 2 in Meteor.
 One more advantage of differs in Angular 2 is that customers can create their own differs for their own collection types.
 
@@ -194,7 +194,7 @@ To use it, we need to install it from NPM:
 
 Let's change `bootstrap` to load from `angular2-meteor` instead of `angular2/bootstrap` as follows:
 
-    import {Component, NgZone} from 'angular2/core';
+    import {Component} from 'angular2/core';
     import {bootstrap} from 'angular2-meteor-auto-bootstrap';
 
     bootstrap(Socially);

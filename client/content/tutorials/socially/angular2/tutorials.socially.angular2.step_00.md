@@ -48,6 +48,7 @@ We are going to add our own files for this tutorial. So let's start by deleting 
     - /client/main.css    (delete)
     - /client/main.html   (delete)
     - /client/main.js     (delete)
+    - /server/main.js     (delete)
 
 Now we can start building our app.
 
@@ -126,7 +127,7 @@ If you look into the typings folder after the execution, you'll find there a def
 
 This is a top level definition file that links all other definition files installed by `typings`.
 
-> Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - there will not prevent you from running your app, but it is highly recommended to resolve those errors.
+> Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - this will not prevent you from running your app, but it is highly recommended to resolve those errors.
 
 That's it! Now we can use Angular 2's power in our Meteor app!
 
