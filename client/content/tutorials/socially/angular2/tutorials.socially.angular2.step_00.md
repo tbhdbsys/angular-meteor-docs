@@ -77,10 +77,10 @@ It's time to add Angular 2 to our stack!
 In the command line, launch those commands:
 
     $ meteor remove blaze-html-templates
-    $ meteor add angular2-compilers
-    $ meteor add barbatus:angular2-runtime
+    $ meteor add angular2-compilers barbatus:angular2-runtime
 
-    $ meteor npm install --save angular2-meteor
+    $ meteor npm install --save angular2-meteor @angular/platform-browser-dynamic
+ 
 
 > You might see a lot of warning messages if you are using NPM v2, it is okay and if you are interested to know more about these warning, you can [read here](http://blog.npmjs.org/post/110924823920/npm-weekly-5).
 
