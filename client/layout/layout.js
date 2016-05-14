@@ -24,8 +24,10 @@ Template.layout.events({
 
 Template.layout.helpers({
   currentApi: function (api) {
-    var route = Router.current().data().route.replace('api.', '');
+    if (Router.current().data) {
+      var route = Router.current().data().route.replace('api.', '');
 
-    return route.substr(0, route.lastIndexOf('.')) === api;
+      return route.substr(0, route.lastIndexOf('.')) === api;
+    }
   }
 });
