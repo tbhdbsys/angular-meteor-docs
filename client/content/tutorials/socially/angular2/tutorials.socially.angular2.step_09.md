@@ -58,7 +58,7 @@ We've just created a System.js module, hence, as you already know, one necessary
 
 [Meteor.subscribe](http://docs.meteor.com/#/full/meteor_subscribe) is the receiving end of Meteor.publish on the client.
 
-In a regular Meteor app with Blaze, we'd add the following line to subscribe to the "parties" publications:
+let's add the following line to subscribe to the `parties` publications:
 
     Meteor.subscribe('parties');
 
@@ -92,6 +92,8 @@ So, we are going to extend the `PartiesList` component and make use of `this.sub
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.3"}}
 
+> Note that we are calling `super()` so that the constructor of the component we are inheriting from will run as well
+
 Now run the app. Whoa, we've just made all the parties come back using pub/sub!
 
 As it's mentioned earlier, it'd be nice for the app to implement some basic security and show parties based on who owns them. Let's do it.
@@ -105,7 +107,10 @@ Firstly, we'll add a new `public` field to the party data several steps:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.4"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.5" filename="typings/party.d.ts"}}
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.5" filename="client/imports/parties-form/parties-form.ts"}}
+
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.6"}}
 

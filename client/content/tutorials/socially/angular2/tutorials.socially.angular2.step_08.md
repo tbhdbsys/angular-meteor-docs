@@ -3,7 +3,7 @@
 
 In this section we'll look at how to:
 
-- implement security for an app using Meteor and Angular 2 API together.
+- implement security for an app using Meteor and Angular 2 API
 - setup user accounts in meteor using a login and password
 - setup OAuth login for Facebook & Twitter
 - restrict access to views based on user permissions
@@ -41,10 +41,7 @@ Add the "accounts-password" Meteor package. It's a very powerful package for all
 
     $ meteor add accounts-password
 
-If Socially were just a Meteor app without Angular 2, the next step would be to add the ["accounts-ui"](https://atmospherejs.com/meteor/accounts-ui) package, which is a standard Meteor package that contains all the HTML and CSS we need for the user operation forms. But "accounts-ui" is a Blaze-related package and will not work in Angular 2.
-
-It's not wrong to say as well that we'd appreciate using Angular 2 components in Angular 2 where possible.
-So, we are going to add `angular2-meteor-accounts-ui` instead which is a simple wrapper over the standard "accounts-ui" that exports a Blaze-based LoginButtons view as an Angular 2 component and, besides, does some necessary cleanup behind the scenes.
+Now we are going to add `angular2-meteor-accounts-ui` which is a which is a package that contains all the HTML and CSS we need for the user operation forms.
 
     $ meteor npm install --save angular2-meteor-accounts-ui
 
@@ -111,7 +108,7 @@ Now you can specify if a component can be accessed only when a user is logged in
 
 If you place `@InjectUser` above the PartiesForm it will inject a new user property:
 
-__`client/parties-form/parties-form.ts`__:
+__`client/imports/parties-form/parties-form.ts`__:
 
     ...
     import {MeteorComponent} from 'angular2-meteor';
@@ -119,7 +116,7 @@ __`client/parties-form/parties-form.ts`__:
 
     @Component({
       selector: 'parties-form',
-      templateUrl: 'client/parties-form/parties-form.html',
+      templateUrl: 'client/imports/parties-form/parties-form.html',
     })
     @InjectUser()
     export class PartiesForm extends MeteorComponent {
@@ -139,7 +136,7 @@ __`client/parties-form/parties-form.ts`__:
 Call `this.user` and you will see that it returns the same object as `Meteor.user()`.
 The new property is reactive and can be used in any template, for example:
 
-__`client/parties-form/parties-form.html`__:
+__`client/imports/parties-form/parties-form.html`__:
 
     <div *ngIf="!user">Please, log in to change party</div>
     <form [ngFormModel]="partiesForm" #f="form" (submit)="addParty(f.value)">
@@ -156,7 +153,7 @@ Let's imagine now that we allow to see and change party details only for logged-
 An ideal way to implement this would be to restrict redirecting to the party details page when
 someone clicks on a party link. In this case, we don't need to check access manually in the party details component itself because the route request is denied early on.
 
-This can be easily done again with help of "barbatus:ng2-meteor-accounts" package
+This can be easily done again with help of "angular2-meteor-accounts-ui" package
 that has a simple `RequireUser` annotation. Just place it above `PartyDetails`
 and you will see if a user is not logged-in to the system, that user won't be able to access the route.
 
@@ -174,7 +171,7 @@ And then pass the partyId into the `@CanActivate` attribute:
 
   __`client/party-details/party-details.ts`__:
 
-    import {CanActivate, ComponentInstruction} from 'angular2/router';
+    import {CanActivate, ComponentInstruction} from '@angular/router-deprecated';
 
     function checkPermissions(instruction: ComponentInstruction) {
       var partyId = instruction.params['partyId'];
@@ -186,7 +183,7 @@ And then pass the partyId into the `@CanActivate` attribute:
       selector: 'party-details'
     })
     @View({
-        templateUrl: 'client/party-details/party-details.html',
+        templateUrl: 'client/imports/party-details/party-details.html',
         directives: [RouterLink]
     })
     @CanActivate(checkPermissions)

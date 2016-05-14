@@ -15,19 +15,19 @@ First, let's create a simple form with a button that will add a new party.
 # Component Architecture
 
 In Angular 2, we build a tree of components with the root `Socially` component and
-child components stemming out of it down to the leaves. This is one of the principal
-architectural differences between Angular 1 & 2.
+child components stemming out of it down to the leaves.
 
-Let's make a new component called `PartiesForm`, and put it inside it's own directory ("client/imports/parties-form").
+Let's make a new component called `PartiesForm`, and put it inside it's own directory (`client/imports/parties-form`).
+
+> Notice that we are placing the file inside the `imports` folder.  
+> That is another Meteor special folder name that tells Meteor to load the modules inside it just when some other module is importing it.  
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.1"}}
 
-Notice that we are exporting the class `PartiesForm` using ES6 module syntax.
-By doing so, we tell TypeScript to create a System.js module with the file content inside.
-
+Notice that we are exporting the class `PartiesForm` using ES6 module syntax. 
 As a result, you'll be able to import `PartiesForm` in any other component as follows:
 
-    import {PartiesForm} from 'client/parties-form/parties-form';
+    import { PartiesForm } from 'client/imports/parties-form/parties-form';
 
 By exporting and importing different modules, you create a modular structure of your app in ES6,
 which is similar to the modules in other script languages like Python.
@@ -43,36 +43,15 @@ We can load the new `PartiesForm` component on the page by placing the `<parties
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.3"}}
 
-There is one more required step in Angular 2 to load a component. The `Socially` component is not aware of child components unless you explicitly let it know what to look for. Add the `PartiesForm` class to the View annotation of the `Socially`, like this:
+There is one more required step in Angular 2 to load a component. The `Socially` component is not aware of child components unless you explicitly let it know what to look for. Add the `PartiesForm` class as a directive of the `Socially`, like this:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.4"}}
 
-Here's a good example how to import and link custom components together:
-
-- import the component class you want to use
-- we add it to the list of directives to use in the `View` annotation
-
-As soon as it's done, the imported component's directive becomes available in the template.
+Now we have our parties-form directive showing on our app.
 
 # Angular 2 Forms
 
 Now let's get back to the form and make it functional.
-
-As you may know, two-way data binding is the default data exchange mechanism between
-components (controllers or directives) and views in Angular 1. In other words, if you bind an Angular 1 controller's property to, say, an `<input>` element on some linked template,
-every change to the value of this input will update that property of the controller and
-vice versa.
-
-In Angular 2, things have changed a bit. Two-way data binding is still available,
-but it is not the default behavior. We will take a close look at two-way binding during the 6th step of the tutorial.
-
-In this chapter, we are going to explore a new way to bind a form input element to a component in Angular 2.
-
-We can build a form model and then two-way bind this model to input elements in the component's view.
-
-This way looks more transparent and allows tighter control over data exchange
-than binding to component properties directly.
-Let's call this way _Model-Driven Forms_.
 
 ## Model-Driven Forms
 
@@ -127,7 +106,7 @@ We can check `partiesForm.valid` property to determine if the form is valid:
     > false
 
 Now let's bind the form model to the form and its input elements. Here we use special
-form directives: [`ngFormModel`](https://angular.io/docs/ts/latest/api/common/NgFormModel-directive.html) and [`ngControl`](https://angular.io/docs/ts/latest/api/common/NgControl-class.html), that do all the magic by binding properties, that we just defined, to the DOM elements. As was mentioned in the earlier steps, these form directives are part of the `angular2/common` package and thus available right away in each template — no need to import them into the component itself.
+form directives: [`ngFormModel`](https://angular.io/docs/ts/latest/api/common/NgFormModel-directive.html) and [`ngControl`](https://angular.io/docs/ts/latest/api/common/NgControl-class.html), that do all the magic by binding properties, that we just defined, to the DOM elements. As was mentioned in the earlier steps, these form directives are part of the `@angular/common` package and thus available right away in each template — no need to import them into the component itself.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.7"}}
 
@@ -173,7 +152,7 @@ In Angular 2, events are indicated by the round bracket () syntax. Here we are t
 > Note: TypeScript doesn't know that controls properties are of Control type.
 > That's why we are casting them to the Control type.
 
-Open a different browser, fill out the form, submit and see how the party is added on both clients. So simple!
+Open a different browser, fill out the form, submit and see how the party is added on both clients.
 
 ### (click)
 

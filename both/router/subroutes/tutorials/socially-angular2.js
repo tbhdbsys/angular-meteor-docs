@@ -137,10 +137,10 @@ SOCIALLY_ANGULAR2 = [
   },
   {
     id: "17",
-    title: 'CSS, LESS and Bootstrap',
-    seoTitle: 'CSS, LESS and Bootstrap',
-    route: "tutorials.socially.angular2.css-less-and-bootstrap",
-    path: "/tutorials/socially/angular2/css-less-and-bootstrap",
+    title: 'CSS, SASS and Bootstrap',
+    seoTitle: 'CSS, SASS and Bootstrap',
+    route: "tutorials.socially.angular2.css-sass-and-bootstrap",
+    path: "/tutorials/socially/angular2/css-sass-and-bootstrap",
     contentTemplate: 'tutorials.socially.angular2.step_17.md'
   },
   {

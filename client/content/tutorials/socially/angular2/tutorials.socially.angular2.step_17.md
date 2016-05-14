@@ -3,23 +3,25 @@
 
 In this chapter we will add Twitter's bootstrap to our project, and add some style and layout to the project.
 
-At the moment, this tutorial we will use only Bootstrap's CSS file and not the JavaScript - but note that you can use all the features of Boostrap 4.
-
 # Adding and importing Bootstrap 4
 
 First, we need to add Boostrap 4 to our project - so let's do that.
 
 Run the following command in your Terminal:
 
-    $ meteor npm install bootstrap4-webpack-package --save
+    $ meteor npm install --save bootstrap@4.0.0-alpha.2
 
-> At this time, you cannot use the original Boostrap 4 package from NPM, and a wrapper is needed. Meteor 1.3.2 may resolve this issue. [Click for more information about this issue](https://github.com/meteor/meteor/issues/6098).
+We are also going to use the [sass](http://sass-lang.com/) version of Bootstrap.
 
-To import it into the project, add the following line in the top of you `app.ts`:
+For that we need to add the following Meteor package to help Meteor handle SASS files:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.2"}}
+    $ meteor add fourseven:scss
 
-And it will import Boostrap's CSS to your project.
+To import it into the project, we will rename `main.css` to `main.scss` and import bootstrap:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.4"}}
+
+And it will import Boostrap's styles into your project.
 
 # First touch of style
 
@@ -28,16 +30,6 @@ Now let's add some style! we will add navigation bar in the top of the page.
 We will also add a container with the `router-outlet` to keep that content of the page:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="17.3"}}
-
-# Add LESS
-
-OK, simple styling works, but we want to be able to use [LESS](http://lesscss.org/).
-
-We can't add LESS from NPM because it is a compiler and we want it to be a part of Meteor build - so we will add it from Atmosphere:
-
-    $ meteor add less
-
-We will use LESS in a few steps!
 
 # Moving things around
 
@@ -77,34 +69,33 @@ And now the parties list:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="17.10"}}
 
-# Use LESS
+# Styling components
 
-Now it's time to use less for that first time! The LESS compiler looks for `.less` files - so let's remove our old `main.css` file first.
+We will create style file for each component.
 
-Now we want to add a `.less` file, and we will create LESS style file for each component.
-
-We will also add `.import` to the file, to indicate the LESS compiler that this is just an import file and not the main LESS files - we will load those files in our main LESS file.
+We will also add `_` prefix to the file, to indicate the SASS compiler that this is just an import file and not the main SASS files - we will load those files in our main SASS file.
 
 So let's start with the parties list, and add some style (it's not that critical at the moment what is the effect of those CSS rules)
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.11" filename="client/imports/parties-list/parties-list.import.less"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.11" filename="client/imports/parties-list/_parties-list.scss"}}
 
-And now let's add LESS file for the party details:
+And now let's add SASS file for the party details:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.12" filename="client/imports/party-details/_party-details.scss"}}
+
+import it into the main SASS file:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.11" filename="client/css/main.scss"}}
 
 And use those new cool styles in the view of the party details:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="17.13"}}
 
-And now we will add a main LESS file, which imports the files we created, and also defines some colors:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.11" filename="client/style/main.less"}}
 
 # Summary
 
-So in this chapter of the tutorial we added Boostrap library and used it's layout and CSS styles.
+So in this chapter of the tutorial we added the Bootstrap library and used it's layout and CSS styles.
 
-We also learnt how to integrate LESS compiler with Meteor and how to create isolated LESS styles for each component.
+We also learned how to integrate SASS compiler with Meteor and how to create isolated SASS styles for each component.
 
 {{/template}}
