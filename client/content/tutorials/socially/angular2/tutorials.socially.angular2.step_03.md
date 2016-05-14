@@ -68,17 +68,15 @@ To use it, we need to install it from NPM:
 
 Let's change `bootstrap` to load from `angular2-meteor-auto-bootstrap` instead of `@angular/platform-browser-dynamic` as follows:
 
-    import { Component } from '@angular/core';
-    import { bootstrap } from 'angular2-meteor-auto-bootstrap';
-
-    ... 
-
-    bootstrap(Socially);
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.4"}}
     
+Now let's import the `Parties` from collections:
 
-Now, change `app.ts` to:
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.2"}}
 
-  {{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
+and let's bind to the Cursor:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
 
 
 # Inserting Parties from the Console
@@ -124,7 +122,7 @@ let's initialize our server with the same parties as we had before.
 Let's add a file called `load-parties.ts` inside of "server" folder
 and implement `loadParties` method inside to load parties:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
 
 Then change `main.ts` to run this method on Meteor startup:
 
