@@ -144,7 +144,7 @@ Create a new `app.ts` file inside of the `client` folder.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.6"}}
 
-First we're importing the dependencies we needed from `angular2/core` and `angular2/platform/browser`. This is not a folder and files in your directory, but a reference to CommonJS modules aliased as `angular2/core` and `angular2/platform/browser`, which in fact located under you `node_modules` directory.
+First we're importing the dependencies we needed from `@angular/core` and `@angular/platform-browser-dynamic`. This is not a folder and files in your directory, but a reference to CommonJS modules aliased as `@angular/core` and `@angular/platform-browser-dynamic`, which in fact located under you `node_modules` directory.
 
 Notice, the Component's selector matches the `<app>` tag we will provide in `index.html` below, and the View template creates the view.
 

@@ -60,7 +60,7 @@ Now that we've created the collection, our client needs to subscribe to it's cha
 
 In order to make Angular understand Meteor collection, `angular2-meteor` includes providers.
 
-Adding those providers to each component is annoying so we've added a new `bootstrap` that overrides the basic bootstrap method from `angular2/bootstrap` and adds some those additional providers to your app.
+Adding those providers to each component is annoying so we've added a new `bootstrap` that overrides the basic bootstrap method from `@angular/platform-browser-dynamic` and adds some those additional providers to your app.
 
 To use it, we need to install it from NPM:
 

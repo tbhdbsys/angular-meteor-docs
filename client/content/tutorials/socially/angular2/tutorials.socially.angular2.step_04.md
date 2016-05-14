@@ -106,7 +106,7 @@ We can check `partiesForm.valid` property to determine if the form is valid:
     > false
 
 Now let's bind the form model to the form and its input elements. Here we use special
-form directives: [`ngFormModel`](https://angular.io/docs/ts/latest/api/common/NgFormModel-directive.html) and [`ngControl`](https://angular.io/docs/ts/latest/api/common/NgControl-class.html), that do all the magic by binding properties, that we just defined, to the DOM elements. As was mentioned in the earlier steps, these form directives are part of the `angular2/common` package and thus available right away in each template — no need to import them into the component itself.
+form directives: [`ngFormModel`](https://angular.io/docs/ts/latest/api/common/NgFormModel-directive.html) and [`ngControl`](https://angular.io/docs/ts/latest/api/common/NgControl-class.html), that do all the magic by binding properties, that we just defined, to the DOM elements. As was mentioned in the earlier steps, these form directives are part of the `@angular/common` package and thus available right away in each template — no need to import them into the component itself.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.7"}}
 
