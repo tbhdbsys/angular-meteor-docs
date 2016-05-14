@@ -35,103 +35,51 @@ In short, Meteor core's setup has:
 
 So first, let's define our first parties collection that will store all our parties.
 
-In a separate folder called "collections", add a file called "parties.ts". Include this:
+In a separate folder called `collections`, add a file called `parties.ts`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.1"}}
 
-We've just created not only a file called "parties.ts", but also a CommonJS module
-called "collections/parties". This work is done by the TypeScript compiler behind the scenes.
+We've just created a file called `parties.ts`, that contains a CommonJS module called `collections/parties`. 
+This work is done by the TypeScript compiler behind the scenes.
 
 The TypeScript compiler converts `.ts` files to ES5, then registers a CommonJS module with the same name as
 the relative path to the file in the app.
 
-That's why we use the special word `export`. We are telling CommonJS what we are allowing to be exported from this module into the outside world.
+That's why we use the special word `export`. We are telling CommonJS what we are allowing the object to be exported from this module into the outside world.
 
-Meteor has a series of special folder names, including the "client" folder. All files within a folder named "client" are loaded on the client only. Likewise, files in a folder called "server" are loaded on the server only.
+Meteor has a series of special folder names, including the `client` folder. All files within a folder named `client` are loaded on the client only. Likewise, files in a folder called `server` are loaded on the server only.
 
-Placing the `collection` folder outside of any special folder, like "client" or "server", makes its contents available to both the client and the server. Therefore, the `parties` collection (and the actions on it) will run on both the client (minimongo) and the server (Mongo).
+Placing the `collection` folder outside of any special folder, makes its contents available to both the client and the server. Therefore, the `parties` collection (and the actions on it) will run on both the client (minimongo) and the server (Mongo).
 
 Though we only declared our model once, we have two modules that declare two versions of our parties collection:
 one for client-side and one for server-side. This is often referred to as "isomorphic" or "universal javascript". All synchronization between these two versions of collections is handled by Meteor.
 
-# Simple Binding to Angular
+# Binding Meteor to Angular
 
 Now that we've created the collection, our client needs to subscribe to it's changes and bind it to our `this.parties` array.
-Angular 2's `ngFor` directive works by default with pure arrays, hence, we'll just need to get an array of documents out of our Mongo collection.
-Since Mongo collections are full Mongo collections even on the client side (thanks to Meteor), we can query documents with the help of [`find`](https://docs.mongodb.org/v3.0/reference/method/db.collection.find/) or [`findOne`](https://docs.mongodb.org/manual/reference/method/db.collection.findOne/) API methods.
 
-Thus, we have at least one way to load our data model. Lets query all parties using `Parties.find()` and call fetch to retrieve them.
+In order to make Angular understand Meteor collection, `angular2-meteor` includes providers.
 
-But first, lets import our `Parties` collection:
+Adding those providers to each component is annoying so we've added a new `bootstrap` that overrides the basic bootstrap method from `angular2/bootstrap` and adds some those additional providers to your app.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.2"}}
+To use it, we need to install it from NPM:
 
-Then, change `client/app.ts` to load parties from Mongo:
+    meteor npm install angular2-meteor-auto-bootstrap --save
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.3"}}
+Let's change `bootstrap` to load from `angular2-meteor-auto-bootstrap` instead of `@angular/platform-browser-dynamic` as follows:
 
-But what happens if the parties data changes on the server-side? How can we tell parties to update itself?
+    import { Component } from '@angular/core';
+    import { bootstrap } from 'angular2-meteor-auto-bootstrap';
 
-For now, we can use Meteor [Tracker](http://docs.meteor.com/#/full/tracker), a reactive wrapper that will run data when a change occurs:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.4"}}
-
-As you may have noticed above, we used not only `Tracker.autorun` but we also added a new argument of `NgZone` type to the constructor and fetched parties inside of the `zone.run` method. `NgZone` is part of Angular 2's change detection system, which has become more clever and faster in Angular 2.
-
-Think of `zone.run` for now as a equivalent of Angular 1's `scope.$apply()` syntax.
-Everything that happens in the zone will be checked by Angular 2 for changes and applied to the UI. You can read more info about Zone.js [here](https://github.com/angular/zone.js).
-
-The `zone` parameter appears in the constructor via the dependency injection resolution mechanism, which
-has a new look in Angular 2. Don't worry if you're unclear about how it works — you'll learn more about the nuances in the next chapters.
-
-The [fat arrow syntax](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) `=>` is also a new syntax that comes in ES2015, and tells the function to run in its parents context. In this case, it sets `this` as the context of the class Socially.
-
-Our `app.ts` file should now look like this:
-
-__`client/app.ts`:__
-
-    import 'reflect-metadata';
-    import 'zone.js/dist/zone';
-    import {NgZone, Component} from 'angular2/core';
-    import {bootstrap} from 'angular2/bootstrap';
-    import {Parties} from '../collections/parties';
-
-    @Component({
-      selector: 'app',
-      templateUrl: "client/app.html"
-    })
-
-    class Socially {
-      parties: Array<Object>;
-
-      constructor (zone: NgZone) {
-        Tracker.autorun(() => zone.run(() => {
-          this.parties = Parties.find().fetch();
-        }));
-      }
-    }
+    ... 
 
     bootstrap(Socially);
+    
 
+Now, change `app.ts` to:
 
-Every change that happens to the `this.parties` variable will automatically be saved to the local client-side Minimongo DB and synced to the server-side MongoDB and all the other clients in realtime!
+  {{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
 
-# Initializing a Collection on the Server
-
-One thing is left before we can start manipulating data and be able to check if changes are reactive.
-
-We need to initialize the `Parties` collection for the server side. Since our collection file
-`collection/parties` is turned into a CommonJS module by Typescript, we'll need to import it manually in order to execute code inside.
-
-It's worth mentioning that CommonJS modules work on the server side the same way as on the client.
-
-There is one special case where the package helps you. Similar to the client's `app.ts`,
-
-If you call your main server file `main.ts`, a CommonJS module will be created out of this file and loaded automatically.
-
-Let's create a new folder called "server" and add a file `main.ts` inside of it. As mentioned earlier, "server" is another special folder name in Meteor: its contents will only run on the server.
-
-  {{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
 
 # Inserting Parties from the Console
 
@@ -166,48 +114,6 @@ Then, remove it using that id (replace 'N4KzMEvtm4dYvk2TF' with your party's id 
 Again, you will see the UI of your app immediately updates with that party removed.
 
 Feel free to try running more actions like updating an object from the console, and so on.
-
-# Blaze-like Binding to Angular
-
-In the _Simple Binding to Angular_ section above we were loading a list of documents in the most straightforward way.
-But what if we assign `Parties.find()` to `this.parties`, the same way as we do in a regular Meteor app
-with [Blaze](https://www.meteor.com/blaze). Blaze is the default frontend framework in Meteor (check the official Meteor [tutorial](https://www.meteor.com/tutorials/blaze/templates) for more). If Angular 2 could understand Mongo methods, we would have an ideal way of dealing with Mongo collections.
-
-`Parties.find()` returns an instance of `Mongo.Cursor`, which can reactively provide all documents, that have been added, changed or removed, to every component. But how can we teach Angular 2 to understand Mongo cursors?
-
-Luckily, Angular 2 comes with the concept of so-called "differ classes" — classes that are used by
-the `ngFor` directive to provide information about what has been changed in a collection to render
-this collection efficiently.
-
-This concept is similar to "dirty checking" in Angular 1.x but with some differences.
-Thanks to some advanced algorithms, Angular 2 now computes the difference between two arrays much more efficiently. We are not going to dive into those details in this tutorial. But you can read this [blog post](http://info.meteor.com/blog/comparing-performance-of-blaze-react-angular-meteor-and-angular-2-with-meteor),
-which compares the speed of Angular 1 with Angular 2 in Meteor.
-One more advantage of differs in Angular 2 is that customers can create their own differs for their own collection types.
-
-The Angular2-Meteor package implements a special differ class for Mongo cursors. All we need to do is to load it into our app.
-
-The Angular2-Meteor package has its own `bootstrap` that overrides the basic bootstrap method from `angular2/bootstrap` and adds some additional new providers. These include a provider for the differ class mentioned above.
-
-To use it, we need to install it from NPM:
-
-    meteor npm install angular2-meteor-auto-bootstrap --save
-
-Let's change `bootstrap` to load from `angular2-meteor` instead of `angular2/bootstrap` as follows:
-
-    import {Component} from 'angular2/core';
-    import {bootstrap} from 'angular2-meteor-auto-bootstrap';
-
-    bootstrap(Socially);
-
-Now, change `app.ts` to:
-
-  {{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
-
-Run your app again and manipulate the documents in the Mongo console.
-You will see that it works as before — it loads the same data as before and all changes to the `this.parties` that
-should happen reactively happen reactively. At the same time, this code looks much simpler than before.
-
-Lets stick to this approach from now on.
 
 # Initializing Data on Server Side
 
