@@ -7,6 +7,20 @@
   </div>
 </template>
 
+<template name="documentationSidebar">
+  <h2>Documentation</h2>
+  <ul class="nav">
+    <li class="search">
+      <label for="search">Search:</label>
+      <input id="searchDocSearch" type="search" placeholder="eg. 'angular'"/>
+    </li>
+    <li><a href="/api">API Reference</a></li>
+    <li><a href="/server">Angular Server</a></li>
+    <li><a href="{{pathFor 'angular2'}}">Angular 2</a></li>
+    <li><a href="{{pathFor 'migration'}}">Blaze 2 Angular</a></li>
+  </ul>
+</template>
+
 <template name="tutorialSelector">
   <h2><a href="/{{tutorialLink}}">Tutorial</a></h2>
   {{#each pages}}
