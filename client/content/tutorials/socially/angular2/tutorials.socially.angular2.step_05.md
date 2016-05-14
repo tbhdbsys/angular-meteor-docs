@@ -12,15 +12,11 @@ By default we have a list of parties shown on the page, but when a user clicks o
 
 # Import Router Dependencies
 
-Routing functionality in Angular traditionally goes in a separate library.
-In Angular 2, there is a separate module for this called [`angular2/router`](https://angular.io/docs/js/latest/api/router/).
+Let install the Angular 2 router from npm:
 
-The Angular2-Meteor package already contains `angular2/router` along with the code, so you can start importing it right out of the box.
-Angular 2 routing turns out to be a rather small module in comparison to other major Angular 2 modules, besides,
-it's expected that Angular 2 can be loaded directly with NPM in the future versions of Meteor (1.3+).
-These were the two main reasons for adding routing to the package.
+    $ meteor npm install --save @angular/router-deprecated
 
-Let's import routing dependencies into our app. We'll need router providers ([`ROUTER_PROVIDERS`](https://angular.io/docs/ts/latest/api/router/ROUTER_PROVIDERS-let.html)), directives ([`ROUTER_DIRECTIVES`](https://angular.io/docs/ts/latest/api/router/ROUTER_DIRECTIVES-let.html)), and configuration ([`RouteConfig`](https://angular.io/docs/ts/latest/api/router/RouteConfig-var.html)). More on what each of these does later.
+Now let's import routing dependencies into our app. We'll need router providers ([`ROUTER_PROVIDERS`](https://angular.io/docs/ts/latest/api/router/ROUTER_PROVIDERS-let.html)), directives ([`ROUTER_DIRECTIVES`](https://angular.io/docs/ts/latest/api/router/ROUTER_DIRECTIVES-let.html)), and configuration ([`RouteConfig`](https://angular.io/docs/ts/latest/api/router/RouteConfig-var.html)). More on what each of these does later.
 
 Be sure to add `ROUTER_DIRECTIVES` to the Component decorator itself to import all directive dependencies into the template. `ROUTER_PROVIDERS` should be added as a dependency to the bootstrapped application in order to make them available throughout the app.
 
@@ -93,9 +89,9 @@ We've added multiple things here. Firstly, we've imported
 our two main views `PartiesList` and `PartyDetails`,
 then we tied them to URLs using `@RouteConfig` annotation.
 
-Also, we need change our template file **client/app.html** to this:
+Also, we need to change our template file **client/app.html** to this:
 
-    <router-outlet></router-outlet>
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.9"}}
 
 This is going to be our "default layout" template. The `router-outlet` directive will
 render a view on the page based on the current URL.
@@ -109,23 +105,6 @@ The same thing was usually done in Angular 1 by placing
     <base href="/">
 
 in the app template.
-
-If you are familiar with Angular 1, you've certainly heard about the [dependency injection](https://docs.angularjs.org/guide/di) pattern as a first-class pattern.
-
-In Angular 1, dependency injection might seem a bit quirky, especially to newcomers from the OOP world where it works with classes.
-
-In Angular 2, DI has radically changed, thanks to ES6 and TypeScript.
-Now dependency injection in Angular 2 looks the same as in, say, Java, where it's been used and polished for many years.
-
-What we did in the last line of code is create a provider of the `BASE_APP_HREF` type that
-will resolve this type to `/` value whenever it's asked to do so. What does it mean for us?
-
-We can use it in many situations. For example, if we have a constructor with a
-parameter of `BASE_APP_HREF` type, we can create an instance with
-this parameter equal to `/` value automatically inside of the constructor.
-
-We are going to look closely behind the scenes in the _Injecting Route Parameters_ section below,
-where we'll use route parameters in the `PartyDetails` component's constructor.
 
 # RouterLink
 

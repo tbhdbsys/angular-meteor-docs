@@ -127,7 +127,7 @@ Router.map(function () {
   redirect('/tutorials/angular2/meteor-methods-with-promises', '/tutorials/socially/angular2/meteor-methods-with-promises');
   redirect('/tutorials/angular2/conditional-template-directives-with-angularjs', '/tutorials/socially/angular2/conditional-template-directives-with-angularjs');
   redirect('/tutorials/angular2/google-maps', '/tutorials/socially/angular2/google-maps');
-  redirect('/tutorials/angular2/css-less-and-bootstrap', '/tutorials/socially/angular2/css-less-and-bootstrap');
+  redirect('/tutorials/angular2/css-less-and-bootstrap', '/tutorials/socially/angular2/css-sass-and-bootstrap');
   redirect('/tutorials/angular2/angular-material-and-custom-angular-auth-forms', '/tutorials/socially/angular2/angular-material-and-custom-angular-auth-forms');
   redirect('/tutorials/angular2/3rd-party-libraries', '/tutorials/socially/angular2/3rd-party-libraries');
   redirect('/tutorials/angular2/handling-files-with-collectionfs', '/tutorials/socially/angular2/handling-files-with-collectionfs');

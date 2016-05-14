@@ -9,9 +9,9 @@ Ng2Material documentation can be found [here](https://justindujardin.github.io/n
 
 First, let's remove our previous framework (boostrap) by running:
 
-    $ meteor npm uninstall bootstrap4-webpack-package --save
+    $ meteor npm uninstall --save bootstrap
 
-And let's remove the import from the `app.ts` file:
+And let's remove the import from the `main.sass` file:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.2"}}
 
