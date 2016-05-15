@@ -35,7 +35,7 @@ This is what makes programming in ES6 really awesome since application structure
 
 Let's add a template for the new component.
 
-Add a file `parties-form/parties-form.html` with the following form:
+Add a file with the following form:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.2"}}
 
