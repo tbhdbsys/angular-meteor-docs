@@ -124,3 +124,15 @@ Template.sidebarStepsCollapse.onRendered(function() {
     $(childElem).collapse('hide');
   }
 });
+
+Template.documentationSidebar.rendered = function () {
+  docsearch({
+    apiKey: '00f07033c9d7df6aa64eafbe2ce7ce8c',
+    indexName: 'angular-meteor',
+    inputSelector: '#searchDocSearch',
+    algoliaOptions: {
+      'hitsPerPage': 5,
+      'facetFilters': '(angular_version:angular1,angular_version:angular2)'
+    }
+  });
+};
