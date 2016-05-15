@@ -51,7 +51,17 @@ Let's add the `<login-buttons>` tag to the right of the party form in the Partie
 
 Then, import the dependencies:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" filename="client/imports/parties-list/parties-list.ts" step="8.3"}}
+
+Now we need to also import the stylesheet of this package - to import style files from `node_modules`, we have to add LESS/SASS compiler to the project.
+
+We chose to use SASS in this tutorial - and we will talk more about this in step 17 - but at the moment, just add the SASS compiler:
+
+    $ meteor add fourseven:scss
+
+And now let's create main stylesheet file (with `.scss` extension), and import the SCSS file from the package:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
 
 Run the code, you'll see a login link to the right of the "Add" button. Click on the link and then "create  account" to sign up. Try to log in and log out.
 
