@@ -45,7 +45,7 @@
 </template>
 
 <template name="apiSelector">
-  <h2>API Reference</h2>
+  <h3>API Reference</h3>
   {{#each angularVersions}}
     {{#angularVersionLink}}
       <h4>{{title}}</h4>
@@ -55,6 +55,7 @@
 
 <template name="sidebarDefaultAPI">
   <div class="col-md-3 left-menu">
+    {{> documentationSidebar }}
     {{> apiSelector }} <br/>
     <div class="version-selector">
       API Version:

@@ -1,4 +1,5 @@
 Template.layout.rendered = function () {
+
   if (window.oldIe) {
     $('body').addClass('oldIe');
   }
