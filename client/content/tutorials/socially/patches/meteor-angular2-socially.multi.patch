@@ -1,7 +1,7 @@
 From a5b3527e8f6be6378b5bb81f61158999c9def6fd Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:10:14 +0200
-Subject: [PATCH 001/191] Add README file
+Subject: [PATCH 001/149] Add README file
 
 ---
  README.md | 2 ++
@@ -18,13 +18,13 @@ index 0000000..bf634c1
 +Tutorial is based on building Angular2 UI for a Meteor app called Socially.
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
 From 29b848ae32cfd6fe9a144c5f7bb1a5fafd15cff2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:11:01 +0200
-Subject: [PATCH 002/191] Step 0.1: add client/index.html
+Subject: [PATCH 002/149] Step 0.1: add client/index.html
 
 ---
  client/index.html | 3 +++
@@ -42,13 +42,13 @@ index 0000000..3887661
 +</body>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 541839273d7816c6a7db1c9bc466c02172ecfe08 Mon Sep 17 00:00:00 2001
+From 7485c26b0e4376978cadf6042f7f724a166a628a Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Fri, 13 May 2016 21:56:51 +0300
-Subject: [PATCH 003/191] Step 0.2: Add the angular2-meteor dependencies
+Subject: [PATCH 003/149] Step 0.2: Add the angular2-meteor dependencies
 
 ---
  .gitignore       | 37 +++++++++++++++++++++++++++++++++++++
@@ -156,7 +156,7 @@ index e794fc0..96a6210 100644
  ui@1.0.11
  underscore@1.0.8
 diff --git a/package.json b/package.json
-index 183abe2..340e611 100644
+index 183abe2..9989232 100644
 --- a/package.json
 +++ b/package.json
 @@ -5,6 +5,16 @@
@@ -164,27 +164,27 @@ index 183abe2..340e611 100644
    },
    "dependencies": {
 -    "meteor-node-stubs": "^0.2.3"
-+    "@angular/common": "^2.0.0-rc.1",
-+    "@angular/compiler": "^2.0.0-rc.1",
-+    "@angular/core": "^2.0.0-rc.1",
-+    "@angular/platform-browser": "^2.0.0-rc.1",
-+    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
-+    "angular2-meteor": "^0.5.5",
-+    "es6-shim": "^0.35.1",
++    "@angular/common": "2.0.0-rc.1",
++    "@angular/compiler": "2.0.0-rc.1",
++    "@angular/core": "2.0.0-rc.1",
++    "@angular/platform-browser": "2.0.0-rc.1",
++    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
++    "angular2-meteor": "0.5.5",
++    "es6-shim": "0.35.1",
 +    "meteor-node-stubs": "^0.2.3",
-+    "reflect-metadata": "^0.1.2",
-+    "rxjs": "^5.0.0-beta.6",
-+    "zone.js": "^0.6.12"
++    "reflect-metadata": "0.1.2",
++    "rxjs": "5.0.0-beta.6",
++    "zone.js": "0.6.12"
    }
  }
 -- 
-2.6.3
+2.6.4
 
 
-From 78caf77a8b34b58d878c89b0fb12a8f111b3ada1 Mon Sep 17 00:00:00 2001
+From 99fd48988c3724acd914a97ccce000f9d1189f78 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:16:27 +0200
-Subject: [PATCH 004/191] Step 0.3: Add TypeScript configuration file
+Subject: [PATCH 004/149] Step 0.3: Add TypeScript configuration file
 
 ---
  tsconfig.json | 21 +++++++++++++++++++++
@@ -220,13 +220,13 @@ index 0000000..4c01376
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From c707a7e2e459e328db5d5111acf356be0187f290 Mon Sep 17 00:00:00 2001
+From 54506ac271beb90285497b122e6df2753660c3fe Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Fri, 13 May 2016 22:03:21 +0300
-Subject: [PATCH 005/191] Step 0.5: Added Typings dependencies
+Subject: [PATCH 005/149] Step 0.5: Added Typings dependencies
 
 ---
  typings.json                                       |  10 +
@@ -3559,13 +3559,13 @@ index 0000000..101957d
 +export * from '~es6-promise/dist/es6-promise';
 +}
 -- 
-2.6.3
+2.6.4
 
 
-From 89fd3d4242960d560494fc9e272b0743a906fe30 Mon Sep 17 00:00:00 2001
+From b9ce73c72cbbdb8752c0467bf953721b0bdd93fa Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Fri, 13 May 2016 23:16:51 +0300
-Subject: [PATCH 006/191] Step 0.6: Create the root component
+Subject: [PATCH 006/149] Step 0.6: Create the root component
 
 ---
  client/app.ts | 12 ++++++++++++
@@ -3592,13 +3592,13 @@ index 0000000..e3dbdbd
 +bootstrap(Socially);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From a19dcce3264c66d0a1e8c1d053c0e6bfa6ea1845 Mon Sep 17 00:00:00 2001
+From c7306ae51b6256ea0791f895349424e643e5f737 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:46:28 +0200
-Subject: [PATCH 007/191] Step 0.7: Add the main component HTML file
+Subject: [PATCH 007/149] Step 0.7: Add the main component HTML file
 
 ---
  client/app.html | 1 +
@@ -3614,13 +3614,13 @@ index 0000000..c57eff5
 +Hello World!
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 22fe919e8f770b632f01be0ec441917708484f14 Mon Sep 17 00:00:00 2001
+From 0bf13d61a2810555d710ab0010db75939ee835ba Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:46:43 +0200
-Subject: [PATCH 008/191] Step 0.8: Use the main component in the index.html
+Subject: [PATCH 008/149] Step 0.8: Use the main component in the index.html
  file
 
 ---
@@ -3638,13 +3638,13 @@ index 3887661..2662e56 100644
  </body>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 69b6ef89b22759df58c5f5d252e356621634dd1e Mon Sep 17 00:00:00 2001
+From bc714954936d25f4b317c2d6d60e8b60a33a26b2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:47:57 +0200
-Subject: [PATCH 009/191] Step 1.1: Add static HTML to the main component view
+Subject: [PATCH 009/149] Step 1.1: Add static HTML to the main component view
 
 ---
  client/app.html | 15 ++++++++++++++-
@@ -3673,13 +3673,13 @@ index c57eff5..9ea318e 100644
 +</ul>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 914f5db5374d9eeccb01aef852a0c79a0d1c5427 Mon Sep 17 00:00:00 2001
+From ab86947ab0295c142188c710479558c8035df45a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:49:08 +0200
-Subject: [PATCH 010/191] Step 2.1: Add dynamic html to the main component view
+Subject: [PATCH 010/149] Step 2.1: Add dynamic html to the main component view
 
 ---
  client/app.html | 23 +++++++++--------------
@@ -3716,13 +3716,13 @@ index 9ea318e..b750655 100644
 +</div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 314139a6a3d12943c3483536965bee5a607a4303 Mon Sep 17 00:00:00 2001
+From 1e7a983ee5611c20f089dab0ec074d718715fe7d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:50:04 +0200
-Subject: [PATCH 011/191] Step 2.2: load parties data into the app
+Subject: [PATCH 011/149] Step 2.2: load parties data into the app
 
 ---
  client/app.ts | 19 ++++++++++++++++++-
@@ -3759,13 +3759,13 @@ index e3dbdbd..1329d59 100644
  bootstrap(Socially);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 4dc40281d3df293e70fccc25eb99c32a04b6ddd8 Mon Sep 17 00:00:00 2001
+From 233682dd933c79c3b0c6d798fb5cbfe797a801ce Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:50:30 +0200
-Subject: [PATCH 012/191] Step 2.3: define parties property
+Subject: [PATCH 012/149] Step 2.3: define parties property
 
 ---
  client/app.ts | 2 ++
@@ -3785,13 +3785,13 @@ index 1329d59..fc74249 100644
      this.parties = [
        {'name': 'Dubstep-Free Zone',
 -- 
-2.6.3
+2.6.4
 
 
-From d8d031f076bc701bcac5b8d8c469b1179d1c2c4b Mon Sep 17 00:00:00 2001
+From 6a1ec688a1969b5f8edafc954bc12f045f56a2cd Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:51:11 +0200
-Subject: [PATCH 013/191] Step 3.1: add the parties collection
+Subject: [PATCH 013/149] Step 3.1: add the parties collection
 
 ---
  collections/parties.ts | 3 +++
@@ -3809,13 +3809,13 @@ index 0000000..22bdeab
 +export let Parties = new Mongo.Collection('parties');
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 8b3de76fa5c54c6c1d673d276c7a7ed2ed481644 Mon Sep 17 00:00:00 2001
+From dba14b3a460aef4bdd4d7c057ca4b573029a0d5e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:53:10 +0200
-Subject: [PATCH 014/191] Step 3.2: import the parties collection
+Subject: [PATCH 014/149] Step 3.2: import the parties collection
 
 ---
  client/app.ts | 1 +
@@ -3834,38 +3834,38 @@ index fc74249..1b7a8b9 100644
  @Component({
    selector: 'app',
 -- 
-2.6.3
+2.6.4
 
 
-From 4befc10bcff969ab6590ba6f947cb7c2b5013779 Mon Sep 17 00:00:00 2001
+From 658f190a6a8c57f72364e8abf67c48b8b654854e Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 00:16:22 +0300
-Subject: [PATCH 015/191] Step 3.3: Added Angular2-Meteor auto bootstrap
+Subject: [PATCH 015/149] Step 3.3: Added Angular2-Meteor auto bootstrap
 
 ---
  package.json | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 340e611..89689a7 100644
+index 9989232..458e0c7 100644
 --- a/package.json
 +++ b/package.json
 @@ -11,6 +11,7 @@
-     "@angular/platform-browser": "^2.0.0-rc.1",
-     "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
-     "angular2-meteor": "^0.5.5",
-+    "angular2-meteor-auto-bootstrap": "^0.5.5",
-     "es6-shim": "^0.35.1",
+     "@angular/platform-browser": "2.0.0-rc.1",
+     "@angular/platform-browser-dynamic": "2.0.0-rc.1",
+     "angular2-meteor": "0.5.5",
++    "angular2-meteor-auto-bootstrap": "0.5.5",
+     "es6-shim": "0.35.1",
      "meteor-node-stubs": "^0.2.3",
-     "reflect-metadata": "^0.1.2",
+     "reflect-metadata": "0.1.2",
 -- 
-2.6.3
+2.6.4
 
 
-From a3cd58436d853ddd4f9039f0c5944d01793146ee Mon Sep 17 00:00:00 2001
+From e1c95693951a64ae6f4ba316d0e360bc2450b475 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 00:16:56 +0300
-Subject: [PATCH 016/191] Step 3.4: Import bootstrap from
+Subject: [PATCH 016/149] Step 3.4: Import bootstrap from
  angular2-meteor-auto-bootstrap
 
 ---
@@ -3886,13 +3886,13 @@ index 1b7a8b9..b28b5aa 100644
  
  @Component({
 -- 
-2.6.3
+2.6.4
 
 
-From 7cce9826fa53151fd37e623297ec5e9f5955d73f Mon Sep 17 00:00:00 2001
+From 04d8aabfa88e0f8b262ceb4b507bbfeeba6e353f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:08:10 +0200
-Subject: [PATCH 017/191] Step 3.5: Bind Mongo Collection to Angular
+Subject: [PATCH 017/149] Step 3.5: Bind Mongo Collection to Angular
 
 ---
  client/app.ts | 20 ++++----------------
@@ -3937,13 +3937,13 @@ index b28b5aa..5410d6e 100644
  }
  
 -- 
-2.6.3
+2.6.4
 
 
-From c5e20a653391881c633300ec1da566615ac3a9f1 Mon Sep 17 00:00:00 2001
+From 366251a4f2cb8ad477b1a205f996feb2bcdb8121 Mon Sep 17 00:00:00 2001
 From: barbatus <alex.borodach@gmail.com>
 Date: Wed, 14 Oct 2015 23:21:31 +0300
-Subject: [PATCH 018/191] Step 3.7: load initial parties on server side
+Subject: [PATCH 018/149] Step 3.7: load initial parties on server side
 
 ---
  server/load-parties.ts | 28 ++++++++++++++++++++++++++++
@@ -3986,13 +3986,13 @@ index 0000000..9e0751c
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 7b1e772bb67e7dc257cc9a0f07cc29e5f8ada09d Mon Sep 17 00:00:00 2001
+From 87b5704f2427e56673c4b3b364c470392c73953c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:11:01 +0200
-Subject: [PATCH 019/191] Step 3.9: bootstrap server side
+Subject: [PATCH 019/149] Step 3.9: bootstrap server side
 
 ---
  server/main.ts | 4 ++++
@@ -4011,13 +4011,13 @@ index 0000000..cdda65d
 +Meteor.startup(loadParties);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 4c507a2c52c1c3fc288f0f066920c49a97b54f4e Mon Sep 17 00:00:00 2001
+From 1808fbab01400d238738cbf8cc8087db8f59e735 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 13:39:12 +0300
-Subject: [PATCH 020/191] Step 4.1: create PartiesForm component
+Subject: [PATCH 020/149] Step 4.1: create PartiesForm component
 
 ---
  client/imports/parties-form/parties-form.ts | 8 ++++++++
@@ -4040,13 +4040,13 @@ index 0000000..223a99a
 +export class PartiesForm { }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 56d2a2103ff520eaee33a3fa1ea07c6476aefa2f Mon Sep 17 00:00:00 2001
+From 60f31b0aceb79b3116f8cc09d8d52284e777a5a9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:14:14 +0200
-Subject: [PATCH 021/191] Step 4.2: add parties-form.html template
+Subject: [PATCH 021/149] Step 4.2: add parties-form.html template
 
 ---
  client/imports/parties-form/parties-form.html | 9 +++++++++
@@ -4070,13 +4070,13 @@ index 0000000..37748f5
 +</form>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 48b5e7ce5e7d913f473ded75da9c5389e319082b Mon Sep 17 00:00:00 2001
+From c98f4e7728fb7f4c4bd8044b56c3398c59002ed5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:14:30 +0200
-Subject: [PATCH 022/191] Step 4.3: load the PartiesForm component
+Subject: [PATCH 022/149] Step 4.3: load the PartiesForm component
 
 ---
  client/app.html | 1 +
@@ -4093,13 +4093,13 @@ index b750655..e6ea085 100644
      <li *ngFor="let party of parties">
        {{party.name}}
 -- 
-2.6.3
+2.6.4
 
 
-From 547f296b78878c72a630e383e4ef56ea19767f28 Mon Sep 17 00:00:00 2001
+From 3b520d2bcd3f182a633165b154795cdf39e038e3 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:14:47 +0200
-Subject: [PATCH 023/191] Step 4.4: import the PartiesForm component and link
+Subject: [PATCH 023/149] Step 4.4: import the PartiesForm component and link
  it with the Socially component
 
 ---
@@ -4125,13 +4125,13 @@ index 5410d6e..cfcde0e 100644
  class Socially {
    parties: Mongo.Cursor<Object>;
 -- 
-2.6.3
+2.6.4
 
 
-From e835c8bb327b828a5d29f086a4f3b5e05f39e5af Mon Sep 17 00:00:00 2001
+From 9a12020851e389fdc1cb99d3ddef7802c4ec0dbb Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 13:56:27 +0300
-Subject: [PATCH 024/191] Step 4.5: build a form model
+Subject: [PATCH 024/149] Step 4.5: build a form model
 
 ---
  client/imports/parties-form/parties-form.ts | 15 ++++++++++++++-
@@ -4167,13 +4167,13 @@ index 223a99a..e63baad 100644
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From a40c28e933cddb49d9a011ba988735e1e7cad7ee Mon Sep 17 00:00:00 2001
+From 884e4a3528efe014ff83778a0bfc306138be6ee7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:16:26 +0200
-Subject: [PATCH 025/191] Step 4.6: add form validation
+Subject: [PATCH 025/149] Step 4.6: add form validation
 
 ---
  client/imports/parties-form/parties-form.ts | 4 ++--
@@ -4197,13 +4197,13 @@ index e63baad..6201c9c 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 9af596cecfe86e5650d578ada1fb74c7f849edc8 Mon Sep 17 00:00:00 2001
+From 7591af5fe92688f02fee2c24d3ec6621d52a3548 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:16:51 +0200
-Subject: [PATCH 026/191] Step 4.7: link the form and its model together
+Subject: [PATCH 026/149] Step 4.7: link the form and its model together
 
 ---
  client/imports/parties-form/parties-form.html | 8 ++++----
@@ -4229,13 +4229,13 @@ index 37748f5..4e3676e 100644
  </form>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From dae242944a5d74afbd0b8303e87259a35c3eb081 Mon Sep 17 00:00:00 2001
+From b4317d590c0a4087d75544a5ecea03ec0aa04d55 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:17:16 +0200
-Subject: [PATCH 027/191] Step 4.8: add submit handler inside the template
+Subject: [PATCH 027/149] Step 4.8: add submit handler inside the template
 
 ---
  client/imports/parties-form/parties-form.html | 2 +-
@@ -4252,13 +4252,13 @@ index 4e3676e..754b9ff 100644
    <input type="text" ngControl="name">
    <label>Description</label>
 -- 
-2.6.3
+2.6.4
 
 
-From a9945921b31ead6d71220a80f000bed5a21e81d9 Mon Sep 17 00:00:00 2001
+From babd9af380a28c6a192cf381a3b7d48173406d7e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:19:39 +0200
-Subject: [PATCH 028/191] Step 4.9: add addParty method into the component
+Subject: [PATCH 028/149] Step 4.9: add addParty method into the component
 
 ---
  client/imports/parties-form/parties-form.ts | 17 ++++++++++++++++-
@@ -4298,13 +4298,13 @@ index 6201c9c..3fc7528 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 8783d3050d50ccf98aafa940542fccd782f45710 Mon Sep 17 00:00:00 2001
+From b39b6844f13405a8a738239c3f3ced3ebd2fad82 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:20:12 +0200
-Subject: [PATCH 029/191] Step 4.10: add a remove party button and click event
+Subject: [PATCH 029/149] Step 4.10: add a remove party button and click event
  handler
 
 ---
@@ -4325,13 +4325,13 @@ index e6ea085..0362c48 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 684bddc38e94a9ed8c0e9e91ba71f29a021275b9 Mon Sep 17 00:00:00 2001
+From b2503da6235349a10c26c48052d154e09493d982 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:21:03 +0200
-Subject: [PATCH 030/191] Step 4.11: add removeParty method inside the
+Subject: [PATCH 030/149] Step 4.11: add removeParty method inside the
  component
 
 ---
@@ -4355,38 +4355,38 @@ index cfcde0e..4c53451 100644
  bootstrap(Socially);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From bfba93df3956459c407c7f6d2cdf85c336ac933c Mon Sep 17 00:00:00 2001
+From ea8060c136bbb515acfd777974b4432740402d4f Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:16:11 +0300
-Subject: [PATCH 031/191] Step 5.0: Install router from npm
+Subject: [PATCH 031/149] Step 5.0: Install router from npm
 
 ---
  package.json | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 89689a7..b9b0ca3 100644
+index 458e0c7..3b6899e 100644
 --- a/package.json
 +++ b/package.json
 @@ -10,6 +10,7 @@
-     "@angular/core": "^2.0.0-rc.1",
-     "@angular/platform-browser": "^2.0.0-rc.1",
-     "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
+     "@angular/core": "2.0.0-rc.1",
+     "@angular/platform-browser": "2.0.0-rc.1",
+     "@angular/platform-browser-dynamic": "2.0.0-rc.1",
 +    "@angular/router-deprecated": "^2.0.0-rc.1",
-     "angular2-meteor": "^0.5.5",
-     "angular2-meteor-auto-bootstrap": "^0.5.5",
-     "es6-shim": "^0.35.1",
+     "angular2-meteor": "0.5.5",
+     "angular2-meteor-auto-bootstrap": "0.5.5",
+     "es6-shim": "0.35.1",
 -- 
-2.6.3
+2.6.4
 
 
-From bbe886aab70bea947fd4b1d5c179bf57163841c8 Mon Sep 17 00:00:00 2001
+From 54623101b6336443b7196e49eb721f47935b8f22 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:19:45 +0300
-Subject: [PATCH 032/191] Step 5.1: import routing components and add them to
+Subject: [PATCH 032/149] Step 5.1: import routing components and add them to
  the app
 
 ---
@@ -4420,13 +4420,13 @@ index 4c53451..b49c54f 100644
 +bootstrap(Socially, [ROUTER_PROVIDERS]);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From d5a515aa0a55688bec9dfdaff8f7b8c1cb673463 Mon Sep 17 00:00:00 2001
+From c8b69257ecf462ad1e555f655fbf2bd2a616b787 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:24:46 +0300
-Subject: [PATCH 033/191] Step 5.2: create PartiesList component
+Subject: [PATCH 033/149] Step 5.2: create PartiesList component
 
 ---
  client/imports/parties-list/parties-list.ts | 21 +++++++++++++++++++++
@@ -4462,13 +4462,13 @@ index 0000000..e5be119
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 46a036a26bc9136df5ca4e918b6ed5db48f609ec Mon Sep 17 00:00:00 2001
+From 42bad065b89d14fa76972e0ae2b3731614f01737 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:25:51 +0200
-Subject: [PATCH 034/191] Step 5.3: create PartiesList component view
+Subject: [PATCH 034/149] Step 5.3: create PartiesList component view
 
 ---
  client/imports/parties-list/parties-list.html | 11 +++++++++++
@@ -4494,13 +4494,13 @@ index 0000000..0362c48
 +</div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From d2c317fc6ea3e799566d30e662ad8882f0285836 Mon Sep 17 00:00:00 2001
+From 54e1d90deceda9d1a9baec573258169fbba164ef Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:26:07 +0200
-Subject: [PATCH 035/191] Step 5.4: Clean up app.ts file
+Subject: [PATCH 035/149] Step 5.4: Clean up app.ts file
 
 ---
  client/app.ts | 19 +++----------------
@@ -4542,13 +4542,13 @@ index b49c54f..c56dc65 100644
 \ No newline at end of file
 +bootstrap(Socially, [ROUTER_PROVIDERS]);
 -- 
-2.6.3
+2.6.4
 
 
-From 1a97a18cea296245227f76cd77f899d1f2f3c7b1 Mon Sep 17 00:00:00 2001
+From b01e82081fdd19c577260bbfd009258126ad96cb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:26:15 +0200
-Subject: [PATCH 036/191] Step 5.5: Remove app.html file
+Subject: [PATCH 036/149] Step 5.5: Remove app.html file
 
 ---
  client/app.html | 11 -----------
@@ -4574,13 +4574,13 @@ index 0362c48..0000000
 -</div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From be0dc76254b3e497c2e1e23ff75f52b166cbff82 Mon Sep 17 00:00:00 2001
+From a96dc8f87ab48e58fae4b29f8b95f2180f82e4f6 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:29:18 +0300
-Subject: [PATCH 037/191] Step 5.6: add PartyDetails component
+Subject: [PATCH 037/149] Step 5.6: add PartyDetails component
 
 ---
  client/imports/party-details/party-details.ts | 7 +++++++
@@ -4601,13 +4601,13 @@ index 0000000..6a234c7
 +})
 +export class PartyDetails {}
 -- 
-2.6.3
+2.6.4
 
 
-From c569395e263b6045dd3aa7039e7fd6956b86f46b Mon Sep 17 00:00:00 2001
+From 61e69f3529634b907e2623fb027b4eb427a59e8f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:27:47 +0200
-Subject: [PATCH 038/191] Step 5.7: add PartyDetails template
+Subject: [PATCH 038/149] Step 5.7: add PartyDetails template
 
 ---
  client/imports/party-details/party-details.html | 5 +++++
@@ -4627,13 +4627,13 @@ index 0000000..a3da9f4
 +</header>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 67317f870855c82e1fc9cf541ec8ed7e431c6449 Mon Sep 17 00:00:00 2001
+From bfdac5e8c231aef9680ee14e27e295f105615106 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:32:05 +0200
-Subject: [PATCH 039/191] Step 5.8: configure routes
+Subject: [PATCH 039/149] Step 5.8: configure routes
 
 ---
  client/app.ts | 11 +++++++++--
@@ -4669,13 +4669,13 @@ index c56dc65..822fc1c 100644
 +bootstrap(Socially, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 123ee9e9446916ed9a42bba2f1229557fd0624d8 Mon Sep 17 00:00:00 2001
+From 2980b175f230e9a2d4922fc3998bbe78449d045b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:32:27 +0200
-Subject: [PATCH 040/191] Step 5.9: Add app.html that uses router
+Subject: [PATCH 040/149] Step 5.9: Add app.html that uses router
 
 ---
  client/app.html | 1 +
@@ -4691,13 +4691,13 @@ index 0000000..90c6b64
 +<router-outlet></router-outlet>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 84f7be6f52b09c3e9082a5cac225390073a513bf Mon Sep 17 00:00:00 2001
+From 4c4b5c1214309ccde908817ca68edf4108af12be Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:34:22 +0200
-Subject: [PATCH 041/191] Step 5.10: import RouterLink directive
+Subject: [PATCH 041/149] Step 5.10: import RouterLink directive
 
 ---
  client/imports/parties-list/parties-list.ts | 4 +++-
@@ -4723,13 +4723,13 @@ index e5be119..b29c1e1 100644
  export class PartiesList {
    parties: Mongo.Cursor;
 -- 
-2.6.3
+2.6.4
 
 
-From d19b15ec02949dd52f6efaf17a5d2cffe0008e90 Mon Sep 17 00:00:00 2001
+From 7d5e30f8c1188030b84a89fa53c32fc3785a59e1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:34:59 +0200
-Subject: [PATCH 042/191] Step 5.11: add links to the parties list
+Subject: [PATCH 042/149] Step 5.11: add links to the parties list
 
 ---
  client/imports/parties-list/parties-list.html | 2 +-
@@ -4749,13 +4749,13 @@ index 0362c48..a149764 100644
        <p>{{party.location}}</p>
        <button (click)="removeParty(party)">X</button>
 -- 
-2.6.3
+2.6.4
 
 
-From ac757e882f61a0e671e195b81ac5e6ecbc67d0e9 Mon Sep 17 00:00:00 2001
+From f1d190225f4d3a4a5afa4f9ec1fb3a21ed856b1c Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:51:47 +0300
-Subject: [PATCH 043/191] Step 5.12: inject route parameters
+Subject: [PATCH 043/149] Step 5.12: inject route parameters
 
 ---
  client/imports/party-details/party-details.ts | 7 ++++++-
@@ -4781,13 +4781,13 @@ index 6a234c7..3872bbe 100644
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From dff1fba25e223976feb9b7df35242bb4f9fb47c2 Mon Sep 17 00:00:00 2001
+From 32bc9becf22b03fc9e426bbb82515acbb6e40307 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:36:57 +0200
-Subject: [PATCH 044/191] Step 5.13: load party details
+Subject: [PATCH 044/149] Step 5.13: load party details
 
 ---
  client/imports/party-details/party-details.ts | 4 ++++
@@ -4816,13 +4816,13 @@ index 3872bbe..8ee343b 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 906602bbc9913f19e30a667cf2d83891ddf3df62 Mon Sep 17 00:00:00 2001
+From 2b48d41fb7a4f315cf2a7990ce0ec49fd1a22e4e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:37:32 +0200
-Subject: [PATCH 045/191] Step 5.14: Add the party details to the view
+Subject: [PATCH 045/149] Step 5.14: Add the party details to the view
 
 ---
  client/imports/party-details/party-details.html | 6 ++++--
@@ -4844,13 +4844,13 @@ index a3da9f4..1793e75 100644
  </header>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 40cb6a46d9cd8193b5aa53ae9203b50a8f3b1b7e Mon Sep 17 00:00:00 2001
+From 904f179fce2ce42905a0688bc96a8ab0f22a4dbe Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:58:37 +0300
-Subject: [PATCH 046/191] Step 6.1: Add router-link dependency
+Subject: [PATCH 046/149] Step 6.1: Add router-link dependency
 
 ---
  client/imports/party-details/party-details.ts | 5 +++--
@@ -4875,13 +4875,13 @@ index 8ee343b..6e8832c 100644
  export class PartyDetails {
    party: Object;
 -- 
-2.6.3
+2.6.4
 
 
-From 47977af5d0e8ec89ffc73d40de6e3520b0321a9a Mon Sep 17 00:00:00 2001
+From 2df767dc4a3196d920585c967ddff1327919c051 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:39:16 +0200
-Subject: [PATCH 047/191] Step 6.2: add party details form
+Subject: [PATCH 047/149] Step 6.2: add party details form
 
 ---
  client/imports/party-details/party-details.html | 16 +++++++++++-----
@@ -4913,13 +4913,13 @@ index 1793e75..bf3be58 100644
 +</form>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From e8ec0cff538f071544cd561f210e2a2d9d1d18ea Mon Sep 17 00:00:00 2001
+From 84100b132dc72bd9e2d4af99f587ade0eea0972a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:39:45 +0200
-Subject: [PATCH 048/191] Step 6.3: bind party to form inputs
+Subject: [PATCH 048/149] Step 6.3: bind party to form inputs
 
 ---
  client/imports/party-details/party-details.html | 8 ++++----
@@ -4947,13 +4947,13 @@ index bf3be58..7521f02 100644
    <button type="submit">Save</button>
    <button [routerLink]="['/PartiesList']">Cancel</button>
 -- 
-2.6.3
+2.6.4
 
 
-From 1910bb361d3b1ebd680c7a4b9bf7673818f58e5a Mon Sep 17 00:00:00 2001
+From 6eda8a6d7482041d283d1ee5242f652d8cb0638e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:44:44 +0200
-Subject: [PATCH 049/191] Step 6.4: add submit event handler
+Subject: [PATCH 049/149] Step 6.4: add submit event handler
 
 ---
  client/imports/party-details/party-details.ts | 10 ++++++++++
@@ -4980,13 +4980,13 @@ index 6e8832c..9bc2b65 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From fd4130e62ecd0c51186e7a8183581920c3acdac4 Mon Sep 17 00:00:00 2001
+From fce81d96f5589458b27214206664069723eaed4f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:45:42 +0200
-Subject: [PATCH 050/191] Step 7.1: declare Party type
+Subject: [PATCH 050/149] Step 7.1: declare Party type
 
 ---
  typings/party.d.ts | 6 ++++++
@@ -5007,13 +5007,13 @@ index 0000000..82919d0
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From f93662c251d8d5cbf9701dee948d6ef2bcd693e8 Mon Sep 17 00:00:00 2001
+From 798a082ba9034d36c8a0b0b4569585935eab6394 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:46:41 +0200
-Subject: [PATCH 051/191] Step 7.2: define parties collection with Party type
+Subject: [PATCH 051/149] Step 7.2: define parties collection with Party type
 
 ---
  collections/parties.ts | 2 +-
@@ -5030,13 +5030,13 @@ index 22bdeab..20143a6 100644
 \ No newline at end of file
 +export let Parties = new Mongo.Collection<Party>('parties');
 -- 
-2.6.3
+2.6.4
 
 
-From 9bc1d50245f8f9edce8af6a29472b9575d12240e Mon Sep 17 00:00:00 2001
+From 9298f1449b6d7238cf2c092fe4acf36a48ce225b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:47:11 +0200
-Subject: [PATCH 052/191] Step 7.3: correct parties cursor to be of the exact
+Subject: [PATCH 052/149] Step 7.3: correct parties cursor to be of the exact
  type
 
 ---
@@ -5057,13 +5057,13 @@ index b29c1e1..cbc9bb2 100644
    constructor() {
      this.parties = Parties.find();
 -- 
-2.6.3
+2.6.4
 
 
-From 1a749b8c2e22600d91b91ef509d68d789fcc8a7f Mon Sep 17 00:00:00 2001
+From 8686eeb6a75619d01db53b8e02749719ef23304d Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:45:27 +0300
-Subject: [PATCH 053/191] Step 7.4: correct party property to be of Party type
+Subject: [PATCH 053/149] Step 7.4: correct party property to be of Party type
 
 ---
  client/imports/party-details/party-details.ts | 2 +-
@@ -5083,13 +5083,13 @@ index 9bc2b65..f20cce5 100644
    constructor(params: RouteParams) {
      var partyId = params.get('partyId');
 -- 
-2.6.3
+2.6.4
 
 
-From 3564920f8d6e34d5be92d191fade7356743c766e Mon Sep 17 00:00:00 2001
+From d1a5ff1ee0c8a2f3f7ffb4799db8f276add9c38b Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 15:32:15 +0300
-Subject: [PATCH 054/191] Step 8.0: Add accounts packages from atmosphere
+Subject: [PATCH 054/149] Step 8.0: Add accounts packages from atmosphere
 
 ---
  .meteor/packages |  2 +-
@@ -5171,38 +5171,38 @@ index 96a6210..d359ca8 100644
  standard-minifier-js@1.0.6
  standard-minifiers@1.0.6
 -- 
-2.6.3
+2.6.4
 
 
-From 66c395fc529ba29eca1da96960ac1ac1b4f84771 Mon Sep 17 00:00:00 2001
+From 4f0445f6add8cf28e2b854143f1b17e48ff2bc01 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 15:33:14 +0300
-Subject: [PATCH 055/191] Step 8.1: Add accounts ui package from NPM
+Subject: [PATCH 055/149] Step 8.1: Add accounts ui package from NPM
 
 ---
  package.json | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index b9b0ca3..16845fb 100644
+index 3b6899e..6d80ac6 100644
 --- a/package.json
 +++ b/package.json
 @@ -12,6 +12,7 @@
-     "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
+     "@angular/platform-browser-dynamic": "2.0.0-rc.1",
      "@angular/router-deprecated": "^2.0.0-rc.1",
-     "angular2-meteor": "^0.5.5",
-+    "angular2-meteor-accounts-ui": "^0.4.2",
-     "angular2-meteor-auto-bootstrap": "^0.5.5",
-     "es6-shim": "^0.35.1",
+     "angular2-meteor": "0.5.5",
++    "angular2-meteor-accounts-ui": "0.4.3",
+     "angular2-meteor-auto-bootstrap": "0.5.5",
+     "es6-shim": "0.35.1",
      "meteor-node-stubs": "^0.2.3",
 -- 
-2.6.3
+2.6.4
 
 
-From bc4f2c9e69117aee443cfc04a42762035d6e5255 Mon Sep 17 00:00:00 2001
+From 0cb96e33bd863662290dc508d28173097a82c68e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:14:09 +0200
-Subject: [PATCH 056/191] Step 8.2: add Accounts UI component to the
+Subject: [PATCH 056/149] Step 8.2: add Accounts UI component to the
  PartiesList template
 
 ---
@@ -5221,20 +5221,43 @@ index a149764..3af9e00 100644
      <li *ngFor="let party of parties">
        <a [routerLink]="['/PartyDetails', {partyId: party._id}]">{{party.name}}</a>
 -- 
-2.6.3
+2.6.4
 
 
-From 7f316cab8c3f51c37caf665a93f76a56303c095b Mon Sep 17 00:00:00 2001
+From d65baa7b615404962c44a5c6ba641fc820ca9657 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:16:21 +0200
-Subject: [PATCH 057/191] Step 8.3: import dependencies
+Subject: [PATCH 057/149] Step 8.3: import dependencies
 
 ---
+ .meteor/packages                            | 1 +
+ .meteor/versions                            | 1 +
  client/imports/parties-list/parties-list.ts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ 3 files changed, 4 insertions(+), 2 deletions(-)
 
+diff --git a/.meteor/packages b/.meteor/packages
+index 24ed442..753b279 100644
+--- a/.meteor/packages
++++ b/.meteor/packages
+@@ -19,3 +19,4 @@ autopublish             # Publish all data to the clients (for prototyping)
+ angular2-compilers
+ barbatus:angular2-runtime
+ accounts-password
++fourseven:scss
+diff --git a/.meteor/versions b/.meteor/versions
+index d359ca8..8eeba49 100644
+--- a/.meteor/versions
++++ b/.meteor/versions
+@@ -32,6 +32,7 @@ ejson@1.0.11
+ email@1.0.12
+ es5-shim@4.5.10
+ fastclick@1.0.11
++fourseven:scss@3.4.3
+ geojson-utils@1.0.8
+ hot-code-push@1.0.4
+ html-tools@1.0.9
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index cbc9bb2..fb409a9 100644
+index cbc9bb2..bd6e7a4 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -3,12 +3,12 @@ import { Parties }     from '../../../collections/parties';
@@ -5242,7 +5265,7 @@ index cbc9bb2..fb409a9 100644
  import { Mongo }       from 'meteor/mongo';
  import { RouterLink }  from '@angular/router-deprecated';
 -
-+import { LoginButtons } from 'angular2-meteor-accounts-ui/login-buttons';
++import { LoginButtons } from 'angular2-meteor-accounts-ui';
  
  @Component({
    selector: 'parties-list',
@@ -5253,13 +5276,34 @@ index cbc9bb2..fb409a9 100644
  export class PartiesList {
    parties: Mongo.Cursor<Party>;
 -- 
-2.6.3
+2.6.4
 
 
-From 6208afdaa8beab91db2cb21a049a3a02ea6d79c5 Mon Sep 17 00:00:00 2001
+From 5f9e614632fb9e7a766f94e70d112d174c98f9ad Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Sun, 15 May 2016 21:52:40 +0300
+Subject: [PATCH 058/149] Step 8.4: Add import for SCSS file
+
+---
+ client/css/main.scss | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 client/css/main.scss
+
+diff --git a/client/css/main.scss b/client/css/main.scss
+new file mode 100644
+index 0000000..a7ccb1a
+--- /dev/null
++++ b/client/css/main.scss
+@@ -0,0 +1 @@
++@import "{}/node_modules/angular2-meteor-accounts-ui/build/login-buttons.scss";
+-- 
+2.6.4
+
+
+From 5cd9c74691e889a3146cdff70c06f63b51217778 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:16:57 +0200
-Subject: [PATCH 058/191] Step 8.5: add parties collection security
+Subject: [PATCH 059/149] Step 8.5: add parties collection security
 
 ---
  collections/parties.ts | 19 +++++++++++++++++++
@@ -5293,13 +5337,13 @@ index 20143a6..167fa10 100644
 +  }
 +});
 -- 
-2.6.3
+2.6.4
 
 
-From 934c24cc85e01e5b8fc6bdafb85d0a77e1235365 Mon Sep 17 00:00:00 2001
+From dcb632c5a64a90596e3ce0a000433b8ec9774670 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:17:48 +0200
-Subject: [PATCH 059/191] Step 8.6: check access and add party owner ID
+Subject: [PATCH 060/149] Step 8.6: check access and add party owner ID
 
 ---
  client/imports/parties-form/parties-form.ts | 22 ++++++++++++++--------
@@ -5348,13 +5392,13 @@ index 3fc7528..24ab7ba 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 4ef4cccc7be8bf4f6f92a655f18802c77d2535d3 Mon Sep 17 00:00:00 2001
+From c06492a7d99d5baf6cdce1f02942aab753de5ea0 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:48:19 +0300
-Subject: [PATCH 060/191] Step 8.7: check access to change party
+Subject: [PATCH 061/149] Step 8.7: check access to change party
 
 ---
  client/imports/party-details/party-details.ts | 19 ++++++++++++-------
@@ -5398,13 +5442,13 @@ index f20cce5..06f5b83 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From ba05aa7b9a677940f05915e6bf9a85e4902f703b Mon Sep 17 00:00:00 2001
+From 7217f2a7eedf2add22841e2e8471962ed6c7b9a8 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:48:44 +0300
-Subject: [PATCH 061/191] Step 8.8: Updated typings
+Subject: [PATCH 062/149] Step 8.8: Updated typings
 
 ---
  typings/party.d.ts | 1 +
@@ -5422,13 +5466,13 @@ index 82919d0..a503ec1 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From b4f91f199903bab077148e88f69afef775177fcc Mon Sep 17 00:00:00 2001
+From 3dcc3ad4c730585ab5f1cf50fa71c1ee0ff7210a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:05:06 +0200
-Subject: [PATCH 062/191] Step 8.9: require user to access PartyDetails
+Subject: [PATCH 063/149] Step 8.9: require user to access PartyDetails
 
 ---
  client/imports/party-details/party-details.ts | 2 ++
@@ -5454,13 +5498,13 @@ index 06f5b83..9abd709 100644
    party: Party;
  
 -- 
-2.6.3
+2.6.4
 
 
-From 15438107f809e22540a4e4f4c1a78bc2e0677964 Mon Sep 17 00:00:00 2001
+From 07666f5d05843171d074129ff92256d30e24d195 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 16:02:32 +0300
-Subject: [PATCH 063/191] Step 9.0: Removed autopublish
+Subject: [PATCH 064/149] Step 9.0: Removed autopublish
 
 ---
  .meteor/packages | 1 -
@@ -5468,7 +5512,7 @@ Subject: [PATCH 063/191] Step 9.0: Removed autopublish
  2 files changed, 2 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 24ed442..1ed54cc 100644
+index 753b279..58b1017 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
 @@ -15,7 +15,6 @@ standard-minifiers      # JS/CSS minifiers run for production mode
@@ -5480,7 +5524,7 @@ index 24ed442..1ed54cc 100644
  barbatus:angular2-runtime
  accounts-password
 diff --git a/.meteor/versions b/.meteor/versions
-index d359ca8..9794fab 100644
+index 8eeba49..034c094 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -3,7 +3,6 @@ accounts-password@1.1.8
@@ -5492,13 +5536,13 @@ index d359ca8..9794fab 100644
  babel-compiler@6.6.4
  babel-runtime@0.1.8
 -- 
-2.6.3
+2.6.4
 
 
-From af125cadb66abab5fe879346d33974c3f99eeae3 Mon Sep 17 00:00:00 2001
+From 15c28f59082bed89cdd04985939a8df6b933b3ff Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:22:04 +0200
-Subject: [PATCH 064/191] Step 9.1: publish parties collection
+Subject: [PATCH 065/149] Step 9.1: publish parties collection
 
 ---
  server/parties.ts | 6 ++++++
@@ -5519,13 +5563,13 @@ index 0000000..24e96e5
 +});
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 6a736955dd543a92ed35c54231df1d0e7daaeb5f Mon Sep 17 00:00:00 2001
+From b52d18157bee9e22cd5c032868df2d37e92eaaa1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:22:36 +0200
-Subject: [PATCH 065/191] Step 9.2: import parties publications on the server
+Subject: [PATCH 066/149] Step 9.2: import parties publications on the server
 
 ---
  server/main.ts | 1 +
@@ -5543,13 +5587,13 @@ index cdda65d..7330ae5 100644
  Meteor.startup(loadParties);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 7ab332638587d99e66016dd1340257c2fe4a79a0 Mon Sep 17 00:00:00 2001
+From 8195f5277d5edb206d6a82bdbdab009944d30a7f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:24:12 +0200
-Subject: [PATCH 066/191] Step 9.3: extend PartiesList and make use of
+Subject: [PATCH 067/149] Step 9.3: extend PartiesList and make use of
  subscribe method
 
 ---
@@ -5557,13 +5601,13 @@ Subject: [PATCH 066/191] Step 9.3: extend PartiesList and make use of
  1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index fb409a9..cfa5ae7 100644
+index bd6e7a4..a20607f 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -4,17 +4,21 @@ import { PartiesForm } from '../parties-form/parties-form';
  import { Mongo }       from 'meteor/mongo';
  import { RouterLink }  from '@angular/router-deprecated';
- import { LoginButtons } from 'angular2-meteor-accounts-ui/login-buttons';
+ import { LoginButtons } from 'angular2-meteor-accounts-ui';
 +import { MeteorComponent } from 'angular2-meteor';
  
  @Component({
@@ -5585,13 +5629,13 @@ index fb409a9..cfa5ae7 100644
  
    removeParty(party) {
 -- 
-2.6.3
+2.6.4
 
 
-From 19789864030622d3486a0b96e385082bd0ffc9cd Mon Sep 17 00:00:00 2001
+From a8087f8ada235c5d2a1cebabf7903cf2462d9076 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:24:47 +0200
-Subject: [PATCH 067/191] Step 9.4: add "Public" checkbox
+Subject: [PATCH 068/149] Step 9.4: add "Public" checkbox
 
 ---
  client/imports/parties-form/parties-form.html | 2 ++
@@ -5610,13 +5654,13 @@ index 754b9ff..1dc86c7 100644
  </form>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From d8ceaab538013516c18e45622773aba2e3bde356 Mon Sep 17 00:00:00 2001
+From e3a5c22bdb7a4a8e1d58287292b0b6d9dd6072e5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:26:03 +0200
-Subject: [PATCH 068/191] Step 9.5: update PartiesForm component
+Subject: [PATCH 069/149] Step 9.5: update PartiesForm component
 
 ---
  client/imports/parties-form/parties-form.ts | 7 +++++--
@@ -5668,13 +5712,13 @@ index a503ec1..6ebcc01 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 91cea0d9013ce17e18ddd4fd33394661b2e8724d Mon Sep 17 00:00:00 2001
+From 700474a8f2bb91cbf38630846481cd96cb70f845 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:26:35 +0200
-Subject: [PATCH 069/191] Step 9.6: add public field to the initial parties
+Subject: [PATCH 070/149] Step 9.6: add public field to the initial parties
 
 ---
  server/load-parties.ts | 9 ++++++---
@@ -5709,13 +5753,13 @@ index 9e0751c..68adcf7 100644
      ];
  
 -- 
-2.6.3
+2.6.4
 
 
-From 9d6554c13c245b95a527dab883eaf13daaa30b65 Mon Sep 17 00:00:00 2001
+From 08964e9029af139b4fe6bb78990bd66382a7d828 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:27:18 +0200
-Subject: [PATCH 070/191] Step 9.7: limit data sent to the client
+Subject: [PATCH 071/149] Step 9.7: limit data sent to the client
 
 ---
  server/parties.ts | 12 +++++++++++-
@@ -5744,13 +5788,13 @@ index 24e96e5..c7c7552 100644
  });
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 8725793af7326e7ad86e324f98d070b36c058288 Mon Sep 17 00:00:00 2001
+From c11d20a71fe5ef38e535bc5699b5acda1d770535 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:27:50 +0200
-Subject: [PATCH 071/191] Step 9.8: add "party" publication
+Subject: [PATCH 072/149] Step 9.8: add "party" publication
 
 ---
  server/parties.ts | 20 +++++++++++++++++---
@@ -5794,13 +5838,13 @@ index c7c7552..8345468 100644
  });
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From a917643d2d550c199e1600f6d8ebe4b3beccd6c0 Mon Sep 17 00:00:00 2001
+From dd5b2518f6e309f6713e6c42486de88ae908380d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:29:31 +0200
-Subject: [PATCH 072/191] Step 9.9: subscribe to the "party" publication
+Subject: [PATCH 073/149] Step 9.9: subscribe to the "party" publication
 
 ---
  client/imports/party-details/party-details.ts | 9 +++++++--
@@ -5838,13 +5882,13 @@ index 9abd709..f21a1a8 100644
  
    saveParty(party) {
 -- 
-2.6.3
+2.6.4
 
 
-From b761205b8effad4c4598ac18103c83b126d915ea Mon Sep 17 00:00:00 2001
+From 4bb1d6a1ff48d7eb077807da6ea32c9d3067e2bf Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:29:57 +0200
-Subject: [PATCH 073/191] Step 9.10: show PartyDetails when the party is loaded
+Subject: [PATCH 074/149] Step 9.10: show PartyDetails when the party is loaded
 
 ---
  client/imports/party-details/party-details.html | 2 +-
@@ -5861,13 +5905,13 @@ index 7521f02..8775366 100644
    <input type="text" [(ngModel)]="party.name">
  
 -- 
-2.6.3
+2.6.4
 
 
-From 6fe020ef0da6a90ef83f0aa0cc5409834edb2dac Mon Sep 17 00:00:00 2001
+From f00a0ca66ff154870aac4a979aa9b0c965313287 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:30:38 +0200
-Subject: [PATCH 074/191] Step 9.11: add search inputs
+Subject: [PATCH 075/149] Step 9.11: add search inputs
 
 ---
  client/imports/parties-list/parties-list.html | 4 +++-
@@ -5887,20 +5931,20 @@ index 3af9e00..6866114 100644
    <ul>
      <li *ngFor="let party of parties">
 -- 
-2.6.3
+2.6.4
 
 
-From 7e07dbb3821902e2ea52cb81f2fda23d61ed6133 Mon Sep 17 00:00:00 2001
+From ca770714b87d1dd14bd9fb551131957a1da93235 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:31:13 +0200
-Subject: [PATCH 075/191] Step 9.12: add search click event handler
+Subject: [PATCH 076/149] Step 9.12: add search click event handler
 
 ---
  client/imports/parties-list/parties-list.ts | 8 ++++++++
  1 file changed, 8 insertions(+)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index cfa5ae7..d877c1f 100644
+index a20607f..f61a359 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -24,4 +24,12 @@ export class PartiesList extends MeteorComponent{
@@ -5918,13 +5962,13 @@ index cfa5ae7..d877c1f 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 96e6c8f147ec09343453d64040879e0d17c326da Mon Sep 17 00:00:00 2001
+From b6e3f00b5524ffbbb465538c27271d1522d4d8ba Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:32:09 +0200
-Subject: [PATCH 076/191] Step 12.1: add options to the parties publication
+Subject: [PATCH 077/149] Step 12.1: add options to the parties publication
 
 ---
  server/parties.ts | 4 ++--
@@ -5946,13 +5990,13 @@ index 8345468..5b9cb4f 100644
  
  Meteor.publish('party', function(partyId: string) {
 -- 
-2.6.3
+2.6.4
 
 
-From dcba612fc9bad68adfe86709c521a089534e46cd Mon Sep 17 00:00:00 2001
+From 01e66eb8b3b0b1e28462ee9d0a4f32d13989f20b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:33:12 +0200
-Subject: [PATCH 077/191] Step 12.2: create options and add them to the parties
+Subject: [PATCH 078/149] Step 12.2: create options and add them to the parties
  subscription
 
 ---
@@ -5960,7 +6004,7 @@ Subject: [PATCH 077/191] Step 12.2: create options and add them to the parties
  1 file changed, 11 insertions(+), 1 deletion(-)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index d877c1f..5ebf18a 100644
+index f61a359..e8bbb0f 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -13,10 +13,20 @@ import { MeteorComponent } from 'angular2-meteor';
@@ -5986,20 +6030,20 @@ index d877c1f..5ebf18a 100644
      }, true);
    }
 -- 
-2.6.3
+2.6.4
 
 
-From 8ec490afd5f94655b1cc41c4ae70996ce75ab66e Mon Sep 17 00:00:00 2001
+From 239bf4d081a20b70ae811d9a7b973dcd255d84c0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:33:40 +0200
-Subject: [PATCH 078/191] Step 12.3: add sorting by party name to PartiesList
+Subject: [PATCH 079/149] Step 12.3: add sorting by party name to PartiesList
 
 ---
  client/imports/parties-list/parties-list.ts | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index 5ebf18a..a9fc7da 100644
+index e8bbb0f..3bdc544 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -27,7 +27,7 @@ export class PartiesList extends MeteorComponent{
@@ -6012,13 +6056,13 @@ index 5ebf18a..a9fc7da 100644
    }
  
 -- 
-2.6.3
+2.6.4
 
 
-From 6e06d6092fb3262f620c11294ff15ff938c4bcb1 Mon Sep 17 00:00:00 2001
+From 92a6b78764aee930ef683029691b1d7e0c9b6d3b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:34:40 +0200
-Subject: [PATCH 079/191] Step 12.4: re-subscribe on current page changes
+Subject: [PATCH 080/149] Step 12.4: re-subscribe on current page changes
  reactively
 
 ---
@@ -6026,7 +6070,7 @@ Subject: [PATCH 079/191] Step 12.4: re-subscribe on current page changes
  1 file changed, 11 insertions(+), 9 deletions(-)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index a9fc7da..bd6299b 100644
+index 3bdc544..a434162 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -14,21 +14,23 @@ import { MeteorComponent } from 'angular2-meteor';
@@ -6063,96 +6107,105 @@ index a9fc7da..bd6299b 100644
  
    removeParty(party) {
 -- 
-2.6.3
+2.6.4
 
 
-From b51f59003a9603e86ed2bd74fa034d2b50e643ce Mon Sep 17 00:00:00 2001
+From a2b9935fc912199286987cb167a0c9fd3dbb3044 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 29 Jan 2016 00:16:46 +0200
-Subject: [PATCH 080/191] Step 12.5: Add reactive var package
+Subject: [PATCH 081/149] Step 12.5: Add reactive var package
 
 ---
  .meteor/packages | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 1ed54cc..7a065eb 100644
+index 58b1017..8db539b 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -18,3 +18,4 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
- angular2-compilers
+@@ -19,3 +19,4 @@ angular2-compilers
  barbatus:angular2-runtime
  accounts-password
+ fourseven:scss
 +reactive-var
 -- 
-2.6.3
+2.6.4
 
 
-From 4b552f07410842c712c6956867fc78cc78b8d501 Mon Sep 17 00:00:00 2001
+From 19e227a5ffa9be24e59cf986f20bae820e2474c7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 29 Jan 2016 00:19:23 +0200
-Subject: [PATCH 081/191] Step 12.6: Import reactive var from meteor
+Subject: [PATCH 082/149] Step 12.6: Import reactive var from meteor
 
 ---
  client/imports/parties-list/parties-list.ts | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index bd6299b..da66603 100644
+index a434162..d65e55d 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -5,6 +5,7 @@ import { Mongo }       from 'meteor/mongo';
  import { RouterLink }  from '@angular/router-deprecated';
- import { LoginButtons } from 'angular2-meteor-accounts-ui/login-buttons';
+ import { LoginButtons } from 'angular2-meteor-accounts-ui';
  import { MeteorComponent } from 'angular2-meteor';
 +import { ReactiveVar } from 'meteor/reactive-var';
  
  @Component({
    selector: 'parties-list',
 -- 
-2.6.3
+2.6.4
 
 
-From 4db78c4d351213d816e370f49df459b50f70b2ad Mon Sep 17 00:00:00 2001
+From 1d739aaeaabdec63f3811f087f73bcd7ebfbed79 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 17:29:11 +0300
-Subject: [PATCH 082/191] Step 12.7: Add dependency for the pagination package
+Subject: [PATCH 083/149] Step 12.7: Add dependency for the pagination package
 
 ---
  package.json | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 16845fb..70f4eec 100644
+index 6d80ac6..0708488 100644
 --- a/package.json
 +++ b/package.json
 @@ -14,6 +14,7 @@
-     "angular2-meteor": "^0.5.5",
-     "angular2-meteor-accounts-ui": "^0.4.2",
-     "angular2-meteor-auto-bootstrap": "^0.5.5",
-+    "angular2-pagination": "^0.2.0",
-     "es6-shim": "^0.35.1",
+     "angular2-meteor": "0.5.5",
+     "angular2-meteor-accounts-ui": "0.4.3",
+     "angular2-meteor-auto-bootstrap": "0.5.5",
++    "angular2-pagination": "0.2.1",
+     "es6-shim": "0.35.1",
      "meteor-node-stubs": "^0.2.3",
-     "reflect-metadata": "^0.1.2",
+     "reflect-metadata": "0.1.2",
 -- 
-2.6.3
+2.6.4
 
 
-From c1e4c9f9f145b972282767dd116e9834e6c30d07 Mon Sep 17 00:00:00 2001
+From ab979c3803d645e7f223f05838b6d0e99d2ae672 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 29 Jan 2016 00:23:44 +0200
-Subject: [PATCH 083/191] Step 12.8: import and set up pagination components
+Subject: [PATCH 084/149] Step 12.8: import and set up pagination components
 
 ---
+ client/css/main.scss                        | 1 +
  client/imports/parties-list/parties-list.ts | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ 2 files changed, 5 insertions(+), 1 deletion(-)
 
+diff --git a/client/css/main.scss b/client/css/main.scss
+index a7ccb1a..a3dd324 100644
+--- a/client/css/main.scss
++++ b/client/css/main.scss
+@@ -1 +1,2 @@
+ @import "{}/node_modules/angular2-meteor-accounts-ui/build/login-buttons.scss";
++@import "{}/node_modules/angular2-pagination/build/pagination-controls-cmp.scss";
+\ No newline at end of file
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index da66603..bd30a62 100644
+index d65e55d..2915764 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -6,11 +6,14 @@ import { RouterLink }  from '@angular/router-deprecated';
- import { LoginButtons } from 'angular2-meteor-accounts-ui/login-buttons';
+ import { LoginButtons } from 'angular2-meteor-accounts-ui';
  import { MeteorComponent } from 'angular2-meteor';
  import { ReactiveVar } from 'meteor/reactive-var';
 +import { PaginationService, PaginatePipe, PaginationControlsCmp } from 'angular2-pagination';
@@ -6168,13 +6221,13 @@ index da66603..bd30a62 100644
  export class PartiesList extends MeteorComponent{
    parties: Mongo.Cursor<Party>;
 -- 
-2.6.3
+2.6.4
 
 
-From 80841d41e4b39e5b9451b8b1ae873203bba49c9c Mon Sep 17 00:00:00 2001
+From 56ed89630d516913bfba83adc8b89500355669e1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:00:29 +0200
-Subject: [PATCH 084/191] Step 12.9: add pagination markup to the PartiesList's
+Subject: [PATCH 085/149] Step 12.9: add pagination markup to the PartiesList's
  template
 
 ---
@@ -6201,13 +6254,13 @@ index 6866114..79dcaa8 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 7356cc72ae3f1ba78cdfd5fc427946116259cdd1 Mon Sep 17 00:00:00 2001
+From b56407ef7798be818ba1ee2c4e9b82bc712b4016 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:00:55 +0200
-Subject: [PATCH 085/191] Step 12.10: handle page changed event of the
+Subject: [PATCH 086/149] Step 12.10: handle page changed event of the
  pagination controls
 
 ---
@@ -6227,13 +6280,13 @@ index 79dcaa8..e7d9bc8 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 6098c9638def12ae49e59f890eafe3c8631f04e2 Mon Sep 17 00:00:00 2001
+From 6db27e81c118f21b20dec8c429f2b816696b6676 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:52:55 +0300
-Subject: [PATCH 086/191] Step 12.11: add page changed event handler to the
+Subject: [PATCH 087/149] Step 12.11: add page changed event handler to the
  component
 
 ---
@@ -6241,7 +6294,7 @@ Subject: [PATCH 086/191] Step 12.11: add page changed event handler to the
  1 file changed, 4 insertions(+)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index bd30a62..940bbee 100644
+index 2915764..ee20e72 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -48,4 +48,8 @@ export class PartiesList extends MeteorComponent{
@@ -6255,13 +6308,13 @@ index bd30a62..940bbee 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From ceb87a97b2461abce9ac67fbcc008fb93e65ca62 Mon Sep 17 00:00:00 2001
+From e6e558d88fb7d046093068a8d4f823a7c61aeb42 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:53:44 +0300
-Subject: [PATCH 087/191] Step 12.12: Add counts package and the typings file
+Subject: [PATCH 088/149] Step 12.12: Add counts package and the typings file
 
 ---
  .meteor/packages            | 1 +
@@ -6271,19 +6324,19 @@ Subject: [PATCH 087/191] Step 12.12: Add counts package and the typings file
  create mode 100644 typings/publish-counts.d.ts
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 7a065eb..be421cc 100644
+index 8db539b..410ce64 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -19,3 +19,4 @@ angular2-compilers
- barbatus:angular2-runtime
+@@ -20,3 +20,4 @@ barbatus:angular2-runtime
  accounts-password
+ fourseven:scss
  reactive-var
 +tmeasday:publish-counts
 diff --git a/.meteor/versions b/.meteor/versions
-index 9794fab..62078e2 100644
+index 034c094..50b525c 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -74,6 +74,7 @@ srp@1.0.8
+@@ -75,6 +75,7 @@ srp@1.0.8
  standard-minifier-css@1.0.6
  standard-minifier-js@1.0.6
  standard-minifiers@1.0.6
@@ -6307,13 +6360,13 @@ index 0000000..765120e
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From d8bdf785da266362e0e103f5b5414497d546a2ee Mon Sep 17 00:00:00 2001
+From 4fc235d5e8903446e1aa1736460fbfc48af2ae37 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:04:13 +0200
-Subject: [PATCH 088/191] Step 12.13: publish total number of parties
+Subject: [PATCH 089/149] Step 12.13: publish total number of parties
 
 ---
  server/parties.ts | 3 +++
@@ -6340,13 +6393,13 @@ index 5b9cb4f..37f9922 100644
  });
  
 -- 
-2.6.3
+2.6.4
 
 
-From c477f0c71d1b8f1a3823d727c1bcdae9a0f1cf70 Mon Sep 17 00:00:00 2001
+From 41d923b3226cf75b0dedc1007e131f85f89079a0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:06:01 +0200
-Subject: [PATCH 089/191] Step 12.14: handle reactive updates of the parties
+Subject: [PATCH 090/149] Step 12.14: handle reactive updates of the parties
  total number
 
 ---
@@ -6354,11 +6407,11 @@ Subject: [PATCH 089/191] Step 12.14: handle reactive updates of the parties
  1 file changed, 6 insertions(+)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index 940bbee..0af243d 100644
+index ee20e72..8d4f5ba 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -6,6 +6,7 @@ import { RouterLink }  from '@angular/router-deprecated';
- import { LoginButtons } from 'angular2-meteor-accounts-ui/login-buttons';
+ import { LoginButtons } from 'angular2-meteor-accounts-ui';
  import { MeteorComponent } from 'angular2-meteor';
  import { ReactiveVar } from 'meteor/reactive-var';
 +import { Counts } from 'meteor/tmeasday:publish-counts';
@@ -6385,13 +6438,13 @@ index 940bbee..0af243d 100644
  
    removeParty(party) {
 -- 
-2.6.3
+2.6.4
 
 
-From 846493a0db216f70e3dfcd5701bea7fc524549d8 Mon Sep 17 00:00:00 2001
+From 5912c7d2c8fb224a6f8dc1d55451e57ebf28efff Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:06:38 +0200
-Subject: [PATCH 090/191] Step 12.15: add parties total number var in the
+Subject: [PATCH 091/149] Step 12.15: add parties total number var in the
  template
 
 ---
@@ -6412,13 +6465,13 @@ index e7d9bc8..412eaef 100644
        <p>{{party.description}}</p>
        <p>{{party.location}}</p>
 -- 
-2.6.3
+2.6.4
 
 
-From f7ea3fc0cbaa214b2ad1c78ecba9d7066abe727d Mon Sep 17 00:00:00 2001
+From a06d30c58c479b9eea1b31702b2b5b163400d57e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:07:37 +0200
-Subject: [PATCH 091/191] Step 12.16: add a sort order dropdown
+Subject: [PATCH 092/149] Step 12.16: add a sort order dropdown
 
 ---
  client/imports/parties-list/parties-list.html | 7 +++++++
@@ -6443,13 +6496,13 @@ index 412eaef..88acea9 100644
      <li *ngFor="let party of parties | paginate:{currentPage: 1, itemsPerPage: pageSize, totalItems: partiesSize}">
        <a [routerLink]="['/PartyDetails', {partyId: party._id}]">{{party.name}}</a>
 -- 
-2.6.3
+2.6.4
 
 
-From d9f7814e9d723d4a1358045a39dc9b3993eb0167 Mon Sep 17 00:00:00 2001
+From 70f9b3653e29f32b40f6fc1889cd1a3ff6cbc5c5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:09:03 +0200
-Subject: [PATCH 092/191] Step 12.17: re-subscribe reactively when sort order
+Subject: [PATCH 093/149] Step 12.17: re-subscribe reactively when sort order
  changes
 
 ---
@@ -6457,7 +6510,7 @@ Subject: [PATCH 092/191] Step 12.17: re-subscribe reactively when sort order
  1 file changed, 7 insertions(+), 3 deletions(-)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index 0af243d..9eb0d4c 100644
+index 8d4f5ba..45366d2 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -20,7 +20,7 @@ export class PartiesList extends MeteorComponent{
@@ -6495,13 +6548,13 @@ index 0af243d..9eb0d4c 100644
      this.curPage.set(page);
    }
 -- 
-2.6.3
+2.6.4
 
 
-From 3d4639f2cb2a660fba60a51e113f0bb461817bb3 Mon Sep 17 00:00:00 2001
+From 5f994970f6b04d47db77161c1c16a649b103d7c1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:27:25 +0200
-Subject: [PATCH 093/191] Step 12.18: add search by the party location using
+Subject: [PATCH 094/149] Step 12.18: add search by the party location using
  Mongo regex
 
 ---
@@ -6547,13 +6600,13 @@ index 37f9922..9595708 100644
  
  Meteor.publish('party', function(partyId: string) {
 -- 
-2.6.3
+2.6.4
 
 
-From 8e1cd2efb06a3163885690381f6ab90f4d6b1e60 Mon Sep 17 00:00:00 2001
+From 8684798b8bc56d8932171e35f5d6a5498c9fa928 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:32:06 +0200
-Subject: [PATCH 094/191] Step 12.19: add reactive search by the location on
+Subject: [PATCH 095/149] Step 12.19: add reactive search by the location on
  the client
 
 ---
@@ -6561,7 +6614,7 @@ Subject: [PATCH 094/191] Step 12.19: add reactive search by the location on
  1 file changed, 4 insertions(+), 6 deletions(-)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index 9eb0d4c..61c88cd 100644
+index 45366d2..c81f2bd 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -22,6 +22,7 @@ export class PartiesList extends MeteorComponent{
@@ -6596,13 +6649,13 @@ index 9eb0d4c..61c88cd 100644
  
    changeSortOrder(nameOrder: string) {
 -- 
-2.6.3
+2.6.4
 
 
-From 6bdabb4c8a38afa3fff22be989938a3761a5becc Mon Sep 17 00:00:00 2001
+From 65c890d401199be905abfc54e9ba24dc39336d07 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:32:47 +0200
-Subject: [PATCH 095/191] Step 13.1: add uninvited users publication
+Subject: [PATCH 096/149] Step 13.1: add uninvited users publication
 
 ---
  server/users.ts | 16 ++++++++++++++++
@@ -6633,13 +6686,13 @@ index 0000000..964ded4
 +});
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 217b643255c9c9037302c91fefb9da6105c59ac5 Mon Sep 17 00:00:00 2001
+From 6a088d362c5a3c3ecd3fe3f9b249862261565cb1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:33:15 +0200
-Subject: [PATCH 096/191] Step 13.2: import users publications on the server
+Subject: [PATCH 097/149] Step 13.2: import users publications on the server
  start
 
 ---
@@ -6659,13 +6712,13 @@ index 7330ae5..b2a5647 100644
  Meteor.startup(loadParties);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 9da01dfe17b11d60da14b224f98c5ad693bc176e Mon Sep 17 00:00:00 2001
+From 81166747d974cb231db7bd8ac8f6a8a5bd2bc008 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:34:11 +0200
-Subject: [PATCH 097/191] Step 13.3: load uninvited users
+Subject: [PATCH 098/149] Step 13.3: load uninvited users
 
 ---
  client/imports/party-details/party-details.ts | 6 ++++++
@@ -6703,13 +6756,13 @@ index f21a1a8..9772de8 100644
  
    saveParty(party) {
 -- 
-2.6.3
+2.6.4
 
 
-From abd7b8452ee8bf26342784885877ebee986ea319 Mon Sep 17 00:00:00 2001
+From b87a15d041ca9d6d091a7bc276221647d791e076 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:34:44 +0200
-Subject: [PATCH 098/191] Step 13.4: Add invited to the party definition
+Subject: [PATCH 099/149] Step 13.4: Add invited to the party definition
 
 ---
  typings/party.d.ts | 1 +
@@ -6727,13 +6780,13 @@ index 6ebcc01..ef626f1 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 0e8a4b4b2f89dcef99dd6516fa02cbc2231bbdf5 Mon Sep 17 00:00:00 2001
+From ccb43e13081c1e34663005d867f6033a2ce5a66b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:35:35 +0200
-Subject: [PATCH 099/191] Step 13.5: render uninvited users
+Subject: [PATCH 100/149] Step 13.5: render uninvited users
 
 ---
  client/imports/party-details/party-details.html | 9 ++++++++-
@@ -6759,13 +6812,13 @@ index 8775366..de28e57 100644
 +</ul>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 9070cc03f4af12d084677a09dd9831ea11e53674 Mon Sep 17 00:00:00 2001
+From e5af534493824509df6c2c4ddf4243b9e5782894 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:45:15 +0200
-Subject: [PATCH 100/191] Step 13.6: add new pipe to render user name
+Subject: [PATCH 101/149] Step 13.6: add new pipe to render user name
 
 ---
  client/imports/pipes/pipes.ts | 24 ++++++++++++++++++++++++
@@ -6804,13 +6857,13 @@ index 0000000..b7b6f2b
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 533e79619d448e235c8d150beaa3f62a862a8203 Mon Sep 17 00:00:00 2001
+From f18c4cfd44f0952eb258e1d89702b59a9f608775 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:46:31 +0200
-Subject: [PATCH 101/191] Step 13.7: make use of the pipe in the template
+Subject: [PATCH 102/149] Step 13.7: make use of the pipe in the template
 
 ---
  client/imports/party-details/party-details.html | 2 +-
@@ -6830,13 +6883,13 @@ index de28e57..00bd010 100644
  </ul>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 5557d6de04aea5caa46fb6452c904b14ff368d91 Mon Sep 17 00:00:00 2001
+From e39a8ae2ad82156ddc2670b5194c69b57c8ba742 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:48:00 +0200
-Subject: [PATCH 102/191] Step 13.8: import DisplayName pipe and add it to the
+Subject: [PATCH 103/149] Step 13.8: import DisplayName pipe and add it to the
  view
 
 ---
@@ -6864,13 +6917,13 @@ index 9772de8..89197b5 100644
  @RequireUser()
  export class PartyDetails extends MeteorComponent {
 -- 
-2.6.3
+2.6.4
 
 
-From d5e00e8740888418876662c8e6746a39935498f5 Mon Sep 17 00:00:00 2001
+From a9215c2474f1d9bd5478eeab6178028c8c11ad9c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:50:45 +0200
-Subject: [PATCH 103/191] Step 14.0: add a party invitation method
+Subject: [PATCH 104/149] Step 14.0: add a party invitation method
 
 ---
  collections/methods.ts | 47 +++++++++++++++++++++++++++++++++++++++++++++++
@@ -6932,36 +6985,36 @@ index 0000000..28e5487
 +});
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 18a80f4c2a56322ec007a51f19ee3f7c420ca4c3 Mon Sep 17 00:00:00 2001
+From f243b6d9f5430e594e04b4aef7327c4d681dc934 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:51:24 +0200
-Subject: [PATCH 104/191] Step 14.1: Add email and check packages
+Subject: [PATCH 105/149] Step 14.1: Add email and check packages
 
 ---
  .meteor/packages | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index be421cc..c9a3be2 100644
+index 410ce64..b232d8b 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -20,3 +20,5 @@ barbatus:angular2-runtime
- accounts-password
+@@ -21,3 +21,5 @@ accounts-password
+ fourseven:scss
  reactive-var
  tmeasday:publish-counts
 +email
 +check
 -- 
-2.6.3
+2.6.4
 
 
-From 7f79f0509fd9c258bba65ab5588e7a60945c4213 Mon Sep 17 00:00:00 2001
+From bc2dc4411648c0d20bc4e60d60527d9e6534f876 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:51:49 +0200
-Subject: [PATCH 105/191] Step 14.2: import methods on the server side
+Subject: [PATCH 106/149] Step 14.2: import methods on the server side
 
 ---
  server/main.ts | 1 +
@@ -6980,13 +7033,13 @@ index b2a5647..e4eb2d1 100644
  Meteor.startup(loadParties);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 1b16a3388c9b99c65b674936366dc1017ae446c1 Mon Sep 17 00:00:00 2001
+From 06b13890b5dc6ad43c0690fa52253e8ffd16941d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:52:16 +0200
-Subject: [PATCH 106/191] Step 14.3: import methods on the client
+Subject: [PATCH 107/149] Step 14.3: import methods on the client
 
 ---
  client/app.ts | 1 +
@@ -7005,13 +7058,13 @@ index 822fc1c..ed187a8 100644
  @Component({
    selector: 'app',
 -- 
-2.6.3
+2.6.4
 
 
-From 9fbaff23d783e684924f6246de7b26ce797206bf Mon Sep 17 00:00:00 2001
+From 7e3a02e0ffeed6b3b358984cf9d49e3a411a7dbc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:52:40 +0200
-Subject: [PATCH 107/191] Step 14.4: add "invite" button
+Subject: [PATCH 108/149] Step 14.4: add "invite" button
 
 ---
  client/imports/party-details/party-details.html | 1 +
@@ -7030,13 +7083,13 @@ index 00bd010..da5af06 100644
  </ul>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From bcbba9bd9e14289fc97b3df6cb7ce39b06e4c61e Mon Sep 17 00:00:00 2001
+From bd622e65bb4ff0e71757d268aac771e64689304b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:53:18 +0200
-Subject: [PATCH 108/191] Step 14.5: add the click handler and call "invite"
+Subject: [PATCH 109/149] Step 14.5: add the click handler and call "invite"
  method
 
 ---
@@ -7065,13 +7118,13 @@ index 89197b5..c972424 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From ddde2ddfd1521a4cd51f815deafeb8e0f39b05a9 Mon Sep 17 00:00:00 2001
+From 17508526919c1cc35a9e0b658647abaa20cae7ac Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:54:04 +0200
-Subject: [PATCH 109/191] Step 14.6: get the party reactively
+Subject: [PATCH 110/149] Step 14.6: get the party reactively
 
 ---
  client/imports/party-details/party-details.ts | 6 ++++--
@@ -7095,13 +7148,13 @@ index c972424..0fbb59c 100644
      this.subscribe('uninvited', partyId, () => {
        this.users = Meteor.users.find({_id: {$ne: Meteor.userId()}});
 -- 
-2.6.3
+2.6.4
 
 
-From cd6a33106f6c94479fcd62f7391b2f61b43971b0 Mon Sep 17 00:00:00 2001
+From 8010184e71574d8c1569c103687466d2e18848c6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:58:30 +0200
-Subject: [PATCH 110/191] Step 14.7: update the users list reactively
+Subject: [PATCH 111/149] Step 14.7: update the users list reactively
 
 ---
  client/imports/party-details/party-details.ts | 14 +++++++++++++-
@@ -7140,13 +7193,13 @@ index 0fbb59c..0b4f975 100644
      if (Meteor.userId()) {
        Parties.update(party._id, {
 -- 
-2.6.3
+2.6.4
 
 
-From 027abc8a09e9f7fd17c65312a5895708fc6a4eed Mon Sep 17 00:00:00 2001
+From 9349f1ee3d4e8ff85bde14ba3321de39a5dc90fb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:59:21 +0200
-Subject: [PATCH 111/191] Step 14.8: show private parties to the invited and
+Subject: [PATCH 112/149] Step 14.8: show private parties to the invited and
  owners only
 
 ---
@@ -7177,13 +7230,13 @@ index 9595708..2a44e5e 100644
        }
      ]
 -- 
-2.6.3
+2.6.4
 
 
-From 18b0dc3d0c6ea219c08281f1d90a7e58724abe5c Mon Sep 17 00:00:00 2001
+From 8a27bf054686fd8ee21934dd3125d8ba11116741 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:00:12 +0200
-Subject: [PATCH 112/191] Step 14.9: add a "reply" method
+Subject: [PATCH 113/149] Step 14.9: add a "reply" method
 
 ---
  collections/methods.ts | 45 +++++++++++++++++++++++++++++++++++++++++++++
@@ -7246,13 +7299,13 @@ index 28e5487..d11acab 100644
  });
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 86c1da591529bd2a7886857694b38703eb85331a Mon Sep 17 00:00:00 2001
+From 0ce7b6d5e2102b6ad4931ca569040c75a8066307 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:00:50 +0200
-Subject: [PATCH 113/191] Step 14.10: update the party typings
+Subject: [PATCH 114/149] Step 14.10: update the party typings
 
 ---
  typings/party.d.ts | 6 ++++++
@@ -7275,13 +7328,13 @@ index ef626f1..e22afd5 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 2e6a73f304c1af378c90ce53e068dc3d522f63f1 Mon Sep 17 00:00:00 2001
+From 0e4e7ae2ec0b34c158d6bf60bb656b7ff37cf864 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:01:23 +0200
-Subject: [PATCH 114/191] Step 14.11: update PartyDetails view with the three
+Subject: [PATCH 115/149] Step 14.11: update PartyDetails view with the three
  response buttons
 
 ---
@@ -7308,13 +7361,13 @@ index da5af06..f60a521 100644
 +</div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From a58c61086b6717cf71406a46f6c594971c8b6b84 Mon Sep 17 00:00:00 2001
+From a303121221c91f9d59085901da7fc3a9fa5cb959 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:02:06 +0200
-Subject: [PATCH 115/191] Step 14.12: handle reply events in the PartyDetails
+Subject: [PATCH 116/149] Step 14.12: handle reply events in the PartyDetails
  component
 
 ---
@@ -7343,13 +7396,13 @@ index 0b4f975..c0d5b90 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 6c0950e7f9a7f487b99b8b8812460231c718ea4f Mon Sep 17 00:00:00 2001
+From 74e31b43e2325a964733a22b11c548c6b954bc14 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:21:50 +0200
-Subject: [PATCH 116/191] Step 14.13: add a new response counting pipe
+Subject: [PATCH 117/149] Step 14.13: add a new response counting pipe
 
 ---
  client/imports/pipes/pipes.ts | 32 ++++++++++++++++++++++++++++++++
@@ -7405,13 +7458,13 @@ index b7b6f2b..44dc577 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 81b32c5d6c342619a3d1522b361b5a2fcc40765b Mon Sep 17 00:00:00 2001
+From 45c0e1ee16296d318bb9b5b78f2d0e7929cd2c78 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:34:41 +0200
-Subject: [PATCH 117/191] Step 14.14: display response statistics in the list
+Subject: [PATCH 118/149] Step 14.14: display response statistics in the list
 
 ---
  client/imports/parties-list/parties-list.html | 6 ++++++
@@ -7435,20 +7488,20 @@ index 88acea9..c3eeb2d 100644
    </ul>
    <pagination-controls (change)="onPageChanged($event.page)"></pagination-controls>
 -- 
-2.6.3
+2.6.4
 
 
-From d3c81b479bc09e4cd91a9157a2e2c9b849b9827b Mon Sep 17 00:00:00 2001
+From c20d6b1d09ef31113c76fbd9e16614b3b2d46192 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:34:59 +0200
-Subject: [PATCH 118/191] Step 14.15: import the RsvpPipe pipe
+Subject: [PATCH 119/149] Step 14.15: import the RsvpPipe pipe
 
 ---
  client/imports/parties-list/parties-list.ts | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index 61c88cd..ddf836b 100644
+index c81f2bd..0532e0c 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -8,13 +8,14 @@ import { MeteorComponent } from 'angular2-meteor';
@@ -7468,27 +7521,27 @@ index 61c88cd..ddf836b 100644
  export class PartiesList extends MeteorComponent{
    parties: Mongo.Cursor<Party>;
 -- 
-2.6.3
+2.6.4
 
 
-From 3848cc9a13a2b22698a0c5835977cf71938b7e63 Mon Sep 17 00:00:00 2001
+From 15988d887c945b93f4f4a0787236bbc52452756a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:58:58 +0200
-Subject: [PATCH 119/191] Step 15.1: inject Meteor user and add isOwner method
+Subject: [PATCH 120/149] Step 15.1: inject Meteor user and add isOwner method
 
 ---
  client/imports/parties-list/parties-list.ts | 13 ++++++++++++-
  1 file changed, 12 insertions(+), 1 deletion(-)
 
 diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index ddf836b..20920cc 100644
+index 0532e0c..20920cc 100644
 --- a/client/imports/parties-list/parties-list.ts
 +++ b/client/imports/parties-list/parties-list.ts
 @@ -3,12 +3,13 @@ import { Parties }     from '../../../collections/parties';
  import { PartiesForm } from '../parties-form/parties-form';
  import { Mongo }       from 'meteor/mongo';
  import { RouterLink }  from '@angular/router-deprecated';
--import { LoginButtons } from 'angular2-meteor-accounts-ui/login-buttons';
+-import { LoginButtons } from 'angular2-meteor-accounts-ui';
 +import { LoginButtons, InjectUser } from 'angular2-meteor-accounts-ui';
  import { MeteorComponent } from 'angular2-meteor';
  import { ReactiveVar } from 'meteor/reactive-var';
@@ -7530,13 +7583,13 @@ index ddf836b..20920cc 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 01b96294a862838313716300f8c901478705e71c Mon Sep 17 00:00:00 2001
+From 35cdf3b76d1e35dbbc70f1b2271c0f768e3555a8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:00:15 +0200
-Subject: [PATCH 120/191] Step 15.2: use the hidden attribute in the
+Subject: [PATCH 121/149] Step 15.2: use the hidden attribute in the
  PartiesList template
 
 ---
@@ -7564,13 +7617,13 @@ index c3eeb2d..254161c 100644
          Who is coming:
          Yes - {{party | rsvp:'yes'}}
 -- 
-2.6.3
+2.6.4
 
 
-From 70f43ca7e64dd49ec36320d346d1e40e700e46c1 Mon Sep 17 00:00:00 2001
+From ec422b1cb8d28d2d25db99e41fe3f6d29ed2ce0a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:08:45 +0200
-Subject: [PATCH 121/191] Step 15.3: add isOwner property into the PartyDetails
+Subject: [PATCH 122/149] Step 15.3: add isOwner property into the PartyDetails
 
 ---
  client/imports/party-details/party-details.ts | 12 +++++++++++-
@@ -7616,13 +7669,13 @@ index c0d5b90..78bf38d 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 27658ee3d31e70a1e607f60230ce7d828dbd2ee7 Mon Sep 17 00:00:00 2001
+From db1ad4179deb54d3cd13696a30bccf826a0e5898 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:10:07 +0200
-Subject: [PATCH 122/191] Step 15.4: add disable attribute bindings
+Subject: [PATCH 123/149] Step 15.4: add disable attribute bindings
 
 ---
  client/imports/party-details/party-details.html | 8 ++++----
@@ -7652,13 +7705,13 @@ index f60a521..b165e55 100644
  </form>
  
 -- 
-2.6.3
+2.6.4
 
 
-From 22340a2c142fa6ab6f09f8954324995c437f0ada Mon Sep 17 00:00:00 2001
+From 2a1795716d2ec2365987d0eab088ce6c3fdb9554 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:11:12 +0200
-Subject: [PATCH 123/191] Step 15.5: add isPublic and isInvited properties
+Subject: [PATCH 124/149] Step 15.5: add isPublic and isInvited properties
 
 ---
  client/imports/party-details/party-details.ts | 17 +++++++++++++++++
@@ -7692,13 +7745,13 @@ index 78bf38d..82689b9 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From fac9b3c646af5308ae6849217adf8283f9086455 Mon Sep 17 00:00:00 2001
+From ff7f8ca89276363f2bff9df3a73d98851bef2e90 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:32:36 +0200
-Subject: [PATCH 124/191] Step 15.6: make use of the properties in the template
+Subject: [PATCH 125/149] Step 15.6: make use of the properties in the template
 
 ---
  client/imports/party-details/party-details.html | 4 ++--
@@ -7727,13 +7780,13 @@ index b165e55..171aba3 100644
    <input type="button" value="I'm going!" (click)="reply('yes')">
    <input type="button" value="Maybe" (click)="reply('maybe')">
 -- 
-2.6.3
+2.6.4
 
 
-From 04e80a566543a3ccb00eec6a8403f5c687a700e2 Mon Sep 17 00:00:00 2001
+From e850c245ef657fe200e1405c71fa192d118a82b6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:33:40 +0200
-Subject: [PATCH 125/191] Step 16.1: extend party location with lat and lng
+Subject: [PATCH 126/149] Step 16.1: extend party location with lat and lng
  coordinates
 
 ---
@@ -7760,13 +7813,13 @@ index e22afd5..2872814 100644
    rsvps?: Array<RSVP>;
  }
 -- 
-2.6.3
+2.6.4
 
 
-From a7a42d6e4d8952571244fb1c8f7220437226f23c Mon Sep 17 00:00:00 2001
+From 840dc51bae79ea225050b0803ea1bfcef2166133 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:34:28 +0200
-Subject: [PATCH 126/191] Step 16.2: change initial parties accordingly
+Subject: [PATCH 127/149] Step 16.2: change initial parties accordingly
 
 ---
  server/load-parties.ts | 18 ++++++++++++------
@@ -7810,13 +7863,13 @@ index 68adcf7..b0e63e6 100644
      ];
  
 -- 
-2.6.3
+2.6.4
 
 
-From a800c298f4a0df035f0c3c0cabd737023d396e7f Mon Sep 17 00:00:00 2001
+From fe1be25c850b2f87a947768996225f289793c949 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:35:21 +0200
-Subject: [PATCH 127/191] Step 16.3: change party creation component
+Subject: [PATCH 128/149] Step 16.3: change party creation component
 
 ---
  client/imports/parties-form/parties-form.ts | 4 +++-
@@ -7838,13 +7891,13 @@ index 1e89ddb..74a19a1 100644
            owner: Meteor.userId()
          });
 -- 
-2.6.3
+2.6.4
 
 
-From 8b65f3ef42292be02de5de7abcb9dc9cc8d63ce6 Mon Sep 17 00:00:00 2001
+From 6f933eb822f331420ec62e0f50ea7723e4c74c91 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:36:06 +0200
-Subject: [PATCH 128/191] Step 16.4: reflect type changes in the parties search
+Subject: [PATCH 129/149] Step 16.4: reflect type changes in the parties search
 
 ---
  server/parties.ts | 2 +-
@@ -7864,38 +7917,38 @@ index 2a44e5e..88cbd96 100644
  
  Meteor.publish('parties', function(options: Object, location: string) {
 -- 
-2.6.3
+2.6.4
 
 
-From 731fc64d6c64ba5721574f0435feef30223062c7 Mon Sep 17 00:00:00 2001
+From 1a75eccab2ceeddabe46f93aabcce9b1d8e92905 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 18:34:10 +0300
-Subject: [PATCH 129/191] Step 16.5: add angular2 google maps package
+Subject: [PATCH 130/149] Step 16.5: add angular2 google maps package
 
 ---
  package.json | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 70f4eec..2804ae5 100644
+index 0708488..e102d10 100644
 --- a/package.json
 +++ b/package.json
 @@ -11,6 +11,7 @@
-     "@angular/platform-browser": "^2.0.0-rc.1",
-     "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
+     "@angular/platform-browser": "2.0.0-rc.1",
+     "@angular/platform-browser-dynamic": "2.0.0-rc.1",
      "@angular/router-deprecated": "^2.0.0-rc.1",
-+    "angular2-google-maps": "^0.10.0",
-     "angular2-meteor": "^0.5.5",
-     "angular2-meteor-accounts-ui": "^0.4.2",
-     "angular2-meteor-auto-bootstrap": "^0.5.5",
++    "angular2-google-maps": "0.10.0",
+     "angular2-meteor": "0.5.5",
+     "angular2-meteor-accounts-ui": "0.4.3",
+     "angular2-meteor-auto-bootstrap": "0.5.5",
 -- 
-2.6.3
+2.6.4
 
 
-From 0ceba5018dfa2a3001d81b466c422eede9381a85 Mon Sep 17 00:00:00 2001
+From e4cd761eb00aaa6d855d4490a69c193615b58a57 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:40:08 +0200
-Subject: [PATCH 130/191] Step 16.6: import and install maps providers globally
+Subject: [PATCH 131/149] Step 16.6: import and install maps providers globally
 
 ---
  client/app.ts | 3 ++-
@@ -7922,13 +7975,13 @@ index ed187a8..020162c 100644
 +bootstrap(Socially, [ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 3381d102da71ae12e18b7470b51c70090eb5b715 Mon Sep 17 00:00:00 2001
+From dd95b3cd65ce97630bd0756d70a9ffdc0abc4f60 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:41:07 +0200
-Subject: [PATCH 131/191] Step 16.7: add maps markup to the PartyDetails
+Subject: [PATCH 132/149] Step 16.7: add maps markup to the PartyDetails
  template
 
 ---
@@ -7969,13 +8022,13 @@ index 171aba3..f8c4191 100644
 +</sebm-google-map>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From ab170eae09f4bc98f3f5ae960260b0662bd5b1ee Mon Sep 17 00:00:00 2001
+From d9a750a21f3e29fc36c066e245317bcbceac2d8a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:42:28 +0200
-Subject: [PATCH 132/191] Step 16.8: add maps logic to the PartyDetails
+Subject: [PATCH 133/149] Step 16.8: add maps logic to the PartyDetails
  component
 
 ---
@@ -8030,13 +8083,13 @@ index 82689b9..f29210d 100644
  }
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From cab916bcac48085d0c3aa93eefda80f926338704 Mon Sep 17 00:00:00 2001
+From ce73a551fb5d91b157ba3b366932aa91368442bc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 10:56:33 +0200
-Subject: [PATCH 133/191] Step 16.9: create main CSS file and add maps styles
+Subject: [PATCH 134/149] Step 16.9: create main CSS file and add maps styles
  there
 
 ---
@@ -8056,13 +8109,13 @@ index 0000000..a5234b3
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 83451724664cb90f95f4656dde2c5a842e468908 Mon Sep 17 00:00:00 2001
+From 51eb1d07a212f9d147e8fd06d2ea3fdd547549c6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 10:57:33 +0200
-Subject: [PATCH 134/191] Step 16.10: add all parties locations on the map
+Subject: [PATCH 135/149] Step 16.10: add all parties locations on the map
 
 ---
  client/imports/parties-list/parties-list.html | 14 +++++++++++++-
@@ -8101,13 +8154,13 @@ index 254161c..b4999e6 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 75fe832f21624d650d9432d3b11f113979c39e2e Mon Sep 17 00:00:00 2001
+From 8e2746950165c9cb8e03eeaef3de18d630b256f6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 10:58:13 +0200
-Subject: [PATCH 135/191] Step 16.11: import maps dependencies in the
+Subject: [PATCH 136/149] Step 16.11: import maps dependencies in the
  PartiesList
 
 ---
@@ -8134,114 +8187,91 @@ index 20920cc..6b9f5cd 100644
  })
  @InjectUser()
 -- 
-2.6.3
+2.6.4
 
 
-From 28158236c4fcff45e1b21b3d2cad2d7be07c951d Mon Sep 17 00:00:00 2001
+From d737f7ca39c20c0be4fc73841c92954f2fbd8beb Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:17:38 +0300
-Subject: [PATCH 136/191] Step 17.1: Add bootstrap package to the project
+Subject: [PATCH 137/149] Step 17.1: Add bootstrap package to the project
 
 ---
  package.json | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 2804ae5..e6b963e 100644
+index e102d10..e3c0b2f 100644
 --- a/package.json
 +++ b/package.json
 @@ -16,6 +16,7 @@
-     "angular2-meteor-accounts-ui": "^0.4.2",
-     "angular2-meteor-auto-bootstrap": "^0.5.5",
-     "angular2-pagination": "^0.2.0",
-+    "bootstrap": "^4.0.0-alpha.2",
-     "es6-shim": "^0.35.1",
+     "angular2-meteor-accounts-ui": "0.4.3",
+     "angular2-meteor-auto-bootstrap": "0.5.5",
+     "angular2-pagination": "0.2.1",
++    "bootstrap": "4.0.0-alpha.2",
+     "es6-shim": "0.35.1",
      "meteor-node-stubs": "^0.2.3",
-     "reflect-metadata": "^0.1.2",
+     "reflect-metadata": "0.1.2",
 -- 
-2.6.3
+2.6.4
 
 
-From 1a27736b46e34a03910619fc276a383fc0952f2f Mon Sep 17 00:00:00 2001
-From: Uri Goldshtein <uri.goldshtein@gmail.com>
-Date: Sat, 14 May 2016 19:18:24 +0300
-Subject: [PATCH 137/191] Step 17.2: Add fourseven:scss package to the project
+From b5af5b0a31d1428e94bd824645985aea797bb974 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Sun, 15 May 2016 22:05:03 +0300
+Subject: [PATCH 138/149] Step 16.9: Add maps styles to the main style file
 
 ---
- .meteor/packages | 1 +
- .meteor/versions | 1 +
- 2 files changed, 2 insertions(+)
+ client/css/main.scss | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/.meteor/packages b/.meteor/packages
-index c9a3be2..39ce4cd 100644
---- a/.meteor/packages
-+++ b/.meteor/packages
-@@ -22,3 +22,4 @@ reactive-var
- tmeasday:publish-counts
- email
- check
-+fourseven:scss
-diff --git a/.meteor/versions b/.meteor/versions
-index 62078e2..50b525c 100644
---- a/.meteor/versions
-+++ b/.meteor/versions
-@@ -31,6 +31,7 @@ ejson@1.0.11
- email@1.0.12
- es5-shim@4.5.10
- fastclick@1.0.11
-+fourseven:scss@3.4.3
- geojson-utils@1.0.8
- hot-code-push@1.0.4
- html-tools@1.0.9
--- 
-2.6.3
-
-
-From 50fe12179cec38ccb5f47e1a4992e41a6322784b Mon Sep 17 00:00:00 2001
-From: Uri Goldshtein <uri.goldshtein@gmail.com>
-Date: Sat, 14 May 2016 19:20:26 +0300
-Subject: [PATCH 138/191] Step 17.4: Rename main.css to scss and import
- bootstrap
-
----
- client/css/main.css  | 4 ----
- client/css/main.scss | 6 ++++++
- 2 files changed, 6 insertions(+), 4 deletions(-)
- delete mode 100644 client/css/main.css
- create mode 100644 client/css/main.scss
-
-diff --git a/client/css/main.css b/client/css/main.css
-deleted file mode 100644
-index a5234b3..0000000
---- a/client/css/main.css
-+++ /dev/null
-@@ -1,4 +0,0 @@
--.sebm-google-map-container {
--    width: 400px;
--    height: 400px;
--}
-\ No newline at end of file
 diff --git a/client/css/main.scss b/client/css/main.scss
-new file mode 100644
-index 0000000..a22b731
---- /dev/null
+index a3dd324..9570b91 100644
+--- a/client/css/main.scss
 +++ b/client/css/main.scss
-@@ -0,0 +1,6 @@
-+@import "{}/node_modules/bootstrap/scss/bootstrap.scss";
+@@ -1,2 +1,7 @@
+ @import "{}/node_modules/angular2-meteor-accounts-ui/build/login-buttons.scss";
+-@import "{}/node_modules/angular2-pagination/build/pagination-controls-cmp.scss";
+\ No newline at end of file
++@import "{}/node_modules/angular2-pagination/build/pagination-controls-cmp.scss";
 +
 +.sebm-google-map-container {
-+    width: 400px;
-+    height: 400px;
++  width: 400px;
++  height: 400px;
 +}
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 03e7cd9a20c93dc1bcdb7e5ebc5230c05304796e Mon Sep 17 00:00:00 2001
+From 999cef8b2c1116c6c186d65bdf729b2825b99492 Mon Sep 17 00:00:00 2001
+From: Uri Goldshtein <uri.goldshtein@gmail.com>
+Date: Sat, 14 May 2016 19:20:26 +0300
+Subject: [PATCH 139/149] Step 17.4: Import bootstrap style into the main style
+ file
+
+---
+ client/css/main.scss | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/client/css/main.scss b/client/css/main.scss
+index 9570b91..d858488 100644
+--- a/client/css/main.scss
++++ b/client/css/main.scss
+@@ -1,5 +1,6 @@
+ @import "{}/node_modules/angular2-meteor-accounts-ui/build/login-buttons.scss";
+ @import "{}/node_modules/angular2-pagination/build/pagination-controls-cmp.scss";
++@import "{}/node_modules/bootstrap/scss/bootstrap.scss";
+ 
+ .sebm-google-map-container {
+   width: 400px;
+-- 
+2.6.4
+
+
+From 840dd3a2c17d11457dd2262558d69010e6db3f2e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:57:52 +0300
-Subject: [PATCH 139/191] Step 17.3: Add bootstrap navbar
+Subject: [PATCH 140/149] Step 17.3: Add bootstrap navbar
 
 ---
  client/app.html | 7 ++++++-
@@ -8262,13 +8292,13 @@ index 90c6b64..b3c49f0 100644
 +</div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 6b66881ed2c154a4b790da02a3d1e6ccb0f29133 Mon Sep 17 00:00:00 2001
+From 49bc5e9b94a480fb23f2c5c8862cb18257cd02c8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:05:49 +0200
-Subject: [PATCH 140/191] Step 17.5: Remove the login buttons from the parties
+Subject: [PATCH 141/149] Step 17.5: Remove the login buttons from the parties
  list component
 
 ---
@@ -8311,13 +8341,13 @@ index 6b9f5cd..a00ff03 100644
  })
  @InjectUser()
 -- 
-2.6.3
+2.6.4
 
 
-From 3525eeeb45ff69ad5ec92affabaeaee8f09b960c Mon Sep 17 00:00:00 2001
+From 9bbdb55ca79e97f8ffc2c0a9079e675cc7b7cd36 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:06:13 +0200
-Subject: [PATCH 141/191] Step 17.6: Add the login buttons to the app component
+Subject: [PATCH 142/149] Step 17.6: Add the login buttons to the app component
 
 ---
  client/app.html | 1 +
@@ -8335,13 +8365,13 @@ index b3c49f0..dffc2ea 100644
  <div class="container-fluid">
    <router-outlet></router-outlet>
 -- 
-2.6.3
+2.6.4
 
 
-From e908bde5b9ed8ae0f6f80a2037d1da221391df87 Mon Sep 17 00:00:00 2001
+From 65bc85fd303dff42fad0553a6b17d8bf9ca315df Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:06:25 +0200
-Subject: [PATCH 142/191] Step 17.7: Import LoginButtons
+Subject: [PATCH 143/149] Step 17.7: Import LoginButtons
 
 ---
  client/app.ts | 3 ++-
@@ -8366,13 +8396,13 @@ index 020162c..9ed717e 100644
  @RouteConfig([
    { path: '/', as: 'PartiesList', component: PartiesList },
 -- 
-2.6.3
+2.6.4
 
 
-From 7c8206def3cebb282437a7b6ec6412a1f42e429d Mon Sep 17 00:00:00 2001
+From 63ce5f6e32a66329c8761f437defc5774ea8d7a2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:07:00 +0200
-Subject: [PATCH 143/191] Step 17.8: Add fonts and font awesome
+Subject: [PATCH 144/149] Step 17.8: Add fonts and font awesome
 
 ---
  client/index.html | 5 +++++
@@ -8393,13 +8423,13 @@ index 2662e56..8a56f1a 100644
  </body>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 6917d0f5a48c639fc6912b601feaa55400227e48 Mon Sep 17 00:00:00 2001
+From e34d5f278aa2d4a1b9f718f5532e84187195fb84 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 14:24:13 +0200
-Subject: [PATCH 144/191] Step 17.9: Update the add new party form layout
+Subject: [PATCH 145/149] Step 17.9: Update the add new party form layout
 
 ---
  client/imports/parties-form/parties-form.html | 30 ++++++++++++++++++---------
@@ -8443,13 +8473,13 @@ index 1dc86c7..a5d11ef 100644
  </form>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 0395e33c0fe469bbaf0d0931e94b77a7f07cdd9a Mon Sep 17 00:00:00 2001
+From d927c190daf3d8dad6fbbb5f711aace506cf63c7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 14:24:29 +0200
-Subject: [PATCH 145/191] Step 17.10: Update parties list layout
+Subject: [PATCH 146/149] Step 17.10: Update parties list layout
 
 ---
  client/imports/parties-list/parties-list.html | 129 +++++++++++++++++++-------
@@ -8596,13 +8626,13 @@ index 29b4bc3..589bc37 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.3
+2.6.4
 
 
-From 99b630531c4b346a9733954dbc2ad24cb7bae833 Mon Sep 17 00:00:00 2001
+From 03e0f34c0c9f7fbb28e7b07072d8ab61e9577994 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:44:24 +0300
-Subject: [PATCH 146/191] Step 17.11: Add parties-list styles
+Subject: [PATCH 147/149] Step 17.11: Add parties-list styles
 
 ---
  client/css/main.scss                           |  43 ++++++++-
@@ -8611,10 +8641,11 @@ Subject: [PATCH 146/191] Step 17.11: Add parties-list styles
  create mode 100644 client/imports/parties-list/_parties-list.scss
 
 diff --git a/client/css/main.scss b/client/css/main.scss
-index a22b731..1e2b12d 100644
+index d858488..6040abd 100644
 --- a/client/css/main.scss
 +++ b/client/css/main.scss
-@@ -1,6 +1,43 @@
+@@ -2,7 +2,44 @@
+ @import "{}/node_modules/angular2-pagination/build/pagination-controls-cmp.scss";
  @import "{}/node_modules/bootstrap/scss/bootstrap.scss";
  
 +$color1 : #2F2933;
@@ -8635,8 +8666,8 @@ index a22b731..1e2b12d 100644
 +}
 +
  .sebm-google-map-container {
--    width: 400px;
--    height: 400px;
+-  width: 400px;
+-  height: 400px;
 -}
 \ No newline at end of file
 +  width: 450px;
@@ -8794,13 +8825,13 @@ index 0000000..3393841
 +  margin-bottom: 1em;
 +}
 -- 
-2.6.3
+2.6.4
 
 
-From 8a2da7bae05b4abeee9342343319e267831401e4 Mon Sep 17 00:00:00 2001
+From 30c0c464eb2a9e47ad41e5cc11e102eb026bae24 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:50:49 +0300
-Subject: [PATCH 147/191] Step 17.12: Add style file for the party details page
+Subject: [PATCH 148/149] Step 17.12: Add style file for the party details page
 
 ---
  client/css/main.scss                             |  1 +
@@ -8809,10 +8840,10 @@ Subject: [PATCH 147/191] Step 17.12: Add style file for the party details page
  create mode 100644 client/imports/party-details/_party-details.scss
 
 diff --git a/client/css/main.scss b/client/css/main.scss
-index 1e2b12d..7174bca 100644
+index 6040abd..eb2bce1 100644
 --- a/client/css/main.scss
 +++ b/client/css/main.scss
-@@ -40,4 +40,5 @@ body {
+@@ -42,4 +42,5 @@ body {
  }
  
  @import "../imports/parties-list/parties-list";
@@ -8857,13 +8888,13 @@ index 0000000..f237bb0
 +  }
 +}
 -- 
-2.6.3
+2.6.4
 
 
-From b4a3aa8859968df59e6668f47921c5b3b3b47275 Mon Sep 17 00:00:00 2001
+From aa78e7e7043aeb4ae11335b599558a7e7604fe44 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 5 Feb 2016 16:16:43 +0200
-Subject: [PATCH 148/191] Step 17.13: Update the layout of the party details
+Subject: [PATCH 149/149] Step 17.13: Update the layout of the party details
  page
 
 ---
@@ -8972,2344 +9003,5 @@ index f8c4191..a22e89c 100644
 -</sebm-google-map>
 \ No newline at end of file
 -- 
-2.6.3
-
-
-From 27a4fc6c48b57f89798075caa13bfd5073da3cff Mon Sep 17 00:00:00 2001
-From: Uri Goldshtein <uri.goldshtein@gmail.com>
-Date: Sat, 14 May 2016 19:59:17 +0300
-Subject: [PATCH 149/191] Step 18.1: Removed bootstrap
-
----
- package.json | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/package.json b/package.json
-index e6b963e..2804ae5 100644
---- a/package.json
-+++ b/package.json
-@@ -16,7 +16,6 @@
-     "angular2-meteor-accounts-ui": "^0.4.2",
-     "angular2-meteor-auto-bootstrap": "^0.5.5",
-     "angular2-pagination": "^0.2.0",
--    "bootstrap": "^4.0.0-alpha.2",
-     "es6-shim": "^0.35.1",
-     "meteor-node-stubs": "^0.2.3",
-     "reflect-metadata": "^0.1.2",
--- 
-2.6.3
-
-
-From 5913af34db80339b8c17871b9b031e8fb427dd9b Mon Sep 17 00:00:00 2001
-From: Uri Goldshtein <uri.goldshtein@gmail.com>
-Date: Sat, 14 May 2016 19:59:53 +0300
-Subject: [PATCH 150/191] Step 18.2: Removed bootstrap import
-
----
- client/css/main.scss | 2 --
- 1 file changed, 2 deletions(-)
-
-diff --git a/client/css/main.scss b/client/css/main.scss
-index 7174bca..16f0a56 100644
---- a/client/css/main.scss
-+++ b/client/css/main.scss
-@@ -1,5 +1,3 @@
--@import "{}/node_modules/bootstrap/scss/bootstrap.scss";
--
- $color1 : #2F2933;
- $color2 : #01A2A6;
- $color3 : #29D9C2;
--- 
-2.6.3
-
-
-From 9fc71ecafddfb66720bb9cbeae9fe05e71fd989a Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 10:32:42 +0200
-Subject: [PATCH 151/191] Step 18.3: Add ng2 material package
-
----
- package.json | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/package.json b/package.json
-index 2804ae5..f7cd905 100644
---- a/package.json
-+++ b/package.json
-@@ -16,6 +16,7 @@
-     "angular2-meteor-accounts-ui": "^0.4.2",
-     "angular2-meteor-auto-bootstrap": "^0.5.5",
-     "angular2-pagination": "^0.2.0",
-+    "ng2-material": "0.2.12",
-     "es6-shim": "^0.35.1",
-     "meteor-node-stubs": "^0.2.3",
-     "reflect-metadata": "^0.1.2",
--- 
-2.6.3
-
-
-From e79354427633d16221ef4023750514926b17ad00 Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 10:32:57 +0200
-Subject: [PATCH 152/191] Step 18.4: Import ng2 material components to the main
- app
-
----
- client/app.ts | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
-
-diff --git a/client/app.ts b/client/app.ts
-index 9ed717e..69e4675 100644
---- a/client/app.ts
-+++ b/client/app.ts
-@@ -1,5 +1,8 @@
- import 'reflect-metadata';
- import 'zone.js/dist/zone';
-+import 'ng2-material/all.webpack';
-+import {MATERIAL_PROVIDERS, MATERIAL_DIRECTIVES} from 'ng2-material/all';
-+
- import { Component, provide } from '@angular/core';
- import { bootstrap } from 'angular2-meteor-auto-bootstrap';
- import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from '@angular/router-deprecated';
-@@ -13,7 +16,7 @@ import {LoginButtons} from 'angular2-meteor-accounts-ui';
- @Component({
-   selector: 'app',
-   templateUrl: 'client/app.html',
--  directives: [ROUTER_DIRECTIVES, LoginButtons]
-+  directives: [ROUTER_DIRECTIVES, LoginButtons, MATERIAL_DIRECTIVES]
- })
- @RouteConfig([
-   { path: '/', as: 'PartiesList', component: PartiesList },
-@@ -21,4 +24,4 @@ import {LoginButtons} from 'angular2-meteor-accounts-ui';
- ])
- class Socially {}
- 
--bootstrap(Socially, [ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
-\ No newline at end of file
-+bootstrap(Socially, [MATERIAL_PROVIDERS, ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
--- 
-2.6.3
-
-
-From 3d4dffac757cc6de2b082929ee2cb34c1c61101f Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 10:33:22 +0200
-Subject: [PATCH 153/191] Step 18.5: Import the fonts for material
-
----
- client/index.html | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
-
-diff --git a/client/index.html b/client/index.html
-index 8a56f1a..c6c91b2 100644
---- a/client/index.html
-+++ b/client/index.html
-@@ -1,8 +1,7 @@
- <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
--  <link href='http://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- </head>
- <body>
--  <app></app>
-+  <app layout="column"></app>
- </body>
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 89820cb54bb14aaf5bfbfbe1c0f10b1c526db80b Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 10:33:40 +0200
-Subject: [PATCH 154/191] Step 18.6: Change the nav bar and the layout
-
----
- client/app.html | 17 ++++++++++-------
- 1 file changed, 10 insertions(+), 7 deletions(-)
-
-diff --git a/client/app.html b/client/app.html
-index dffc2ea..abfc8de 100644
---- a/client/app.html
-+++ b/client/app.html
-@@ -1,7 +1,10 @@
--<nav class="navbar navbar-light bg-faded">
--  <a class="navbar-brand" href="#">Socially</a>
--  <login-buttons class="pull-right"></login-buttons>
--</nav>
--<div class="container-fluid">
--  <router-outlet></router-outlet>
--</div>
-\ No newline at end of file
-+<md-toolbar md-scroll-shrink layout="row" layout-align="start center" layout-padding>
-+  <h2>
-+    <a ui-sref="parties"><span class="md-title">Socially</span></a>
-+  </h2>
-+  <span flex></span>
-+  <div class="navbar-right navbar-text">
-+    <login-buttons></login-buttons>
-+  </div>
-+</md-toolbar>
-+<router-outlet flex-gt-sm layout-gt-sm="row"></router-outlet>
-\ No newline at end of file
--- 
-2.6.3
-
-
-From dddb35e8148c7af1922b9e40d4e5ab2c4f4d4349 Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 11:02:13 +0200
-Subject: [PATCH 155/191] Step 18.7: Import the components into the parties
- form
-
----
- client/imports/parties-form/parties-form.ts | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/client/imports/parties-form/parties-form.ts b/client/imports/parties-form/parties-form.ts
-index 74a19a1..6719572 100644
---- a/client/imports/parties-form/parties-form.ts
-+++ b/client/imports/parties-form/parties-form.ts
-@@ -3,10 +3,13 @@ import { Component } from '@angular/core';
- import { FormBuilder, ControlGroup, Validators, Control } from '@angular/common';
- import { Parties } from '../../../collections/parties.ts';
- import { Meteor } from 'meteor/meteor';
-+import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
-+
- 
- @Component({
-   selector: 'parties-form',
--  templateUrl: '/client/imports/parties-form/parties-form.html'
-+  templateUrl: '/client/imports/parties-form/parties-form.html',
-+  directives: [MATERIAL_DIRECTIVES]
- })
- export class PartiesForm {
-   partiesForm: ControlGroup;
--- 
-2.6.3
-
-
-From 91dbb7cc64c20b2111c4e78a41d23b2d30ac3267 Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 11:14:41 +0200
-Subject: [PATCH 156/191] Step 18.9: Add the import to the parties list
-
----
- client/imports/parties-list/parties-list.ts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/client/imports/parties-list/parties-list.ts b/client/imports/parties-list/parties-list.ts
-index a00ff03..201190f 100644
---- a/client/imports/parties-list/parties-list.ts
-+++ b/client/imports/parties-list/parties-list.ts
-@@ -11,12 +11,13 @@ import { PaginationService, PaginatePipe, PaginationControlsCmp } from 'angular2
- import { RsvpPipe } from '../pipes/pipes.ts';
- import { Meteor } from 'meteor/meteor';
- import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
-+import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
- 
- @Component({
-   selector: 'parties-list',
-   viewProviders: [PaginationService],
-   templateUrl: '/client/imports/parties-list/parties-list.html',
--  directives: [ANGULAR2_GOOGLE_MAPS_DIRECTIVES, PartiesForm, RouterLink, PaginationControlsCmp],
-+  directives: [MATERIAL_DIRECTIVES, ANGULAR2_GOOGLE_MAPS_DIRECTIVES, PartiesForm, RouterLink, PaginationControlsCmp],
-   pipes: [PaginatePipe, RsvpPipe]
- })
- @InjectUser()
--- 
-2.6.3
-
-
-From 853fac3b65d719a744a872ad888d92aa8e53416e Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 11:15:01 +0200
-Subject: [PATCH 157/191] Step 18.10: Change that layout of the parties list
-
----
- client/imports/parties-list/parties-list.html | 162 +++++++++++---------------
- 1 file changed, 67 insertions(+), 95 deletions(-)
-
-diff --git a/client/imports/parties-list/parties-list.html b/client/imports/parties-list/parties-list.html
-index 589bc37..1d8033a 100644
---- a/client/imports/parties-list/parties-list.html
-+++ b/client/imports/parties-list/parties-list.html
-@@ -1,100 +1,72 @@
--<div class="row">
--  <div class="col-md-12">
--    <div class="jumbotron">
--      <h3>Create a new party!</h3>
--      <parties-form [hidden]="!user"></parties-form>
--      <div [hidden]="user">You need to login to create new parties!</div>
--    </div>
--  </div>
--</div>
--<div class="row ma-filters">
--  <div class="col-md-6">
--    <h3>All Parties:</h3>
--    <form class="form-inline">
--      <input type="text" class="form-control" #searchtext placeholder="Search by Location">
--      <button type="button" class="btn btn-primary" (click)="search(searchtext.value)">Search</button>
--      Sort by name: <select class="form-control" #sort (change)="changeSortOrder(sort.value)">
--      <option value="1" selected>Ascending</option>
--      <option value="-1">Descending</option>
--    </select>
--    </form>
--  </div>
--</div>
--<div class="row">
--  <div class="col-md-6">
--    <ul class="list-group">
--      <li class="list-group-item">
--        <pagination-controls (change)="onPageChanged($event.page)"></pagination-controls>
--      </li>
--      <li *ngFor="let party of parties | paginate:{currentPage: 1, itemsPerPage: pageSize, totalItems: partiesSize}"
--          class="list-group-item ma-party-item">
--        <div class="row">
--          <div class="col-sm-8">
--            <h2 class="ma-party-name">
--              <a [routerLink]="['/PartyDetails', {partyId: party._id}]">{{party.name}}</a>
--            </h2>
--            @ {{party.location.name}}
--            <p class="ma-party-description">
--              {{party.description}}
--            </p>
--          </div>
--          <div class="col-sm-4">
--            <button class="btn btn-danger pull-right" [hidden]="!isOwner(party)" (click)="removeParty(party)"><i
--                    class="fa fa-times"></i></button>
--          </div>
-+<md-content flex layout="row" class="ma-parties-list">
-+  <div layout="row" flex>
-+    <div flex="50">
-+      <div>
-+        <md-content class="new-party-form-container">
-+          <md-toolbar>
-+            <div class="md-toolbar-tools">
-+              <h3>Create a new party!</h3>
-+            </div>
-+          </md-toolbar>
-+          <parties-form [hidden]="!user"></parties-form>
-+          <div [hidden]="user">You need to login to create new parties!</div>
-+        </md-content>
-+        <div layout-padding layout="row">
-+          <md-input-container class="md-block" flex-gt-sm>
-+            <label>Search</label>
-+            <input type="text" md-input #searchtext placeholder="Search by Location">
-+          </md-input-container>
-+          Sort by name: <select class="form-control" #sort (change)="changeSortOrder(sort.value)">
-+            <option value="1" selected>Ascending</option>
-+            <option value="-1">Descending</option>
-+          </select>
-         </div>
--        <div class="row ma-party-item-bottom">
--          <div class="col-sm-4">
--            <div class="ma-rsvp-sum">
--              <div class="ma-rsvp-amount">
--                <div class="ma-amount">
--                  {{party | rsvp:'yes'}}
--                </div>
--                <div class="ma-rsvp-title">
--                  YES
--                </div>
--              </div>
--              <div class="ma-rsvp-amount">
--                <div class="ma-amount">
--                  {{party | rsvp:'maybe'}}
--                </div>
--                <div class="ma-rsvp-title">
--                  MAYBE
--                </div>
--              </div>
--              <div class="ma-rsvp-amount">
--                <div class="ma-amount">
--                  {{party | rsvp:'no'}}
--                </div>
--                <div class="ma-rsvp-title">
--                  NO
-+      </div>
-+      <md-content class="md-padding" style="padding-top:0;">
-+        <pagination-controls (change)="onPageChanged($event.page)"></pagination-controls>
-+        <div *ngFor="let party of parties | paginate:{currentPage: 1, itemsPerPage: pageSize, totalItems: partiesSize}" class="ma-party">
-+          <md-card>
-+            <md-card-content>
-+              <h2 class="md-title ma-name" style=""><a [routerLink]="['/PartyDetails', {partyId: party._id}]">{{party.name}}</a></h2>
-+              <p class="ma-description" style="padding:0 10px;margin-bottom:35px;margin-top: 6px;">{{party.description}}</p>
-+              <div layout="row">
-+                <div layout="row" layout-align="end end">
-+                  <div>
-+                    <div class="rsvps-sum">
-+                      <div class="rsvps-amount">{{party | rsvp:'yes'}}</div>
-+                      <div class="rsvps-title">Yes</div>
-+                    </div>
-+                    <div class="rsvps-sum">
-+                      <div class="rsvps-amount">{{party | rsvp:'maybe'}}</div>
-+                      <div class="rsvps-title">Maybe</div>
-+                    </div>
-+                    <div class="rsvps-sum">
-+                      <div class="rsvps-amount">{{party | rsvp:'no'}}</div>
-+                      <div class="rsvps-title">No</div>
-+                    </div>
-+                  </div>
-                 </div>
-               </div>
--            </div>
--          </div>
-+            </md-card-content>
-+          </md-card>
-         </div>
--      </li>
--      <li class="list-group-item">
--        <pagination-controls (change)="onPageChanged($event.page)"></pagination-controls>
--      </li>
--    </ul>
--  </div>
--  <div class="col-md-6">
--    <ul class="list-group">
--      <li class="list-group-item">
--        <sebm-google-map
--                [latitude]="0"
--                [longitude]="0"
--                [zoom]="1">
--          <div *ngFor="let party of parties">
--            <sebm-google-map-marker
--                    *ngIf="party.location.lat"
--                    [latitude]="party.location.lat"
--                    [longitude]="party.location.lng">
--            </sebm-google-map-marker>
--          </div>
--        </sebm-google-map>
--      </li>
--    </ul>
-+      </md-content>
-+    </div>
-+    <div flex="50" layout="row" style="min-height:300px;">
-+      <sebm-google-map
-+              style="width: 100%; min-height:300px;"
-+              flex layout="row"
-+              [latitude]="0"
-+              [longitude]="0"
-+              [zoom]="1">
-+        <div *ngFor="let party of parties">
-+          <sebm-google-map-marker
-+                  *ngIf="party.location.lat"
-+                  [latitude]="party.location.lat"
-+                  [longitude]="party.location.lng">
-+          </sebm-google-map-marker>
-+        </div>
-+      </sebm-google-map>
-+    </div>
-   </div>
--</div>
-\ No newline at end of file
-+</md-content>
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 971b06c756124738e323d393e963f148cc912212 Mon Sep 17 00:00:00 2001
-From: Uri Goldshtein <uri.goldshtein@gmail.com>
-Date: Sat, 14 May 2016 20:19:07 +0300
-Subject: [PATCH 158/191] Step 18.11: Add some style
-
----
- client/imports/parties-list/_parties-list.scss | 150 +++++++------------------
- 1 file changed, 43 insertions(+), 107 deletions(-)
-
-diff --git a/client/imports/parties-list/_parties-list.scss b/client/imports/parties-list/_parties-list.scss
-index 3393841..d6512b5 100644
---- a/client/imports/parties-list/_parties-list.scss
-+++ b/client/imports/parties-list/_parties-list.scss
-@@ -1,125 +1,61 @@
--.ma-add-button-container {
--  button.btn {
--    background: $color3;
--    float: right;
--    margin-right: 5px;
--    outline: none;
--    i {
--      color: $color5;
--    }
--  }
--}
--
--.ma-parties-col {
--  padding-top: 20px;
--}
--
--.ma-filters {
--  margin-bottom: 10px;
-+.new-party-form-container {
-+  margin: 20px;
-+  border: 1px gainsboro solid;
- }
--
--.ma-party-item {
--  .ma-party-name {
--    margin-bottom: 20px;
--    a {
--      color: $color6;
--      text-decoration: none !important;
--      font-weight: 400;
--    }
-+.ma-parties-list {
-+  .sebm-google-map {
-+    box-sizing: border-box;
-+    -webkit-flex: 1;
-+    -ms-flex: 1;
-+    flex: 1;
-+    -webkit-flex-direction: row;
-+    -ms-flex-direction: row;
-+    flex-direction: row;
-+    box-sizing: border-box;
-+    display: -webkit-flex;
-+    display: -ms-flexbox;
-+    display: flex;
-   }
--  .ma-party-description {
--    color: $color6;
--    font-weight: 300;
--    padding-left: 18px;
--    font-size: 14px;
-+
-+  .angular-google-map-container {
-+    box-sizing: border-box;
-+    -webkit-flex: 1;
-+    -ms-flex: 1;
-+    flex: 1;
-   }
- 
--  .ma-remove {
--    color: lighten($color7, 20%);
--    position: absolute;
--    right: 20px;
--    top: 20px;
--    &:hover {
--      color: $color7;
-+  .rsvps-sum {
-+    float: left;
-+    width: 50px;
-+    text-align: center;
-+    .rsvps-amount {
-+      font-size: 24px;
-+    }
-+    .rsvps-title {
-+      font-size: 13px;
-+      color: #aaa;
-     }
-   }
- 
--  .ma-party-item-bottom {
--    padding-top: 10px;
--    .ma-posted-by-col {
--      .ma-posted-by {
--        color: darken($color4, 30%);
--        font-size: 12px;
--      }
--      .ma-everyone-invited {
--        @media (max-width: 400px) {
--          display: block;
--          i {
--            margin-left: 0px !important;
--          }
--        }
--        font-size: 12px;
--        color: darken($color4, 10%);
--        i {
--          color: darken($color4, 10%);
--          margin-left: 5px;
--        }
--      }
-+  .ma-party {
-+    .party-image {
-+      background-size: cover;
-+      width: 100%;
-+      height: 200px;
-     }
- 
--    .ma-rsvp-buttons {
--      input.btn {
--        color: darken($color3, 20%);
--        background: transparent !important;
--        outline: none;
--        padding-left: 0;
--        &:active {
--          box-shadow: none;
--        }
--        &:hover {
--          color: darken($color3, 30%);
--        }
--        &.btn-primary {
--          color: lighten($color3, 10%);
--          border: 0;
--          background: transparent !important;
--        }
-+    .ma-name {
-+      a {
-+        text-decoration: none;
-+        color: #333;
-       }
-     }
-+    .ma-description {
- 
--    .ma-rsvp-sum {
--      width: 160px;
--      @media (min-width: 400px) {
--        float: right;
--      }
--      @media (max-width: 400px) {
--        margin: 0 auto;
--      }
--    }
--    .ma-rsvp-amount {
--      display: inline-block;
--      text-align: center;
--      width: 50px;
--      .ma-amount {
--        font-weight: bold;
--        font-size: 20px;
--      }
--      .ma-rsvp-title {
--        font-size: 11px;
--        color: #aaa;
--        text-transform: uppercase;
--      }
-     }
-   }
- }
- 
--.ma-angular-map-col {
--  .angular-google-map-container, .angular-google-map {
--    height: 100%;
--    width: 100%;
--  }
--}
--
- .search-form {
-   margin-bottom: 1em;
--}
-+}
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 5f494d10ae4d10057e340675e9d6e6c3afe0ee92 Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 11:22:54 +0200
-Subject: [PATCH 159/191] Step 18.12: Import the directives in the party
- details page
-
----
- client/imports/party-details/party-details.ts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/client/imports/party-details/party-details.ts b/client/imports/party-details/party-details.ts
-index f29210d..fd6993f 100644
---- a/client/imports/party-details/party-details.ts
-+++ b/client/imports/party-details/party-details.ts
-@@ -7,11 +7,12 @@ import { MeteorComponent } from 'angular2-meteor';
- import { DisplayName } from '../pipes/pipes.ts';
- import { Mongo } from 'meteor/mongo';
- import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES, MouseEvent} from 'angular2-google-maps/core';
-+import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
- 
- @Component({
-   selector: 'party-details',
-   templateUrl: '/client/imports/party-details/party-details.html',
--  directives: [RouterLink, ANGULAR2_GOOGLE_MAPS_DIRECTIVES],
-+  directives: [RouterLink, ANGULAR2_GOOGLE_MAPS_DIRECTIVES, MATERIAL_DIRECTIVES],
-   pipes: [DisplayName]
- })
- @RequireUser()
--- 
-2.6.3
-
-
-From 1567c33b73e2b15d7b9f60c9c673d459979fc3ee Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 11:23:20 +0200
-Subject: [PATCH 160/191] Step 18.13: Update the layout of the party details
- page
-
----
- client/imports/party-details/party-details.html | 106 ++++++++++++------------
- 1 file changed, 51 insertions(+), 55 deletions(-)
-
-diff --git a/client/imports/party-details/party-details.html b/client/imports/party-details/party-details.html
-index a22e89c..5d7f738 100644
---- a/client/imports/party-details/party-details.html
-+++ b/client/imports/party-details/party-details.html
-@@ -1,60 +1,56 @@
--<div class="row ma-party-details-container">
--  <div class="col-sm-6 col-sm-offset-3">
-+<div layout="row" flex class="ma-party-details" *ngIf="party">
-+  <div flex="33" offset="33">
-+    <md-content class="new-party-form-container">
-+      <md-toolbar>
-+        <div class="md-toolbar-tools">
-+          <h3>Your party details:</h3>
-+        </div>
-+      </md-toolbar>
-+      <form layout="column">
-+        <md-input-container>
-+          <label>Party Name</label>
-+          <input md-input [disabled]="!isOwner" type="text" [(ngModel)]="party.name">
-+        </md-input-container>
-+        <md-input-container>
-+          <label>Party Description</label>
-+          <input md-input [disabled]="!isOwner" type="text" [(ngModel)]="party.description">
-+        </md-input-container>
-+        <md-input-container>
-+          <label>Location name</label>
-+          <input md-input [disabled]="!isOwner" type="text" [(ngModel)]="party.location.name" class="form-control">
-+        </md-input-container>
-+        <md-checkbox [(checked)]="party.public" aria-label="Public">
-+          Is public
-+        </md-checkbox>
- 
--    <legend>View and Edit Your Party Details:</legend>
--    <form class="form-horizontal" (submit)="saveParty(party)" *ngIf="party">
--      <div class="form-group">
--        <label>Party Name</label>
--        <input [disabled]="!isOwner" type="text" [(ngModel)]="party.name" class="form-control">
--      </div>
--      <div class="form-group">
--        <label>Description</label>
--        <input [disabled]="!isOwner" type="text" [(ngModel)]="party.description" class="form-control">
--      </div>
--      <div class="form-group">
--        <label>Location name</label>
--        <input [disabled]="!isOwner" type="text" [(ngModel)]="party.location.name" class="form-control">
--      </div>
--      <div class="form-group">
--        <button [disabled]="!isOwner" type="submit" class="btn btn-primary">Save</button>
--        <button [routerLink]="['/PartiesList']" class="btn">Back</button>
--      </div>
--    </form>
-+        <div layout="row" layout-align="left">
-+          <button [disabled]="!isOwner" type="submit" md-raised-button class="md-raised md-primary">Save</button>
-+          <button [routerLink]="['/PartiesList']" md-raised-button class="md-raised">Back</button>
-+        </div>
- 
--    <div class="ma-invite-list" ng-show="partyDetails.canInvite()">
--      <h3>
--        Users to invite:
--      </h3>
--      <ul>
--        <li *ngFor="let user of users">
--          <div>{{ user | displayName }}</div>
--          <button (click)="invite(user)" class="btn btn-primary btn-sm">Invite</button>
--        </li>
--      </ul>
--      <div *ngIf="isInvited">
--        <h2>Reply to the invitation</h2>
--        <input type="button" class="btn btn-primary" value="I'm going!" (click)="reply('yes')">
--        <input type="button" class="btn btn-warning" value="Maybe" (click)="reply('maybe')">
--        <input type="button" class="btn btn-danger" value="No" (click)="reply('no')">
--      </div>
--    </div>
-+        <md-list>
-+          <md-subheader class="md-no-sticky">Users to invite:</md-subheader>
-+          <md-list-item *ngFor="let user of users">
-+            <div>{{ user | displayName }}</div>
-+            <button (click)="invite(user)" md-raised-button class="md-raised">Invite</button>
-+          </md-list-item>
-+        </md-list>
- 
--    <h3 class="ma-map-title">
--      Click the map to set the party location
--    </h3>
--
--    <div class="angular-google-map-container">
--      <sebm-google-map
--              [latitude]="lat || centerLat"
--              [longitude]="lng || centerLng"
--              [zoom]="8"
--              (mapClick)="mapClicked($event)">
--        <sebm-google-map-marker
--                *ngIf="lat && lng"
--                [latitude]="lat"
--                [longitude]="lng">
--        </sebm-google-map-marker>
--      </sebm-google-map>
--    </div>
-+        <div class="angular-google-map-container">
-+          <sebm-google-map
-+                  style="height: 300px;"
-+                  [latitude]="lat || centerLat"
-+                  [longitude]="lng || centerLng"
-+                  [zoom]="8"
-+                  (mapClick)="mapClicked($event)">
-+            <sebm-google-map-marker
-+                    *ngIf="lat && lng"
-+                    [latitude]="lat"
-+                    [longitude]="lng">
-+            </sebm-google-map-marker>
-+          </sebm-google-map>
-+        </div>
-+      </form>
-+    </md-content>
-   </div>
- </div>
--- 
-2.6.3
-
-
-From 834b7d9122d7bbcc96ff650a31074d670b09e09b Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 13:38:10 +0200
-Subject: [PATCH 161/191] Step 18.14: Replace login buttons with custom buttons
-
----
- client/app.html | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
-
-diff --git a/client/app.html b/client/app.html
-index abfc8de..a5bb6b8 100644
---- a/client/app.html
-+++ b/client/app.html
-@@ -4,7 +4,14 @@
-   </h2>
-   <span flex></span>
-   <div class="navbar-right navbar-text">
--    <login-buttons></login-buttons>
-+    <div [hidden]="user">
-+      <button md-button [routerLink]="['/Login']" >Login</button>
-+      <button md-button [routerLink]="['/Signup']">Sign up</button>
-+    </div>
-+    <div [hidden]="!user">
-+      <span>{{ user | displayName }}</span>
-+      <button md-button (click)="logout()">Logout</button>
-+    </div>
-   </div>
- </md-toolbar>
- <router-outlet flex-gt-sm layout-gt-sm="row"></router-outlet>
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 910d38e92f8a56636e2e1c2dd15bc7e7d6e4a47c Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 13:38:32 +0200
-Subject: [PATCH 162/191] Step 18.15: Add logic to support custom login
-
----
- client/app.ts | 24 +++++++++++++++++++++---
- 1 file changed, 21 insertions(+), 3 deletions(-)
-
-diff --git a/client/app.ts b/client/app.ts
-index 69e4675..4a1c3b7 100644
---- a/client/app.ts
-+++ b/client/app.ts
-@@ -2,6 +2,7 @@ import 'reflect-metadata';
- import 'zone.js/dist/zone';
- import 'ng2-material/all.webpack';
- import {MATERIAL_PROVIDERS, MATERIAL_DIRECTIVES} from 'ng2-material/all';
-+import {MeteorComponent} from 'angular2-meteor';
- 
- import { Component, provide } from '@angular/core';
- import { bootstrap } from 'angular2-meteor-auto-bootstrap';
-@@ -12,16 +13,33 @@ import { PartyDetails } from './imports/party-details/party-details.ts';
- import '../collections/methods.ts';
- import {ANGULAR2_GOOGLE_MAPS_PROVIDERS} from 'angular2-google-maps/core';
- import {LoginButtons} from 'angular2-meteor-accounts-ui';
-+import {RouterLink} from 'angular2/router';
-+import {DisplayName} from './imports/pipes/pipes.ts';
-+import {InjectUser} from 'angular2-meteor-accounts-ui';
-+import {Login} from './imports/auth/login.ts';
-+import {Signup} from './imports/auth/signup.ts';
-+import {Recover} from './imports/auth/recover.ts';
- 
- @Component({
-   selector: 'app',
-   templateUrl: 'client/app.html',
--  directives: [ROUTER_DIRECTIVES, LoginButtons, MATERIAL_DIRECTIVES]
-+  directives: [ROUTER_DIRECTIVES, LoginButtons, MATERIAL_DIRECTIVES, RouterLink],
-+  pipes: [DisplayName]
- })
- @RouteConfig([
-   { path: '/', as: 'PartiesList', component: PartiesList },
--  { path: '/party/:partyId', as: 'PartyDetails', component: PartyDetails }
-+  { path: '/party/:partyId', as: 'PartyDetails', component: PartyDetails },
-+  { path: '/login', as: 'Login', component: Login },
-+  { path: '/signup', as: 'Signup', component: Signup },
-+  { path: '/recover', as: 'Recover', component: Recover }
- ])
--class Socially {}
-+@InjectUser()
-+class Socially extends MeteorComponent {
-+  user: Meteor.User;
-+
-+  constructor() {
-+    super();
-+  }
-+}
- 
- bootstrap(Socially, [MATERIAL_PROVIDERS, ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
--- 
-2.6.3
-
-
-From 044709de749719d901ccc0c2eaa3cbfa6fbb4abf Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 14:11:40 +0200
-Subject: [PATCH 163/191] Step 18.16: Create the login component
-
----
- client/imports/auth/login.ts | 42 ++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 42 insertions(+)
- create mode 100644 client/imports/auth/login.ts
-
-diff --git a/client/imports/auth/login.ts b/client/imports/auth/login.ts
-new file mode 100644
-index 0000000..f510324
---- /dev/null
-+++ b/client/imports/auth/login.ts
-@@ -0,0 +1,42 @@
-+import {Component} from 'angular2/core';
-+import {MeteorComponent} from 'angular2-meteor';
-+import {Router} from 'angular2/router';
-+import {FormBuilder, ControlGroup, Validators} from 'angular2/common';
-+import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
-+import {RouterLink} from 'angular2/router';
-+
-+@Component({
-+  selector: 'login',
-+  directives: [MATERIAL_DIRECTIVES, RouterLink],
-+  templateUrl: '/client/imports/auth/login.html'
-+})
-+export class Login extends MeteorComponent {
-+  loginForm: ControlGroup;
-+  error: string;
-+
-+  constructor(private router: Router) {
-+    super();
-+
-+    let fb = new FormBuilder();
-+
-+    this.loginForm = fb.group({
-+      email: ['', Validators.required],
-+      password: ['', Validators.required]
-+    });
-+
-+    this.error = '';
-+  }
-+
-+  login(credentials) {
-+    if (this.loginForm.valid) {
-+      Meteor.loginWithPassword(credentials.email, credentials.password, (err) => {
-+        if (err) {
-+          this.error = err;
-+        }
-+        else {
-+          this.router.navigate(['/PartiesList']);
-+        }
-+      });
-+    }
-+  }
-+}
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 253c010392986793ad76b30ea9e3e83f4bace7e6 Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 14:11:48 +0200
-Subject: [PATCH 164/191] Step 18.17: Create the login view
-
----
- client/imports/auth/login.html | 54 ++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 54 insertions(+)
- create mode 100644 client/imports/auth/login.html
-
-diff --git a/client/imports/auth/login.html b/client/imports/auth/login.html
-new file mode 100644
-index 0000000..19fa9de
---- /dev/null
-+++ b/client/imports/auth/login.html
-@@ -0,0 +1,54 @@
-+<md-content layout="row" layout-align="center start" layout-fill layout-margin>
-+  <md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33" class="md-whiteframe-z2" layout-fill>
-+    <md-toolbar class="md-primary md-tall" layout="column" layout-align="end" layout-fill>
-+      <div layout="row" class="md-toolbar-tools md-toolbar-tools-bottom">
-+        <h3 class="md-display-1"> Sign in </h3>
-+      </div>
-+    </md-toolbar>
-+    <div layout="column" layout-fill layout-margin layout-padding>
-+      <div layout="row" layout-fill layout-margin>
-+        <p class="md-body-2"> Use existing account</p>
-+      </div>
-+      <div layout="row" layout-fill layout-margin layout-padding layout-wrap>
-+        <button md-button class="md-raised">
-+          <span> Google</span>
-+        </button>
-+        <button md-button class="md-raised">
-+          <span>Facebook </span>
-+        </button>
-+        <button md-button class="md-raised">
-+          <span>Twitter </span>
-+        </button>
-+      </div>
-+      <md-divider class="inset"></md-divider>
-+      <div layout="row" layout-fill layout-margin>
-+        <p class="md-body-2"> Sign in with your email</p>
-+      </div>
-+
-+      <form [ngFormModel]="loginForm" #f="ngForm" (submit)="login(f.value)" layout="column" layout-fill layout-padding layout-margin>
-+        <md-input-container>
-+          <label> Email </label>
-+          <input md-input type="text" ngControl="email" aria-label="email" />
-+        </md-input-container>
-+        <md-input-container>
-+          <label> Password </label>
-+          <input md-input type="password" ngControl="password" aria-label="password" />
-+        </md-input-container>
-+        <div layout="row" layout-align="space-between center">
-+          <button md-button [routerLink]="['/Recover']">Forgot password?</button>
-+          <button md-button class="md-raised md-primary" type="submit" aria-label="login">Sign In
-+          </button>
-+        </div>
-+      </form>
-+      <div [hidden]="error == ''">
-+        <md-toolbar class="md-warn" layout="row" layout-fill layout-padding layout-margin>
-+          <p class="md-body-1">{{ error }}</p>
-+        </md-toolbar>
-+      </div>
-+      <md-divider></md-divider>
-+      <div layout="row" layout-align="center">
-+        <button md-button [routerLink]="['/Signup']">Need an account?</button>
-+      </div>
-+    </div>
-+  </md-whiteframe>
-+</md-content>
-\ No newline at end of file
--- 
-2.6.3
-
-
-From b99b4e52481ea2e0dc938aa4ef5e3025225ef20c Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 14:12:04 +0200
-Subject: [PATCH 165/191] Step 18.18: Create the signup component
-
----
- client/imports/auth/signup.ts | 42 ++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 42 insertions(+)
- create mode 100644 client/imports/auth/signup.ts
-
-diff --git a/client/imports/auth/signup.ts b/client/imports/auth/signup.ts
-new file mode 100644
-index 0000000..6aee6ce
---- /dev/null
-+++ b/client/imports/auth/signup.ts
-@@ -0,0 +1,42 @@
-+import {Component} from 'angular2/core';
-+import {MeteorComponent} from 'angular2-meteor';
-+import {Router} from 'angular2/router';
-+import {FormBuilder, ControlGroup, Validators} from 'angular2/common';
-+import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
-+import {RouterLink} from 'angular2/router';
-+
-+@Component({
-+  selector: 'signup',
-+  directives: [MATERIAL_DIRECTIVES, RouterLink],
-+  templateUrl: '/client/imports/auth/signup.html'
-+})
-+export class Signup extends MeteorComponent {
-+  signupForm: ControlGroup;
-+  error: string;
-+
-+  constructor(private router: Router) {
-+    super();
-+
-+    let fb = new FormBuilder();
-+
-+    this.signupForm = fb.group({
-+      email: ['', Validators.required],
-+      password: ['', Validators.required]
-+    });
-+
-+    this.error = '';
-+  }
-+
-+  signup(credentials) {
-+    if (this.signupForm.valid) {
-+      Accounts.createUser({ email: credentials.email, password: credentials.password}, (err) => {
-+        if (err) {
-+          this.error = err;
-+        }
-+        else {
-+          this.router.navigate(['/PartiesList']);
-+        }
-+      });
-+    }
-+  }
-+}
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 2d11e01bc423066268a3328cc6505f403da8d3c7 Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 14:12:12 +0200
-Subject: [PATCH 166/191] Step 18.19: Create the signup view
-
----
- client/imports/auth/signup.html | 50 +++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 50 insertions(+)
- create mode 100644 client/imports/auth/signup.html
-
-diff --git a/client/imports/auth/signup.html b/client/imports/auth/signup.html
-new file mode 100644
-index 0000000..6222883
---- /dev/null
-+++ b/client/imports/auth/signup.html
-@@ -0,0 +1,50 @@
-+<md-content layout="row" layout-align="center start" layout-fill layout-margin>
-+  <md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33" class="md-whiteframe-z2" layout-fill>
-+    <md-toolbar class="md-primary md-tall" layout="column" layout-align="end" layout-fill>
-+      <div layout="row" class="md-toolbar-tools md-toolbar-tools-bottom">
-+        <h3 class="md-display-1"> Sign up </h3>
-+      </div>
-+    </md-toolbar>
-+    <div layout="column" layout-fill layout-margin layout-padding>
-+      <form [ngFormModel]="signupForm" #f="ngForm" (submit)="signup(f.value)" layout="column" layout-fill layout-padding layout-margin>
-+        <md-input-container>
-+          <label> Email </label>
-+          <input md-input type="text" ngControl="email" aria-label="email" />
-+        </md-input-container>
-+        <md-input-container>
-+          <label> Password </label>
-+          <input md-input type="password" ngControl="password" aria-label="password" />
-+        </md-input-container>
-+        <div layout="row" layout-align="space-between center">
-+          <button md-button class="md-raised md-primary" type="submit" aria-label="login">Sign Up!
-+          </button>
-+        </div>
-+      </form>
-+      <md-divider></md-divider>
-+      <div layout="row" layout-fill layout-margin>
-+        <p class="md-body-2"> Want to use an existing account? </p>
-+      </div>
-+
-+      <div layout="row" layout-fill layout-margin layout-padding layout-wrap>
-+        <button md-button class="md-raised">
-+          <span> Google</span>
-+        </button>
-+        <button md-button class="md-raised">
-+          <span>Facebook </span>
-+        </button>
-+        <button md-button class="md-raised">
-+          <span>Twitter </span>
-+        </button>
-+      </div>
-+      <div [hidden]="error == ''">
-+        <md-toolbar class="md-warn" layout="row" layout-fill layout-padding layout-margin>
-+          <p class="md-body-1">{{ error }}</p>
-+        </md-toolbar>
-+      </div>
-+      <md-divider></md-divider>
-+      <div layout="row" layout-align="center">
-+        <button md-button [routerLink]="['/Login']">Already a user?</button>
-+      </div>
-+    </div>
-+  </md-whiteframe>
-+</md-content>
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 361bbe321daeeb33bf56e60e8a711d634d902773 Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 14:15:27 +0200
-Subject: [PATCH 167/191] Step 18.20: Create the recover component
-
----
- client/imports/auth/recover.ts | 41 +++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 41 insertions(+)
- create mode 100644 client/imports/auth/recover.ts
-
-diff --git a/client/imports/auth/recover.ts b/client/imports/auth/recover.ts
-new file mode 100644
-index 0000000..2edcd38
---- /dev/null
-+++ b/client/imports/auth/recover.ts
-@@ -0,0 +1,41 @@
-+import {Component} from 'angular2/core';
-+import {MeteorComponent} from 'angular2-meteor';
-+import {Router} from 'angular2/router';
-+import {FormBuilder, ControlGroup, Validators} from 'angular2/common';
-+import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
-+import {RouterLink} from 'angular2/router';
-+
-+@Component({
-+  selector: 'recover',
-+  directives: [MATERIAL_DIRECTIVES, RouterLink],
-+  templateUrl: '/client/imports/auth/recover.html'
-+})
-+export class Recover extends MeteorComponent {
-+  recoverForm: ControlGroup;
-+  error: string;
-+
-+  constructor(private router: Router) {
-+    super();
-+
-+    let fb = new FormBuilder();
-+
-+    this.recoverForm = fb.group({
-+      email: ['', Validators.required]
-+    });
-+
-+    this.error = '';
-+  }
-+
-+  recover(credentials) {
-+    if (this.recoverForm.valid) {
-+      Accounts.forgotPassword({ email: credentials.email}, (err) => {
-+        if (err) {
-+          this.error = err;
-+        }
-+        else {
-+          this.router.navigate(['/PartiesList']);
-+        }
-+      });
-+    }
-+  }
-+}
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 4d27f21c238e1ca3491584fcdd333e121ccb8842 Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 14:15:37 +0200
-Subject: [PATCH 168/191] Step 18.21: Create the recover view
-
----
- client/imports/auth/recover.html | 30 ++++++++++++++++++++++++++++++
- 1 file changed, 30 insertions(+)
- create mode 100644 client/imports/auth/recover.html
-
-diff --git a/client/imports/auth/recover.html b/client/imports/auth/recover.html
-new file mode 100644
-index 0000000..5f0c5cb
---- /dev/null
-+++ b/client/imports/auth/recover.html
-@@ -0,0 +1,30 @@
-+<md-content layout="row" layout-align="center start" layout-fill layout-margin>
-+  <md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33" class="md-whiteframe-z2" layout-fill>
-+    <md-toolbar class="md-primary md-tall" layout="column" layout-align="end" layout-fill>
-+      <div layout="row" class="md-toolbar-tools md-toolbar-tools-bottom">
-+        <h3 class="md-display-1"> Recover Your Password</h3>
-+      </div>
-+    </md-toolbar>
-+    <div layout="column" layout-fill layout-margin layout-padding>
-+      <form [ngFormModel]="recoverForm" #f="ngForm" (submit)="recover(f.value)" layout="column" layout-fill layout-padding layout-margin>
-+        <md-input-container>
-+          <label> Email </label>
-+          <input md-input type="text" ngControl="email" aria-label="email" />
-+        </md-input-container>
-+        <div layout="row" layout-align="space-between center">
-+          <button md-button class="md-raised md-primary" type="submit" aria-label="login">Recover
-+          </button>
-+        </div>
-+      </form>
-+      <div [hidden]="error == ''">
-+        <md-toolbar class="md-warn" layout="row" layout-fill layout-padding layout-margin>
-+          <p class="md-body-1">{{ error }}</p>
-+        </md-toolbar>
-+      </div>
-+      <md-divider></md-divider>
-+      <div layout="row" layout-align="center">
-+        <button md-button [routerLink]="['/Login']">Remember your password?</button>
-+      </div>
-+    </div>
-+  </md-whiteframe>
-+</md-content>
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 9bb478909004c9f4de8aa8a23dcbe9acfac36f33 Mon Sep 17 00:00:00 2001
-From: Dotan Simha <dotansimha@gmail.com>
-Date: Sat, 6 Feb 2016 14:16:57 +0200
-Subject: [PATCH 169/191] Step 18.22: Add the logout method to the main
- component
-
----
- client/app.ts | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/client/app.ts b/client/app.ts
-index 4a1c3b7..7749f5d 100644
---- a/client/app.ts
-+++ b/client/app.ts
-@@ -40,6 +40,12 @@ class Socially extends MeteorComponent {
-   constructor() {
-     super();
-   }
-+
-+  logout() {
-+    this.autorun(() => {
-+      Meteor.logout();
-+    });
-+  }
- }
- 
- bootstrap(Socially, [MATERIAL_PROVIDERS, ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
--- 
-2.6.3
-
-
-From 47fccb3ee34ba8fd0e55a07baea88f30d1b52bb8 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 21:26:31 +0300
-Subject: [PATCH 170/191] Step 21.1: Create the socially-browser package
-
----
- packages/socially-browser/README.md                |  0
- packages/socially-browser/package.js               | 24 ++++++++++++++++++++++
- .../socially-browser/socially-browser-tests.js     | 11 ++++++++++
- packages/socially-browser/socially-browser.js      |  5 +++++
- 4 files changed, 40 insertions(+)
- create mode 100644 packages/socially-browser/README.md
- create mode 100644 packages/socially-browser/package.js
- create mode 100644 packages/socially-browser/socially-browser-tests.js
- create mode 100644 packages/socially-browser/socially-browser.js
-
-diff --git a/packages/socially-browser/README.md b/packages/socially-browser/README.md
-new file mode 100644
-index 0000000..e69de29
-diff --git a/packages/socially-browser/package.js b/packages/socially-browser/package.js
-new file mode 100644
-index 0000000..2008a3b
---- /dev/null
-+++ b/packages/socially-browser/package.js
-@@ -0,0 +1,24 @@
-+Package.describe({
-+  name: 'socially-browser',
-+  version: '0.0.1',
-+  // Brief, one-line summary of the package.
-+  summary: '',
-+  // URL to the Git repository containing the source code for this package.
-+  git: '',
-+  // By default, Meteor will default to using README.md for documentation.
-+  // To avoid submitting documentation, set this field to null.
-+  documentation: 'README.md'
-+});
-+
-+Package.onUse(function(api) {
-+  api.versionsFrom('1.3');
-+  api.use('ecmascript');
-+  api.mainModule('socially-browser.js');
-+});
-+
-+Package.onTest(function(api) {
-+  api.use('ecmascript');
-+  api.use('tinytest');
-+  api.use('socially-browser');
-+  api.mainModule('socially-browser-tests.js');
-+});
-diff --git a/packages/socially-browser/socially-browser-tests.js b/packages/socially-browser/socially-browser-tests.js
-new file mode 100644
-index 0000000..4d09527
---- /dev/null
-+++ b/packages/socially-browser/socially-browser-tests.js
-@@ -0,0 +1,11 @@
-+// Import Tinytest from the tinytest Meteor package.
-+import { Tinytest } from "meteor/tinytest";
-+
-+// Import and rename a variable exported by socially-browser.js.
-+import { name as packageName } from "meteor/socially-browser";
-+
-+// Write your tests here!
-+// Here is an example.
-+Tinytest.add('socially-browser - example', function (test) {
-+  test.equal(packageName, "socially-browser");
-+});
-diff --git a/packages/socially-browser/socially-browser.js b/packages/socially-browser/socially-browser.js
-new file mode 100644
-index 0000000..ff66909
---- /dev/null
-+++ b/packages/socially-browser/socially-browser.js
-@@ -0,0 +1,5 @@
-+// Write your package code here!
-+
-+// Variables exported by this module can be imported by other packages and
-+// applications. See socially-browser-tests.js for an example of importing.
-+export const name = 'socially-browser';
--- 
-2.6.3
-
-
-From 8d397e99264c24bd944b5365e00f1a0c4a5fa4e8 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:12:47 +0300
-Subject: [PATCH 171/191] Step 21.2: Clean up the package folder and file
-
----
- packages/socially-browser/package.js                |  6 +-----
- packages/socially-browser/socially-browser-tests.js | 11 -----------
- packages/socially-browser/socially-browser.js       |  5 -----
- 3 files changed, 1 insertion(+), 21 deletions(-)
- delete mode 100644 packages/socially-browser/socially-browser-tests.js
- delete mode 100644 packages/socially-browser/socially-browser.js
-
-diff --git a/packages/socially-browser/package.js b/packages/socially-browser/package.js
-index 2008a3b..11d39b6 100644
---- a/packages/socially-browser/package.js
-+++ b/packages/socially-browser/package.js
-@@ -13,12 +13,8 @@ Package.describe({
- Package.onUse(function(api) {
-   api.versionsFrom('1.3');
-   api.use('ecmascript');
--  api.mainModule('socially-browser.js');
-+  api.use(['angular2-compilers', 'barbatus:angular2-runtime'], 'client');
- });
- 
- Package.onTest(function(api) {
--  api.use('ecmascript');
--  api.use('tinytest');
--  api.use('socially-browser');
--  api.mainModule('socially-browser-tests.js');
- });
-diff --git a/packages/socially-browser/socially-browser-tests.js b/packages/socially-browser/socially-browser-tests.js
-deleted file mode 100644
-index 4d09527..0000000
---- a/packages/socially-browser/socially-browser-tests.js
-+++ /dev/null
-@@ -1,11 +0,0 @@
--// Import Tinytest from the tinytest Meteor package.
--import { Tinytest } from "meteor/tinytest";
--
--// Import and rename a variable exported by socially-browser.js.
--import { name as packageName } from "meteor/socially-browser";
--
--// Write your tests here!
--// Here is an example.
--Tinytest.add('socially-browser - example', function (test) {
--  test.equal(packageName, "socially-browser");
--});
-diff --git a/packages/socially-browser/socially-browser.js b/packages/socially-browser/socially-browser.js
-deleted file mode 100644
-index ff66909..0000000
---- a/packages/socially-browser/socially-browser.js
-+++ /dev/null
-@@ -1,5 +0,0 @@
--// Write your package code here!
--
--// Variables exported by this module can be imported by other packages and
--// applications. See socially-browser-tests.js for an example of importing.
--export const name = 'socially-browser';
--- 
-2.6.3
-
-
-From 8674535185fe43cb5960ac9d6686ab87d0c8fa25 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:16:08 +0300
-Subject: [PATCH 172/191] Step 21.3: Create empty main file
-
----
- packages/socially-browser/README.md           | 0
- packages/socially-browser/socially-browser.ts | 2 ++
- 2 files changed, 2 insertions(+)
- delete mode 100644 packages/socially-browser/README.md
- create mode 100644 packages/socially-browser/socially-browser.ts
-
-diff --git a/packages/socially-browser/README.md b/packages/socially-browser/README.md
-deleted file mode 100644
-index e69de29..0000000
-diff --git a/packages/socially-browser/socially-browser.ts b/packages/socially-browser/socially-browser.ts
-new file mode 100644
-index 0000000..defd5f8
---- /dev/null
-+++ b/packages/socially-browser/socially-browser.ts
-@@ -0,0 +1,2 @@
-+import 'reflect-metadata';
-+
--- 
-2.6.3
-
-
-From 980a495aeca3de32c3e0c610d4467b895e57d153 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:16:23 +0300
-Subject: [PATCH 173/191] Step 21.4: Import the main file and set it as the
- main module
-
----
- packages/socially-browser/package.js | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/packages/socially-browser/package.js b/packages/socially-browser/package.js
-index 11d39b6..965c2ba 100644
---- a/packages/socially-browser/package.js
-+++ b/packages/socially-browser/package.js
-@@ -14,6 +14,8 @@ Package.onUse(function(api) {
-   api.versionsFrom('1.3');
-   api.use('ecmascript');
-   api.use(['angular2-compilers', 'barbatus:angular2-runtime'], 'client');
-+  
-+  api.mainModule('socially-browser.ts', 'web.browser');
- });
- 
- Package.onTest(function(api) {
--- 
-2.6.3
-
-
-From 8f0ccc033daa8356d6ac07c27e89d43602c35d58 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:17:11 +0300
-Subject: [PATCH 174/191] Step 21.5: Move the login component into the package
-
----
- client/imports/auth/login.html            | 54 -------------------------------
- client/imports/auth/login.ts              | 42 ------------------------
- packages/socially-browser/auth/login.html | 54 +++++++++++++++++++++++++++++++
- packages/socially-browser/auth/login.ts   | 42 ++++++++++++++++++++++++
- 4 files changed, 96 insertions(+), 96 deletions(-)
- delete mode 100644 client/imports/auth/login.html
- delete mode 100644 client/imports/auth/login.ts
- create mode 100644 packages/socially-browser/auth/login.html
- create mode 100644 packages/socially-browser/auth/login.ts
-
-diff --git a/client/imports/auth/login.html b/client/imports/auth/login.html
-deleted file mode 100644
-index 19fa9de..0000000
---- a/client/imports/auth/login.html
-+++ /dev/null
-@@ -1,54 +0,0 @@
--<md-content layout="row" layout-align="center start" layout-fill layout-margin>
--  <md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33" class="md-whiteframe-z2" layout-fill>
--    <md-toolbar class="md-primary md-tall" layout="column" layout-align="end" layout-fill>
--      <div layout="row" class="md-toolbar-tools md-toolbar-tools-bottom">
--        <h3 class="md-display-1"> Sign in </h3>
--      </div>
--    </md-toolbar>
--    <div layout="column" layout-fill layout-margin layout-padding>
--      <div layout="row" layout-fill layout-margin>
--        <p class="md-body-2"> Use existing account</p>
--      </div>
--      <div layout="row" layout-fill layout-margin layout-padding layout-wrap>
--        <button md-button class="md-raised">
--          <span> Google</span>
--        </button>
--        <button md-button class="md-raised">
--          <span>Facebook </span>
--        </button>
--        <button md-button class="md-raised">
--          <span>Twitter </span>
--        </button>
--      </div>
--      <md-divider class="inset"></md-divider>
--      <div layout="row" layout-fill layout-margin>
--        <p class="md-body-2"> Sign in with your email</p>
--      </div>
--
--      <form [ngFormModel]="loginForm" #f="ngForm" (submit)="login(f.value)" layout="column" layout-fill layout-padding layout-margin>
--        <md-input-container>
--          <label> Email </label>
--          <input md-input type="text" ngControl="email" aria-label="email" />
--        </md-input-container>
--        <md-input-container>
--          <label> Password </label>
--          <input md-input type="password" ngControl="password" aria-label="password" />
--        </md-input-container>
--        <div layout="row" layout-align="space-between center">
--          <button md-button [routerLink]="['/Recover']">Forgot password?</button>
--          <button md-button class="md-raised md-primary" type="submit" aria-label="login">Sign In
--          </button>
--        </div>
--      </form>
--      <div [hidden]="error == ''">
--        <md-toolbar class="md-warn" layout="row" layout-fill layout-padding layout-margin>
--          <p class="md-body-1">{{ error }}</p>
--        </md-toolbar>
--      </div>
--      <md-divider></md-divider>
--      <div layout="row" layout-align="center">
--        <button md-button [routerLink]="['/Signup']">Need an account?</button>
--      </div>
--    </div>
--  </md-whiteframe>
--</md-content>
-\ No newline at end of file
-diff --git a/client/imports/auth/login.ts b/client/imports/auth/login.ts
-deleted file mode 100644
-index f510324..0000000
---- a/client/imports/auth/login.ts
-+++ /dev/null
-@@ -1,42 +0,0 @@
--import {Component} from 'angular2/core';
--import {MeteorComponent} from 'angular2-meteor';
--import {Router} from 'angular2/router';
--import {FormBuilder, ControlGroup, Validators} from 'angular2/common';
--import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
--import {RouterLink} from 'angular2/router';
--
--@Component({
--  selector: 'login',
--  directives: [MATERIAL_DIRECTIVES, RouterLink],
--  templateUrl: '/client/imports/auth/login.html'
--})
--export class Login extends MeteorComponent {
--  loginForm: ControlGroup;
--  error: string;
--
--  constructor(private router: Router) {
--    super();
--
--    let fb = new FormBuilder();
--
--    this.loginForm = fb.group({
--      email: ['', Validators.required],
--      password: ['', Validators.required]
--    });
--
--    this.error = '';
--  }
--
--  login(credentials) {
--    if (this.loginForm.valid) {
--      Meteor.loginWithPassword(credentials.email, credentials.password, (err) => {
--        if (err) {
--          this.error = err;
--        }
--        else {
--          this.router.navigate(['/PartiesList']);
--        }
--      });
--    }
--  }
--}
-\ No newline at end of file
-diff --git a/packages/socially-browser/auth/login.html b/packages/socially-browser/auth/login.html
-new file mode 100644
-index 0000000..19fa9de
---- /dev/null
-+++ b/packages/socially-browser/auth/login.html
-@@ -0,0 +1,54 @@
-+<md-content layout="row" layout-align="center start" layout-fill layout-margin>
-+  <md-whiteframe layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33" class="md-whiteframe-z2" layout-fill>
-+    <md-toolbar class="md-primary md-tall" layout="column" layout-align="end" layout-fill>
-+      <div layout="row" class="md-toolbar-tools md-toolbar-tools-bottom">
-+        <h3 class="md-display-1"> Sign in </h3>
-+      </div>
-+    </md-toolbar>
-+    <div layout="column" layout-fill layout-margin layout-padding>
-+      <div layout="row" layout-fill layout-margin>
-+        <p class="md-body-2"> Use existing account</p>
-+      </div>
-+      <div layout="row" layout-fill layout-margin layout-padding layout-wrap>
-+        <button md-button class="md-raised">
-+          <span> Google</span>
-+        </button>
-+        <button md-button class="md-raised">
-+          <span>Facebook </span>
-+        </button>
-+        <button md-button class="md-raised">
-+          <span>Twitter </span>
-+        </button>
-+      </div>
-+      <md-divider class="inset"></md-divider>
-+      <div layout="row" layout-fill layout-margin>
-+        <p class="md-body-2"> Sign in with your email</p>
-+      </div>
-+
-+      <form [ngFormModel]="loginForm" #f="ngForm" (submit)="login(f.value)" layout="column" layout-fill layout-padding layout-margin>
-+        <md-input-container>
-+          <label> Email </label>
-+          <input md-input type="text" ngControl="email" aria-label="email" />
-+        </md-input-container>
-+        <md-input-container>
-+          <label> Password </label>
-+          <input md-input type="password" ngControl="password" aria-label="password" />
-+        </md-input-container>
-+        <div layout="row" layout-align="space-between center">
-+          <button md-button [routerLink]="['/Recover']">Forgot password?</button>
-+          <button md-button class="md-raised md-primary" type="submit" aria-label="login">Sign In
-+          </button>
-+        </div>
-+      </form>
-+      <div [hidden]="error == ''">
-+        <md-toolbar class="md-warn" layout="row" layout-fill layout-padding layout-margin>
-+          <p class="md-body-1">{{ error }}</p>
-+        </md-toolbar>
-+      </div>
-+      <md-divider></md-divider>
-+      <div layout="row" layout-align="center">
-+        <button md-button [routerLink]="['/Signup']">Need an account?</button>
-+      </div>
-+    </div>
-+  </md-whiteframe>
-+</md-content>
-\ No newline at end of file
-diff --git a/packages/socially-browser/auth/login.ts b/packages/socially-browser/auth/login.ts
-new file mode 100644
-index 0000000..f510324
---- /dev/null
-+++ b/packages/socially-browser/auth/login.ts
-@@ -0,0 +1,42 @@
-+import {Component} from 'angular2/core';
-+import {MeteorComponent} from 'angular2-meteor';
-+import {Router} from 'angular2/router';
-+import {FormBuilder, ControlGroup, Validators} from 'angular2/common';
-+import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
-+import {RouterLink} from 'angular2/router';
-+
-+@Component({
-+  selector: 'login',
-+  directives: [MATERIAL_DIRECTIVES, RouterLink],
-+  templateUrl: '/client/imports/auth/login.html'
-+})
-+export class Login extends MeteorComponent {
-+  loginForm: ControlGroup;
-+  error: string;
-+
-+  constructor(private router: Router) {
-+    super();
-+
-+    let fb = new FormBuilder();
-+
-+    this.loginForm = fb.group({
-+      email: ['', Validators.required],
-+      password: ['', Validators.required]
-+    });
-+
-+    this.error = '';
-+  }
-+
-+  login(credentials) {
-+    if (this.loginForm.valid) {
-+      Meteor.loginWithPassword(credentials.email, credentials.password, (err) => {
-+        if (err) {
-+          this.error = err;
-+        }
-+        else {
-+          this.router.navigate(['/PartiesList']);
-+        }
-+      });
-+    }
-+  }
-+}
-\ No newline at end of file
--- 
-2.6.3
-
-
-From dac0b5aa259b8df150fd16a3f0ed3caec61d9e28 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:17:29 +0300
-Subject: [PATCH 175/191] Step 21.6: Change the name of the login component
-
----
- packages/socially-browser/auth/login.ts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/packages/socially-browser/auth/login.ts b/packages/socially-browser/auth/login.ts
-index f510324..dc1eef4 100644
---- a/packages/socially-browser/auth/login.ts
-+++ b/packages/socially-browser/auth/login.ts
-@@ -10,7 +10,7 @@ import {RouterLink} from 'angular2/router';
-   directives: [MATERIAL_DIRECTIVES, RouterLink],
-   templateUrl: '/client/imports/auth/login.html'
- })
--export class Login extends MeteorComponent {
-+export class BrowserLogin extends MeteorComponent {
-   loginForm: ControlGroup;
-   error: string;
- 
--- 
-2.6.3
-
-
-From f0cb2854544a165288d60ea1569f6463fd3c81ba Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:18:13 +0300
-Subject: [PATCH 176/191] Step 21.7: Export the login component from the main
- package file
-
----
- .meteor/packages                              | 1 +
- .meteor/versions                              | 2 ++
- packages/socially-browser/socially-browser.ts | 1 +
- 3 files changed, 4 insertions(+)
-
-diff --git a/.meteor/packages b/.meteor/packages
-index 39ce4cd..bf4d3ce 100644
---- a/.meteor/packages
-+++ b/.meteor/packages
-@@ -23,3 +23,4 @@ tmeasday:publish-counts
- email
- check
- fourseven:scss
-+socially-browser
-diff --git a/.meteor/versions b/.meteor/versions
-index 50b525c..c84ef96 100644
---- a/.meteor/versions
-+++ b/.meteor/versions
-@@ -6,6 +6,7 @@ angular2-html-templates@0.5.2
- autoupdate@1.2.9
- babel-compiler@6.6.4
- babel-runtime@0.1.8
-+barbatus:angular2-runtime@0.1.0
- barbatus:angular2-runtime@0.2.3_2
- barbatus:typescript@0.2.11
- barbatus:typescript-compiler@0.5.10
-@@ -69,6 +70,7 @@ routepolicy@1.0.10
- service-configuration@1.0.9
- session@1.1.5
- sha@1.0.7
-+socially-browser@0.0.1
- spacebars@1.0.11
- spacebars-compiler@1.0.11
- srp@1.0.8
-diff --git a/packages/socially-browser/socially-browser.ts b/packages/socially-browser/socially-browser.ts
-index defd5f8..36ff3c8 100644
---- a/packages/socially-browser/socially-browser.ts
-+++ b/packages/socially-browser/socially-browser.ts
-@@ -1,2 +1,3 @@
- import 'reflect-metadata';
- 
-+export * from "./auth/login";
-\ No newline at end of file
--- 
-2.6.3
-
-
-From b08754114d927a298d426a6980714eb72ea853a9 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:19:36 +0300
-Subject: [PATCH 177/191] Step 21.10: Import and use the browser package
-
----
- client/app.ts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/client/app.ts b/client/app.ts
-index 7749f5d..8c8887e 100644
---- a/client/app.ts
-+++ b/client/app.ts
-@@ -16,9 +16,9 @@ import {LoginButtons} from 'angular2-meteor-accounts-ui';
- import {RouterLink} from 'angular2/router';
- import {DisplayName} from './imports/pipes/pipes.ts';
- import {InjectUser} from 'angular2-meteor-accounts-ui';
--import {Login} from './imports/auth/login.ts';
- import {Signup} from './imports/auth/signup.ts';
- import {Recover} from './imports/auth/recover.ts';
-+import {BrowserLogin} from 'meteor/socially-browser';
- 
- @Component({
-   selector: 'app',
-@@ -29,7 +29,7 @@ import {Recover} from './imports/auth/recover.ts';
- @RouteConfig([
-   { path: '/', as: 'PartiesList', component: PartiesList },
-   { path: '/party/:partyId', as: 'PartyDetails', component: PartyDetails },
--  { path: '/login', as: 'Login', component: Login },
-+  { path: '/login', as: 'Login', component: BrowserLogin },
-   { path: '/signup', as: 'Signup', component: Signup },
-   { path: '/recover', as: 'Recover', component: Recover }
- ])
--- 
-2.6.3
-
-
-From 5b0e73d458590b67d743afff169e5b8bc41fe7f5 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:47:17 +0300
-Subject: [PATCH 178/191] Step 21.11: Add the HTML file to the package.js
-
----
- packages/socially-browser/package.js | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/packages/socially-browser/package.js b/packages/socially-browser/package.js
-index 965c2ba..6a89869 100644
---- a/packages/socially-browser/package.js
-+++ b/packages/socially-browser/package.js
-@@ -14,8 +14,9 @@ Package.onUse(function(api) {
-   api.versionsFrom('1.3');
-   api.use('ecmascript');
-   api.use(['angular2-compilers', 'barbatus:angular2-runtime'], 'client');
--  
-+
-   api.mainModule('socially-browser.ts', 'web.browser');
-+  api.addFiles('auth/login.html', 'web.browser');
- });
- 
- Package.onTest(function(api) {
--- 
-2.6.3
-
-
-From 26e7abd151501aeb28792dca6a12b9bb0050429f Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:47:38 +0300
-Subject: [PATCH 179/191] Step 21.12: Correct the path for the HTML file
-
----
- packages/socially-browser/auth/login.ts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/packages/socially-browser/auth/login.ts b/packages/socially-browser/auth/login.ts
-index dc1eef4..6ea0b5b 100644
---- a/packages/socially-browser/auth/login.ts
-+++ b/packages/socially-browser/auth/login.ts
-@@ -8,7 +8,7 @@ import {RouterLink} from 'angular2/router';
- @Component({
-   selector: 'login',
-   directives: [MATERIAL_DIRECTIVES, RouterLink],
--  templateUrl: '/client/imports/auth/login.html'
-+  templateUrl: '/packages/socially-browser/auth/login.html'
- })
- export class BrowserLogin extends MeteorComponent {
-   loginForm: ControlGroup;
--- 
-2.6.3
-
-
-From 3736b13b78607a2fce936fd39e1c6cadec962543 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 22:49:04 +0300
-Subject: [PATCH 180/191] Step 21.13: Add cordova platform to the project
-
----
- .meteor/platforms | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/.meteor/platforms b/.meteor/platforms
-index efeba1b..81ae701 100644
---- a/.meteor/platforms
-+++ b/.meteor/platforms
-@@ -1,2 +1,3 @@
--server
- browser
-+ios
-+server
--- 
-2.6.3
-
-
-From 97b7f27bb0272ecf91b0ef729fd99a1bbf91aed8 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:19:08 +0300
-Subject: [PATCH 181/191] Step 21.14: Create the mobile package
-
----
- packages/socially-mobile/package.js         | 23 +++++++++++++++++++++++
- packages/socially-mobile/socially-mobile.ts |  3 +++
- 2 files changed, 26 insertions(+)
- create mode 100644 packages/socially-mobile/package.js
- create mode 100644 packages/socially-mobile/socially-mobile.ts
-
-diff --git a/packages/socially-mobile/package.js b/packages/socially-mobile/package.js
-new file mode 100644
-index 0000000..6da32ef
---- /dev/null
-+++ b/packages/socially-mobile/package.js
-@@ -0,0 +1,23 @@
-+Package.describe({
-+  name: 'socially-mobile',
-+  version: '0.0.1',
-+  // Brief, one-line summary of the package.
-+  summary: '',
-+  // URL to the Git repository containing the source code for this package.
-+  git: '',
-+  // By default, Meteor will default to using README.md for documentation.
-+  // To avoid submitting documentation, set this field to null.
-+  documentation: 'README.md'
-+});
-+
-+Package.onUse(function(api) {
-+  api.versionsFrom('1.3');
-+  api.use('ecmascript');
-+  api.use(['angular2-compilers', 'barbatus:angular2-runtime'], 'client');
-+
-+  api.mainModule('socially-mobile.ts', 'web.cordova');
-+  api.addFiles('auth/login.html', 'web.cordova');
-+});
-+
-+Package.onTest(function(api) {
-+});
-diff --git a/packages/socially-mobile/socially-mobile.ts b/packages/socially-mobile/socially-mobile.ts
-new file mode 100644
-index 0000000..36ff3c8
---- /dev/null
-+++ b/packages/socially-mobile/socially-mobile.ts
-@@ -0,0 +1,3 @@
-+import 'reflect-metadata';
-+
-+export * from "./auth/login";
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 1a455ce0a04dfe5dd0710d288be2090b566c61b4 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:19:27 +0300
-Subject: [PATCH 182/191] Step 21.15: Add the login component for the mobile
-
----
- .meteor/packages                         |  1 +
- .meteor/versions                         |  1 +
- packages/socially-mobile/auth/login.html |  1 +
- packages/socially-mobile/auth/login.ts   | 12 ++++++++++++
- 4 files changed, 15 insertions(+)
- create mode 100644 packages/socially-mobile/auth/login.html
- create mode 100644 packages/socially-mobile/auth/login.ts
-
-diff --git a/.meteor/packages b/.meteor/packages
-index bf4d3ce..01ee572 100644
---- a/.meteor/packages
-+++ b/.meteor/packages
-@@ -24,3 +24,4 @@ email
- check
- fourseven:scss
- socially-browser
-+socially-mobile
-diff --git a/.meteor/versions b/.meteor/versions
-index c84ef96..3f0f539 100644
---- a/.meteor/versions
-+++ b/.meteor/versions
-@@ -71,6 +71,7 @@ service-configuration@1.0.9
- session@1.1.5
- sha@1.0.7
- socially-browser@0.0.1
-+socially-mobile@0.0.1
- spacebars@1.0.11
- spacebars-compiler@1.0.11
- srp@1.0.8
-diff --git a/packages/socially-mobile/auth/login.html b/packages/socially-mobile/auth/login.html
-new file mode 100644
-index 0000000..88395a9
---- /dev/null
-+++ b/packages/socially-mobile/auth/login.html
-@@ -0,0 +1 @@
-+This is the mobile login!
-\ No newline at end of file
-diff --git a/packages/socially-mobile/auth/login.ts b/packages/socially-mobile/auth/login.ts
-new file mode 100644
-index 0000000..b9050d5
---- /dev/null
-+++ b/packages/socially-mobile/auth/login.ts
-@@ -0,0 +1,12 @@
-+import {Component} from 'angular2/core';
-+import {MeteorComponent} from 'angular2-meteor';
-+
-+@Component({
-+  selector: 'login',
-+  templateUrl: '/packages/socially-mobile/auth/login.html'
-+})
-+export class MobileLogin extends MeteorComponent {
-+  constructor() {
-+    super();
-+  }
-+}
--- 
-2.6.3
-
-
-From 66815fe6d981ee01336970536fa2053fd4427403 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:20:04 +0300
-Subject: [PATCH 183/191] Step 21.17: Import and use the mobile login
-
----
- client/app.ts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/client/app.ts b/client/app.ts
-index 8c8887e..34b256e 100644
---- a/client/app.ts
-+++ b/client/app.ts
-@@ -19,6 +19,7 @@ import {InjectUser} from 'angular2-meteor-accounts-ui';
- import {Signup} from './imports/auth/signup.ts';
- import {Recover} from './imports/auth/recover.ts';
- import {BrowserLogin} from 'meteor/socially-browser';
-+import {MobileLogin} from 'meteor/socially-mobile';
- 
- @Component({
-   selector: 'app',
-@@ -29,7 +30,7 @@ import {BrowserLogin} from 'meteor/socially-browser';
- @RouteConfig([
-   { path: '/', as: 'PartiesList', component: PartiesList },
-   { path: '/party/:partyId', as: 'PartyDetails', component: PartyDetails },
--  { path: '/login', as: 'Login', component: BrowserLogin },
-+  { path: '/login', as: 'Login', component: BrowserLogin || MobileLogin},
-   { path: '/signup', as: 'Signup', component: Signup },
-   { path: '/recover', as: 'Recover', component: Recover }
- ])
--- 
-2.6.3
-
-
-From c742ede6eaa6410a77b835d38a5ba3fdc7d24fe6 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:35:26 +0300
-Subject: [PATCH 184/191] Step 22.1: Add ionic to the project
-
----
- package.json | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/package.json b/package.json
-index f7cd905..35fa824 100644
---- a/package.json
-+++ b/package.json
-@@ -20,6 +20,7 @@
-     "es6-shim": "^0.35.1",
-     "meteor-node-stubs": "^0.2.3",
-     "reflect-metadata": "^0.1.2",
-+    "ionic-webpack-package": "^1.0.0",
-     "rxjs": "^5.0.0-beta.6",
-     "zone.js": "^0.6.12"
-   }
--- 
-2.6.3
-
-
-From 763887582ed8c1f03acdcbf7ed2efbfe3ec36798 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:41:09 +0300
-Subject: [PATCH 185/191] Step 22.2: Export the mobile imports from the mobile
- package
-
----
- packages/socially-mobile/socially-mobile.ts | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/packages/socially-mobile/socially-mobile.ts b/packages/socially-mobile/socially-mobile.ts
-index 36ff3c8..cccf968 100644
---- a/packages/socially-mobile/socially-mobile.ts
-+++ b/packages/socially-mobile/socially-mobile.ts
-@@ -1,3 +1,5 @@
- import 'reflect-metadata';
-+import {IONIC_DIRECTIVES} from 'ionic-webpack-package';
- 
--export * from "./auth/login";
-\ No newline at end of file
-+export * from "./auth/login";
-+export let MOBILE_IMPORTS = IONIC_DIRECTIVES;
-\ No newline at end of file
--- 
-2.6.3
-
-
-From bfc1ec3cebeac062d0671cdb3cb2f67dc4cf56e5 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:41:49 +0300
-Subject: [PATCH 186/191] Step 22.3: Import the mobile imports in the root
- project
-
----
- client/app.ts | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/client/app.ts b/client/app.ts
-index 34b256e..0f451cc 100644
---- a/client/app.ts
-+++ b/client/app.ts
-@@ -19,7 +19,7 @@ import {InjectUser} from 'angular2-meteor-accounts-ui';
- import {Signup} from './imports/auth/signup.ts';
- import {Recover} from './imports/auth/recover.ts';
- import {BrowserLogin} from 'meteor/socially-browser';
--import {MobileLogin} from 'meteor/socially-mobile';
-+import {MobileLogin, MOBILE_IMPORTS} from 'meteor/socially-mobile';
- 
- @Component({
-   selector: 'app',
-@@ -49,4 +49,4 @@ class Socially extends MeteorComponent {
-   }
- }
- 
--bootstrap(Socially, [MATERIAL_PROVIDERS, ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
-+bootstrap(Socially, [MATERIAL_PROVIDERS, ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' }), MOBILE_IMPORTS || []]);
--- 
-2.6.3
-
-
-From 9f9f7bbfbdd2b5d1cfaf2aac07b7ba6fae7a384f Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:45:04 +0300
-Subject: [PATCH 187/191] Step 22.4: Added app component view for mobile
- package
-
----
- packages/socially-mobile/app/app.html | 1 +
- 1 file changed, 1 insertion(+)
- create mode 100644 packages/socially-mobile/app/app.html
-
-diff --git a/packages/socially-mobile/app/app.html b/packages/socially-mobile/app/app.html
-new file mode 100644
-index 0000000..d3974fa
---- /dev/null
-+++ b/packages/socially-mobile/app/app.html
-@@ -0,0 +1 @@
-+Mobile main!
-\ No newline at end of file
--- 
-2.6.3
-
-
-From ffa3cc8efcee3943cb0665febf77b1d4d1f593dd Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:45:26 +0300
-Subject: [PATCH 188/191] Step 22.5: Export the mobile app path from the
- package
-
----
- packages/socially-mobile/socially-mobile.ts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/packages/socially-mobile/socially-mobile.ts b/packages/socially-mobile/socially-mobile.ts
-index cccf968..17c8101 100644
---- a/packages/socially-mobile/socially-mobile.ts
-+++ b/packages/socially-mobile/socially-mobile.ts
-@@ -2,4 +2,5 @@ import 'reflect-metadata';
- import {IONIC_DIRECTIVES} from 'ionic-webpack-package';
- 
- export * from "./auth/login";
--export let MOBILE_IMPORTS = IONIC_DIRECTIVES;
-\ No newline at end of file
-+export let MOBILE_IMPORTS = IONIC_DIRECTIVES;
-+export let APP_COMPONENT_MOBILE_TEMPLATE = "/packages/socially-mobile/app/app.html";
-\ No newline at end of file
--- 
-2.6.3
-
-
-From 6572f3d13beecfc2e6af7870f9bd1e43c6a59954 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:45:43 +0300
-Subject: [PATCH 189/191] Step 22.6: Move the main app template into the
- browser package
-
----
- client/app.html                        | 17 -----------------
- packages/socially-browser/app/app.html | 17 +++++++++++++++++
- 2 files changed, 17 insertions(+), 17 deletions(-)
- delete mode 100644 client/app.html
- create mode 100644 packages/socially-browser/app/app.html
-
-diff --git a/client/app.html b/client/app.html
-deleted file mode 100644
-index a5bb6b8..0000000
---- a/client/app.html
-+++ /dev/null
-@@ -1,17 +0,0 @@
--<md-toolbar md-scroll-shrink layout="row" layout-align="start center" layout-padding>
--  <h2>
--    <a ui-sref="parties"><span class="md-title">Socially</span></a>
--  </h2>
--  <span flex></span>
--  <div class="navbar-right navbar-text">
--    <div [hidden]="user">
--      <button md-button [routerLink]="['/Login']" >Login</button>
--      <button md-button [routerLink]="['/Signup']">Sign up</button>
--    </div>
--    <div [hidden]="!user">
--      <span>{{ user | displayName }}</span>
--      <button md-button (click)="logout()">Logout</button>
--    </div>
--  </div>
--</md-toolbar>
--<router-outlet flex-gt-sm layout-gt-sm="row"></router-outlet>
-\ No newline at end of file
-diff --git a/packages/socially-browser/app/app.html b/packages/socially-browser/app/app.html
-new file mode 100644
-index 0000000..a5bb6b8
---- /dev/null
-+++ b/packages/socially-browser/app/app.html
-@@ -0,0 +1,17 @@
-+<md-toolbar md-scroll-shrink layout="row" layout-align="start center" layout-padding>
-+  <h2>
-+    <a ui-sref="parties"><span class="md-title">Socially</span></a>
-+  </h2>
-+  <span flex></span>
-+  <div class="navbar-right navbar-text">
-+    <div [hidden]="user">
-+      <button md-button [routerLink]="['/Login']" >Login</button>
-+      <button md-button [routerLink]="['/Signup']">Sign up</button>
-+    </div>
-+    <div [hidden]="!user">
-+      <span>{{ user | displayName }}</span>
-+      <button md-button (click)="logout()">Logout</button>
-+    </div>
-+  </div>
-+</md-toolbar>
-+<router-outlet flex-gt-sm layout-gt-sm="row"></router-outlet>
-\ No newline at end of file
--- 
-2.6.3
-
-
-From a6631834225d9335fa5de3b4ab880f5a28ea8d11 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:46:01 +0300
-Subject: [PATCH 190/191] Step 22.7: Export the path of browser app template
- from the browser package
-
----
- packages/socially-browser/socially-browser.ts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/packages/socially-browser/socially-browser.ts b/packages/socially-browser/socially-browser.ts
-index 36ff3c8..8744e46 100644
---- a/packages/socially-browser/socially-browser.ts
-+++ b/packages/socially-browser/socially-browser.ts
-@@ -1,3 +1,4 @@
- import 'reflect-metadata';
- 
--export * from "./auth/login";
-\ No newline at end of file
-+export * from "./auth/login";
-+export let APP_COMPONENT_BROWSER_TEMPLATE = "/packages/socially-browser/app/app.html";
-\ No newline at end of file
--- 
-2.6.3
-
-
-From c60ce383564747ffd92ab850560e09377d3265c5 Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Mon, 11 Apr 2016 23:46:17 +0300
-Subject: [PATCH 191/191] Step 22.8: Added usage of the dynamic template path
-
----
- client/app.ts | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/client/app.ts b/client/app.ts
-index 0f451cc..efda4e0 100644
---- a/client/app.ts
-+++ b/client/app.ts
-@@ -18,12 +18,12 @@ import {DisplayName} from './imports/pipes/pipes.ts';
- import {InjectUser} from 'angular2-meteor-accounts-ui';
- import {Signup} from './imports/auth/signup.ts';
- import {Recover} from './imports/auth/recover.ts';
--import {BrowserLogin} from 'meteor/socially-browser';
--import {MobileLogin, MOBILE_IMPORTS} from 'meteor/socially-mobile';
-+import {BrowserLogin, APP_COMPONENT_BROWSER_TEMPLATE} from 'meteor/socially-browser';
-+import {MobileLogin, MOBILE_IMPORTS, APP_COMPONENT_MOBILE_TEMPLATE} from 'meteor/socially-mobile';
- 
- @Component({
-   selector: 'app',
--  templateUrl: 'client/app.html',
-+  templateUrl: APP_COMPONENT_BROWSER_TEMPLATE || APP_COMPONENT_MOBILE_TEMPLATE,
-   directives: [ROUTER_DIRECTIVES, LoginButtons, MATERIAL_DIRECTIVES, RouterLink],
-   pipes: [DisplayName]
- })
--- 
-2.6.3
+2.6.4
 
