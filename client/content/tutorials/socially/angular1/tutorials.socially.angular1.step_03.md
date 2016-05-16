@@ -15,7 +15,7 @@ Meteor makes writing distributed client code as simple as talking to a local dat
 
 Every Meteor client includes an in-memory database cache. To manage the client cache, the server publishes sets of JSON documents, and the client subscribes to these sets. As documents in a set change, the server patches each client's cache automatically.
 
-That introduce us to a new concept - **Full Stack Reactivity**.
+That introduces us to a new concept - **Full Stack Reactivity**.
 
 In an Angularish language we might call it **3 way data binding**.
 
