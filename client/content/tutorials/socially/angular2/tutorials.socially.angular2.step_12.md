@@ -102,7 +102,11 @@ pretty much the same if we were to use a pagination filter in Angular 1.
 First, let's import all of the pagination parts into the `PartiesList` component, and then
 set them up to be available in the component's view as follows:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" filename="client/imports/parties-list/parties-list.ts" step="12.8"}}
+
+And let's also import the stylesheet of the package:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" filename="client/css/main.scss" step="12.8"}}
 
 Now, add the pagination pipe and controls to the `parties-list.html` template:
 
