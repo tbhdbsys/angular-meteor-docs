@@ -117,11 +117,11 @@ and management called `typings`. You can find more information about it [here](h
 
 In our case, we'll need to execute commands as follows to install all dependencies:
 
-        $ npm install typings -g
+        $ sudo npm install typings -g
         $ typings init
         $ typings install es6-promise --save
-        $ typings install es6-shim --ambient --save
-        $ typings install registry:env/meteor --ambient
+        $ typings install dt~es6-shim --global --save
+        $ typings install registry:env/meteor --global
 
 If you look into the typings folder after the execution, you'll find there a definition file called `main.d.ts`.
 
