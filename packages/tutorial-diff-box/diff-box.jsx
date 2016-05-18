@@ -4,21 +4,27 @@ DiffBox._tutorials = {};
 
 DiffBox.registerTutorial = function (tutorialName, metadata) {
   if (! Match.test(metadata, {
-    gitHubRepoName: String,
-    patchFilename: String
-  })) {
+      gitHubRepoName: String,
+      patchFilename: String
+    })) {
     throw new Error("Must pass 'gitHubRepoName' and 'patchFilename' fields to DiffBox.registerTutorial.");
   }
 
   DiffBox._tutorials[tutorialName] = metadata;
 };
 
+function escapeHtml(unsafe) {
+  return unsafe
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+}
+
 Template.DiffBox.onCreated(function () {
   if (! Match.test(Template.currentData(), {
-    step: String,
-    tutorialName: String,
-    filename: Match.Optional(String)
-  })) {
+      step: String,
+      tutorialName: String,
+      filename: Match.Optional(String)
+    })) {
     throw new Error("Must pass 'step' and 'tutorialName' arguments to DiffBox.");
   }
 
@@ -88,9 +94,9 @@ Template.DiffBox.helpers({
 
           if (hljs.getLanguage(fileType)) {
             highlightedContent =
-              hljs.highlight(fileType, line.content , true).value;
+              hljs.highlight(fileType, fileType !== 'html' ? escapeHtml(line.content) : line.content , true).value;
           } else {
-            highlightedContent = line.content;
+            highlightedContent = escapeHtml(line.content);
           }
         }
 
