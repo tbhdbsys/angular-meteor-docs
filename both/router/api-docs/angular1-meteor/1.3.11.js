@@ -112,19 +112,19 @@ API_1_3_11 = function (version, basedOnTemplatesOf) {
           },
           {
             id: "13",
-            route: "api." + version + ".templates",
-            path: urlBase + "templates",
-            title: "$angularTemplatesSettings",
-            seoTitle: "$angularTemplatesSettings",
-            mdContent: "api." + version + ".templates"
-          },
-          {
-            id: "14",
             route: "api." + version + ".get-collection-reactively",
             path: urlBase + "get-collection-reactively",
             title: "getCollectionReactively",
             seoTitle: "getCollectionReactively",
             mdContent: "api." + templatePrefix + ".get-collection-reactively"
+          },
+          {
+            id: "14",
+            route: "api." + version + ".templates",
+            path: urlBase + "templates",
+            title: "angular-templates",
+            seoTitle: "angular-templates",
+            mdContent: "api." + version + ".templates"
           }
         ]
       }

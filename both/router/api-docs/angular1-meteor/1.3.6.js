@@ -92,7 +92,7 @@ API_1_3_6 = function (version, basedOnTemplatesOf) {
             path: urlBase + "blaze-template",
             title: "blaze-template directive",
             seoTitle: "blaze-template directive",
-            mdContent: "api." + templatePrefix + ".blaze-template"
+            mdContent: "api." + version + ".blaze-template"
           },
           {
             id: "11",
@@ -100,7 +100,7 @@ API_1_3_6 = function (version, basedOnTemplatesOf) {
             path: urlBase + "ngFileExtension",
             title: "File Extensions",
             seoTitle: "File Extensions",
-            mdContent: "api." + templatePrefix + ".ngFileExtension"
+            mdContent: "api." + version + ".ngFileExtension"
           },
           {
             id: "12",
