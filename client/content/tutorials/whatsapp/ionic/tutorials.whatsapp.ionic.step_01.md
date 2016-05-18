@@ -71,7 +71,7 @@ This is simply a file where all our desired scripts are loaded. Note that librar
 
 > *NOTE*: We can also specify the script loader as a general rule for all our libraries, but this way it won't be clear that the files we just imported are being imported as scripts. Both approaches are good, but we will stick with the direct and simple approach of specifying the script loader for every library module imported, because it's more declerative.
 
-As you can also there is an `app.js` file being imported at the bottom. This file should be our main app file. Let's write it:
+As you can see there is also an `app.js` file being imported at the bottom. This file should be our main app file. Let's write it:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="1.7"}}
 
