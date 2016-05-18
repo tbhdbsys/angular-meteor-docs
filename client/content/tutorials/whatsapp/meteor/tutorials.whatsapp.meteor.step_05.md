@@ -1,57 +1,56 @@
 {{#template name="tutorials.whatsapp.meteor.step_05.md"}}
 
+Our next step is about adding new chats. So far we have the chats list implemented and user management, we just need to connect the two.
 
-Our next step is about adding the ability to create new chats. So far we had the chats list and the users feature, we just need to connect them.
-
-We will open the new chat view using Ionic’s modal dialog, so first let’s add a button that opens this dialog to the chats list:
-
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.0"}}
-
-This button calls a controller method, which we will implement now in the controller:
+We will open the new chat view using `Ionic`'s modal dialog, so first let's add a button that opens this dialog to the chats list:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.1"}}
 
-Note that we first create the modal dialog with a template, and then later we open it in the button function.
-
-Now let’s add the view of this modal dialog, which is just a list of users:
+This button calls a controller method, which we will implement now in the controller:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.2"}}
 
-And in order to open this modal, we will create a service that takes care of that:
+Note that we first create the modal dialog with a template, and later on we will implement the logic of showing it on screen.
+
+Now let's add the view of this modal dialog, which is just a list of users:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.3"}}
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.4"}}
+And in order to open this modal, we will create a service that takes care of it:
 
-And now we will add the controller of this view, and use the `NewChat` service:
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.4"}}
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.5"}}
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.6"}}
+And now we will add the controller of this view, and use the `NewChat` service:
 
-It includes the Users collection and a function for creating a new chat. This function is not yet implemented in the server, so let’s create it:
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.6"}}
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.7"}}
 
-We will also rewrite the logic of `removeChat()` function in the `ChatsCtrl` and we will call a server method instead (which will be explained why further in this tutorial):
+It includes the users collection and a function for creating a new chat. This function is not yet implemented in the server, so let's create it:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.8"}}
 
-And we will implement the method on the server:
+We will also rewrite the logic of `removeChat()` function in the `ChatsCtrl` and we will call a server method instead (which will be explained why further in this tutorial):
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.9"}}
 
-The next messages won’t include the username, only the user id, so we need to change the logic of username display. We will add a filter that fetches the user object from the Users collection according to the `userId` property of the chat object:
+And we will implement the method on the server:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.10"}}
 
-{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.11"}}
+The next messages won't include the username, only the user id, so we need to change the logic of username display. We will add a filter that fetches the user object from the users collection according to the `userId` property of the chat object:
 
-And we will also create the same logic for fetching the user’s image:
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.11"}}
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.12"}}
 
+And we will also create the same logic for fetching the user's image:
+
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.13"}}
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.14"}}
 
 And we will add the usage of this filter in the chats list:
 
@@ -63,11 +62,11 @@ And in the chat view:
 
 Now we want to get rid of the current data we have, which is just a static data.
 
-So let’s stop our Meteor’s server and reset the whole app by running:
+So let's stop our `Meteor`'s server and reset the whole app by running:
 
     $ meteor reset
 
-Let’s add some users to the server instead of the old static data:
+Let's add some users to the server instead of the old static data:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="5.16"}}
 
@@ -77,13 +76,13 @@ Run it again, and this should be the result of the new Modal we created:
 
 Cool! and now clicking a user will open a chat with that user.
 
-Our last part of this step is to remove Meteor’s package named `insecure`.
+Our last part of this step is to remove `Meteor`'s package named `insecure`.
 
 This package provides the ability to run `remove()` method from the client side in our collection. This is a behavior we do not want to use because removing data and creating data should be done in the server and only after certain validations, and this is the reason for implementing the `removeChat()` method in the server.
 
-Meteor includes this package only for development purposes and it should be removed once our app is ready for production.
+`Meteor` includes this package only for development purposes and it should be removed once our app is ready for production.
 
-So removing this package by running this command:
+So remove this package by running this command:
 
     $ meteor remove insecure
 

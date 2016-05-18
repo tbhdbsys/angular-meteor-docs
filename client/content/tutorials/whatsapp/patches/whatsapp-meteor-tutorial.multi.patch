@@ -1,7 +1,7 @@
-From 89ddc93a2bfdf339e68c0425ce1edef6fbc91b08 Mon Sep 17 00:00:00 2001
+From 18dfae2516cbedfde09308da4cf31129ab4275a4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:04:49 +0300
-Subject: [PATCH 001/116] Step 1.0: Create project
+Subject: [PATCH 001/115] Step 0.1: Create project
 
 ---
  .gitignore                  |  1 +
@@ -208,10 +208,10 @@ index 0000000..4277e98
 2.5.0
 
 
-From de5d0b9573f565cc528f37c27cc3c4e3d5797730 Mon Sep 17 00:00:00 2001
+From 2d3ccd010a8d46470e6f05bf1b95657ec661d1f5 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:06:19 +0300
-Subject: [PATCH 002/116] Step 1.1: Initial setup
+Subject: [PATCH 002/115] Step 0.2: Initial setup
 
 ---
  .meteor/packages | 3 ++-
@@ -291,10 +291,10 @@ index 4277e98..141c29d 100644
 2.5.0
 
 
-From 6a512fade6df51f8d9e364a324c1ea254e7c1854 Mon Sep 17 00:00:00 2001
+From 047a69981e1152c9acec2635da6f25d99a86ac7f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:11:10 +0300
-Subject: [PATCH 003/116] Step 1.2: Create main html file
+Subject: [PATCH 003/115] Step 1.1: Create main html file
 
 ---
  client/index.html | 22 ++++++++++++++++++++++
@@ -334,276 +334,85 @@ index 0000000..a27b518
 2.5.0
 
 
-From 0aebaaafc42c8335f00a2aeaa1d7ce9a0816a3a2 Mon Sep 17 00:00:00 2001
+From 87e9046738efe05630b81ceb79f89478c1f33daf Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:21:27 +0300
-Subject: [PATCH 004/116] Step 1.3: Create main app file
+Subject: [PATCH 004/115] Step 1.2: Create main app file
 
 ---
- client/scripts/lib/app.js | 27 +++++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
+ client/scripts/lib/app.js | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
  create mode 100644 client/scripts/lib/app.js
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
 new file mode 100644
-index 0000000..4733783
+index 0000000..f9ab95c
 --- /dev/null
 +++ b/client/scripts/lib/app.js
-@@ -0,0 +1,27 @@
+@@ -0,0 +1,30 @@
 +// Libs
-+import angular from 'angular';
 +import 'angular-animate';
 +import 'angular-meteor';
 +import 'angular-sanitize';
 +import 'angular-ui-router';
 +import 'ionic-scripts';
++import Angular from 'angular';
++import { Meteor } from 'meteor/meteor';
 +
 +// Modules
 +
++const App = 'Whatsapp';
++
 +// App
-+const App = angular.module('Whatsapp', [
++Angular.module(App, [
 +  'angular-meteor',
 +  'ionic'
 +]);
 +
 +// Startup
 +if (Meteor.isCordova) {
-+  angular.element(document).on('deviceready', onReady);
++  Angular.element(document).on('deviceready', onReady);
 +}
 +else {
-+  angular.element(document).ready(onReady);
++  Angular.element(document).ready(onReady);
 +}
 +
 +function onReady() {
-+  angular.bootstrap(document, ['Whatsapp']);
++  Angular.bootstrap(document, [App]);
 +}
 -- 
 2.5.0
 
 
-From 895b084ef7e3e45d20af03f800fecc0c0fab998b Mon Sep 17 00:00:00 2001
+From e8c5a61d23a64d8b0aece93a482d00865b7b20e3 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:32:04 +0300
-Subject: [PATCH 005/116] Step 1.4: Add angular es6 class helpers
+Subject: [PATCH 005/115] Step 1.3: Add angular es6 class helpers
 
 ---
- client/scripts/entities.js | 62 ++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 62 insertions(+)
- create mode 100644 client/scripts/entities.js
+ package.json | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/client/scripts/entities.js b/client/scripts/entities.js
-new file mode 100644
-index 0000000..81b0c61
---- /dev/null
-+++ b/client/scripts/entities.js
-@@ -0,0 +1,62 @@
-+class Injectable {
-+  constructor() {
-+    this.constructor.$inject.forEach((name, i) => {
-+      this[name] = arguments[i];
-+    });
-+  }
-+}
-+
-+export class Controller extends Injectable {
-+  constructor() {
-+    super(...arguments);
-+
-+    const createViewModel = this.$scope &&
-+      (this.$scope.viewModel || this.$scope.$viewModel);
-+
-+    if (createViewModel) {
-+      createViewModel.call(this.$scope, this);
-+    }
-+  }
-+}
-+
-+export class Provider extends Injectable {
-+}
-+
-+export class Service extends Injectable {
-+}
-+
-+export class Directive extends Injectable {
-+  compile() {
-+    return this.link.bind(this);
-+  }
-+}
-+
-+export class Decorator extends Injectable {
-+  decorate() {
-+    throw Error('Decorator#decorate() must be implemented');
-+  }
-+}
-+
-+export class Factory extends Injectable {
-+  create() {
-+    throw Error('Factory#create() must be implemented');
-+  }
-+}
-+
-+export class Filter extends Injectable {
-+  filter() {
-+    throw Error('Filter#filter() must be implemented');
-+  }
-+}
-+
-+export class Config extends Injectable {
-+  configure() {
-+    throw Error('Config#configure() must be implemented');
-+  }
-+}
-+
-+export class Runner extends Injectable {
-+  run() {
-+    throw Error('Runner#run() must be implemented');
-+  }
-+}
+diff --git a/package.json b/package.json
+index 141c29d..e5e3d10 100644
+--- a/package.json
++++ b/package.json
+@@ -7,6 +7,7 @@
+   "dependencies": {
+     "angular": "^1.5.3",
+     "angular-animate": "^1.5.3",
++    "angular-ecmascript": "0.0.3",
+     "angular-meteor": "^1.3.9",
+     "angular-sanitize": "^1.5.3",
+     "angular-ui-router": "^0.2.18",
 -- 
 2.5.0
 
 
-From 0f5ddbd76251c2ef6099edbf021d007c81cbfaa5 Mon Sep 17 00:00:00 2001
-From: DAB0mB <emanor6@gmail.com>
-Date: Fri, 1 Apr 2016 18:33:09 +0300
-Subject: [PATCH 006/116] Step 1.5: Add modules definer
-
----
- client/scripts/definer.js | 116 ++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 116 insertions(+)
- create mode 100644 client/scripts/definer.js
-
-diff --git a/client/scripts/definer.js b/client/scripts/definer.js
-new file mode 100644
-index 0000000..2300350
---- /dev/null
-+++ b/client/scripts/definer.js
-@@ -0,0 +1,116 @@
-+import angular from 'angular';
-+import * as Entities from './entities';
-+
-+export default class Definer {
-+  constructor(module, dependencies) {
-+    if (_.isString(module)) {
-+      module = angular.module(module, dependencies);
-+    }
-+
-+    this.module = module;
-+  }
-+
-+  define(Entity, ...args) {
-+    if (_.isFunction(Entity)) {
-+      const proto = Entity.prototype;
-+      Entity.$inject = Entity.$inject || [];
-+
-+      if (proto instanceof Entities.Controller)
-+        this._defineController(Entity);
-+      else if (proto instanceof Entities.Provider)
-+        this._defineProvider(Entity);
-+      else if (proto instanceof Entities.Service)
-+        this._defineService(Entity);
-+      else if (proto instanceof Entities.Decorator)
-+        this._defineDecorator(Entity);
-+      else if (proto instanceof Entities.Directive)
-+        this._defineDirective(Entity);
-+      else if (proto instanceof Entities.Factory)
-+        this._defineFactory(Entity);
-+      else if (proto instanceof Entities.Filter)
-+        this._defineFilter(Entity);
-+      else if (proto instanceof Entities.Config)
-+        this._defineConfig(Entity);
-+      else if (proto instanceof Entities.Runner)
-+        this._defineRunner(Entity);
-+      else
-+        throw Error("can't define unknown entity type");
-+    }
-+    else {
-+      this.module[Entity](...args);
-+    }
-+
-+    return this;
-+  }
-+
-+  _defineProvider(Provider) {
-+    this.module.provider(Provider.name, Provider);
-+  }
-+
-+  _defineController(Controller) {
-+    this.module.controller(Controller.name, Controller);
-+  }
-+
-+  _defineService(Service) {
-+    this.module.service(Service.name, Service)
-+  }
-+
-+  _defineDecorator(Decorator) {
-+    function handler() {
-+      const decorator = new Decorator(...arguments);
-+      return decorator.decorate.bind(decorator);
-+    }
-+
-+    handler.$inject = Decorator.$inject;
-+    this.module.decorator(Decorator.name, handler);
-+  }
-+
-+  _defineDirective(Directive) {
-+    function handler() {
-+      return new Directive(...arguments);
-+    }
-+
-+    handler.$inject = Directive.$inject;
-+    this.module.directive(Directive.name, handler);
-+  }
-+
-+  _defineFactory(Factory) {
-+    function handler() {
-+      const factory = new Factory(...arguments);
-+      return factory.create.bind(factory);
-+    }
-+
-+    handler.$inject = Factory.$inject;
-+    this.module.factory(Factory.name, handler);
-+  }
-+
-+  _defineFilter(Filter) {
-+    function handler() {
-+      const filter = new Filter(...arguments);
-+      return filter.filter.bind(filter);
-+    }
-+
-+    handler.$inject = Filter.$inject;
-+    this.module.filter(Filter.name, handler);
-+  }
-+
-+  _defineConfig(Config) {
-+    function handler() {
-+      const config = new Config(...arguments);
-+      return config.configure();
-+    }
-+
-+    handler.$inject = Config.$inject;
-+    this.module.config(handler);
-+  }
-+
-+  _defineRunner(Runner) {
-+    function handler() {
-+      const runner = new Runner(...arguments);
-+      return runner.run();
-+    }
-+
-+    handler.$inject = Runner.$inject;
-+    this.module.run(handler);
-+  }
-+}
-\ No newline at end of file
--- 
-2.5.0
-
-
-From 703bc08191e0c1b6cea8737f05419c20fcaaa52f Mon Sep 17 00:00:00 2001
+From 751064efc9131caa79068d19cd75d50498bf7f3e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:40:40 +0300
-Subject: [PATCH 007/116] Step 1.6: Add initial routes
+Subject: [PATCH 006/115] Step 1.4: Add initial routes
 
 ---
  client/scripts/routes.js | 24 ++++++++++++++++++++++++
@@ -612,11 +421,11 @@ Subject: [PATCH 007/116] Step 1.6: Add initial routes
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
 new file mode 100644
-index 0000000..ceb9e83
+index 0000000..17165ce
 --- /dev/null
 +++ b/client/scripts/routes.js
 @@ -0,0 +1,24 @@
-+import { Config } from './entities';
++import { Config } from 'angular-ecmascript/module-helpers';
 +
 +export default class RoutesConfig extends Config {
 +  configure() {
@@ -645,59 +454,61 @@ index 0000000..ceb9e83
 2.5.0
 
 
-From fa54a1e103880f214330827959f21bc9ab997992 Mon Sep 17 00:00:00 2001
+From f17de3ba6c0e957cd5e484ced65f53a2c53bae2f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:44:59 +0300
-Subject: [PATCH 008/116] Step 1.7: Load routes config
+Subject: [PATCH 007/115] Step 1.5: Load routes config
 
 ---
  client/scripts/lib/app.js | 5 +++++
  1 file changed, 5 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 4733783..c5a26ec 100644
+index f9ab95c..8b49417 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -7,6 +7,8 @@ import 'angular-ui-router';
+@@ -5,9 +5,11 @@ import 'angular-sanitize';
+ import 'angular-ui-router';
  import 'ionic-scripts';
+ import Angular from 'angular';
++import Loader from 'angular-ecmascript/module-loader';
+ import { Meteor } from 'meteor/meteor';
  
  // Modules
-+import Definer from '../definer';
 +import RoutesConfig from '../routes';
  
- // App
- const App = angular.module('Whatsapp', [
-@@ -14,6 +16,9 @@ const App = angular.module('Whatsapp', [
+ const App = 'Whatsapp';
+ 
+@@ -17,6 +19,9 @@ Angular.module(App, [
    'ionic'
  ]);
  
-+new Definer(App)
-+  .define(RoutesConfig);
++new Loader(App)
++  .load(RoutesConfig);
 +
  // Startup
  if (Meteor.isCordova) {
-   angular.element(document).on('deviceready', onReady);
+   Angular.element(document).on('deviceready', onReady);
 -- 
 2.5.0
 
 
-From 8e0991dc68f6080ed261678a907d0d3a6328370e Mon Sep 17 00:00:00 2001
+From 44dbc5110ab18c5fdbe7a64a52f2a59b358a2d5d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:13:21 +0300
-Subject: [PATCH 009/116] Step 1.8: Create tabs view
+Subject: [PATCH 008/115] Step 1.6: Create tabs view
 
 ---
- client/templates/tabs.html | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ client/templates/tabs.html | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
  create mode 100644 client/templates/tabs.html
 
 diff --git a/client/templates/tabs.html b/client/templates/tabs.html
 new file mode 100644
-index 0000000..ece5253
+index 0000000..14ec5fb
 --- /dev/null
 +++ b/client/templates/tabs.html
-@@ -0,0 +1,24 @@
-+
+@@ -0,0 +1,23 @@
 +<ion-tabs class="tabs-stable tabs-icon-top tabs-color-positive" ng-cloak>
 +
 +  <ion-tab title="Favorites" icon-on="ion-ios-star" icon-off="ion-ios-star-outline" href="#/tab/favorites">
@@ -726,10 +537,10 @@ index 0000000..ece5253
 2.5.0
 
 
-From 9189aae8c58ce3aafc5a69a8145ed66cdfc500dc Mon Sep 17 00:00:00 2001
+From 4dc906974edf465a3e24f298eecf674f03585fb3 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:15:22 +0300
-Subject: [PATCH 010/116] Step 1.9: Create chats view
+Subject: [PATCH 009/115] Step 1.7: Create chats view
 
 ---
  client/templates/chats.html | 5 +++++
@@ -752,10 +563,10 @@ index 0000000..b1d926f
 2.5.0
 
 
-From e13e6bd8aec58da27bc0d6b10674189d398c1079 Mon Sep 17 00:00:00 2001
+From 9b6e853d56d81e5fc8194be09622afe325d243b0 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:16:27 +0300
-Subject: [PATCH 011/116] Step 1.10: Add IOS platform
+Subject: [PATCH 010/115] Step 1.8: Add IOS platform
 
 ---
  .meteor/platforms | 1 +
@@ -773,80 +584,78 @@ index efeba1b..cc0f96a 100644
 2.5.0
 
 
-From 6f11c4e01cb8444429c89f221ae9ce0203c909b4 Mon Sep 17 00:00:00 2001
+From 28aa777570b8e3fd8b968268227e9456515269a4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:19:07 +0300
-Subject: [PATCH 012/116] Step 1.11: Create chats controller
+Subject: [PATCH 011/115] Step 1.9: Create chats controller
 
 ---
- client/scripts/controllers/chats.controller.js | 6 ++++++
- 1 file changed, 6 insertions(+)
+ client/scripts/controllers/chats.controller.js | 4 ++++
+ 1 file changed, 4 insertions(+)
  create mode 100644 client/scripts/controllers/chats.controller.js
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
 new file mode 100644
-index 0000000..9e58909
+index 0000000..22b00f9
 --- /dev/null
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -0,0 +1,6 @@
-+import { Controller } from '../entities';
+@@ -0,0 +1,4 @@
++import { Controller } from 'angular-ecmascript/module-helpers';
 +
 +export default class ChatsCtrl extends Controller {
 +}
-+
-+ChatsCtrl.$inject = ['$scope'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From aa9579518496c209f25792418b4f058713c7585e Mon Sep 17 00:00:00 2001
+From 10617270d39a99cce843dba75fde3906afb1dca4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:20:52 +0300
-Subject: [PATCH 013/116] Step 1.12: Load chats controller
+Subject: [PATCH 012/115] Step 1.10: Load chats controller
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index c5a26ec..b90b89c 100644
+index 8b49417..b332f9e 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -8,6 +8,7 @@ import 'ionic-scripts';
+@@ -9,6 +9,7 @@ import Loader from 'angular-ecmascript/module-loader';
+ import { Meteor } from 'meteor/meteor';
  
  // Modules
- import Definer from '../definer';
 +import ChatsCtrl from '../controllers/chats.controller';
  import RoutesConfig from '../routes';
  
- // App
-@@ -17,6 +18,7 @@ const App = angular.module('Whatsapp', [
+ const App = 'Whatsapp';
+@@ -20,6 +21,7 @@ Angular.module(App, [
  ]);
  
- new Definer(App)
-+  .define(ChatsCtrl)
-   .define(RoutesConfig);
+ new Loader(App)
++  .load(ChatsCtrl)
+   .load(RoutesConfig);
  
  // Startup
 -- 
 2.5.0
 
 
-From 7e7b1cd4adcb50fd3ea266f6d22dfe32eaebe2c7 Mon Sep 17 00:00:00 2001
+From b6e23158ba1372ff6d943149faa5a8b36965730e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:24:25 +0300
-Subject: [PATCH 014/116] Step 1.13: Add moment npm package
+Subject: [PATCH 013/115] Step 1.11: Add moment npm package
 
 ---
  package.json | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/package.json b/package.json
-index 141c29d..9085e95 100644
+index e5e3d10..3e9483f 100644
 --- a/package.json
 +++ b/package.json
-@@ -11,6 +11,7 @@
+@@ -12,6 +12,7 @@
      "angular-sanitize": "^1.5.3",
      "angular-ui-router": "^0.2.18",
      "ionic-scripts": "0.0.1",
@@ -859,24 +668,26 @@ index 141c29d..9085e95 100644
 2.5.0
 
 
-From 732d3183a3865cbd299fab05f4e02cd19a6efa9e Mon Sep 17 00:00:00 2001
+From aaef78e38e0f78f4d05d66eb50fbc66d795dee42 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:27:54 +0300
-Subject: [PATCH 015/116] Step 1.14: Add data stub to chats controller
+Subject: [PATCH 014/115] Step 1.12: Add data stub to chats controller
 
 ---
  client/scripts/controllers/chats.controller.js | 54 +++++++++++++++++++++++++-
  1 file changed, 53 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index 9e58909..dab9f27 100644
+index 22b00f9..909bdfd 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -1,6 +1,58 @@
-+import moment from 'moment';
- import { Controller } from '../entities';
+@@ -1,4 +1,56 @@
++import Moment from 'moment';
+ import { Controller } from 'angular-ecmascript/module-helpers';
  
  export default class ChatsCtrl extends Controller {
+-}
+\ No newline at end of file
 +  constructor() {
 +    super(...arguments);
 +
@@ -887,7 +698,7 @@ index 9e58909..dab9f27 100644
 +        picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
 +        lastMessage: {
 +          text: 'You on your way?',
-+          timestamp: moment().subtract(1, 'hours').toDate()
++          timestamp: Moment().subtract(1, 'hours').toDate()
 +        }
 +      },
 +      {
@@ -896,7 +707,7 @@ index 9e58909..dab9f27 100644
 +        picture: 'https://randomuser.me/api/portraits/thumb/lego/1.jpg',
 +        lastMessage: {
 +          text: 'Hey, it\'s me',
-+          timestamp: moment().subtract(2, 'hours').toDate()
++          timestamp: Moment().subtract(2, 'hours').toDate()
 +        }
 +      },
 +      {
@@ -905,7 +716,7 @@ index 9e58909..dab9f27 100644
 +        picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg',
 +        lastMessage: {
 +          text: 'I should buy a boat',
-+          timestamp: moment().subtract(1, 'days').toDate()
++          timestamp: Moment().subtract(1, 'days').toDate()
 +        }
 +      },
 +      {
@@ -914,7 +725,7 @@ index 9e58909..dab9f27 100644
 +        picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg',
 +        lastMessage: {
 +          text: 'Look at my mukluks!',
-+          timestamp: moment().subtract(4, 'days').toDate()
++          timestamp: Moment().subtract(4, 'days').toDate()
 +        }
 +      },
 +      {
@@ -923,31 +734,27 @@ index 9e58909..dab9f27 100644
 +        picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg',
 +        lastMessage: {
 +          text: 'This is wicked good ice cream.',
-+          timestamp: moment().subtract(2, 'weeks').toDate()
++          timestamp: Moment().subtract(2, 'weeks').toDate()
 +        }
 +      }
 +    ];
 +  }
- }
- 
--ChatsCtrl.$inject = ['$scope'];
-\ No newline at end of file
-+ChatsCtrl.$inject = ['$scope'];
++}
 -- 
 2.5.0
 
 
-From 914c93b131eebc1cd5cd7253e7b6c0ef7065ada8 Mon Sep 17 00:00:00 2001
+From 5d65d31bf09e7fe6d5b6c697c4d1c8f146d78663 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:30:19 +0300
-Subject: [PATCH 016/116] Step 1.15: Connect chats controller to chats view
+Subject: [PATCH 015/115] Step 1.13: Connect chats controller to chats view
 
 ---
  client/scripts/routes.js | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index ceb9e83..a40a32c 100644
+index 17165ce..43898c5 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
 @@ -12,7 +12,8 @@ export default class RoutesConfig extends Config {
@@ -964,28 +771,27 @@ index ceb9e83..a40a32c 100644
 2.5.0
 
 
-From cb9379ca371a1f97bd21f9a24bf6f1365c933d82 Mon Sep 17 00:00:00 2001
+From ba0cf6f520a37b7ff39f72e538bc9ca550c3e242 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:32:46 +0300
-Subject: [PATCH 017/116] Step 1.16: Add data stub to chats view
+Subject: [PATCH 016/115] Step 1.14: Add data stub to chats view
 
 ---
- client/templates/chats.html | 13 ++++++++++++-
- 1 file changed, 12 insertions(+), 1 deletion(-)
+ client/templates/chats.html | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index b1d926f..a9caadc 100644
+index b1d926f..73fd236 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
-@@ -1,5 +1,16 @@
+@@ -1,5 +1,15 @@
  <ion-view view-title="Chats">
    <ion-content>
 -
 +    <ion-list>
-+      <ion-item
-+              ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
-+              class="item-chat item-remove-animate item-avatar item-icon-right"
-+              type="item-text-wrap">
++      <ion-item ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
++                class="item-chat item-remove-animate item-avatar item-icon-right"
++                type="item-text-wrap">
 +        <img ng-src="{{ chat.picture }}">
 +        <h2>{{ chat.name }}</h2>
 +        <p>{{ chat.lastMessage.text }}</p>
@@ -1000,30 +806,30 @@ index b1d926f..a9caadc 100644
 2.5.0
 
 
-From 8b6a228952149974ab3f01adbbb401d04bc4af23 Mon Sep 17 00:00:00 2001
+From 5077b792227066a70bc108f014d8e3ece679b635 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:53:13 +0300
-Subject: [PATCH 018/116] Step 1.17: Create calendar filter
+Subject: [PATCH 017/115] Step 1.15: Create calendar filter
 
 ---
- client/scripts/filters/calendar.filter.js | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ client/scripts/filters/calendar.filter.js | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
  create mode 100644 client/scripts/filters/calendar.filter.js
 
 diff --git a/client/scripts/filters/calendar.filter.js b/client/scripts/filters/calendar.filter.js
 new file mode 100644
-index 0000000..ade0bfc
+index 0000000..f22da38
 --- /dev/null
 +++ b/client/scripts/filters/calendar.filter.js
-@@ -0,0 +1,15 @@
-+import moment from 'moment';
-+import { Filter } from '../entities';
+@@ -0,0 +1,17 @@
++import Moment from 'moment';
++import { Filter } from 'angular-ecmascript/module-helpers';
 +
-+export default class calendar extends Filter {
++export default class CalendarFilter extends Filter {
 +  filter(time) {
 +    if (!time) return;
 +
-+    return moment(time).calendar(null, {
++    return Moment(time).calendar(null, {
 +      lastDay : '[Yesterday]',
 +      sameDay : 'LT',
 +      lastWeek : 'dddd',
@@ -1031,58 +837,60 @@ index 0000000..ade0bfc
 +    });
 +  }
 +}
++
++CalendarFilter.$name = 'calendar';
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From 39dc2f4d9e1bbba96c869b33b265ef15636cd943 Mon Sep 17 00:00:00 2001
+From 016b9a3670888b01fb49297a4e8d8c6c88157c15 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:54:53 +0300
-Subject: [PATCH 019/116] Step 1.18: Load calendar filter
+Subject: [PATCH 018/115] Step 1.16: Load calendar filter
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index b90b89c..73db909 100644
+index b332f9e..abe61c0 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -9,6 +9,7 @@ import 'ionic-scripts';
+@@ -10,6 +10,7 @@ import { Meteor } from 'meteor/meteor';
+ 
  // Modules
- import Definer from '../definer';
  import ChatsCtrl from '../controllers/chats.controller';
 +import CalendarFilter from '../filters/calendar.filter';
  import RoutesConfig from '../routes';
  
- // App
-@@ -19,6 +20,7 @@ const App = angular.module('Whatsapp', [
+ const App = 'Whatsapp';
+@@ -22,6 +23,7 @@ Angular.module(App, [
  
- new Definer(App)
-   .define(ChatsCtrl)
-+  .define(CalendarFilter)
-   .define(RoutesConfig);
+ new Loader(App)
+   .load(ChatsCtrl)
++  .load(CalendarFilter)
+   .load(RoutesConfig);
  
  // Startup
 -- 
 2.5.0
 
 
-From 698211dac723ff39016bc672da2ff0d3756ce737 Mon Sep 17 00:00:00 2001
+From d3a00bb21fa1aa20e0c9564dc8e7b6496292f41c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:57:54 +0300
-Subject: [PATCH 020/116] Step 1.19: Apply calendar filter to chats view
+Subject: [PATCH 019/115] Step 1.17: Apply calendar filter to chats view
 
 ---
  client/templates/chats.html | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index a9caadc..a158175 100644
+index 73fd236..eaee732 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
-@@ -8,7 +8,7 @@
+@@ -7,7 +7,7 @@
          <img ng-src="{{ chat.picture }}">
          <h2>{{ chat.name }}</h2>
          <p>{{ chat.lastMessage.text }}</p>
@@ -1095,20 +903,20 @@ index a9caadc..a158175 100644
 2.5.0
 
 
-From 10a60b49a813b4d360aee81d62425fa789d56450 Mon Sep 17 00:00:00 2001
+From 4ce67889db00468633fd290cef666f5f743b2fdc Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 12:00:13 +0300
-Subject: [PATCH 021/116] Step 1.20: Add delete button to chats view
+Subject: [PATCH 020/115] Step 1.18: Add delete button to chats view
 
 ---
  client/templates/chats.html | 3 +++
  1 file changed, 3 insertions(+)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index a158175..7a08b34 100644
+index eaee732..5286351 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
-@@ -10,6 +10,9 @@
+@@ -9,6 +9,9 @@
          <p>{{ chat.lastMessage.text }}</p>
          <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
          <i class="icon ion-chevron-right icon-accessory"></i>
@@ -1122,21 +930,21 @@ index a158175..7a08b34 100644
 2.5.0
 
 
-From dd6adbc0205c230ce8bcca56386881fd816754d8 Mon Sep 17 00:00:00 2001
+From 9bab1ca916e484378ab786c78f14ef72360b46fe Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:21:42 +0300
-Subject: [PATCH 022/116] Step 1.21: Add delete button logic to chats
+Subject: [PATCH 021/115] Step 1.19: Add delete button logic to chats
  controller
 
 ---
- client/scripts/controllers/chats.controller.js | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ client/scripts/controllers/chats.controller.js | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index dab9f27..42aae98 100644
+index 909bdfd..20dcbeb 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -53,6 +53,10 @@ export default class ChatsCtrl extends Controller {
+@@ -53,4 +53,8 @@ export default class ChatsCtrl extends Controller {
        }
      ];
    }
@@ -1145,18 +953,14 @@ index dab9f27..42aae98 100644
 +    this.data.splice(this.data.indexOf(chat), 1);
 +  }
  }
- 
--ChatsCtrl.$inject = ['$scope'];
-+ChatsCtrl.$inject = ['$scope'];
-\ No newline at end of file
 -- 
 2.5.0
 
 
-From 6e32f49179da294144a30413d0adaeabc713e001 Mon Sep 17 00:00:00 2001
+From f2f352b65e9126b4c15e572bb6ad4c8e85050f3b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:22:46 +0300
-Subject: [PATCH 023/116] Step 1.22: Add sass meteor package
+Subject: [PATCH 022/115] Step 1.20: Add sass meteor package
 
 ---
  .meteor/packages | 1 +
@@ -1188,10 +992,10 @@ index bf91a90..fc2fc94 100644
 2.5.0
 
 
-From cd8a579ed47d2927c864b638430a762c6dea65c5 Mon Sep 17 00:00:00 2001
+From 428cbef64825d16da37872855f80d180fe8d2f1c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:25:03 +0300
-Subject: [PATCH 024/116] Step 1.23: Add chats stylesheet
+Subject: [PATCH 023/115] Step 1.21: Add chats stylesheet
 
 ---
  client/styles/chats.scss | 9 +++++++++
@@ -1218,33 +1022,35 @@ index 0000000..7c1b8d5
 2.5.0
 
 
-From af27953afece6b6d78d7134b031b9d04e5004562 Mon Sep 17 00:00:00 2001
+From da679935cc13560ccf5030b98a99dc052596274d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:31:05 +0300
-Subject: [PATCH 025/116] Step 2.0: Add meteor collections
+Subject: [PATCH 024/115] Step 2.1: Add meteor collections
 
 ---
- lib/collections.js | 2 ++
- 1 file changed, 2 insertions(+)
+ lib/collections.js | 4 ++++
+ 1 file changed, 4 insertions(+)
  create mode 100644 lib/collections.js
 
 diff --git a/lib/collections.js b/lib/collections.js
 new file mode 100644
-index 0000000..b08a877
+index 0000000..531e6c2
 --- /dev/null
 +++ b/lib/collections.js
-@@ -0,0 +1,2 @@
-+Chats = new Mongo.Collection('chats');
-+Messages = new Mongo.Collection('messages');
+@@ -0,0 +1,4 @@
++import { Mongo } from 'meteor/mongo';
++
++export const Chats = new Mongo.Collection('chats');
++export const Messages = new Mongo.Collection('messages');
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From be5035f97fe1a1d9d201e205fd99da7dd90ba6ac Mon Sep 17 00:00:00 2001
+From 4fdcc923fea708671df5c110a14d6960b018bf6a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:33:05 +0300
-Subject: [PATCH 026/116] Step 2.1: Create server bootstrap
+Subject: [PATCH 025/115] Step 2.2: Create server bootstrap
 
 ---
  server/bootstrap.js | 3 +++
@@ -1265,21 +1071,23 @@ index 0000000..948f7b0
 2.5.0
 
 
-From a73ab57c7e82f94141379cb7efb7d66e9007d611 Mon Sep 17 00:00:00 2001
+From 30db24294dd73657e316ebbf8dd930c6c8ce71c3 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:36:58 +0300
-Subject: [PATCH 027/116] Step 2.2: Add chats collection data stub
+Subject: [PATCH 026/115] Step 2.3: Add chats collection data stub
 
 ---
- server/bootstrap.js | 61 +++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 61 insertions(+)
+ server/bootstrap.js | 63 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 63 insertions(+)
 
 diff --git a/server/bootstrap.js b/server/bootstrap.js
-index 948f7b0..d136ab6 100644
+index 948f7b0..3724cfb 100644
 --- a/server/bootstrap.js
 +++ b/server/bootstrap.js
-@@ -1,3 +1,64 @@
-+import moment from 'moment';
+@@ -1,3 +1,66 @@
++import Moment from 'moment';
++import { Meteor } from 'meteor/meteor';
++import { Chats, Messages } from '../lib/collections';
 +
  Meteor.startup(function() {
 +  if (Chats.find().count() !== 0) return;
@@ -1289,23 +1097,23 @@ index 948f7b0..d136ab6 100644
 +  const messages = [
 +    {
 +      text: 'You on your way?',
-+      timestamp: moment().subtract(1, 'hours').toDate()
++      timestamp: Moment().subtract(1, 'hours').toDate()
 +    },
 +    {
 +      text: 'Hey, it\'s me',
-+      timestamp: moment().subtract(2, 'hours').toDate()
++      timestamp: Moment().subtract(2, 'hours').toDate()
 +    },
 +    {
 +      text: 'I should buy a boat',
-+      timestamp: moment().subtract(1, 'days').toDate()
++      timestamp: Moment().subtract(1, 'days').toDate()
 +    },
 +    {
 +      text: 'Look at my mukluks!',
-+      timestamp: moment().subtract(4, 'days').toDate()
++      timestamp: Moment().subtract(4, 'days').toDate()
 +    },
 +    {
 +      text: 'This is wicked good ice cream.',
-+      timestamp: moment().subtract(2, 'weeks').toDate()
++      timestamp: Moment().subtract(2, 'weeks').toDate()
 +    }
 +  ];
 +
@@ -1348,23 +1156,24 @@ index 948f7b0..d136ab6 100644
 2.5.0
 
 
-From 8610c2aa76fe4d6676d772bb2f5a549942429371 Mon Sep 17 00:00:00 2001
+From 6948ce2ba10fc0af27a097557d35cf31f4aba988 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:41:36 +0300
-Subject: [PATCH 028/116] Step 2.3: Add chats collection helper to chats
+Subject: [PATCH 027/115] Step 2.4: Add chats collection helper to chats
  controller
 
 ---
- client/scripts/controllers/chats.controller.js | 51 ++------------------------
- 1 file changed, 4 insertions(+), 47 deletions(-)
+ client/scripts/controllers/chats.controller.js | 52 +++-----------------------
+ 1 file changed, 5 insertions(+), 47 deletions(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index 42aae98..79f5866 100644
+index 20dcbeb..8c2b479 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -1,57 +1,14 @@
--import moment from 'moment';
- import { Controller } from '../entities';
+@@ -1,57 +1,15 @@
+-import Moment from 'moment';
+ import { Controller } from 'angular-ecmascript/module-helpers';
++import { Chats } from '../../../lib/collections';
  
  export default class ChatsCtrl extends Controller {
    constructor() {
@@ -1377,7 +1186,7 @@ index 42aae98..79f5866 100644
 -        picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
 -        lastMessage: {
 -          text: 'You on your way?',
--          timestamp: moment().subtract(1, 'hours').toDate()
+-          timestamp: Moment().subtract(1, 'hours').toDate()
 -        }
 -      },
 -      {
@@ -1386,7 +1195,7 @@ index 42aae98..79f5866 100644
 -        picture: 'https://randomuser.me/api/portraits/thumb/lego/1.jpg',
 -        lastMessage: {
 -          text: 'Hey, it\'s me',
--          timestamp: moment().subtract(2, 'hours').toDate()
+-          timestamp: Moment().subtract(2, 'hours').toDate()
 -        }
 -      },
 -      {
@@ -1395,7 +1204,7 @@ index 42aae98..79f5866 100644
 -        picture: 'https://randomuser.me/api/portraits/thumb/women/1.jpg',
 -        lastMessage: {
 -          text: 'I should buy a boat',
--          timestamp: moment().subtract(1, 'days').toDate()
+-          timestamp: Moment().subtract(1, 'days').toDate()
 -        }
 -      },
 -      {
@@ -1404,7 +1213,7 @@ index 42aae98..79f5866 100644
 -        picture: 'https://randomuser.me/api/portraits/thumb/women/2.jpg',
 -        lastMessage: {
 -          text: 'Look at my mukluks!',
--          timestamp: moment().subtract(4, 'days').toDate()
+-          timestamp: Moment().subtract(4, 'days').toDate()
 -        }
 -      },
 -      {
@@ -1413,7 +1222,7 @@ index 42aae98..79f5866 100644
 -        picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg',
 -        lastMessage: {
 -          text: 'This is wicked good ice cream.',
--          timestamp: moment().subtract(2, 'weeks').toDate()
+-          timestamp: Moment().subtract(2, 'weeks').toDate()
 -        }
 +    this.helpers({
 +      data() {
@@ -1428,10 +1237,10 @@ index 42aae98..79f5866 100644
 2.5.0
 
 
-From 6da439a045da7d574f46456679e8a6ab8e23d3ec Mon Sep 17 00:00:00 2001
+From afffed51fe74b4e50a4a4d590e3caf33acc53f39 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:51:05 +0300
-Subject: [PATCH 029/116] Step 2.4: Update delete button logic to use
+Subject: [PATCH 028/115] Step 2.5: Update delete button logic to use
  controller helper
 
 ---
@@ -1439,10 +1248,10 @@ Subject: [PATCH 029/116] Step 2.4: Update delete button logic to use
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index 79f5866..20111a3 100644
+index 8c2b479..2bd68e9 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -12,7 +12,7 @@ export default class ChatsCtrl extends Controller {
+@@ -13,6 +13,6 @@ export default class ChatsCtrl extends Controller {
    }
  
    remove(chat) {
@@ -1450,22 +1259,21 @@ index 79f5866..20111a3 100644
 +    this.data.remove(chat);
    }
  }
- 
 -- 
 2.5.0
 
 
-From f57ce3d4b0044fc9274221c6ff7186ec192f4376 Mon Sep 17 00:00:00 2001
+From 5ba4d19e48e21dbb83d174b7e32dc50380b64225 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:05:22 +0300
-Subject: [PATCH 030/116] Step 3.0: Add chat route state
+Subject: [PATCH 029/115] Step 3.1: Add chat route state
 
 ---
  client/scripts/routes.js | 9 +++++++++
  1 file changed, 9 insertions(+)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index a40a32c..dffab9f 100644
+index 43898c5..2a7f2b9 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
 @@ -16,6 +16,15 @@ export default class RoutesConfig extends Config {
@@ -1488,10 +1296,10 @@ index a40a32c..dffab9f 100644
 2.5.0
 
 
-From ae8400ee9da4971c3b56299a307c278e8bdf9f23 Mon Sep 17 00:00:00 2001
+From e15c9db4237c249983d03e1913b00068ca9e468f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:07:19 +0300
-Subject: [PATCH 031/116] Step 3.1: Add chat view
+Subject: [PATCH 030/115] Step 3.2: Add chat view
 
 ---
  client/templates/chat.html | 5 +++++
@@ -1514,23 +1322,24 @@ index 0000000..a2c5625
 2.5.0
 
 
-From 92f95714b23b02d0f4a54e066a64e3af1f663289 Mon Sep 17 00:00:00 2001
+From 8d1a1e01b40d9f18b5b6d895635d14da2583701f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:16:44 +0300
-Subject: [PATCH 032/116] Step 3.2: Add chat controller
+Subject: [PATCH 031/115] Step 3.3: Add chat controller
 
 ---
- client/scripts/controllers/chat.controller.js | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
+ client/scripts/controllers/chat.controller.js | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
  create mode 100644 client/scripts/controllers/chat.controller.js
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
 new file mode 100644
-index 0000000..626f6ee
+index 0000000..ce67614
 --- /dev/null
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -0,0 +1,17 @@
-+import { Controller } from '../entities';
+@@ -0,0 +1,18 @@
++import { Controller } from 'angular-ecmascript/module-helpers';
++import { Chats } from '../../../lib/collections';
 +
 +export default class ChatCtrl extends Controller {
 +  constructor() {
@@ -1546,65 +1355,65 @@ index 0000000..626f6ee
 +  }
 +}
 +
-+ChatCtrl.$inject = ['$scope', '$stateParams'];
++ChatCtrl.$inject = ['$stateParams'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From a66c17b46dfc0086e608ed3f5cc0e02c6f2c973b Mon Sep 17 00:00:00 2001
+From 961ee4f688f5f341840685345d5d7048bfc42f3b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:18:32 +0300
-Subject: [PATCH 033/116] Step 3.3: Load chat controller
+Subject: [PATCH 032/115] Step 3.4: Load chat controller
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 73db909..6f28d0f 100644
+index abe61c0..371fc10 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -9,6 +9,7 @@ import 'ionic-scripts';
+@@ -10,6 +10,7 @@ import { Meteor } from 'meteor/meteor';
+ 
  // Modules
- import Definer from '../definer';
  import ChatsCtrl from '../controllers/chats.controller';
 +import ChatCtrl from '../controllers/chat.controller';
  import CalendarFilter from '../filters/calendar.filter';
  import RoutesConfig from '../routes';
  
-@@ -20,6 +21,7 @@ const App = angular.module('Whatsapp', [
+@@ -23,6 +24,7 @@ Angular.module(App, [
  
- new Definer(App)
-   .define(ChatsCtrl)
-+  .define(ChatCtrl)
-   .define(CalendarFilter)
-   .define(RoutesConfig);
+ new Loader(App)
+   .load(ChatsCtrl)
++  .load(ChatCtrl)
+   .load(CalendarFilter)
+   .load(RoutesConfig);
  
 -- 
 2.5.0
 
 
-From bc40dd7bbfac157fd4cc1a2b028d9497f984f684 Mon Sep 17 00:00:00 2001
+From 6317f3979b5d485eb601b6c5353da7bc5288b649 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:22:17 +0300
-Subject: [PATCH 034/116] Step 3.4: Add reference to chat view in chats view
+Subject: [PATCH 033/115] Step 3.5: Add reference to chat view in chats view
 
 ---
  client/templates/chats.html | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index 7a08b34..dada8ed 100644
+index 5286351..2d4d4c8 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
-@@ -4,7 +4,8 @@
-       <ion-item
-               ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
-               class="item-chat item-remove-animate item-avatar item-icon-right"
--              type="item-text-wrap">
-+              type="item-text-wrap"
-+              href="#/tab/chats/{{ chat._id }}">
+@@ -3,7 +3,8 @@
+     <ion-list>
+       <ion-item ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
+                 class="item-chat item-remove-animate item-avatar item-icon-right"
+-                type="item-text-wrap">
++                type="item-text-wrap"
++                href="#/tab/chats/{{ chat._id }}">
          <img ng-src="{{ chat.picture }}">
          <h2>{{ chat.name }}</h2>
          <p>{{ chat.lastMessage.text }}</p>
@@ -1612,10 +1421,10 @@ index 7a08b34..dada8ed 100644
 2.5.0
 
 
-From 358e135e5e7f6c7c4fa94c2455696ac9957d6532 Mon Sep 17 00:00:00 2001
+From 24e32b93c600b7e3aa48c831927e43251f0c025a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:24:03 +0300
-Subject: [PATCH 035/116] Step 3.5: Add chat stylesheet
+Subject: [PATCH 034/115] Step 3.6: Add chat stylesheet
 
 ---
  client/styles/chat.scss | 7 +++++++
@@ -1640,20 +1449,27 @@ index 0000000..2637ff1
 2.5.0
 
 
-From 66886b11c32b539a2d791918416925a4c1e4d3e4 Mon Sep 17 00:00:00 2001
+From 40f4d2974371ff24cfa1fa6f9c6b35aef63d6378 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:28:02 +0300
-Subject: [PATCH 036/116] Step 3.6: Add messages helper to chat controller
+Subject: [PATCH 035/115] Step 3.7: Add messages helper to chat controller
 
 ---
- client/scripts/controllers/chat.controller.js | 3 +++
- 1 file changed, 3 insertions(+)
+ client/scripts/controllers/chat.controller.js | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index 626f6ee..5911c34 100644
+index ce67614..ff51fda 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -7,6 +7,9 @@ export default class ChatCtrl extends Controller {
+@@ -1,5 +1,5 @@
+ import { Controller } from 'angular-ecmascript/module-helpers';
+-import { Chats } from '../../../lib/collections';
++import { Chats, Messages } from '../../../lib/collections';
+ 
+ export default class ChatCtrl extends Controller {
+   constructor() {
+@@ -8,6 +8,9 @@ export default class ChatCtrl extends Controller {
      this.chatId = this.$stateParams.chatId;
  
      this.helpers({
@@ -1667,10 +1483,10 @@ index 626f6ee..5911c34 100644
 2.5.0
 
 
-From 463b55e1865139381bf1b7623fad7b4b63192eb1 Mon Sep 17 00:00:00 2001
+From 172564b03059b3f41ebcbf57e83aeddc8d21f5b8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:30:19 +0300
-Subject: [PATCH 037/116] Step 3.7: Add messages to chat view
+Subject: [PATCH 036/115] Step 3.8: Add messages to chat view
 
 ---
  client/templates/chat.html | 14 ++++++++++++--
@@ -1703,10 +1519,10 @@ index a2c5625..139aeae 100644
 2.5.0
 
 
-From 19e208ef8f0e454b92aa9f2c75c7d6bd93f1e63a Mon Sep 17 00:00:00 2001
+From 11b4657c8d68821ee99f0120c55ca750e0d4ff42 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:12:43 +0300
-Subject: [PATCH 038/116] Step 3.8: Add message style to chat stylesheet
+Subject: [PATCH 037/115] Step 3.9: Add message style to chat stylesheet
 
 ---
  client/styles/chat.scss | 79 +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1805,10 +1621,10 @@ index 2637ff1..aefef95 100644
 2.5.0
 
 
-From 3d41324e396fcf8f05539c8aaf1392373ef3319c Mon Sep 17 00:00:00 2001
+From cbbf28c3a879fd2c02138a70bac0e0eead49d1a0 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:35:24 +0300
-Subject: [PATCH 039/116] Step 3.9: Add assets
+Subject: [PATCH 038/115] Step 3.10: Add assets
 
 ---
  public/chat-background.jpg | Bin 0 -> 29275 bytes
@@ -2439,22 +2255,22 @@ index 0000000..64093ae
 2.5.0
 
 
-From 1805f9b164eb27655def4b754b66977d16e6c68d Mon Sep 17 00:00:00 2001
+From f70fed508eda14ab515862508376705901c60c5b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:37:12 +0300
-Subject: [PATCH 040/116] Step 3.10: Add angular-moment npm package
+Subject: [PATCH 039/115] Step 3.11: Add angular-moment npm package
 
 ---
  package.json | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 9085e95..6eb6f1e 100644
+index 3e9483f..c540d03 100644
 --- a/package.json
 +++ b/package.json
-@@ -8,6 +8,7 @@
-     "angular": "^1.5.3",
+@@ -9,6 +9,7 @@
      "angular-animate": "^1.5.3",
+     "angular-ecmascript": "0.0.3",
      "angular-meteor": "^1.3.9",
 +    "angular-moment": "^1.0.0-beta.5",
      "angular-sanitize": "^1.5.3",
@@ -2464,30 +2280,30 @@ index 9085e95..6eb6f1e 100644
 2.5.0
 
 
-From 70813365986e3fbfae7912bfa628465757c1f1ce Mon Sep 17 00:00:00 2001
+From ca43d07cffbb3b3bb0542eb1fbe04a56a9cd97aa Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:39:18 +0300
-Subject: [PATCH 041/116] Step 3.11: Load angular-meteor
+Subject: [PATCH 040/115] Step 3.12: Load angular-moment
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 6f28d0f..2c36626 100644
+index 371fc10..83ff376 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -2,6 +2,7 @@
- import angular from 'angular';
+@@ -1,6 +1,7 @@
+ // Libs
  import 'angular-animate';
  import 'angular-meteor';
 +import 'angular-moment';
  import 'angular-sanitize';
  import 'angular-ui-router';
  import 'ionic-scripts';
-@@ -16,6 +17,7 @@ import RoutesConfig from '../routes';
+@@ -19,6 +20,7 @@ const App = 'Whatsapp';
  // App
- const App = angular.module('Whatsapp', [
+ Angular.module(App, [
    'angular-meteor',
 +  'angularMoment',
    'ionic'
@@ -2497,10 +2313,10 @@ index 6f28d0f..2c36626 100644
 2.5.0
 
 
-From 8bc8592a9582f54d8039aaf431a440cbc2e6df4e Mon Sep 17 00:00:00 2001
+From 15c25541f3c72361bb5c6932dfac7f4b36d58879 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:40:58 +0300
-Subject: [PATCH 042/116] Step 3.12: Add moment filter to chat view
+Subject: [PATCH 041/115] Step 3.13: Add moment filter to chat view
 
 ---
  client/templates/chat.html | 2 +-
@@ -2523,20 +2339,20 @@ index 139aeae..f35bd17 100644
 2.5.0
 
 
-From 364e2f8f0ade107084df23fd97308892e0b2b5ff Mon Sep 17 00:00:00 2001
+From 6e781337f85c25daeedcc1bfb58c0930bdfb3261 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:43:27 +0300
-Subject: [PATCH 043/116] Step 3.13: Add chatbox to chat view
+Subject: [PATCH 042/115] Step 3.14: Add chatbox to chat view
 
 ---
- client/templates/chat.html | 19 +++++++++++++++++++
- 1 file changed, 19 insertions(+)
+ client/templates/chat.html | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index f35bd17..f344481 100644
+index f35bd17..ac8112f 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
-@@ -12,4 +12,23 @@
+@@ -12,4 +12,22 @@
        </div>
      </div>
    </ion-content>
@@ -2544,10 +2360,9 @@ index f35bd17..f344481 100644
 +    <button class="button button-clear button-icon button-positive icon ion-ios-upload-outline"></button>
 +
 +    <label class="item-input-wrapper">
-+      <input
-+              ng-model="chat.message"
-+              dir="auto"
-+              type="text"/>
++      <input ng-model="chat.message"
++             dir="auto"
++             type="text"/>
 +    </label>
 +
 +    <span ng-if="chat.message.length > 0">
@@ -2565,20 +2380,20 @@ index f35bd17..f344481 100644
 2.5.0
 
 
-From d3c84c6c9a7d0945549e7e1ea1821d9bc5b0c090 Mon Sep 17 00:00:00 2001
+From db1e590ae2b63a762e480655f32ece1d30824d3a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:45:55 +0300
-Subject: [PATCH 044/116] Step 3.14: Add chatbox logic to chat controller
+Subject: [PATCH 043/115] Step 3.15: Add chatbox logic to chat controller
 
 ---
  client/scripts/controllers/chat.controller.js | 3 +++
  1 file changed, 3 insertions(+)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index 5911c34..23a2f3f 100644
+index ff51fda..bcfe0be 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -15,6 +15,9 @@ export default class ChatCtrl extends Controller {
+@@ -16,6 +16,9 @@ export default class ChatCtrl extends Controller {
        }
      });
    }
@@ -2587,31 +2402,31 @@ index 5911c34..23a2f3f 100644
 +  }
  }
  
- ChatCtrl.$inject = ['$scope', '$stateParams'];
+ ChatCtrl.$inject = ['$stateParams'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From f9fd9ef698c275c80797abb9a0fa68d2d2474725 Mon Sep 17 00:00:00 2001
+From 6e99c9812ef2f50c9e43cc0a3ca6a2f2978e553e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:47:56 +0300
-Subject: [PATCH 045/116] Step 3.15: Add input directive
+Subject: [PATCH 044/115] Step 3.16: Add input directive
 
 ---
- client/scripts/directives/input.directive.js | 50 ++++++++++++++++++++++++++++
- 1 file changed, 50 insertions(+)
+ client/scripts/directives/input.directive.js | 51 ++++++++++++++++++++++++++++
+ 1 file changed, 51 insertions(+)
  create mode 100644 client/scripts/directives/input.directive.js
 
 diff --git a/client/scripts/directives/input.directive.js b/client/scripts/directives/input.directive.js
 new file mode 100644
-index 0000000..7396f77
+index 0000000..8b1d6a9
 --- /dev/null
 +++ b/client/scripts/directives/input.directive.js
-@@ -0,0 +1,50 @@
-+import { Directive } from '../entities';
+@@ -0,0 +1,51 @@
++import { Directive } from 'angular-ecmascript/module-helpers';
 +
-+export default class input extends Directive {
++export default class InputDirective extends Directive {
 +  constructor() {
 +    super(...arguments);
 +
@@ -2658,67 +2473,68 @@ index 0000000..7396f77
 +  }
 +}
 +
-+input.$inject = ['$timeout'];
++InputDirective.$name = 'input';
++InputDirective.$inject = ['$timeout'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From 5eb27155f16f05456cbd566b6a5388e08b372eaf Mon Sep 17 00:00:00 2001
+From 3ebba6788e241bf7f0769a1652d0da785238a496 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Sat, 2 Apr 2016 16:49:05 +0300
-Subject: [PATCH 046/116] Step 3.16: Load input directive
+Date: Sun, 15 May 2016 22:38:06 +0300
+Subject: [PATCH 045/115] Step 3.17: Load input directive
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 2c36626..69e1891 100644
+index 83ff376..bb7c7c4 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -11,6 +11,7 @@ import 'ionic-scripts';
- import Definer from '../definer';
+@@ -12,6 +12,7 @@ import { Meteor } from 'meteor/meteor';
+ // Modules
  import ChatsCtrl from '../controllers/chats.controller';
  import ChatCtrl from '../controllers/chat.controller';
 +import InputDirective from '../directives/input.directive';
  import CalendarFilter from '../filters/calendar.filter';
  import RoutesConfig from '../routes';
  
-@@ -24,6 +25,7 @@ const App = angular.module('Whatsapp', [
- new Definer(App)
-   .define(ChatsCtrl)
-   .define(ChatCtrl)
-+  .define(InputDirective)
-   .define(CalendarFilter)
-   .define(RoutesConfig);
+@@ -27,6 +28,7 @@ Angular.module(App, [
+ new Loader(App)
+   .load(ChatsCtrl)
+   .load(ChatCtrl)
++  .load(InputDirective)
+   .load(CalendarFilter)
+   .load(RoutesConfig);
  
 -- 
 2.5.0
 
 
-From df54d96001e666e9f3d269ab5dffc53ebae46986 Mon Sep 17 00:00:00 2001
+From 6df0ed4b1999ab7f243290ab3eea7453455d7711 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Sun, 10 Apr 2016 22:52:39 +0300
-Subject: [PATCH 047/116] Step 3.17: Use input directive in chat view
+Date: Sun, 15 May 2016 22:38:25 +0300
+Subject: [PATCH 046/115] Step 3.18: Add chat view
 
 ---
  client/templates/chat.html | 5 ++++-
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index f344481..2185326 100644
+index ac8112f..c08d5b2 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
-@@ -19,7 +19,10 @@
-       <input
-               ng-model="chat.message"
-               dir="auto"
--              type="text"/>
-+              type="text"
-+              on-return="chat.sendMessage(); chat.closeKeyboard()"
-+              on-focus="chat.inputUp()"
-+              on-blur="chat.inputDown()"/>
+@@ -18,7 +18,10 @@
+     <label class="item-input-wrapper">
+       <input ng-model="chat.message"
+              dir="auto"
+-             type="text"/>
++             type="text"
++             on-return="chat.sendMessage(); chat.closeKeyboard()"
++             on-focus="chat.inputUp()"
++             on-blur="chat.inputDown()"/>
      </label>
  
      <span ng-if="chat.message.length > 0">
@@ -2726,35 +2542,36 @@ index f344481..2185326 100644
 2.5.0
 
 
-From 794830842639cf064efcab3c606159968b99aee5 Mon Sep 17 00:00:00 2001
+From 06b064aabd0656c141f32612c2d1004b2f25cc42 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 10 Apr 2016 22:53:57 +0300
-Subject: [PATCH 048/116] Step 3.18: Implement input directive handlers in chat
+Subject: [PATCH 047/115] Step 3.19: Implement input directive handlers in chat
  controller
 
 ---
- client/scripts/controllers/chat.controller.js | 29 ++++++++++++++++++++++++++-
- 1 file changed, 28 insertions(+), 1 deletion(-)
+ client/scripts/controllers/chat.controller.js | 34 ++++++++++++++++++++++++++-
+ 1 file changed, 33 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index 23a2f3f..e20800e 100644
+index bcfe0be..2c4a26c 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -1,3 +1,4 @@
-+import ionic from 'ionic-scripts';
- import { Controller } from '../entities';
+@@ -1,3 +1,5 @@
++import Ionic from 'ionic-scripts';
++import { Meteor } from 'meteor/meteor';
+ import { Controller } from 'angular-ecmascript/module-helpers';
+ import { Chats, Messages } from '../../../lib/collections';
  
- export default class ChatCtrl extends Controller {
-@@ -5,6 +6,8 @@ export default class ChatCtrl extends Controller {
+@@ -6,6 +8,8 @@ export default class ChatCtrl extends Controller {
      super(...arguments);
  
      this.chatId = this.$stateParams.chatId;
-+    this.isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
++    this.isIOS = Ionic.Platform.isWebView() && Ionic.Platform.isIOS();
 +    this.isCordova = Meteor.isCordova;
  
      this.helpers({
        messages() {
-@@ -18,6 +21,30 @@ export default class ChatCtrl extends Controller {
+@@ -19,6 +23,34 @@ export default class ChatCtrl extends Controller {
  
    sendMessage() {
    }
@@ -2764,9 +2581,7 @@ index 23a2f3f..e20800e 100644
 +      this.keyboardHeight = 216;
 +    }
 +
-+    this.$timeout(() => {
-+      this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(true);
-+    }, 300);
++    this.scrollBottom(true);
 +  }
 +
 +  inputDown () {
@@ -2782,20 +2597,25 @@ index 23a2f3f..e20800e 100644
 +      cordova.plugins.Keyboard.close();
 +    }
 +  }
++
++  scrollBottom(animate) {
++    this.$timeout(() => {
++      this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
++    }, 300);
++  }
  }
  
--ChatCtrl.$inject = ['$scope', '$stateParams'];
+-ChatCtrl.$inject = ['$stateParams'];
 \ No newline at end of file
-+ChatCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$ionicScrollDelegate'];
-\ No newline at end of file
++ChatCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate'];
 -- 
 2.5.0
 
 
-From 27bae6a89771f2db27f6cb35a852ccd6438eb2e6 Mon Sep 17 00:00:00 2001
+From 1c73ab190460611a65a552c63a8a2b378733b699 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:17:20 +0300
-Subject: [PATCH 049/116] Step 3.19: Add footer style to chat stylesheet
+Subject: [PATCH 048/115] Step 3.20: Add footer style to chat stylesheet
 
 ---
  client/styles/chat.scss | 18 +++++++++++++++++-
@@ -2840,21 +2660,27 @@ index aefef95..77f09da 100644
 2.5.0
 
 
-From 7dac8b04f54b55d3be79a6e99d53c61c755a9c4c Mon Sep 17 00:00:00 2001
+From 0c1b7e760cf340094129b19662659d40e7fb841f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:19:14 +0300
-Subject: [PATCH 050/116] Step 3.20: Implement new message method in chat
+Subject: [PATCH 049/115] Step 3.21: Implement new message method in chat
  controller
 
 ---
- client/scripts/controllers/chat.controller.js | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ client/scripts/controllers/chat.controller.js | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index e20800e..fae0f77 100644
+index 2c4a26c..59b99f1 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -20,6 +20,15 @@ export default class ChatCtrl extends Controller {
+@@ -1,4 +1,5 @@
+ import Ionic from 'ionic-scripts';
++import { _ } from 'meteor/underscore';
+ import { Meteor } from 'meteor/meteor';
+ import { Controller } from 'angular-ecmascript/module-helpers';
+ import { Chats, Messages } from '../../../lib/collections';
+@@ -22,6 +23,15 @@ export default class ChatCtrl extends Controller {
    }
  
    sendMessage() {
@@ -2874,22 +2700,25 @@ index e20800e..fae0f77 100644
 2.5.0
 
 
-From 4e87d8e4892dd7b103908d7ed7c7757586683794 Mon Sep 17 00:00:00 2001
+From 71e795407ef1ac56adf42a85c1b766b3a5567748 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:20:51 +0300
-Subject: [PATCH 051/116] Step 3.21: Add new message meteor method
+Subject: [PATCH 050/115] Step 3.22: Add new message meteor method
 
 ---
- lib/methods.js | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ lib/methods.js | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
  create mode 100644 lib/methods.js
 
 diff --git a/lib/methods.js b/lib/methods.js
 new file mode 100644
-index 0000000..820e4a9
+index 0000000..0bc5526
 --- /dev/null
 +++ b/lib/methods.js
-@@ -0,0 +1,10 @@
+@@ -0,0 +1,13 @@
++import { Meteor } from 'meteor/meteor';
++import { Chats, Messages } from '../lib/collections';
++
 +Meteor.methods({
 +  newMessage(message) {
 +    message.timestamp = new Date();
@@ -2905,10 +2734,10 @@ index 0000000..820e4a9
 2.5.0
 
 
-From 792e4c0dea4181d0c529b6e7fa1afc7c95022ea5 Mon Sep 17 00:00:00 2001
+From fe795638f470846f88831ab55babfa9f2f18579d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:22:22 +0300
-Subject: [PATCH 052/116] Step 3.22: Add check meteor package
+Subject: [PATCH 051/115] Step 3.23: Add check meteor package
 
 ---
  .meteor/packages | 1 +
@@ -2927,20 +2756,21 @@ index 934f644..b39011c 100644
 2.5.0
 
 
-From 3e5ca576fb22ba33513e6a3e2b1e46f46e625860 Mon Sep 17 00:00:00 2001
+From 5b8a9bf0149cea4086a392d5ddc26bcefd0a5774 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:23:23 +0300
-Subject: [PATCH 053/116] Step 3.23: Validate new message method params
+Subject: [PATCH 052/115] Step 3.24: Validate new message method params
 
 ---
  lib/methods.js | 5 +++++
  1 file changed, 5 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index 820e4a9..9b996dd 100644
+index 0bc5526..5256b0d 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -1,5 +1,10 @@
+@@ -3,6 +3,11 @@ import { Chats, Messages } from '../lib/collections';
+ 
  Meteor.methods({
    newMessage(message) {
 +    check(message, {
@@ -2955,10 +2785,10 @@ index 820e4a9..9b996dd 100644
 2.5.0
 
 
-From f5704fe88a074fa5c711c0dc7565918b91a79f0d Mon Sep 17 00:00:00 2001
+From 6ef63380b442ebd5810f491464fb55715a667c34 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:46:33 +0300
-Subject: [PATCH 054/116] Step 4.0: Add accounts meteor package
+Subject: [PATCH 053/115] Step 4.1: Add accounts meteor package
 
 ---
  .meteor/packages |  1 +
@@ -3034,22 +2864,22 @@ index fc2fc94..9cf6152 100644
 2.5.0
 
 
-From 275679cb7a00a323bd756a6ce4a0d7d6908e2479 Mon Sep 17 00:00:00 2001
+From 52d866e53278762bb745b01dd44f6ad99b57b9bd Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:26:21 +0300
-Subject: [PATCH 055/116] Step 4.1: Add angular-meteor-auth npm package
+Subject: [PATCH 054/115] Step 4.2: Add angular-meteor-auth npm package
 
 ---
  package.json | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 6eb6f1e..a06bb06 100644
+index c540d03..b629aa2 100644
 --- a/package.json
 +++ b/package.json
-@@ -8,6 +8,7 @@
-     "angular": "^1.5.3",
+@@ -9,6 +9,7 @@
      "angular-animate": "^1.5.3",
+     "angular-ecmascript": "0.0.3",
      "angular-meteor": "^1.3.9",
 +    "angular-meteor-auth": "^1.0.1",
      "angular-moment": "^1.0.0-beta.5",
@@ -3059,30 +2889,30 @@ index 6eb6f1e..a06bb06 100644
 2.5.0
 
 
-From 54eae86cafe5884bd9e8dadc143c0f3842c921a5 Mon Sep 17 00:00:00 2001
+From 3855aab11b76959ffa2f7d9af379d6e6817d7dd2 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:27:31 +0300
-Subject: [PATCH 056/116] Step 4.2: Load angular-meteor-auth module
+Subject: [PATCH 055/115] Step 4.3: Load angular-meteor-auth module
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 69e1891..7948039 100644
+index bb7c7c4..27adac8 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -2,6 +2,7 @@
- import angular from 'angular';
+@@ -1,6 +1,7 @@
+ // Libs
  import 'angular-animate';
  import 'angular-meteor';
 +import 'angular-meteor-auth';
  import 'angular-moment';
  import 'angular-sanitize';
  import 'angular-ui-router';
-@@ -18,6 +19,7 @@ import RoutesConfig from '../routes';
+@@ -21,6 +22,7 @@ const App = 'Whatsapp';
  // App
- const App = angular.module('Whatsapp', [
+ Angular.module(App, [
    'angular-meteor',
 +  'angular-meteor.auth',
    'angularMoment',
@@ -3092,22 +2922,25 @@ index 69e1891..7948039 100644
 2.5.0
 
 
-From aebf9ac80c8652d7fae0d82a4046a4f2f27a45ed Mon Sep 17 00:00:00 2001
+From 7441b6ce026f6c006a54755c977b8553ad98e110 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:50:40 +0300
-Subject: [PATCH 057/116] Step 4.3: Add SMS configuration
+Subject: [PATCH 056/115] Step 4.4: Add SMS configuration
 
 ---
- server/sms.js | 4 ++++
- 1 file changed, 4 insertions(+)
+ server/sms.js | 7 +++++++
+ 1 file changed, 7 insertions(+)
  create mode 100644 server/sms.js
 
 diff --git a/server/sms.js b/server/sms.js
 new file mode 100644
-index 0000000..db3cf5d
+index 0000000..d77a645
 --- /dev/null
 +++ b/server/sms.js
-@@ -0,0 +1,4 @@
+@@ -0,0 +1,7 @@
++import { Meteor } from 'meteor/meteor';
++import { Accounts } from 'meteor/accounts-base';
++
 +if (Meteor.settings && Meteor.settings.ACCOUNTS_PHONE) {
 +  Accounts._options.adminPhoneNumbers = Meteor.settings.ACCOUNTS_PHONE.ADMIN_NUMBERS;
 +  Accounts._options.phoneVerificationMasterCode = Meteor.settings.ACCOUNTS_PHONE.MASTER_CODE;
@@ -3117,17 +2950,17 @@ index 0000000..db3cf5d
 2.5.0
 
 
-From 7536c7617c78cf1938ffab8c79090243023104a0 Mon Sep 17 00:00:00 2001
+From 6c6dd39b9627bd9057e9bf3054fef61234c0eb88 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:54:37 +0300
-Subject: [PATCH 058/116] Step 4.4: Create auth route states
+Subject: [PATCH 057/115] Step 4.5: Create auth route states
 
 ---
  client/scripts/routes.js | 15 +++++++++++++++
  1 file changed, 15 insertions(+)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index dffab9f..699e738 100644
+index 2a7f2b9..d18af5e 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
 @@ -25,6 +25,21 @@ export default class RoutesConfig extends Config {
@@ -3156,10 +2989,10 @@ index dffab9f..699e738 100644
 2.5.0
 
 
-From 0e889b042a576884eb5160db832539376fdb30d8 Mon Sep 17 00:00:00 2001
+From 6c82fd9938956845e34013fe57b34d482d41ab5a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:57:33 +0300
-Subject: [PATCH 059/116] Step 4.5: Add login view
+Subject: [PATCH 058/115] Step 4.6: Add login view
 
 ---
  client/templates/login.html | 15 +++++++++++++++
@@ -3192,23 +3025,25 @@ index 0000000..c9758d0
 2.5.0
 
 
-From f21769708de02581374a04e76153a718ef217c58 Mon Sep 17 00:00:00 2001
+From 52c04289311cd0a9ebc7c2474074b9f5a5ba331c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 00:17:17 +0300
-Subject: [PATCH 060/116] Step 4.6: Add login controller
+Subject: [PATCH 059/115] Step 4.7: Add login controller
 
 ---
- client/scripts/controllers/login.controller.js | 43 ++++++++++++++++++++++++++
- 1 file changed, 43 insertions(+)
+ client/scripts/controllers/login.controller.js | 45 ++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
  create mode 100644 client/scripts/controllers/login.controller.js
 
 diff --git a/client/scripts/controllers/login.controller.js b/client/scripts/controllers/login.controller.js
 new file mode 100644
-index 0000000..dd24702
+index 0000000..a64d0d5
 --- /dev/null
 +++ b/client/scripts/controllers/login.controller.js
-@@ -0,0 +1,43 @@
-+import { Controller } from '../entities';
+@@ -0,0 +1,45 @@
++import { _ } from 'meteor/underscore';
++import { Accounts } from 'meteor/accounts-base';
++import { Controller } from 'angular-ecmascript/module-helpers';
 +
 +export default class LoginCtrl extends Controller {
 +  login() {
@@ -3250,60 +3085,60 @@ index 0000000..dd24702
 +  }
 +}
 +
-+LoginCtrl.$inject = ['$scope', '$state', '$ionicLoading', '$ionicPopup', '$log'];
++LoginCtrl.$inject = ['$state', '$ionicLoading', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From f13b7fb5594b504eefbd6a329d1498da233c7eee Mon Sep 17 00:00:00 2001
+From 3a48b5713c4bbba640e9c5522d9d726d448b12e7 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 00:43:16 +0300
-Subject: [PATCH 061/116] Step 4.7: Load login controller
+Subject: [PATCH 060/115] Step 4.8: Load login controller
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 7948039..310012d 100644
+index 27adac8..fed5de9 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -12,6 +12,7 @@ import 'ionic-scripts';
- import Definer from '../definer';
+@@ -13,6 +13,7 @@ import { Meteor } from 'meteor/meteor';
+ // Modules
  import ChatsCtrl from '../controllers/chats.controller';
  import ChatCtrl from '../controllers/chat.controller';
 +import LoginCtrl from '../controllers/login.controller';
  import InputDirective from '../directives/input.directive';
  import CalendarFilter from '../filters/calendar.filter';
  import RoutesConfig from '../routes';
-@@ -27,6 +28,7 @@ const App = angular.module('Whatsapp', [
- new Definer(App)
-   .define(ChatsCtrl)
-   .define(ChatCtrl)
-+  .define(LoginCtrl)
-   .define(InputDirective)
-   .define(CalendarFilter)
-   .define(RoutesConfig);
+@@ -30,6 +31,7 @@ Angular.module(App, [
+ new Loader(App)
+   .load(ChatsCtrl)
+   .load(ChatCtrl)
++  .load(LoginCtrl)
+   .load(InputDirective)
+   .load(CalendarFilter)
+   .load(RoutesConfig);
 -- 
 2.5.0
 
 
-From 68634b6332019cd56f2a3382f47361f3cf52be23 Mon Sep 17 00:00:00 2001
+From 6b2e9f039db583f3e93c823bf3091aac5ef3ec89 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 00:34:22 +0300
-Subject: [PATCH 062/116] Step 4.8: Add resolve to auth routes
+Subject: [PATCH 061/115] Step 4.9: Add resolve to auth routes
 
 ---
  client/scripts/routes.js | 20 ++++++++++++++++++--
  1 file changed, 18 insertions(+), 2 deletions(-)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index 699e738..4e805d3 100644
+index d18af5e..a98ef5a 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
 @@ -1,12 +1,21 @@
- import { Config } from './entities';
+ import { Config } from 'angular-ecmascript/module-helpers';
  
  export default class RoutesConfig extends Config {
 +  constructor() {
@@ -3350,35 +3185,38 @@ index 699e738..4e805d3 100644
 2.5.0
 
 
-From af10d6c3d09a7d7e8c5f3980399abcbeb606a887 Mon Sep 17 00:00:00 2001
+From 590428b79fcaedcac2851fccc83c953eda7a76b4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:42:50 +0300
-Subject: [PATCH 063/116] Step 4.9: Add routes runner
+Subject: [PATCH 062/115] Step 4.10: Add routes runner
 
 ---
- client/scripts/routes.js | 19 ++++++++++++++++---
- 1 file changed, 16 insertions(+), 3 deletions(-)
+ client/scripts/routes.js | 23 ++++++++++++++++++++---
+ 1 file changed, 20 insertions(+), 3 deletions(-)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index 4e805d3..8f0ee5c 100644
+index a98ef5a..9c1ba1a 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
-@@ -1,6 +1,6 @@
--import { Config } from './entities';
-+import { Config, Runner } from './entities';
+@@ -1,6 +1,7 @@
+-import { Config } from 'angular-ecmascript/module-helpers';
++import { _ } from 'meteor/underscore';
++import { Config, Runner } from 'angular-ecmascript/module-helpers';
  
 -export default class RoutesConfig extends Config {
-+export class RoutesConfig extends Config {
++class RoutesConfig extends Config {
    constructor() {
      super(...arguments);
  
-@@ -62,4 +62,17 @@ export default class RoutesConfig extends Config {
+@@ -62,4 +63,20 @@ export default class RoutesConfig extends Config {
    }
  }
  
 -RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 \ No newline at end of file
-+export class RoutesRunner extends Runner {
++RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
++
++class RoutesRunner extends Runner {
 +  run() {
 +    this.$rootScope.$on('$stateChangeError', (...args) => {
 +      const err = _.last(args);
@@ -3390,42 +3228,42 @@ index 4e805d3..8f0ee5c 100644
 +  }
 +}
 +
-+RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 +RoutesRunner.$inject = ['$rootScope', '$state'];
++
++export default [RoutesConfig, RoutesRunner];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From 4e8f1d59db544d0fd3e2b425e95842e44605aaf7 Mon Sep 17 00:00:00 2001
+From 436253f11c15e8eb218b3164c64196dee49e34b0 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:44:46 +0300
-Subject: [PATCH 064/116] Step 4.10: Create routes runner
+Subject: [PATCH 063/115] Step 4.11: Create routes runner
 
 ---
- client/scripts/lib/app.js | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ client/scripts/lib/app.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 310012d..3a00d00 100644
+index fed5de9..6b21d0e 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -15,7 +15,7 @@ import ChatCtrl from '../controllers/chat.controller';
+@@ -16,7 +16,7 @@ import ChatCtrl from '../controllers/chat.controller';
  import LoginCtrl from '../controllers/login.controller';
  import InputDirective from '../directives/input.directive';
  import CalendarFilter from '../filters/calendar.filter';
 -import RoutesConfig from '../routes';
-+import { RoutesConfig, RoutesRunner } from '../routes';
++import Routes from '../routes';
  
- // App
- const App = angular.module('Whatsapp', [
-@@ -31,7 +31,8 @@ new Definer(App)
-   .define(LoginCtrl)
-   .define(InputDirective)
-   .define(CalendarFilter)
--  .define(RoutesConfig);
-+  .define(RoutesConfig)
-+  .define(RoutesRunner);
+ const App = 'Whatsapp';
+ 
+@@ -34,7 +34,7 @@ new Loader(App)
+   .load(LoginCtrl)
+   .load(InputDirective)
+   .load(CalendarFilter)
+-  .load(RoutesConfig);
++  .load(Routes);
  
  // Startup
  if (Meteor.isCordova) {
@@ -3433,10 +3271,10 @@ index 310012d..3a00d00 100644
 2.5.0
 
 
-From 47b04cd1dd71d4b9ab5edb53b7042bc3e183e200 Mon Sep 17 00:00:00 2001
+From 7082f8fa1abd8e75ac14d03d86a2a251d490cd39 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:47:03 +0300
-Subject: [PATCH 065/116] Step 4.11: Add login stylesheet
+Subject: [PATCH 064/115] Step 4.12: Add login stylesheet
 
 ---
  client/styles/login.scss | 6 ++++++
@@ -3460,10 +3298,10 @@ index 0000000..a6c2a96
 2.5.0
 
 
-From 09418accc48b9cea31b5894e30ce334b6716784f Mon Sep 17 00:00:00 2001
+From 1509126fee8862c76a20f29fb38d62b35254df94 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:48:42 +0300
-Subject: [PATCH 066/116] Step 4.12: Add confirmation view
+Subject: [PATCH 065/115] Step 4.13: Add confirmation view
 
 ---
  client/templates/confirmation.html | 20 ++++++++++++++++++++
@@ -3501,23 +3339,25 @@ index 0000000..23f4be1
 2.5.0
 
 
-From 455679b3ca8914ca90f95f008507eb71cbfd5618 Mon Sep 17 00:00:00 2001
+From aa9e2ae696eacd09c425ab34baf95ad9e3ec1447 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:50:37 +0300
-Subject: [PATCH 067/116] Step 4.13: Create confirmation controller
+Subject: [PATCH 066/115] Step 4.14: Create confirmation controller
 
 ---
- .../scripts/controllers/confirmation.controller.js | 30 ++++++++++++++++++++++
- 1 file changed, 30 insertions(+)
+ .../scripts/controllers/confirmation.controller.js | 32 ++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
  create mode 100644 client/scripts/controllers/confirmation.controller.js
 
 diff --git a/client/scripts/controllers/confirmation.controller.js b/client/scripts/controllers/confirmation.controller.js
 new file mode 100644
-index 0000000..43ffa26
+index 0000000..285fd98
 --- /dev/null
 +++ b/client/scripts/controllers/confirmation.controller.js
-@@ -0,0 +1,30 @@
-+import { Controller } from '../entities';
+@@ -0,0 +1,32 @@
++import { _ } from 'meteor/underscore';
++import { Accounts } from 'meteor/accounts-base';
++import { Controller } from 'angular-ecmascript/module-helpers';
 +
 +export default class ConfirmationCtrl extends Controller {
 +  constructor() {
@@ -3546,49 +3386,49 @@ index 0000000..43ffa26
 +  }
 +}
 +
-+ConfirmationCtrl.$inject = ['$scope', '$state', '$ionicPopup', '$log'];
++ConfirmationCtrl.$inject = ['$state', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From 455ec3f4f43636e9ff027036df62d51d5ab37556 Mon Sep 17 00:00:00 2001
+From 8f2726713e6c3db8b895a927a2b0ff5683c4df72 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:52:28 +0300
-Subject: [PATCH 068/116] Step 4.14: Load confirmation controller
+Subject: [PATCH 067/115] Step 4.15: Load confirmation controller
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 3a00d00..907399c 100644
+index 6b21d0e..fffbb60 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -12,6 +12,7 @@ import 'ionic-scripts';
- import Definer from '../definer';
+@@ -13,6 +13,7 @@ import { Meteor } from 'meteor/meteor';
+ // Modules
  import ChatsCtrl from '../controllers/chats.controller';
  import ChatCtrl from '../controllers/chat.controller';
 +import ConfirmationCtrl from '../controllers/confirmation.controller';
  import LoginCtrl from '../controllers/login.controller';
  import InputDirective from '../directives/input.directive';
  import CalendarFilter from '../filters/calendar.filter';
-@@ -28,6 +29,7 @@ const App = angular.module('Whatsapp', [
- new Definer(App)
-   .define(ChatsCtrl)
-   .define(ChatCtrl)
-+  .define(ConfirmationCtrl)
-   .define(LoginCtrl)
-   .define(InputDirective)
-   .define(CalendarFilter)
+@@ -31,6 +32,7 @@ Angular.module(App, [
+ new Loader(App)
+   .load(ChatsCtrl)
+   .load(ChatCtrl)
++  .load(ConfirmationCtrl)
+   .load(LoginCtrl)
+   .load(InputDirective)
+   .load(CalendarFilter)
 -- 
 2.5.0
 
 
-From f37796f94879d8162ac2e3274a27041363353dce Mon Sep 17 00:00:00 2001
+From dd33f38dbec8ce80735da162ac0d410a4489a629 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:53:56 +0300
-Subject: [PATCH 069/116] Step 4.15: Add profile view
+Subject: [PATCH 068/115] Step 4.16: Add profile view
 
 ---
  client/templates/profile.html | 23 +++++++++++++++++++++++
@@ -3629,23 +3469,24 @@ index 0000000..c18fe20
 2.5.0
 
 
-From fab0d34bc0e8e581bf6a7cfc2bb9c20a29f45fa9 Mon Sep 17 00:00:00 2001
+From cd8f0aa2828c46f4828979f08f55c3db9196f17e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 22:03:23 +0300
-Subject: [PATCH 070/116] Step 4.16: Create profile controller
+Subject: [PATCH 069/115] Step 4.17: Create profile controller
 
 ---
- client/scripts/controllers/profile.controller.js | 31 ++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ client/scripts/controllers/profile.controller.js | 32 ++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
  create mode 100644 client/scripts/controllers/profile.controller.js
 
 diff --git a/client/scripts/controllers/profile.controller.js b/client/scripts/controllers/profile.controller.js
 new file mode 100644
-index 0000000..77f956e
+index 0000000..a6628c9
 --- /dev/null
 +++ b/client/scripts/controllers/profile.controller.js
-@@ -0,0 +1,31 @@
-+import { Controller } from '../entities';
+@@ -0,0 +1,32 @@
++import { _ } from 'meteor/underscore';
++import { Controller } from 'angular-ecmascript/module-helpers';
 +
 +export default class ProfileCtrl extends Controller {
 +  constructor() {
@@ -3675,49 +3516,49 @@ index 0000000..77f956e
 +  }
 +}
 +
-+ProfileCtrl.$inject = ['$scope', '$state', '$ionicPopup', '$log'];
++ProfileCtrl.$inject = ['$state', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From ae43b771e3a94c735764c0bba54af03f85d2b444 Mon Sep 17 00:00:00 2001
+From ecff11667e4673ba7bcb5a41b1e8cc60c60b4b77 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 22:06:29 +0300
-Subject: [PATCH 071/116] Step 4.17: Load profile controller
+Subject: [PATCH 070/115] Step 4.18: Load profile controller
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 907399c..9560b48 100644
+index fffbb60..7da5248 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -14,6 +14,7 @@ import ChatsCtrl from '../controllers/chats.controller';
+@@ -15,6 +15,7 @@ import ChatsCtrl from '../controllers/chats.controller';
  import ChatCtrl from '../controllers/chat.controller';
  import ConfirmationCtrl from '../controllers/confirmation.controller';
  import LoginCtrl from '../controllers/login.controller';
 +import ProfileCtrl from '../controllers/profile.controller';
  import InputDirective from '../directives/input.directive';
  import CalendarFilter from '../filters/calendar.filter';
- import { RoutesConfig, RoutesRunner } from '../routes';
-@@ -31,6 +32,7 @@ new Definer(App)
-   .define(ChatCtrl)
-   .define(ConfirmationCtrl)
-   .define(LoginCtrl)
-+  .define(ProfileCtrl)
-   .define(InputDirective)
-   .define(CalendarFilter)
-   .define(RoutesConfig)
+ import Routes from '../routes';
+@@ -34,6 +35,7 @@ new Loader(App)
+   .load(ChatCtrl)
+   .load(ConfirmationCtrl)
+   .load(LoginCtrl)
++  .load(ProfileCtrl)
+   .load(InputDirective)
+   .load(CalendarFilter)
+   .load(Routes);
 -- 
 2.5.0
 
 
-From 5cfc077b072ccba15f2b66491468f449f19cba02 Mon Sep 17 00:00:00 2001
+From 0e41b6501ff7905d6876dbfe1cd20169ed72cd1d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 22:08:01 +0300
-Subject: [PATCH 072/116] Step 4.18: Add profile stylesheet
+Subject: [PATCH 071/115] Step 4.19: Add profile stylesheet
 
 ---
  client/styles/profile.scss | 40 ++++++++++++++++++++++++++++++++++++++++
@@ -3775,20 +3616,20 @@ index 0000000..ef4c6cc
 2.5.0
 
 
-From 896b56db8a2c3904a0da938eca4ca491c67afea0 Mon Sep 17 00:00:00 2001
+From ffb2c775b0b70a0ac2270f9c6ae6ab1bf12d6aa0 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:25:48 +0300
-Subject: [PATCH 073/116] Step 4.19: Add update name method
+Subject: [PATCH 072/115] Step 4.20: Add update name method
 
 ---
  lib/methods.js | 14 ++++++++++++++
  1 file changed, 14 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index 9b996dd..0c0ddb0 100644
+index 5256b0d..45d5aa9 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -11,5 +11,19 @@ Meteor.methods({
+@@ -14,5 +14,19 @@ Meteor.methods({
      Chats.update(message.chatId, { $set: { lastMessage: message } });
  
      return messageId;
@@ -3813,20 +3654,21 @@ index 9b996dd..0c0ddb0 100644
 2.5.0
 
 
-From 04a03d00700e8c75d06ad4054afebdf97cacc042 Mon Sep 17 00:00:00 2001
+From e92b6356a00c0f5a14c7ba77d33f6575be1cfa38 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:49:24 +0300
-Subject: [PATCH 074/116] Step 4.20: Bind user to any new message
+Subject: [PATCH 073/115] Step 4.21: Bind user to any new message
 
 ---
  lib/methods.js | 6 ++++++
  1 file changed, 6 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index 0c0ddb0..c990546 100644
+index 45d5aa9..0060ad1 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -1,11 +1,17 @@
+@@ -3,12 +3,18 @@ import { Chats, Messages } from '../lib/collections';
+ 
  Meteor.methods({
    newMessage(message) {
 +    if (!this.userId) {
@@ -3848,20 +3690,20 @@ index 0c0ddb0..c990546 100644
 2.5.0
 
 
-From acbfa9f26bdde08ead4594cdb2564cd56151d577 Mon Sep 17 00:00:00 2001
+From eed1dcaf1ab12638a2eb72f129c046cb851ec499 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:51:43 +0300
-Subject: [PATCH 075/116] Step 4.21: Add settings route state
+Subject: [PATCH 074/115] Step 4.22: Add settings route state
 
 ---
  client/scripts/routes.js | 9 +++++++++
  1 file changed, 9 insertions(+)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index 8f0ee5c..d824d70 100644
+index 9c1ba1a..ea59297 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
-@@ -52,6 +52,15 @@ export class RoutesConfig extends Config {
+@@ -53,6 +53,15 @@ class RoutesConfig extends Config {
          resolve: {
            user: this.isAuthorized
          }
@@ -3881,10 +3723,10 @@ index 8f0ee5c..d824d70 100644
 2.5.0
 
 
-From 26f0011d7a5f09dd2337b5aacb8f98db0f235a57 Mon Sep 17 00:00:00 2001
+From 0d71526cd992288fb06fd8679fadf8e7aa74149c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:54:20 +0300
-Subject: [PATCH 076/116] Step 4.22: Add settings view
+Subject: [PATCH 075/115] Step 4.23: Add settings view
 
 ---
  client/templates/settings.html | 7 +++++++
@@ -3909,23 +3751,24 @@ index 0000000..eadaf50
 2.5.0
 
 
-From d6f7f742c42f4b6b209d5287cf76503fc7c9c889 Mon Sep 17 00:00:00 2001
+From 0814899a4caf0c181e17e30ae720d145b860c979 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:55:04 +0300
-Subject: [PATCH 077/116] Step 4.23: Add settings controller
+Subject: [PATCH 076/115] Step 4.24: Add settings controller
 
 ---
- client/scripts/controllers/settings.controller.js | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ client/scripts/controllers/settings.controller.js | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
  create mode 100644 client/scripts/controllers/settings.controller.js
 
 diff --git a/client/scripts/controllers/settings.controller.js b/client/scripts/controllers/settings.controller.js
 new file mode 100644
-index 0000000..66ada04
+index 0000000..2e35fb1
 --- /dev/null
 +++ b/client/scripts/controllers/settings.controller.js
-@@ -0,0 +1,22 @@
-+import { Controller } from '../entities';
+@@ -0,0 +1,23 @@
++import { Meteor } from 'meteor/meteor';
++import { Controller } from 'angular-ecmascript/module-helpers';
 +
 +export default class SettingsCtrl extends Controller {
 +  logout() {
@@ -3946,56 +3789,56 @@ index 0000000..66ada04
 +  }
 +}
 +
-+SettingsCtrl.$inject = ['$scope', '$state', '$ionicPopup', '$log'];
++SettingsCtrl.$inject = ['$state', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From 5d6dbd614199db4f14669785d0d112e9aa7e598b Mon Sep 17 00:00:00 2001
+From e39ecb0738203f66012dbf3d2858c09d97ae4f22 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:53:42 +0300
-Subject: [PATCH 078/116] Step 4.24: Load settings controller
+Subject: [PATCH 077/115] Step 4.25: Load settings controller
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 9560b48..d46bf55 100644
+index 7da5248..ec96194 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -15,6 +15,7 @@ import ChatCtrl from '../controllers/chat.controller';
+@@ -16,6 +16,7 @@ import ChatCtrl from '../controllers/chat.controller';
  import ConfirmationCtrl from '../controllers/confirmation.controller';
  import LoginCtrl from '../controllers/login.controller';
  import ProfileCtrl from '../controllers/profile.controller';
 +import SettingsCtrl from '../controllers/settings.controller';
  import InputDirective from '../directives/input.directive';
  import CalendarFilter from '../filters/calendar.filter';
- import { RoutesConfig, RoutesRunner } from '../routes';
-@@ -33,6 +34,7 @@ new Definer(App)
-   .define(ConfirmationCtrl)
-   .define(LoginCtrl)
-   .define(ProfileCtrl)
-+  .define(SettingsCtrl)
-   .define(InputDirective)
-   .define(CalendarFilter)
-   .define(RoutesConfig)
+ import Routes from '../routes';
+@@ -36,6 +37,7 @@ new Loader(App)
+   .load(ConfirmationCtrl)
+   .load(LoginCtrl)
+   .load(ProfileCtrl)
++  .load(SettingsCtrl)
+   .load(InputDirective)
+   .load(CalendarFilter)
+   .load(Routes);
 -- 
 2.5.0
 
 
-From 27562e969ae75f0adcaf10e1d926ab64db852965 Mon Sep 17 00:00:00 2001
+From c8bad5c401b17326ef65287034a32cb74ffdb677 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:59:09 +0300
-Subject: [PATCH 079/116] Step 4.25: Classify message ownership
+Subject: [PATCH 078/115] Step 4.26: Classify message ownership
 
 ---
  client/templates/chat.html | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index 2185326..847ee55 100644
+index c08d5b2..896eed8 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
 @@ -5,7 +5,7 @@
@@ -4011,20 +3854,20 @@ index 2185326..847ee55 100644
 2.5.0
 
 
-From 515b78f5e4fe44e32819b18bb4b72215355c1ca6 Mon Sep 17 00:00:00 2001
+From b3915ebfb55be66815f8baadcd9ddc74d2d2658d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 10 Apr 2016 23:43:12 +0300
-Subject: [PATCH 080/116] Step 4.26: Add auto-scroll to chat controller
+Subject: [PATCH 079/115] Step 4.27: Add auto-scroll to chat controller
 
 ---
- client/scripts/controllers/chat.controller.js | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ client/scripts/controllers/chat.controller.js | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index fae0f77..7fbedeb 100644
+index 59b99f1..8f7291f 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -17,6 +17,8 @@ export default class ChatCtrl extends Controller {
+@@ -20,6 +20,8 @@ export default class ChatCtrl extends Controller {
          return Chats.findOne(this.chatId);
        }
      });
@@ -4033,11 +3876,10 @@ index fae0f77..7fbedeb 100644
    }
  
    sendMessage() {
-@@ -54,6 +56,18 @@ export default class ChatCtrl extends Controller {
-       cordova.plugins.Keyboard.close();
+@@ -56,6 +58,17 @@ export default class ChatCtrl extends Controller {
      }
    }
-+
+ 
 +  autoScroll() {
 +    let recentMessagesNum = this.messages.length;
 +
@@ -4045,29 +3887,28 @@ index fae0f77..7fbedeb 100644
 +      const currMessagesNum = this.getCollectionReactively('messages').length;
 +      const animate = recentMessagesNum != currMessagesNum;
 +      recentMessagesNum = currMessagesNum;
-+
-+      this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
++      this.scrollBottom(animate);
 +    });
 +  }
- }
- 
- ChatCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$ionicScrollDelegate'];
-\ No newline at end of file
++
+   scrollBottom(animate) {
+     this.$timeout(() => {
+       this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
 -- 
 2.5.0
 
 
-From 514af935266df8b5d9fb1aebbc19ce61165ff8ca Mon Sep 17 00:00:00 2001
+From da566e34f926191225e464f525a97e1292ea416a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:09:27 +0300
-Subject: [PATCH 081/116] Step 5.0: Add new chat button
+Subject: [PATCH 080/115] Step 5.1: Add new chat button
 
 ---
  client/templates/chats.html | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index dada8ed..d9e2271 100644
+index 2d4d4c8..e1fd2b7 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
 @@ -1,4 +1,8 @@
@@ -4078,25 +3919,25 @@ index dada8ed..d9e2271 100644
 +
    <ion-content>
      <ion-list>
-       <ion-item
+       <ion-item ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
 -- 
 2.5.0
 
 
-From 16603abe0eef5638685164e0b5cb5fcc6d676ce0 Mon Sep 17 00:00:00 2001
+From 284079da9eebf64271ba7b24f305f32721f4ed83 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:13:08 +0300
-Subject: [PATCH 082/116] Step 5.1: Add new chat button logic
+Subject: [PATCH 081/115] Step 5.2: Add new chat button logic
 
 ---
- client/scripts/controllers/chats.controller.js | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ client/scripts/controllers/chats.controller.js | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index 20111a3..64111ec 100644
+index 2bd68e9..e590107 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -11,9 +11,13 @@ export default class ChatsCtrl extends Controller {
+@@ -12,7 +12,13 @@ export default class ChatsCtrl extends Controller {
      });
    }
  
@@ -4108,19 +3949,16 @@ index 20111a3..64111ec 100644
      this.data.remove(chat);
    }
  }
- 
--ChatsCtrl.$inject = ['$scope'];
-\ No newline at end of file
-+ChatsCtrl.$inject = ['$scope', 'NewChat'];
-\ No newline at end of file
++
++ChatsCtrl.$inject = ['NewChat'];
 -- 
 2.5.0
 
 
-From 4ec9a9997d4ebd55fd5bb5d0ce42f0a1c919b74b Mon Sep 17 00:00:00 2001
+From 6d4e794bdc89734ae408e92211ac485f536c2457 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:14:52 +0300
-Subject: [PATCH 083/116] Step 5.2: Add new chat modal view
+Subject: [PATCH 082/115] Step 5.3: Add new chat modal view
 
 ---
  client/templates/new-chat.html | 19 +++++++++++++++++++
@@ -4129,7 +3967,7 @@ Subject: [PATCH 083/116] Step 5.2: Add new chat modal view
 
 diff --git a/client/templates/new-chat.html b/client/templates/new-chat.html
 new file mode 100644
-index 0000000..a571aa7
+index 0000000..16452f2
 --- /dev/null
 +++ b/client/templates/new-chat.html
 @@ -0,0 +1,19 @@
@@ -4144,7 +3982,7 @@ index 0000000..a571aa7
 +  <ion-content>
 +    <div class="list">
 +      <a ng-repeat="user in chat.users" ng-click="chat.newChat(user._id)" class="item">
-+        <h2>{{user.profile.name}}</h2>
++        <h2>{{ user.profile.name }}</h2>
 +        <p>
 +          Hey there! I am using meteor-Whatsapp with meteor.
 +        </p>
@@ -4157,25 +3995,25 @@ index 0000000..a571aa7
 2.5.0
 
 
-From dfb4ed119115f7b3953672ced17997684f0fa4a8 Mon Sep 17 00:00:00 2001
+From 8f64415d911ed2e5cca317ae9d7f6c01717edce7 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Mon, 4 Apr 2016 00:18:07 +0300
-Subject: [PATCH 084/116] Step 5.3: Create new chat service
+Date: Sun, 15 May 2016 22:30:23 +0300
+Subject: [PATCH 083/115] Step 5.4: Create new chat service
 
 ---
- client/scripts/services/new-chat.service.js | 28 ++++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+ client/scripts/services/new-chat.service.js | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
  create mode 100644 client/scripts/services/new-chat.service.js
 
 diff --git a/client/scripts/services/new-chat.service.js b/client/scripts/services/new-chat.service.js
 new file mode 100644
-index 0000000..c0c95a6
+index 0000000..c9fad5f
 --- /dev/null
 +++ b/client/scripts/services/new-chat.service.js
-@@ -0,0 +1,28 @@
-+import { Service } from '../entities';
+@@ -0,0 +1,29 @@
++import { Service } from 'angular-ecmascript/module-helpers';
 +
-+export default class NewChat extends Service {
++export default class NewChatService extends Service {
 +  constructor() {
 +    super(...arguments);
 +
@@ -4200,62 +4038,65 @@ index 0000000..c0c95a6
 +  }
 +}
 +
-+NewChat.$inject = ['$rootScope', '$ionicModal'];
++NewChatService.$name = 'NewChat';
++NewChatService.$inject = ['$rootScope', '$ionicModal'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From f39d7757a8822a9461573735cf7f4402c37d4d4a Mon Sep 17 00:00:00 2001
+From 9897b4dcc29ad9bf72ad0204f66c04fc2adb409c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
-Date: Mon, 4 Apr 2016 00:20:05 +0300
-Subject: [PATCH 085/116] Step 5.4: Load new chat service
+Date: Sun, 15 May 2016 22:30:40 +0300
+Subject: [PATCH 084/115] Step 5.5: Load new chat service
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index d46bf55..5f219e8 100644
+index ec96194..244c1fc 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -18,6 +18,7 @@ import ProfileCtrl from '../controllers/profile.controller';
+@@ -19,6 +19,7 @@ import ProfileCtrl from '../controllers/profile.controller';
  import SettingsCtrl from '../controllers/settings.controller';
  import InputDirective from '../directives/input.directive';
  import CalendarFilter from '../filters/calendar.filter';
 +import NewChatService from '../services/new-chat.service';
- import { RoutesConfig, RoutesRunner } from '../routes';
+ import Routes from '../routes';
  
- // App
-@@ -37,6 +38,7 @@ new Definer(App)
-   .define(SettingsCtrl)
-   .define(InputDirective)
-   .define(CalendarFilter)
-+  .define(NewChatService)
-   .define(RoutesConfig)
-   .define(RoutesRunner);
+ const App = 'Whatsapp';
+@@ -40,6 +41,7 @@ new Loader(App)
+   .load(SettingsCtrl)
+   .load(InputDirective)
+   .load(CalendarFilter)
++  .load(NewChatService)
+   .load(Routes);
  
+ // Startup
 -- 
 2.5.0
 
 
-From 607f9d38c1157e9ab375cc2071fd45bf6328fd73 Mon Sep 17 00:00:00 2001
+From 428d2a74e77d108d444bb6985056692ebb149257 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:27:03 +0300
-Subject: [PATCH 086/116] Step 5.5: Add new chat controller
+Subject: [PATCH 085/115] Step 5.6: Add new chat controller
 
 ---
- client/scripts/controllers/new-chat.controller.js | 48 +++++++++++++++++++++++
- 1 file changed, 48 insertions(+)
+ client/scripts/controllers/new-chat.controller.js | 50 +++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
  create mode 100644 client/scripts/controllers/new-chat.controller.js
 
 diff --git a/client/scripts/controllers/new-chat.controller.js b/client/scripts/controllers/new-chat.controller.js
 new file mode 100644
-index 0000000..976501e
+index 0000000..ec42a00
 --- /dev/null
 +++ b/client/scripts/controllers/new-chat.controller.js
-@@ -0,0 +1,48 @@
-+import { Controller } from '../entities';
+@@ -0,0 +1,50 @@
++import { Meteor } from 'meteor/meteor';
++import { Controller } from 'angular-ecmascript/module-helpers';
++import { Chats } from '../../../lib/collections';
 +
 +export default class NewChatCtrl extends Controller {
 +  constructor() {
@@ -4302,26 +4143,26 @@ index 0000000..976501e
 +  }
 +}
 +
-+NewChatCtrl.$inject = ['$scope', '$state', 'NewChat', '$ionicPopup', '$log'];
++NewChatCtrl.$inject = ['$state', 'NewChat', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From b8e3b716ffb9638460b8367ee7009bac049e00bd Mon Sep 17 00:00:00 2001
+From 89ff24b2db1aa22cce465b7ae13d41db15aed2fa Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:50:34 +0300
-Subject: [PATCH 087/116] Step 5.6: Load new chat controller
+Subject: [PATCH 086/115] Step 5.7: Load new chat controller
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 5f219e8..16ce5cc 100644
+index 244c1fc..175db75 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -14,6 +14,7 @@ import ChatsCtrl from '../controllers/chats.controller';
+@@ -15,6 +15,7 @@ import ChatsCtrl from '../controllers/chats.controller';
  import ChatCtrl from '../controllers/chat.controller';
  import ConfirmationCtrl from '../controllers/confirmation.controller';
  import LoginCtrl from '../controllers/login.controller';
@@ -4329,32 +4170,32 @@ index 5f219e8..16ce5cc 100644
  import ProfileCtrl from '../controllers/profile.controller';
  import SettingsCtrl from '../controllers/settings.controller';
  import InputDirective from '../directives/input.directive';
-@@ -34,6 +35,7 @@ new Definer(App)
-   .define(ChatCtrl)
-   .define(ConfirmationCtrl)
-   .define(LoginCtrl)
-+  .define(NewChatCtrl)
-   .define(ProfileCtrl)
-   .define(SettingsCtrl)
-   .define(InputDirective)
+@@ -37,6 +38,7 @@ new Loader(App)
+   .load(ChatCtrl)
+   .load(ConfirmationCtrl)
+   .load(LoginCtrl)
++  .load(NewChatCtrl)
+   .load(ProfileCtrl)
+   .load(SettingsCtrl)
+   .load(InputDirective)
 -- 
 2.5.0
 
 
-From db14fc918797d130a44259096ac498ac64f54c8a Mon Sep 17 00:00:00 2001
+From 52ad5ef69fcd1bc7297826e20bd38f463b0be1b1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:31:07 +0300
-Subject: [PATCH 088/116] Step 5.7: Add new chat method
+Subject: [PATCH 087/115] Step 5.8: Add new chat method
 
 ---
  lib/methods.js | 23 +++++++++++++++++++++++
  1 file changed, 23 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index c990546..30c78fc 100644
+index 0060ad1..f36891f 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -31,5 +31,28 @@ Meteor.methods({
+@@ -34,5 +34,28 @@ Meteor.methods({
      }
  
      return Meteor.users.update(this.userId, { $set: { 'profile.name': name } });
@@ -4388,20 +4229,20 @@ index c990546..30c78fc 100644
 2.5.0
 
 
-From dc87eb5047797b43b6876cc96399e7a52b01bef9 Mon Sep 17 00:00:00 2001
+From 268bd3dab7f9de940db78d8fd2eab499d1e12c04 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:00:10 +0300
-Subject: [PATCH 089/116] Step 5.8: Call remove chat method
+Subject: [PATCH 088/115] Step 5.9: Call remove chat method
 
 ---
  client/scripts/controllers/chats.controller.js | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index 64111ec..6713400 100644
+index e590107..eabaf3f 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
-@@ -16,7 +16,7 @@ export default class ChatsCtrl extends Controller {
+@@ -17,7 +17,7 @@ export default class ChatsCtrl extends Controller {
    }
  
    remove(chat) {
@@ -4414,20 +4255,20 @@ index 64111ec..6713400 100644
 2.5.0
 
 
-From e4ecca3f3aa9d9b93b732c36b8e7701a53b10f1e Mon Sep 17 00:00:00 2001
+From a5432b198ee772b9433267f94defa6911622ed90 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:01:59 +0300
-Subject: [PATCH 090/116] Step 5.9: Add remove chat method
+Subject: [PATCH 089/115] Step 5.10: Add remove chat method
 
 ---
  lib/methods.js | 19 +++++++++++++++++++
  1 file changed, 19 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index 30c78fc..4bd9d8e 100644
+index f36891f..09faf2b 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -54,5 +54,24 @@ Meteor.methods({
+@@ -57,5 +57,24 @@ Meteor.methods({
      const chatId = Chats.insert(chat);
  
      return chatId;
@@ -4457,25 +4298,27 @@ index 30c78fc..4bd9d8e 100644
 2.5.0
 
 
-From 6e9c75db78e05a4dd37c78821cb82cbb9f0cb1aa Mon Sep 17 00:00:00 2001
+From 070ae02cc067cc646f60055314052e777dadc19a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:06:30 +0300
-Subject: [PATCH 091/116] Step 5.10: Create chat name filter
+Subject: [PATCH 090/115] Step 5.11: Create chat name filter
 
 ---
- client/scripts/filters/chat-name.filter.js | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ client/scripts/filters/chat-name.filter.js | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
  create mode 100644 client/scripts/filters/chat-name.filter.js
 
 diff --git a/client/scripts/filters/chat-name.filter.js b/client/scripts/filters/chat-name.filter.js
 new file mode 100644
-index 0000000..9be07ca
+index 0000000..0dc2283
 --- /dev/null
 +++ b/client/scripts/filters/chat-name.filter.js
-@@ -0,0 +1,13 @@
-+import { Filter } from '../entities';
+@@ -0,0 +1,17 @@
++import { _ } from 'meteor/underscore';
++import { Meteor } from 'meteor/meteor';
++import { Filter } from 'angular-ecmascript/module-helpers';
 +
-+export default class chatName extends Filter {
++export default class ChatNameFilter extends Filter {
 +  filter(chat) {
 +    if (!chat) return;
 +
@@ -4486,62 +4329,66 @@ index 0000000..9be07ca
 +    return hasName ? otherUser.profile.name : chat.name || 'NO NAME';
 +  }
 +}
++
++ChatNameFilter.$name = 'chatName';
 -- 
 2.5.0
 
 
-From 5bfd1f7687cb99be5080bd146a2b1923d679f046 Mon Sep 17 00:00:00 2001
+From a13de28e620ef220ca37f1e3df050c379cfc0651 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 18:01:46 +0300
-Subject: [PATCH 092/116] Step 5.11: Load chat name filter
+Subject: [PATCH 091/115] Step 5.12: Load chat name filter
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 16ce5cc..8f72e2d 100644
+index 175db75..247a6bc 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -19,6 +19,7 @@ import ProfileCtrl from '../controllers/profile.controller';
+@@ -20,6 +20,7 @@ import ProfileCtrl from '../controllers/profile.controller';
  import SettingsCtrl from '../controllers/settings.controller';
  import InputDirective from '../directives/input.directive';
  import CalendarFilter from '../filters/calendar.filter';
 +import ChatNameFilter from '../filters/chat-name.filter';
  import NewChatService from '../services/new-chat.service';
- import { RoutesConfig, RoutesRunner } from '../routes';
+ import Routes from '../routes';
  
-@@ -40,6 +41,7 @@ new Definer(App)
-   .define(SettingsCtrl)
-   .define(InputDirective)
-   .define(CalendarFilter)
-+  .define(ChatNameFilter)
-   .define(NewChatService)
-   .define(RoutesConfig)
-   .define(RoutesRunner);
+@@ -43,6 +44,7 @@ new Loader(App)
+   .load(SettingsCtrl)
+   .load(InputDirective)
+   .load(CalendarFilter)
++  .load(ChatNameFilter)
+   .load(NewChatService)
+   .load(Routes);
+ 
 -- 
 2.5.0
 
 
-From 3446da514d42f0bc344d4dfdfd3e644f9742e29e Mon Sep 17 00:00:00 2001
+From 7d9b44f521235109a17580ea91c0e3f0f10fae6d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:10:10 +0300
-Subject: [PATCH 093/116] Step 5.12: Create chat picture filter
+Subject: [PATCH 092/115] Step 5.13: Create chat picture filter
 
 ---
- client/scripts/filters/chat-picture.filter.js | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ client/scripts/filters/chat-picture.filter.js | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
  create mode 100644 client/scripts/filters/chat-picture.filter.js
 
 diff --git a/client/scripts/filters/chat-picture.filter.js b/client/scripts/filters/chat-picture.filter.js
 new file mode 100644
-index 0000000..dafc7bb
+index 0000000..91533ff
 --- /dev/null
 +++ b/client/scripts/filters/chat-picture.filter.js
-@@ -0,0 +1,13 @@
-+import { Filter } from '../entities';
+@@ -0,0 +1,17 @@
++import { _ } from 'meteor/underscore';
++import { Meteor } from 'meteor/meteor';
++import { Filter } from 'angular-ecmascript/module-helpers';
 +
-+export default class chatPicture extends Filter {
++export default class ChatPictureFilter extends Filter {
 +  filter(chat) {
 +    if (!chat) return;
 +
@@ -4552,61 +4399,63 @@ index 0000000..dafc7bb
 +    return hasPicture ? otherUser.profile.picture : chat.picture || '/user-default.svg';
 +  };
 +}
++
++ChatPictureFilter.$name = 'chatPicture';
 \ No newline at end of file
 -- 
 2.5.0
 
 
-From a097b32bbc1f1c291d5b833bed304df9e6efe6a5 Mon Sep 17 00:00:00 2001
+From 2f8205af39ab8f631cf59e25df0355c125aa9702 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 18:11:54 +0300
-Subject: [PATCH 094/116] Step 5.13: Load chat picture filter
+Subject: [PATCH 093/115] Step 5.14: Load chat picture filter
 
 ---
  client/scripts/lib/app.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/lib/app.js b/client/scripts/lib/app.js
-index 8f72e2d..d2e6ebd 100644
+index 247a6bc..313e394 100644
 --- a/client/scripts/lib/app.js
 +++ b/client/scripts/lib/app.js
-@@ -20,6 +20,7 @@ import SettingsCtrl from '../controllers/settings.controller';
+@@ -21,6 +21,7 @@ import SettingsCtrl from '../controllers/settings.controller';
  import InputDirective from '../directives/input.directive';
  import CalendarFilter from '../filters/calendar.filter';
  import ChatNameFilter from '../filters/chat-name.filter';
 +import ChatPictureFilter from '../filters/chat-picture.filter';
  import NewChatService from '../services/new-chat.service';
- import { RoutesConfig, RoutesRunner } from '../routes';
+ import Routes from '../routes';
  
-@@ -42,6 +43,7 @@ new Definer(App)
-   .define(InputDirective)
-   .define(CalendarFilter)
-   .define(ChatNameFilter)
-+  .define(ChatPictureFilter)
-   .define(NewChatService)
-   .define(RoutesConfig)
-   .define(RoutesRunner);
+@@ -45,6 +46,7 @@ new Loader(App)
+   .load(InputDirective)
+   .load(CalendarFilter)
+   .load(ChatNameFilter)
++  .load(ChatPictureFilter)
+   .load(NewChatService)
+   .load(Routes);
+ 
 -- 
 2.5.0
 
 
-From 36801fb20cd8f0881c6eb3a4be5d9c955256226c Mon Sep 17 00:00:00 2001
+From 0c08905c1a852498b2a605c0cde2270253e2017f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:11:53 +0300
-Subject: [PATCH 095/116] Step 5.14: Apply chat filters in chats view
+Subject: [PATCH 094/115] Step 5.15: Apply chat filters in chats view
 
 ---
  client/templates/chats.html | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index d9e2271..17a5503 100644
+index e1fd2b7..d5b3e72 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
-@@ -10,8 +10,8 @@
-               class="item-chat item-remove-animate item-avatar item-icon-right"
-               type="item-text-wrap"
-               href="#/tab/chats/{{ chat._id }}">
+@@ -9,8 +9,8 @@
+                 class="item-chat item-remove-animate item-avatar item-icon-right"
+                 type="item-text-wrap"
+                 href="#/tab/chats/{{ chat._id }}">
 -        <img ng-src="{{ chat.picture }}">
 -        <h2>{{ chat.name }}</h2>
 +        <img ng-src="{{ chat | chatPicture }}">
@@ -4618,17 +4467,17 @@ index d9e2271..17a5503 100644
 2.5.0
 
 
-From 034fbac8fdb028fc298ed003abc554f793fa216b Mon Sep 17 00:00:00 2001
+From e4273e2e049a3b814ffdc1584ee62118e08994d5 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:13:20 +0300
-Subject: [PATCH 096/116] Step 5.15: Apply chat filters in chat view
+Subject: [PATCH 095/115] Step 5.16: Apply chat filters in chat view
 
 ---
  client/templates/chat.html | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index 847ee55..80fc3d8 100644
+index 896eed8..f450447 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
 @@ -1,6 +1,6 @@
@@ -4644,21 +4493,24 @@ index 847ee55..80fc3d8 100644
 2.5.0
 
 
-From 52a92a673c42274979fab23293be92619911833a Mon Sep 17 00:00:00 2001
+From 147ad4df9f2071b0159a754a2919038238f3e55b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:16:52 +0300
-Subject: [PATCH 097/116] Step 5.16: Create users with phone data stub
+Subject: [PATCH 096/115] Step 5.17: Create users with phone data stub
 
 ---
- server/bootstrap.js | 68 ++++++++++++-----------------------------------------
- 1 file changed, 15 insertions(+), 53 deletions(-)
+ server/bootstrap.js | 71 ++++++++++++-----------------------------------------
+ 1 file changed, 16 insertions(+), 55 deletions(-)
 
 diff --git a/server/bootstrap.js b/server/bootstrap.js
-index d136ab6..fdf13b4 100644
+index 3724cfb..aeb796f 100644
 --- a/server/bootstrap.js
 +++ b/server/bootstrap.js
-@@ -1,64 +1,26 @@
- import moment from 'moment';
+@@ -1,66 +1,27 @@
+-import Moment from 'moment';
+ import { Meteor } from 'meteor/meteor';
+-import { Chats, Messages } from '../lib/collections';
++import { Accounts } from 'meteor/accounts-base';
  
  Meteor.startup(function() {
 -  if (Chats.find().count() !== 0) return;
@@ -4669,23 +4521,23 @@ index d136ab6..fdf13b4 100644
 -  const messages = [
 -    {
 -      text: 'You on your way?',
--      timestamp: moment().subtract(1, 'hours').toDate()
+-      timestamp: Moment().subtract(1, 'hours').toDate()
 -    },
 -    {
 -      text: 'Hey, it\'s me',
--      timestamp: moment().subtract(2, 'hours').toDate()
+-      timestamp: Moment().subtract(2, 'hours').toDate()
 -    },
 -    {
 -      text: 'I should buy a boat',
--      timestamp: moment().subtract(1, 'days').toDate()
+-      timestamp: Moment().subtract(1, 'days').toDate()
 -    },
 -    {
 -      text: 'Look at my mukluks!',
--      timestamp: moment().subtract(4, 'days').toDate()
+-      timestamp: Moment().subtract(4, 'days').toDate()
 -    },
 -    {
 -      text: 'This is wicked good ice cream.',
--      timestamp: moment().subtract(2, 'weeks').toDate()
+-      timestamp: Moment().subtract(2, 'weeks').toDate()
 +  Accounts.createUserWithPhone({
 +    phone: '+972501234567',
 +    profile: {
@@ -4742,10 +4594,10 @@ index d136ab6..fdf13b4 100644
 2.5.0
 
 
-From 6b1ed1fade9b2d054f71f793cc513e9d49822ac3 Mon Sep 17 00:00:00 2001
+From fb8f364169d2fab8e6058fd031cc9628010c94cb Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:17:42 +0300
-Subject: [PATCH 098/116] Step 5.17: Remove insecure meteor package
+Subject: [PATCH 097/115] Step 5.18: Remove insecure meteor package
 
 ---
  .meteor/packages | 1 -
@@ -4780,10 +4632,10 @@ index 9cf6152..9145a90 100644
 2.5.0
 
 
-From 1a8ad1ad72f6cdf1d723462edc904a923cbc22ca Mon Sep 17 00:00:00 2001
+From 37261d47e346468a3cd71a4f22499d7474138f90 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:18:22 +0300
-Subject: [PATCH 099/116] Step 6.0: Remove autopublish meteor package
+Subject: [PATCH 098/115] Step 6.1: Remove autopublish meteor package
 
 ---
  .meteor/packages | 1 -
@@ -4818,10 +4670,10 @@ index 9145a90..ecbcce7 100644
 2.5.0
 
 
-From dcbca2159b779bf30b72df8312ca8bacacebb5db Mon Sep 17 00:00:00 2001
+From 0e189a35978302ef5f91a173eb8c33159ce92c49 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:19:34 +0300
-Subject: [PATCH 100/116] Step 6.1: Add publish-composite meteor package
+Subject: [PATCH 099/115] Step 6.2: Add publish-composite meteor package
 
 ---
  .meteor/packages | 1 +
@@ -4853,22 +4705,24 @@ index ecbcce7..ece495e 100644
 2.5.0
 
 
-From 58ef1ef3fbfc78c7820bb9801f9ec9f106bae1dc Mon Sep 17 00:00:00 2001
+From ce212c2019ab66362f1260274e8b245fd32cb07c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:20:53 +0300
-Subject: [PATCH 101/116] Step 6.2: Add users publication
+Subject: [PATCH 100/115] Step 6.3: Add users publication
 
 ---
- server/publications.js | 3 +++
- 1 file changed, 3 insertions(+)
+ server/publications.js | 5 +++++
+ 1 file changed, 5 insertions(+)
  create mode 100644 server/publications.js
 
 diff --git a/server/publications.js b/server/publications.js
 new file mode 100644
-index 0000000..984f411
+index 0000000..4160aec
 --- /dev/null
 +++ b/server/publications.js
-@@ -0,0 +1,3 @@
+@@ -0,0 +1,5 @@
++import { Meteor } from 'meteor/meteor';
++
 +Meteor.publish('users', function() {
 +  return Meteor.users.find({}, { fields: { profile: 1 } });
 +});
@@ -4877,20 +4731,20 @@ index 0000000..984f411
 2.5.0
 
 
-From 83918061489167c8bc412b3953fe8f5991517e8c Mon Sep 17 00:00:00 2001
+From 70aecaa254a957fd602b7b0c6a86acd701bbc7ca Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:22:13 +0300
-Subject: [PATCH 102/116] Step 6.3: Add users subscription
+Subject: [PATCH 101/115] Step 6.4: Add users subscription
 
 ---
  client/scripts/controllers/new-chat.controller.js | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/scripts/controllers/new-chat.controller.js b/client/scripts/controllers/new-chat.controller.js
-index 976501e..1641f0f 100644
+index ec42a00..66d5876 100644
 --- a/client/scripts/controllers/new-chat.controller.js
 +++ b/client/scripts/controllers/new-chat.controller.js
-@@ -4,6 +4,8 @@ export default class NewChatCtrl extends Controller {
+@@ -6,6 +6,8 @@ export default class NewChatCtrl extends Controller {
    constructor() {
      super(...arguments);
  
@@ -4903,20 +4757,23 @@ index 976501e..1641f0f 100644
 2.5.0
 
 
-From bc20af3d98a2965d2bb76d98ac2b6c9efde31d0e Mon Sep 17 00:00:00 2001
+From 485fcf86fe3ed29cd9a00fafa2439c4c3c8915a5 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:26:21 +0300
-Subject: [PATCH 103/116] Step 6.4: Add chats publication
+Subject: [PATCH 102/115] Step 6.5: Add chats publication
 
 ---
- server/publications.js | 25 +++++++++++++++++++++++++
- 1 file changed, 25 insertions(+)
+ server/publications.js | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
 diff --git a/server/publications.js b/server/publications.js
-index 984f411..1d3ea3e 100644
+index 4160aec..211249f 100644
 --- a/server/publications.js
 +++ b/server/publications.js
-@@ -1,3 +1,28 @@
+@@ -1,5 +1,31 @@
+ import { Meteor } from 'meteor/meteor';
++import { Chats, Messages } from '../lib/collections';
+ 
  Meteor.publish('users', function() {
    return Meteor.users.find({}, { fields: { profile: 1 } });
 +});
@@ -4950,20 +4807,26 @@ index 984f411..1d3ea3e 100644
 2.5.0
 
 
-From 754824a9146f68f302f293904900a8e752512683 Mon Sep 17 00:00:00 2001
+From 818daa7f74990565f18531b6814569baa640e30c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:32:44 +0300
-Subject: [PATCH 104/116] Step 6.5: Add chats subscription
+Subject: [PATCH 103/115] Step 6.6: Add chats subscription
 
 ---
- client/scripts/routes.js | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ client/scripts/routes.js | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/routes.js b/client/scripts/routes.js
-index d824d70..f2438ae 100644
+index ea59297..d3d7a65 100644
 --- a/client/scripts/routes.js
 +++ b/client/scripts/routes.js
-@@ -14,7 +14,10 @@ export class RoutesConfig extends Config {
+@@ -1,4 +1,5 @@
+ import { _ } from 'meteor/underscore';
++import { Meteor } from 'meteor/meteor';
+ import { Config, Runner } from 'angular-ecmascript/module-helpers';
+ 
+ class RoutesConfig extends Config {
+@@ -15,7 +16,10 @@ class RoutesConfig extends Config {
          abstract: true,
          templateUrl: 'client/templates/tabs.html',
          resolve: {
@@ -4979,10 +4842,10 @@ index d824d70..f2438ae 100644
 2.5.0
 
 
-From 300d29ec523f6a3559b83ac4cd57d70438370a7a Mon Sep 17 00:00:00 2001
+From cc4c0ba059c55f9e601c2136d48e3f3e5cfe3ea6 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:37:10 +0300
-Subject: [PATCH 105/116] Step 7.0: Add camera-ui meteor package
+Subject: [PATCH 104/115] Step 7.1: Add camera-ui meteor package
 
 ---
  .meteor/packages | 1 +
@@ -5045,20 +4908,20 @@ index ece495e..b287660 100644
 2.5.0
 
 
-From b20ac611ebce7599b3a0fac13097cd912f17eaa6 Mon Sep 17 00:00:00 2001
+From 76d6020a3508f294772ab59851a7cab27b13cd63 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:39:17 +0300
-Subject: [PATCH 106/116] Step 7.1: Add update picture method
+Subject: [PATCH 105/115] Step 7.2: Add update picture method
 
 ---
  lib/methods.js | 10 ++++++++++
  1 file changed, 10 insertions(+)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index 4bd9d8e..e32e0f6 100644
+index 09faf2b..9b0de15 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -73,5 +73,15 @@ Meteor.methods({
+@@ -76,5 +76,15 @@ Meteor.methods({
      Messages.remove({ chatId: chatId });
  
      return Chats.remove({ _id: chatId });
@@ -5079,10 +4942,10 @@ index 4bd9d8e..e32e0f6 100644
 2.5.0
 
 
-From bb901f4866eac3b4d2f83abd5b2b28862618ad86 Mon Sep 17 00:00:00 2001
+From 8c92f3861f3d795f2e00245e490eb4597e7cdb56 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:43:58 +0300
-Subject: [PATCH 107/116] Step 7.2: Add update picture button to profile view
+Subject: [PATCH 106/115] Step 7.3: Add update picture button to profile view
 
 ---
  client/templates/profile.html | 8 ++++++--
@@ -5111,21 +4974,27 @@ index c18fe20..2cbd896 100644
 2.5.0
 
 
-From f2066d9dab6d622d92ba84f828cf279b1fa8634f Mon Sep 17 00:00:00 2001
+From fdc3c8052904dfa667909efb169df8c13eef82fa Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:48:51 +0300
-Subject: [PATCH 108/116] Step 7.3: Add update picture logic to profile
+Subject: [PATCH 107/115] Step 7.4: Add update picture logic to profile
  controller
 
 ---
- client/scripts/controllers/profile.controller.js | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
+ client/scripts/controllers/profile.controller.js | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
 diff --git a/client/scripts/controllers/profile.controller.js b/client/scripts/controllers/profile.controller.js
-index 77f956e..6420234 100644
+index a6628c9..a6e56a7 100644
 --- a/client/scripts/controllers/profile.controller.js
 +++ b/client/scripts/controllers/profile.controller.js
-@@ -8,6 +8,21 @@ export default class ProfileCtrl extends Controller {
+@@ -1,4 +1,5 @@
+ import { _ } from 'meteor/underscore';
++import { MeteorCameraUI } from 'meteor/okland:camera-ui';
+ import { Controller } from 'angular-ecmascript/module-helpers';
+ 
+ export default class ProfileCtrl extends Controller {
+@@ -9,6 +10,21 @@ export default class ProfileCtrl extends Controller {
      this.name = profile ? profile.name : '';
    }
  
@@ -5147,7 +5016,7 @@ index 77f956e..6420234 100644
    updateName() {
      if (_.isEmpty(this.name)) return;
  
-@@ -18,6 +33,7 @@ export default class ProfileCtrl extends Controller {
+@@ -19,6 +35,7 @@ export default class ProfileCtrl extends Controller {
    }
  
    handleError(err) {
@@ -5159,10 +5028,10 @@ index 77f956e..6420234 100644
 2.5.0
 
 
-From c28550a5d071c0eb9149a5d6f6de8d5351f0ae8d Mon Sep 17 00:00:00 2001
+From 94d9b012abb2ae3e3e0edfa36534ca6706912199 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:50:43 +0300
-Subject: [PATCH 109/116] Step 7.4: Update profile stylesheet
+Subject: [PATCH 108/115] Step 7.5: Update profile stylesheet
 
 ---
  client/styles/profile.scss | 2 ++
@@ -5185,10 +5054,10 @@ index ef4c6cc..41d7455 100644
 2.5.0
 
 
-From d02cc09a23e0492a15de8723e5d12d08e189f261 Mon Sep 17 00:00:00 2001
+From c6f7f965465c9bb54b05c28ac1e51c9316910794 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:53:13 +0300
-Subject: [PATCH 110/116] Step 7.5: Add reference to profile from settings view
+Subject: [PATCH 109/115] Step 7.6: Add reference to profile from settings view
 
 ---
  client/templates/settings.html | 8 +++++++-
@@ -5216,20 +5085,28 @@ index eadaf50..05b4deb 100644
 2.5.0
 
 
-From 68b0a47c1316e0d11bf20090ed5fb44c5210e329 Mon Sep 17 00:00:00 2001
+From 51b773b7e58bd95b1db5a2ecbc82cceb737376ba Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 10:33:36 +0300
-Subject: [PATCH 111/116] Step 8.0: Add send picture logic
+Subject: [PATCH 110/115] Step 8.1: Add send picture logic
 
 ---
- client/scripts/controllers/chat.controller.js | 25 ++++++++++++++++++++++++-
- 1 file changed, 24 insertions(+), 1 deletion(-)
+ client/scripts/controllers/chat.controller.js | 26 +++++++++++++++++++++++++-
+ 1 file changed, 25 insertions(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chat.controller.js b/client/scripts/controllers/chat.controller.js
-index 7fbedeb..60fcb37 100644
+index 8f7291f..2d5e4a8 100644
 --- a/client/scripts/controllers/chat.controller.js
 +++ b/client/scripts/controllers/chat.controller.js
-@@ -21,6 +21,18 @@ export default class ChatCtrl extends Controller {
+@@ -1,6 +1,7 @@
+ import Ionic from 'ionic-scripts';
+ import { _ } from 'meteor/underscore';
+ import { Meteor } from 'meteor/meteor';
++import { MeteorCameraUI } from 'meteor/okland:camera-ui';
+ import { Controller } from 'angular-ecmascript/module-helpers';
+ import { Chats, Messages } from '../../../lib/collections';
+ 
+@@ -24,6 +25,18 @@ export default class ChatCtrl extends Controller {
      this.autoScroll();
    }
  
@@ -5248,9 +5125,9 @@ index 7fbedeb..60fcb37 100644
    sendMessage() {
      if (_.isEmpty(this.message)) return;
  
-@@ -68,6 +80,17 @@ export default class ChatCtrl extends Controller {
+@@ -74,6 +87,17 @@ export default class ChatCtrl extends Controller {
        this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
-     });
+     }, 300);
    }
 +
 +  handleError(err) {
@@ -5265,27 +5142,26 @@ index 7fbedeb..60fcb37 100644
 +  }
  }
  
--ChatCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$ionicScrollDelegate'];
-\ No newline at end of file
-+ChatCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$ionicScrollDelegate', '$ionicPopup', '$log'];
+-ChatCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate'];
++ChatCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate', '$ionicPopup', '$log'];
 -- 
 2.5.0
 
 
-From 2c1dbd8faba4e9ecb2b9c6aa6d1a48cafe16d337 Mon Sep 17 00:00:00 2001
+From f0eb5b6184bede45141342d8ba1c48e2c612b1f2 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:10:09 +0300
-Subject: [PATCH 112/116] Step 8.1: Invoke send picture logic on click
+Subject: [PATCH 111/115] Step 8.2: Invoke send picture logic on click
 
 ---
  client/templates/chat.html | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index 80fc3d8..09e402e 100644
+index f450447..00dce4b 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
-@@ -29,7 +29,7 @@
+@@ -28,7 +28,7 @@
        <button ng-click="chat.sendMessage()" class="button button-clear button-positive">Send</button>
      </span>
      <span ng-if="!chat.message || chat.message.length === 0">
@@ -5298,20 +5174,26 @@ index 80fc3d8..09e402e 100644
 2.5.0
 
 
-From 1da6cd2f5b745970ace70603ca77a6d8dbe9816c Mon Sep 17 00:00:00 2001
+From ed6e85c24bef9cd131ac39f50160a2bced5fda42 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:12:36 +0300
-Subject: [PATCH 113/116] Step 8.2: Add picture message validation
+Subject: [PATCH 112/115] Step 8.3: Add picture message validation
 
 ---
- lib/methods.js | 16 ++++++++++++----
- 1 file changed, 12 insertions(+), 4 deletions(-)
+ lib/methods.js | 17 +++++++++++++----
+ 1 file changed, 13 insertions(+), 4 deletions(-)
 
 diff --git a/lib/methods.js b/lib/methods.js
-index e32e0f6..18a371a 100644
+index 9b0de15..8c74d4e 100644
 --- a/lib/methods.js
 +++ b/lib/methods.js
-@@ -5,10 +5,18 @@ Meteor.methods({
+@@ -1,4 +1,5 @@
+ import { Meteor } from 'meteor/meteor';
++import { check } from 'meteor/check';
+ import { Chats, Messages } from '../lib/collections';
+ 
+ Meteor.methods({
+@@ -8,10 +9,18 @@ Meteor.methods({
          'Must be logged in to send message.');
      }
  
@@ -5338,17 +5220,17 @@ index e32e0f6..18a371a 100644
 2.5.0
 
 
-From 96d8afab35c144cca63d4a685bd94183bab533e6 Mon Sep 17 00:00:00 2001
+From ec6108a9361e3a9d1f5b7b5e6eb05961bc954157 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:15:58 +0300
-Subject: [PATCH 114/116] Step 8.3: Add picture message type to chat view
+Subject: [PATCH 113/115] Step 8.4: Add picture message type to chat view
 
 ---
  client/templates/chat.html | 7 ++++++-
  1 file changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/chat.html b/client/templates/chat.html
-index 09e402e..30b6fd0 100644
+index 00dce4b..461add3 100644
 --- a/client/templates/chat.html
 +++ b/client/templates/chat.html
 @@ -6,7 +6,12 @@
@@ -5369,10 +5251,10 @@ index 09e402e..30b6fd0 100644
 2.5.0
 
 
-From 3f9a27534d061b195f338365aefdd132d3e3af1d Mon Sep 17 00:00:00 2001
+From 804df6ef65c8b0a43ccb3ab1ee306d33e7be1531 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:18:24 +0300
-Subject: [PATCH 115/116] Step 8.4: Add picture style to chat stylesheet
+Subject: [PATCH 114/115] Step 8.5: Add picture style to chat stylesheet
 
 ---
  client/styles/chat.scss | 12 +++++++++++-
@@ -5412,10 +5294,10 @@ index 77f09da..e35382c 100644
 2.5.0
 
 
-From 22d3d8d6eb321c35490a20c958eb141c38a52cb4 Mon Sep 17 00:00:00 2001
+From c10fb4601b11171e9c50443b7dee29044f47fcd3 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:22:15 +0300
-Subject: [PATCH 116/116] Step 8.5: Add picture message indication in chats
+Subject: [PATCH 115/115] Step 8.6: Add picture message indication in chats
  view
 
 ---
@@ -5423,11 +5305,11 @@ Subject: [PATCH 116/116] Step 8.5: Add picture message indication in chats
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/client/templates/chats.html b/client/templates/chats.html
-index 17a5503..60c0147 100644
+index d5b3e72..b7b8f13 100644
 --- a/client/templates/chats.html
 +++ b/client/templates/chats.html
-@@ -12,7 +12,10 @@
-               href="#/tab/chats/{{ chat._id }}">
+@@ -11,7 +11,10 @@
+                 href="#/tab/chats/{{ chat._id }}">
          <img ng-src="{{ chat | chatPicture }}">
          <h2>{{ chat | chatName }}</h2>
 -        <p>{{ chat.lastMessage.text }}</p>

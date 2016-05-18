@@ -82,7 +82,7 @@ This package provides the ability to run `remove()` method from the client side 
 
 `Meteor` includes this package only for development purposes and it should be removed once our app is ready for production.
 
-So removing this package by running this command:
+So remote this package by running this command:
 
     $ meteor remove insecure
 

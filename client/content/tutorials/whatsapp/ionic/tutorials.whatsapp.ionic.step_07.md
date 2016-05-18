@@ -10,7 +10,7 @@ We will add now the [publish-composite](https://atmospherejs.com/reywood/publish
 
     $ meteor add reywood:publish-composite
 
-Now we need to explicitly define our publications. Let’s start by sending the users' information.
+Now we need to explicitly define our publications. Let's start by sending the users' information.
 
 Create a file named `publications.js` under the `api/server` with the following contents:
 
@@ -18,7 +18,7 @@ Create a file named `publications.js` under the `api/server` with the following 
 
 For the `users` collection we only defined a query for publication, and for the `chats` we defined a composite publication where each user will get his relevant chats.
 
-And of course we need to modify some of the client side code, we need to make sure that the client is subscribed to the published data, so let’s do so in `NewChatCtrl`, because this is where we need the `users` data:
+And of course we need to modify some of the client side code, we need to make sure that the client is subscribed to the published data, so let's do so in `NewChatCtrl`, because this is where we need the `users` data:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="6.4"}}
 

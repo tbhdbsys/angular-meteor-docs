@@ -2,7 +2,7 @@
 
 Congratulations!
 
-You’ve created a WhatsApp app!
+You’ve created a `Whatsapp` app!
 
 Thanks a lot to [Idan Wender](https://github.com/idanwe/), [Dotan Simha](https://github.com/dotansimha) and [Eytan Manor](https://github.com/DAB0mB) who helped me ([Urigo](https://github.com/urigo)) a lot with this post.
 

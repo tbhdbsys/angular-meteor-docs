@@ -38,7 +38,7 @@ For debugging purposes if you'd like to add admin phone numbers and mater verifi
       }
     }
 
-We're going to create the same flow of whatsapp for authentication using 3 views:
+We're going to create the same flow of `Whatsapp` for authentication using 3 views:
 
 - `Login` - Asks for the user's phone number.
 - `Confirmation` - Verifies a user's phone number by an SMS authentication.
