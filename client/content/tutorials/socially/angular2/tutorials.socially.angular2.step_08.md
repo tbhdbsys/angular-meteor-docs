@@ -77,6 +77,7 @@ Let's go to the "collection" folder and specify what actions are allowed:
 
 In only 10 lines of code we've specified that inserts, updates and removes can only be completed if a user is logged in.
 
+The callbacks passed to the Parties.allow are executed on the server only. The client optimistically assumes that any action (such as removal of a party) will succeed, and reverts the action as soon as the server denies permission. 
 If you want to learn more about those parameters passed into Parties.allow or how this method works in general, please, read the official Meteor [docs on allow](http://docs.meteor.com/#/full/allow).
 
 ## Meteor.user()
@@ -99,15 +100,12 @@ Let's do the user check in `party-details.ts`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.7"}}
 
-> Notice that you should also update your `tsconfig.json` to include the declaration file.
-
-
 Typing each time `Meteor.user()` or `Meteor.userId()` might seems tedious.
 Not to mention that there is no way to use these functions in the component templates currently.
 
 # RequireUser
 
-How can you simply life here? You can try out the decorators that comes with the accounts package, which wraps around all Meteor Accounts API (login with password and social logins features)
+How can you simplify life here? You can try out the decorator that comes with the accounts package, which wraps around all Meteor Accounts API (login with password and social logins features)
 and exports two services for the usage in Angular 2. Besides that, it has two convenient annotations: `InjectUser` and `RequireUser`.
 
 Now you can specify if a component can be accessed only when a user is logged in using the `@RequireUser` annotation.
