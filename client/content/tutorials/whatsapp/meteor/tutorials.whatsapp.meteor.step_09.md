@@ -20,6 +20,7 @@ You can safely start with those solutions knowing that you won't have to switch 
 
 Next steps:
 
+* If you'd like to deploy this app to a production server, we recommend you check out Meteor Galaxy, the cloud service for [https://www.meteor.com/hosting](hosting and managing Meteor apps).
 * Check out [https://www.meteor.com/](https://www.meteor.com/) for many more resources
 * Go to [http://angular-meteor.com/](http://angular-meteor.com/) and check out the [advanced tutorial](http://angular-meteor.com/tutorials/angular1/bootstrapping)
 
