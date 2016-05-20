@@ -3,6 +3,8 @@
 
 This chapter is all about migrating your Angular1 app to **Angular2**, using Socially as an example.
 
+It it based on the great [Upgrading from 1.x guide](https://angular.io/docs/ts/latest/guide/upgrade.html) on angular.io. 
+
 It includes switching from JavaScript to **TypeScript**. With that we can use all of its benefits.
 
 
