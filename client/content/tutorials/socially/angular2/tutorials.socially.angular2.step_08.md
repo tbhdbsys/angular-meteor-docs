@@ -41,11 +41,11 @@ Add the "accounts-password" Meteor package. It's a very powerful package for all
 
     $ meteor add accounts-password
 
-Now we are going to add `angular2-meteor-accounts-ui` which is a which is a package that contains all the HTML and CSS we need for the user operation forms.
+Now we are going to add `angular2-meteor-accounts-ui` which is a package that contains all the HTML and CSS we need for the user operation forms.
 
     $ meteor npm install --save angular2-meteor-accounts-ui
 
-Let's add the `<login-buttons>` tag to the right of the party form in the PartiesList's template:
+Let's add the `<login-buttons>` tag below of the party form in the PartiesList's template:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.2"}}
 
@@ -63,7 +63,7 @@ And now let's create main stylesheet file (with `.scss` extension), and import t
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
 
-Run the code, you'll see a login link to the right of the "Add" button. Click on the link and then "create  account" to sign up. Try to log in and log out.
+Run the code, you'll see a login link below the form. Click on the link and then "create  account" to sign up. Try to log in and log out.
 
 That's it! As you can see, it's very easy to add basic login support with the help of the Meteor accounts package.
 
