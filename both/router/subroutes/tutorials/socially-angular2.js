@@ -187,11 +187,20 @@ SOCIALLY_ANGULAR2 = [
   },
   {
     id: "23",
+    title: 'ngUpgrade and Migration to Angular2',
+    seoTitle: 'ngUpgrade and Migration to Angular2',
+    route: "tutorials.socially.angular2.migration-to-angular2",
+    path: "/tutorials/socially/angular2/migration-to-angular2",
+    contentTemplate: 'tutorials.socially.angular2.step_23.md',
+    previousCodeStep: '22'
+  },
+  {
+    id: "24",
     title: 'Next Steps',
     seoTitle: 'Next Steps',
     route: "tutorials.socially.angular2.next-steps",
     path: "/tutorials/socially/angular2/next-steps",
-    contentTemplate: 'tutorials.socially.angular2.step_23.md',
-    previousCodeStep: '22'
+    contentTemplate: 'tutorials.socially.angular2.step_24.md',
+    previousCodeStep: '23'
   }
 ];
