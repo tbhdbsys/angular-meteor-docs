@@ -47,10 +47,10 @@ Before we dive into building our app's different components, we need a way to wr
 
     $ meteor npm install angular-ecmascript --save
 
-`angular-ecmascript` is a utility library which will help us write an `AngularJS` app using `es6`'s class system.
-As for now there is no official way to do so, however using `es6` syntax is recommended, hence `angular-ecmascript` was created.
+`angular-ecmascript` is a utility library which will help us write an `AngularJS` app using es6's class system.
+As for now there is no official way to do so, however using es6 syntax is recommended, hence `angular-ecmascript` was created.
 
-In addition, `angular-ecmascript` provides us with some very handy features, like auto-injection without using any pre-processors like [ng-annotate](https://github.com/olov/ng-annotate), or setting our controller as the view model any time it is created (For more information about setting the controller as the view model see [referene](http://www.angular-meteor.com/api/1.3.11/reactive)).
+In addition, `angular-ecmascript` provides us with some very handy features, like auto-injection without using any pre-processors like [ng-annotate](https://github.com/olov/ng-annotate), or setting our controller as the view model any time it is created (See [referene](/api/1.3.11/reactive)). The API shouldn't be too complicated to understand, and we will get familiar with it as we make progress with this tutorial.
 
 Our next step is to create the states and routes for the views.
 
