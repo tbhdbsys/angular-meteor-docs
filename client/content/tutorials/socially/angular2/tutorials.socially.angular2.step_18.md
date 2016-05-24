@@ -25,9 +25,11 @@ Run the following command in your Terminal:
 
 Now we will import it in the main page, we also need to declare that we are going to use `MATERIAL_DIRECTIVES` which is a shorthand for all of the components and directives that Ng2Material exports, and also import the module's providers in our `bootstrap` call:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.4" filename="client/app.ts"}}
 
-> Note that our import in the main page is from `ng2-material/all.webpack` which have the CSS stylesheet bundled inside, and the next import is from another path without the CSS because it is needed to load only once!
+And we will also need to import the style files:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.4" filename="client/css/main.scss"}}
 
 And let's update our fonts to the Material official fonts:
 
@@ -39,29 +41,52 @@ That's it - now we can use it!
 
 Like we did in the previous chapter - let's take care of the navigation bar first.
 
-We use directives and components from Ng2Material - such as `md-toolbar`, and we will also use Ng2Material grid system (`flex-gt-sm`):
+We use directives and components from Ng2Material - such as `md-toolbar`.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.6"}}
+In order to use `md-toolbar`, we need to fetch the code of this package, by running:
 
-Now let's take care of the parties form, we also need to import the directives of Ng2Material first:
+    meteor npm install @angular2-material/toolbar --save
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.7"}}
+And now we can import it in our main component:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.6" filename="client/app.ts"}}
+
+> Note that we also imported the CSS file of mdToolbar component - Meteor allows us to do such imports!
+
+And use it in the main component's template:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.6" filename="client/app.html"}}
+
+Now let's take care of the parties form.
+
+In the form we will use another two extra components on ngMaterial2: MdInput and MdCheckbox - we also need to fetch their packages:
+
+    meteor npm install @angular2-material/input --save
+    meteor npm install @angular2-material/checkbox --save
+
+Now let's add all the imports to the component:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.7" filename="client/imports/parties-form/parties-form.ts"}}
 
 And now let's update it's layout:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.8"}}
 
-We use the input wrapper (`md-input` and `md-input-container`) which are wrappers with style and cool layout.
+We use the mdInput component which is a wrapper for regular HTML input with style and cool layout.
 
 And now import the directives into the parties list:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.9"}}
 
+And we will also add the MdInput import:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.10" filename="client/imports/parties-list/parties-list.ts"}}
+
 And now update the parties list layout:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.10" filename="client/imports/parties-list/parties-list.html"}}
 
-Now we need to make some changes in the LESS in order to get better result, so let's start with the parties list LESS file:
+Now we need to make some changes in the style files in order to get better result, so let's start with the parties list style file:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.11"}}
 
