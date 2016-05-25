@@ -73,9 +73,10 @@ And add a simple template outline for the party details:
 At this point our front-end app structure should look like this:
 
     client
-      \- parties-list
-      \- parties-form
-      \- party-details
+      \- imports
+        \- parties-list
+        \- parties-form
+        \- party-details
 
 At this point, your app will not run until our routes are configured.
 
