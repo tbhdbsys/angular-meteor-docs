@@ -126,7 +126,7 @@ __`client/imports/parties-form/parties-form.ts`__:
       selector: 'parties-form',
       templateUrl: 'client/imports/parties-form/parties-form.html',
     })
-    @InjectUser()
+    @InjectUser("user")
     export class PartiesForm extends MeteorComponent {
       user: Meteor.User;
       constructor() {
@@ -187,12 +187,10 @@ And then pass the partyId into the `@CanActivate` attribute:
       return (party && party.owner == Meteor.userId());
     }
 
-    Component({
-      selector: 'party-details'
-    })
-    @View({
-        templateUrl: 'client/imports/party-details/party-details.html',
-        directives: [RouterLink]
+    @Component({
+      selector: 'party-details',
+      templateUrl: 'client/imports/party-details/party-details.html',
+      directives: [RouterLink]
     })
     @CanActivate(checkPermissions)
     export class PartyDetails {
