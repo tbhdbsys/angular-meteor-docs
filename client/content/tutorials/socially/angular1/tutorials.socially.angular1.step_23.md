@@ -265,8 +265,9 @@ This is how it looks now, after implementing all material2 directives:
 
 And that's it! You have now Angular1 working side by side with Angular2.
 
-UpgradeAdapter is pretty awesome, right? Good luck to you in the Angular2 world. It was a nice journey!
+UpgradeAdapter is pretty awesome, right? 
 
-...
+Now you can start learning Angular 2 Meteor [here](/tutorials/socially/angular2/bootstrapping) and upgrade app.
+
 
 {{/template}}
