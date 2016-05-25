@@ -215,6 +215,7 @@ SOCIALLY_ANGULAR1 = [
     route: "tutorials.socially.angular1.migration-to-angular2",
     path: "/tutorials/socially/angular1/migration-to-angular2",
     contentTemplate: 'tutorials.socially.angular1.step_23.md',
+    video: '//www.youtube.com/embed/3mtgDq4sB8Y',
     previousCodeStep: '22'
   },
   {
