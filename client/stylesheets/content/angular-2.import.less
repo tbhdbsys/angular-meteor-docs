@@ -1,6 +1,12 @@
 @import "../variables.import.less";
 
 .angular-2 {
+
+  .main-unit {
+    background-color: @angular2-background;
+    color: @second-background-color;
+  }
+
   h1, img {
     margin-bottom: 1rem;
   }
@@ -12,6 +18,7 @@
 
   .header {
     text-align: center;
+    margin-top: 3rem;
 
     p {
       font-size: 1.2rem;
@@ -19,13 +26,18 @@
     }
   }
 
-  .angular-2-option {
-    text-align: left;
-    min-height: 210px;
+  .cta-link {
+    margin: 2rem;
+    a {
+      color: @second-background-color;
+      background-color: @angular2-background;
+      border-color: @second-background-color;
 
-    h2 {
-      text-align: center;
-      margin: 2rem 0 1.5rem;
+      &:hover {
+        background-color: darken(@angular2-background, 10%);
+        border-color: darken(@second-background-color, 10%);
+        color: darken(@second-background-color, 10%);
+      }
     }
   }
 }

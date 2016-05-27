@@ -1,10 +1,8 @@
-<template name="stepbar">
-  {{#unless ../stepbarHide}}
-    <div class="stepbar">
-      {{> stepbarButtons }}
-    </div>
-  {{/unless}}
-</template>
+<!-- <template name="stepbar">
+  <div class="stepbar">
+    {{> stepbarButtons }}
+  </div>
+</template> -->
 
 <template name="stepbarBottom">
   {{#unless ../stepbarHide}}
@@ -62,7 +60,7 @@
 </template>
 
 <template name="tutorialNavigationButtons">
-  <ul class="btn-group nav">
+  <ul class="btn-group nav step-bar-navigation">
     {{> stepbarButtonsPrevious }}
     {{> stepbarLiveDemo }}
     {{> stepbarCodeDiff }}
@@ -85,7 +83,9 @@
     </div>
   </div>
   <div class="row">
-    <h1 class="col-md-8 col-xs-12 title">Step {{id}} - {{title}}</h1>
+    {{# if id}}
+      <h1 class="col-md-8 col-xs-12 title">Step {{id}} - {{title}}</h1>
+    {{/if}}
     <div class="col-md-4 col-xs-12 video">
       {{#if video}}
         <iframe src="{{video}}" frameborder="0" allowfullscreen></iframe>

@@ -30,7 +30,7 @@ Router.map(function () {
   self.route('angular2', {
     path: '/angular2',
     template: 'angular2',
-    seoTitle: 'Angular 2.0 Meteor'
+    seoTitle: 'Angular 2 Meteor'
   });
 
   self.route('manifesto', {
@@ -151,7 +151,14 @@ Router.map(function () {
 
   self.route('tutorials.socially', {
     path: '/tutorials/socially',
-    template: 'tutorials.socially.intro',
+    template: 'tutorials',
+    data: {
+      stepbarHide: true,
+      isIntro: true,
+      contentTemplate: 'tutorials.socially.intro',
+      path: "/tutorials/socially",
+    },
+    contentTemplate: 'tutorials.socially.intro',
     seoTitle: 'Angular Meteor Tutorials'
   });
 

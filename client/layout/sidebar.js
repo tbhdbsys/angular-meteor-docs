@@ -48,10 +48,7 @@ Template.sidebarDefault.helpers({
     else {
       return SOCIALLY_ANGULAR1;
     }
-  }
-});
-
-Template.sidebarDefault.helpers({
+  },
   index: function () {
     return Number(this.id);
   }
@@ -82,7 +79,12 @@ Template.sidebarLink.helpers({
   },
   sidebarPath: function() {
     var rData = Router.current().data();
-    var parent = rData.path.substr(0, rData.path.lastIndexOf('/'));
+    var parent;
+    if (!rData.isIntro) {
+      parent = rData.path.substr(0, rData.path.lastIndexOf('/'));
+    } else {
+      return this.path;
+    }
     var chapter = this.path.substr(this.path.lastIndexOf('/'));
     return parent + chapter;
   }
@@ -94,13 +96,13 @@ Template.tutorialsLink.helpers({
     var rData = Router.current().data();
     if(this.subSidebarType === "sidebarStepsCollapse") {
       var childElem = '.' + this.id + '-steps';
-      if(rData.route == self.route || rData.parent.route == self.route) {
+      if(rData.route == self.route || (rData.parent && rData.parent.route == self.route)) {
         $(childElem).collapse('show');
       } else {
         $(childElem).collapse('hide');
       }
     }
-    return rData.route == self.route || rData.parent.route == self.route ? "active" : "";
+    return rData.route == self.route || (rData.parent && rData.parent.route == self.route) ? "active" : "";
   },
   chapter: function () {
     if (Router.current().data) {
