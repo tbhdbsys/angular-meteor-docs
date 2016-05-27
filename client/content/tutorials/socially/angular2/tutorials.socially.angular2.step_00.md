@@ -117,13 +117,13 @@ and management called `typings`. You can find more information about it [here](h
 
 In our case, we'll need to execute commands as follows to install all dependencies:
 
-        $ npm install typings -g
+        $ sudo npm install typings -g
         $ typings init
         $ typings install es6-promise --save
-        $ typings install es6-shim --ambient --save
-        $ typings install registry:env/meteor --ambient
+        $ typings install dt~es6-shim --global --save
+        $ typings install registry:env/meteor --global
 
-If you look into the typings folder after the execution, you'll find there a definition file called `main.d.ts`.
+If you look into the typings folder after the execution, you'll find there a definition file called `index.d.ts`.
 
 This is a top level definition file that links all other definition files installed by `typings`.
 
@@ -144,7 +144,7 @@ Create a new `app.ts` file inside of the `client` folder.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.6"}}
 
-First we're importing the dependencies we needed from `@angular/core` and `@angular/platform-browser-dynamic`. This is not a folder and files in your directory, but a reference to CommonJS modules aliased as `@angular/core` and `@angular/platform-browser-dynamic`, which in fact located under you `node_modules` directory.
+First we're importing the dependencies we needed from `@angular/core` and `@angular/platform-browser-dynamic`. This is not a folder and files in your directory, but a reference to CommonJS modules aliased as `@angular/core` and `@angular/platform-browser-dynamic`, which in fact located under your `node_modules` directory.
 
 Notice, the Component's selector matches the `<app>` tag we will provide in `index.html` below, and the View template creates the view.
 
@@ -182,11 +182,11 @@ Let's go through some of the technologies we used till now:
 
 Npm stands for Node Packages Manager, which manages your dependencies and external packages.
 
-Meteor support NPM packages (starting from 1.3), and when we created our project - a file named `package.json` created - this file contains the project's npm dependencies and some other metadata.
+Meteor supports NPM packages (starting from 1.3), and when we created our project - a file named `package.json` was created - this file contains the project's npm dependencies and some other metadata.
 
-To install the current project dependencies, type in the commend line `npm install`.
+To install the current project dependencies, type in the command line `npm install`.
 
-We also used Meteor packages (`meteor add ...`).  Meteor packages has some abilities that npm packages don't have yet so we will use some packages from there as well.
+We also used Meteor packages (`meteor add ...`).  Meteor packages have some abilities that npm packages don't have yet so we will use some packages from there as well.
 
 ## ES6 Modules and CommonJS
 

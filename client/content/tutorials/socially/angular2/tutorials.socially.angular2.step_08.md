@@ -41,19 +41,29 @@ Add the "accounts-password" Meteor package. It's a very powerful package for all
 
     $ meteor add accounts-password
 
-Now we are going to add `angular2-meteor-accounts-ui` which is a which is a package that contains all the HTML and CSS we need for the user operation forms.
+Now we are going to add `angular2-meteor-accounts-ui` which is a package that contains all the HTML and CSS we need for the user operation forms.
 
     $ meteor npm install --save angular2-meteor-accounts-ui
 
-Let's add the `<login-buttons>` tag to the right of the party form in the PartiesList's template:
+Let's add the `<login-buttons>` tag below of the party form in the PartiesList's template:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.2"}}
 
 Then, import the dependencies:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" filename="client/imports/parties-list/parties-list.ts" step="8.3"}}
 
-Run the code, you'll see a login link to the right of the "Add" button. Click on the link and then "create  account" to sign up. Try to log in and log out.
+Now we need to also import the stylesheet of this package - to import style files from `node_modules`, we have to add LESS/SASS compiler to the project.
+
+We chose to use SASS in this tutorial - and we will talk more about this in step 17 - but at the moment, just add the SASS compiler:
+
+    $ meteor add fourseven:scss
+
+And now let's create main stylesheet file (with `.scss` extension), and import the SCSS file from the package:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
+
+Run the code, you'll see a login link below the form. Click on the link and then "create  account" to sign up. Try to log in and log out.
 
 That's it! As you can see, it's very easy to add basic login support with the help of the Meteor accounts package.
 
@@ -67,6 +77,7 @@ Let's go to the "collection" folder and specify what actions are allowed:
 
 In only 10 lines of code we've specified that inserts, updates and removes can only be completed if a user is logged in.
 
+The callbacks passed to the Parties.allow are executed on the server only. The client optimistically assumes that any action (such as removal of a party) will succeed, and reverts the action as soon as the server denies permission. 
 If you want to learn more about those parameters passed into Parties.allow or how this method works in general, please, read the official Meteor [docs on allow](http://docs.meteor.com/#/full/allow).
 
 ## Meteor.user()
@@ -89,15 +100,12 @@ Let's do the user check in `party-details.ts`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.7"}}
 
-> Notice that you should also update your `tsconfig.json` to include the declaration file.
-
-
 Typing each time `Meteor.user()` or `Meteor.userId()` might seems tedious.
 Not to mention that there is no way to use these functions in the component templates currently.
 
 # RequireUser
 
-How can you simply life here? You can try out the decorators that comes with the accounts package, which wraps around all Meteor Accounts API (login with password and social logins features)
+How can you simplify life here? You can try out the decorator that comes with the accounts package, which wraps around all Meteor Accounts API (login with password and social logins features)
 and exports two services for the usage in Angular 2. Besides that, it has two convenient annotations: `InjectUser` and `RequireUser`.
 
 Now you can specify if a component can be accessed only when a user is logged in using the `@RequireUser` annotation.
@@ -118,7 +126,7 @@ __`client/imports/parties-form/parties-form.ts`__:
       selector: 'parties-form',
       templateUrl: 'client/imports/parties-form/parties-form.html',
     })
-    @InjectUser()
+    @InjectUser("user")
     export class PartiesForm extends MeteorComponent {
       user: Meteor.User;
       constructor() {
@@ -179,12 +187,10 @@ And then pass the partyId into the `@CanActivate` attribute:
       return (party && party.owner == Meteor.userId());
     }
 
-    Component({
-      selector: 'party-details'
-    })
-    @View({
-        templateUrl: 'client/imports/party-details/party-details.html',
-        directives: [RouterLink]
+    @Component({
+      selector: 'party-details',
+      templateUrl: 'client/imports/party-details/party-details.html',
+      directives: [RouterLink]
     })
     @CanActivate(checkPermissions)
     export class PartyDetails {

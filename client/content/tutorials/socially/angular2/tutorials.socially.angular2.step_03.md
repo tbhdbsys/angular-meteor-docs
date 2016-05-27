@@ -93,7 +93,7 @@ In a new terminal tab, go to your app directory and type:
 
 This opens a console into your app's local development database using [Mongo shell](https://docs.mongodb.org/manual/reference/mongo-shell/). At the prompt, type:
 
-    db.parties.insert({ name: "A new party", description: "From the mongo console!" });
+    db.parties.insert({ name: "A new party", description: "From the mongo console!", location: "In the DB" });
 
 In your web browser, you will see the UI of your app immediately update to show the new party.
 You can see that we didn't have to write any code to connect the server-side database to our front-end code — it just happened automatically.
@@ -124,7 +124,7 @@ and implement `loadParties` method inside to load parties:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
 
-Then change `main.ts` to run this method on Meteor startup:
+Then create `main.ts` to run this method on Meteor startup:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.9"}}
 

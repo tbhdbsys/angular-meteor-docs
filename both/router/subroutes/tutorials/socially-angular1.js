@@ -210,11 +210,21 @@ SOCIALLY_ANGULAR1 = [
   },
   {
     id: "23",
+    title: 'Migration to Angular2',
+    seoTitle: 'Migration to Angular2',
+    route: "tutorials.socially.angular1.migration-to-angular2",
+    path: "/tutorials/socially/angular1/migration-to-angular2",
+    contentTemplate: 'tutorials.socially.angular1.step_23.md',
+    video: '//www.youtube.com/embed/3mtgDq4sB8Y',
+    previousCodeStep: '22'
+  },
+  {
+    id: "24",
     title: 'Next Steps',
     seoTitle: 'Next Steps',
     route: "tutorials.socially.angular1.next-steps",
     path: "/tutorials/socially/angular1/next-steps",
-    contentTemplate: 'tutorials.socially.angular1.step_23.md',
-    previousCodeStep: '22'
+    contentTemplate: 'tutorials.socially.angular1.step_24.md',
+    previousCodeStep: '23'
   }
 ];
