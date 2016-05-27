@@ -69,9 +69,127 @@ First, we have to create a Component, let's call it `PartyRemove`!
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="4.14"}}
 
-Use one-way binding since this is available in AngularJS 1.5
+## Bindings
+
+Bindings are the way to use an external data in a component and to add communication between components.
+
+There are four types of binding:
+
+**Value**
+
+`@` - Passing a string value to a component.
+
+```html
+<my-component my-attr="hello {{name}}">
+```
+
+```js
+angular.module('demo')
+  .component('myComponent', {
+    bindings: {
+      myAttr: '@'
+    },
+    controllerAs: 'myComponent',
+    controller: function() {
+      // on some action
+      this.showName = () => {
+        console.log(this.myAttr); // outputs a value of `hello {{name}}`
+      };
+    }
+  });
+```
+
+**Two-way**
+
+`=` - It means that you're setting up bidirectional binding between components. Any change of `myAttr` variable will reflect the value of `name`, and vice versa.
+
+```html
+<my-component my-attr="name">
+```
+
+```js
+angular.module('demo')
+  .component('myComponent', {
+    bindings: {
+      myAttr: '='
+    },
+    controllerAs: 'myComponent',
+    controller: function() {
+      // on some action
+      this.showName = () => {
+        console.log(this.myAttr); // outputs name's value
+      };
+
+      this.changeName = () => {
+        this.myAttr = 'Kamil'; // also changes a value of `name` variable
+      };
+    }
+  });
+```
+
+**One-way**
+
+`>` - It means that you're setting up one-directional binding components. Any changes to `name` will be reflected in `myAttr`, but changes in `myAttr` will not reflect in `name`.
+
+```html
+<my-component my-attr="name">
+```
+
+```js
+angular.module('demo')
+  .component('myComponent', {
+    bindings: {
+      myAttr: '>'
+    },
+    controllerAs: 'myComponent',
+    controller: function() {
+      // on some action
+      this.showName = () => {
+        console.log(this.myAttr); // outputs name's value
+      };
+
+      this.changeName = () => {
+        this.myAttr = 'Kamil'; // does not change a value of `name` variable
+      };
+    }
+  });
+```
+
+**Expression**
+
+`&` - An expression. Provides a way to execute an expression in the context of the parent component.
+
+```html
+<my-component my-attr="setName(newName)">
+```
+
+```js
+angular.module('demo')
+  .component('myComponent', {
+    bindings: {
+      myAttr: '&'
+    },
+    controllerAs: 'myComponent',
+    controller: function() {
+      // on some action
+      this.submit = () => {
+        // execute the myAttr expression
+        this.myAttr({
+          newName: 'Donald'
+        });
+      };
+    }
+  });
+```
+
+> You can read more about bindings on [Official Angular's documentation](https://docs.angularjs.org/api/ng/service/$compile#-scope-).
+
+Since you know how something about bindings we can continue our work!
+
+Use one-way binding since this is available in AngularJS 1.5:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="4.15"}}
+
 
 Now, we can add some logic to remove() method:
 
