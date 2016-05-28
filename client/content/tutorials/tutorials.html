@@ -3,15 +3,19 @@
     <div class="row">
       {{> sidebar tutorials}}
       <div class="col-md-9 main-content">
+        {{#unless stepbarHide}}
         <div class="header">
           {{> tutorialStepHeader}}
         </div>
+        {{/unless}}
         <div class="body">
           {{> Template.dynamic template=contentTemplate}}
         </div>
+        {{#unless stepbarHide}}
         <div class="footer">
           {{> tutorialNavigationButtons}}
         </div>
+        {{/unless}}
       </div>
     </div>
   </div>

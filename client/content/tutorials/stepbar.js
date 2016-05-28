@@ -102,9 +102,9 @@ Template.stepbarCodeDiff.helpers({
 Template.improveDoc.helpers({
   tutorialName: function () {
     var rData = Router.current().data();
-    if (rData.parent.route == 'tutorials.socially.angular2') {
+    if (rData.parent && rData.parent.route == 'tutorials.socially.angular2') {
       return 'socially/angular2';
-    } else if (rData.parent.route == 'tutorials.whatsapp.ionic') {
+    } else if (rData.parent && rData.parent.route == 'tutorials.whatsapp.ionic') {
       return 'whatsapp/ionic'
     } else {
       return 'socially/angular1'
