@@ -1,6 +1,6 @@
 <template name="api.1.2.2.AngularMeteorCollection">
   <div>
-    {{> improveBtn href="https://github.com/Urigo/angular-meteor/edit/master/docs/angular-meteor/client/content/api-reference/angular1-meteor/1.2.2/api.AngularMeteorCollection.html"}}
+    {{> improveBtn href="https://github.com/Urigo/angular-meteor-docs/edit/master/client/content/api-reference/angular1-meteor/1.2.2/api.AngularMeteorCollection.html"}}
 
     <do-nothing>
         {{#markdown}}
@@ -179,7 +179,7 @@ None
 <br>
 <h3><p><code><span class="pln">stop();</span></code></p></h3>
 <br>
-Stops watching the current collection for changes made in the scope variable or meteor collection. 
+Stops watching the current collection for changes made in the scope variable or meteor collection.
 
 #### Parameters
 None
@@ -202,17 +202,17 @@ None
 
     // Add another todo to the collection
     var anotherTodoObject = {name:'fourth todo'};
-    $scope.todos.push(anotherTodoObject);  
+    $scope.todos.push(anotherTodoObject);
 
     /*
      * The scope variable now holds:
      * [{name:'first todo'}, {name:'second todo'}, {name:'third todo'}, {name:'fourth todo'}]
-     * 
+     *
      * but the collection holds:
      * [{name:'first todo'}, {name:'second todo'}, {name:'third todo'}]
      *
      * that's because auto-save was set to false (the 2nd parameter in the $meteor.collection call).
-     * 
+     *
      * To save the data we need to explicitly call the save() function:
      */
     $scope.todos.save();
