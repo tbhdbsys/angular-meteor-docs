@@ -18,7 +18,7 @@ index 0000000..bf634c1
 +Tutorial is based on building Angular2 UI for a Meteor app called Socially.
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 29b848ae32cfd6fe9a144c5f7bb1a5fafd15cff2 Mon Sep 17 00:00:00 2001
@@ -42,7 +42,7 @@ index 0000000..3887661
 +</body>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 7485c26b0e4376978cadf6042f7f724a166a628a Mon Sep 17 00:00:00 2001
@@ -178,7 +178,7 @@ index 183abe2..9989232 100644
    }
  }
 -- 
-2.6.4
+2.7.4
 
 
 From 99fd48988c3724acd914a97ccce000f9d1189f78 Mon Sep 17 00:00:00 2001
@@ -220,7 +220,7 @@ index 0000000..4c01376
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 54506ac271beb90285497b122e6df2753660c3fe Mon Sep 17 00:00:00 2001
@@ -3559,7 +3559,7 @@ index 0000000..101957d
 +export * from '~es6-promise/dist/es6-promise';
 +}
 -- 
-2.6.4
+2.7.4
 
 
 From b9ce73c72cbbdb8752c0467bf953721b0bdd93fa Mon Sep 17 00:00:00 2001
@@ -3592,7 +3592,7 @@ index 0000000..e3dbdbd
 +bootstrap(Socially);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From c7306ae51b6256ea0791f895349424e643e5f737 Mon Sep 17 00:00:00 2001
@@ -3614,7 +3614,7 @@ index 0000000..c57eff5
 +Hello World!
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 0bf13d61a2810555d710ab0010db75939ee835ba Mon Sep 17 00:00:00 2001
@@ -3638,7 +3638,7 @@ index 3887661..2662e56 100644
  </body>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From bc714954936d25f4b317c2d6d60e8b60a33a26b2 Mon Sep 17 00:00:00 2001
@@ -3673,7 +3673,7 @@ index c57eff5..9ea318e 100644
 +</ul>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From ab86947ab0295c142188c710479558c8035df45a Mon Sep 17 00:00:00 2001
@@ -3716,7 +3716,7 @@ index 9ea318e..b750655 100644
 +</div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 1e7a983ee5611c20f089dab0ec074d718715fe7d Mon Sep 17 00:00:00 2001
@@ -3759,7 +3759,7 @@ index e3dbdbd..1329d59 100644
  bootstrap(Socially);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 233682dd933c79c3b0c6d798fb5cbfe797a801ce Mon Sep 17 00:00:00 2001
@@ -3785,7 +3785,7 @@ index 1329d59..fc74249 100644
      this.parties = [
        {'name': 'Dubstep-Free Zone',
 -- 
-2.6.4
+2.7.4
 
 
 From 6a1ec688a1969b5f8edafc954bc12f045f56a2cd Mon Sep 17 00:00:00 2001
@@ -3809,7 +3809,7 @@ index 0000000..22bdeab
 +export let Parties = new Mongo.Collection('parties');
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From dba14b3a460aef4bdd4d7c057ca4b573029a0d5e Mon Sep 17 00:00:00 2001
@@ -3834,7 +3834,7 @@ index fc74249..1b7a8b9 100644
  @Component({
    selector: 'app',
 -- 
-2.6.4
+2.7.4
 
 
 From 658f190a6a8c57f72364e8abf67c48b8b654854e Mon Sep 17 00:00:00 2001
@@ -3859,7 +3859,7 @@ index 9989232..458e0c7 100644
      "meteor-node-stubs": "^0.2.3",
      "reflect-metadata": "0.1.2",
 -- 
-2.6.4
+2.7.4
 
 
 From e1c95693951a64ae6f4ba316d0e360bc2450b475 Mon Sep 17 00:00:00 2001
@@ -3886,7 +3886,7 @@ index 1b7a8b9..b28b5aa 100644
  
  @Component({
 -- 
-2.6.4
+2.7.4
 
 
 From 04d8aabfa88e0f8b262ceb4b507bbfeeba6e353f Mon Sep 17 00:00:00 2001
@@ -3937,7 +3937,7 @@ index b28b5aa..5410d6e 100644
  }
  
 -- 
-2.6.4
+2.7.4
 
 
 From 366251a4f2cb8ad477b1a205f996feb2bcdb8121 Mon Sep 17 00:00:00 2001
@@ -3986,7 +3986,7 @@ index 0000000..9e0751c
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 87b5704f2427e56673c4b3b364c470392c73953c Mon Sep 17 00:00:00 2001
@@ -4011,7 +4011,7 @@ index 0000000..cdda65d
 +Meteor.startup(loadParties);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 1808fbab01400d238738cbf8cc8087db8f59e735 Mon Sep 17 00:00:00 2001
@@ -4040,7 +4040,7 @@ index 0000000..223a99a
 +export class PartiesForm { }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 60f31b0aceb79b3116f8cc09d8d52284e777a5a9 Mon Sep 17 00:00:00 2001
@@ -4070,7 +4070,7 @@ index 0000000..37748f5
 +</form>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From c98f4e7728fb7f4c4bd8044b56c3398c59002ed5 Mon Sep 17 00:00:00 2001
@@ -4093,7 +4093,7 @@ index b750655..e6ea085 100644
      <li *ngFor="let party of parties">
        {{party.name}}
 -- 
-2.6.4
+2.7.4
 
 
 From 3b520d2bcd3f182a633165b154795cdf39e038e3 Mon Sep 17 00:00:00 2001
@@ -4125,7 +4125,7 @@ index 5410d6e..cfcde0e 100644
  class Socially {
    parties: Mongo.Cursor<Object>;
 -- 
-2.6.4
+2.7.4
 
 
 From 9a12020851e389fdc1cb99d3ddef7802c4ec0dbb Mon Sep 17 00:00:00 2001
@@ -4167,7 +4167,7 @@ index 223a99a..e63baad 100644
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 884e4a3528efe014ff83778a0bfc306138be6ee7 Mon Sep 17 00:00:00 2001
@@ -4197,7 +4197,7 @@ index e63baad..6201c9c 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 7591af5fe92688f02fee2c24d3ec6621d52a3548 Mon Sep 17 00:00:00 2001
@@ -4229,7 +4229,7 @@ index 37748f5..4e3676e 100644
  </form>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From b4317d590c0a4087d75544a5ecea03ec0aa04d55 Mon Sep 17 00:00:00 2001
@@ -4252,7 +4252,7 @@ index 4e3676e..754b9ff 100644
    <input type="text" ngControl="name">
    <label>Description</label>
 -- 
-2.6.4
+2.7.4
 
 
 From babd9af380a28c6a192cf381a3b7d48173406d7e Mon Sep 17 00:00:00 2001
@@ -4298,7 +4298,7 @@ index 6201c9c..3fc7528 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From b39b6844f13405a8a738239c3f3ced3ebd2fad82 Mon Sep 17 00:00:00 2001
@@ -4325,7 +4325,7 @@ index e6ea085..0362c48 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From b2503da6235349a10c26c48052d154e09493d982 Mon Sep 17 00:00:00 2001
@@ -4355,7 +4355,7 @@ index cfcde0e..4c53451 100644
  bootstrap(Socially);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From ea8060c136bbb515acfd777974b4432740402d4f Mon Sep 17 00:00:00 2001
@@ -4380,7 +4380,7 @@ index 458e0c7..3b6899e 100644
      "angular2-meteor-auto-bootstrap": "0.5.5",
      "es6-shim": "0.35.1",
 -- 
-2.6.4
+2.7.4
 
 
 From 54623101b6336443b7196e49eb721f47935b8f22 Mon Sep 17 00:00:00 2001
@@ -4420,7 +4420,7 @@ index 4c53451..b49c54f 100644
 +bootstrap(Socially, [ROUTER_PROVIDERS]);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From c8b69257ecf462ad1e555f655fbf2bd2a616b787 Mon Sep 17 00:00:00 2001
@@ -4462,7 +4462,7 @@ index 0000000..e5be119
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 42bad065b89d14fa76972e0ae2b3731614f01737 Mon Sep 17 00:00:00 2001
@@ -4494,7 +4494,7 @@ index 0000000..0362c48
 +</div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 54e1d90deceda9d1a9baec573258169fbba164ef Mon Sep 17 00:00:00 2001
@@ -4542,7 +4542,7 @@ index b49c54f..c56dc65 100644
 \ No newline at end of file
 +bootstrap(Socially, [ROUTER_PROVIDERS]);
 -- 
-2.6.4
+2.7.4
 
 
 From b01e82081fdd19c577260bbfd009258126ad96cb Mon Sep 17 00:00:00 2001
@@ -4574,7 +4574,7 @@ index 0362c48..0000000
 -</div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From a96dc8f87ab48e58fae4b29f8b95f2180f82e4f6 Mon Sep 17 00:00:00 2001
@@ -4601,7 +4601,7 @@ index 0000000..6a234c7
 +})
 +export class PartyDetails {}
 -- 
-2.6.4
+2.7.4
 
 
 From 61e69f3529634b907e2623fb027b4eb427a59e8f Mon Sep 17 00:00:00 2001
@@ -4627,7 +4627,7 @@ index 0000000..a3da9f4
 +</header>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From bfdac5e8c231aef9680ee14e27e295f105615106 Mon Sep 17 00:00:00 2001
@@ -4669,7 +4669,7 @@ index c56dc65..822fc1c 100644
 +bootstrap(Socially, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 2980b175f230e9a2d4922fc3998bbe78449d045b Mon Sep 17 00:00:00 2001
@@ -4691,7 +4691,7 @@ index 0000000..90c6b64
 +<router-outlet></router-outlet>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 4c4b5c1214309ccde908817ca68edf4108af12be Mon Sep 17 00:00:00 2001
@@ -4723,7 +4723,7 @@ index e5be119..b29c1e1 100644
  export class PartiesList {
    parties: Mongo.Cursor;
 -- 
-2.6.4
+2.7.4
 
 
 From 7d5e30f8c1188030b84a89fa53c32fc3785a59e1 Mon Sep 17 00:00:00 2001
@@ -4749,7 +4749,7 @@ index 0362c48..a149764 100644
        <p>{{party.location}}</p>
        <button (click)="removeParty(party)">X</button>
 -- 
-2.6.4
+2.7.4
 
 
 From f1d190225f4d3a4a5afa4f9ec1fb3a21ed856b1c Mon Sep 17 00:00:00 2001
@@ -4781,7 +4781,7 @@ index 6a234c7..3872bbe 100644
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 32bc9becf22b03fc9e426bbb82515acbb6e40307 Mon Sep 17 00:00:00 2001
@@ -4816,7 +4816,7 @@ index 3872bbe..8ee343b 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 2b48d41fb7a4f315cf2a7990ce0ec49fd1a22e4e Mon Sep 17 00:00:00 2001
@@ -4844,7 +4844,7 @@ index a3da9f4..1793e75 100644
  </header>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 904f179fce2ce42905a0688bc96a8ab0f22a4dbe Mon Sep 17 00:00:00 2001
@@ -4875,7 +4875,7 @@ index 8ee343b..6e8832c 100644
  export class PartyDetails {
    party: Object;
 -- 
-2.6.4
+2.7.4
 
 
 From 2df767dc4a3196d920585c967ddff1327919c051 Mon Sep 17 00:00:00 2001
@@ -4913,7 +4913,7 @@ index 1793e75..bf3be58 100644
 +</form>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 84100b132dc72bd9e2d4af99f587ade0eea0972a Mon Sep 17 00:00:00 2001
@@ -4947,7 +4947,7 @@ index bf3be58..7521f02 100644
    <button type="submit">Save</button>
    <button [routerLink]="['/PartiesList']">Cancel</button>
 -- 
-2.6.4
+2.7.4
 
 
 From 6eda8a6d7482041d283d1ee5242f652d8cb0638e Mon Sep 17 00:00:00 2001
@@ -4980,7 +4980,7 @@ index 6e8832c..9bc2b65 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From fce81d96f5589458b27214206664069723eaed4f Mon Sep 17 00:00:00 2001
@@ -5007,7 +5007,7 @@ index 0000000..82919d0
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 798a082ba9034d36c8a0b0b4569585935eab6394 Mon Sep 17 00:00:00 2001
@@ -5030,7 +5030,7 @@ index 22bdeab..20143a6 100644
 \ No newline at end of file
 +export let Parties = new Mongo.Collection<Party>('parties');
 -- 
-2.6.4
+2.7.4
 
 
 From 9298f1449b6d7238cf2c092fe4acf36a48ce225b Mon Sep 17 00:00:00 2001
@@ -5057,7 +5057,7 @@ index b29c1e1..cbc9bb2 100644
    constructor() {
      this.parties = Parties.find();
 -- 
-2.6.4
+2.7.4
 
 
 From 8686eeb6a75619d01db53b8e02749719ef23304d Mon Sep 17 00:00:00 2001
@@ -5083,7 +5083,7 @@ index 9bc2b65..f20cce5 100644
    constructor(params: RouteParams) {
      var partyId = params.get('partyId');
 -- 
-2.6.4
+2.7.4
 
 
 From d1a5ff1ee0c8a2f3f7ffb4799db8f276add9c38b Mon Sep 17 00:00:00 2001
@@ -5171,7 +5171,7 @@ index 96a6210..d359ca8 100644
  standard-minifier-js@1.0.6
  standard-minifiers@1.0.6
 -- 
-2.6.4
+2.7.4
 
 
 From 4f0445f6add8cf28e2b854143f1b17e48ff2bc01 Mon Sep 17 00:00:00 2001
@@ -5196,7 +5196,7 @@ index 3b6899e..6d80ac6 100644
      "es6-shim": "0.35.1",
      "meteor-node-stubs": "^0.2.3",
 -- 
-2.6.4
+2.7.4
 
 
 From 0cb96e33bd863662290dc508d28173097a82c68e Mon Sep 17 00:00:00 2001
@@ -5221,7 +5221,7 @@ index a149764..3af9e00 100644
      <li *ngFor="let party of parties">
        <a [routerLink]="['/PartyDetails', {partyId: party._id}]">{{party.name}}</a>
 -- 
-2.6.4
+2.7.4
 
 
 From d65baa7b615404962c44a5c6ba641fc820ca9657 Mon Sep 17 00:00:00 2001
@@ -5276,7 +5276,7 @@ index cbc9bb2..bd6e7a4 100644
  export class PartiesList {
    parties: Mongo.Cursor<Party>;
 -- 
-2.6.4
+2.7.4
 
 
 From 5f9e614632fb9e7a766f94e70d112d174c98f9ad Mon Sep 17 00:00:00 2001
@@ -5297,7 +5297,7 @@ index 0000000..a7ccb1a
 @@ -0,0 +1 @@
 +@import "{}/node_modules/angular2-meteor-accounts-ui/build/login-buttons.scss";
 -- 
-2.6.4
+2.7.4
 
 
 From 5cd9c74691e889a3146cdff70c06f63b51217778 Mon Sep 17 00:00:00 2001
@@ -5337,7 +5337,7 @@ index 20143a6..167fa10 100644
 +  }
 +});
 -- 
-2.6.4
+2.7.4
 
 
 From dcb632c5a64a90596e3ce0a000433b8ec9774670 Mon Sep 17 00:00:00 2001
@@ -5392,7 +5392,7 @@ index 3fc7528..24ab7ba 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From c06492a7d99d5baf6cdce1f02942aab753de5ea0 Mon Sep 17 00:00:00 2001
@@ -5442,7 +5442,7 @@ index f20cce5..06f5b83 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 7217f2a7eedf2add22841e2e8471962ed6c7b9a8 Mon Sep 17 00:00:00 2001
@@ -5466,7 +5466,7 @@ index 82919d0..a503ec1 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 3dcc3ad4c730585ab5f1cf50fa71c1ee0ff7210a Mon Sep 17 00:00:00 2001
@@ -5498,7 +5498,7 @@ index 06f5b83..9abd709 100644
    party: Party;
  
 -- 
-2.6.4
+2.7.4
 
 
 From 07666f5d05843171d074129ff92256d30e24d195 Mon Sep 17 00:00:00 2001
@@ -5536,7 +5536,7 @@ index 8eeba49..034c094 100644
  babel-compiler@6.6.4
  babel-runtime@0.1.8
 -- 
-2.6.4
+2.7.4
 
 
 From 15c28f59082bed89cdd04985939a8df6b933b3ff Mon Sep 17 00:00:00 2001
@@ -5563,7 +5563,7 @@ index 0000000..24e96e5
 +});
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From b52d18157bee9e22cd5c032868df2d37e92eaaa1 Mon Sep 17 00:00:00 2001
@@ -5587,7 +5587,7 @@ index cdda65d..7330ae5 100644
  Meteor.startup(loadParties);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 8195f5277d5edb206d6a82bdbdab009944d30a7f Mon Sep 17 00:00:00 2001
@@ -5629,7 +5629,7 @@ index bd6e7a4..a20607f 100644
  
    removeParty(party) {
 -- 
-2.6.4
+2.7.4
 
 
 From a8087f8ada235c5d2a1cebabf7903cf2462d9076 Mon Sep 17 00:00:00 2001
@@ -5654,7 +5654,7 @@ index 754b9ff..1dc86c7 100644
  </form>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From e3a5c22bdb7a4a8e1d58287292b0b6d9dd6072e5 Mon Sep 17 00:00:00 2001
@@ -5712,7 +5712,7 @@ index a503ec1..6ebcc01 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 700474a8f2bb91cbf38630846481cd96cb70f845 Mon Sep 17 00:00:00 2001
@@ -5753,7 +5753,7 @@ index 9e0751c..68adcf7 100644
      ];
  
 -- 
-2.6.4
+2.7.4
 
 
 From 08964e9029af139b4fe6bb78990bd66382a7d828 Mon Sep 17 00:00:00 2001
@@ -5788,7 +5788,7 @@ index 24e96e5..c7c7552 100644
  });
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From c11d20a71fe5ef38e535bc5699b5acda1d770535 Mon Sep 17 00:00:00 2001
@@ -5838,7 +5838,7 @@ index c7c7552..8345468 100644
  });
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From dd5b2518f6e309f6713e6c42486de88ae908380d Mon Sep 17 00:00:00 2001
@@ -5882,7 +5882,7 @@ index 9abd709..f21a1a8 100644
  
    saveParty(party) {
 -- 
-2.6.4
+2.7.4
 
 
 From 4bb1d6a1ff48d7eb077807da6ea32c9d3067e2bf Mon Sep 17 00:00:00 2001
@@ -5905,7 +5905,7 @@ index 7521f02..8775366 100644
    <input type="text" [(ngModel)]="party.name">
  
 -- 
-2.6.4
+2.7.4
 
 
 From f00a0ca66ff154870aac4a979aa9b0c965313287 Mon Sep 17 00:00:00 2001
@@ -5931,7 +5931,7 @@ index 3af9e00..6866114 100644
    <ul>
      <li *ngFor="let party of parties">
 -- 
-2.6.4
+2.7.4
 
 
 From ca770714b87d1dd14bd9fb551131957a1da93235 Mon Sep 17 00:00:00 2001
@@ -5962,7 +5962,7 @@ index a20607f..f61a359 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From b6e3f00b5524ffbbb465538c27271d1522d4d8ba Mon Sep 17 00:00:00 2001
@@ -5990,7 +5990,7 @@ index 8345468..5b9cb4f 100644
  
  Meteor.publish('party', function(partyId: string) {
 -- 
-2.6.4
+2.7.4
 
 
 From 01e66eb8b3b0b1e28462ee9d0a4f32d13989f20b Mon Sep 17 00:00:00 2001
@@ -6030,7 +6030,7 @@ index f61a359..e8bbb0f 100644
      }, true);
    }
 -- 
-2.6.4
+2.7.4
 
 
 From 239bf4d081a20b70ae811d9a7b973dcd255d84c0 Mon Sep 17 00:00:00 2001
@@ -6056,7 +6056,7 @@ index e8bbb0f..3bdc544 100644
    }
  
 -- 
-2.6.4
+2.7.4
 
 
 From 92a6b78764aee930ef683029691b1d7e0c9b6d3b Mon Sep 17 00:00:00 2001
@@ -6107,7 +6107,7 @@ index 3bdc544..a434162 100644
  
    removeParty(party) {
 -- 
-2.6.4
+2.7.4
 
 
 From a2b9935fc912199286987cb167a0c9fd3dbb3044 Mon Sep 17 00:00:00 2001
@@ -6129,7 +6129,7 @@ index 58b1017..8db539b 100644
  fourseven:scss
 +reactive-var
 -- 
-2.6.4
+2.7.4
 
 
 From 19e227a5ffa9be24e59cf986f20bae820e2474c7 Mon Sep 17 00:00:00 2001
@@ -6154,7 +6154,7 @@ index a434162..d65e55d 100644
  @Component({
    selector: 'parties-list',
 -- 
-2.6.4
+2.7.4
 
 
 From 1d739aaeaabdec63f3811f087f73bcd7ebfbed79 Mon Sep 17 00:00:00 2001
@@ -6179,7 +6179,7 @@ index 6d80ac6..0708488 100644
      "meteor-node-stubs": "^0.2.3",
      "reflect-metadata": "0.1.2",
 -- 
-2.6.4
+2.7.4
 
 
 From ab979c3803d645e7f223f05838b6d0e99d2ae672 Mon Sep 17 00:00:00 2001
@@ -6221,7 +6221,7 @@ index d65e55d..2915764 100644
  export class PartiesList extends MeteorComponent{
    parties: Mongo.Cursor<Party>;
 -- 
-2.6.4
+2.7.4
 
 
 From 56ed89630d516913bfba83adc8b89500355669e1 Mon Sep 17 00:00:00 2001
@@ -6254,7 +6254,7 @@ index 6866114..79dcaa8 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From b56407ef7798be818ba1ee2c4e9b82bc712b4016 Mon Sep 17 00:00:00 2001
@@ -6280,7 +6280,7 @@ index 79dcaa8..e7d9bc8 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 6db27e81c118f21b20dec8c429f2b816696b6676 Mon Sep 17 00:00:00 2001
@@ -6308,7 +6308,7 @@ index 2915764..ee20e72 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From e6e558d88fb7d046093068a8d4f823a7c61aeb42 Mon Sep 17 00:00:00 2001
@@ -6360,7 +6360,7 @@ index 0000000..765120e
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 4fc235d5e8903446e1aa1736460fbfc48af2ae37 Mon Sep 17 00:00:00 2001
@@ -6393,7 +6393,7 @@ index 5b9cb4f..37f9922 100644
  });
  
 -- 
-2.6.4
+2.7.4
 
 
 From 41d923b3226cf75b0dedc1007e131f85f89079a0 Mon Sep 17 00:00:00 2001
@@ -6438,7 +6438,7 @@ index ee20e72..8d4f5ba 100644
  
    removeParty(party) {
 -- 
-2.6.4
+2.7.4
 
 
 From 5912c7d2c8fb224a6f8dc1d55451e57ebf28efff Mon Sep 17 00:00:00 2001
@@ -6465,7 +6465,7 @@ index e7d9bc8..412eaef 100644
        <p>{{party.description}}</p>
        <p>{{party.location}}</p>
 -- 
-2.6.4
+2.7.4
 
 
 From a06d30c58c479b9eea1b31702b2b5b163400d57e Mon Sep 17 00:00:00 2001
@@ -6496,7 +6496,7 @@ index 412eaef..88acea9 100644
      <li *ngFor="let party of parties | paginate:{currentPage: 1, itemsPerPage: pageSize, totalItems: partiesSize}">
        <a [routerLink]="['/PartyDetails', {partyId: party._id}]">{{party.name}}</a>
 -- 
-2.6.4
+2.7.4
 
 
 From 70f9b3653e29f32b40f6fc1889cd1a3ff6cbc5c5 Mon Sep 17 00:00:00 2001
@@ -6548,7 +6548,7 @@ index 8d4f5ba..45366d2 100644
      this.curPage.set(page);
    }
 -- 
-2.6.4
+2.7.4
 
 
 From 5f994970f6b04d47db77161c1c16a649b103d7c1 Mon Sep 17 00:00:00 2001
@@ -6600,7 +6600,7 @@ index 37f9922..9595708 100644
  
  Meteor.publish('party', function(partyId: string) {
 -- 
-2.6.4
+2.7.4
 
 
 From 8684798b8bc56d8932171e35f5d6a5498c9fa928 Mon Sep 17 00:00:00 2001
@@ -6649,7 +6649,7 @@ index 45366d2..c81f2bd 100644
  
    changeSortOrder(nameOrder: string) {
 -- 
-2.6.4
+2.7.4
 
 
 From 65c890d401199be905abfc54e9ba24dc39336d07 Mon Sep 17 00:00:00 2001
@@ -6686,7 +6686,7 @@ index 0000000..964ded4
 +});
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 6a088d362c5a3c3ecd3fe3f9b249862261565cb1 Mon Sep 17 00:00:00 2001
@@ -6712,7 +6712,7 @@ index 7330ae5..b2a5647 100644
  Meteor.startup(loadParties);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 81166747d974cb231db7bd8ac8f6a8a5bd2bc008 Mon Sep 17 00:00:00 2001
@@ -6756,7 +6756,7 @@ index f21a1a8..9772de8 100644
  
    saveParty(party) {
 -- 
-2.6.4
+2.7.4
 
 
 From b87a15d041ca9d6d091a7bc276221647d791e076 Mon Sep 17 00:00:00 2001
@@ -6780,7 +6780,7 @@ index 6ebcc01..ef626f1 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From ccb43e13081c1e34663005d867f6033a2ce5a66b Mon Sep 17 00:00:00 2001
@@ -6812,7 +6812,7 @@ index 8775366..de28e57 100644
 +</ul>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From e5af534493824509df6c2c4ddf4243b9e5782894 Mon Sep 17 00:00:00 2001
@@ -6857,7 +6857,7 @@ index 0000000..b7b6f2b
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From f18c4cfd44f0952eb258e1d89702b59a9f608775 Mon Sep 17 00:00:00 2001
@@ -6883,7 +6883,7 @@ index de28e57..00bd010 100644
  </ul>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From e39a8ae2ad82156ddc2670b5194c69b57c8ba742 Mon Sep 17 00:00:00 2001
@@ -6917,7 +6917,7 @@ index 9772de8..89197b5 100644
  @RequireUser()
  export class PartyDetails extends MeteorComponent {
 -- 
-2.6.4
+2.7.4
 
 
 From a9215c2474f1d9bd5478eeab6178028c8c11ad9c Mon Sep 17 00:00:00 2001
@@ -6985,7 +6985,7 @@ index 0000000..28e5487
 +});
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From f243b6d9f5430e594e04b4aef7327c4d681dc934 Mon Sep 17 00:00:00 2001
@@ -7008,7 +7008,7 @@ index 410ce64..b232d8b 100644
 +email
 +check
 -- 
-2.6.4
+2.7.4
 
 
 From bc2dc4411648c0d20bc4e60d60527d9e6534f876 Mon Sep 17 00:00:00 2001
@@ -7033,7 +7033,7 @@ index b2a5647..e4eb2d1 100644
  Meteor.startup(loadParties);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 06b13890b5dc6ad43c0690fa52253e8ffd16941d Mon Sep 17 00:00:00 2001
@@ -7058,7 +7058,7 @@ index 822fc1c..ed187a8 100644
  @Component({
    selector: 'app',
 -- 
-2.6.4
+2.7.4
 
 
 From 7e3a02e0ffeed6b3b358984cf9d49e3a411a7dbc Mon Sep 17 00:00:00 2001
@@ -7083,7 +7083,7 @@ index 00bd010..da5af06 100644
  </ul>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From bd622e65bb4ff0e71757d268aac771e64689304b Mon Sep 17 00:00:00 2001
@@ -7118,7 +7118,7 @@ index 89197b5..c972424 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 17508526919c1cc35a9e0b658647abaa20cae7ac Mon Sep 17 00:00:00 2001
@@ -7148,7 +7148,7 @@ index c972424..0fbb59c 100644
      this.subscribe('uninvited', partyId, () => {
        this.users = Meteor.users.find({_id: {$ne: Meteor.userId()}});
 -- 
-2.6.4
+2.7.4
 
 
 From 8010184e71574d8c1569c103687466d2e18848c6 Mon Sep 17 00:00:00 2001
@@ -7193,7 +7193,7 @@ index 0fbb59c..0b4f975 100644
      if (Meteor.userId()) {
        Parties.update(party._id, {
 -- 
-2.6.4
+2.7.4
 
 
 From 9349f1ee3d4e8ff85bde14ba3321de39a5dc90fb Mon Sep 17 00:00:00 2001
@@ -7230,7 +7230,7 @@ index 9595708..2a44e5e 100644
        }
      ]
 -- 
-2.6.4
+2.7.4
 
 
 From 8a27bf054686fd8ee21934dd3125d8ba11116741 Mon Sep 17 00:00:00 2001
@@ -7299,7 +7299,7 @@ index 28e5487..d11acab 100644
  });
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 0ce7b6d5e2102b6ad4931ca569040c75a8066307 Mon Sep 17 00:00:00 2001
@@ -7328,7 +7328,7 @@ index ef626f1..e22afd5 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From 0e4e7ae2ec0b34c158d6bf60bb656b7ff37cf864 Mon Sep 17 00:00:00 2001
@@ -7361,7 +7361,7 @@ index da5af06..f60a521 100644
 +</div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
 From a303121221c91f9d59085901da7fc3a9fa5cb959 Mon Sep 17 00:00:00 2001
@@ -7396,20 +7396,20 @@ index 0b4f975..c0d5b90 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 74e31b43e2325a964733a22b11c548c6b954bc14 Mon Sep 17 00:00:00 2001
+From b56c1574656f367eee23ab1fca478cd9186f5a4c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:21:50 +0200
 Subject: [PATCH 117/170] Step 14.13: add a new response counting pipe
 
 ---
- client/imports/pipes/pipes.ts | 32 ++++++++++++++++++++++++++++++++
- 1 file changed, 32 insertions(+)
+ client/imports/pipes/pipes.ts | 33 ++++++++++++++++++++++++++++++++-
+ 1 file changed, 32 insertions(+), 1 deletion(-)
 
 diff --git a/client/imports/pipes/pipes.ts b/client/imports/pipes/pipes.ts
-index b7b6f2b..44dc577 100644
+index b7b6f2b..2a9114a 100644
 --- a/client/imports/pipes/pipes.ts
 +++ b/client/imports/pipes/pipes.ts
 @@ -1,6 +1,8 @@
@@ -7421,10 +7421,12 @@ index b7b6f2b..44dc577 100644
  
  @Pipe({
    name: 'displayName'
-@@ -21,4 +23,34 @@ export class DisplayName {
+@@ -21,4 +23,33 @@ export class DisplayName {
  
      return '';
    }
+-}
+\ No newline at end of file
 +}
 +
 +
@@ -7436,8 +7438,7 @@ index b7b6f2b..44dc577 100644
 +  init: boolean = false;
 +  total: number = 0;
 +
-+  transform(party: Party, args: any[]): number {
-+    let type = args[0];
++  transform(party: Party, type: string): number {
 +    if (!type) {
 +      return 0;
 +    }
@@ -7455,13 +7456,12 @@ index b7b6f2b..44dc577 100644
 +
 +    return this.total;
 +  }
- }
-\ No newline at end of file
++}
 -- 
-2.6.4
+2.7.4
 
 
-From 45c0e1ee16296d318bb9b5b78f2d0e7929cd2c78 Mon Sep 17 00:00:00 2001
+From 3897bd5a4e86a1afcfa2d5c28cf16ad6354ec4d7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:34:41 +0200
 Subject: [PATCH 118/170] Step 14.14: display response statistics in the list
@@ -7488,10 +7488,10 @@ index 88acea9..c3eeb2d 100644
    </ul>
    <pagination-controls (change)="onPageChanged($event.page)"></pagination-controls>
 -- 
-2.6.4
+2.7.4
 
 
-From c20d6b1d09ef31113c76fbd9e16614b3b2d46192 Mon Sep 17 00:00:00 2001
+From 95009a09eb9bf59de12d70b24161fb424a6a30e4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:34:59 +0200
 Subject: [PATCH 119/170] Step 14.15: import the RsvpPipe pipe
@@ -7521,10 +7521,10 @@ index c81f2bd..0532e0c 100644
  export class PartiesList extends MeteorComponent{
    parties: Mongo.Cursor<Party>;
 -- 
-2.6.4
+2.7.4
 
 
-From 15988d887c945b93f4f4a0787236bbc52452756a Mon Sep 17 00:00:00 2001
+From f48514ae3c29d2fab921a37bb96c58f6e956cd4f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:58:58 +0200
 Subject: [PATCH 120/170] Step 15.1: inject Meteor user and add isOwner method
@@ -7583,10 +7583,10 @@ index 0532e0c..20920cc 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 35cdf3b76d1e35dbbc70f1b2271c0f768e3555a8 Mon Sep 17 00:00:00 2001
+From 670aef8daf2bd9ba6ce24e915e6422da9b9a86bf Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:00:15 +0200
 Subject: [PATCH 121/170] Step 15.2: use the hidden attribute in the
@@ -7617,10 +7617,10 @@ index c3eeb2d..254161c 100644
          Who is coming:
          Yes - {{party | rsvp:'yes'}}
 -- 
-2.6.4
+2.7.4
 
 
-From ec422b1cb8d28d2d25db99e41fe3f6d29ed2ce0a Mon Sep 17 00:00:00 2001
+From 9ef11c61d0c216ad5e9e548584ce704e266b5827 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:08:45 +0200
 Subject: [PATCH 122/170] Step 15.3: add isOwner property into the PartyDetails
@@ -7669,10 +7669,10 @@ index c0d5b90..78bf38d 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From db1ad4179deb54d3cd13696a30bccf826a0e5898 Mon Sep 17 00:00:00 2001
+From 633d10ce75c48c823387ae45509c19bc5487efcb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:10:07 +0200
 Subject: [PATCH 123/170] Step 15.4: add disable attribute bindings
@@ -7705,10 +7705,10 @@ index f60a521..b165e55 100644
  </form>
  
 -- 
-2.6.4
+2.7.4
 
 
-From 2a1795716d2ec2365987d0eab088ce6c3fdb9554 Mon Sep 17 00:00:00 2001
+From f1203f60a88756d3c27b495a5c05e74c749040bc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:11:12 +0200
 Subject: [PATCH 124/170] Step 15.5: add isPublic and isInvited properties
@@ -7745,10 +7745,10 @@ index 78bf38d..82689b9 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From ff7f8ca89276363f2bff9df3a73d98851bef2e90 Mon Sep 17 00:00:00 2001
+From 8bafbd88bd9ff7ccbf9d38544090f1cef59d5d70 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:32:36 +0200
 Subject: [PATCH 125/170] Step 15.6: make use of the properties in the template
@@ -7780,10 +7780,10 @@ index b165e55..171aba3 100644
    <input type="button" value="I'm going!" (click)="reply('yes')">
    <input type="button" value="Maybe" (click)="reply('maybe')">
 -- 
-2.6.4
+2.7.4
 
 
-From e850c245ef657fe200e1405c71fa192d118a82b6 Mon Sep 17 00:00:00 2001
+From 41541938483113602e8b3339841a9c26e0440d9f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:33:40 +0200
 Subject: [PATCH 126/170] Step 16.1: extend party location with lat and lng
@@ -7813,10 +7813,10 @@ index e22afd5..2872814 100644
    rsvps?: Array<RSVP>;
  }
 -- 
-2.6.4
+2.7.4
 
 
-From 840dc51bae79ea225050b0803ea1bfcef2166133 Mon Sep 17 00:00:00 2001
+From 9325424681aac74f3b6adae5216da6c9296d5aae Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:34:28 +0200
 Subject: [PATCH 127/170] Step 16.2: change initial parties accordingly
@@ -7863,10 +7863,10 @@ index 68adcf7..b0e63e6 100644
      ];
  
 -- 
-2.6.4
+2.7.4
 
 
-From fe1be25c850b2f87a947768996225f289793c949 Mon Sep 17 00:00:00 2001
+From e7a8e073980ae0ed2fd785b4e8a106325a55602b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:35:21 +0200
 Subject: [PATCH 128/170] Step 16.3: change party creation component
@@ -7891,10 +7891,10 @@ index 1e89ddb..74a19a1 100644
            owner: Meteor.userId()
          });
 -- 
-2.6.4
+2.7.4
 
 
-From 6f933eb822f331420ec62e0f50ea7723e4c74c91 Mon Sep 17 00:00:00 2001
+From 416254ae9f35a85081ea3971cc7db97bf55a6b76 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:36:06 +0200
 Subject: [PATCH 129/170] Step 16.4: reflect type changes in the parties search
@@ -7917,10 +7917,10 @@ index 2a44e5e..88cbd96 100644
  
  Meteor.publish('parties', function(options: Object, location: string) {
 -- 
-2.6.4
+2.7.4
 
 
-From 1a75eccab2ceeddabe46f93aabcce9b1d8e92905 Mon Sep 17 00:00:00 2001
+From 67bed1de907d5961b51fd6ce5b4b8857b971c3a7 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 18:34:10 +0300
 Subject: [PATCH 130/170] Step 16.5: add angular2 google maps package
@@ -7942,10 +7942,10 @@ index 0708488..e102d10 100644
      "angular2-meteor-accounts-ui": "0.4.3",
      "angular2-meteor-auto-bootstrap": "0.5.5",
 -- 
-2.6.4
+2.7.4
 
 
-From e4cd761eb00aaa6d855d4490a69c193615b58a57 Mon Sep 17 00:00:00 2001
+From 3a176cef558b26086287905036464bc1ed1d294c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:40:08 +0200
 Subject: [PATCH 131/170] Step 16.6: import and install maps providers globally
@@ -7975,10 +7975,10 @@ index ed187a8..020162c 100644
 +bootstrap(Socially, [ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From dd95b3cd65ce97630bd0756d70a9ffdc0abc4f60 Mon Sep 17 00:00:00 2001
+From 29376e44d9597cb3d5e8685dbbf14a40791a3a90 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:41:07 +0200
 Subject: [PATCH 132/170] Step 16.7: add maps markup to the PartyDetails
@@ -8022,10 +8022,10 @@ index 171aba3..f8c4191 100644
 +</sebm-google-map>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From d9a750a21f3e29fc36c066e245317bcbceac2d8a Mon Sep 17 00:00:00 2001
+From d7b3fea8efd8968fb1104070727db6edb35cec63 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:42:28 +0200
 Subject: [PATCH 133/170] Step 16.8: add maps logic to the PartyDetails
@@ -8083,10 +8083,10 @@ index 82689b9..f29210d 100644
  }
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From ce73a551fb5d91b157ba3b366932aa91368442bc Mon Sep 17 00:00:00 2001
+From a4d4880da31b2bd008e4b7e930d5856d8b430013 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 10:56:33 +0200
 Subject: [PATCH 134/170] Step 16.9: create main CSS file and add maps styles
@@ -8109,10 +8109,10 @@ index 0000000..a5234b3
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 51eb1d07a212f9d147e8fd06d2ea3fdd547549c6 Mon Sep 17 00:00:00 2001
+From 5ddc7df0f14d007e237ead8ee545953442a19f6a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 10:57:33 +0200
 Subject: [PATCH 135/170] Step 16.10: add all parties locations on the map
@@ -8154,10 +8154,10 @@ index 254161c..b4999e6 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 8e2746950165c9cb8e03eeaef3de18d630b256f6 Mon Sep 17 00:00:00 2001
+From d6067794aea9376120b5885b81026752e8d493ea Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 10:58:13 +0200
 Subject: [PATCH 136/170] Step 16.11: import maps dependencies in the
@@ -8187,10 +8187,10 @@ index 20920cc..6b9f5cd 100644
  })
  @InjectUser()
 -- 
-2.6.4
+2.7.4
 
 
-From d737f7ca39c20c0be4fc73841c92954f2fbd8beb Mon Sep 17 00:00:00 2001
+From 8465989ea863d0057b130587140137edd5e27ee2 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:17:38 +0300
 Subject: [PATCH 137/170] Step 17.1: Add bootstrap package to the project
@@ -8212,10 +8212,10 @@ index e102d10..e3c0b2f 100644
      "meteor-node-stubs": "^0.2.3",
      "reflect-metadata": "0.1.2",
 -- 
-2.6.4
+2.7.4
 
 
-From b5af5b0a31d1428e94bd824645985aea797bb974 Mon Sep 17 00:00:00 2001
+From b1d4aa0ddd0e3cedb3a0d4923b07f0d7d513c00b Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Sun, 15 May 2016 22:05:03 +0300
 Subject: [PATCH 138/170] Step 16.9: Add maps styles to the main style file
@@ -8240,10 +8240,10 @@ index a3dd324..9570b91 100644
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 999cef8b2c1116c6c186d65bdf729b2825b99492 Mon Sep 17 00:00:00 2001
+From 2d66149e793d90a15f72d270bbe9210da824308d Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:20:26 +0300
 Subject: [PATCH 139/170] Step 17.4: Import bootstrap style into the main style
@@ -8265,10 +8265,10 @@ index 9570b91..d858488 100644
  .sebm-google-map-container {
    width: 400px;
 -- 
-2.6.4
+2.7.4
 
 
-From 840dd3a2c17d11457dd2262558d69010e6db3f2e Mon Sep 17 00:00:00 2001
+From 5ea3599b343c52e713f373af9392a980619965e3 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:57:52 +0300
 Subject: [PATCH 140/170] Step 17.3: Add bootstrap navbar
@@ -8292,10 +8292,10 @@ index 90c6b64..b3c49f0 100644
 +</div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 49bc5e9b94a480fb23f2c5c8862cb18257cd02c8 Mon Sep 17 00:00:00 2001
+From 4cf07c7cfd925ae6ba362d7cd5cf6405e70bea8b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:05:49 +0200
 Subject: [PATCH 141/170] Step 17.5: Remove the login buttons from the parties
@@ -8341,10 +8341,10 @@ index 6b9f5cd..a00ff03 100644
  })
  @InjectUser()
 -- 
-2.6.4
+2.7.4
 
 
-From 9bbdb55ca79e97f8ffc2c0a9079e675cc7b7cd36 Mon Sep 17 00:00:00 2001
+From 16212097d26aea7c213d20f217ff14724ac85a96 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:06:13 +0200
 Subject: [PATCH 142/170] Step 17.6: Add the login buttons to the app component
@@ -8365,10 +8365,10 @@ index b3c49f0..dffc2ea 100644
  <div class="container-fluid">
    <router-outlet></router-outlet>
 -- 
-2.6.4
+2.7.4
 
 
-From 65bc85fd303dff42fad0553a6b17d8bf9ca315df Mon Sep 17 00:00:00 2001
+From 08d100b1b7f250b54f09a625fd9fa2cdea786c5a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:06:25 +0200
 Subject: [PATCH 143/170] Step 17.7: Import LoginButtons
@@ -8396,10 +8396,10 @@ index 020162c..9ed717e 100644
  @RouteConfig([
    { path: '/', as: 'PartiesList', component: PartiesList },
 -- 
-2.6.4
+2.7.4
 
 
-From 63ce5f6e32a66329c8761f437defc5774ea8d7a2 Mon Sep 17 00:00:00 2001
+From 3da9a22529727641c87008b04ed4bbf740c18262 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:07:00 +0200
 Subject: [PATCH 144/170] Step 17.8: Add fonts and font awesome
@@ -8423,10 +8423,10 @@ index 2662e56..8a56f1a 100644
  </body>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From e34d5f278aa2d4a1b9f718f5532e84187195fb84 Mon Sep 17 00:00:00 2001
+From c22d23fd8c79b4fb1cb62ce502f72bbf5d7ae952 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 14:24:13 +0200
 Subject: [PATCH 145/170] Step 17.9: Update the add new party form layout
@@ -8473,10 +8473,10 @@ index 1dc86c7..a5d11ef 100644
  </form>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From d927c190daf3d8dad6fbbb5f711aace506cf63c7 Mon Sep 17 00:00:00 2001
+From c6ee675cccce6f20a71f5947174fb3ea165fecdc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 14:24:29 +0200
 Subject: [PATCH 146/170] Step 17.10: Update parties list layout
@@ -8626,10 +8626,10 @@ index 29b4bc3..589bc37 100644
  </div>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 03e0f34c0c9f7fbb28e7b07072d8ab61e9577994 Mon Sep 17 00:00:00 2001
+From a1e9d7d32284451d34819fbef6ac3a8b5f56fb77 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:44:24 +0300
 Subject: [PATCH 147/170] Step 17.11: Add parties-list styles
@@ -8825,10 +8825,10 @@ index 0000000..3393841
 +  margin-bottom: 1em;
 +}
 -- 
-2.6.4
+2.7.4
 
 
-From 30c0c464eb2a9e47ad41e5cc11e102eb026bae24 Mon Sep 17 00:00:00 2001
+From 43ea1e1df743c1da6b5b79bcf71fc7e20cd8adee Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:50:49 +0300
 Subject: [PATCH 148/170] Step 17.12: Add style file for the party details page
@@ -8888,10 +8888,10 @@ index 0000000..f237bb0
 +  }
 +}
 -- 
-2.6.4
+2.7.4
 
 
-From aa78e7e7043aeb4ae11335b599558a7e7604fe44 Mon Sep 17 00:00:00 2001
+From 49c7e0cc221880b4e2e359ee30bf3181a0099cd9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 5 Feb 2016 16:16:43 +0200
 Subject: [PATCH 149/170] Step 17.13: Update the layout of the party details
@@ -9003,10 +9003,10 @@ index f8c4191..a22e89c 100644
 -</sebm-google-map>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 427dc57b5f1daeade81056296f883c97b31d0ed4 Mon Sep 17 00:00:00 2001
+From 1e86fdbb6337bcaf18e6b2b0b702c74f06bd6451 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:59:53 +0300
 Subject: [PATCH 150/170] Step 18.2: Removed bootstrap import
@@ -9027,10 +9027,10 @@ index eb2bce1..f3a2528 100644
  $color1 : #2F2933;
  $color2 : #01A2A6;
 -- 
-2.6.4
+2.7.4
 
 
-From 66f4d90ba4d2b8058092936a8e117439cf240e93 Mon Sep 17 00:00:00 2001
+From 26f18a7134deeea1f0fc992c6a313c621229e1cc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:32:42 +0200
 Subject: [PATCH 151/170] Step 18.3: Add ng2 material package
@@ -9053,10 +9053,10 @@ index e3c0b2f..5b1822e 100644
      "meteor-node-stubs": "^0.2.3",
      "reflect-metadata": "0.1.2",
 -- 
-2.6.4
+2.7.4
 
 
-From 06e176e93484170820501d819f631d466c5165fb Mon Sep 17 00:00:00 2001
+From 038028ab9cf73c9393103651f6ede699cfcc3372 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:32:57 +0200
 Subject: [PATCH 152/170] Step 18.4: Import ng2 material components to the main
@@ -9108,10 +9108,10 @@ index f3a2528..71a87ec 100644
  $color1 : #2F2933;
  $color2 : #01A2A6;
 -- 
-2.6.4
+2.7.4
 
 
-From f5a5d9b932301803261715bac50974874538b688 Mon Sep 17 00:00:00 2001
+From 44ae798db8c40430d6c89b932912fe56afb1f299 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:33:22 +0200
 Subject: [PATCH 153/170] Step 18.5: Import the fonts for material
@@ -9137,10 +9137,10 @@ index 8a56f1a..c6c91b2 100644
  </body>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From ec546db32c83af9199e3d4d9860ca15dffd27e81 Mon Sep 17 00:00:00 2001
+From a01d54db0d2b7c92f897f44c7a765cc2da62abcb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:33:40 +0200
 Subject: [PATCH 154/170] Step 18.6: Change the nav bar and the layout
@@ -9223,10 +9223,10 @@ index 5b1822e..af466e2 100644
      "rxjs": "5.0.0-beta.6",
      "zone.js": "0.6.12"
 -- 
-2.6.4
+2.7.4
 
 
-From 6e5134ffcd0ac7eba9241c734678aa0790ab3886 Mon Sep 17 00:00:00 2001
+From 3447032b0450a4ad4498061e71c8e2f2e948169c Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 24 May 2016 21:35:46 +0300
 Subject: [PATCH 155/170]  Step 18.7: Import the components into the parties
@@ -9271,10 +9271,10 @@ index af466e2..7087f52 100644
      "angular2-google-maps": "0.10.0",
      "angular2-meteor": "0.5.5",
 -- 
-2.6.4
+2.7.4
 
 
-From 468c01b7cef3cbc1086a07b2ee9f456e364cd910 Mon Sep 17 00:00:00 2001
+From 9be52c33b07220c77cbb28392922b1f4ea2997a2 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 24 May 2016 21:36:00 +0300
 Subject: [PATCH 156/170] Step 18.8: Update the view of the parties form
@@ -9317,10 +9317,10 @@ index a5d11ef..1a2c0ff 100644
  </form>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 0b6bf5ed2d2e923c64db5ff68f3ef8157199dc86 Mon Sep 17 00:00:00 2001
+From 0005f5f0b4f2a0f93c69213ca317048075b6eb88 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:14:41 +0200
 Subject: [PATCH 157/170] Step 18.9: Add the import to the parties list
@@ -9349,10 +9349,10 @@ index a00ff03..0c2a4be 100644
  })
  @InjectUser()
 -- 
-2.6.4
+2.7.4
 
 
-From 9c6c21d6ff8e448e8b316cd31a980e752fd1c928 Mon Sep 17 00:00:00 2001
+From 5639e718c63a3c486f3928165083106fcd7d717e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:15:01 +0200
 Subject: [PATCH 158/170] Step 18.10: Change that layout of the parties list
@@ -9558,10 +9558,10 @@ index 0c2a4be..be4f711 100644
  })
  @InjectUser()
 -- 
-2.6.4
+2.7.4
 
 
-From 3fecb89201c56968209c2fa8e6f9b544fc9a5d9a Mon Sep 17 00:00:00 2001
+From 6a132a97dcf459d0983005e4829fab61f32b309f Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 20:19:07 +0300
 Subject: [PATCH 159/170] Step 18.11: Add some style
@@ -9745,10 +9745,10 @@ index 3393841..d6512b5 100644
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 9cf822ade917d2a3633779a2980afb2c0e954822 Mon Sep 17 00:00:00 2001
+From e34c61b5b9635b93453d505197ee67b985053136 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:22:54 +0200
 Subject: [PATCH 160/170] Step 18.12: Import the directives in the party
@@ -9780,10 +9780,10 @@ index f29210d..b416838 100644
  })
  @RequireUser()
 -- 
-2.6.4
+2.7.4
 
 
-From c6d7683fd5c9fbadb3c7ea948d4d0cea34467828 Mon Sep 17 00:00:00 2001
+From 8ebbb923f436e3c9a2793e500a7cb7641e520da3 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:23:20 +0200
 Subject: [PATCH 161/170] Step 18.13: Update the layout of the party details
@@ -9910,10 +9910,10 @@ index a22e89c..1cc65e7 100644
    </div>
  </div>
 -- 
-2.6.4
+2.7.4
 
 
-From 6c202a928ae05ae2fe4d1d66e328c5dfd29374ae Mon Sep 17 00:00:00 2001
+From c0c6014ed82363db889b739d090ef7940c86fe59 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 13:38:10 +0200
 Subject: [PATCH 162/170] Step 18.14: Replace login buttons with custom buttons
@@ -9944,10 +9944,10 @@ index 4ad9b7e..50e4d9c 100644
  <router-outlet flex-gt-sm layout-gt-sm="row"></router-outlet>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 2d100aa126f696bc55fe81b915cc106676c74b78 Mon Sep 17 00:00:00 2001
+From fbbf140923819b96ddd37934c32eb9602e1da1f8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 13:38:32 +0200
 Subject: [PATCH 163/170] Step 18.15: Add logic to support custom login
@@ -10010,10 +10010,10 @@ index 4b32982..069ef80 100644
  
  bootstrap(Socially, [MATERIAL_PROVIDERS, ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
 -- 
-2.6.4
+2.7.4
 
 
-From 99b09fec1238f9a1c8278dac22cf9f7d55772887 Mon Sep 17 00:00:00 2001
+From dd721dd639e4a183831238a33bd14ef81ae12bca Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:11:40 +0200
 Subject: [PATCH 164/170] Step 18.16: Create the login component
@@ -10074,10 +10074,10 @@ index 0000000..935e519
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 5cc65495cc59a285a07c1a3adc2a77a8388c8c2a Mon Sep 17 00:00:00 2001
+From 9ae3e4ae12e6ecd177a4add3f00060467c96df0b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:11:48 +0200
 Subject: [PATCH 165/170] Step 18.17: Create the login view
@@ -10128,10 +10128,10 @@ index 0000000..40581a6
 +</md-content>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From 5be26ab66ac8f6457afc2fbaa4d6327c00ddc0b7 Mon Sep 17 00:00:00 2001
+From 5ca827e3b3eaf9fcf42bf5a9c8563b755f237a9c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:12:04 +0200
 Subject: [PATCH 166/170] Step 18.18: Create the signup component
@@ -10192,10 +10192,10 @@ index 0000000..dc07078
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From d5118de175835d259910de112ab639e1f1556f70 Mon Sep 17 00:00:00 2001
+From 87af05a580a1b612a6889cf05d8c2a5b3a6db44a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:12:12 +0200
 Subject: [PATCH 167/170] Step 18.19: Create the signup view
@@ -10239,10 +10239,10 @@ index 0000000..65cf9d8
 +</md-content>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From c202b751fe332c714a921c17d68b3a1be5648159 Mon Sep 17 00:00:00 2001
+From 1dca0758fdf8d9adfcf723ed97781189c7ca4b8f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:15:27 +0200
 Subject: [PATCH 168/170] Step 18.20: Create the recover component
@@ -10302,10 +10302,10 @@ index 0000000..7e65e55
 +}
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From c851ff83ed4ddb9ec0f3a27755448f986f901077 Mon Sep 17 00:00:00 2001
+From 7122fb1a309fabc48f53239efbca6b5efaf00be4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:15:37 +0200
 Subject: [PATCH 169/170] Step 18.21: Create the recover view
@@ -10347,10 +10347,10 @@ index 0000000..3b3a2a8
 +</md-content>
 \ No newline at end of file
 -- 
-2.6.4
+2.7.4
 
 
-From d6bd1e3c4e16a7cc8c5d20c79d10d74d2a986450 Mon Sep 17 00:00:00 2001
+From 4c34349bfe5bad1922552cfddac90392c58cc886 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:16:57 +0200
 Subject: [PATCH 170/170] Step 18.22: Add the logout method to the main
@@ -10378,5 +10378,5 @@ index 069ef80..5bd765b 100644
  
  bootstrap(Socially, [MATERIAL_PROVIDERS, ROUTER_PROVIDERS, ANGULAR2_GOOGLE_MAPS_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);
 -- 
-2.6.4
+2.7.4
 

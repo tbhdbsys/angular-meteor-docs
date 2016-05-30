@@ -152,10 +152,20 @@ in the `@Pipe` decorator, which tells Angular 2's check detection
 system to check this pipe on changes as well, i.e., in the same way as any other
 component.
 
-It's also worth mentioning the `args` parameter passed into the pipe `transform`. This `args` parameter
-bears a list of configuration arguments which we can provide this pipe with,
-each separated by a comma. In our case, passed only the RSVP response, hence, we are taking the first
+It's also worth mentioning that the arguments of a Pipe implementation inside a template are passed to the `transform` method in the same form. Only difference is that the first argument of `transform` is a value to be transformed. In our case, passed only the RSVP response, hence, we are taking the first
 value in the list.
+
+An example:
+
+```js
+// usage: text | subStr:20:50
+@Pipe({name: 'subStr'})
+class SubStrPipe {
+  transform(text: string, starts: number, ends: number) {
+    return text.substring(starts, ends);
+  }
+}
+```
 
 Let's make use of this pipe in the `PartiesList` component:
 
