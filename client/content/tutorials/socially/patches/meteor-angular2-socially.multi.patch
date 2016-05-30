@@ -1,7 +1,7 @@
 From a5b3527e8f6be6378b5bb81f61158999c9def6fd Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:10:14 +0200
-Subject: [PATCH 001/170] Add README file
+Subject: [PATCH 001/169] Add README file
 
 ---
  README.md | 2 ++
@@ -24,7 +24,7 @@ index 0000000..bf634c1
 From 29b848ae32cfd6fe9a144c5f7bb1a5fafd15cff2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:11:01 +0200
-Subject: [PATCH 002/170] Step 0.1: add client/index.html
+Subject: [PATCH 002/169] Step 0.1: add client/index.html
 
 ---
  client/index.html | 3 +++
@@ -48,7 +48,7 @@ index 0000000..3887661
 From 7485c26b0e4376978cadf6042f7f724a166a628a Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Fri, 13 May 2016 21:56:51 +0300
-Subject: [PATCH 003/170] Step 0.2: Add the angular2-meteor dependencies
+Subject: [PATCH 003/169] Step 0.2: Add the angular2-meteor dependencies
 
 ---
  .gitignore       | 37 +++++++++++++++++++++++++++++++++++++
@@ -184,7 +184,7 @@ index 183abe2..9989232 100644
 From 99fd48988c3724acd914a97ccce000f9d1189f78 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:16:27 +0200
-Subject: [PATCH 004/170] Step 0.3: Add TypeScript configuration file
+Subject: [PATCH 004/169] Step 0.3: Add TypeScript configuration file
 
 ---
  tsconfig.json | 21 +++++++++++++++++++++
@@ -226,7 +226,7 @@ index 0000000..4c01376
 From 54506ac271beb90285497b122e6df2753660c3fe Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Fri, 13 May 2016 22:03:21 +0300
-Subject: [PATCH 005/170] Step 0.5: Added Typings dependencies
+Subject: [PATCH 005/169] Step 0.5: Added Typings dependencies
 
 ---
  typings.json                                       |  10 +
@@ -3565,7 +3565,7 @@ index 0000000..101957d
 From b9ce73c72cbbdb8752c0467bf953721b0bdd93fa Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Fri, 13 May 2016 23:16:51 +0300
-Subject: [PATCH 006/170] Step 0.6: Create the root component
+Subject: [PATCH 006/169] Step 0.6: Create the root component
 
 ---
  client/app.ts | 12 ++++++++++++
@@ -3598,7 +3598,7 @@ index 0000000..e3dbdbd
 From c7306ae51b6256ea0791f895349424e643e5f737 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:46:28 +0200
-Subject: [PATCH 007/170] Step 0.7: Add the main component HTML file
+Subject: [PATCH 007/169] Step 0.7: Add the main component HTML file
 
 ---
  client/app.html | 1 +
@@ -3620,7 +3620,7 @@ index 0000000..c57eff5
 From 0bf13d61a2810555d710ab0010db75939ee835ba Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:46:43 +0200
-Subject: [PATCH 008/170] Step 0.8: Use the main component in the index.html
+Subject: [PATCH 008/169] Step 0.8: Use the main component in the index.html
  file
 
 ---
@@ -3644,7 +3644,7 @@ index 3887661..2662e56 100644
 From bc714954936d25f4b317c2d6d60e8b60a33a26b2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:47:57 +0200
-Subject: [PATCH 009/170] Step 1.1: Add static HTML to the main component view
+Subject: [PATCH 009/169] Step 1.1: Add static HTML to the main component view
 
 ---
  client/app.html | 15 ++++++++++++++-
@@ -3679,7 +3679,7 @@ index c57eff5..9ea318e 100644
 From ab86947ab0295c142188c710479558c8035df45a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:49:08 +0200
-Subject: [PATCH 010/170] Step 2.1: Add dynamic html to the main component view
+Subject: [PATCH 010/169] Step 2.1: Add dynamic html to the main component view
 
 ---
  client/app.html | 23 +++++++++--------------
@@ -3722,7 +3722,7 @@ index 9ea318e..b750655 100644
 From 1e7a983ee5611c20f089dab0ec074d718715fe7d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:50:04 +0200
-Subject: [PATCH 011/170] Step 2.2: load parties data into the app
+Subject: [PATCH 011/169] Step 2.2: load parties data into the app
 
 ---
  client/app.ts | 19 ++++++++++++++++++-
@@ -3765,7 +3765,7 @@ index e3dbdbd..1329d59 100644
 From 233682dd933c79c3b0c6d798fb5cbfe797a801ce Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:50:30 +0200
-Subject: [PATCH 012/170] Step 2.3: define parties property
+Subject: [PATCH 012/169] Step 2.3: define parties property
 
 ---
  client/app.ts | 2 ++
@@ -3791,7 +3791,7 @@ index 1329d59..fc74249 100644
 From 6a1ec688a1969b5f8edafc954bc12f045f56a2cd Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:51:11 +0200
-Subject: [PATCH 013/170] Step 3.1: add the parties collection
+Subject: [PATCH 013/169] Step 3.1: add the parties collection
 
 ---
  collections/parties.ts | 3 +++
@@ -3815,7 +3815,7 @@ index 0000000..22bdeab
 From dba14b3a460aef4bdd4d7c057ca4b573029a0d5e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 15:53:10 +0200
-Subject: [PATCH 014/170] Step 3.2: import the parties collection
+Subject: [PATCH 014/169] Step 3.2: import the parties collection
 
 ---
  client/app.ts | 1 +
@@ -3840,7 +3840,7 @@ index fc74249..1b7a8b9 100644
 From 658f190a6a8c57f72364e8abf67c48b8b654854e Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 00:16:22 +0300
-Subject: [PATCH 015/170] Step 3.3: Added Angular2-Meteor auto bootstrap
+Subject: [PATCH 015/169] Step 3.3: Added Angular2-Meteor auto bootstrap
 
 ---
  package.json | 1 +
@@ -3865,7 +3865,7 @@ index 9989232..458e0c7 100644
 From e1c95693951a64ae6f4ba316d0e360bc2450b475 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 00:16:56 +0300
-Subject: [PATCH 016/170] Step 3.4: Import bootstrap from
+Subject: [PATCH 016/169] Step 3.4: Import bootstrap from
  angular2-meteor-auto-bootstrap
 
 ---
@@ -3892,7 +3892,7 @@ index 1b7a8b9..b28b5aa 100644
 From 04d8aabfa88e0f8b262ceb4b507bbfeeba6e353f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:08:10 +0200
-Subject: [PATCH 017/170] Step 3.5: Bind Mongo Collection to Angular
+Subject: [PATCH 017/169] Step 3.5: Bind Mongo Collection to Angular
 
 ---
  client/app.ts | 20 ++++----------------
@@ -3943,7 +3943,7 @@ index b28b5aa..5410d6e 100644
 From 366251a4f2cb8ad477b1a205f996feb2bcdb8121 Mon Sep 17 00:00:00 2001
 From: barbatus <alex.borodach@gmail.com>
 Date: Wed, 14 Oct 2015 23:21:31 +0300
-Subject: [PATCH 018/170] Step 3.7: load initial parties on server side
+Subject: [PATCH 018/169] Step 3.7: load initial parties on server side
 
 ---
  server/load-parties.ts | 28 ++++++++++++++++++++++++++++
@@ -3992,7 +3992,7 @@ index 0000000..9e0751c
 From 87b5704f2427e56673c4b3b364c470392c73953c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:11:01 +0200
-Subject: [PATCH 019/170] Step 3.9: bootstrap server side
+Subject: [PATCH 019/169] Step 3.9: bootstrap server side
 
 ---
  server/main.ts | 4 ++++
@@ -4017,7 +4017,7 @@ index 0000000..cdda65d
 From 1808fbab01400d238738cbf8cc8087db8f59e735 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 13:39:12 +0300
-Subject: [PATCH 020/170] Step 4.1: create PartiesForm component
+Subject: [PATCH 020/169] Step 4.1: create PartiesForm component
 
 ---
  client/imports/parties-form/parties-form.ts | 8 ++++++++
@@ -4046,7 +4046,7 @@ index 0000000..223a99a
 From 60f31b0aceb79b3116f8cc09d8d52284e777a5a9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:14:14 +0200
-Subject: [PATCH 021/170] Step 4.2: add parties-form.html template
+Subject: [PATCH 021/169] Step 4.2: add parties-form.html template
 
 ---
  client/imports/parties-form/parties-form.html | 9 +++++++++
@@ -4076,7 +4076,7 @@ index 0000000..37748f5
 From c98f4e7728fb7f4c4bd8044b56c3398c59002ed5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:14:30 +0200
-Subject: [PATCH 022/170] Step 4.3: load the PartiesForm component
+Subject: [PATCH 022/169] Step 4.3: load the PartiesForm component
 
 ---
  client/app.html | 1 +
@@ -4099,7 +4099,7 @@ index b750655..e6ea085 100644
 From 3b520d2bcd3f182a633165b154795cdf39e038e3 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:14:47 +0200
-Subject: [PATCH 023/170] Step 4.4: import the PartiesForm component and link
+Subject: [PATCH 023/169] Step 4.4: import the PartiesForm component and link
  it with the Socially component
 
 ---
@@ -4131,7 +4131,7 @@ index 5410d6e..cfcde0e 100644
 From 9a12020851e389fdc1cb99d3ddef7802c4ec0dbb Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 13:56:27 +0300
-Subject: [PATCH 024/170] Step 4.5: build a form model
+Subject: [PATCH 024/169] Step 4.5: build a form model
 
 ---
  client/imports/parties-form/parties-form.ts | 15 ++++++++++++++-
@@ -4173,7 +4173,7 @@ index 223a99a..e63baad 100644
 From 884e4a3528efe014ff83778a0bfc306138be6ee7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:16:26 +0200
-Subject: [PATCH 025/170] Step 4.6: add form validation
+Subject: [PATCH 025/169] Step 4.6: add form validation
 
 ---
  client/imports/parties-form/parties-form.ts | 4 ++--
@@ -4203,7 +4203,7 @@ index e63baad..6201c9c 100644
 From 7591af5fe92688f02fee2c24d3ec6621d52a3548 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:16:51 +0200
-Subject: [PATCH 026/170] Step 4.7: link the form and its model together
+Subject: [PATCH 026/169] Step 4.7: link the form and its model together
 
 ---
  client/imports/parties-form/parties-form.html | 8 ++++----
@@ -4235,7 +4235,7 @@ index 37748f5..4e3676e 100644
 From b4317d590c0a4087d75544a5ecea03ec0aa04d55 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:17:16 +0200
-Subject: [PATCH 027/170] Step 4.8: add submit handler inside the template
+Subject: [PATCH 027/169] Step 4.8: add submit handler inside the template
 
 ---
  client/imports/parties-form/parties-form.html | 2 +-
@@ -4258,7 +4258,7 @@ index 4e3676e..754b9ff 100644
 From babd9af380a28c6a192cf381a3b7d48173406d7e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:19:39 +0200
-Subject: [PATCH 028/170] Step 4.9: add addParty method into the component
+Subject: [PATCH 028/169] Step 4.9: add addParty method into the component
 
 ---
  client/imports/parties-form/parties-form.ts | 17 ++++++++++++++++-
@@ -4304,7 +4304,7 @@ index 6201c9c..3fc7528 100644
 From b39b6844f13405a8a738239c3f3ced3ebd2fad82 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:20:12 +0200
-Subject: [PATCH 029/170] Step 4.10: add a remove party button and click event
+Subject: [PATCH 029/169] Step 4.10: add a remove party button and click event
  handler
 
 ---
@@ -4331,7 +4331,7 @@ index e6ea085..0362c48 100644
 From b2503da6235349a10c26c48052d154e09493d982 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:21:03 +0200
-Subject: [PATCH 030/170] Step 4.11: add removeParty method inside the
+Subject: [PATCH 030/169] Step 4.11: add removeParty method inside the
  component
 
 ---
@@ -4361,7 +4361,7 @@ index cfcde0e..4c53451 100644
 From ea8060c136bbb515acfd777974b4432740402d4f Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:16:11 +0300
-Subject: [PATCH 031/170] Step 5.0: Install router from npm
+Subject: [PATCH 031/169] Step 5.0: Install router from npm
 
 ---
  package.json | 1 +
@@ -4386,7 +4386,7 @@ index 458e0c7..3b6899e 100644
 From 54623101b6336443b7196e49eb721f47935b8f22 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:19:45 +0300
-Subject: [PATCH 032/170] Step 5.1: import routing components and add them to
+Subject: [PATCH 032/169] Step 5.1: import routing components and add them to
  the app
 
 ---
@@ -4426,7 +4426,7 @@ index 4c53451..b49c54f 100644
 From c8b69257ecf462ad1e555f655fbf2bd2a616b787 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:24:46 +0300
-Subject: [PATCH 033/170] Step 5.2: create PartiesList component
+Subject: [PATCH 033/169] Step 5.2: create PartiesList component
 
 ---
  client/imports/parties-list/parties-list.ts | 21 +++++++++++++++++++++
@@ -4468,7 +4468,7 @@ index 0000000..e5be119
 From 42bad065b89d14fa76972e0ae2b3731614f01737 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:25:51 +0200
-Subject: [PATCH 034/170] Step 5.3: create PartiesList component view
+Subject: [PATCH 034/169] Step 5.3: create PartiesList component view
 
 ---
  client/imports/parties-list/parties-list.html | 11 +++++++++++
@@ -4500,7 +4500,7 @@ index 0000000..0362c48
 From 54e1d90deceda9d1a9baec573258169fbba164ef Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:26:07 +0200
-Subject: [PATCH 035/170] Step 5.4: Clean up app.ts file
+Subject: [PATCH 035/169] Step 5.4: Clean up app.ts file
 
 ---
  client/app.ts | 19 +++----------------
@@ -4548,7 +4548,7 @@ index b49c54f..c56dc65 100644
 From b01e82081fdd19c577260bbfd009258126ad96cb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:26:15 +0200
-Subject: [PATCH 036/170] Step 5.5: Remove app.html file
+Subject: [PATCH 036/169] Step 5.5: Remove app.html file
 
 ---
  client/app.html | 11 -----------
@@ -4580,7 +4580,7 @@ index 0362c48..0000000
 From a96dc8f87ab48e58fae4b29f8b95f2180f82e4f6 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:29:18 +0300
-Subject: [PATCH 037/170] Step 5.6: add PartyDetails component
+Subject: [PATCH 037/169] Step 5.6: add PartyDetails component
 
 ---
  client/imports/party-details/party-details.ts | 7 +++++++
@@ -4607,7 +4607,7 @@ index 0000000..6a234c7
 From 61e69f3529634b907e2623fb027b4eb427a59e8f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 16:27:47 +0200
-Subject: [PATCH 038/170] Step 5.7: add PartyDetails template
+Subject: [PATCH 038/169] Step 5.7: add PartyDetails template
 
 ---
  client/imports/party-details/party-details.html | 5 +++++
@@ -4633,7 +4633,7 @@ index 0000000..a3da9f4
 From bfdac5e8c231aef9680ee14e27e295f105615106 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:32:05 +0200
-Subject: [PATCH 039/170] Step 5.8: configure routes
+Subject: [PATCH 039/169] Step 5.8: configure routes
 
 ---
  client/app.ts | 11 +++++++++--
@@ -4675,7 +4675,7 @@ index c56dc65..822fc1c 100644
 From 2980b175f230e9a2d4922fc3998bbe78449d045b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:32:27 +0200
-Subject: [PATCH 040/170] Step 5.9: Add app.html that uses router
+Subject: [PATCH 040/169] Step 5.9: Add app.html that uses router
 
 ---
  client/app.html | 1 +
@@ -4697,7 +4697,7 @@ index 0000000..90c6b64
 From 4c4b5c1214309ccde908817ca68edf4108af12be Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:34:22 +0200
-Subject: [PATCH 041/170] Step 5.10: import RouterLink directive
+Subject: [PATCH 041/169] Step 5.10: import RouterLink directive
 
 ---
  client/imports/parties-list/parties-list.ts | 4 +++-
@@ -4729,7 +4729,7 @@ index e5be119..b29c1e1 100644
 From 7d5e30f8c1188030b84a89fa53c32fc3785a59e1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:34:59 +0200
-Subject: [PATCH 042/170] Step 5.11: add links to the parties list
+Subject: [PATCH 042/169] Step 5.11: add links to the parties list
 
 ---
  client/imports/parties-list/parties-list.html | 2 +-
@@ -4755,7 +4755,7 @@ index 0362c48..a149764 100644
 From f1d190225f4d3a4a5afa4f9ec1fb3a21ed856b1c Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:51:47 +0300
-Subject: [PATCH 043/170] Step 5.12: inject route parameters
+Subject: [PATCH 043/169] Step 5.12: inject route parameters
 
 ---
  client/imports/party-details/party-details.ts | 7 ++++++-
@@ -4787,7 +4787,7 @@ index 6a234c7..3872bbe 100644
 From 32bc9becf22b03fc9e426bbb82515acbb6e40307 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:36:57 +0200
-Subject: [PATCH 044/170] Step 5.13: load party details
+Subject: [PATCH 044/169] Step 5.13: load party details
 
 ---
  client/imports/party-details/party-details.ts | 4 ++++
@@ -4822,7 +4822,7 @@ index 3872bbe..8ee343b 100644
 From 2b48d41fb7a4f315cf2a7990ce0ec49fd1a22e4e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:37:32 +0200
-Subject: [PATCH 045/170] Step 5.14: Add the party details to the view
+Subject: [PATCH 045/169] Step 5.14: Add the party details to the view
 
 ---
  client/imports/party-details/party-details.html | 6 ++++--
@@ -4850,7 +4850,7 @@ index a3da9f4..1793e75 100644
 From 904f179fce2ce42905a0688bc96a8ab0f22a4dbe Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 14:58:37 +0300
-Subject: [PATCH 046/170] Step 6.1: Add router-link dependency
+Subject: [PATCH 046/169] Step 6.1: Add router-link dependency
 
 ---
  client/imports/party-details/party-details.ts | 5 +++--
@@ -4881,7 +4881,7 @@ index 8ee343b..6e8832c 100644
 From 2df767dc4a3196d920585c967ddff1327919c051 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:39:16 +0200
-Subject: [PATCH 047/170] Step 6.2: add party details form
+Subject: [PATCH 047/169] Step 6.2: add party details form
 
 ---
  client/imports/party-details/party-details.html | 16 +++++++++++-----
@@ -4919,7 +4919,7 @@ index 1793e75..bf3be58 100644
 From 84100b132dc72bd9e2d4af99f587ade0eea0972a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:39:45 +0200
-Subject: [PATCH 048/170] Step 6.3: bind party to form inputs
+Subject: [PATCH 048/169] Step 6.3: bind party to form inputs
 
 ---
  client/imports/party-details/party-details.html | 8 ++++----
@@ -4953,7 +4953,7 @@ index bf3be58..7521f02 100644
 From 6eda8a6d7482041d283d1ee5242f652d8cb0638e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:44:44 +0200
-Subject: [PATCH 049/170] Step 6.4: add submit event handler
+Subject: [PATCH 049/169] Step 6.4: add submit event handler
 
 ---
  client/imports/party-details/party-details.ts | 10 ++++++++++
@@ -4986,7 +4986,7 @@ index 6e8832c..9bc2b65 100644
 From fce81d96f5589458b27214206664069723eaed4f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:45:42 +0200
-Subject: [PATCH 050/170] Step 7.1: declare Party type
+Subject: [PATCH 050/169] Step 7.1: declare Party type
 
 ---
  typings/party.d.ts | 6 ++++++
@@ -5013,7 +5013,7 @@ index 0000000..82919d0
 From 798a082ba9034d36c8a0b0b4569585935eab6394 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:46:41 +0200
-Subject: [PATCH 051/170] Step 7.2: define parties collection with Party type
+Subject: [PATCH 051/169] Step 7.2: define parties collection with Party type
 
 ---
  collections/parties.ts | 2 +-
@@ -5036,7 +5036,7 @@ index 22bdeab..20143a6 100644
 From 9298f1449b6d7238cf2c092fe4acf36a48ce225b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Mon, 25 Jan 2016 17:47:11 +0200
-Subject: [PATCH 052/170] Step 7.3: correct parties cursor to be of the exact
+Subject: [PATCH 052/169] Step 7.3: correct parties cursor to be of the exact
  type
 
 ---
@@ -5063,7 +5063,7 @@ index b29c1e1..cbc9bb2 100644
 From 8686eeb6a75619d01db53b8e02749719ef23304d Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:45:27 +0300
-Subject: [PATCH 053/170] Step 7.4: correct party property to be of Party type
+Subject: [PATCH 053/169] Step 7.4: correct party property to be of Party type
 
 ---
  client/imports/party-details/party-details.ts | 2 +-
@@ -5089,7 +5089,7 @@ index 9bc2b65..f20cce5 100644
 From d1a5ff1ee0c8a2f3f7ffb4799db8f276add9c38b Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 15:32:15 +0300
-Subject: [PATCH 054/170] Step 8.0: Add accounts packages from atmosphere
+Subject: [PATCH 054/169] Step 8.0: Add accounts packages from atmosphere
 
 ---
  .meteor/packages |  2 +-
@@ -5177,7 +5177,7 @@ index 96a6210..d359ca8 100644
 From 4f0445f6add8cf28e2b854143f1b17e48ff2bc01 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 15:33:14 +0300
-Subject: [PATCH 055/170] Step 8.1: Add accounts ui package from NPM
+Subject: [PATCH 055/169] Step 8.1: Add accounts ui package from NPM
 
 ---
  package.json | 1 +
@@ -5202,7 +5202,7 @@ index 3b6899e..6d80ac6 100644
 From 0cb96e33bd863662290dc508d28173097a82c68e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:14:09 +0200
-Subject: [PATCH 056/170] Step 8.2: add Accounts UI component to the
+Subject: [PATCH 056/169] Step 8.2: add Accounts UI component to the
  PartiesList template
 
 ---
@@ -5227,7 +5227,7 @@ index a149764..3af9e00 100644
 From d65baa7b615404962c44a5c6ba641fc820ca9657 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:16:21 +0200
-Subject: [PATCH 057/170] Step 8.3: import dependencies
+Subject: [PATCH 057/169] Step 8.3: import dependencies
 
 ---
  .meteor/packages                            | 1 +
@@ -5282,7 +5282,7 @@ index cbc9bb2..bd6e7a4 100644
 From 5f9e614632fb9e7a766f94e70d112d174c98f9ad Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Sun, 15 May 2016 21:52:40 +0300
-Subject: [PATCH 058/170] Step 8.4: Add import for SCSS file
+Subject: [PATCH 058/169] Step 8.4: Add import for SCSS file
 
 ---
  client/css/main.scss | 1 +
@@ -5303,7 +5303,7 @@ index 0000000..a7ccb1a
 From 5cd9c74691e889a3146cdff70c06f63b51217778 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:16:57 +0200
-Subject: [PATCH 059/170] Step 8.5: add parties collection security
+Subject: [PATCH 059/169] Step 8.5: add parties collection security
 
 ---
  collections/parties.ts | 19 +++++++++++++++++++
@@ -5343,7 +5343,7 @@ index 20143a6..167fa10 100644
 From dcb632c5a64a90596e3ce0a000433b8ec9774670 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:17:48 +0200
-Subject: [PATCH 060/170] Step 8.6: check access and add party owner ID
+Subject: [PATCH 060/169] Step 8.6: check access and add party owner ID
 
 ---
  client/imports/parties-form/parties-form.ts | 22 ++++++++++++++--------
@@ -5398,7 +5398,7 @@ index 3fc7528..24ab7ba 100644
 From c06492a7d99d5baf6cdce1f02942aab753de5ea0 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:48:19 +0300
-Subject: [PATCH 061/170] Step 8.7: check access to change party
+Subject: [PATCH 061/169] Step 8.7: check access to change party
 
 ---
  client/imports/party-details/party-details.ts | 19 ++++++++++++-------
@@ -5448,7 +5448,7 @@ index f20cce5..06f5b83 100644
 From 7217f2a7eedf2add22841e2e8471962ed6c7b9a8 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:48:44 +0300
-Subject: [PATCH 062/170] Step 8.8: Updated typings
+Subject: [PATCH 062/169] Step 8.8: Updated typings
 
 ---
  typings/party.d.ts | 1 +
@@ -5472,7 +5472,7 @@ index 82919d0..a503ec1 100644
 From 3dcc3ad4c730585ab5f1cf50fa71c1ee0ff7210a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:05:06 +0200
-Subject: [PATCH 063/170] Step 8.9: require user to access PartyDetails
+Subject: [PATCH 063/169] Step 8.9: require user to access PartyDetails
 
 ---
  client/imports/party-details/party-details.ts | 2 ++
@@ -5504,7 +5504,7 @@ index 06f5b83..9abd709 100644
 From 07666f5d05843171d074129ff92256d30e24d195 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 16:02:32 +0300
-Subject: [PATCH 064/170] Step 9.0: Removed autopublish
+Subject: [PATCH 064/169] Step 9.0: Removed autopublish
 
 ---
  .meteor/packages | 1 -
@@ -5542,7 +5542,7 @@ index 8eeba49..034c094 100644
 From 15c28f59082bed89cdd04985939a8df6b933b3ff Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:22:04 +0200
-Subject: [PATCH 065/170] Step 9.1: publish parties collection
+Subject: [PATCH 065/169] Step 9.1: publish parties collection
 
 ---
  server/parties.ts | 6 ++++++
@@ -5569,7 +5569,7 @@ index 0000000..24e96e5
 From b52d18157bee9e22cd5c032868df2d37e92eaaa1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:22:36 +0200
-Subject: [PATCH 066/170] Step 9.2: import parties publications on the server
+Subject: [PATCH 066/169] Step 9.2: import parties publications on the server
 
 ---
  server/main.ts | 1 +
@@ -5593,7 +5593,7 @@ index cdda65d..7330ae5 100644
 From 8195f5277d5edb206d6a82bdbdab009944d30a7f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:24:12 +0200
-Subject: [PATCH 067/170] Step 9.3: extend PartiesList and make use of
+Subject: [PATCH 067/169] Step 9.3: extend PartiesList and make use of
  subscribe method
 
 ---
@@ -5635,7 +5635,7 @@ index bd6e7a4..a20607f 100644
 From a8087f8ada235c5d2a1cebabf7903cf2462d9076 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:24:47 +0200
-Subject: [PATCH 068/170] Step 9.4: add "Public" checkbox
+Subject: [PATCH 068/169] Step 9.4: add "Public" checkbox
 
 ---
  client/imports/parties-form/parties-form.html | 2 ++
@@ -5660,7 +5660,7 @@ index 754b9ff..1dc86c7 100644
 From e3a5c22bdb7a4a8e1d58287292b0b6d9dd6072e5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:26:03 +0200
-Subject: [PATCH 069/170] Step 9.5: update PartiesForm component
+Subject: [PATCH 069/169] Step 9.5: update PartiesForm component
 
 ---
  client/imports/parties-form/parties-form.ts | 7 +++++--
@@ -5718,7 +5718,7 @@ index a503ec1..6ebcc01 100644
 From 700474a8f2bb91cbf38630846481cd96cb70f845 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:26:35 +0200
-Subject: [PATCH 070/170] Step 9.6: add public field to the initial parties
+Subject: [PATCH 070/169] Step 9.6: add public field to the initial parties
 
 ---
  server/load-parties.ts | 9 ++++++---
@@ -5759,7 +5759,7 @@ index 9e0751c..68adcf7 100644
 From 08964e9029af139b4fe6bb78990bd66382a7d828 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:27:18 +0200
-Subject: [PATCH 071/170] Step 9.7: limit data sent to the client
+Subject: [PATCH 071/169] Step 9.7: limit data sent to the client
 
 ---
  server/parties.ts | 12 +++++++++++-
@@ -5794,7 +5794,7 @@ index 24e96e5..c7c7552 100644
 From c11d20a71fe5ef38e535bc5699b5acda1d770535 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:27:50 +0200
-Subject: [PATCH 072/170] Step 9.8: add "party" publication
+Subject: [PATCH 072/169] Step 9.8: add "party" publication
 
 ---
  server/parties.ts | 20 +++++++++++++++++---
@@ -5844,7 +5844,7 @@ index c7c7552..8345468 100644
 From dd5b2518f6e309f6713e6c42486de88ae908380d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:29:31 +0200
-Subject: [PATCH 073/170] Step 9.9: subscribe to the "party" publication
+Subject: [PATCH 073/169] Step 9.9: subscribe to the "party" publication
 
 ---
  client/imports/party-details/party-details.ts | 9 +++++++--
@@ -5888,7 +5888,7 @@ index 9abd709..f21a1a8 100644
 From 4bb1d6a1ff48d7eb077807da6ea32c9d3067e2bf Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:29:57 +0200
-Subject: [PATCH 074/170] Step 9.10: show PartyDetails when the party is loaded
+Subject: [PATCH 074/169] Step 9.10: show PartyDetails when the party is loaded
 
 ---
  client/imports/party-details/party-details.html | 2 +-
@@ -5911,7 +5911,7 @@ index 7521f02..8775366 100644
 From f00a0ca66ff154870aac4a979aa9b0c965313287 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:30:38 +0200
-Subject: [PATCH 075/170] Step 9.11: add search inputs
+Subject: [PATCH 075/169] Step 9.11: add search inputs
 
 ---
  client/imports/parties-list/parties-list.html | 4 +++-
@@ -5937,7 +5937,7 @@ index 3af9e00..6866114 100644
 From ca770714b87d1dd14bd9fb551131957a1da93235 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:31:13 +0200
-Subject: [PATCH 076/170] Step 9.12: add search click event handler
+Subject: [PATCH 076/169] Step 9.12: add search click event handler
 
 ---
  client/imports/parties-list/parties-list.ts | 8 ++++++++
@@ -5968,7 +5968,7 @@ index a20607f..f61a359 100644
 From b6e3f00b5524ffbbb465538c27271d1522d4d8ba Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:32:09 +0200
-Subject: [PATCH 077/170] Step 12.1: add options to the parties publication
+Subject: [PATCH 077/169] Step 12.1: add options to the parties publication
 
 ---
  server/parties.ts | 4 ++--
@@ -5996,7 +5996,7 @@ index 8345468..5b9cb4f 100644
 From 01e66eb8b3b0b1e28462ee9d0a4f32d13989f20b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:33:12 +0200
-Subject: [PATCH 078/170] Step 12.2: create options and add them to the parties
+Subject: [PATCH 078/169] Step 12.2: create options and add them to the parties
  subscription
 
 ---
@@ -6036,7 +6036,7 @@ index f61a359..e8bbb0f 100644
 From 239bf4d081a20b70ae811d9a7b973dcd255d84c0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:33:40 +0200
-Subject: [PATCH 079/170] Step 12.3: add sorting by party name to PartiesList
+Subject: [PATCH 079/169] Step 12.3: add sorting by party name to PartiesList
 
 ---
  client/imports/parties-list/parties-list.ts | 2 +-
@@ -6062,7 +6062,7 @@ index e8bbb0f..3bdc544 100644
 From 92a6b78764aee930ef683029691b1d7e0c9b6d3b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 28 Jan 2016 23:34:40 +0200
-Subject: [PATCH 080/170] Step 12.4: re-subscribe on current page changes
+Subject: [PATCH 080/169] Step 12.4: re-subscribe on current page changes
  reactively
 
 ---
@@ -6113,7 +6113,7 @@ index 3bdc544..a434162 100644
 From a2b9935fc912199286987cb167a0c9fd3dbb3044 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 29 Jan 2016 00:16:46 +0200
-Subject: [PATCH 081/170] Step 12.5: Add reactive var package
+Subject: [PATCH 081/169] Step 12.5: Add reactive var package
 
 ---
  .meteor/packages | 1 +
@@ -6135,7 +6135,7 @@ index 58b1017..8db539b 100644
 From 19e227a5ffa9be24e59cf986f20bae820e2474c7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 29 Jan 2016 00:19:23 +0200
-Subject: [PATCH 082/170] Step 12.6: Import reactive var from meteor
+Subject: [PATCH 082/169] Step 12.6: Import reactive var from meteor
 
 ---
  client/imports/parties-list/parties-list.ts | 1 +
@@ -6160,7 +6160,7 @@ index a434162..d65e55d 100644
 From 1d739aaeaabdec63f3811f087f73bcd7ebfbed79 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 17:29:11 +0300
-Subject: [PATCH 083/170] Step 12.7: Add dependency for the pagination package
+Subject: [PATCH 083/169] Step 12.7: Add dependency for the pagination package
 
 ---
  package.json | 1 +
@@ -6185,7 +6185,7 @@ index 6d80ac6..0708488 100644
 From ab979c3803d645e7f223f05838b6d0e99d2ae672 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 29 Jan 2016 00:23:44 +0200
-Subject: [PATCH 084/170] Step 12.8: import and set up pagination components
+Subject: [PATCH 084/169] Step 12.8: import and set up pagination components
 
 ---
  client/css/main.scss                        | 1 +
@@ -6227,7 +6227,7 @@ index d65e55d..2915764 100644
 From 56ed89630d516913bfba83adc8b89500355669e1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:00:29 +0200
-Subject: [PATCH 085/170] Step 12.9: add pagination markup to the PartiesList's
+Subject: [PATCH 085/169] Step 12.9: add pagination markup to the PartiesList's
  template
 
 ---
@@ -6260,7 +6260,7 @@ index 6866114..79dcaa8 100644
 From b56407ef7798be818ba1ee2c4e9b82bc712b4016 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:00:55 +0200
-Subject: [PATCH 086/170] Step 12.10: handle page changed event of the
+Subject: [PATCH 086/169] Step 12.10: handle page changed event of the
  pagination controls
 
 ---
@@ -6286,7 +6286,7 @@ index 79dcaa8..e7d9bc8 100644
 From 6db27e81c118f21b20dec8c429f2b816696b6676 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:52:55 +0300
-Subject: [PATCH 087/170] Step 12.11: add page changed event handler to the
+Subject: [PATCH 087/169] Step 12.11: add page changed event handler to the
  component
 
 ---
@@ -6314,7 +6314,7 @@ index 2915764..ee20e72 100644
 From e6e558d88fb7d046093068a8d4f823a7c61aeb42 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:53:44 +0300
-Subject: [PATCH 088/170] Step 12.12: Add counts package and the typings file
+Subject: [PATCH 088/169] Step 12.12: Add counts package and the typings file
 
 ---
  .meteor/packages            | 1 +
@@ -6366,7 +6366,7 @@ index 0000000..765120e
 From 4fc235d5e8903446e1aa1736460fbfc48af2ae37 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:04:13 +0200
-Subject: [PATCH 089/170] Step 12.13: publish total number of parties
+Subject: [PATCH 089/169] Step 12.13: publish total number of parties
 
 ---
  server/parties.ts | 3 +++
@@ -6399,7 +6399,7 @@ index 5b9cb4f..37f9922 100644
 From 41d923b3226cf75b0dedc1007e131f85f89079a0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:06:01 +0200
-Subject: [PATCH 090/170] Step 12.14: handle reactive updates of the parties
+Subject: [PATCH 090/169] Step 12.14: handle reactive updates of the parties
  total number
 
 ---
@@ -6444,7 +6444,7 @@ index ee20e72..8d4f5ba 100644
 From 5912c7d2c8fb224a6f8dc1d55451e57ebf28efff Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:06:38 +0200
-Subject: [PATCH 091/170] Step 12.15: add parties total number var in the
+Subject: [PATCH 091/169] Step 12.15: add parties total number var in the
  template
 
 ---
@@ -6471,7 +6471,7 @@ index e7d9bc8..412eaef 100644
 From a06d30c58c479b9eea1b31702b2b5b163400d57e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:07:37 +0200
-Subject: [PATCH 092/170] Step 12.16: add a sort order dropdown
+Subject: [PATCH 092/169] Step 12.16: add a sort order dropdown
 
 ---
  client/imports/parties-list/parties-list.html | 7 +++++++
@@ -6502,7 +6502,7 @@ index 412eaef..88acea9 100644
 From 70f9b3653e29f32b40f6fc1889cd1a3ff6cbc5c5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:09:03 +0200
-Subject: [PATCH 093/170] Step 12.17: re-subscribe reactively when sort order
+Subject: [PATCH 093/169] Step 12.17: re-subscribe reactively when sort order
  changes
 
 ---
@@ -6554,7 +6554,7 @@ index 8d4f5ba..45366d2 100644
 From 5f994970f6b04d47db77161c1c16a649b103d7c1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:27:25 +0200
-Subject: [PATCH 094/170] Step 12.18: add search by the party location using
+Subject: [PATCH 094/169] Step 12.18: add search by the party location using
  Mongo regex
 
 ---
@@ -6606,7 +6606,7 @@ index 37f9922..9595708 100644
 From 8684798b8bc56d8932171e35f5d6a5498c9fa928 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:32:06 +0200
-Subject: [PATCH 095/170] Step 12.19: add reactive search by the location on
+Subject: [PATCH 095/169] Step 12.19: add reactive search by the location on
  the client
 
 ---
@@ -6655,7 +6655,7 @@ index 45366d2..c81f2bd 100644
 From 65c890d401199be905abfc54e9ba24dc39336d07 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:32:47 +0200
-Subject: [PATCH 096/170] Step 13.1: add uninvited users publication
+Subject: [PATCH 096/169] Step 13.1: add uninvited users publication
 
 ---
  server/users.ts | 16 ++++++++++++++++
@@ -6692,7 +6692,7 @@ index 0000000..964ded4
 From 6a088d362c5a3c3ecd3fe3f9b249862261565cb1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:33:15 +0200
-Subject: [PATCH 097/170] Step 13.2: import users publications on the server
+Subject: [PATCH 097/169] Step 13.2: import users publications on the server
  start
 
 ---
@@ -6718,7 +6718,7 @@ index 7330ae5..b2a5647 100644
 From 81166747d974cb231db7bd8ac8f6a8a5bd2bc008 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:34:11 +0200
-Subject: [PATCH 098/170] Step 13.3: load uninvited users
+Subject: [PATCH 098/169] Step 13.3: load uninvited users
 
 ---
  client/imports/party-details/party-details.ts | 6 ++++++
@@ -6762,7 +6762,7 @@ index f21a1a8..9772de8 100644
 From b87a15d041ca9d6d091a7bc276221647d791e076 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:34:44 +0200
-Subject: [PATCH 099/170] Step 13.4: Add invited to the party definition
+Subject: [PATCH 099/169] Step 13.4: Add invited to the party definition
 
 ---
  typings/party.d.ts | 1 +
@@ -6786,7 +6786,7 @@ index 6ebcc01..ef626f1 100644
 From ccb43e13081c1e34663005d867f6033a2ce5a66b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:35:35 +0200
-Subject: [PATCH 100/170] Step 13.5: render uninvited users
+Subject: [PATCH 100/169] Step 13.5: render uninvited users
 
 ---
  client/imports/party-details/party-details.html | 9 ++++++++-
@@ -6818,7 +6818,7 @@ index 8775366..de28e57 100644
 From e5af534493824509df6c2c4ddf4243b9e5782894 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:45:15 +0200
-Subject: [PATCH 101/170] Step 13.6: add new pipe to render user name
+Subject: [PATCH 101/169] Step 13.6: add new pipe to render user name
 
 ---
  client/imports/pipes/pipes.ts | 24 ++++++++++++++++++++++++
@@ -6863,7 +6863,7 @@ index 0000000..b7b6f2b
 From f18c4cfd44f0952eb258e1d89702b59a9f608775 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:46:31 +0200
-Subject: [PATCH 102/170] Step 13.7: make use of the pipe in the template
+Subject: [PATCH 102/169] Step 13.7: make use of the pipe in the template
 
 ---
  client/imports/party-details/party-details.html | 2 +-
@@ -6889,7 +6889,7 @@ index de28e57..00bd010 100644
 From e39a8ae2ad82156ddc2670b5194c69b57c8ba742 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:48:00 +0200
-Subject: [PATCH 103/170] Step 13.8: import DisplayName pipe and add it to the
+Subject: [PATCH 103/169] Step 13.8: import DisplayName pipe and add it to the
  view
 
 ---
@@ -6923,7 +6923,7 @@ index 9772de8..89197b5 100644
 From a9215c2474f1d9bd5478eeab6178028c8c11ad9c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:50:45 +0200
-Subject: [PATCH 104/170] Step 14.0: add a party invitation method
+Subject: [PATCH 104/169] Step 14.0: add a party invitation method
 
 ---
  collections/methods.ts | 47 +++++++++++++++++++++++++++++++++++++++++++++++
@@ -6991,7 +6991,7 @@ index 0000000..28e5487
 From f243b6d9f5430e594e04b4aef7327c4d681dc934 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:51:24 +0200
-Subject: [PATCH 105/170] Step 14.1: Add email and check packages
+Subject: [PATCH 105/169] Step 14.1: Add email and check packages
 
 ---
  .meteor/packages | 2 ++
@@ -7014,7 +7014,7 @@ index 410ce64..b232d8b 100644
 From bc2dc4411648c0d20bc4e60d60527d9e6534f876 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:51:49 +0200
-Subject: [PATCH 106/170] Step 14.2: import methods on the server side
+Subject: [PATCH 106/169] Step 14.2: import methods on the server side
 
 ---
  server/main.ts | 1 +
@@ -7039,7 +7039,7 @@ index b2a5647..e4eb2d1 100644
 From 06b13890b5dc6ad43c0690fa52253e8ffd16941d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:52:16 +0200
-Subject: [PATCH 107/170] Step 14.3: import methods on the client
+Subject: [PATCH 107/169] Step 14.3: import methods on the client
 
 ---
  client/app.ts | 1 +
@@ -7064,7 +7064,7 @@ index 822fc1c..ed187a8 100644
 From 7e3a02e0ffeed6b3b358984cf9d49e3a411a7dbc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:52:40 +0200
-Subject: [PATCH 108/170] Step 14.4: add "invite" button
+Subject: [PATCH 108/169] Step 14.4: add "invite" button
 
 ---
  client/imports/party-details/party-details.html | 1 +
@@ -7089,7 +7089,7 @@ index 00bd010..da5af06 100644
 From bd622e65bb4ff0e71757d268aac771e64689304b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:53:18 +0200
-Subject: [PATCH 109/170] Step 14.5: add the click handler and call "invite"
+Subject: [PATCH 109/169] Step 14.5: add the click handler and call "invite"
  method
 
 ---
@@ -7124,7 +7124,7 @@ index 89197b5..c972424 100644
 From 17508526919c1cc35a9e0b658647abaa20cae7ac Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:54:04 +0200
-Subject: [PATCH 110/170] Step 14.6: get the party reactively
+Subject: [PATCH 110/169] Step 14.6: get the party reactively
 
 ---
  client/imports/party-details/party-details.ts | 6 ++++--
@@ -7154,7 +7154,7 @@ index c972424..0fbb59c 100644
 From 8010184e71574d8c1569c103687466d2e18848c6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:58:30 +0200
-Subject: [PATCH 111/170] Step 14.7: update the users list reactively
+Subject: [PATCH 111/169] Step 14.7: update the users list reactively
 
 ---
  client/imports/party-details/party-details.ts | 14 +++++++++++++-
@@ -7199,7 +7199,7 @@ index 0fbb59c..0b4f975 100644
 From 9349f1ee3d4e8ff85bde14ba3321de39a5dc90fb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 22:59:21 +0200
-Subject: [PATCH 112/170] Step 14.8: show private parties to the invited and
+Subject: [PATCH 112/169] Step 14.8: show private parties to the invited and
  owners only
 
 ---
@@ -7236,7 +7236,7 @@ index 9595708..2a44e5e 100644
 From 8a27bf054686fd8ee21934dd3125d8ba11116741 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:00:12 +0200
-Subject: [PATCH 113/170] Step 14.9: add a "reply" method
+Subject: [PATCH 113/169] Step 14.9: add a "reply" method
 
 ---
  collections/methods.ts | 45 +++++++++++++++++++++++++++++++++++++++++++++
@@ -7305,7 +7305,7 @@ index 28e5487..d11acab 100644
 From 0ce7b6d5e2102b6ad4931ca569040c75a8066307 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:00:50 +0200
-Subject: [PATCH 114/170] Step 14.10: update the party typings
+Subject: [PATCH 114/169] Step 14.10: update the party typings
 
 ---
  typings/party.d.ts | 6 ++++++
@@ -7334,7 +7334,7 @@ index ef626f1..e22afd5 100644
 From 0e4e7ae2ec0b34c158d6bf60bb656b7ff37cf864 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:01:23 +0200
-Subject: [PATCH 115/170] Step 14.11: update PartyDetails view with the three
+Subject: [PATCH 115/169] Step 14.11: update PartyDetails view with the three
  response buttons
 
 ---
@@ -7367,7 +7367,7 @@ index da5af06..f60a521 100644
 From a303121221c91f9d59085901da7fc3a9fa5cb959 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:02:06 +0200
-Subject: [PATCH 116/170] Step 14.12: handle reply events in the PartyDetails
+Subject: [PATCH 116/169] Step 14.12: handle reply events in the PartyDetails
  component
 
 ---
@@ -7399,17 +7399,17 @@ index 0b4f975..c0d5b90 100644
 2.7.4
 
 
-From b56c1574656f367eee23ab1fca478cd9186f5a4c Mon Sep 17 00:00:00 2001
+From 12419c009a43fec9c589b843e318853481a2d1fa Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:21:50 +0200
-Subject: [PATCH 117/170] Step 14.13: add a new response counting pipe
+Subject: [PATCH 117/169] Step 14.13: add a new response counting pipe
 
 ---
  client/imports/pipes/pipes.ts | 33 ++++++++++++++++++++++++++++++++-
  1 file changed, 32 insertions(+), 1 deletion(-)
 
 diff --git a/client/imports/pipes/pipes.ts b/client/imports/pipes/pipes.ts
-index b7b6f2b..2a9114a 100644
+index b7b6f2b..ddce20e 100644
 --- a/client/imports/pipes/pipes.ts
 +++ b/client/imports/pipes/pipes.ts
 @@ -1,6 +1,8 @@
@@ -7445,10 +7445,10 @@ index b7b6f2b..2a9114a 100644
 +
 +    if (!this.init) {
 +      this.autorun(() => {
-+        party = Parties.findOne(party._id);
-+        if (party) {
-+          this.total = party.rsvps ?
-+            party.rsvps.filter(rsvp => rsvp.response === type).length : 0;
++        const found = Parties.findOne(party._id);
++        if (found) {
++          this.total = found.rsvps ?
++            found.rsvps.filter(rsvp => rsvp.response === type).length : 0;
 +        }
 +      }, true);
 +      this.init = true;
@@ -7461,10 +7461,10 @@ index b7b6f2b..2a9114a 100644
 2.7.4
 
 
-From 3897bd5a4e86a1afcfa2d5c28cf16ad6354ec4d7 Mon Sep 17 00:00:00 2001
+From bbbaa15918ff95741469b08d916fc8a434bce9c1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:34:41 +0200
-Subject: [PATCH 118/170] Step 14.14: display response statistics in the list
+Subject: [PATCH 118/169] Step 14.14: display response statistics in the list
 
 ---
  client/imports/parties-list/parties-list.html | 6 ++++++
@@ -7491,10 +7491,10 @@ index 88acea9..c3eeb2d 100644
 2.7.4
 
 
-From 95009a09eb9bf59de12d70b24161fb424a6a30e4 Mon Sep 17 00:00:00 2001
+From 48437679100b0f41fbf0f6b79299de7c0eead242 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:34:59 +0200
-Subject: [PATCH 119/170] Step 14.15: import the RsvpPipe pipe
+Subject: [PATCH 119/169] Step 14.15: import the RsvpPipe pipe
 
 ---
  client/imports/parties-list/parties-list.ts | 3 ++-
@@ -7524,10 +7524,10 @@ index c81f2bd..0532e0c 100644
 2.7.4
 
 
-From f48514ae3c29d2fab921a37bb96c58f6e956cd4f Mon Sep 17 00:00:00 2001
+From 1a94b171cbe5f0629862d21aeec71a91d5c9eb06 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 3 Feb 2016 23:58:58 +0200
-Subject: [PATCH 120/170] Step 15.1: inject Meteor user and add isOwner method
+Subject: [PATCH 120/169] Step 15.1: inject Meteor user and add isOwner method
 
 ---
  client/imports/parties-list/parties-list.ts | 13 ++++++++++++-
@@ -7586,10 +7586,10 @@ index 0532e0c..20920cc 100644
 2.7.4
 
 
-From 670aef8daf2bd9ba6ce24e915e6422da9b9a86bf Mon Sep 17 00:00:00 2001
+From f980182f282c243615c8421fd3e751bffebe65e2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:00:15 +0200
-Subject: [PATCH 121/170] Step 15.2: use the hidden attribute in the
+Subject: [PATCH 121/169] Step 15.2: use the hidden attribute in the
  PartiesList template
 
 ---
@@ -7620,10 +7620,10 @@ index c3eeb2d..254161c 100644
 2.7.4
 
 
-From 9ef11c61d0c216ad5e9e548584ce704e266b5827 Mon Sep 17 00:00:00 2001
+From ae9b9ea49615312adfd14915b3b51b708e604a81 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:08:45 +0200
-Subject: [PATCH 122/170] Step 15.3: add isOwner property into the PartyDetails
+Subject: [PATCH 122/169] Step 15.3: add isOwner property into the PartyDetails
 
 ---
  client/imports/party-details/party-details.ts | 12 +++++++++++-
@@ -7672,10 +7672,10 @@ index c0d5b90..78bf38d 100644
 2.7.4
 
 
-From 633d10ce75c48c823387ae45509c19bc5487efcb Mon Sep 17 00:00:00 2001
+From 73805531e0fdcf11058343b1ad07997d7d6cb9dc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:10:07 +0200
-Subject: [PATCH 123/170] Step 15.4: add disable attribute bindings
+Subject: [PATCH 123/169] Step 15.4: add disable attribute bindings
 
 ---
  client/imports/party-details/party-details.html | 8 ++++----
@@ -7708,10 +7708,10 @@ index f60a521..b165e55 100644
 2.7.4
 
 
-From f1203f60a88756d3c27b495a5c05e74c749040bc Mon Sep 17 00:00:00 2001
+From 59cae0c686e68608fe3932a9f0ebea0c5e05726c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:11:12 +0200
-Subject: [PATCH 124/170] Step 15.5: add isPublic and isInvited properties
+Subject: [PATCH 124/169] Step 15.5: add isPublic and isInvited properties
 
 ---
  client/imports/party-details/party-details.ts | 17 +++++++++++++++++
@@ -7748,10 +7748,10 @@ index 78bf38d..82689b9 100644
 2.7.4
 
 
-From 8bafbd88bd9ff7ccbf9d38544090f1cef59d5d70 Mon Sep 17 00:00:00 2001
+From dbbc698d97e55575086e9ba2e877b9080ed3bab1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:32:36 +0200
-Subject: [PATCH 125/170] Step 15.6: make use of the properties in the template
+Subject: [PATCH 125/169] Step 15.6: make use of the properties in the template
 
 ---
  client/imports/party-details/party-details.html | 4 ++--
@@ -7783,10 +7783,10 @@ index b165e55..171aba3 100644
 2.7.4
 
 
-From 41541938483113602e8b3339841a9c26e0440d9f Mon Sep 17 00:00:00 2001
+From 3844c3d65db43d26ef2f4f82c4c7a7d8dbbc3d0c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:33:40 +0200
-Subject: [PATCH 126/170] Step 16.1: extend party location with lat and lng
+Subject: [PATCH 126/169] Step 16.1: extend party location with lat and lng
  coordinates
 
 ---
@@ -7816,10 +7816,10 @@ index e22afd5..2872814 100644
 2.7.4
 
 
-From 9325424681aac74f3b6adae5216da6c9296d5aae Mon Sep 17 00:00:00 2001
+From 265d94e2d19b62212d109e61d3b79d454715e179 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:34:28 +0200
-Subject: [PATCH 127/170] Step 16.2: change initial parties accordingly
+Subject: [PATCH 127/169] Step 16.2: change initial parties accordingly
 
 ---
  server/load-parties.ts | 18 ++++++++++++------
@@ -7866,10 +7866,10 @@ index 68adcf7..b0e63e6 100644
 2.7.4
 
 
-From e7a8e073980ae0ed2fd785b4e8a106325a55602b Mon Sep 17 00:00:00 2001
+From 8c17fce967aceda43bb0c1137a0d4c3f8ffcd72f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:35:21 +0200
-Subject: [PATCH 128/170] Step 16.3: change party creation component
+Subject: [PATCH 128/169] Step 16.3: change party creation component
 
 ---
  client/imports/parties-form/parties-form.ts | 4 +++-
@@ -7894,10 +7894,10 @@ index 1e89ddb..74a19a1 100644
 2.7.4
 
 
-From 416254ae9f35a85081ea3971cc7db97bf55a6b76 Mon Sep 17 00:00:00 2001
+From 4061c40576f96f1525c3a9a0692f1db00fbb595b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:36:06 +0200
-Subject: [PATCH 129/170] Step 16.4: reflect type changes in the parties search
+Subject: [PATCH 129/169] Step 16.4: reflect type changes in the parties search
 
 ---
  server/parties.ts | 2 +-
@@ -7920,10 +7920,10 @@ index 2a44e5e..88cbd96 100644
 2.7.4
 
 
-From 67bed1de907d5961b51fd6ce5b4b8857b971c3a7 Mon Sep 17 00:00:00 2001
+From fe8b1681eb270d6bb089ae91eccc65fe49346d83 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 18:34:10 +0300
-Subject: [PATCH 130/170] Step 16.5: add angular2 google maps package
+Subject: [PATCH 130/169] Step 16.5: add angular2 google maps package
 
 ---
  package.json | 1 +
@@ -7945,10 +7945,10 @@ index 0708488..e102d10 100644
 2.7.4
 
 
-From 3a176cef558b26086287905036464bc1ed1d294c Mon Sep 17 00:00:00 2001
+From 32722cf8929fe9b20c5628ff50fb5fe8471e3d05 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:40:08 +0200
-Subject: [PATCH 131/170] Step 16.6: import and install maps providers globally
+Subject: [PATCH 131/169] Step 16.6: import and install maps providers globally
 
 ---
  client/app.ts | 3 ++-
@@ -7978,10 +7978,10 @@ index ed187a8..020162c 100644
 2.7.4
 
 
-From 29376e44d9597cb3d5e8685dbbf14a40791a3a90 Mon Sep 17 00:00:00 2001
+From a49312f986ed590299899a92ecdc6995fcabf655 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:41:07 +0200
-Subject: [PATCH 132/170] Step 16.7: add maps markup to the PartyDetails
+Subject: [PATCH 132/169] Step 16.7: add maps markup to the PartyDetails
  template
 
 ---
@@ -8025,10 +8025,10 @@ index 171aba3..f8c4191 100644
 2.7.4
 
 
-From d7b3fea8efd8968fb1104070727db6edb35cec63 Mon Sep 17 00:00:00 2001
+From fef43603f6d91ca9d77642b82d6a6f7a456d437e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 00:42:28 +0200
-Subject: [PATCH 133/170] Step 16.8: add maps logic to the PartyDetails
+Subject: [PATCH 133/169] Step 16.8: add maps logic to the PartyDetails
  component
 
 ---
@@ -8086,15 +8086,16 @@ index 82689b9..f29210d 100644
 2.7.4
 
 
-From a4d4880da31b2bd008e4b7e930d5856d8b430013 Mon Sep 17 00:00:00 2001
+From 93c758c2fe283e0d3727ba7abdddbb3dbaa3a9d8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 10:56:33 +0200
-Subject: [PATCH 134/170] Step 16.9: create main CSS file and add maps styles
+Subject: [PATCH 134/169] Step 16.9: create main CSS file and add maps styles
  there
 
 ---
- client/css/main.css | 4 ++++
- 1 file changed, 4 insertions(+)
+ client/css/main.css  | 4 ++++
+ client/css/main.scss | 7 ++++++-
+ 2 files changed, 10 insertions(+), 1 deletion(-)
  create mode 100644 client/css/main.css
 
 diff --git a/client/css/main.css b/client/css/main.css
@@ -8108,14 +8109,29 @@ index 0000000..a5234b3
 +    height: 400px;
 +}
 \ No newline at end of file
+diff --git a/client/css/main.scss b/client/css/main.scss
+index a3dd324..9570b91 100644
+--- a/client/css/main.scss
++++ b/client/css/main.scss
+@@ -1,2 +1,7 @@
+ @import "{}/node_modules/angular2-meteor-accounts-ui/build/login-buttons.scss";
+-@import "{}/node_modules/angular2-pagination/build/pagination-controls-cmp.scss";
+\ No newline at end of file
++@import "{}/node_modules/angular2-pagination/build/pagination-controls-cmp.scss";
++
++.sebm-google-map-container {
++  width: 400px;
++  height: 400px;
++}
+\ No newline at end of file
 -- 
 2.7.4
 
 
-From 5ddc7df0f14d007e237ead8ee545953442a19f6a Mon Sep 17 00:00:00 2001
+From 28d98fd5774ca72049f8d8dabc7c298c9e51d4b7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 10:57:33 +0200
-Subject: [PATCH 135/170] Step 16.10: add all parties locations on the map
+Subject: [PATCH 135/169] Step 16.10: add all parties locations on the map
 
 ---
  client/imports/parties-list/parties-list.html | 14 +++++++++++++-
@@ -8157,10 +8173,10 @@ index 254161c..b4999e6 100644
 2.7.4
 
 
-From d6067794aea9376120b5885b81026752e8d493ea Mon Sep 17 00:00:00 2001
+From 4aafb3f7c3dddab7ad0169f00aaf303a4fa5f586 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 10:58:13 +0200
-Subject: [PATCH 136/170] Step 16.11: import maps dependencies in the
+Subject: [PATCH 136/169] Step 16.11: import maps dependencies in the
  PartiesList
 
 ---
@@ -8190,10 +8206,10 @@ index 20920cc..6b9f5cd 100644
 2.7.4
 
 
-From 8465989ea863d0057b130587140137edd5e27ee2 Mon Sep 17 00:00:00 2001
+From 8ef71f0793c4a82212903b984cb9ed49168fc40d Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:17:38 +0300
-Subject: [PATCH 137/170] Step 17.1: Add bootstrap package to the project
+Subject: [PATCH 137/169] Step 17.1: Add bootstrap package to the project
 
 ---
  package.json | 1 +
@@ -8215,38 +8231,10 @@ index e102d10..e3c0b2f 100644
 2.7.4
 
 
-From b1d4aa0ddd0e3cedb3a0d4923b07f0d7d513c00b Mon Sep 17 00:00:00 2001
-From: dotansimha <dotansimha@gmail.com>
-Date: Sun, 15 May 2016 22:05:03 +0300
-Subject: [PATCH 138/170] Step 16.9: Add maps styles to the main style file
-
----
- client/css/main.scss | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
-
-diff --git a/client/css/main.scss b/client/css/main.scss
-index a3dd324..9570b91 100644
---- a/client/css/main.scss
-+++ b/client/css/main.scss
-@@ -1,2 +1,7 @@
- @import "{}/node_modules/angular2-meteor-accounts-ui/build/login-buttons.scss";
--@import "{}/node_modules/angular2-pagination/build/pagination-controls-cmp.scss";
-\ No newline at end of file
-+@import "{}/node_modules/angular2-pagination/build/pagination-controls-cmp.scss";
-+
-+.sebm-google-map-container {
-+  width: 400px;
-+  height: 400px;
-+}
-\ No newline at end of file
--- 
-2.7.4
-
-
-From 2d66149e793d90a15f72d270bbe9210da824308d Mon Sep 17 00:00:00 2001
+From 4adab0a4eb0c5bf27560be91bebebc2c853f7d1a Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:20:26 +0300
-Subject: [PATCH 139/170] Step 17.4: Import bootstrap style into the main style
+Subject: [PATCH 138/169] Step 17.2: Import bootstrap style into the main style
  file
 
 ---
@@ -8268,10 +8256,10 @@ index 9570b91..d858488 100644
 2.7.4
 
 
-From 5ea3599b343c52e713f373af9392a980619965e3 Mon Sep 17 00:00:00 2001
+From ecbe76a44fa17c80cadfe5cd73f43cf0f3ee0d91 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 6 May 2016 21:57:52 +0300
-Subject: [PATCH 140/170] Step 17.3: Add bootstrap navbar
+Subject: [PATCH 139/169] Step 17.3: Add bootstrap navbar
 
 ---
  client/app.html | 7 ++++++-
@@ -8295,10 +8283,10 @@ index 90c6b64..b3c49f0 100644
 2.7.4
 
 
-From 4cf07c7cfd925ae6ba362d7cd5cf6405e70bea8b Mon Sep 17 00:00:00 2001
+From 1b86e5cf57f45bc62b904f90d851dd62144c2f57 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:05:49 +0200
-Subject: [PATCH 141/170] Step 17.5: Remove the login buttons from the parties
+Subject: [PATCH 140/169] Step 17.4: Remove the login buttons from the parties
  list component
 
 ---
@@ -8344,10 +8332,10 @@ index 6b9f5cd..a00ff03 100644
 2.7.4
 
 
-From 16212097d26aea7c213d20f217ff14724ac85a96 Mon Sep 17 00:00:00 2001
+From e4a65029e99590f50173cb0a91fe6114ee1fe31f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:06:13 +0200
-Subject: [PATCH 142/170] Step 17.6: Add the login buttons to the app component
+Subject: [PATCH 141/169] Step 17.5: Add the login buttons to the app component
 
 ---
  client/app.html | 1 +
@@ -8368,10 +8356,10 @@ index b3c49f0..dffc2ea 100644
 2.7.4
 
 
-From 08d100b1b7f250b54f09a625fd9fa2cdea786c5a Mon Sep 17 00:00:00 2001
+From c1d6bf3218654b2e644dc32bd24cc1389d4a6aee Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:06:25 +0200
-Subject: [PATCH 143/170] Step 17.7: Import LoginButtons
+Subject: [PATCH 142/169] Step 17.6: Import LoginButtons
 
 ---
  client/app.ts | 3 ++-
@@ -8399,10 +8387,10 @@ index 020162c..9ed717e 100644
 2.7.4
 
 
-From 3da9a22529727641c87008b04ed4bbf740c18262 Mon Sep 17 00:00:00 2001
+From d12f66971e319efd1c9eab62320535c5e6c2409b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 13:07:00 +0200
-Subject: [PATCH 144/170] Step 17.8: Add fonts and font awesome
+Subject: [PATCH 143/169] Step 17.7: Add fonts and font awesome
 
 ---
  client/index.html | 5 +++++
@@ -8426,10 +8414,10 @@ index 2662e56..8a56f1a 100644
 2.7.4
 
 
-From c22d23fd8c79b4fb1cb62ce502f72bbf5d7ae952 Mon Sep 17 00:00:00 2001
+From b2f3d03a11448ed48e1c3350a2273625ef48b35f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 14:24:13 +0200
-Subject: [PATCH 145/170] Step 17.9: Update the add new party form layout
+Subject: [PATCH 144/169] Step 17.8: Update the add new party form layout
 
 ---
  client/imports/parties-form/parties-form.html | 30 ++++++++++++++++++---------
@@ -8476,10 +8464,10 @@ index 1dc86c7..a5d11ef 100644
 2.7.4
 
 
-From c6ee675cccce6f20a71f5947174fb3ea165fecdc Mon Sep 17 00:00:00 2001
+From b9a2de78569d421d00142c5fc28e8b218ee1ec02 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 4 Feb 2016 14:24:29 +0200
-Subject: [PATCH 146/170] Step 17.10: Update parties list layout
+Subject: [PATCH 145/169] Step 17.9: Update parties list layout
 
 ---
  client/imports/parties-list/parties-list.html | 129 +++++++++++++++++++-------
@@ -8629,10 +8617,10 @@ index 29b4bc3..589bc37 100644
 2.7.4
 
 
-From a1e9d7d32284451d34819fbef6ac3a8b5f56fb77 Mon Sep 17 00:00:00 2001
+From c0aa7073d3b2bd04cd276efdc8e748f47ceafa10 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:44:24 +0300
-Subject: [PATCH 147/170] Step 17.11: Add parties-list styles
+Subject: [PATCH 146/169] Step 17.10: Add parties-list styles
 
 ---
  client/css/main.scss                           |  43 ++++++++-
@@ -8828,10 +8816,10 @@ index 0000000..3393841
 2.7.4
 
 
-From 43ea1e1df743c1da6b5b79bcf71fc7e20cd8adee Mon Sep 17 00:00:00 2001
+From a2a78714a8978e8f6516c8694f5c7ca5c9dd6a09 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:50:49 +0300
-Subject: [PATCH 148/170] Step 17.12: Add style file for the party details page
+Subject: [PATCH 147/169] Step 17.11: Add style file for the party details page
 
 ---
  client/css/main.scss                             |  1 +
@@ -8891,10 +8879,10 @@ index 0000000..f237bb0
 2.7.4
 
 
-From 49c7e0cc221880b4e2e359ee30bf3181a0099cd9 Mon Sep 17 00:00:00 2001
+From 35bcbc950404b4404de7ef50d05fa3e3a08c5604 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Fri, 5 Feb 2016 16:16:43 +0200
-Subject: [PATCH 149/170] Step 17.13: Update the layout of the party details
+Subject: [PATCH 148/169] Step 17.12: Update the layout of the party details
  page
 
 ---
@@ -9006,10 +8994,10 @@ index f8c4191..a22e89c 100644
 2.7.4
 
 
-From 1e86fdbb6337bcaf18e6b2b0b702c74f06bd6451 Mon Sep 17 00:00:00 2001
+From 08cc75eeaa7c08325b55d27c8281d576ff732049 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 19:59:53 +0300
-Subject: [PATCH 150/170] Step 18.2: Removed bootstrap import
+Subject: [PATCH 149/169] Step 18.1: Removed bootstrap import
 
 ---
  client/css/main.scss | 1 -
@@ -9030,10 +9018,10 @@ index eb2bce1..f3a2528 100644
 2.7.4
 
 
-From 26f18a7134deeea1f0fc992c6a313c621229e1cc Mon Sep 17 00:00:00 2001
+From f0f1df368047d4dd3db2466aa9d004a58ef19518 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:32:42 +0200
-Subject: [PATCH 151/170] Step 18.3: Add ng2 material package
+Subject: [PATCH 150/169] Step 18.2: Add ng2 material package
 
 ---
  package.json | 2 +-
@@ -9056,10 +9044,10 @@ index e3c0b2f..5b1822e 100644
 2.7.4
 
 
-From 038028ab9cf73c9393103651f6ede699cfcc3372 Mon Sep 17 00:00:00 2001
+From 5adeb8e55f548981eccd6bf9af828a936c122e2f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:32:57 +0200
-Subject: [PATCH 152/170] Step 18.4: Import ng2 material components to the main
+Subject: [PATCH 151/169] Step 18.3: Import ng2 material components to the main
  app
 
 ---
@@ -9111,10 +9099,10 @@ index f3a2528..71a87ec 100644
 2.7.4
 
 
-From 44ae798db8c40430d6c89b932912fe56afb1f299 Mon Sep 17 00:00:00 2001
+From 06857922628f58a8cedd72897c848d39c66f3b97 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:33:22 +0200
-Subject: [PATCH 153/170] Step 18.5: Import the fonts for material
+Subject: [PATCH 152/169] Step 18.4: Import the fonts for material
 
 ---
  client/index.html | 5 ++---
@@ -9140,16 +9128,16 @@ index 8a56f1a..c6c91b2 100644
 2.7.4
 
 
-From a01d54db0d2b7c92f897f44c7a765cc2da62abcb Mon Sep 17 00:00:00 2001
+From 5db02dd7a9d985c4b14d708cb70ee58767825210 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 10:33:40 +0200
-Subject: [PATCH 154/170] Step 18.6: Change the nav bar and the layout
+Subject: [PATCH 153/169] Step 18.5: Change the nav bar and the layout
 
 ---
  client/app.html | 17 ++++++++++-------
  client/app.ts   |  4 +++-
- package.json    |  3 ++-
- 3 files changed, 15 insertions(+), 9 deletions(-)
+ package.json    |  4 +++-
+ 3 files changed, 16 insertions(+), 9 deletions(-)
 
 diff --git a/client/app.html b/client/app.html
 index dffc2ea..4ad9b7e 100644
@@ -9202,13 +9190,14 @@ index da6dc38..4b32982 100644
  @RouteConfig([
    { path: '/', as: 'PartiesList', component: PartiesList },
 diff --git a/package.json b/package.json
-index 5b1822e..af466e2 100644
+index 5b1822e..6367953 100644
 --- a/package.json
 +++ b/package.json
-@@ -11,14 +11,15 @@
+@@ -11,14 +11,16 @@
      "@angular/platform-browser": "2.0.0-rc.1",
      "@angular/platform-browser-dynamic": "2.0.0-rc.1",
      "@angular/router-deprecated": "^2.0.0-rc.1",
++    "@angular2-material/core": "^2.0.0-alpha.4",
 +    "@angular2-material/toolbar": "^2.0.0-alpha.4",
      "angular2-google-maps": "0.10.0",
      "angular2-meteor": "0.5.5",
@@ -9226,10 +9215,10 @@ index 5b1822e..af466e2 100644
 2.7.4
 
 
-From 3447032b0450a4ad4498061e71c8e2f2e948169c Mon Sep 17 00:00:00 2001
+From ebfab93175885a6739cfe9b65c02f41d5961017f Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 24 May 2016 21:35:46 +0300
-Subject: [PATCH 155/170]  Step 18.7: Import the components into the parties
+Subject: [PATCH 154/169]  Step 18.6: Import the components into the parties
  form
 
 ---
@@ -9258,13 +9247,13 @@ index 74a19a1..fe3fdf0 100644
  export class PartiesForm {
    partiesForm: ControlGroup;
 diff --git a/package.json b/package.json
-index af466e2..7087f52 100644
+index 6367953..3f0296e 100644
 --- a/package.json
 +++ b/package.json
-@@ -11,6 +11,8 @@
-     "@angular/platform-browser": "2.0.0-rc.1",
+@@ -12,6 +12,8 @@
      "@angular/platform-browser-dynamic": "2.0.0-rc.1",
      "@angular/router-deprecated": "^2.0.0-rc.1",
+     "@angular2-material/core": "^2.0.0-alpha.4",
 +    "@angular2-material/checkbox": "^2.0.0-alpha.4",
 +    "@angular2-material/input": "^2.0.0-alpha.4",
      "@angular2-material/toolbar": "^2.0.0-alpha.4",
@@ -9274,10 +9263,10 @@ index af466e2..7087f52 100644
 2.7.4
 
 
-From 9be52c33b07220c77cbb28392922b1f4ea2997a2 Mon Sep 17 00:00:00 2001
+From 23b53135d83145a7b85b97124cc366d6c64f43eb Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 24 May 2016 21:36:00 +0300
-Subject: [PATCH 156/170] Step 18.8: Update the view of the parties form
+Subject: [PATCH 155/169] Step 18.7: Update the view of the parties form
 
 ---
  client/imports/parties-form/parties-form.html | 20 ++++++--------------
@@ -9320,10 +9309,10 @@ index a5d11ef..1a2c0ff 100644
 2.7.4
 
 
-From 0005f5f0b4f2a0f93c69213ca317048075b6eb88 Mon Sep 17 00:00:00 2001
+From c6b2ff5ef2b5580c8d2ce65dbc41bd967f843237 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:14:41 +0200
-Subject: [PATCH 157/170] Step 18.9: Add the import to the parties list
+Subject: [PATCH 156/169] Step 18.8: Add the import to the parties list
 
 ---
  client/imports/parties-list/parties-list.ts | 3 ++-
@@ -9352,10 +9341,10 @@ index a00ff03..0c2a4be 100644
 2.7.4
 
 
-From 5639e718c63a3c486f3928165083106fcd7d717e Mon Sep 17 00:00:00 2001
+From f6384c5fd82efcbffb337689eae6ec358dce06a4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:15:01 +0200
-Subject: [PATCH 158/170] Step 18.10: Change that layout of the parties list
+Subject: [PATCH 157/169] Step 18.9: Change that layout of the parties list
 
 ---
  client/imports/parties-list/parties-list.html | 164 +++++++++++---------------
@@ -9561,10 +9550,10 @@ index 0c2a4be..be4f711 100644
 2.7.4
 
 
-From 6a132a97dcf459d0983005e4829fab61f32b309f Mon Sep 17 00:00:00 2001
+From 95e6c4a17e0a014fb539ad1064ff5d5aae361a63 Mon Sep 17 00:00:00 2001
 From: Uri Goldshtein <uri.goldshtein@gmail.com>
 Date: Sat, 14 May 2016 20:19:07 +0300
-Subject: [PATCH 159/170] Step 18.11: Add some style
+Subject: [PATCH 158/169] Step 18.10: Add some style
 
 ---
  client/imports/parties-list/_parties-list.scss | 150 +++++++------------------
@@ -9748,10 +9737,10 @@ index 3393841..d6512b5 100644
 2.7.4
 
 
-From e34c61b5b9635b93453d505197ee67b985053136 Mon Sep 17 00:00:00 2001
+From 1cde4513da3bb250a216c20ea7b0f5aa932873b2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:22:54 +0200
-Subject: [PATCH 160/170] Step 18.12: Import the directives in the party
+Subject: [PATCH 159/169] Step 18.11: Import the directives in the party
  details page
 
 ---
@@ -9783,10 +9772,10 @@ index f29210d..b416838 100644
 2.7.4
 
 
-From 8ebbb923f436e3c9a2793e500a7cb7641e520da3 Mon Sep 17 00:00:00 2001
+From b016111b81879bc67324b3650fa6c09099c06e23 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 11:23:20 +0200
-Subject: [PATCH 161/170] Step 18.13: Update the layout of the party details
+Subject: [PATCH 160/169] Step 18.12: Update the layout of the party details
  page
 
 ---
@@ -9913,10 +9902,10 @@ index a22e89c..1cc65e7 100644
 2.7.4
 
 
-From c0c6014ed82363db889b739d090ef7940c86fe59 Mon Sep 17 00:00:00 2001
+From e7bf35aa2a8c3a7d180c07429ce72156baf21fee Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 13:38:10 +0200
-Subject: [PATCH 162/170] Step 18.14: Replace login buttons with custom buttons
+Subject: [PATCH 161/169] Step 18.13: Replace login buttons with custom buttons
 
 ---
  client/app.html | 9 ++++++++-
@@ -9947,10 +9936,10 @@ index 4ad9b7e..50e4d9c 100644
 2.7.4
 
 
-From fbbf140923819b96ddd37934c32eb9602e1da1f8 Mon Sep 17 00:00:00 2001
+From e85cd9ed498f570bade6e1bbec4307a14b779f4c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 13:38:32 +0200
-Subject: [PATCH 163/170] Step 18.15: Add logic to support custom login
+Subject: [PATCH 162/169] Step 18.14: Add logic to support custom login
 
 ---
  client/app.ts | 28 ++++++++++++++++++++++++----
@@ -10013,10 +10002,10 @@ index 4b32982..069ef80 100644
 2.7.4
 
 
-From dd721dd639e4a183831238a33bd14ef81ae12bca Mon Sep 17 00:00:00 2001
+From 54ec21aecc36c82d1e4837433d0bab49ede31d28 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:11:40 +0200
-Subject: [PATCH 164/170] Step 18.16: Create the login component
+Subject: [PATCH 163/169] Step 18.15: Create the login component
 
 ---
  client/imports/auth/login.ts | 43 +++++++++++++++++++++++++++++++++++++++++++
@@ -10077,10 +10066,10 @@ index 0000000..935e519
 2.7.4
 
 
-From 9ae3e4ae12e6ecd177a4add3f00060467c96df0b Mon Sep 17 00:00:00 2001
+From 49281cf7132733f12f64b078d9253fd6e0606c38 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:11:48 +0200
-Subject: [PATCH 165/170] Step 18.17: Create the login view
+Subject: [PATCH 164/169] Step 18.16: Create the login view
 
 ---
  client/imports/auth/login.html | 33 +++++++++++++++++++++++++++++++++
@@ -10131,10 +10120,10 @@ index 0000000..40581a6
 2.7.4
 
 
-From 5ca827e3b3eaf9fcf42bf5a9c8563b755f237a9c Mon Sep 17 00:00:00 2001
+From 992c629acc13cd992c1eb35c75f4046002e9fe86 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:12:04 +0200
-Subject: [PATCH 166/170] Step 18.18: Create the signup component
+Subject: [PATCH 165/169] Step 18.17: Create the signup component
 
 ---
  client/imports/auth/signup.ts | 43 +++++++++++++++++++++++++++++++++++++++++++
@@ -10195,10 +10184,10 @@ index 0000000..dc07078
 2.7.4
 
 
-From 87af05a580a1b612a6889cf05d8c2a5b3a6db44a Mon Sep 17 00:00:00 2001
+From 2a946e47e8e865e078ae35d16c1e75cf3da1c3aa Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:12:12 +0200
-Subject: [PATCH 167/170] Step 18.19: Create the signup view
+Subject: [PATCH 166/169] Step 18.18: Create the signup view
 
 ---
  client/imports/auth/signup.html | 26 ++++++++++++++++++++++++++
@@ -10242,10 +10231,10 @@ index 0000000..65cf9d8
 2.7.4
 
 
-From 1dca0758fdf8d9adfcf723ed97781189c7ca4b8f Mon Sep 17 00:00:00 2001
+From 8965e9f1be00a315c49573d281e1987cd847dd69 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:15:27 +0200
-Subject: [PATCH 168/170] Step 18.20: Create the recover component
+Subject: [PATCH 167/169] Step 18.19: Create the recover component
 
 ---
  client/imports/auth/recover.ts | 42 ++++++++++++++++++++++++++++++++++++++++++
@@ -10305,10 +10294,10 @@ index 0000000..7e65e55
 2.7.4
 
 
-From 7122fb1a309fabc48f53239efbca6b5efaf00be4 Mon Sep 17 00:00:00 2001
+From b2d1cf69b2de2e0a934a731fb66903aaa7b8e9aa Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:15:37 +0200
-Subject: [PATCH 169/170] Step 18.21: Create the recover view
+Subject: [PATCH 168/169] Step 18.20: Create the recover view
 
 ---
  client/imports/auth/recover.html | 24 ++++++++++++++++++++++++
@@ -10350,10 +10339,10 @@ index 0000000..3b3a2a8
 2.7.4
 
 
-From 4c34349bfe5bad1922552cfddac90392c58cc886 Mon Sep 17 00:00:00 2001
+From faaa5c4e86be57bed26246f21eefa77bf0a9f287 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 6 Feb 2016 14:16:57 +0200
-Subject: [PATCH 170/170] Step 18.22: Add the logout method to the main
+Subject: [PATCH 169/169] Step 18.21: Add the logout method to the main
  component
 
 ---

@@ -1,6 +1,6 @@
 {{#template name="tutorials.socially.angular2.step_16.md"}}
 {{> downloadPreviousStep stepName="step_15"}}
-As you see, our app looks far from fancy using only 
+As you see, our app looks far from fancy using only
 pure HTML templates. It urgently needs graphical design improvements
 to be usable. We are going to fix this issue in the next three steps starting
 from the current. Ultimately, we'll try out two graphical design front-end libraries: Twitter's Bootstrap and Google's Material Design,
@@ -42,7 +42,7 @@ The PartiesForm component needs to be changed too to reflect type changes:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="16.3"}}
 
-Lastly, we are updating the parties publications. It's interesting to 
+Lastly, we are updating the parties publications. It's interesting to
 see what a small change is required to update the parties search by location: it needs only to point out that "location" property has been moved to "location.name", thanks to Mongo's flexible API:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="16.4"}}
@@ -100,7 +100,7 @@ The last change will be about CSS styles. To show the map container of a specifi
 we'll have to set element styles. Since we'll need styles for that for two pages, let's create
 a separate CSS file for the whole app, which is, anyways, will be useful on the next steps:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="16.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.9" filename="client/css/main.scss"}}
 
 As usual, having introduced new feature, we are finishing it up with testing.
 Let's create a new party with the location name set to some existing place you know, and go to the details page. Click on the maps at the

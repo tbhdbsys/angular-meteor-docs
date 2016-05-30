@@ -13,7 +13,7 @@ First, let's remove our previous framework (boostrap) by running:
 
 And let's remove the import from the `main.sass` file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.1"}}
 
 # Adding and importing Ng2Material
 
@@ -25,15 +25,15 @@ Run the following command in your Terminal:
 
 Now we will import it in the main page, we also need to declare that we are going to use `MATERIAL_DIRECTIVES` which is a shorthand for all of the components and directives that Ng2Material exports, and also import the module's providers in our `bootstrap` call:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.4" filename="client/app.ts"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.3" filename="client/app.ts"}}
 
 And we will also need to import the style files:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.4" filename="client/css/main.scss"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.3" filename="client/css/main.scss"}}
 
 And let's update our fonts to the Material official fonts:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.4"}}
 
 That's it - now we can use it!
 
@@ -45,17 +45,17 @@ We use directives and components from Ng2Material - such as `md-toolbar`.
 
 In order to use `md-toolbar`, we need to fetch the code of this package, by running:
 
-    meteor npm install @angular2-material/toolbar --save
+    meteor npm install @angular2-material/core @angular2-material/toolbar --save
 
 And now we can import it in our main component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.6" filename="client/app.ts"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.5" filename="client/app.ts"}}
 
 > Note that we also imported the CSS file of mdToolbar component - Meteor allows us to do such imports!
 
 And use it in the main component's template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.6" filename="client/app.html"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.5" filename="client/app.html"}}
 
 Now let's take care of the parties form.
 
@@ -66,37 +66,37 @@ In the form we will use another two extra components on ngMaterial2: MdInput and
 
 Now let's add all the imports to the component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.7" filename="client/imports/parties-form/parties-form.ts"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.6" filename="client/imports/parties-form/parties-form.ts"}}
 
 And now let's update it's layout:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.7"}}
 
 We use the mdInput component which is a wrapper for regular HTML input with style and cool layout.
 
 And now import the directives into the parties list:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.8"}}
 
 And we will also add the MdInput import:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.10" filename="client/imports/parties-list/parties-list.ts"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.9" filename="client/imports/parties-list/parties-list.ts"}}
 
 And now update the parties list layout:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.10" filename="client/imports/parties-list/parties-list.html"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.9" filename="client/imports/parties-list/parties-list.html"}}
 
 Now we need to make some changes in the style files in order to get better result, so let's start with the parties list style file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.10"}}
 
 Now let's add the import in the party details component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.11"}}
 
 And update its layout:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.13"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.12"}}
 
 # Custom Authentication Components
 
@@ -106,43 +106,43 @@ First, let's remove the `login-buttons` from the navigation bar, and replace it 
 
 We will also add `routerLink` to each button, and add logic to hide/show buttons according to the user's login state:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.13"}}
 
 Now we need to define the new routes in the `app.ts` file, where we defined our previous routes. We all use `InjectUser()` decorator to inject the user data into the component, so the `ngIf` and `[hidden]` we added will work:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.14"}}
 
 And let's create the login component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.16"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.15"}}
 
 In this component we use Meteor's accounts, and use the Accounts API to login our user with email and password.
 
 And the login view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.17"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.16"}}
 
 Signup component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.18"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.17"}}
 
 In this component we use Meteor's accounts, and use the Accounts API to add a new user.
 
 And signup view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.19"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.18"}}
 
 We also have "Recover" button in the login page, so let's create a component that handles that:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.20"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.19"}}
 
 And its view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.21"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.20"}}
 
 Our last missing piece is the Logout feature, which we will add in the main component, because it is located in the navigation bar:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.22"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.21"}}
 
 That's it! we just implemented our own authentication components using Meteor's Accounts API and Ng2Material!
 
