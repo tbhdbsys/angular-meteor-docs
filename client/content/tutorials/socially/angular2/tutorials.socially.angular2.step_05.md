@@ -154,9 +154,21 @@ Let's now load a party instance using a received ID parameter:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.13"}}
 
-And render the party details on the page:
+We also have to make it reactive, because we don't know if the subscription is ready by now.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.14"}}
+
+> To read more about Tracker.autorun [click here](http://docs.meteor.com/api/tracker.html#Tracker-autorun).
+
+To apply any change of `party` to UI, we have to use `NgZone.run()` method. If you familiar with Angular1 you can think of it as sort of $scope.apply(), but only sort of!
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.15"}}
+
+> Official Angular2 docs about [NgZone](https://angular.io/docs/js/latest/api/core/NgZone-class.html)
+
+And render the party details on the page:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.16"}}
 
 # Challenge
 
