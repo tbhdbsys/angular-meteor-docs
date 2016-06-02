@@ -116,7 +116,7 @@ And let's create the login component:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.15"}}
 
-In this component we use Meteor's accounts, and use the Accounts API to login our user with email and password.
+In this component we use Meteor's accounts (`meteor/accounts-base` package), and use the Accounts API to login our user with email and password.
 
 And the login view:
 
