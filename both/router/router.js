@@ -83,6 +83,7 @@ Router.map(function () {
 
   // Redirecting old links to Socially Angular 1
   redirect('/tutorials/angular1', '/tutorials/socially/angular1');
+  redirect('/tutorials/socially/angular1/socially', '/tutorials/socially/angular1');
   redirect('/tutorials/angular1/bootstrapping', '/tutorials/socially/angular1/bootstrapping');
   redirect('/tutorials/angular1/static-template', '/tutorials/socially/angular1/static-template');
   redirect('/tutorials/angular1/dynamic-template', '/tutorials/socially/angular1/dynamic-template');
@@ -110,6 +111,7 @@ Router.map(function () {
 
   // Redirecting old links to Socially Angular 2
   redirect('/tutorials/angular2', '/tutorials/socially/angular2');
+  redirect('/tutorials/socially/angular2/socially', '/tutorials/socially/angular2');
   redirect('/tutorials/angular2/bootstrapping', '/tutorials/socially/angular2/bootstrapping');
   redirect('/tutorials/angular2/static-template', '/tutorials/socially/angular2/static-template');
   redirect('/tutorials/angular2/dynamic-template', '/tutorials/socially/angular2/dynamic-template');
