@@ -45,7 +45,7 @@ Let’s create our own declaration file for our project in order to learn this t
 
 There is one definite place in our app where we could make use of types to avoid potential bugs.
 We are going to declare a `Party` interface, you should already be familiar with its properties: "name", "description" and "location". We can make the "Description" property optional.
-TypeScript's type-checking bases on the "shapes" that types have. And intefaces are TypeScript's means to describe these type "shapes", which 
+TypeScript's type-checking bases on the "shapes" that types have. And intefaces are TypeScript's means to describe these type "shapes", which
 is sometimes called "duck typing". More on that you can read [here](http://www.typescriptlang.org/Handbook#interfaces).
 
 Let's create our `party.d.ts` file and place it inside the _typings_ folder with the following content:
@@ -91,6 +91,42 @@ but so far our _tsconfig.json_ contains only a "files" property, which is certai
 a general compilation. At the same time, Angular2-Meteor's TypeScript compiler, defaults most of the
 compilation options internally to fit our needs. To fix plugins, let's set up our _tsconfig.json_
 properly with the options that will make plugins understand our needs and the structure of our app.
+
+```json
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "target": "es5",
+    "isolatedModules": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "sourceMap": true
+  },
+  "filesGlob": [
+    "client/**/*.ts",
+    "server/**/*.ts",
+    "typings/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
+
+**CompilerOptions:**
+
+- `experimentalDecorators` - Enables experimental support for ES7 decorators.
+- `module` - Specify module code generation
+- `target` - Specify ECMAScript target version
+- `isolatedModules` - Unconditionally emit imports for unresolved files
+- `moduleResolution` - Determine how modules get resolved
+- `emitDecoratorMetadata` - Emit design-type metadata for decorated declarations in source
+- `removeComments` - Remove all comments except copy-right header comments beginning with
+- `noImplicitAny` - Raise error on expressions and declarations with an implied 'any' type
+- `sourceMap` - Generates corresponding '.map' file
 
 Now, let's go to any of the `.ts` files and check if all that annoying redness has disappeared.
 
