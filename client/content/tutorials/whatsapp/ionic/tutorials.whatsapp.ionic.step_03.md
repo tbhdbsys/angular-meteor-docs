@@ -12,7 +12,7 @@ Open the command line in our app’s root folder and type:
 
 We just created a live and ready example Meteor app inside an `api` folder.
 
-As you can see `Meteor` provides with an exmaple app. Since non of it is relevant to us, you can go ahead and delete:
+As you can see `Meteor` provides with an example app. Since non of it is relevant to us, you can go ahead and delete:
 
     $ cd api
     $ rm .gitignore
