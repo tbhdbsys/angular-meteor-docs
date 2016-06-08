@@ -25,7 +25,7 @@ Next, import the users publication to be defined on the server during startup:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="13.2"}}
 
-As you can see above, we've introduced a new party property — "uninvited", which is going to be an array of all uninvited user IDs.
+As you can see above, we've introduced a new party property — "invited", which is going to be an array of all invited user IDs.
 
 Don't forget to update your `party.d.ts` declaration file to reflect changes of the Party.
 
