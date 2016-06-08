@@ -82,7 +82,7 @@ We must inform Angular 2 to perform a UI refresh when new data arrives. In other
 These two points were a strong reason to add a new class called `MeteorComponent`
 to the Angular2-Meteor package. `MeteorComponent` has two public methods: `subscribe` and `autorun`.
 If you inherit a component of this class and make use of these methods, you won't need to worry
-about cleanups: `MeteorComponent` will do them for you behind the hood when it's needed.
+about cleanups: `MeteorComponent` will do them for you under the hood when it's needed.
 
 These methods also have a convenient boolean parameter called `autoBind`, which goes lastly.
 As its name suggests, we can tell `subscribe` to run the subscription callback in the change detection zone
