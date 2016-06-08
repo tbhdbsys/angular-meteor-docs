@@ -38,7 +38,7 @@ To do that we will use Meteor's [publish function](http://docs.meteor.com/#/full
 
 Publication functions are placed inside the "server" folder so clients won't have access to them.
 
-Let's create a new file named inside of "server" called `parties.ts`. Here we can specify which parties to pass to the client.
+Let's create a new file inside the "server" folder called `parties.ts`. Here we can specify which parties to pass to the client.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.1"}}
 
