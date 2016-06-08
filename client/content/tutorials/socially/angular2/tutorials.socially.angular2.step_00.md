@@ -80,21 +80,28 @@ In the command line, launch those commands:
     $ meteor add angular2-compilers barbatus:angular2-runtime
 
     $ meteor npm install --save angular2-meteor @angular/platform-browser-dynamic
- 
 
 > You might see a lot of warning messages if you are using NPM v2, it is okay and if you are interested to know more about these warning, you can [read here](http://blog.npmjs.org/post/110924823920/npm-weekly-5).
+
+**Why `angular2-compilers`?**
+
+In order to use `TypeScript` and the replacement for `blaze-html-templates` package.
+
+**Why `barbatus:angular2-runtime`?**
+
+To avoid importing `reflect-metatada` and `zone.js` (more about it [here](https://github.com/Urigo/angular2-meteor#install-package)).
 
 Also run:
 
     $ meteor npm install
-    
+
 To make sure all npm dependencies are installed.    
 
 ## Typescript
 
 An Angular 2 Meteor app can be written in regular JavaScript (ES5), the new JavaScript (ES2015 aka ES6) or TypeScript on both the server and the client.
 
-TypeScript is the recommended choice by the Angular team so in this tutorial, we'll be using TypeScript. 
+TypeScript is the recommended choice by the Angular team so in this tutorial, we'll be using TypeScript.
 
 Don't worry if you're not familiar with TypeScript. Valid ES6 or ES5 JavaScript is a valid TypeScript and we will explain new concepts when we would need them in the tutorial.
 
@@ -134,8 +141,8 @@ That's it! Now we can use Angular 2's power in our Meteor app!
 # Root Component
 
 Angular 2 code is structured as a tree of components.
- 
-Each component is a controller with an attached view. 
+
+Each component is a controller with an attached view.
 
 Since it's a tree, there should be a root component and branch components
 that stem out of it. So let's create our root component.
@@ -190,7 +197,7 @@ We also used Meteor packages (`meteor add ...`).  Meteor packages have some abil
 
 ## ES6 Modules and CommonJS
 
-Meteor supports [ES6 modules](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) out of the box. 
+Meteor supports [ES6 modules](https://developer.mozilla.org/en/docs/web/javascript/reference/statements/import) out of the box.
 
 This feature provides the ability to use `import` / `export` statements and gives you a full control for modules loading and dependencies.
 
