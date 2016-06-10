@@ -112,7 +112,7 @@ Quick explanation. We need to know the name, the type and also the size of file 
 
 Since `sourceFile` is a `File` type object and `UploadFS.Uploader()` requires an `ArrayBuffer`, we need to transform it somehow. This is why we use `FileReader`.
 
-> You can read more about [FileReader on Mozilla Developer Network](mdn.io/FileReader)
+> You can read more about [FileReader on Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
 
 Now we can move on to implement that function in PartiesUpload component:
 
