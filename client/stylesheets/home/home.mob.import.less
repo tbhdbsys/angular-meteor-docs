@@ -12,6 +12,10 @@
         height: 275px;
       }
     }
+
+	.showcase h1 {
+  	  margin-bottom: 2rem;
+    }
   }
 }
 
@@ -96,4 +100,50 @@
       margin: 2rem;
     }
   }
+}
+
+.showcase {
+
+	.row {
+		padding: 0 3rem;
+	}
+
+	.img-container {
+		overflow: hidden;
+		margin-bottom: 15px;
+		border-radius: @border-radius;
+		border: 1px solid #dedede;
+	}
+
+	.site {
+		margin-bottom: 30px;
+	}
+
+	.site-title {
+		display: inline-block;
+		padding: 5px 20px;
+		border-radius: @border-radius;
+		transition: all .5s;
+	}
+
+	a:not(.btn) {
+		color: @text-color;
+
+		&:hover {
+
+			img {
+				opacity: .5;
+				transform: scale(1.15);
+			}
+
+			.site-title {
+				background: @second-background-color;
+			}
+		}
+	}
+
+	img {
+		width: 100%;
+		transition: all .5s;
+	}
 }
