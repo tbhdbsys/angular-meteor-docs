@@ -67,7 +67,7 @@ We used [`gm`](https://github.com/aheckmann/gm) module, let's install it:
 
     $ meteor npm install gm --save
 
-> Be aware that this module requires at least one of these libraries: [GraphicsMagick](http://www.graphicsmagick.org/), [ImageMagick](http://www.imagemagick.org/).
+> Note: To use this module, you need download and install [GraphicsMagick](http://www.graphicsmagick.org/) or [ImageMagick](http://www.imagemagick.org/). In Mac OS X, you can use [Homebrew](http://brew.sh/) and do: `brew install graphicsmagick` or `brew install imagemagick`.
 
 
 ### Image upload
