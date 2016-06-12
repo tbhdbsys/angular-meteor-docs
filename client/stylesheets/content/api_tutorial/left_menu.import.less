@@ -11,9 +11,46 @@
   .search {
     margin:  0 .5rem .5rem 1rem;
 
-    label {
-      vertical-align: bottom;
-    }
+	label {
+		position: relative;
+	}
+
+	.search-text {
+		display: none;
+	}
+
+	.search-icon {
+		position: absolute;
+		z-index: 200;
+		top: 50%;
+		height: 16px;
+		margin-top: -7px;
+		left: .875rem;
+		line-height: 1;
+		color: #aaa;
+	}
+
+	input {
+		border: 2px solid #dedede;
+		padding: .5rem .875rem .5rem 2.625rem;
+		width: 100%;
+		transition: all .25s;
+		border-radius: @border-radius;
+		font-weight: 300;
+
+		&:hover {
+			border-color: #ccc;
+		}
+
+		&:focus {
+			outline: none;
+			border-color: @active-button;
+		}
+	}
+  }
+
+  .algolia-autocomplete {
+	  display: block !important;
   }
 
 
