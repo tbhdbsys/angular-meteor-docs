@@ -236,7 +236,21 @@ Now we can just add it to the component:
 
 and implement it in the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.36"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.37"}}
+
+### Fixing fonts
+
+As you probably notice, there are many warnings about missing fonts. We can easily fix it with the help of a package called [`mys:fonts`](https://github.com/jellyjs/meteor-fonts).
+
+    $ meteor add mys:fonts
+
+That plugin needs to know which font we want to use and where it should be available.
+
+Configuration is pretty easy, you will catch it by just looking on an example:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.39"}}
+
+Now `roboto-regular.ttf` is availbe under `http://localhost:3000/fonts/roboto-regular.ttf`.
 
 And... You have an app that works with Ionic!
 
