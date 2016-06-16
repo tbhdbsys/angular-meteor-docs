@@ -96,20 +96,13 @@ MIGRATION = {
             },
             {
               id: "24",
-              title: 'Router Migration',
-              route: "migration.angular2.router",
-              path: "/migration/angular2/router",
-              contentTemplate: 'migration.angular2.router.md'
+              title: 'Code Migration',
+              route: "migration.angular2.migration",
+              path: "/migration/angular2/code-migration",
+              contentTemplate: 'migration.angular2.code-migration.md'
             },
             {
               id: "25",
-              title: 'Tutorial',
-              route: "migration.angular2.tutorial",
-              path: "/migration/angular2/tutorial",
-              contentTemplate: 'migration.angular2.tutorial.md'
-            },
-            {
-              id: "26",
               title: 'Next Steps',
               route: "migration.angular2.next-steps",
               path: "/migration/angular2/next-steps",
