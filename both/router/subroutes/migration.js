@@ -58,6 +58,64 @@ MIGRATION = {
               contentTemplate: 'migration.angular1.2-step.md'
             }
           ]
+        },
+        {
+          id: "2",
+          title: "Angular 2",
+          route: "migration.angular2",
+          path: "/migration/angular2",
+          pathRedirect: "/migration/angular2/intro",
+          pages: [
+            {
+              id: "20",
+              title: 'Introduction',
+              route: "migration.angular2.intro",
+              path: "/migration/angular2/intro",
+              contentTemplate: 'migration.angular2.intro.md'
+            },
+            {
+              id: "21",
+              title: 'Understanding Angular 2',
+              route: "migration.angular2.basic",
+              path: "/migration/angular2/understanding-angular2",
+              contentTemplate: 'migration.angular2.basic.md'
+            },
+            {
+              id: "22",
+              title: 'First Steps',
+              route: "migration.angular2.first-steps",
+              path: "/migration/angular2/first-steps",
+              contentTemplate: 'migration.angular2.first-steps.md'
+            },
+            {
+              id: "23",
+              title: 'Coexistence',
+              route: "migration.angular2.coexistence",
+              path: "/migration/angular2/coexistence",
+              contentTemplate: 'migration.angular2.coexistence.md'
+            },
+            {
+              id: "24",
+              title: 'Router Migration',
+              route: "migration.angular2.router",
+              path: "/migration/angular2/router",
+              contentTemplate: 'migration.angular2.router.md'
+            },
+            {
+              id: "25",
+              title: 'Tutorial',
+              route: "migration.angular2.tutorial",
+              path: "/migration/angular2/tutorial",
+              contentTemplate: 'migration.angular2.tutorial.md'
+            },
+            {
+              id: "26",
+              title: 'Next Steps',
+              route: "migration.angular2.next-steps",
+              path: "/migration/angular2/next-steps",
+              contentTemplate: 'migration.angular2.next-steps.md'
+            }
+          ]
         }
       ]
     }
