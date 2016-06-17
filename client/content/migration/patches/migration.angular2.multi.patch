@@ -1,0 +1,997 @@
+From 0985fc63fded5ac429fc987135a3ff0f6a0a2d7a Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 16 Jun 2016 18:44:36 +0300
+Subject: [PATCH 01/22] Added missing files
+
+---
+ .meteor/.finished-upgraders |  13 +++++
+ .meteor/.gitignore          |   1 +
+ .meteor/.id                 |   7 +++
+ .meteor/packages            |  71 ++++++++++++++++++++++++
+ .meteor/platforms           |   4 ++
+ .meteor/release             |   1 +
+ .meteor/versions            | 132 ++++++++++++++++++++++++++++++++++++++++++++
+ 7 files changed, 229 insertions(+)
+ create mode 100755 .meteor/.finished-upgraders
+ create mode 100755 .meteor/.gitignore
+ create mode 100755 .meteor/.id
+ create mode 100755 .meteor/packages
+ create mode 100755 .meteor/platforms
+ create mode 100644 .meteor/release
+ create mode 100644 .meteor/versions
+
+diff --git a/.meteor/.finished-upgraders b/.meteor/.finished-upgraders
+new file mode 100755
+index 0000000..dacc2c0
+--- /dev/null
++++ b/.meteor/.finished-upgraders
+@@ -0,0 +1,13 @@
++# This file contains information which helps Meteor properly upgrade your
++# app when you run 'meteor update'. You should check it into version control
++# with your project.
++
++notices-for-0.9.0
++notices-for-0.9.1
++0.9.4-platform-file
++notices-for-facebook-graph-api-2
++1.2.0-standard-minifiers-package
++1.2.0-meteor-platform-split
++1.2.0-cordova-changes
++1.2.0-breaking-changes
++1.3.0-split-minifiers-package
+diff --git a/.meteor/.gitignore b/.meteor/.gitignore
+new file mode 100755
+index 0000000..4083037
+--- /dev/null
++++ b/.meteor/.gitignore
+@@ -0,0 +1 @@
++local
+diff --git a/.meteor/.id b/.meteor/.id
+new file mode 100755
+index 0000000..c27c0e4
+--- /dev/null
++++ b/.meteor/.id
+@@ -0,0 +1,7 @@
++# This file contains a token that is unique to your project.
++# Check it into your repository along with the rest of this directory.
++# It can be used for purposes such as:
++#   - ensuring you don't accidentally deploy one app on top of another
++#   - providing package authors with aggregated statistics
++
++vqze4o4fmojp1vxyybb
+diff --git a/.meteor/packages b/.meteor/packages
+new file mode 100755
+index 0000000..84de7d0
+--- /dev/null
++++ b/.meteor/packages
+@@ -0,0 +1,71 @@
++# Meteor packages used by this project one per line.
++# Check this file (and the other files in this directory) into your repository.
++#
++# 'meteor add' and 'meteor remove' will edit this file for you
++# but you can also edit it by hand.
++
++# meteor libraries
++meteor-base
++ecmascript
++es5-shim
++check
++tracker
++
++# standard libraries
++jquery
++underscore
++less
++
++# ui
++blaze-html-templates
++reactive-dict
++reactive-var
++aldeed:template-extension
++percolate:momentum
++
++# data
++mongo
++aldeed:simple-schema
++aldeed:collection2
++dburles:collection-helpers
++reywood:publish-composite
++mdg:validated-method
++mdg:validation-error
++
++# routing
++kadira:flow-router@2.11.0
++kadira:blaze-layout
++arillo:flow-router-helpers
++zimme:active-route
++
++# i18n
++tap:i18n
++
++# accounts
++accounts-password
++useraccounts:unstyled
++useraccounts:flow-routing
++softwarerero:accounts-t9n
++
++# mobile
++crosswalk
++mobile-experience
++chriswessels:hammer
++
++# production
++juliancwirko:postcss@1.0.0-beta.11
++standard-minifier-js
++ddp-rate-limiter
++app-prod-security
++
++# rest apis
++simple:rest-accounts-password
++simple:rest
++
++# testing
++factory
++xolvio:cleaner
++dispatch:mocha-phantomjs
++practicalmeteor:mocha@2.1.1-rc.1
++hwillson:stub-collections
++johanbrook:publication-collector
+diff --git a/.meteor/platforms b/.meteor/platforms
+new file mode 100755
+index 0000000..0c5aaa5
+--- /dev/null
++++ b/.meteor/platforms
+@@ -0,0 +1,4 @@
++server
++browser
++android
++ios
+diff --git a/.meteor/release b/.meteor/release
+new file mode 100644
+index 0000000..b2d8cda
+--- /dev/null
++++ b/.meteor/release
+@@ -0,0 +1 @@
++METEOR@1.3.3
+diff --git a/.meteor/versions b/.meteor/versions
+new file mode 100644
+index 0000000..d8ddf64
+--- /dev/null
++++ b/.meteor/versions
+@@ -0,0 +1,132 @@
++accounts-base@1.2.7
++accounts-password@1.1.10
++aldeed:collection2@2.9.1
++aldeed:collection2-core@1.1.1
++aldeed:schema-deny@1.0.1
++aldeed:schema-index@1.0.1
++aldeed:simple-schema@1.5.3
++aldeed:template-extension@4.0.0
++allow-deny@1.0.5
++app-prod-security@0.0.0
++arillo:flow-router-helpers@0.5.2
++autoupdate@1.2.10
++babel-compiler@6.8.0
++babel-runtime@0.1.9
++base64@1.0.9
++binary-heap@1.0.9
++blaze@2.1.8
++blaze-html-templates@1.0.4
++blaze-tools@1.0.9
++boilerplate-generator@1.0.9
++browser-policy@1.0.9
++browser-policy-common@1.0.10
++browser-policy-content@1.0.11
++browser-policy-framing@1.0.11
++caching-compiler@1.0.5
++caching-html-compiler@1.0.6
++callback-hook@1.0.9
++cfs:http-methods@0.0.32
++check@1.2.2
++chriswessels:hammer@4.0.2
++coffeescript@1.1.0
++crosswalk@1.6.2
++dburles:collection-helpers@1.0.4
++ddp@1.2.5
++ddp-client@1.2.8
++ddp-common@1.2.6
++ddp-rate-limiter@1.0.5
++ddp-server@1.2.7
++deps@1.0.12
++diff-sequence@1.0.6
++dispatch:mocha-core@0.0.2
++dispatch:mocha-phantomjs@0.1.5
++dispatch:phantomjs-tests@0.0.5
++ecmascript@0.4.4
++ecmascript-runtime@0.2.11
++ejson@1.0.12
++email@1.0.13
++es5-shim@4.5.11
++factory@1.0.0
++fastclick@1.0.12
++force-ssl@1.0.12
++geojson-utils@1.0.9
++hot-code-push@1.0.4
++html-tools@1.0.10
++htmljs@1.0.10
++http@1.1.6
++hwillson:stub-collections@1.0.1
++id-map@1.0.8
++johanbrook:publication-collector@1.0.0
++jquery@1.11.9
++juliancwirko:postcss@1.1.1
++kadira:blaze-layout@2.3.0
++kadira:flow-router@2.12.1
++launch-screen@1.0.12
++less@2.6.1
++livedata@1.0.18
++localstorage@1.0.11
++logging@1.0.13
++mdg:validated-method@1.1.0
++mdg:validation-error@0.5.1
++meteor@1.1.15
++meteor-base@1.0.4
++meteorspark:util@0.2.0
++minifier-css@1.1.12
++minifier-js@1.1.12
++minimongo@1.0.17
++mobile-experience@1.0.4
++mobile-status-bar@1.0.12
++modules@0.6.2
++modules-runtime@0.6.4
++mongo@1.1.8
++mongo-id@1.0.5
++npm-bcrypt@0.8.6_1
++npm-mongo@1.4.44
++observe-sequence@1.0.12
++ordered-dict@1.0.8
++percolate:momentum@0.7.2
++percolate:velocityjs@1.1.0
++practicalmeteor:chai@2.1.0_1
++practicalmeteor:loglevel@1.2.0_2
++practicalmeteor:mocha@2.4.5_2
++practicalmeteor:mocha-core@0.1.4
++practicalmeteor:sinon@1.14.1_2
++promise@0.7.2
++raix:eventemitter@0.1.3
++random@1.0.9
++rate-limit@1.0.5
++reactive-dict@1.1.8
++reactive-var@1.0.10
++reload@1.1.9
++retry@1.0.8
++reywood:publish-composite@1.4.2
++routepolicy@1.0.11
++service-configuration@1.0.10
++session@1.1.6
++sha@1.0.8
++simple:authenticate-user-by-token@1.0.1
++simple:json-routes@2.1.0
++simple:rest@1.1.1
++simple:rest-accounts-password@1.1.2
++simple:rest-bearer-token-parser@1.0.1
++simple:rest-json-error-handler@1.0.1
++softwarerero:accounts-t9n@1.3.4
++spacebars@1.0.12
++spacebars-compiler@1.0.12
++srp@1.0.9
++standard-minifier-js@1.0.7
++tap:i18n@1.8.2
++templating@1.1.10
++templating-tools@1.0.4
++tmeasday:test-reporter-helpers@0.2.1
++tracker@1.0.14
++ui@1.0.11
++underscore@1.0.9
++url@1.0.10
++useraccounts:core@1.14.2
++useraccounts:flow-routing@1.14.2
++useraccounts:unstyled@1.14.2
++webapp@1.2.9
++webapp-hashing@1.0.9
++xolvio:cleaner@0.3.1
++zimme:active-route@2.3.2
+-- 
+2.6.4
+
+
+From 17efa19b64281f7539ff203ff1108906db899fce Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:17:07 +0300
+Subject: [PATCH 02/22] Step 1.1: Add Angular 2 compilers
+
+---
+ .meteor/packages | 1 +
+ .meteor/versions | 6 ++++++
+ 2 files changed, 7 insertions(+)
+ mode change 100755 => 100644 .meteor/packages
+
+diff --git a/.meteor/packages b/.meteor/packages
+old mode 100755
+new mode 100644
+index 84de7d0..d46ec8e
+--- a/.meteor/packages
++++ b/.meteor/packages
+@@ -69,3 +69,4 @@ dispatch:mocha-phantomjs
+ practicalmeteor:mocha@2.1.1-rc.1
+ hwillson:stub-collections
+ johanbrook:publication-collector
++angular2-with-blaze-compilers
+diff --git a/.meteor/versions b/.meteor/versions
+index d8ddf64..b91253d 100644
+--- a/.meteor/versions
++++ b/.meteor/versions
+@@ -7,11 +7,17 @@ aldeed:schema-index@1.0.1
+ aldeed:simple-schema@1.5.3
+ aldeed:template-extension@4.0.0
+ allow-deny@1.0.5
++angular2-css@0.1.0
++angular2-html-templates@0.5.3
++angular2-with-blaze-compilers@0.5.7
+ app-prod-security@0.0.0
+ arillo:flow-router-helpers@0.5.2
+ autoupdate@1.2.10
+ babel-compiler@6.8.0
+ babel-runtime@0.1.9
++barbatus:typescript@0.3.3
++barbatus:typescript-compiler@0.6.1
++barbatus:typescript-runtime@0.1.2
+ base64@1.0.9
+ binary-heap@1.0.9
+ blaze@2.1.8
+-- 
+2.6.4
+
+
+From 351031e0afa705f2f2e761300f7a21bb46e03cd6 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:19:26 +0300
+Subject: [PATCH 03/22] Step 1.2: Add angular2 , angular2-meteor and polyfills
+
+---
+ package.json | 5 +++++
+ 1 file changed, 5 insertions(+)
+ mode change 100755 => 100644 package.json
+
+diff --git a/package.json b/package.json
+old mode 100755
+new mode 100644
+index 49fa9dd..1263471
+--- a/package.json
++++ b/package.json
+@@ -9,6 +9,11 @@
+     "chimp-watch": "chimp --ddp=http://localhost:3000 --watch --mocha --path=tests"
+   },
+   "dependencies": {
++    "@angular/compiler": "^2.0.0-rc.1",
++    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
++    "@angular/router-deprecated": "^2.0.0-rc.1",
++    "angular2-meteor": "^0.5.5",
++    "angular2-meteor-polyfills": "^0.1.1",
+     "autoprefixer": "^6.3.1",
+     "faker": "^3.0.1"
+   },
+-- 
+2.6.4
+
+
+From dd7a125e4b7634dbcc044a377e1b318adf4c9d42 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:20:04 +0300
+Subject: [PATCH 04/22] Step 1.3: Add angular 2 runtime package from Atmosphere
+
+---
+ .meteor/packages | 1 +
+ .meteor/versions | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/.meteor/packages b/.meteor/packages
+index d46ec8e..25a1410 100644
+--- a/.meteor/packages
++++ b/.meteor/packages
+@@ -70,3 +70,4 @@ practicalmeteor:mocha@2.1.1-rc.1
+ hwillson:stub-collections
+ johanbrook:publication-collector
+ angular2-with-blaze-compilers
++barbatus:angular2-runtime
+diff --git a/.meteor/versions b/.meteor/versions
+index b91253d..67bfd2f 100644
+--- a/.meteor/versions
++++ b/.meteor/versions
+@@ -15,6 +15,7 @@ arillo:flow-router-helpers@0.5.2
+ autoupdate@1.2.10
+ babel-compiler@6.8.0
+ babel-runtime@0.1.9
++barbatus:angular2-runtime@0.5.0
+ barbatus:typescript@0.3.3
+ barbatus:typescript-compiler@0.6.1
+ barbatus:typescript-runtime@0.1.2
+-- 
+2.6.4
+
+
+From 0d5dcb0630ca9dd86e01c29217ff5a901be9304f Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:29:53 +0300
+Subject: [PATCH 05/22] Step 1.4: Removed less dependency
+
+---
+ .meteor/packages | 1 -
+ .meteor/versions | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/.meteor/packages b/.meteor/packages
+index 25a1410..d706fec 100644
+--- a/.meteor/packages
++++ b/.meteor/packages
+@@ -14,7 +14,6 @@ tracker
+ # standard libraries
+ jquery
+ underscore
+-less
+ 
+ # ui
+ blaze-html-templates
+diff --git a/.meteor/versions b/.meteor/versions
+index 67bfd2f..8fcc2c6 100644
+--- a/.meteor/versions
++++ b/.meteor/versions
+@@ -69,7 +69,6 @@ juliancwirko:postcss@1.1.1
+ kadira:blaze-layout@2.3.0
+ kadira:flow-router@2.12.1
+ launch-screen@1.0.12
+-less@2.6.1
+ livedata@1.0.18
+ localstorage@1.0.11
+ logging@1.0.13
+-- 
+2.6.4
+
+
+From 45175237ee53ab119b05d490df20975ac1867cb7 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:31:00 +0300
+Subject: [PATCH 06/22] Step 1.5: Added angular2-blaze-template package
+
+---
+ package.json | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/package.json b/package.json
+index 1263471..59196b5 100644
+--- a/package.json
++++ b/package.json
+@@ -12,6 +12,7 @@
+     "@angular/compiler": "^2.0.0-rc.1",
+     "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
+     "@angular/router-deprecated": "^2.0.0-rc.1",
++    "angular2-blaze-template": "0.0.1",
+     "angular2-meteor": "^0.5.5",
+     "angular2-meteor-polyfills": "^0.1.1",
+     "autoprefixer": "^6.3.1",
+-- 
+2.6.4
+
+
+From 566fc0eeafeb920c7f9f940300f4fd64dcea633a Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:33:14 +0300
+Subject: [PATCH 07/22] Step 1.6: Change the extension of the main file
+
+---
+ client/main.js | 1 -
+ client/main.ts | 1 +
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ delete mode 100755 client/main.js
+ create mode 100755 client/main.ts
+
+diff --git a/client/main.js b/client/main.js
+deleted file mode 100755
+index 090ed9e..0000000
+--- a/client/main.js
++++ /dev/null
+@@ -1 +0,0 @@
+-import '/imports/startup/client';
+diff --git a/client/main.ts b/client/main.ts
+new file mode 100755
+index 0000000..090ed9e
+--- /dev/null
++++ b/client/main.ts
+@@ -0,0 +1 @@
++import '/imports/startup/client';
+-- 
+2.6.4
+
+
+From 04ab5b7a34ff3828d6799024959d7557b25d7e74 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:41:23 +0300
+Subject: [PATCH 08/22] Step 2.1: Create the MainComponent
+
+---
+ client/main.ts | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+
+diff --git a/client/main.ts b/client/main.ts
+index 090ed9e..6d7311b 100755
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -1 +1,14 @@
+ import '/imports/startup/client';
++
++import {bootstrap} from "@angular/platform-browser-dynamic";
++import {Component} from "@angular/core";
++
++@Component({
++  selector: 'app',
++  template: ''
++})
++class MainComponent {
++  constructor() {}
++}
++
++bootstrap(MainComponent, []);
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 4c85036a7945548aa1f8caf5085796b020dc4214 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:42:10 +0300
+Subject: [PATCH 09/22] Step 2.2: Changed the name of the main HTML file
+
+---
+ client/head.html      | 8 --------
+ client/index.ng2.html | 8 ++++++++
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+ delete mode 100755 client/head.html
+ create mode 100755 client/index.ng2.html
+
+diff --git a/client/head.html b/client/head.html
+deleted file mode 100755
+index 6bf9f6f..0000000
+--- a/client/head.html
++++ /dev/null
+@@ -1,8 +0,0 @@
+-<head>
+-  <meta charset="utf-8">
+-  <title>Todos - All your todos synced wherever you happen to be</title>
+-  <meta name="description" content="The simple todo list that keeps your todos in sync everywhere free forever. Todos is open source and powered by Meteor.">
+-  <meta name="viewport" content="user-scalable=no, initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1" />
+-  <link rel="shortcut icon" type="image/png" href="favicon.png?v1" sizes="16x16 32x32 64x64">
+-  <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-precomposed.png">
+-</head>
+\ No newline at end of file
+diff --git a/client/index.ng2.html b/client/index.ng2.html
+new file mode 100755
+index 0000000..6bf9f6f
+--- /dev/null
++++ b/client/index.ng2.html
+@@ -0,0 +1,8 @@
++<head>
++  <meta charset="utf-8">
++  <title>Todos - All your todos synced wherever you happen to be</title>
++  <meta name="description" content="The simple todo list that keeps your todos in sync everywhere free forever. Todos is open source and powered by Meteor.">
++  <meta name="viewport" content="user-scalable=no, initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1" />
++  <link rel="shortcut icon" type="image/png" href="favicon.png?v1" sizes="16x16 32x32 64x64">
++  <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-precomposed.png">
++</head>
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From a821901670f36dc1e7667df1ee5d3f0d8b5668ce Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:42:32 +0300
+Subject: [PATCH 10/22] Step 2.3: Added app tag to the main HTML file
+
+---
+ client/index.ng2.html | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/client/index.ng2.html b/client/index.ng2.html
+index 6bf9f6f..9670ce7 100755
+--- a/client/index.ng2.html
++++ b/client/index.ng2.html
+@@ -5,4 +5,7 @@
+   <meta name="viewport" content="user-scalable=no, initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1" />
+   <link rel="shortcut icon" type="image/png" href="favicon.png?v1" sizes="16x16 32x32 64x64">
+   <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-precomposed.png">
+-</head>
+\ No newline at end of file
++</head>
++<body>
++    <app></app>
++</body>
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 23840bc0152676bf8e7616e3f0963ceb04e6c575 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:49:52 +0300
+Subject: [PATCH 11/22] Step 3.1: Commented all the FlowRouter definitions
+
+---
+ imports/startup/client/routes.js | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/imports/startup/client/routes.js b/imports/startup/client/routes.js
+index 6c61877..5bebb6e 100755
+--- a/imports/startup/client/routes.js
++++ b/imports/startup/client/routes.js
+@@ -11,6 +11,7 @@ import '../../ui/pages/app-not-found.js';
+ // Import to override accounts templates
+ import '../../ui/accounts/accounts-templates.js';
+ 
++/*
+ FlowRouter.route('/lists/:_id', {
+   name: 'Lists.show',
+   action() {
+@@ -48,3 +49,4 @@ AccountsTemplates.configureRoute('resetPwd', {
+   name: 'resetPwd',
+   path: '/reset-password',
+ });
++*/
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 843baa65d6b68c76b89ab8e4a859248e1c387659 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:51:58 +0300
+Subject: [PATCH 12/22] Step 3.2: Added routes definitions using Angular 2
+ router
+
+---
+ client/main.ts | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/client/main.ts b/client/main.ts
+index 6d7311b..1aa4fdf 100755
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -2,13 +2,19 @@ import '/imports/startup/client';
+ 
+ import {bootstrap} from "@angular/platform-browser-dynamic";
+ import {Component} from "@angular/core";
++import {ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig} from "@angular/router-deprecated";
+ 
+ @Component({
+-  selector: 'app',
+-  template: ''
++  selector: "app",
++  directives: [ROUTER_DIRECTIVES],
++  template: `<router-outlet></router-outlet>`,
+ })
++@RouteConfig([
++  {path: '/', name: 'Home', component: MainContainerComponent },
++  {path: '/lists/:_id', name: 'ListShow', component: ListShowComponent }
++])
+ class MainComponent {
+   constructor() {}
+ }
+ 
+-bootstrap(MainComponent, []);
+\ No newline at end of file
++bootstrap(MainComponent, [ROUTER_PROVIDERS]);
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 02a6a31bf37537311328adb0eeb3804e5b2144de Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 19:34:18 +0300
+Subject: [PATCH 13/22] Step 3.3: Added base tag
+
+---
+ client/index.ng2.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/client/index.ng2.html b/client/index.ng2.html
+index 9670ce7..e80ca6a 100755
+--- a/client/index.ng2.html
++++ b/client/index.ng2.html
+@@ -5,6 +5,7 @@
+   <meta name="viewport" content="user-scalable=no, initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1" />
+   <link rel="shortcut icon" type="image/png" href="favicon.png?v1" sizes="16x16 32x32 64x64">
+   <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-precomposed.png">
++  <base href="/">
+ </head>
+ <body>
+     <app></app>
+-- 
+2.6.4
+
+
+From 34e8b0894e95cde6d23244ad1e5c6d15cd859bbb Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:57:05 +0300
+Subject: [PATCH 14/22] Step 3.4: Created a stub for MainContainerComponent
+
+---
+ client/imports/components/main-container.component.ts | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 client/imports/components/main-container.component.ts
+
+diff --git a/client/imports/components/main-container.component.ts b/client/imports/components/main-container.component.ts
+new file mode 100644
+index 0000000..daeb148
+--- /dev/null
++++ b/client/imports/components/main-container.component.ts
+@@ -0,0 +1,8 @@
++import {Component} from "@angular/core";
++
++@Component({
++  template: 'Hello MainContainer!'
++})
++export class MainContainerComponent {
++
++}
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 68eb081ef61a5c142e54cf57795e4132e570aa3e Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:57:33 +0300
+Subject: [PATCH 15/22] Step 3.5: Created a stub for ListShowComponent
+
+---
+ client/imports/components/list-show.component.ts | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 client/imports/components/list-show.component.ts
+
+diff --git a/client/imports/components/list-show.component.ts b/client/imports/components/list-show.component.ts
+new file mode 100644
+index 0000000..cdc5fba
+--- /dev/null
++++ b/client/imports/components/list-show.component.ts
+@@ -0,0 +1,8 @@
++import {Component} from "@angular/core";
++
++@Component({
++  template: 'Hello ListShow!'
++})
++export class ListShowComponent {
++
++}
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 7621307b801387a3e3f8b2785389a3218d37d782 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 18:57:58 +0300
+Subject: [PATCH 16/22] Step 3.6: Added imports
+
+---
+ client/main.ts | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/client/main.ts b/client/main.ts
+index 1aa4fdf..362c403 100755
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -3,6 +3,8 @@ import '/imports/startup/client';
+ import {bootstrap} from "@angular/platform-browser-dynamic";
+ import {Component} from "@angular/core";
+ import {ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig} from "@angular/router-deprecated";
++import {MainContainerComponent} from "./imports/components/main-container.component";
++import {ListShowComponent} from "./imports/components/list-show.component";
+ 
+ @Component({
+   selector: "app",
+-- 
+2.6.4
+
+
+From fb033d309c9d609277d3e15cee05a0b998730cd3 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 19:08:48 +0300
+Subject: [PATCH 17/22] Step 4.1: Added MeteorComponent
+
+---
+ client/imports/components/main-container.component.ts | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/client/imports/components/main-container.component.ts b/client/imports/components/main-container.component.ts
+index daeb148..999e0c3 100644
+--- a/client/imports/components/main-container.component.ts
++++ b/client/imports/components/main-container.component.ts
+@@ -1,8 +1,11 @@
+ import {Component} from "@angular/core";
++import {MeteorComponent} from "angular2-meteor";
+ 
+ @Component({
+-  template: 'Hello MainContainer!'
++  directives: [],
++  template: ''
+ })
+-export class MainContainerComponent {
+-
++export class MainContainerComponent extends MeteorComponent {
++  constructor() {
++  }
+ }
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 260d59cffd0961a97b1df6f31b3843d023f0c2f3 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 19:10:45 +0300
+Subject: [PATCH 18/22] Step 4.2: Added router redirection
+
+---
+ client/imports/components/main-container.component.ts | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/client/imports/components/main-container.component.ts b/client/imports/components/main-container.component.ts
+index 999e0c3..fc07ba1 100644
+--- a/client/imports/components/main-container.component.ts
++++ b/client/imports/components/main-container.component.ts
+@@ -1,11 +1,16 @@
+ import {Component} from "@angular/core";
+ import {MeteorComponent} from "angular2-meteor";
++import {Lists} from "../../../imports/api/lists/lists.js";
++import {Router} from "@angular/router-deprecated";
+ 
+ @Component({
+   directives: [],
+   template: ''
+ })
+ export class MainContainerComponent extends MeteorComponent {
+-  constructor() {
++  constructor(router : Router) {
++    if (Lists.findOne()) {
++      router.navigate(['ListShow', {_id: Lists.findOne()._id}]);
++    }
+   }
+ }
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From fcb8e6922425f6c654e6fc2be1400c4f399608ef Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 19:17:31 +0300
+Subject: [PATCH 19/22] Step 4.3: Added data subscription
+
+---
+ client/imports/components/main-container.component.ts | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
+
+diff --git a/client/imports/components/main-container.component.ts b/client/imports/components/main-container.component.ts
+index fc07ba1..6ec1952 100644
+--- a/client/imports/components/main-container.component.ts
++++ b/client/imports/components/main-container.component.ts
+@@ -9,8 +9,15 @@ import {Router} from "@angular/router-deprecated";
+ })
+ export class MainContainerComponent extends MeteorComponent {
+   constructor(router : Router) {
+-    if (Lists.findOne()) {
+-      router.navigate(['ListShow', {_id: Lists.findOne()._id}]);
+-    }
++    super();
++
++    this.subscribe('lists.public');
++    this.subscribe('lists.private');
++
++    this.autorun(() => {
++      if (Lists.findOne()) {
++        router.navigate(['ListShow', {_id: Lists.findOne()._id}]);
++      }
++    });
+   }
+ }
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 02ec0171a0b538929da3d75943221f4dfd34a20a Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 19:18:39 +0300
+Subject: [PATCH 20/22] Step 5.1: Get the ID of the list from the router
+
+---
+ client/imports/components/list-show.component.ts | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/client/imports/components/list-show.component.ts b/client/imports/components/list-show.component.ts
+index cdc5fba..085236e 100644
+--- a/client/imports/components/list-show.component.ts
++++ b/client/imports/components/list-show.component.ts
+@@ -1,8 +1,11 @@
+ import {Component} from "@angular/core";
++import {RouteParams} from "@angular/router-deprecated";
+ 
+ @Component({
+   template: 'Hello ListShow!'
+ })
+ export class ListShowComponent {
+-
++  constructor(params : RouteParams) {
++    let listId = params.get("_id");
++  }
+ }
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From d6eb0ad79a7f3ec5060c7f853cb2da5fd1487093 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 19:21:50 +0300
+Subject: [PATCH 21/22] Step 5.2: Added the template loading and context
+
+---
+ client/imports/components/list-show.component.ts | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/client/imports/components/list-show.component.ts b/client/imports/components/list-show.component.ts
+index 085236e..42202bf 100644
+--- a/client/imports/components/list-show.component.ts
++++ b/client/imports/components/list-show.component.ts
+@@ -1,11 +1,20 @@
+ import {Component} from "@angular/core";
+ import {RouteParams} from "@angular/router-deprecated";
++import {BlazeTemplate} from "angular2-blaze-template";
+ 
+ @Component({
+-  template: 'Hello ListShow!'
++  directives: [BlazeTemplate],
++  template: `<blaze-template name="App_body" [context]="templateContext"></blaze-template>`
+ })
+ export class ListShowComponent {
++  private templateContext : any;
++
+   constructor(params : RouteParams) {
+     let listId = params.get("_id");
++
++    this.templateContext = {
++      main: "Lists_show_page",
++      _id: listId
++    };
+   }
+ }
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 9b6d203beb47fcdc6df6bf01a8e1f7c26b6310b7 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Fri, 17 Jun 2016 19:27:46 +0300
+Subject: [PATCH 22/22] Step 5.3: Changed the way of getting the list ID
+
+---
+ imports/ui/pages/lists-show-page.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/imports/ui/pages/lists-show-page.js b/imports/ui/pages/lists-show-page.js
+index 4287674..3e33194 100755
+--- a/imports/ui/pages/lists-show-page.js
++++ b/imports/ui/pages/lists-show-page.js
+@@ -11,7 +11,7 @@ import './app-not-found.js';
+ import '../components/lists-show.js';
+ 
+ Template.Lists_show_page.onCreated(function listsShowPageOnCreated() {
+-  this.getListId = () => FlowRouter.getParam('_id');
++  this.getListId = () => this.data._id;;
+ 
+   this.autorun(() => {
+     this.subscribe('todos.inList', this.getListId());
+-- 
+2.6.4
+
