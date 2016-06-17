@@ -30,7 +30,7 @@ So let's add the package to our project:
 
        meteor add angular2-with-blaze-compilers
 
-> Make sure that use Meteor <= 1.3.1 in your project.
+> Make sure that use Meteor >= 1.3.1 in your project.
 
 If you already have in your project any other package that handles TypeScript or LESS files, please remove those packages by using `meteor remove` command.
 
@@ -48,25 +48,44 @@ So now our application is capable to use both Angular 2 and Blaze at the same ti
 
 We will add Angular2-Meteor and Angular 2 core from NPM:
 
-    meteor npm install --save angular2-meteor @angular/platform-browser-dynamic
+    meteor npm install --save angular2-meteor @angular/platform-browser-dynamic @angular/router-deprecated angular2-meteor-polyfills
 
-We also need to import Angular 2 dependencies, we also want to make sure that this dependencies loaded first and once, so in order to verify it we created an Atmosphere package that import the required dependencies.
+> This will install Angular2-Meteor, Angular 2 core, Angular 2 router and polyfills that required to run Angular2-Meteor.
+
+We also need to import Angular 2 dependencies, we want to make sure that these dependencies loaded first and once, so in order to verify it we created an Atmosphere package that import the required dependencies.
 
 Let's add the Angular 2 dependencies package:
 
     meteor add barbatus:angular2-runtime
 
+In this example, the To-do app already have a dependency for LESS, so we need to remove it because the `angular2-with-blaze-compilers` already compilers them to match Angular 2 stylesheets.
+
+So let's remove it:
+
+    meteor remove less
+
 > That's it! now our app can run both Angular 2 and Blaze and we can start coding!
 
-## Create Angular 2 Application
+## How to start?
 
-So now we need to create Angular 2 application.
+So now we need to create Angular 2 application in order to begin with the migration.
 
-## Load Angular 2 Components inside Blaze Template
+The first thing that we need to do is to create main file that creates the application, but still have the ability to run the original Blaze application.
 
-Our next step of coexistence is to load Angular 2 Component inside our already running app.
+This is little bit tricky and our goal here is to wrap the Blaze application with an Angular 2 application.
 
-So let's understand how to do it.
+The next step of this tutorial will cover step-by-step migration tutorial, and you can find there the instructions for creating Angular 2 app.
 
+## Blaze Template inside Angular 2 Components
+
+Angular2-Meteor team also provides a solution for step-by-step migration, so you can create Angular 2 application around your current Blaze application, and load your already exists and implemented code into Angular 2.
+
+In order to use this feature, let's add `angular2-blaze-template` package to the project:
+
+    meteor npm install --save angular2-blaze-template
+
+The usage is simple, you just need to provide the name of the Template and optional context object.
+
+You will see in the next chapters that we will use this in the first steps of the migration.
 
 {{/template}}
