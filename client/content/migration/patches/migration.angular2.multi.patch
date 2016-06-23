@@ -1,7 +1,7 @@
-From 0985fc63fded5ac429fc987135a3ff0f6a0a2d7a Mon Sep 17 00:00:00 2001
+From 5eaa87775f63b6928a6f20a4c31495d66fdc025e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 16 Jun 2016 18:44:36 +0300
-Subject: [PATCH 01/40] Added missing files
+Subject: [PATCH 01/50] Added missing files
 
 ---
  .meteor/.finished-upgraders |  13 +++++
@@ -295,10 +295,10 @@ index 0000000..d8ddf64
 2.6.4
 
 
-From 17efa19b64281f7539ff203ff1108906db899fce Mon Sep 17 00:00:00 2001
+From c784d2d7bb7e6abe31e61fd70e8853513d2a7bfe Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:17:07 +0300
-Subject: [PATCH 02/40] Step 1.1: Add Angular 2 compilers
+Subject: [PATCH 02/50] Step 1.1: Add Angular 2 compilers
 
 ---
  .meteor/packages | 1 +
@@ -343,42 +343,46 @@ index d8ddf64..b91253d 100644
 2.6.4
 
 
-From 351031e0afa705f2f2e761300f7a21bb46e03cd6 Mon Sep 17 00:00:00 2001
+From ee69a33a13f08db108c483e763315c4abf9bcab7 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:19:26 +0300
-Subject: [PATCH 03/40] Step 1.2: Add angular2 , angular2-meteor and polyfills
+Subject: [PATCH 03/50] Step 1.2: Add angular2 , angular2-meteor and polyfills
 
 ---
- package.json | 5 +++++
- 1 file changed, 5 insertions(+)
+ package.json | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
  mode change 100755 => 100644 package.json
 
 diff --git a/package.json b/package.json
 old mode 100755
 new mode 100644
-index 49fa9dd..1263471
+index 49fa9dd..e29a6ea
 --- a/package.json
 +++ b/package.json
-@@ -9,6 +9,11 @@
+@@ -9,8 +9,13 @@
      "chimp-watch": "chimp --ddp=http://localhost:3000 --watch --mocha --path=tests"
    },
    "dependencies": {
-+    "@angular/compiler": "^2.0.0-rc.1",
-+    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
-+    "@angular/router-deprecated": "^2.0.0-rc.1",
-+    "angular2-meteor": "^0.5.5",
-+    "angular2-meteor-polyfills": "^0.1.1",
-     "autoprefixer": "^6.3.1",
-     "faker": "^3.0.1"
+-    "autoprefixer": "^6.3.1",
+-    "faker": "^3.0.1"
++    "@angular/compiler": "2.0.0-rc.1",
++    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
++    "@angular/router-deprecated": "2.0.0-rc.1",
++    "angular2-meteor": "0.5.5",
++    "angular2-meteor-polyfills": "0.1.1",
++    "autoprefixer": "6.3.1",
++    "faker": "3.0.1"
    },
+   "devDependencies": {
+     "eslint": "^2.3.0",
 -- 
 2.6.4
 
 
-From dd7a125e4b7634dbcc044a377e1b318adf4c9d42 Mon Sep 17 00:00:00 2001
+From a9d1cf09d2b4916c216146915095a8e633ce804d Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:20:04 +0300
-Subject: [PATCH 04/40] Step 1.3: Add angular 2 runtime package from Atmosphere
+Subject: [PATCH 04/50] Step 1.3: Add angular 2 runtime package from Atmosphere
 
 ---
  .meteor/packages | 1 +
@@ -410,10 +414,10 @@ index b91253d..67bfd2f 100644
 2.6.4
 
 
-From 0d5dcb0630ca9dd86e01c29217ff5a901be9304f Mon Sep 17 00:00:00 2001
+From 0743708049ce36d6fcdf1a6a4b342e3eff21f8a0 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:29:53 +0300
-Subject: [PATCH 05/40] Step 1.4: Removed less dependency
+Subject: [PATCH 05/50] Step 1.4: Removed less dependency
 
 ---
  .meteor/packages | 1 -
@@ -448,35 +452,35 @@ index 67bfd2f..8fcc2c6 100644
 2.6.4
 
 
-From 45175237ee53ab119b05d490df20975ac1867cb7 Mon Sep 17 00:00:00 2001
+From af7c39f2230eee6315dfb6dc5310cb33c86d8322 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:31:00 +0300
-Subject: [PATCH 06/40] Step 1.5: Added angular2-blaze-template package
+Subject: [PATCH 06/50] Step 1.5: Added angular2-blaze-template package
 
 ---
  package.json | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 1263471..59196b5 100644
+index e29a6ea..492d3b2 100644
 --- a/package.json
 +++ b/package.json
 @@ -12,6 +12,7 @@
-     "@angular/compiler": "^2.0.0-rc.1",
-     "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
-     "@angular/router-deprecated": "^2.0.0-rc.1",
+     "@angular/compiler": "2.0.0-rc.1",
+     "@angular/platform-browser-dynamic": "2.0.0-rc.1",
+     "@angular/router-deprecated": "2.0.0-rc.1",
 +    "angular2-blaze-template": "0.0.1",
-     "angular2-meteor": "^0.5.5",
-     "angular2-meteor-polyfills": "^0.1.1",
-     "autoprefixer": "^6.3.1",
+     "angular2-meteor": "0.5.5",
+     "angular2-meteor-polyfills": "0.1.1",
+     "autoprefixer": "6.3.1",
 -- 
 2.6.4
 
 
-From 566fc0eeafeb920c7f9f940300f4fd64dcea633a Mon Sep 17 00:00:00 2001
+From 007e43208cb4973ef8b72e9cd1b664fc83b511f3 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:33:14 +0300
-Subject: [PATCH 07/40] Step 1.6: Change the extension of the main file
+Subject: [PATCH 07/50] Step 1.6: Change the extension of the main file
 
 ---
  client/main.js | 1 -
@@ -503,10 +507,10 @@ index 0000000..090ed9e
 2.6.4
 
 
-From 04ab5b7a34ff3828d6799024959d7557b25d7e74 Mon Sep 17 00:00:00 2001
+From 3e1c84b590de8debf81a2e2f973a144e1226628b Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:41:23 +0300
-Subject: [PATCH 08/40] Step 2.1: Create the MainComponent
+Subject: [PATCH 08/50] Step 2.1: Create the MainComponent
 
 ---
  client/main.ts | 13 +++++++++++++
@@ -536,10 +540,10 @@ index 090ed9e..6d7311b 100755
 2.6.4
 
 
-From 4c85036a7945548aa1f8caf5085796b020dc4214 Mon Sep 17 00:00:00 2001
+From d3589871d52cb78ec325b4175cc911e0015b2450 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:42:10 +0300
-Subject: [PATCH 09/40] Step 2.2: Changed the name of the main HTML file
+Subject: [PATCH 09/50] Step 2.2: Changed the name of the main HTML file
 
 ---
  client/head.html      | 8 --------
@@ -582,10 +586,10 @@ index 0000000..6bf9f6f
 2.6.4
 
 
-From a821901670f36dc1e7667df1ee5d3f0d8b5668ce Mon Sep 17 00:00:00 2001
+From 531af27ca7aed3829f6e06202e04b2cfef578893 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:42:32 +0300
-Subject: [PATCH 10/40] Step 2.3: Added app tag to the main HTML file
+Subject: [PATCH 10/50] Step 2.3: Added app tag to the main HTML file
 
 ---
  client/index.ng2.html | 5 ++++-
@@ -610,10 +614,10 @@ index 6bf9f6f..9670ce7 100755
 2.6.4
 
 
-From 23840bc0152676bf8e7616e3f0963ceb04e6c575 Mon Sep 17 00:00:00 2001
+From 9a9204778cd0946f2be8b2f1c9d8ce403a37702e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:49:52 +0300
-Subject: [PATCH 11/40] Step 3.1: Commented all the FlowRouter definitions
+Subject: [PATCH 11/50] Step 3.1: Commented all the FlowRouter definitions
 
 ---
  imports/startup/client/routes.js | 2 ++
@@ -641,10 +645,10 @@ index 6c61877..5bebb6e 100755
 2.6.4
 
 
-From 843baa65d6b68c76b89ab8e4a859248e1c387659 Mon Sep 17 00:00:00 2001
+From d7aaa46059bf4958967e7a00f055b79de8d32af2 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:51:58 +0300
-Subject: [PATCH 12/40] Step 3.2: Added routes definitions using Angular 2
+Subject: [PATCH 12/50] Step 3.2: Added routes definitions using Angular 2
  router
 
 ---
@@ -684,10 +688,10 @@ index 6d7311b..1aa4fdf 100755
 2.6.4
 
 
-From 02a6a31bf37537311328adb0eeb3804e5b2144de Mon Sep 17 00:00:00 2001
+From 5e52f881a91032341185f6127242ed0f53100e99 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 19:34:18 +0300
-Subject: [PATCH 13/40] Step 3.3: Added base tag
+Subject: [PATCH 13/50] Step 3.3: Added base tag
 
 ---
  client/index.ng2.html | 1 +
@@ -709,10 +713,10 @@ index 9670ce7..e80ca6a 100755
 2.6.4
 
 
-From 34e8b0894e95cde6d23244ad1e5c6d15cd859bbb Mon Sep 17 00:00:00 2001
+From 27f0263ac8fbdb030b80c27340d423bad95fe030 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:57:05 +0300
-Subject: [PATCH 14/40] Step 3.4: Created a stub for MainContainerComponent
+Subject: [PATCH 14/50] Step 3.4: Created a stub for MainContainerComponent
 
 ---
  client/imports/components/main-container.component.ts | 8 ++++++++
@@ -738,10 +742,10 @@ index 0000000..daeb148
 2.6.4
 
 
-From 68eb081ef61a5c142e54cf57795e4132e570aa3e Mon Sep 17 00:00:00 2001
+From c0c78b136cbe904bb35294f6694ef6f48b7fbe87 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:57:33 +0300
-Subject: [PATCH 15/40] Step 3.5: Created a stub for ListShowComponent
+Subject: [PATCH 15/50] Step 3.5: Created a stub for ListShowComponent
 
 ---
  client/imports/components/list-show.component.ts | 8 ++++++++
@@ -767,10 +771,10 @@ index 0000000..cdc5fba
 2.6.4
 
 
-From 7621307b801387a3e3f8b2785389a3218d37d782 Mon Sep 17 00:00:00 2001
+From f2c8c5391c143dcf41890287430483de43e8a690 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 18:57:58 +0300
-Subject: [PATCH 16/40] Step 3.6: Added imports
+Subject: [PATCH 16/50] Step 3.6: Added imports
 
 ---
  client/main.ts | 2 ++
@@ -793,10 +797,10 @@ index 1aa4fdf..362c403 100755
 2.6.4
 
 
-From fb033d309c9d609277d3e15cee05a0b998730cd3 Mon Sep 17 00:00:00 2001
+From 580380cab059df50c92d618828015de4261264d3 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 19:08:48 +0300
-Subject: [PATCH 17/40] Step 4.1: Added MeteorComponent
+Subject: [PATCH 17/50] Step 4.1: Added MeteorComponent
 
 ---
  client/imports/components/main-container.component.ts | 9 ++++++---
@@ -826,10 +830,10 @@ index daeb148..999e0c3 100644
 2.6.4
 
 
-From 260d59cffd0961a97b1df6f31b3843d023f0c2f3 Mon Sep 17 00:00:00 2001
+From 878fa9a4fa433d4889f6d504e6ff07fc9d378e54 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 19:10:45 +0300
-Subject: [PATCH 18/40] Step 4.2: Added router redirection
+Subject: [PATCH 18/50] Step 4.2: Added router redirection
 
 ---
  client/imports/components/main-container.component.ts | 7 ++++++-
@@ -862,10 +866,10 @@ index 999e0c3..fc07ba1 100644
 2.6.4
 
 
-From fcb8e6922425f6c654e6fc2be1400c4f399608ef Mon Sep 17 00:00:00 2001
+From 17aac887be6d0571412a78d7abbd937f384612c1 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 19:17:31 +0300
-Subject: [PATCH 19/40] Step 4.3: Added data subscription
+Subject: [PATCH 19/50] Step 4.3: Added data subscription
 
 ---
  client/imports/components/main-container.component.ts | 13 ++++++++++---
@@ -899,10 +903,10 @@ index fc07ba1..6ec1952 100644
 2.6.4
 
 
-From 02ec0171a0b538929da3d75943221f4dfd34a20a Mon Sep 17 00:00:00 2001
+From 4ed93f5c7d298c15aab0fa8a8da2a4f9dc87e5b5 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 19:18:39 +0300
-Subject: [PATCH 20/40] Step 5.1: Get the ID of the list from the router
+Subject: [PATCH 20/50] Step 5.1: Get the ID of the list from the router
 
 ---
  client/imports/components/list-show.component.ts | 5 ++++-
@@ -930,10 +934,10 @@ index cdc5fba..085236e 100644
 2.6.4
 
 
-From d6eb0ad79a7f3ec5060c7f853cb2da5fd1487093 Mon Sep 17 00:00:00 2001
+From 52536c45120f5ebda6152a0ba09cdb098e287c9b Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 19:21:50 +0300
-Subject: [PATCH 21/40] Step 5.2: Added the template loading and context
+Subject: [PATCH 21/50] Step 5.2: Added the template loading and context
 
 ---
  client/imports/components/list-show.component.ts | 11 ++++++++++-
@@ -970,10 +974,10 @@ index 085236e..42202bf 100644
 2.6.4
 
 
-From 9b6d203beb47fcdc6df6bf01a8e1f7c26b6310b7 Mon Sep 17 00:00:00 2001
+From 7d84aa3dfb4ea924b34da5e1be21acd388d5eea8 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Fri, 17 Jun 2016 19:27:46 +0300
-Subject: [PATCH 22/40] Step 5.3: Changed the way of getting the list ID
+Subject: [PATCH 22/50] Step 5.3: Changed the way of getting the list ID
 
 ---
  imports/ui/pages/lists-show-page.js | 2 +-
@@ -996,10 +1000,10 @@ index 4287674..3e33194 100755
 2.6.4
 
 
-From fe3e883cc000e29c82c22996620d71a40d0f85c4 Mon Sep 17 00:00:00 2001
+From 4448efc62bf6f495a2d08b69d7ca74e89a103b66 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 10:55:50 +0300
-Subject: [PATCH 23/40] Step 6.1: Migrate the App_body template
+Subject: [PATCH 23/50] Step 6.1: Migrate the App_body template
 
 ---
  client/imports/components/main-container.ng2.html | 48 +++++++++++++++++++++++
@@ -1064,10 +1068,10 @@ index 0000000..d81e697
 2.6.4
 
 
-From aae8cfdd151f520aa9ae8c6e15b5678f476dc7f8 Mon Sep 17 00:00:00 2001
+From d662fc0cd9808743a15446401ac31533471db8f5 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 10:56:03 +0300
-Subject: [PATCH 24/40] Step 6.2: Use the new template and added stub methods
+Subject: [PATCH 24/50] Step 6.2: Use the new template and added stub methods
 
 ---
  .../imports/components/main-container.component.ts | 22 +++++++++++++++++-----
@@ -1122,10 +1126,10 @@ index 6ec1952..1e656f4 100644
 2.6.4
 
 
-From 613ad46417ccf50dbece4b2676b0e01d26a8f164 Mon Sep 17 00:00:00 2001
+From efaba8e9e1ff6a88bb0bb93f5ec474add3346143 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 10:58:24 +0300
-Subject: [PATCH 25/40] Step 6.3: Added the list of todo lists
+Subject: [PATCH 25/50] Step 6.3: Added the list of todo lists
 
 ---
  client/imports/components/main-container.component.ts | 16 ++++++++++------
@@ -1173,10 +1177,10 @@ index 1e656f4..1f9964c 100644
 2.6.4
 
 
-From b3e38691945c9d2592e694e12f2609f5a0eabfbb Mon Sep 17 00:00:00 2001
+From ed04c09748b603099b1609a659c60e71fbf568dd Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 11:18:18 +0300
-Subject: [PATCH 26/40] Step 6.4: Implemented isConnect
+Subject: [PATCH 26/50] Step 6.4: Implemented isConnect
 
 ---
  client/imports/components/main-container.component.ts | 3 ++-
@@ -1207,10 +1211,10 @@ index 1f9964c..b870293 100644
 2.6.4
 
 
-From 91a01d0de9e332aebe2436a5e17e9e5c8d7168e2 Mon Sep 17 00:00:00 2001
+From edbba9c297a94ea1c280c86e804a7156a4d65de1 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 11:20:33 +0300
-Subject: [PATCH 27/40] Step 6.5: Implemented emailLocalPart method
+Subject: [PATCH 27/50] Step 6.5: Implemented emailLocalPart method
 
 ---
  client/imports/components/main-container.component.ts | 9 ++++++++-
@@ -1240,10 +1244,10 @@ index b870293..9774afe 100644
 2.6.4
 
 
-From cddbfc9149907d2e434e44bee1b4fb23f64645cc Mon Sep 17 00:00:00 2001
+From 0294b78918ae18554f5269f463bb4ab00d3cd4a5 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:00:02 +0300
-Subject: [PATCH 28/40] Step 6.6: Added ability to create child routes
+Subject: [PATCH 28/50] Step 6.6: Added ability to create child routes
 
 ---
  client/main.ts | 3 +--
@@ -1267,10 +1271,10 @@ index 362c403..9b4472e 100755
 2.6.4
 
 
-From 8df37ba5e56ea95db151b645f6051a6b0d3ee761 Mon Sep 17 00:00:00 2001
+From 7fc8afd781944a7328ecf0b6a6edeac2b6d3339d Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:00:17 +0300
-Subject: [PATCH 29/40] Step 6.7: Added the child route in the main page
+Subject: [PATCH 29/50] Step 6.7: Added the child route in the main page
 
 ---
  client/imports/components/main-container.component.ts | 6 +++++-
@@ -1304,10 +1308,10 @@ index 9774afe..5d13731 100644
 2.6.4
 
 
-From b114250236c0320ad9a45d90008f044c8339854b Mon Sep 17 00:00:00 2001
+From 8a5f695766506920e2f9fa9429b2527b2220e351 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:01:30 +0300
-Subject: [PATCH 30/40] Step 6.8: Update the list show component to load the
+Subject: [PATCH 30/50] Step 6.8: Update the list show component to load the
  child Template
 
 ---
@@ -1339,10 +1343,10 @@ index 42202bf..cc2ddac 100644
 2.6.4
 
 
-From 336d8579900a0e37b70e4615e18fedaa2bf0f46f Mon Sep 17 00:00:00 2001
+From 4e882ef35a4ed7dd67defe88485ea2eada8b61b6 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:25:08 +0300
-Subject: [PATCH 31/40] Step 6.9: Added default route for redirection
+Subject: [PATCH 31/50] Step 6.9: Added default route for redirection
 
 ---
  client/imports/components/main-container.component.ts | 6 ++++--
@@ -1379,10 +1383,10 @@ index 5d13731..09f01dd 100644
 2.6.4
 
 
-From 79a50fad36cc83ad158b81a58dd7d259f06816c1 Mon Sep 17 00:00:00 2001
+From 6afb600d2aa6697e5e9a41ed743e452d78dcb419 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:25:22 +0300
-Subject: [PATCH 32/40] Step 6.10: Added the list redirector component
+Subject: [PATCH 32/50] Step 6.10: Added the list redirector component
 
 ---
  .../imports/components/list-redirector.component.ts  | 20 ++++++++++++++++++++
@@ -1420,10 +1424,10 @@ index 0000000..a08e2ae
 2.6.4
 
 
-From 3f5f9e8bd383d550afe49c4eb73634a01e8f8358 Mon Sep 17 00:00:00 2001
+From 2376e2e2db202f0d6965a3c2aa8689a21ec44db7 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:34:11 +0300
-Subject: [PATCH 33/40] Step 6.11: Implemented the isCurrentList logic
+Subject: [PATCH 33/50] Step 6.11: Implemented the isCurrentList logic
 
 ---
  client/imports/components/main-container.component.ts | 11 ++++++++++-
@@ -1470,10 +1474,10 @@ index 09f01dd..01ddde0 100644
 2.6.4
 
 
-From f6b3572c9e62abb12afb613824a375abe587e83d Mon Sep 17 00:00:00 2001
+From 37aa8de081e22e7c609b427dc99cd25c4c9e2750 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:48:06 +0300
-Subject: [PATCH 34/40] Step 6.12: Added the routers link in the HTML file
+Subject: [PATCH 34/50] Step 6.12: Added the routers link in the HTML file
 
 ---
  client/imports/components/main-container.ng2.html | 6 +++---
@@ -1507,10 +1511,10 @@ index d81e697..fdb9378 100644
 2.6.4
 
 
-From 819ed5f5d7f87626c85cac936c012862cc7c679e Mon Sep 17 00:00:00 2001
+From 1dd7191cf2db1d75a02e82617ad33d2626946b5b Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:48:20 +0300
-Subject: [PATCH 35/40] Step 6.13: Added the routes definitions
+Subject: [PATCH 35/50] Step 6.13: Added the routes definitions
 
 ---
  client/imports/components/main-container.component.ts | 6 +++++-
@@ -1544,10 +1548,10 @@ index 01ddde0..5df273a 100644
 2.6.4
 
 
-From 3adbea0e64479a2e018107b328728d399ece0547 Mon Sep 17 00:00:00 2001
+From 07854ea82996c74158a2c1056dd69a867debf957 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:48:46 +0300
-Subject: [PATCH 36/40] Step 6.14: Added stubs for signin/join components
+Subject: [PATCH 36/50] Step 6.14: Added stubs for signin/join components
 
 ---
  client/imports/components/join.component.ts   | 12 ++++++++++++
@@ -1598,10 +1602,10 @@ index 0000000..273f990
 2.6.4
 
 
-From bd4f77da6c8c11f6f84c3905aff9fd347f4b2e31 Mon Sep 17 00:00:00 2001
+From 69334479f60cbcf45bd92dfccead1c172b4dd204 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:54:48 +0300
-Subject: [PATCH 37/40] Step 6.15: Added addNewList method to the main
+Subject: [PATCH 37/50] Step 6.15: Added addNewList method to the main
  component
 
 ---
@@ -1642,10 +1646,10 @@ index 5df273a..64e0dff 100644
 2.6.4
 
 
-From 87f715dd809d84fb224c8702ed49b2983159b2e9 Mon Sep 17 00:00:00 2001
+From c103553805397c322d001d3b8500b467a317fa21 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:55:11 +0300
-Subject: [PATCH 38/40] Step 6.16: Added click action to the new list button
+Subject: [PATCH 38/50] Step 6.16: Added click action to the new list button
 
 ---
  client/imports/components/main-container.ng2.html | 2 +-
@@ -1668,10 +1672,10 @@ index fdb9378..fc3da0d 100644
 2.6.4
 
 
-From 8201c11836272c1fc815da70b0dc0ad331163b38 Mon Sep 17 00:00:00 2001
+From b97b5e611ed8bddad8136aabd918b25934e78ce8 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:58:50 +0300
-Subject: [PATCH 39/40] Step 6.17: Added logout method
+Subject: [PATCH 39/50] Step 6.17: Added logout method
 
 ---
  client/imports/components/main-container.component.ts | 16 ++++++++++++++++
@@ -1707,10 +1711,10 @@ index 64e0dff..720496b 100644
 2.6.4
 
 
-From 3d7ad12a0605088c904ff7b487a23546390a519d Mon Sep 17 00:00:00 2001
+From d8a0c74f3fb12f95f858733c24e5644f723d9d01 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Thu, 23 Jun 2016 12:59:01 +0300
-Subject: [PATCH 40/40] Step 6.18: Added logout click action
+Subject: [PATCH 40/50] Step 6.18: Added logout click action
 
 ---
  client/imports/components/main-container.ng2.html | 2 +-
@@ -1729,6 +1733,811 @@ index fc3da0d..a35bc92 100644
          </div>
          <div *ngIf="!currentUser" class="btns-group">
              <a [routerLink]="['Signin']" class="btn-secondary">Sign In</a>
+-- 
+2.6.4
+
+
+From 430fd19e99c2af65ca62aceac7bf0c57e726c78f Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 17:04:50 +0300
+Subject: [PATCH 41/50] Step 6.19: Removed App_body and root_director templates
+
+---
+ imports/startup/client/routes.js      |   2 -
+ imports/ui/layouts/app-body.html      |  75 -------------------
+ imports/ui/layouts/app-body.js        | 136 ----------------------------------
+ imports/ui/pages/root-redirector.html |   2 -
+ imports/ui/pages/root-redirector.js   |  14 ----
+ 5 files changed, 229 deletions(-)
+ delete mode 100755 imports/ui/layouts/app-body.html
+ delete mode 100755 imports/ui/layouts/app-body.js
+ delete mode 100755 imports/ui/pages/root-redirector.html
+ delete mode 100755 imports/ui/pages/root-redirector.js
+
+diff --git a/imports/startup/client/routes.js b/imports/startup/client/routes.js
+index 5bebb6e..4213bc4 100755
+--- a/imports/startup/client/routes.js
++++ b/imports/startup/client/routes.js
+@@ -3,8 +3,6 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+ import { AccountsTemplates } from 'meteor/useraccounts:core';
+ 
+ // Import to load these templates
+-import '../../ui/layouts/app-body.js';
+-import '../../ui/pages/root-redirector.js';
+ import '../../ui/pages/lists-show-page.js';
+ import '../../ui/pages/app-not-found.js';
+ 
+diff --git a/imports/ui/layouts/app-body.html b/imports/ui/layouts/app-body.html
+deleted file mode 100755
+index 96756fe..0000000
+--- a/imports/ui/layouts/app-body.html
++++ /dev/null
+@@ -1,75 +0,0 @@
+-<template name="App_body">
+-  {{#HammerTouchArea gestureMap=templateGestures}}
+-    <div id="container" class="{{menuOpen}} {{cordova}}">
+-      <section id="menu">
+-        {{#if currentUser}}
+-          <div class="btns-group-vertical">
+-            <a href="#" class="js-user-menu btn-secondary">
+-              {{#if userMenuOpen}}
+-                <span class="icon-arrow-up"></span>
+-                {{else}}
+-                <span class="icon-arrow-down"></span>
+-              {{/if}}
+-
+-              {{emailLocalPart}}
+-            </a>
+-            {{#if userMenuOpen}}
+-              <a class="js-logout btn-secondary">{{_ 'Logout'}}</a>
+-            {{/if}}
+-          </div>
+-        {{else}}
+-          <div class="btns-group">
+-            <a href="{{pathFor 'signin'}}" class="btn-secondary">{{_ 'Sign In'}}</a>
+-            <a href="{{pathFor 'join'}}" class="btn-secondary">{{_ 'Join'}}</a>
+-          </div>
+-        {{/if}}
+-
+-        <div class="list-todos">
+-          <a class="js-new-list link-list-new">
+-            <span class="icon-plus"></span>
+-            {{_ "New List"}}
+-          </a>
+-
+-          {{#each list in lists}}
+-            <a href="{{pathFor 'Lists.show' _id=list._id}}" title="{{list.name}}"
+-                class="list-todo {{activeListClass list}}">
+-              {{#if list.userId}}
+-                <span class="icon-lock"></span>
+-              {{/if}}
+-
+-              {{#if list.incompleteCount}}
+-                <span class="count-list">{{list.incompleteCount}}</span>
+-              {{/if}}
+-
+-              {{list.name}}
+-            </a>
+-          {{/each}}
+-        </div>
+-      </section>
+-
+-      {{#unless connected}}
+-        <div class="notifications">
+-          <div class="notification">
+-            <span class="icon-sync"></span>
+-            <div class="meta">
+-              <div class="title-notification">Trying to connect</div>
+-              <div class="description">There seems to be a connection issue</div>
+-            </div>
+-          </div>
+-        </div>
+-      {{/unless}}
+-
+-      <div class="content-overlay"></div>
+-
+-      <div id="content-container">
+-        {{#momentum plugin="fade"}}
+-          {{#if Template.subscriptionsReady}}
+-            {{> Template.dynamic template=main}}
+-          {{else}}
+-            {{> App_loading}}
+-          {{/if}}
+-        {{/momentum}}
+-      </div>
+-    </div>
+-  {{/HammerTouchArea}}
+-</template>
+diff --git a/imports/ui/layouts/app-body.js b/imports/ui/layouts/app-body.js
+deleted file mode 100755
+index f90a3a3..0000000
+--- a/imports/ui/layouts/app-body.js
++++ /dev/null
+@@ -1,136 +0,0 @@
+-import './app-body.html';
+-
+-import { Meteor } from 'meteor/meteor';
+-import { ReactiveVar } from 'meteor/reactive-var';
+-import { ReactiveDict } from 'meteor/reactive-dict';
+-import { Lists } from '../../api/lists/lists.js';
+-import { Template } from 'meteor/templating';
+-import { ActiveRoute } from 'meteor/zimme:active-route';
+-import { FlowRouter } from 'meteor/kadira:flow-router';
+-import { TAPi18n } from 'meteor/tap:i18n';
+-
+-import { insert } from '../../api/lists/methods.js';
+-
+-import '../components/loading.js';
+-
+-const CONNECTION_ISSUE_TIMEOUT = 5000;
+-
+-// A store which is local to this file?
+-const showConnectionIssue = new ReactiveVar(false);
+-
+-Meteor.startup(() => {
+-  // Only show the connection error box if it has been 5 seconds since
+-  // the app started
+-  setTimeout(() => {
+-    // FIXME:
+-    // Launch screen handle created in lib/router.js
+-    // dataReadyHold.release();
+-
+-    // Show the connection error box
+-    showConnectionIssue.set(true);
+-  }, CONNECTION_ISSUE_TIMEOUT);
+-});
+-
+-Template.App_body.onCreated(function appBodyOnCreated() {
+-  this.subscribe('lists.public');
+-  this.subscribe('lists.private');
+-
+-  this.state = new ReactiveDict();
+-  this.state.setDefault({
+-    menuOpen: false,
+-    userMenuOpen: false,
+-  });
+-});
+-
+-Template.App_body.helpers({
+-  menuOpen() {
+-    const instance = Template.instance();
+-    return instance.state.get('menuOpen') && 'menu-open';
+-  },
+-  cordova() {
+-    return Meteor.isCordova && 'cordova';
+-  },
+-  emailLocalPart() {
+-    const email = Meteor.user().emails[0].address;
+-    return email.substring(0, email.indexOf('@'));
+-  },
+-  userMenuOpen() {
+-    const instance = Template.instance();
+-    return instance.state.get('userMenuOpen');
+-  },
+-  lists() {
+-    return Lists.find({ $or: [
+-      { userId: { $exists: false } },
+-      { userId: Meteor.userId() },
+-    ] });
+-  },
+-  activeListClass(list) {
+-    const active = ActiveRoute.name('Lists.show')
+-      && FlowRouter.getParam('_id') === list._id;
+-
+-    return active && 'active';
+-  },
+-  connected() {
+-    if (showConnectionIssue.get()) {
+-      return Meteor.status().connected;
+-    }
+-
+-    return true;
+-  },
+-  templateGestures: {
+-    'swipeleft .cordova'(event, instance) {
+-      instance.state.set('menuOpen', false);
+-    },
+-    'swiperight .cordova'(event, instance) {
+-      instance.state.set('menuOpen', true);
+-    },
+-  },
+-});
+-
+-Template.App_body.events({
+-  'click .js-menu'(event, instance) {
+-    instance.state.set('menuOpen', !instance.state.get('menuOpen'));
+-  },
+-
+-  'click .content-overlay'(event, instance) {
+-    instance.state.set('menuOpen', false);
+-    event.preventDefault();
+-  },
+-
+-  'click .js-user-menu'(event, instance) {
+-    instance.state.set('userMenuOpen', !instance.state.get('userMenuOpen'));
+-    // stop the menu from closing
+-    event.stopImmediatePropagation();
+-  },
+-
+-  'click #menu a'(event, instance) {
+-    instance.state.set('menuOpen', false);
+-  },
+-
+-  'click .js-logout'() {
+-    Meteor.logout();
+-
+-    // if we are on a private list, we'll need to go to a public one
+-    if (ActiveRoute.name('Lists.show')) {
+-      // TODO -- test this code path
+-      const list = Lists.findOne(FlowRouter.getParam('_id'));
+-      if (list.userId) {
+-        FlowRouter.go('Lists.show', Lists.findOne({ userId: { $exists: false } }));
+-      }
+-    }
+-  },
+-
+-  'click .js-new-list'() {
+-    const listId = insert.call((err) => {
+-      if (err) {
+-        // At this point, we have already redirected to the new list page, but
+-        // for some reason the list didn't get created. This should almost never
+-        // happen, but it's good to handle it anyway.
+-        FlowRouter.go('App.home');
+-        alert(TAPi18n.__('Could not create list.')); // eslint-disable-line no-alert
+-      }
+-    });
+-
+-    FlowRouter.go('Lists.show', { _id: listId });
+-  },
+-});
+diff --git a/imports/ui/pages/root-redirector.html b/imports/ui/pages/root-redirector.html
+deleted file mode 100755
+index f4911b9..0000000
+--- a/imports/ui/pages/root-redirector.html
++++ /dev/null
+@@ -1,2 +0,0 @@
+-<template name="app_rootRedirector">
+-</template>
+\ No newline at end of file
+diff --git a/imports/ui/pages/root-redirector.js b/imports/ui/pages/root-redirector.js
+deleted file mode 100755
+index 5cb98d9..0000000
+--- a/imports/ui/pages/root-redirector.js
++++ /dev/null
+@@ -1,14 +0,0 @@
+-import { Meteor } from 'meteor/meteor';
+-import { Template } from 'meteor/templating';
+-import { FlowRouter } from 'meteor/kadira:flow-router';
+-import { Lists } from '../../api/lists/lists.js';
+-
+-import './root-redirector.html';
+-
+-Template.app_rootRedirector.onCreated(() => {
+-  // We need to set a timeout here so that we don't redirect from inside a redirection
+-  //   which is a no-no in FR.
+-  Meteor.defer(() => {
+-    FlowRouter.go('Lists.show', Lists.findOne());
+-  });
+-});
+-- 
+2.6.4
+
+
+From 01528f775cba6f923f936b6a196fb71ea17d37b4 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 14:53:41 +0300
+Subject: [PATCH 42/50] Step 7.1: Take the layout of the join form
+
+---
+ client/imports/components/join.ng2.html | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+ create mode 100644 client/imports/components/join.ng2.html
+
+diff --git a/client/imports/components/join.ng2.html b/client/imports/components/join.ng2.html
+new file mode 100644
+index 0000000..fbbd088
+--- /dev/null
++++ b/client/imports/components/join.ng2.html
+@@ -0,0 +1,24 @@
++<div class="page auth">
++    <nav>
++        <div class="nav-group">
++            <a href="#" class="js-menu nav-item">
++                <span class="icon-list-unordered"></span>
++            </a>
++        </div>
++    </nav>
++
++    <div class="content-scrollable">
++        <div class="wrapper-auth">
++            <div class="at-form">
++                <h1 class="title-auth">Join</h1>
++                <p class="subtitle-auth">Signing in allows you to have private lists</p>
++                <div class="at-pwd-form">
++                    <form role="form" id="at-pwd-form">
++
++                    </form>
++                </div>
++            </div>
++
++        </div>
++    </div>
++</div>
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From ead20a7a965319975ac1e3cc9dc9d5d9e772e7d5 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 14:53:55 +0300
+Subject: [PATCH 43/50] Step 7.2: Use the new template
+
+---
+ client/imports/components/join.component.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/client/imports/components/join.component.ts b/client/imports/components/join.component.ts
+index d509962..979f1a7 100644
+--- a/client/imports/components/join.component.ts
++++ b/client/imports/components/join.component.ts
+@@ -3,7 +3,7 @@ import {MeteorComponent} from "angular2-meteor/build/index";
+ 
+ @Component({
+   directives: [],
+-  template: 'Join!'
++  templateUrl: '/client/imports/components/join.ng2.html'
+ })
+ export class JoinComponent extends MeteorComponent {
+   constructor() {
+-- 
+2.6.4
+
+
+From 893bc190af79acea0f920bee2f8441ae0b1f409a Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 16:47:20 +0300
+Subject: [PATCH 44/50] Step 7.3: Added the join form HTML
+
+---
+ client/imports/components/join.ng2.html | 20 ++++++++++++++++----
+ 1 file changed, 16 insertions(+), 4 deletions(-)
+
+diff --git a/client/imports/components/join.ng2.html b/client/imports/components/join.ng2.html
+index fbbd088..fd16b02 100644
+--- a/client/imports/components/join.ng2.html
++++ b/client/imports/components/join.ng2.html
+@@ -6,19 +6,31 @@
+             </a>
+         </div>
+     </nav>
+-
+     <div class="content-scrollable">
+         <div class="wrapper-auth">
+             <div class="at-form">
+                 <h1 class="title-auth">Join</h1>
+                 <p class="subtitle-auth">Signing in allows you to have private lists</p>
++                <div class="list-errors">
++                    <div *ngFor="let errorText of errors" class="list-item">{{errorText}}</div>
++                </div>
+                 <div class="at-pwd-form">
+-                    <form role="form" id="at-pwd-form">
+-
++                    <form id="at-pwd-form" (ngSubmit)="join()" #joinForm="ngForm">
++                        <div class="input">
++                            <input [(ngModel)]="model.email" ngControl="email" #email="ngForm" type="text" id="email" name="email" placeholder="Email" class="form-control" autocapitalize="none" autocorrect="off">
++                        </div>
++                        <div class="input">
++                            <input [(ngModel)]="model.password" ngControl="password" #password="ngForm" required type="password" id="password" name="password" class="form-control" placeholder="Password" autocapitalize="none" autocorrect="off">
++                        </div>
++                        <div class="input">
++                            <input [(ngModel)]="model.passwordVerify" ngControl="passwordVerify" #passwordVerify="ngForm" required type="password" id="password_verify" class="form-control" name="password_verify" placeholder="Password (Again)" autocapitalize="none" autocorrect="off">
++                        </div>
++                        <button type="submit" class="btn-primary" [disabled]="!joinForm.form.valid">
++                            REGISTER
++                        </button>
+                     </form>
+                 </div>
+             </div>
+-
+         </div>
+     </div>
+ </div>
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From a6f4a1e28b28d720cd3987148257c09490c1f4c6 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 16:47:41 +0300
+Subject: [PATCH 45/50] Step 7.4: Added the logic for join component
+
+---
+ client/imports/components/join.component.ts | 42 ++++++++++++++++++++++++++++-
+ 1 file changed, 41 insertions(+), 1 deletion(-)
+
+diff --git a/client/imports/components/join.component.ts b/client/imports/components/join.component.ts
+index 979f1a7..fbf7c5c 100644
+--- a/client/imports/components/join.component.ts
++++ b/client/imports/components/join.component.ts
+@@ -1,12 +1,52 @@
+ import {Component} from "@angular/core";
+ import {MeteorComponent} from "angular2-meteor/build/index";
++import {Accounts} from "meteor/accounts-base";
++import {Router} from "@angular/router-deprecated";
++
++class JoinModel {
++  constructor(public email : string, public password : string, public passwordVerify : string) {
++
++  }
++}
+ 
+ @Component({
+   directives: [],
+   templateUrl: '/client/imports/components/join.ng2.html'
+ })
+ export class JoinComponent extends MeteorComponent {
+-  constructor() {
++  private model : JoinModel;
++  private errors : Array<string> = [];
++
++  constructor(private router : Router) {
+     super();
++
++    this.model = new JoinModel('', '', '');
++  }
++
++  resetErrors() {
++    this.errors = [];
++  }
++
++  join() {
++    this.resetErrors();
++
++    if (this.model.password !== this.model.passwordVerify) {
++      this.errors.push("Passwords does not match!");
++
++      return;
++    }
++
++    Accounts.createUser({
++      email: this.model.email,
++      password: this.model.email
++    }, (err) => {
++      if (err) {
++        this.errors.push(err.reason);
++
++        return;
++      }
++
++      this.router.root.navigate(['Home']);
++    });
+   }
+ }
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From 6c1bab196ba03c8f5d2e933644411733acd62272 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 16:48:11 +0300
+Subject: [PATCH 46/50] Step 7.5: Removed Blaze accounts packages
+
+---
+ .meteor/packages                                   |  3 --
+ .meteor/versions                                   |  4 --
+ imports/startup/client/index.js                    |  1 -
+ imports/startup/client/routes.js                   | 46 +---------------------
+ .../startup/client/useraccounts-configuration.js   | 20 ----------
+ 5 files changed, 1 insertion(+), 73 deletions(-)
+ delete mode 100755 imports/startup/client/useraccounts-configuration.js
+
+diff --git a/.meteor/packages b/.meteor/packages
+index d706fec..7ff072c 100644
+--- a/.meteor/packages
++++ b/.meteor/packages
+@@ -42,9 +42,6 @@ tap:i18n
+ 
+ # accounts
+ accounts-password
+-useraccounts:unstyled
+-useraccounts:flow-routing
+-softwarerero:accounts-t9n
+ 
+ # mobile
+ crosswalk
+diff --git a/.meteor/versions b/.meteor/versions
+index 8fcc2c6..78e859b 100644
+--- a/.meteor/versions
++++ b/.meteor/versions
+@@ -116,7 +116,6 @@ simple:rest@1.1.1
+ simple:rest-accounts-password@1.1.2
+ simple:rest-bearer-token-parser@1.0.1
+ simple:rest-json-error-handler@1.0.1
+-softwarerero:accounts-t9n@1.3.4
+ spacebars@1.0.12
+ spacebars-compiler@1.0.12
+ srp@1.0.9
+@@ -129,9 +128,6 @@ tracker@1.0.14
+ ui@1.0.11
+ underscore@1.0.9
+ url@1.0.10
+-useraccounts:core@1.14.2
+-useraccounts:flow-routing@1.14.2
+-useraccounts:unstyled@1.14.2
+ webapp@1.2.9
+ webapp-hashing@1.0.9
+ xolvio:cleaner@0.3.1
+diff --git a/imports/startup/client/index.js b/imports/startup/client/index.js
+index a36a1b1..b0b0f47 100755
+--- a/imports/startup/client/index.js
++++ b/imports/startup/client/index.js
+@@ -1,2 +1 @@
+-import './useraccounts-configuration.js';
+ import './routes.js';
+diff --git a/imports/startup/client/routes.js b/imports/startup/client/routes.js
+index 4213bc4..dbd1a96 100755
+--- a/imports/startup/client/routes.js
++++ b/imports/startup/client/routes.js
+@@ -1,50 +1,6 @@
+ import { FlowRouter } from 'meteor/kadira:flow-router';
+ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+-import { AccountsTemplates } from 'meteor/useraccounts:core';
+ 
+ // Import to load these templates
+ import '../../ui/pages/lists-show-page.js';
+-import '../../ui/pages/app-not-found.js';
+-
+-// Import to override accounts templates
+-import '../../ui/accounts/accounts-templates.js';
+-
+-/*
+-FlowRouter.route('/lists/:_id', {
+-  name: 'Lists.show',
+-  action() {
+-    BlazeLayout.render('App_body', { main: 'Lists_show_page' });
+-  },
+-});
+-
+-FlowRouter.route('/', {
+-  name: 'App.home',
+-  action() {
+-    BlazeLayout.render('App_body', { main: 'app_rootRedirector' });
+-  },
+-});
+-
+-// the App_notFound template is used for unknown routes and missing lists
+-FlowRouter.notFound = {
+-  action() {
+-    BlazeLayout.render('App_body', { main: 'App_notFound' });
+-  },
+-};
+-
+-AccountsTemplates.configureRoute('signIn', {
+-  name: 'signin',
+-  path: '/signin',
+-});
+-
+-AccountsTemplates.configureRoute('signUp', {
+-  name: 'join',
+-  path: '/join',
+-});
+-
+-AccountsTemplates.configureRoute('forgotPwd');
+-
+-AccountsTemplates.configureRoute('resetPwd', {
+-  name: 'resetPwd',
+-  path: '/reset-password',
+-});
+-*/
+\ No newline at end of file
++import '../../ui/pages/app-not-found.js';
+\ No newline at end of file
+diff --git a/imports/startup/client/useraccounts-configuration.js b/imports/startup/client/useraccounts-configuration.js
+deleted file mode 100755
+index a24d28c..0000000
+--- a/imports/startup/client/useraccounts-configuration.js
++++ /dev/null
+@@ -1,20 +0,0 @@
+-import { AccountsTemplates } from 'meteor/useraccounts:core';
+-import { TAPi18n } from 'meteor/tap:i18n';
+-
+-AccountsTemplates.configure({
+-  showForgotPasswordLink: true,
+-  texts: {
+-    errors: {
+-      loginForbidden: TAPi18n.__('Incorrect username or password'),
+-      pwdMismatch: TAPi18n.__('Passwords don\'t match'),
+-    },
+-    title: {
+-      signIn: TAPi18n.__('Sign In'),
+-      signUp: TAPi18n.__('Join'),
+-    },
+-  },
+-  defaultTemplate: 'Auth_page',
+-  defaultLayout: 'App_body',
+-  defaultContentRegion: 'main',
+-  defaultLayoutRegions: {},
+-});
+-- 
+2.6.4
+
+
+From 7d02e08274ec688405a27563b9dc50044e801e3f Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 16:49:58 +0300
+Subject: [PATCH 47/50] Step 7.6: Added current user to the main page
+
+---
+ client/imports/components/main-container.component.ts | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/client/imports/components/main-container.component.ts b/client/imports/components/main-container.component.ts
+index 720496b..1333107 100644
+--- a/client/imports/components/main-container.component.ts
++++ b/client/imports/components/main-container.component.ts
+@@ -26,6 +26,7 @@ export class MainContainerComponent extends MeteorComponent {
+   private isCordova : boolean;
+   private menuOpen : boolean = false;
+   private userMenuOpen : boolean = false;
++  private currentUser : Meteor.User;
+ 
+   constructor(private router : Router) {
+     super();
+@@ -40,6 +41,8 @@ export class MainContainerComponent extends MeteorComponent {
+         { userId: { $exists: false } },
+         { userId: Meteor.userId() },
+       ] });
++
++      this.currentUser = Meteor.user();
+     }, true);
+   }
+ 
+-- 
+2.6.4
+
+
+From b11dc184bec9fc1c1f3baf4cf4479719060f9b28 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 16:51:22 +0300
+Subject: [PATCH 48/50] Step 7.7: Fix the user menu toggle
+
+---
+ client/imports/components/main-container.ng2.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/client/imports/components/main-container.ng2.html b/client/imports/components/main-container.ng2.html
+index a35bc92..0ff0645 100644
+--- a/client/imports/components/main-container.ng2.html
++++ b/client/imports/components/main-container.ng2.html
+@@ -1,7 +1,7 @@
+ <div id="container" [ngClass]="{'menu-open': menuOpen, 'cordova': isCordova}">
+     <section id="menu">
+         <div *ngIf="currentUser" class="btns-group-vertical">
+-            <a href="#" class="js-user-menu btn-secondary">
++            <a class="js-user-menu btn-secondary" (click)="userMenuOpen = !userMenuOpen">
+                 <span *ngIf="userMenuOpen" class="icon-arrow-up"></span>
+                 <span *ngIf="!userMenuOpen" class="icon-arrow-down"></span>
+ 
+-- 
+2.6.4
+
+
+From 981007d86d2744e7d21eead54db2bb6477490238 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 17:00:21 +0300
+Subject: [PATCH 49/50] Step 7.8: Added sign in template HTML
+
+---
+ client/imports/components/signin.ng2.html | 33 +++++++++++++++++++++++++++++++
+ 1 file changed, 33 insertions(+)
+ create mode 100644 client/imports/components/signin.ng2.html
+
+diff --git a/client/imports/components/signin.ng2.html b/client/imports/components/signin.ng2.html
+new file mode 100644
+index 0000000..5c71bfa
+--- /dev/null
++++ b/client/imports/components/signin.ng2.html
+@@ -0,0 +1,33 @@
++<div class="page auth">
++    <nav>
++        <div class="nav-group">
++            <a href="#" class="js-menu nav-item">
++                <span class="icon-list-unordered"></span>
++            </a>
++        </div>
++    </nav>
++    <div class="content-scrollable">
++        <div class="wrapper-auth">
++            <div class="at-form">
++                <h1 class="title-auth">Signin</h1>
++                <p class="subtitle-auth">Signing in allows you to have private lists</p>
++                <div class="list-errors">
++                    <div *ngFor="let errorText of errors" class="list-item">{{errorText}}</div>
++                </div>
++                <div class="at-pwd-form">
++                    <form id="at-pwd-form" (ngSubmit)="join()" #joinForm="ngForm">
++                        <div class="input">
++                            <input [(ngModel)]="model.email" ngControl="email" #email="ngForm" type="text" id="email" name="email" placeholder="Email" class="form-control" autocapitalize="none" autocorrect="off">
++                        </div>
++                        <div class="input">
++                            <input [(ngModel)]="model.password" ngControl="password" #password="ngForm" required type="password" id="password" name="password" class="form-control" placeholder="Password" autocapitalize="none" autocorrect="off">
++                        </div>
++                        <button type="submit" class="btn-primary" [disabled]="!joinForm.form.valid">
++                            SIGN IN
++                        </button>
++                    </form>
++                </div>
++            </div>
++        </div>
++    </div>
++</div>
+\ No newline at end of file
+-- 
+2.6.4
+
+
+From b0701f44408f34b6b07416b971e8d2c424925851 Mon Sep 17 00:00:00 2001
+From: dotansimha <dotansimha@gmail.com>
+Date: Thu, 23 Jun 2016 17:00:30 +0300
+Subject: [PATCH 50/50] Step 7.9: Added sign in component login
+
+---
+ client/imports/components/signin.component.ts | 34 +++++++++++++++++++++++++--
+ 1 file changed, 32 insertions(+), 2 deletions(-)
+
+diff --git a/client/imports/components/signin.component.ts b/client/imports/components/signin.component.ts
+index 273f990..fe90288 100644
+--- a/client/imports/components/signin.component.ts
++++ b/client/imports/components/signin.component.ts
+@@ -1,12 +1,42 @@
+ import {Component} from "@angular/core";
+ import {MeteorComponent} from "angular2-meteor/build/index";
++import {Router} from "@angular/router-deprecated";
++
++class SigninModel {
++  constructor(public email : string, public password : string) {
++
++  }
++}
+ 
+ @Component({
+   directives: [],
+-  template: 'Signin!'
++  templateUrl: '/client/imports/components/signin.ng2.html'
+ })
+ export class SigninComponent extends MeteorComponent {
+-  constructor() {
++  private model : SigninModel;
++  private errors : Array<string> = [];
++
++  constructor(private router : Router) {
+     super();
++
++    this.model = new SigninModel('', '');
++  }
++
++  resetErrors() {
++    this.errors = [];
++  }
++
++  join() {
++    this.resetErrors();
++
++    Meteor.loginWithPassword(this.model.email, this.model.password, (err) => {
++      if (err) {
++        this.errors.push(err.reason);
++
++        return;
++      }
++
++      this.router.root.navigate(['Home']);
++    });
+   }
+ }
+\ No newline at end of file
 -- 
 2.6.4
 
