@@ -92,13 +92,17 @@ Now we want to add some static data to this controller, we will use `moment` pac
 
     $ meteor npm install moment --save
 
-Now let’s add the static data, we will create a stub schema for chats and messages:
+The `moment` package will be added to `package.json` by `npm`:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="1.11"}}
 
-Connect the chats view to the `ChatsCtrl`:
+Now let’s add the static data to the `ChatsCtrl`. We will create a stub schema for chats and messages:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="1.12"}}
+
+Connect the chats view to the `ChatsCtrl`:
+
+{{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="1.13"}}
 
 Note that we used the `controllerAs` syntax with the `chats` value. This means that that the controller should be accessed from the scope through a data model called `chats`, which is just a reference to the scope.
 
