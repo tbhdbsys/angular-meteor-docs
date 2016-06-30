@@ -37,7 +37,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'Adding/removing objects and Angular event handling',
     route: "tutorials.socially.angular2.adding-removing-objects-and-angular-event-handling",
     path: "/tutorials/socially/angular2/adding-removing-objects-and-angular-event-handling",
-    contentTemplate: 'tutorials.socially.angular2.step_04.md'
+    contentTemplate: 'tutorials.socially.angular2.step_04.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/YyDK-JiTGX8'
   },
   {
     id: "5",
@@ -45,7 +46,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'Routing and Multiple Views',
     route: "tutorials.socially.angular2.routing-and-multiple-views",
     path: "/tutorials/socially/angular2/routing-and-multiple-views",
-    contentTemplate: 'tutorials.socially.angular2.step_05.md'
+    contentTemplate: 'tutorials.socially.angular2.step_05.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/CsXum7TFg14'
   },
   {
     id: "6",
@@ -53,7 +55,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'Bind one object',
     route: "tutorials.socially.angular2.bind-one-object",
     path: "/tutorials/socially/angular2/bind-one-object",
-    contentTemplate: 'tutorials.socially.angular2.step_06.md'
+    contentTemplate: 'tutorials.socially.angular2.step_06.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/khZjQu121io'
   },
   {
     id: "7",
@@ -69,7 +72,9 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'User accounts, authentication and permissions',
     route: "tutorials.socially.angular2.user-accounts-authentication-and-permissions",
     path: "/tutorials/socially/angular2/user-accounts-authentication-and-permissions",
-    contentTemplate: 'tutorials.socially.angular2.step_08.md'
+    contentTemplate: 'tutorials.socially.angular2.step_08.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/WnHz6yQqWnA'
+
   },
   {
     id: "9",
@@ -77,7 +82,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'Privacy and publish-subscribe functions',
     route: "tutorials.socially.angular2.privacy-and-publish-subscribe-functions",
     path: "/tutorials/socially/angular2/privacy-and-publish-subscribe-functions",
-    contentTemplate: 'tutorials.socially.angular2.step_09.md'
+    contentTemplate: 'tutorials.socially.angular2.step_09.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/-L9a3BJ13Bk'
   },
   {
     id: "10",
@@ -101,7 +107,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'Search, sort, pagination and reactive vars',
     route: "tutorials.socially.angular2.search-sort-pagination-and-reactive-vars",
     path: "/tutorials/socially/angular2/search-sort-pagination-and-reactive-vars",
-    contentTemplate: 'tutorials.socially.angular2.step_12.md'
+    contentTemplate: 'tutorials.socially.angular2.step_12.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/fejKFYDN4k4'
   },
   {
     id: "13",
@@ -109,7 +116,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'Using and creating AngularJS filters',
     route: "tutorials.socially.angular2.using-and-creating-angularjs-filters",
     path: "/tutorials/socially/angular2/using-and-creating-angularjs-filters",
-    contentTemplate: 'tutorials.socially.angular2.step_13.md'
+    contentTemplate: 'tutorials.socially.angular2.step_13.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/l_emU5OYpkk'
   },
   {
     id: "14",
@@ -117,7 +125,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'Meteor methods',
     route: "tutorials.socially.angular2.meteor-methods",
     path: "/tutorials/socially/angular2/meteor-methods",
-    contentTemplate: 'tutorials.socially.angular2.step_14.md'
+    contentTemplate: 'tutorials.socially.angular2.step_14.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/M-8Vn2r6eYw'
   },
   {
     id: "15",
@@ -125,7 +134,9 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'Conditional template directives with AngularJS',
     route: "tutorials.socially.angular2.conditional-template-directives-with-angularjs",
     path: "/tutorials/socially/angular2/conditional-template-directives-with-angularjs",
-    contentTemplate: 'tutorials.socially.angular2.step_15.md'
+    contentTemplate: 'tutorials.socially.angular2.step_15.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/f0IPUP-mIyA'
+
   },
   {
     id: "16",
@@ -133,7 +144,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'Google Maps',
     route: "tutorials.socially.angular2.google-maps",
     path: "/tutorials/socially/angular2/google-maps",
-    contentTemplate: 'tutorials.socially.angular2.step_16.md'
+    contentTemplate: 'tutorials.socially.angular2.step_16.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/qPqdtzimF0k'
   },
   {
     id: "17",
@@ -141,7 +153,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'CSS, SASS and Bootstrap',
     route: "tutorials.socially.angular2.css-sass-and-bootstrap",
     path: "/tutorials/socially/angular2/css-sass-and-bootstrap",
-    contentTemplate: 'tutorials.socially.angular2.step_17.md'
+    contentTemplate: 'tutorials.socially.angular2.step_17.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/D7Zo2jOx11M'
   },
   {
     id: "18",
@@ -149,7 +162,8 @@ SOCIALLY_ANGULAR2 = [
     seoTitle: 'angular-material and custom Angular auth forms',
     route: "tutorials.socially.angular2.angular-material-and-custom-angular-auth-forms",
     path: "/tutorials/socially/angular2/angular-material-and-custom-angular-auth-forms",
-    contentTemplate: 'tutorials.socially.angular2.step_18.md'
+    contentTemplate: 'tutorials.socially.angular2.step_18.md',
+    liveDemoVideo: 'https://www.youtube.com/embed/8m44bliJF1M'
   },
   {
     id: "19",
