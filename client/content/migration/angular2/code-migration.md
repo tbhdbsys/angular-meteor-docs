@@ -338,6 +338,99 @@ And the Component:
 
 {{> DiffBox tutorialName="migration-angular2" step="7.9"}}
 
+### 8. Migrate the Todo List Template
 
+So let's continue! now we will migrate the list of todo, so far we use an existing Blaze Template called `Lists_show_page` inside a new Angular 2 Component called `ListShowComponent`.
+
+First, let's modify the template, we use the same techniques we learned in the previous steps - we will use the existing template and just change the events, bindings and directives:
+
+{{> DiffBox tutorialName="migration-angular2" step="8.1"}}
+
+Assuming you already got it, let's migrate the Template code into a Component:
+
+{{> DiffBox tutorialName="migration-angular2" step="8.2"}}
+
+> At the moment, we will use the exiting `Todo_item` template to show the items - we will later migrate it too - so we just pass the required params using `getContextForItem`.
+
+Great, now we need to implement the events we had in the Blaze Template, let's add them first to the view:
+
+{{> DiffBox tutorialName="migration-angular2" step="8.3"}}
+
+And now let's implement and migrate the code into the Component's class:
+
+{{> DiffBox tutorialName="migration-angular2" step="8.4"}}
+
+That's it! we can now remove the old files of this Template (`imports/ui/components/lists-show.html`, `imports/ui/components/lists-show.js`, `imports/ui/pages/lists-show-page.js`, `imports/ui/pages/lists-show-page.html`), and we can removed the imports for those files from the routes file (`imports/startup/client/routes.js`).
+
+### 9. Migrate the List Item Template
+
+Our last relevant Blaze Template is the list item - this is a little bit tricky because this template need to interact with the parent Component and get the actual Todo item, and also expose events for the parent Component - so we will use a new Angular 2 features called `Input` and `Output` for that.
+
+So let's start with the Component migration this time:
+
+{{> DiffBox tutorialName="migration-angular2" step="9.1"}}
+
+We copied the code from the old Blaze Template, and added two `Input`s and one `Output` in the Component declaration:
+
+- `todo` which is the actual todo item.
+- `editing` which is an indication for the current item that being edited.
+- `editChange` which is an event we expose to the parent Component that triggered when starting to edit an item in the list.
+
+Now let's migrate the HTML Template of this Component:
+
+{{> DiffBox tutorialName="migration-angular2" step="9.2"}}
+
+And now we need to use this new Component in the `ListShowComponent`:
+
+{{> DiffBox tutorialName="migration-angular2" step="9.3"}}
+
+And let's implement the actual event handler and use declare the usage of the new Component:
+
+{{> DiffBox tutorialName="migration-angular2" step="9.4"}}
+
+And we are done! You can now remove all the files that related to the list item and removed it's import! (we did it in commit #9.5)
+
+### 10. Cleanup
+
+So now that we are done with the migration, we need to perform some clean-ups and make sure that we remove all the old files.
+
+Let's start by removing the Blaze main import from the `main.ts` file:
+
+{{> DiffBox tutorialName="migration-angular2" step="10.1"}}
+
+Everything should work just fine - that's means that there is no more dependencies for the Blaze Templates!
+
+Next, let's join all the stylesheets we need under the same directory - `imports/styelsheets/`, now they are in `imports/ui/stylesheets/` (commit #10.2).
+
+> Make sure to also take `imports/ui/components/lists-show.less` !
+
+And we also need to update the imports in the main less file:
+
+{{> DiffBox tutorialName="migration-angular2" step="10.3"}}
+
+Now we can remove all the files we no longer use from `imports/ui/` directory - which are ALL of the files, except `errors.js` which we use, so let's move it to `/imports/` directory first, and them remove `imports/ui/` directory (commit #10.4).
+
+And let's update the imports of `errors.js` file:
+
+{{> DiffBox tutorialName="migration-angular2" step="10.5" filename="client/imports/components/list-item.component.ts"}}
+
+{{> DiffBox tutorialName="migration-angular2" step="10.5" filename="client/imports/components/list-show.component.ts"}}
+
+We can also removed all client startup files (`imports/startup/client`), since we no longer use them (in commit #10.6).
+
+We can also now remove Meteor packages we no longer use that related to Blaze or Router!
+
+So let's do it by running:
+
+    meteor remove blaze-html-templates aldeed:template-extension kadira:flow-router kadira:blaze-layout arillo:flow-router-helpers zimme:active-route
+
+And now we can also use the regular Angular 2 compilers package, so let's remove the old one and use the regular one:
+
+    meteor remove angular2-with-blaze-compilers
+    meteor add angular2-compilers less
+
+And the last step, is to remove `.ng2` from the HTML files extension and update it to be `.html`, remember also to update it in the Component `templateUrl` !
+
+That's it! In the next chapter we will take about the next step of migration from Blaze to Angular 2.
 
 {{/template}}
