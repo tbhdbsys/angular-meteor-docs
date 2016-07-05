@@ -70,7 +70,7 @@ So in our case, Meteor found our `index.html` file, recognized it was meant for 
 
 > (`right-click` -> `inspect element` on the page to see the generated file Meteor served to the client)
 
-# Adding Angular 2 and it's dependencies
+# Adding Angular 2 and its dependencies
 
 It's time to add Angular 2 to our stack!
 
