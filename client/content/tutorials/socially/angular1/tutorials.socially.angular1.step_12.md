@@ -182,7 +182,7 @@ And we don't have to do anything other than that, because we defined `sort` vari
 
 So all we have left is to sit back and enjoy our pagination working like a charm.
 
-We've made a lot of changes, so please check the step's code [here](https://github.com/Urigo/meteor-angular-socially/compare/step_14...step_15)
+We've made a lot of changes, so please check the step's code [here](https://github.com/Urigo/meteor-angular-socially/compare/step_11...step_12)
 to make sure you have everything needed and can run the application.
 
 # Reactive Search
