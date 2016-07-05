@@ -91,6 +91,10 @@ In order to use `TypeScript` and the replacement for `blaze-html-templates` pack
 
 To avoid importing `reflect-metatada` and `zone.js` (more about it [here](https://github.com/Urigo/angular2-meteor#install-package)).
 
+You have to install polyfills:
+
+    $ meteor npm install angular2-meteor-polyfills --save
+
 Also run:
 
     $ meteor npm install

@@ -13,6 +13,10 @@ Using ionic is pretty simple - first, we need to install it:
 
     $ meteor npm install ionic-angular --save
 
+We also have to install two missing packages:
+
+    $ meteor npm install @angular/http @angular/router --save
+
 Ionic's main scss file won't work with Meteor 1.3. Don't worry! We just need to remove one line from it.
 
 Let's go to `/node_modules/ionic-angular/ionic.scss`, copy and paste it to `client/css` directory.
