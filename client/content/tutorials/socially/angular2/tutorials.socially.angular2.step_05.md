@@ -14,11 +14,11 @@ By default we have a list of parties shown on the page, but when a user clicks o
 
 Let install the Angular 2 router from npm:
 
-    $ meteor npm install --save @angular/router-deprecated
+    $ meteor npm install --save @angular/router
 
-Now let's import routing dependencies into our app. We'll need router providers ([`ROUTER_PROVIDERS`](https://angular.io/docs/ts/latest/api/router/ROUTER_PROVIDERS-let.html)), directives ([`ROUTER_DIRECTIVES`](https://angular.io/docs/ts/latest/api/router/ROUTER_DIRECTIVES-let.html)), and configuration ([`RouteConfig`](https://angular.io/docs/ts/latest/api/router/RouteConfig-var.html)). More on what each of these does later.
+Now let's import routing dependencies into our app. We'll need router providers ([`provideRouter`](https://angular.io/docs/ts/latest/api/router/index/provideRouter-function.html)), directives ([`ROUTER_DIRECTIVES`](https://angular.io/docs/ts/latest/api/router/index/ROUTER_DIRECTIVES-let.html)), and configuration (`RouteConfig`). More on what each of these does later.
 
-Be sure to add `ROUTER_DIRECTIVES` to the Component decorator itself to import all directive dependencies into the template. `ROUTER_PROVIDERS` should be added as a dependency to the bootstrapped application in order to make them available throughout the app.
+Be sure to add `ROUTER_DIRECTIVES` to the Component decorator itself to import all directive dependencies into the template.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.1"}}
 
@@ -38,7 +38,7 @@ Another great feature of the Angular 2 router is that we can route directly to a
 This type of routing is also known as _Component Routing_. And it makes it really easy to configure routes.
 
 So, first, we are going to split our app into 2 main views (or pages): Parties List and Party Details.
-Then, we are going to utilize `RouteConfig` annotation over the `Socially` component
+Then, we are going to use `RouteConfig` with `provideRouter`
 to configure routes, which basically means we will wire components to unique URLs.
 
 ## Parties List
@@ -88,7 +88,7 @@ Let's configure our routes. This is how we map url paths to components.
 
 We've added multiple things here. Firstly, we've imported
 our two main views `PartiesList` and `PartyDetails`,
-then we tied them to URLs using `@RouteConfig` annotation.
+then we tied them to URLs using `RouteConfig` with `provideRouter` to create `APP_ROUTER_PROVIDERS` which contains every provider exposed by `@angular/router`.
 
 Also, we need to change our template file **client/app.html** to this:
 
@@ -124,10 +124,10 @@ Now we can wrap our party in a `routerLink` and pass in the `_id` as a parameter
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.11"}}
 
 `routerLink` takes an array of URL parts as it was defined in the configuration and
-then composes a full URL. By the first `/PartyDetails` item we instruct `routerLink` to
+then composes a full URL. By the first `/party` item we instruct `routerLink` to
 find URL path to the `PartyDetails` view in the root routing config.
 Since each component in Angular 2 can have own routing config,
-if we put `./PartiesList` there, the directive would resolve routes accordingly to
+if we put `/` there, the directive would resolve routes accordingly to
 `PartiesList` routing config if any.
 
 # Injecting Route Params
@@ -136,16 +136,16 @@ We've just added links to the `PartyDetails` view.
 
 The next thing is to grab the `partyId` route parameter in order to load the correct party in the `PartyDetails` view.
 
-In Angular 2, it's as simple as passing the [`RouteParams`](https://angular.io/docs/ts/latest/api/router/RouteParams-class.html) argument to the `PartyDetails` constructor:
+In Angular 2, it's as simple as passing the `ActivatedRoute` argument to the `PartyDetails` constructor:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.12"}}
 
 Dependency injection is employed heavily here by Angular 2 to do all the work behind the scenes.
-TypeScript first compiles this class with the class metadata that says what argument types this class expects in the constructor (i.e. `RouteParams`),
+TypeScript first compiles this class with the class metadata that says what argument types this class expects in the constructor (i.e. `ActivatedRoute`),
 so Angular 2 knows what types to inject if asked to create an instance of this class.
 
-Then, when you click on a party details link, the `router-outlet` directive will create a `RouteParams` provider that provides
-parameters for the current URL. Right after that moment if a `PartyDetails` instance is created by means of the dependency injection API, it's created with `RouteParams` injected and equalled to the current URL inside the constructor.
+Then, when you click on a party details link, the `router-outlet` directive will create a `ActivatedRoute` provider that provides
+parameters for the current URL. Right after that moment if a `PartyDetails` instance is created by means of the dependency injection API, it's created with `ActivatedRoute` injected and equalled to the current URL inside the constructor.
 
 If you want to read more about dependency injection in Angular 2, you can find an extensive overview in this [article](http://blog.thoughtram.io/angular/2015/05/18/dependency-injection-in-angular-2.html).
 If you are curious about class metadata read more about it [here](http://blog.thoughtram.io/angular/2015/09/17/resolve-service-dependencies-in-angular-2.html).
