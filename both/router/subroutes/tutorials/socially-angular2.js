@@ -210,20 +210,11 @@ SOCIALLY_ANGULAR2 = [
   },
   {
     id: "24",
-    title: 'Blaze to Angular 2',
-    seoTitle: 'Blaze to Angular 2',
-    route: "tutorials.socially.angular2.blaze-to-angular2",
-    path: "/tutorials/socially/angular2/blaze-to-angular2",
-    contentTemplate: 'tutorials.socially.angular2.blaze.md',
-    previousCodeStep: '23'
-  },
-  {
-    id: "25",
     title: 'Next Steps',
     seoTitle: 'Next Steps',
     route: "tutorials.socially.angular2.next-steps",
     path: "/tutorials/socially/angular2/next-steps",
     contentTemplate: 'tutorials.socially.angular2.step_24.md',
-    previousCodeStep: '24'
+    previousCodeStep: '23'
   }
 ];
