@@ -52,7 +52,7 @@ Now we will add some `css` to the messages list:
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="3.9"}}
 
-We also need to add some `Whatsapp` assets so it would look more similiar.
+We also need to add some `Whatsapp` assets so it would look more similar.
 
 Note that the images are under `public/` folder so we can use them in the client side from the root directory (in the `css` file).
 
