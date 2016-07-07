@@ -8,7 +8,7 @@ PAGES = [
     ghRepoName: "https://github.com/Urigo/meteor-angular-socially",
     subSidebarType: "sidebarStepsCollapse",
     seoTitlePrefix: "Angular Meteor Tutorial | ",
-    subHead: "Build your first Angular Meteor app",
+    subHead: "Build your first Angular Meteor app", 
     stepbarHide: true,
     pages: SOCIALLY_ANGULAR1,
     apiPath: '/api/'

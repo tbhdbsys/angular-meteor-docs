@@ -1,7 +1,5 @@
 {{#template name="migration.angular2.first-steps.md"}}
 
-# First Steps
-
 So in this migration tutorial, we will migrate the Meteor's To-do example application - it is written in Meteor 1.3, with ES2016 code and Blaze.
 
 Our goal here is to migrate this running app to Meteor 1.3 with TypeScript and Angular 2 - we will do it by adding Angular 2 to the existing Blaze application - run them both and replace a single part each time - until we will have full Angular 2 application.
