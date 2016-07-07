@@ -10,8 +10,6 @@ What do we have so far?
 
 So let's start!
 
-### 1. TypeScript
-
 TypeScript is the recommended language for writing Angular 2 application.
 
 The TypeScript compiler works for `.ts` files - so let's start by changing the main file (`client/main.js`) into TypeScript file.
