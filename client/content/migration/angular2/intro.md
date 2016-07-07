@@ -11,7 +11,10 @@ We will also show how to run Blaze application with Angular 2, and how to migrat
 ## Reasons to migrate
 
 - Blaze no longer maintained and developed (Since [Meteor 1.2](https://forums.meteor.com/t/next-steps-on-blaze-and-the-view-layer/13561)).
-- ???
+- Angular 2 provides more than UI templating and utils - you also get better architecture of the project.
+- Angular 2 support a lot of features that missing in Blaze and you need to get from external packages (such as routing, i18n).
+- Angular 2 supports [server side rendering](https://universal.angular.io/).
+
 
 ## What you need to know?
 

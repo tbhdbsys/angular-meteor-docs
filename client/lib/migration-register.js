@@ -4,6 +4,6 @@ DiffBox.registerTutorial('migration-angular1', {
 });
 
 DiffBox.registerTutorial('migration-angular2', {
-  gitHubRepoName: 'dotansimha/blaze-to-angular2',
+  gitHubRepoName: 'dotansimha/angular2-blaze-migration-tutorial',
   patchFilename: 'client/content/migration/patches/migration.angular2.multi.patch'
 });
