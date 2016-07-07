@@ -2,7 +2,7 @@
 
 So now we will add an ability to add a user profile image using the device's camera (e.g. phone or laptop).
 
-The first part is to add the `Meteor` package that provide us this ability:
+The first part is to add the `Meteor` package that provides us this ability:
 
     $ meteor add okland:camera-ui
 
