@@ -61,6 +61,7 @@ MIGRATION = {
         },
         {
           id: "2",
+          ghRepoName: "https://github.com/dotansimha/angular2-blaze-migration-tutorial",
           title: "Angular 2",
           route: "migration.angular2",
           path: "/migration/angular2",
