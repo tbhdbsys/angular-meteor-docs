@@ -1,7 +1,5 @@
 {{#template name="migration.angular2.basic.md"}}
 
-# Understanding Angular 2
-
 Now let's understand Angular 2 and how it's fundamentals are related to Blaze fundamentals.
 
 ## Angular 2 Architecture

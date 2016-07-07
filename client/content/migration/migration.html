@@ -1,5 +1,5 @@
 <template name="migration">
-    <div class="container">
+    <div class="container tutorial-container">
         <div class="row">
             <div class="col-md-3 left-menu">
                 <h3>Blaze to Angular 2</h3>
@@ -12,9 +12,29 @@
                 </ul>
             </div>
             <div class="col-md-9 main-content">
+                {{#unless stepbarHide}}
+                    <div class="header">
+                        <div class="row buttons">
+                            <div class="col-md-12">
+                                {{> improveDoc }}
+                                {{> tutorialNavigationButtons}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{# if id}}
+                                <h1 class="col-md-8 col-xs-12 title">{{title}}</h1>
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/unless}}
                 <div class="body">
                   {{> Template.dynamic template=contentTemplate}}
                 </div>
+                {{#unless stepbarHide}}
+                    <div class="footer">
+                        {{> tutorialNavigationButtons}}
+                    </div>
+                {{/unless}}
             </div>
         </div>
     </div>

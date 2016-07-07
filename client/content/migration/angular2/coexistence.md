@@ -1,7 +1,5 @@
 {{#template name="migration.angular2.coexistence.md"}}
 
-# Coexistence
-
 This chapter will teach you how to add Angular 2 to your Blaze application and how to use both platforms at the same time.
 
 We need coexistence of this two platform because we want to update our components step-by-step.

@@ -1,7 +1,5 @@
 {{#template name="migration.angular2.next-steps.md"}}
 
-# Next Steps
-
 So what's next? there are several this we removed or did not migrate at this tutorial - because we want to keep in simple and focus on the important difference between Angular 2 and Blaze.
 
 ### i18n
