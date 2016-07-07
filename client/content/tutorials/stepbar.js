@@ -73,15 +73,35 @@ Template.stepbarCodeDiff.helpers({
     var self = this;
     return self.parent.ghRepoName;
   },
+  hideCommitDiff: function() {
+    var self = this;
+    if(self.parent.pages) {
+      return self.parent.pages[parseInt(self.id, 10)].hideCommitDiff
+    }
+  },
   currentCommit: function () {
     var self = this;
+    var override = self.parent.pages[parseInt(self.id, 10)].diffStep;
+
+    if (override) {
+      return override;
+    }
+
     var zeroToStep = '';
     if (self.id < 10)
       zeroToStep = '0';
+
     return zeroToStep + self.id;
   },
   previousCommit: function() {
     var self = this;
+
+    var override = (self.parent.pages[parseInt(self.id, 10) - 1 ] || {}).diffStep;
+
+    if (override) {
+      return override;
+    }
+
     var zeroToStep = '';
     if ((self.id - 1) < 10)
       zeroToStep = '0';

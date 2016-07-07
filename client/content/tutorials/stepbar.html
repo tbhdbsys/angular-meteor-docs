@@ -54,15 +54,17 @@
 
 <template name="stepbarCodeDiff">
   {{#if next}}
-    {{#if CommitDiff}}
-      <a href="{{ghRepoName}}/commit/{{CommitDiff}}">
-        <li class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Code Diff</li>
-      </a>
-    {{else}}
-      <a href="{{ghRepoName}}/compare/step_{{previousCommit}}...step_{{currentCommit}}">
-        <li class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Code Diff</li>
-      </a>
-    {{/if}}
+      {{#unless hideCommitDiff}}
+          {{#if CommitDiff}}
+          <a href="{{ghRepoName}}/commit/{{CommitDiff}}">
+            <li class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Code Diff</li>
+          </a>
+        {{else}}
+          <a href="{{ghRepoName}}/compare/step_{{previousCommit}}...step_{{currentCommit}}">
+            <li class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Code Diff</li>
+          </a>
+        {{/if}}
+      {{/unless}}
   {{/if}}
 </template>
 
