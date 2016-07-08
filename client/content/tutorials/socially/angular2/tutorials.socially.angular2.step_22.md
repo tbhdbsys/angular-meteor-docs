@@ -40,7 +40,7 @@ We can't forget about the template, let's move `app.html` too.
 
 Since there will be two main components we still need to rename `app.ts` to `app.web.ts`, also `app.web.html`.
 
-Great so far! You probably noticed that templateUrl also has to change:
+Great so far! You probably noticed that template also has to change:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.7"}}
 
@@ -189,7 +189,7 @@ It seems like we can move on to create a web version of PartiesList component:
 
 As you can see, we removed few import statements that have been used in class by itself.
 
-We also changed the `templateUrl` and renamed template file to `parties-list.web.html`.
+We also changed the `template` and renamed template file to `parties-list.web.html`.
 
 We can now remove `parties-list.ts` file.
 

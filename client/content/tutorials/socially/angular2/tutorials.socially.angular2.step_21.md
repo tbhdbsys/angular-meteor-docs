@@ -29,7 +29,7 @@ First thing to do is to rename `login.html` to `login.web.html`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="21.2"}}
 
-Let's do the same with `login.ts` file but with one small change which is a new templateUrl:
+Let's do the same with `login.ts` file but with one small change which is a new `template` property:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="21.3"}}
 

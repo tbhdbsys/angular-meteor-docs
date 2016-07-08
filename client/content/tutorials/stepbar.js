@@ -12,7 +12,6 @@ Template.stepbarButtons.helpers({
   },
   next: function () {
     var self = this;
-    console.log(self.parent.pages);
     if(self.parent.pages) {
       return self.parent.pages[parseInt(self.id, 10) + 1]
     }
@@ -36,7 +35,6 @@ Template.stepbarButtonsPrevious.helpers({
 Template.stepbarButtonsNext.helpers({
   next: function () {
     var self = this;
-    console.log(self.parent.pages, self.id);
     if(self.parent.pages) {
       return self.parent.pages[parseInt(self.id, 10) + 1]
     }
