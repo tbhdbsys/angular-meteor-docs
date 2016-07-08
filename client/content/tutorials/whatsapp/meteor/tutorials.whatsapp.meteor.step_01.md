@@ -28,7 +28,7 @@ We used some ionic tags to achieve mobile style:
 * ion-nav-bar - Create a navigation bar in the page header.
 * ion-nav-view - This is a placeholder to the real content. `AngularJS` and `Ionic` will put your content inside this tag automatically.
 
-Note that we only provide the `<head>` and `<body>` tags because `Meteor` takes care of appending the releant html parts into one file, and any tag we will use here will be added to `Meteor`'s main index.html file.
+Note that we only provide the `<head>` and `<body>` tags because `Meteor` takes care of appending the relevant html parts into one file, and any tag we will use here will be added to `Meteor`'s main index.html file.
 
 This feature is really useful because we do not need to take care of including our files in `index.html` since it will be maintained automatically.
 
@@ -50,11 +50,11 @@ Before we dive into building our app's different components, we need a way to wr
 `angular-ecmascript` is a utility library which will help us write an `AngularJS` app using es6's class system.
 As for now there is no official way to do so, however using es6 syntax is recommended, hence `angular-ecmascript` was created.
 
-In addition, `angular-ecmascript` provides us with some very handy features, like auto-injection without using any pre-processors like [ng-annotate](https://github.com/olov/ng-annotate), or setting our controller as the view model any time it is created (See [referene](/api/1.3.11/reactive)). The API shouldn't be too complicated to understand, and we will get familiar with it as we make progress with this tutorial.
+In addition, `angular-ecmascript` provides us with some very handy features, like auto-injection without using any pre-processors like [ng-annotate](https://github.com/olov/ng-annotate), or setting our controller as the view model any time it is created (See [reference](/api/1.3.11/reactive)). The API shouldn't be too complicated to understand, and we will get familiar with it as we make progress with this tutorial.
 
 Our next step is to create the states and routes for the views.
 
-Our app uses `Ionic` to create 5 tabs: `favorites`, `recents`,` contacts`, `chats`, and `settings`.
+Our app uses `Ionic` to create 5 tabs: `favorites`, `recents`, ` contacts`, `chats`, and `settings`.
 
 We will define our routes and states with [angular-ui-router](https://atmospherejs.com/angularui/angular-ui-router) (which is included by `Ionic`), and at the moment we will add the main page which is the chats tab:
 
@@ -74,7 +74,7 @@ And this is what it looks at the moment, inside a browser:
 
 {{tutorialImage 'whatsapp-meteor' '1.png' 500}}
 
-If you'd like to view the app in a mobile layout you can add a mobile platform as described in the [previous step](/tutorials/whatsapp/meteor/bootstrapping). Our app should look like so on an `iOS` platfrom:
+If you'd like to view the app in a mobile layout you can add a mobile platform as described in the [previous step](/tutorials/whatsapp/meteor/bootstrapping). Our app should look like so on an `iOS` platform:
 
 {{tutorialImage 'whatsapp-meteor' '2.png' 500}}
 

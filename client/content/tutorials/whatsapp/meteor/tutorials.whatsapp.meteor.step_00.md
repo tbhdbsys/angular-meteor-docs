@@ -7,7 +7,7 @@ Create a new project by running these commands in your command line:
     $ meteor create whatsapp
     $ cd whatsapp
 
-Your app now contains a live and ready example. To run our app simply type the followig on the command line:
+Your app now contains a live and ready example. To run our app simply type the following on the command line:
 
     $ meteor
 
@@ -41,6 +41,6 @@ And finally, we will install `angular-meteor`:
 
     $ meteor npm install angular-meteor --save
 
-Dependent libraries like `AngularJS` will be added automatically so you should'nt worry about that.
+Dependent libraries like `AngularJS` will be added automatically so you shouldn't worry about that.
 
 {{/template}}

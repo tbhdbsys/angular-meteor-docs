@@ -2,7 +2,7 @@
 
 Right now all the chats are published to all the clients which is not very safe for privacy. Let's fix that.
 
-First thing we need to do inorder to stop all the automatic publication of information is to remove the `autopublish` package from the Meteor server. Type in the command line:
+First thing we need to do in order to stop all the automatic publication of information is to remove the `autopublish` package from the Meteor server. Type in the command line:
 
     $ meteor remove autopublish
 
@@ -22,7 +22,7 @@ And of course we need to modify some of the client side code, we need to make su
 
 Now let's do a more complex publication, let's send each client only his chats with their messages.
 
-Inorder to do that, we need to do a joined collections publication. `reywood:publish-composite` package helps us achieve it with a very easy and convenient way.
+In order to do that, we need to do a joined collections publication. `reywood:publish-composite` package helps us achieve it with a very easy and convenient way.
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="6.5"}}
 

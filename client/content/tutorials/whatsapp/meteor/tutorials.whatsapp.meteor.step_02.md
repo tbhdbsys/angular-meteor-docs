@@ -8,7 +8,7 @@ In this step we are going to add several features to our project:
 
 So let’s start by creating some `Mongo` collections which will be used to store our data.
 
-`Mongo` collections need to be available in both client and server in order to share data, so we will decleare our collections in a folder named `lib` under the project’s root (`lib/collections.js`).
+`Mongo` collections need to be available in both client and server in order to share data, so we will declare our collections in a folder named `lib` under the project’s root (`lib/collections.js`).
 
 {{> DiffBox tutorialName="whatsapp-meteor-tutorial" step="2.1"}}
 
