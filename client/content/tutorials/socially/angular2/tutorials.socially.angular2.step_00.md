@@ -85,7 +85,11 @@ In the command line, launch those commands:
 
 **Why `angular2-compilers`?**
 
-In order to use `TypeScript` and the replacement for `blaze-html-templates` package.
+In order to use:
+
+- `TypeScript`
+- the replacement for `blaze-html-templates` package
+- to support SCSS, SASS and LESS
 
 **Why `barbatus:angular2-runtime`?**
 
@@ -155,7 +159,7 @@ Finally, we `bootstrap` our component, thus, marking it as the root component.
 
 > You can see another example of Meteor's power and simplicity - no need to include this file anywhere. Meteor takes care of it by going through all the files in the project and include them automatically.
 
-Our component is linked to it's template with the `templateUrl` property, let's create the template:
+Our component has the template defined with the `template` property, let's create the template:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.7"}}
 

@@ -51,15 +51,9 @@ Let's add the `<login-buttons>` tag below of the party form in the PartiesList's
 
 Then, import the dependencies:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" filename="client/imports/parties-list/parties-list.ts" step="8.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.3"}}
 
-Now we need to also import the stylesheet of this package - to import style files from `node_modules`, we have to add LESS/SASS compiler to the project.
-
-We chose to use SASS in this tutorial - and we will talk more about this in step 17 - but at the moment, just add the SASS compiler:
-
-    $ meteor add fourseven:scss
-
-And now let's create main stylesheet file (with `.scss` extension), and import the SCSS file from the package:
+Now let's create main stylesheet file (with `.scss` extension), and import the SCSS file from the package:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
 
@@ -77,7 +71,7 @@ Let's go to the "collection" folder and specify what actions are allowed:
 
 In only 10 lines of code we've specified that inserts, updates and removes can only be completed if a user is logged in.
 
-The callbacks passed to the Parties.allow are executed on the server only. The client optimistically assumes that any action (such as removal of a party) will succeed, and reverts the action as soon as the server denies permission. 
+The callbacks passed to the Parties.allow are executed on the server only. The client optimistically assumes that any action (such as removal of a party) will succeed, and reverts the action as soon as the server denies permission.
 If you want to learn more about those parameters passed into Parties.allow or how this method works in general, please, read the official Meteor [docs on allow](http://docs.meteor.com/#/full/allow).
 
 ## Meteor.user()
@@ -122,9 +116,11 @@ __`client/imports/parties-form/parties-form.ts`__:
     import {MeteorComponent} from 'angular2-meteor';
     import {InjectUser} from 'angular2-meteor-accounts-ui';
 
+    import template from './parties-form.html';
+
     @Component({
       selector: 'parties-form',
-      templateUrl: 'client/imports/parties-form/parties-form.html',
+      template,
     })
     @InjectUser("user")
     export class PartiesForm extends MeteorComponent {
@@ -179,7 +175,9 @@ And then pass the partyId into the `@CanActivate` attribute:
 
   __`client/party-details/party-details.ts`__:
 
-    import {CanActivate, ComponentInstruction} from '@angular/router-deprecated';
+    import {CanActivate, ComponentInstruction} from '@angular/router';
+
+    import template from './party-details.html';
 
     function checkPermissions(instruction: ComponentInstruction) {
       var partyId = instruction.params['partyId'];
@@ -189,8 +187,8 @@ And then pass the partyId into the `@CanActivate` attribute:
 
     @Component({
       selector: 'party-details',
-      templateUrl: 'client/imports/party-details/party-details.html',
-      directives: [RouterLink]
+      template,
+      directives: [ROUTER_DIRECTIVES]
     })
     @CanActivate(checkPermissions)
     export class PartyDetails {
