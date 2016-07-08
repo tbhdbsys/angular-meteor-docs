@@ -13,9 +13,7 @@ Run the following command in your Terminal:
 
 We are also going to use the [sass](http://sass-lang.com/) version of Bootstrap.
 
-For that we need to add the following Meteor package to help Meteor handle SASS files:
-
-    $ meteor add fourseven:scss
+For that we need to add package that handle SASS files. But wait, we already have one! The `angular2-compilers` package supports SASS, SCSS and LESS files.
 
 To import it into the project, we will rename `main.css` to `main.scss` and import bootstrap:
 
