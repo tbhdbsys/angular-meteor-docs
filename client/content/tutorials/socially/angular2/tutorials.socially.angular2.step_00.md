@@ -79,7 +79,7 @@ In the command line, launch those commands:
     $ meteor remove blaze-html-templates
     $ meteor add angular2-compilers barbatus:angular2-runtime
 
-    $ meteor npm install --save meteor-node-stubs reflect-metadata @angular/core@^2.0.0-rc.2 angular2-meteor angular2-meteor-polyfills@^0.1.1 rxjs@5.0.0-beta.6 zone.js@^0.6.6 @angular/core@^2.0.0-rc.4 @angular/common@^2.0.0-rc.4 @angular/compiler@^2.0.0-rc.4 @angular/platform-browser@^2.0.0-rc.4 @angular/platform-browser-dynamic
+    $ meteor npm install --save meteor-node-stubs reflect-metadata angular2-meteor angular2-meteor-polyfills@^0.1.1 rxjs@5.0.0-beta.6 zone.js@^0.6.6 @angular/core@^2.0.0-rc.4 @angular/common@^2.0.0-rc.4 @angular/compiler@^2.0.0-rc.4 @angular/platform-browser@^2.0.0-rc.4 @angular/platform-browser-dynamic
 
 > You might see a lot of warning messages if you are using NPM v2, it is okay and if you are interested to know more about these warning, you can [read here](http://blog.npmjs.org/post/110924823920/npm-weekly-5).
 
