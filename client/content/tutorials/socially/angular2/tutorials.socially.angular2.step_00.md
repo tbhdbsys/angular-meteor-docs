@@ -126,7 +126,7 @@ In our case, we'll need to execute commands as follows to install all dependenci
         $ typings init
         $ typings install es6-promise --save
         $ typings install dt~es6-shim --global --save
-        $ typings install registry:env/meteor --global
+        $ typings install registry:env/meteor --global --save
 
 If you look into the typings folder after the execution, you'll find there a definition file called `index.d.ts`.
 
