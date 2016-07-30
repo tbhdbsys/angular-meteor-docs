@@ -1,43 +1,38 @@
 Template.stepbarButtons.helpers({
   prev: function () {
     var self = this;
-    if(self.parent.pages) {
-      return self.parent.pages[parseInt(self.id, 10) - 1]
-    } else {
-      var pathObject = {
-        path: 'tutorials/socially'
-      };
-      return pathObject;
-    }
+    var page = prevPage(self);
+    if (page) return page;
+
+    var pathObject = {
+      path: 'tutorials/socially'
+    };
+
+    return pathObject;
   },
   next: function () {
     var self = this;
-    if(self.parent.pages) {
-      return self.parent.pages[parseInt(self.id, 10) + 1]
-    }
+    return nextPage(self);
   }
 });
 
 Template.stepbarButtonsPrevious.helpers({
   prev: function () {
     var self = this;
-    if(self.parent.pages) {
-      return self.parent.pages[parseInt(self.id, 10) - 1]
-    } else {
-      var pathObject = {
-        path: 'tutorials/socially'
-      };
-      return pathObject;
-    }
+    var page = prevPage(self);
+    if (page) return page;
+
+    var pathObject = {
+      path: 'tutorials/socially'
+    };
+    return pathObject;
   }
 });
 
 Template.stepbarButtonsNext.helpers({
   next: function () {
     var self = this;
-    if(self.parent.pages) {
-      return self.parent.pages[parseInt(self.id, 10) + 1]
-    }
+    return nextPage(self);
   }
 });
 
@@ -56,9 +51,7 @@ Template.stepbarLiveDemo.helpers({
   },
   next: function () {
     var self = this;
-    if(self.parent.pages) {
-      return self.parent.pages[parseInt(self.id, 10) + 1]
-    }
+    return nextPage(self);
   }
 });
 
@@ -73,13 +66,12 @@ Template.stepbarCodeDiff.helpers({
   },
   hideCommitDiff: function() {
     var self = this;
-    if(self.parent.pages) {
-      return self.parent.pages[parseInt(self.id, 10)].hideCommitDiff
-    }
+    var page = currPage(self);
+    if (page) return page.hideCommitDiff;
   },
   currentCommit: function () {
     var self = this;
-    var override = self.parent.pages[parseInt(self.id, 10)].diffStep;
+    var override = (currPage(self) || {}).diffStep;
 
     if (override) {
       return override;
@@ -93,8 +85,7 @@ Template.stepbarCodeDiff.helpers({
   },
   previousCommit: function() {
     var self = this;
-
-    var override = (self.parent.pages[parseInt(self.id, 10) - 1 ] || {}).diffStep;
+    var override = (prevPage(self) || {}).diffStep;
 
     if (override) {
       return override;
@@ -107,9 +98,8 @@ Template.stepbarCodeDiff.helpers({
   },
   next: function () {
     var self = this;
-    if(self.parent.pages) {
-      return self.parent.pages[parseInt(self.id, 10) + 1]
-    }
+    var page = nextPage(self);
+    if (page) return page;
   }
 });
 
@@ -136,3 +126,21 @@ Template.downloadPreviousStep.helpers({
     }
   }
 });
+
+function currPage(view) {
+  if (!view.parent.pages) return;
+  var offset = parseInt(view.parent.pages[0].id);
+  return view.parent.pages[parseInt(view.id, 10) - offset];
+}
+
+function nextPage(view) {
+  if (!view.parent.pages) return;
+  var offset = parseInt(view.parent.pages[0].id);
+  return view.parent.pages[parseInt(view.id, 10) - offset + 1];
+}
+
+function prevPage(view) {
+  if (!view.parent.pages) return;
+  var offset = parseInt(view.parent.pages[0].id);
+  return view.parent.pages[parseInt(view.id, 10) - offset - 1];
+}
