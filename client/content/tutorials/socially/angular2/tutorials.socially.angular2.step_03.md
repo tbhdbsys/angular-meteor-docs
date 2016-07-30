@@ -35,11 +35,11 @@ In short, Meteor core's setup has:
 
 So first, let's define our first parties collection that will store all our parties.
 
-In a separate folder called `collections`, add a file called `parties.ts`:
+Add a file `both/collections/parties/parties.collection.ts`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.1"}}
 
-We've just created a file called `parties.ts`, that contains a CommonJS module called `collections/parties`. 
+We've just created a file called `parties.collection.ts`, that contains a CommonJS module called `both/collections/parties`.
 This work is done by the TypeScript compiler behind the scenes.
 
 The TypeScript compiler converts `.ts` files to ES5, then registers a CommonJS module with the same name as
@@ -49,7 +49,7 @@ That's why we use the special word `export`. We are telling CommonJS what we are
 
 Meteor has a series of special folder names, including the `client` folder. All files within a folder named `client` are loaded on the client only. Likewise, files in a folder called `server` are loaded on the server only.
 
-Placing the `collection` folder outside of any special folder, makes its contents available to both the client and the server. Therefore, the `parties` collection (and the actions on it) will run on both the client (minimongo) and the server (Mongo).
+Placing the `both` folder outside of any special folder, makes its contents available to both the client and the server. Therefore, the `parties` collection (and the actions on it) will run on both the client (minimongo) and the server (Mongo).
 
 Though we only declared our model once, we have two modules that declare two versions of our parties collection:
 one for client-side and one for server-side. This is often referred to as "isomorphic" or "universal javascript". All synchronization between these two versions of collections is handled by Meteor.
@@ -60,23 +60,15 @@ Now that we've created the collection, our client needs to subscribe to it's cha
 
 In order to make Angular understand Meteor collection, `angular2-meteor` includes providers.
 
-Adding those providers to each component is annoying so we've added a new `bootstrap` that overrides the basic bootstrap method from `@angular/platform-browser-dynamic` and adds some those additional providers to your app.
+We added those providers in the first step by using `bootstrap` method from `angular2-meteor-auto-bootstrap` package.
 
-To use it, we need to install it from NPM:
-
-    meteor npm install angular2-meteor-auto-bootstrap --save
-
-Let's change `bootstrap` to load from `angular2-meteor-auto-bootstrap` instead of `@angular/platform-browser-dynamic` as follows:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.4"}}
-    
-Now let's import the `Parties` from collections:
+Let's import the `Parties` from collections:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.2"}}
 
 and let's bind to the Cursor:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.3"}}
 
 
 # Inserting Parties from the Console
@@ -119,14 +111,13 @@ Until now we've been inserting party documents to our collection using the Mongo
 It would be convenient though to have some initial data pre-loaded into our database. So,
 let's initialize our server with the same parties as we had before.
 
-Let's add a file called `load-parties.ts` inside of "server" folder
-and implement `loadParties` method inside to load parties:
+Let's create a file `server/imports/fixtures/parties.ts` and implement `loadParties` method inside to load parties:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.4"}}
 
 Then create `main.ts` to run this method on Meteor startup:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
 
 Now run the app and you should see the list of parties on the screen.
 If not, please, run
