@@ -164,7 +164,7 @@ To apply any change of `party` to UI, we have to use `NgZone.run()` method. If y
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.15"}}
 
-> Official Angular2 docs about [NgZone](https://angular.io/docs/js/latest/api/core/NgZone-class.html)
+> Official Angular2 docs about [NgZone](https://angular.io/docs/js/latest/api/core/index/NgZone-class.html)
 
 And render the party details on the page:
 
