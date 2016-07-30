@@ -21,7 +21,7 @@ Open your command line and paste this command:
 
 Now let's create our app — write this in the command line:
 
-    $ meteor create socially
+    $ meteor create --example angular2-boilerplate socially
 
 Now let's see what we've got. Go into the new folder:
 
@@ -41,20 +41,17 @@ and look at the amazing app that's running on your computer!
 
 We now have a fully functional app which includes both a server and a client!
 
-The default Meteor app starts life with three files in the `client` directory: one `js`, one `html` and one `css` file.
-
 We are going to add our own files for this tutorial. So let's start by deleting these files:
 
-    - /client/main.css    (delete)
-    - /client/main.html   (delete)
-    - /client/main.js     (delete)
-    - /server/main.js     (delete)
+    - /client             (delete)
+    - /both               (delete)
+    - /server             (delete)
 
 Now we can start building our app.
 
 Create a new `index.html` file in the client folder, and place this code inside. Then run the app again.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.3"}}
 
 And Meteor build tool refreshes automatically and our app is updated in the browser.
 
@@ -70,31 +67,6 @@ So in our case, Meteor found our `index.html` file, recognized it was meant for 
 
 > (`right-click` -> `inspect element` on the page to see the generated file Meteor served to the client)
 
-# Adding Angular 2 and its dependencies
-
-It's time to add Angular 2 to our stack!
-
-In the command line, launch those commands:
-
-    $ meteor remove blaze-html-templates
-    $ meteor add angular2-compilers barbatus:angular2-runtime
-
-    $ meteor npm install --save meteor-node-stubs reflect-metadata angular2-meteor angular2-meteor-polyfills@^0.1.1 rxjs@5.0.0-beta.6 zone.js@^0.6.6 @angular/core@^2.0.0-rc.4 @angular/common@^2.0.0-rc.4 @angular/compiler@^2.0.0-rc.4 @angular/platform-browser@^2.0.0-rc.4 @angular/platform-browser-dynamic
-
-> You might see a lot of warning messages if you are using NPM v2, it is okay and if you are interested to know more about these warning, you can [read here](http://blog.npmjs.org/post/110924823920/npm-weekly-5).
-
-**Why `angular2-compilers`?**
-
-In order to use:
-
-- `TypeScript`
-- the replacement for `blaze-html-templates` package
-- to support SCSS, SASS and LESS
-
-**Why `barbatus:angular2-runtime`?**
-
-To avoid importing `reflect-metatada` and `zone.js` (more about it [here](https://github.com/Urigo/angular2-meteor#install-package)).
-
 ## Typescript
 
 An Angular 2 Meteor app can be written in regular JavaScript (ES5), the new JavaScript (ES2015 aka ES6) or TypeScript on both the server and the client.
@@ -105,11 +77,27 @@ Don't worry if you're not familiar with TypeScript. Valid ES6 or ES5 JavaScript 
 
 > If you'd like to deep dive into TypeScript, we recommend the [official tutorial](http://www.typescriptlang.org/Tutorial).
 
-To start we need to add a TypeScript configuration file named `tsconfig.json` into our project:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.3"}}
-
 Those are the basic configurations to run an Angular 2.0 Meteor app.
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "isolatedModules": false,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": false
+}
+```
 
 To learn more about Typescript compiler options, [click here](http://www.typescriptlang.org/docs/handbook/compiler-options.html).
 
@@ -120,21 +108,11 @@ We need to let Typescript know about all the types in the libraries we depend up
 In order to do that — thus adding full type-checking support at this stage — we'll use a special tool for typings installation
 and management called `typings`. You can find more information about it [here](https://github.com/typings/typings).
 
-In our case, we'll need to execute commands as follows to install all dependencies:
-
-        $ sudo npm install typings -g
-        $ typings init
-        $ typings install es6-promise --save
-        $ typings install dt~es6-shim --global --save
-        $ typings install registry:env/meteor --global --save
-
-If you look into the typings folder after the execution, you'll find there a definition file called `index.d.ts`.
+If you look into the typings folder, you'll find there a definition file called `index.d.ts`.
 
 This is a top level definition file that links all other definition files installed by `typings`.
 
 > Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - this will not prevent you from running your app, but it is highly recommended to resolve those errors.
-
-That's it! Now we can use Angular 2's power in our Meteor app!
 
 # Root Component
 
@@ -145,32 +123,48 @@ Each component is a controller with an attached view.
 Since it's a tree, there should be a root component and branch components
 that stem out of it. So let's create our root component.
 
-Create a new `app.ts` file inside of the `client` folder.
+Create a new `app.component.ts` file inside of the `client` folder.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.4"}}
 
-First we're importing the dependencies we needed from `@angular/core` and `@angular/platform-browser-dynamic`. This is not a folder and files in your directory, but a reference to CommonJS modules aliased as `@angular/core` and `@angular/platform-browser-dynamic`, which in fact located under your `node_modules` directory.
+First we're importing the dependency we needed from `@angular/core`.
 
 Notice, the Component's selector matches the `<app>` tag we will provide in `index.html` below, and the View template creates the view.
 
-The class, Socially, inherits from `@Component` which is part of Angular 2.
+The class, AppComponent, inherits from `@Component` which is part of Angular 2.
 
-Finally, we `bootstrap` our component, thus, marking it as the root component.
+We have defined the component, let's create the template:
 
-> You can see another example of Meteor's power and simplicity - no need to include this file anywhere. Meteor takes care of it by going through all the files in the project and include them automatically.
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.5"}}
 
-Our component has the template defined with the `template` property, let's create the template:
+Now, we can use it inside of the component:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.6"}}
+
+**About templates**
+
+Thanks to `angular2-compilers` package, we can import any html file into TypeScript space as a module.
+"But what we get from that module?" You ask. The answer is simply, it's a string. `angular2-compilers` converts html file's contents into string.
+
+> Since a component doesn't exist without its template, **we recommend** you to use a ***template as a string*** method, instead of loading it asynchronously (`templateUrl`).
+
+> In our opinion, this is the best practice of creating components.
+
+Finally, we can `bootstrap` our component, thus, marking it as the root component.
+
+First thing to do is to add `<app/>` element to the `<body/>`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.7"}}
 
-The only thing left before we can run our app is to import the root module and
-add the `<app>` tag to `index.html`.
+Great! We still need to tell the Angular2 framework which component should be loaded:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.8"}}
 
-Importing the root module every time looks like a repetitive task.
-Here comes some good news — the Angular 2 Meteor package recognizes the file named `app.ts`.
-If you have one in the app root folder, the package will import it for you without even having to ask.
+As you can see, we used `angular2-meteor-auto-bootstrap` package.
+
+In order to make Angular understand Meteor, `angular2-meteor` includes providers.
+
+Adding those providers to each component is annoying so we've added a new `bootstrap` that overrides the basic bootstrap method from `@angular/platform-browser-dynamic` and adds some those additional providers to your app.
 
 Let's run the app:
 
