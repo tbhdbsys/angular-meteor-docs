@@ -11,6 +11,9 @@ Template.tutorialSelector.helpers({
     if (route.indexOf('tutorials/whatsapp/ionic') !== -1 || route.indexOf('tutorials/whatsapp/meteor') !== -1) {
       return 'tutorials/whatsapp';
     }
+    else if (route.indexOf('tutorials/whatsapp2') !== -1) {
+      return 'tutorials/whatsapp2';
+    }
     else {
       return 'tutorials/socially';
     }
@@ -18,7 +21,9 @@ Template.tutorialSelector.helpers({
   pages: function() {
     var route = Router.current().route.path(this) || 'angular';
 
-    if (route.indexOf('tutorials/whatsapp/ionic') !== -1 || route.indexOf('tutorials/whatsapp/meteor') !== -1) {
+    if (route.indexOf('tutorials/whatsapp/ionic') !== -1 ||
+        route.indexOf('tutorials/whatsapp/meteor') !== -1 ||
+        route.indexOf('tutorials/whatsapp2/ionic')) {
       return [];
     }
     else {
@@ -44,6 +49,9 @@ Template.sidebarDefault.helpers({
     }
     if (route.indexOf('tutorials/whatsapp/meteor') !== -1) {
       return WHATSAPP_METEOR;
+    }
+    if (route.indexOf('tutorials/whatsapp2/ionic') !== -1) {
+      return WHATSAPP2_IONIC;
     }
     else {
       return SOCIALLY_ANGULAR1;

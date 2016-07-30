@@ -170,6 +170,12 @@ Router.map(function () {
     seoTitle: 'Angular Meteor and Ionic tutorial'
   });
 
+  self.route('tutorials.whatsapp2', {
+    path: '/tutorials/whatsapp2',
+    template: 'tutorials.whatsapp2.intro',
+    seoTitle: 'Angular 2 Meteor and Ionic 2 tutorial'
+  });
+
   var directedRouteNames = [];
 
   var createApiRoutes = function(apisDefs, appendToLinks){
