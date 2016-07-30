@@ -45,7 +45,7 @@ Let’s create our own declaration file for our project in order to learn this t
 
 There is one definite place in our app where we could make use of types to avoid potential bugs.
 We are going to declare a `Party` interface, you should already be familiar with its properties: "name", "description" and "location". We can make the "Description" property optional.
-TypeScript's type-checking bases on the "shapes" that types have. And intefaces are TypeScript's means to describe these type "shapes", which
+TypeScript's type-checking bases on the "shapes" that types have. And interfaces are TypeScript's means to describe these type "shapes", which
 is sometimes called "duck typing". More on that you can read [here](http://www.typescriptlang.org/Handbook#interfaces).
 
 Let's create our `party.d.ts` file and place it inside the _typings_ folder with the following content:
