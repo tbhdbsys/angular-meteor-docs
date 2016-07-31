@@ -9,17 +9,11 @@ First, we need to add Boostrap 4 to our project - so let's do that.
 
 Run the following command in your Terminal:
 
-    $ meteor npm install --save bootstrap@4.0.0-alpha.2
+    $ meteor npm install --save bootstrap@4.0.0-alpha.3
 
-We are also going to use the [sass](http://sass-lang.com/) version of Bootstrap.
-
-For that we need to add package that handle SASS files. But wait, we already have one! The `angular2-compilers` package supports SASS, SCSS and LESS files.
-
-To import it into the project, we will rename `main.css` to `main.scss` and import bootstrap:
+ Import Boostrap's styles into your project:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="17.2"}}
-
-And it will import Boostrap's styles into your project.
 
 # First touch of style
 
@@ -35,19 +29,19 @@ So first thing we want to do now, is to move the login buttons to another place 
 
 So first let's remove it from it's current place (parties list), first the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.4" filename="client/imports/parties-list/parties-list.html"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.4"}}
 
 And from the `PartiesList` component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.4" filename="client/imports/parties-list/parties-list.ts"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.5"}}
 
 And add it to the main component, which is the component that responsible to the navigation bar, so the view first:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.6"}}
 
 And do not forget that we need to import it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.7"}}
 
 # Fonts and FontAwesome
 
@@ -55,39 +49,37 @@ Meteor gives you the control of your `head` tag, so you can import fonts and add
 
 We will add a cool font and add [FontAwesome](https://fortawesome.github.io/Font-Awesome/) style file, which also contains it's font:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.8"}}
 
 # Some more style
 
 So now we will take advantage of all Bootstrap's features - first let's update the layout of the form:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.9"}}
 
 And now the parties list:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.10"}}
 
 # Styling components
 
 We will create style file for each component.
 
-We will also add `_` prefix to the file, to indicate the SASS compiler that this is just an import file and not the main SASS files - we will load those files in our main SASS file.
-
 So let's start with the parties list, and add some style (it's not that critical at the moment what is the effect of those CSS rules)
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.10" filename="client/imports/parties-list/_parties-list.scss"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.11"}}
 
 And now let's add SASS file for the party details:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.11" filename="client/imports/party-details/_party-details.scss"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.12"}}
 
 import it into the main SASS file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.10" filename="client/css/main.scss"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.13"}}
 
 And use those new cool styles in the view of the party details:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="17.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="17.14"}}
 
 
 # Summary
