@@ -38,9 +38,9 @@ To do that we will use Meteor's [publish function](http://docs.meteor.com/#/full
 
 Publication functions are placed inside the "server" folder so clients won't have access to them.
 
-Let's create a new file inside the "server" folder called `parties.ts`. Here we can specify which parties to pass to the client.
+Let's create a new file inside the "server/imports/publications" folder called `parties.ts`. Here we can specify which parties to pass to the client.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.2"}}
 
 As you can see, parameters of the Meteor.publish are self-explanatory:
 first one is a publication name, then there goes a function that returns
@@ -50,9 +50,9 @@ that server will transfer to the client.
 The publish function can take parameters as well, but
 we'll get to that in a minute.
 
-We've just created a System.js module, hence, as you already know, one necessary thing is left — to import it in the `main.ts` in order to execute code inside:
+We've just created a module, as you already know, one necessary thing is left — to import it in the `main.ts` in order to execute code inside:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.3"}}
 
 ## Meteor.subscribe
 
@@ -88,9 +88,9 @@ These methods also have a convenient boolean parameter called `autoBind`, which 
 As its name suggests, we can tell `subscribe` to run the subscription callback in the change detection zone
 by setting the parameter to true.
 
-So, we are going to extend the `PartiesList` component and make use of `this.subscribe`:
+So, we are going to extend the `PartiesListComponent` component and make use of `this.subscribe`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.4"}}
 
 > Note that we are calling `super()` so that the constructor of the component we are inheriting from will run as well
 
@@ -100,26 +100,26 @@ As it's mentioned earlier, it'd be nice for the app to implement some basic secu
 
 Firstly, we'll add a new `public` field to the party data several steps:
 
-1. update party in `typings/party.d.ts` to include `public: boolean`;
-2. add UI with the new "Public" checkbox to the right of the "Location" input;
-3. change the `PartiesForm` component and its `addParty` method particularly to reflect changes on the UI;
-4. change the initial data on the server in `loadParties.ts` to contain the `public` field as well:
+Add UI with the new "Public" checkbox to the right of the "Location" input;
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.5"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.5" filename="typings/party.d.ts"}}
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.5" filename="client/imports/parties-form/parties-form.ts"}}
-
+Update Party in `both/interfaces/party.interface.ts` to include `public: boolean`;
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.6"}}
 
-Note that since `public` is a reserved word, if we want to use it as field name, we need add quote around like this `'public'`.
+Change the `PartiesFormComponent` and its `addParty` method particularly to reflect changes on the UI;
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.7"}}
+
+Change the initial data on the server in `parties.ts` to contain the `public` field as well:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.8"}}
 
 Next, we are limiting data sent to the client. A simple check is to verify that either
 the party is public or the "owner" field exists and is equal to the currently logged-in user:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.9"}}
 
 > `$or`, `$and` and `$exists` names are part of the MongoDB query syntax.
 > If you are not familiar with it, please, read about them here: [$or](http://docs.mongodb.org/manual/reference/operator/query/or/), [$and](http://docs.mongodb.org/manual/reference/operator/query/and/) and [$exists](http://docs.mongodb.org/manual/reference/operator/query/exists/).
@@ -146,7 +146,7 @@ of parameters, and these parameters are passed by the user to `Meteor.subscribe`
 
 Let's elaborate our "party" publication on the server. We want to publish both a list of parties and a single party.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.10"}}
 
 Looks like a lot of code, but it does something powerful. The privacy query, we introduced above, was moved to a separate method called `buildQuery`. We'll need this function to avoid repetition with each different parties query.
 
@@ -154,16 +154,7 @@ Looks like a lot of code, but it does something powerful. The privacy query, we 
 
 Let's subscribe to the new publication in the PartyDetails to load one specific party:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.9"}}
-
-As you can see above, the `party` property is undefined initially, which
-means at the moment the template is being rendered it's also undefined.
-The Angular 2 rendering engine doesn't check availability of template variables while rendering,
-as opposed to how templates are rendered in Blaze.
-
-We can add an `ngIf` directive to conditionally display the form when the party data is available:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.11"}}
 
 Run the app and click on one of the party links. You'll see that the party details page loads with full data as before.
 
@@ -172,11 +163,11 @@ Run the app and click on one of the party links. You'll see that the party detai
 Now it's time for the parties search. Let's add a search input and button to the right of the "Add" button.
 We are going to extend the `PartiesList` component since this features is related to the parties list itself:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.12"}}
 
 As you may have guessed, the next thing is to process the button click event:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.13"}}
 
 Notice that we don't re-subscribe in the `search` method because we've already loaded all parties available to
 the current user from the published parties, so we just query the loaded collection.
