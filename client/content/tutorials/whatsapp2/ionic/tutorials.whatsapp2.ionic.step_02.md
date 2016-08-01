@@ -72,13 +72,36 @@ Once creating an Ionic page it's recommended to use the following layout:
 
 The current view template contains an &lt;ion-header&gt; with a navigation bar containing the tab's title and an &lt;ion-content&gt; containing the list of the chats. The `*ngFor` attribute is used for iteration and is equivalent to Angular1's `ng-for` attribute. The '*' sign just tells us that this is a template directive we're dealing with (A directive that should eventually be rendered in the view). To prevent any misunderstandings, let's have a quick example for some of the notations in Angular2's template syntax that we gonna use in this tutorial:
 
-| Template syntax                                                                                    |                                                                                                                                     |
-| -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| &lt;input [value]="firstName"&gt;                                                                  | Binds property `value` to the result of expression `firstName`.                                                                     |
-| &lt;button (click)="readRainbow($event)"&gt;                                                       | Calls method `readRainbow` when a click event is triggered on this button element (or its children) and passes in the event object. |
-| &lt;div title="Hello &#123;&#123;ponyName&#125;&#125;"&gt;                                         | Binds a property to an interpolated string, e.g. "Hello Seabiscuit". Equivalent to: &lt;div [title]="'Hello ' + ponyName"&gt;       |
-| &lt;my-cmp [(title)]="name"&gt;                                                                    | Sets up two-way data binding. Equivalent to: &lt;my-cmp [title]="name" (titleChange)="name=$event"&gt;                              |
-| &lt;p&gt;Card No.: &#123;&#123;cardNumber &#124; myCreditCardNumberFormatter&#125;&#125;&lt;/p&gt; | Transforms the current value of expression `cardNumber` via the pipe called `myCreditCardNumberFormatter`.                          |
+<table class="variables-matrix input-arguments">
+  <thead>
+  <tr>
+    <th><strong>Template syntax</strong></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>&lt;input [value]="firstName"&gt;</td>
+    <td>Binds property `value` to the result of expression `firstName`.</td>
+  </tr>
+  <tr>
+    <td>&lt;button (click)="readRainbow($event)"&gt;</td>
+    <td>Calls method `readRainbow` when a click event is triggered on this button element (or its children) and passes in the event object.</td>
+  </tr>
+  <tr>
+    <td>&lt;div title="Hello &#123;&#123;ponyName&#125;&#125;"&gt;</td>
+    <td>Binds a property to an interpolated string, e.g. "Hello Seabiscuit". Equivalent to: &lt;div [title]="'Hello ' + ponyName"&gt;</td>
+  </tr>
+  <tr>
+    <td>&lt;my-cmp [(title)]="name"&gt;</td>
+    <td>Sets up two-way data binding. Equivalent to: &lt;my-cmp [title]="name" (titleChange)="name=$event"&gt;</td>
+  </tr>
+  <tr>
+    <td>&lt;p&gt;Card No.: &#123;&#123;cardNumber &#124; myCreditCardNumberFormatter&#125;&#125;&lt;/p&gt;</td>
+    <td>Transforms the current value of expression `cardNumber` via the pipe called `myCreditCardNumberFormatter`.</td>
+  </tr>
+  </tbody>
+</table>
 
 > **NOTE:** Ionic elements will always have a prefix of `ion` and are self explanatory. Further information about Ionic's HTML elements can be found [here](ionicframework.com/docs/v2/component). It's very important to use these elemnts since they are the ones who provides us with the mobile-app look.
 
