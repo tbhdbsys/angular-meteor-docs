@@ -13061,10 +13061,10 @@ index 4ec70f0..4d19a36 100644
 2.7.4
 
 
-From b5e48acd7b03a7d9505d814ab02882f6c2bca4d3 Mon Sep 17 00:00:00 2001
+From 994f031fb0d4df816f23e2350f61409676afb379 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:04:43 +0200
-Subject: [PATCH 257/277] Step 22.23: Add two classes to fix an issue with
+Subject: [PATCH 257/277] Step 22.24: Add two classes to fix an issue with
  overflow
 
 ---
@@ -13095,10 +13095,10 @@ index 4d19a36..d26d2bf 100644
 2.7.4
 
 
-From 784a7dbcec0a2c16abfa33f09fff7269c212f70f Mon Sep 17 00:00:00 2001
+From 2ee958715cf2ca9c0de32e2cce9aaaebbce807dd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:05:29 +0200
-Subject: [PATCH 258/277] Step 22.24: Set the proper class on body
+Subject: [PATCH 258/277] Step 22.25: Set the proper class on body
 
 ---
  client/main.ts | 9 +++++++++
@@ -13135,10 +13135,10 @@ index 288b2be..d21894b 100644
 2.7.4
 
 
-From ccea4a79d8462341e7ab0a377ef30c8c532d7493 Mon Sep 17 00:00:00 2001
+From 3b0120f8dd9b9575dcccd1299c86431c3c473c06 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:25:49 +0200
-Subject: [PATCH 259/277] Step 22.25: Move the PartiesListComponent class to a
+Subject: [PATCH 259/277] Step 22.26: Move the PartiesListComponent class to a
  separate file
 
 ---
@@ -13224,10 +13224,10 @@ index 0000000..0606368
 2.7.4
 
 
-From 4ee3f56b0a1cac64589aecc031f980ef7b041b8f Mon Sep 17 00:00:00 2001
+From 45cee6cadb977e5cf7ad801a7f4740fd911e8d94 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:28:29 +0200
-Subject: [PATCH 260/277] Step 22.26: Add needed modules
+Subject: [PATCH 260/277] Step 22.27: Add needed modules
 
 ---
  client/imports/parties/parties-list.class.ts | 11 +++++++++++
@@ -13256,10 +13256,10 @@ index 0606368..0a73543 100644
 2.7.4
 
 
-From 7289865e202df20638b3b5b51cb80a24e3afd911 Mon Sep 17 00:00:00 2001
+From 0552100bdee6ea8e7cbdef451649248057560c96 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:29:07 +0200
-Subject: [PATCH 261/277] Step 22.27: Use InjectUser on it
+Subject: [PATCH 261/277] Step 22.28: Use InjectUser on it
 
 ---
  client/imports/parties/parties-list.class.ts | 2 ++
@@ -13288,10 +13288,10 @@ index 0a73543..8b138a7 100644
 2.7.4
 
 
-From a795e6fd5adb488ed755d67bc2c5dc9435713860 Mon Sep 17 00:00:00 2001
+From d75044ce9baa30c9e37c33c0ce98c5a71d5be232 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:30:00 +0200
-Subject: [PATCH 262/277] Step 22.28: Rename to parties-list.web.component.ts
+Subject: [PATCH 262/277] Step 22.29: Rename to parties-list.web.component.ts
 
 ---
  client/imports/parties/parties-list.component.ts   | 97 ----------------------
@@ -13510,10 +13510,10 @@ index 0000000..aeb3ccb
 2.7.4
 
 
-From bf9436ea8a9cb153593a9c09ddd92617153876e0 Mon Sep 17 00:00:00 2001
+From 172511e97c29245614fffc3df0c6ea56c30b8893 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:30:51 +0200
-Subject: [PATCH 263/277] Step 22.29: Rename the class to PartiesList
+Subject: [PATCH 263/277] Step 22.30: Rename the class to PartiesList
 
 ---
  client/imports/parties/parties-list.class.ts | 2 +-
@@ -13536,10 +13536,10 @@ index 8b138a7..cbd3aec 100644
 2.7.4
 
 
-From 2814daacf04650452174ad038df2dcbeb857da22 Mon Sep 17 00:00:00 2001
+From 12a9e37fba7269bd54e77ff1c5f8833ae23b22d0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:33:20 +0200
-Subject: [PATCH 264/277] Step 22.30: Use only needed things
+Subject: [PATCH 264/277] Step 22.31: Use only needed things
 
 ---
  .../imports/parties/parties-list.web.component.ts  | 80 ++--------------------
@@ -13653,10 +13653,10 @@ index aeb3ccb..1a4b2cd 100644
 2.7.4
 
 
-From e13924e3527ade087f148aa76184414c2fb2cbfe Mon Sep 17 00:00:00 2001
+From ebf5bb58acd65b11c43d712abed06afbe1714b62 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:34:14 +0200
-Subject: [PATCH 265/277] Step 22.31: Correct the template path
+Subject: [PATCH 265/277] Step 22.32: Correct the template path
 
 ---
  client/imports/parties/parties-list.web.component.ts | 2 +-
@@ -13679,10 +13679,10 @@ index 1a4b2cd..0d38431 100644
 2.7.4
 
 
-From f635d7f02cbd55293c92ec6e07e2ed179bbb2bb4 Mon Sep 17 00:00:00 2001
+From 26e34da59146860adbe2d1a264d6cf21dfb25c72 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:34:37 +0200
-Subject: [PATCH 266/277] Step 22.32: Rename to parties-list-web.component.html
+Subject: [PATCH 266/277] Step 22.33: Rename to parties-list-web.component.html
 
 ---
  client/imports/parties/parties-list.component.html | 78 ----------------------
@@ -13863,10 +13863,10 @@ index 0000000..ce092fa
 2.7.4
 
 
-From 404d001c73162261ab00494eb8557f00ee1024c2 Mon Sep 17 00:00:00 2001
+From 240262eb5e5b834cafcfafd378f411e3fd7dc19c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:35:41 +0200
-Subject: [PATCH 267/277] Step 22.33: Create a basic view of the mobile version
+Subject: [PATCH 267/277] Step 22.34: Create a basic view of the mobile version
 
 ---
  client/imports/parties/parties-list.mobile.component.html | 7 +++++++
@@ -13890,10 +13890,10 @@ index 0000000..b9e7ac6
 2.7.4
 
 
-From 1e31e2e83e7d1ee639ad33dfa814b61a7241857f Mon Sep 17 00:00:00 2001
+From f70a460c90af2f19b8511d8dc70eb2d67ae1ad12 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:37:46 +0200
-Subject: [PATCH 268/277] Step 22.34: Create the mobile version of PartiesList
+Subject: [PATCH 268/277] Step 22.35: Create the mobile version of PartiesList
  component
 
 ---
@@ -13928,10 +13928,10 @@ index 0000000..62bdabe
 2.7.4
 
 
-From 95d6ae88a29936ed37c3b0736687243317704f19 Mon Sep 17 00:00:00 2001
+From ae6b91c42f08c42af4ef5fcf0edf196ff4b39e74 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:38:23 +0200
-Subject: [PATCH 269/277] Step 22.35: Update a path of PartiesListComponent
+Subject: [PATCH 269/277] Step 22.36: Update a path of PartiesListComponent
  module
 
 ---
@@ -13955,10 +13955,10 @@ index 2a45ca8..21a36bc 100644
 2.7.4
 
 
-From 778285018ff348194dbf2593ce47ffd3bed7c5f3 Mon Sep 17 00:00:00 2001
+From 4d6276607701be7b758573c234c5c3cc316d18cf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:39:35 +0200
-Subject: [PATCH 270/277] Step 22.36: Import RsvpPipe
+Subject: [PATCH 270/277] Step 22.37: Import RsvpPipe
 
 ---
  client/imports/parties/parties-list.mobile.component.ts | 4 +++-
@@ -13989,10 +13989,10 @@ index 62bdabe..f4b5f7d 100644
 2.7.4
 
 
-From 3b489540046f25f049d2c88c690e6f4c112e7337 Mon Sep 17 00:00:00 2001
+From 090c082368d1ec6198a442bd4fd1e183381fdc83 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:40:14 +0200
-Subject: [PATCH 271/277] Step 22.37: Add name, description ad RSVPs to the
+Subject: [PATCH 271/277] Step 22.38: Add name, description ad RSVPs to the
  view
 
 ---
@@ -14037,10 +14037,10 @@ index b9e7ac6..31ec349 100644
 2.7.4
 
 
-From afa44de7ef08fd062164e334f52c3dc7b1777976 Mon Sep 17 00:00:00 2001
+From ad84d4e79eb467e84eb5a070f37b4369978a6b6d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:41:32 +0200
-Subject: [PATCH 272/277] Step 22.38: Set PartiesListComponent as a root page
+Subject: [PATCH 272/277] Step 22.39: Set PartiesListComponent as a root page
 
 ---
  client/app.mobile.component.ts | 8 +++++++-
@@ -14073,10 +14073,10 @@ index 2eb6a16..bb29fe1 100644
 2.7.4
 
 
-From 2cd09836b04c75a8aef7a059fee28e9012c712ed Mon Sep 17 00:00:00 2001
+From 18b25974b67ad5b77cbff5af221b9324d3976150 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:42:45 +0200
-Subject: [PATCH 273/277] Step 22.39: Fix an issuewith a absolute path of an
+Subject: [PATCH 273/277] Step 22.40: Fix an issuewith a absolute path of an
  image
 
 ---
@@ -14115,10 +14115,10 @@ index 4a317a1..114a46b 100644
 2.7.4
 
 
-From 5f2c450a6e71b95ebf7fd4e5a8aa5f1700e500c6 Mon Sep 17 00:00:00 2001
+From 682947f07c1fe2067abd10a02dfaa0e111fe95b2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:43:40 +0200
-Subject: [PATCH 274/277] Step 22.40: Add DisplayMainImage pipe
+Subject: [PATCH 274/277] Step 22.41: Add DisplayMainImage pipe
 
 ---
  client/imports/parties/parties-list.mobile.component.ts | 3 ++-
@@ -14149,10 +14149,10 @@ index f4b5f7d..285621d 100644
 2.7.4
 
 
-From a4f20ce175a65dd6fe87c07a358f596b3038b389 Mon Sep 17 00:00:00 2001
+From a1d8870516f26ce29be8df6ed1e5dc6817ab8462 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:44:12 +0200
-Subject: [PATCH 275/277] Step 22.41: Use the pipe
+Subject: [PATCH 275/277] Step 22.42: Use the pipe
 
 ---
  client/imports/parties/parties-list.mobile.component.html | 1 +
@@ -14174,10 +14174,10 @@ index 31ec349..dc2e509 100644
 2.7.4
 
 
-From ad30ea0b11e5c5b5aad8998f79b65436e5fb861c Mon Sep 17 00:00:00 2001
+From 79ae4cf5c8fbcb468b70e88ff759741f5edf1df2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:46:07 +0200
-Subject: [PATCH 276/277] Step 22.42: Add mys:fonts
+Subject: [PATCH 276/277] Step 22.43: Add mys:fonts
 
 ---
  .meteor/packages | 1 +
@@ -14209,10 +14209,10 @@ index 81bf246..0663738 100644
 2.7.4
 
 
-From e66b9f41e623b798b844eb8c059abbf05e074a05 Mon Sep 17 00:00:00 2001
+From 106c60ba499599c9993673a687a4bd7b023c8d71 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Sat, 30 Jul 2016 17:52:57 +0200
-Subject: [PATCH 277/277] Step 22.43: Define fonts.json
+Subject: [PATCH 277/277] Step 22.44: Define fonts.json
 
 ---
  fonts.json | 8 ++++++++
