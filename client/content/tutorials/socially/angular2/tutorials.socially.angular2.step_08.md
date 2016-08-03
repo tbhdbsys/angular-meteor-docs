@@ -47,15 +47,15 @@ Now we are going to add `angular2-meteor-accounts-ui` which is a package that co
 
 Let's add the `<login-buttons>` tag below of the party form in the PartiesList's template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.3"}}
 
 Then, import the dependencies:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
 
 Now let's create main stylesheet file (with `.scss` extension), and import the SCSS file from the package:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.2"}}
 
 Run the code, you'll see a login link below the form. Click on the link and then "create  account" to sign up. Try to log in and log out.
 
@@ -84,47 +84,54 @@ Meteor's base accounts package provides two reactive functions that we are going
 use, [`Meteor.user()`](http://docs.meteor.com/#/full/meteor_user) and [`Meteor.userId()`](http://docs.meteor.com/#/full/meteor_users).
 
 For now, we are going to keep it simple in this app and allow every logged-in user to change a party.
-Change the click handler of the "Add" button in the `parties-form.ts`, `addParty`, to save the user ID as well. Also, it'd be useful to add an alert prompting the user to log in if she wants to add or update a party:
+Change the click handler of the "Add" button in the `parties-form.component.ts`, `addParty`, to save the user ID as well. Also, it'd be useful to add an alert prompting the user to log in if she wants to add or update a party:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.6"}}
 
-> Notice that you'll need to update the Party type in the `party.d.ts` definition file with the optional new property: `owner?: string`.
+> Notice that you'll need to update the Party interface in the `party.interface.ts` definition file with the optional new property: `owner?: string`.
 
-Let's do the user check in `party-details.ts`:
+Let's do the user check in `party-details.component.ts`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.7"}}
 
 Typing each time `Meteor.user()` or `Meteor.userId()` might seems tedious.
 Not to mention that there is no way to use these functions in the component templates currently.
 
-# RequireUser
+# canActivate
 
-How can you simplify life here? You can try out the decorator that comes with the accounts package, which wraps around all Meteor Accounts API (login with password and social logins features)
-and exports two services for the usage in Angular 2. Besides that, it has two convenient annotations: `InjectUser` and `RequireUser`.
+`CanActivate` is a one of three guard types in the new router. It decides if a route can be activated.
 
-Now you can specify if a component can be accessed only when a user is logged in using the `@RequireUser` annotation.
+> There is also the `CanActivateChild` which does the same what CanActivate but for a child and the `CanDeactivate` to decide if a route can be deactivated.
+
+Now you can specify if a component can be accessed only when a user is logged in using the `canActivate` property in the `RouterConfig`.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.9"}}
 
+We created a new provider called `CanActivateForLoggedIn` that contains a boolean value with login state.
+As you can see we specified only the name of that provider inside `canActive` property.
+
+It's worth mentioning that guards can receive more than one provider.
+
 # InjectUser
 
-If you place `@InjectUser` above the PartiesForm it will inject a new user property:
+If you place `@InjectUser` above the PartiesFormComponent it will inject a new user property:
 
-__`client/imports/parties-form/parties-form.ts`__:
+__`client/imports/parties/parties-form.component.ts`__:
 
     ...
-    import {MeteorComponent} from 'angular2-meteor';
-    import {InjectUser} from 'angular2-meteor-accounts-ui';
+    import { MeteorComponent } from 'angular2-meteor';
+    import { InjectUser } from 'angular2-meteor-accounts-ui';
 
-    import template from './parties-form.html';
+    import template from './parties-form.component.html';
 
     @Component({
       selector: 'parties-form',
       template,
     })
-    @InjectUser("user")
-    export class PartiesForm extends MeteorComponent {
+    @InjectUser('user')
+    export class PartiesFormComponent extends MeteorComponent {
       user: Meteor.User;
+
       constructor() {
         super();
         ...
@@ -133,17 +140,17 @@ __`client/imports/parties-form/parties-form.ts`__:
       ...
     }
 
-> Notice that you have to extend `PartiesForm` with `MeteorComponent` to make the user property reactive.
+> Notice that you have to extend `PartiesFormComponent` with `MeteorComponent` to make the user property reactive.
 > That's because this class adds a few Meteor specific methods to a child inheritor, used to implement reactivity (as above) or Meteor's pub/sub data transfer.
 > We'll learn more about MeteorComponent later on the next step, where we'll be subscribing to server publications.
 
 Call `this.user` and you will see that it returns the same object as `Meteor.user()`.
 The new property is reactive and can be used in any template, for example:
 
-__`client/imports/parties-form/parties-form.html`__:
+__`client/imports/parties/parties-form.component.html`__:
 
     <div *ngIf="!user">Please, log in to change party</div>
-    <form [ngFormModel]="partiesForm" #f="form" (submit)="addParty(f.value)">
+    <form ...>
       ...
     </form>
 
@@ -157,42 +164,36 @@ Let's imagine now that we allow to see and change party details only for logged-
 An ideal way to implement this would be to restrict redirecting to the party details page when
 someone clicks on a party link. In this case, we don't need to check access manually in the party details component itself because the route request is denied early on.
 
-This can be easily done again with help of "angular2-meteor-accounts-ui" package
-that has a simple `RequireUser` annotation. Just place it above `PartyDetails`
-and you will see if a user is not logged-in to the system, that user won't be able to access the route.
+This can be easily done again with help of `CanActivate` property. You can do this with the PartyDetailsComponent, just like we did previous steps earlier with the PartiesFormComponent.
 
 Now log out and try to click on any party link. See, links don't work!
 
 But what about more sophisticated access? Say, let's prevent access into the PartyDetails view for those
 who don't own that particular party.
 
-It's easy to implement in Angular 2 as well using [`@CanActivate`](https://angular.io/docs/ts/latest/api/router/CanActivate-decorator.html) annotation
-(BTW, `RequireUser` itself is just a simple inheritor of `@CanActivate`).
+It could be done inside of a component using `canActivate` method.
 
-Let's add a `checkPermissions` function, where we get the current route's `partyId` parameter
+Let's add a `canActivate` method and `CanActivate` interface, where we get the current route's `partyId` parameter
 and check if the corresponding party's owner is the same as the currently logged-in user.
-And then pass the partyId into the `@CanActivate` attribute:
 
-  __`client/party-details/party-details.ts`__:
+  __`client/imports/parties/party-details.component.ts`__:
 
-    import {CanActivate, ComponentInstruction} from '@angular/router';
+    import { CanActivate } from '@angular/router';
 
-    import template from './party-details.html';
-
-    function checkPermissions(instruction: ComponentInstruction) {
-      var partyId = instruction.params['partyId'];
-      var party = Parties.findOne(partyId);
-      return (party && party.owner == Meteor.userId());
-    }
+    import template from './party-details.component.html';
 
     @Component({
       selector: 'party-details',
       template,
       directives: [ROUTER_DIRECTIVES]
     })
-    @CanActivate(checkPermissions)
-    export class PartyDetails {
+    export class PartyDetails implements CanActivate {
       ...
+
+      canActivate() {
+        const party = Parties.findOne(this.partyId);
+        return (party && party.owner == Meteor.userId());
+      }
     }
 
 Now log in, then add a new party, log out and click on the party link.

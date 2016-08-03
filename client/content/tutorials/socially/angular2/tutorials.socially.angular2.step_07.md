@@ -41,40 +41,54 @@ But as you remember, we've mentioned so far only one declaration file `angular2-
 
 Let’s create our own declaration file for our project in order to learn this type-checking better.
 
-## Custom Type Declaration File
+## Interfaces
 
-There is one definite place in our app where we could make use of types to avoid potential bugs.
-We are going to declare a `Party` interface, you should already be familiar with its properties: "name", "description" and "location". We can make the "Description" property optional.
-TypeScript's type-checking bases on the "shapes" that types have. And interfaces are TypeScript's means to describe these type "shapes", which
-is sometimes called "duck typing". More on that you can read [here](http://www.typescriptlang.org/Handbook#interfaces).
+We are going to declare a `Party` interface. You should already be familiar with its properties: "name", "description" and "location". We can make the "Description" property optional.
 
-Let's create our `party.d.ts` file and place it inside the _typings_ folder with the following content:
+TypeScript's type-checking bases on the "shapes" that types have. And interfaces are TypeScript's means to describe these type "shapes", which is sometimes called "duck typing". More on that you can read [here](http://www.typescriptlang.org/docs/handbook/interfaces.html).
+
+Let's create our `party.interface.ts` file and place it inside the _both/interfaces_ folder with the following content:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="7.1"}}
 
-Wherever Party is used, we can declare the type. Let's start by clarifying the parties collection in `collections/parties.ts`.
+Let's start by clarifying the parties collection in `both/collections/parties.collection.ts`.
 Change the code to:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="7.2"}}
 
-As you can see, we used a generic type `Mongo.Collection<>` with the class parameter set to `Party` instead of just basic
-`Mongo.Collection` class.
+As you can see, we used a generic type `Mongo.Collection<>` with the class parameter set to `Party` instead of just basic `Mongo.Collection` class.
 
-Now let’s fiddle with it. Go to the _client/parties-form/parties-form.ts_ file and change “location” property to, say,
-“newLocation”. Run the app. You should see in the console a warning saying in a nutshell: there is no “newLocation” property defined on the `Party` type.
+Now let’s fiddle with it. Go to the _client/imports/parties/parties-form.component.ts_ file and change "location" property to, say, "newLocation".
 
-Let’s torture it more. Go to the _client/parties-list/parties-list.ts_.
-There you’ll see the "parties" property assigned to the `Mongo.Cursor<Object>` type. As you can see, TypeScript considers this construct acceptable even there is no `Party` type mentioned. That’s because Object type is the base class to all types available in JavaScript, so TypeScript doesn’t swear confronting to the OOP principles.
+Run the app.
 
-But let’s change it to `Mongo.Cursor<string>`. Run the app and you will see the compiler is unhappy with you again. TypeScript doesn’t know how to convert `Mongo.Cursor<string>` to `Mongo.Cursor<Party>`, so it considers the assignment to be wrong.
+You should see in the console a warning saying in a nutshell: _there is no "newLocation" property defined on the `Party` type._
 
-Isn’t it cool?! We’ve made our app more bug resistant with only a few changes!
+Let’s torture it more. Go to the _client/imports/parties/parties-list.component.ts_.
 
-Finally, let’s change `Object` to `Party` in the `PartiesList` and `PartyDetails` components to make our code look right:
+There you’ll see the "parties" property assigned to the `Mongo.Cursor<any>` type.
+
+As you can see, TypeScript considers this construct acceptable even there is no `Party` type mentioned.
+
+That's because `any` type accepts all types available in JavaScript, so TypeScript doesn't swear confronting to the OOP principles.
+
+But let’s change it to `Mongo.Cursor<string>`. Run the app and you will see the compiler is unhappy with you again.
+
+TypeScript doesn’t know how to convert `Mongo.Cursor<string>` to `Mongo.Cursor<Party>`, so it considers the assignment to be wrong.
+
+Isn't it cool?! We've made our app more bug resistant with only a few changes!
+
+Let's change `any` to `Party` in the `PartiesListComponent` and `PartyDetailsComponent` to make our code look right:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="7.3"}}
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="7.4"}}
+
+Last thing is to add `Party` in the data fixtures:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="7.5"}}
+
+We used `Party[]` because the `parties` variable is an array that holds Party objects.
 
 ## TypeScript Configuration and IDEs
 
@@ -95,34 +109,30 @@ properly with the options that will make plugins understand our needs and the st
 ```json
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "module": "commonjs",
     "target": "es5",
+    "module": "commonjs",
     "isolatedModules": false,
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "removeComments": false,
     "noImplicitAny": false,
     "sourceMap": true
   },
-  "filesGlob": [
-    "client/**/*.ts",
-    "server/**/*.ts",
-    "typings/**/*.d.ts"
-  ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "compileOnSave": false
 }
 ```
 
 **CompilerOptions:**
 
-- `experimentalDecorators` - Enables experimental support for ES7 decorators.
-- `module` - Specify module code generation
 - `target` - Specify ECMAScript target version
+- `module` - Specify module code generation
 - `isolatedModules` - Unconditionally emit imports for unresolved files
 - `moduleResolution` - Determine how modules get resolved
+- `experimentalDecorators` - Enables experimental support for ES7 decorators.
 - `emitDecoratorMetadata` - Emit design-type metadata for decorated declarations in source
 - `removeComments` - Remove all comments except copy-right header comments beginning with
 - `noImplicitAny` - Raise error on expressions and declarations with an implied 'any' type
@@ -160,19 +170,13 @@ If you are using [Atom](atom.io) as your editor with the [Atom-TypeScript plugin
       "files": []
     }
 
-# Challange
-
-We've tried out type-checking for the `Party` type in a couple of places in this step.
-There are still some places left where the type is used but parameters are not defined, for example,
-the party saving method. Try to correct remaining places to use `Party` as this step's challenge.
-
 # Summary
 
 In this step we discovered how to make our TypeScript code less buggy with:
 
 - the benefits of type-checking
 - type declaration files for verifying library APIs
-- custom declaration files to check our own projects APIs
+- interfaces to check our own projects APIs
 - TSD for loading declaration files easily
 - creating a `tsconfig.json` file for loading files and specifying compiler options
 
