@@ -18,7 +18,7 @@ Then we gonna clean some unnecessary SASS files importations of the pages we've 
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.2"}}
 
-Ionic2 provides us with a new theming system. The theme is determined thanks to SASS variables located in the file `app/theme/app.variables.scss`. By changing these variables our entire app's theme will be changed as well. Not only that, but you can also add new theming colors, and they should be available on the as HTML attributes, and the should affect the theming of most Ionic elements once we use them.
+Ionic2 provides us with a new theming system. The theme is determined thanks to SASS variables located in the file `app/theme/app.variables.scss`. By changing these variables our entire app's theme will be changed as well. Not only that, but you can also add new theming colors, and they should be available on the HTML as attributes, and the should affect the theming of most Ionic elements once we use them.
 
 Since we want our app to have a Whatsapp theme, we gonna define a new variable called `whatsapp`:
 
