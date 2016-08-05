@@ -23,7 +23,7 @@ Template.tutorialSelector.helpers({
 
     if (route.indexOf('tutorials/whatsapp/ionic') !== -1 ||
         route.indexOf('tutorials/whatsapp/meteor') !== -1 ||
-        route.indexOf('tutorials/whatsapp2/ionic')) {
+        route.indexOf('tutorials/whatsapp2/ionic') !== -1) {
       return [];
     }
     else {
