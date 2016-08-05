@@ -104,14 +104,20 @@ Template.stepbarCodeDiff.helpers({
 });
 
 Template.improveDoc.helpers({
-  tutorialName: function () {
+  contentDir: function () {
     var rData = Router.current().data();
-    if (rData.parent && rData.parent.route == 'tutorials.socially.angular2') {
-      return 'socially/angular2';
+    if (rData.parent && rData.parent.route == 'migration.angular2') {
+      return 'migration/angular2';
+    } else if (rData.parent && rData.parent.route == 'migration.angular1') {
+      return 'migration/angular1';
+    } else if (rData.parent && rData.parent.route == 'tutorials.socially.angular2') {
+      return 'tutorials/socially/angular2';
     } else if (rData.parent && rData.parent.route == 'tutorials.whatsapp.ionic') {
-      return 'whatsapp/ionic'
+      return 'tutorials/whatsapp/ionic'
+    } else if (rData.parent && rData.parent.route == 'tutorials.whatsapp2.ionic') {
+      return 'tutorials/whatsapp2/ionic';
     } else {
-      return 'socially/angular1'
+      return 'tutorials/socially/angular1';
     }
   }
 });
