@@ -114,6 +114,8 @@ This is a top level definition file that links all other definition files instal
 
 > Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - this will not prevent you from running your app, but it is highly recommended to resolve those errors.
 
+> Also in order to be able to use typings properly, it is recommended to install [node.js](https://nodejs.org).
+
 # Root Component
 
 Angular 2 code is structured as a tree of components.
