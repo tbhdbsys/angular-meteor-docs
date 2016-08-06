@@ -36,16 +36,15 @@ A Meteor project will contain the following dirs by default:
 
 These scripts should be loaded automatically by their alphabetic order on their belonging platform, e.g. a script defined under the client dir should be loaded by Meteor only on the client. A script defined in neither of these folders should be loaded on both. Since we're using Ionic's CLI for the client code we have no need in the client dir in the Meteor project. Let's get rid of it:
 
-    $ rm -rf api/client
+    $ rm -rf client
 
 We want our server and client to share the same resources, which means that once we install an NPM package in the Ionic project it's gonna be available in the Meteor project as well. To achieve that we gonna add a symbolic link to `node_modules` dir in our Meteor project:
 
-    $ cd api
     $ ln -s ../node_modules
 
 Since they share the same packages we have no need to configure our Meteor project using `package.json`:
 
-    $ rm api/package.json
+    $ rm package.json
 
 And let's not forget to add the Meteor NPM dependencies to the Ionic project as well:
 
@@ -59,7 +58,7 @@ This collection is actually a reference to a [MongoDB](mongodb.com) collection, 
 
 Now we will go into the server's entry file located in `server/main.js` and we will use the chats collection we've just created to insert some chat documents. First we need to rename this file since we're using Typesript and we want it to have a `.ts` extension:
 
-    $ cd api/server
+    $ cd server
     $ mv main.js main.ts
 
 And afterwards we can go ahead and write our code:
@@ -124,7 +123,7 @@ If you will look closely you will see that the component inherits from [MeteorCo
 
 Since the messages are defined in a seperate collection and not as a nested object inside a chat document anymore, they need to be queried seperately. In addition, the last message of a chat can be changed, so we want it to be recomputated anytime the result of its query changes, therefore we wrapped its calculation insdie a [Computation](docs.meteor.com/api/tracker.html#Tracker-autorun). However, this method causes a memory leak issue since whenever a chat is being removed or replaced with another one, the computation is gonna keep running in the background until the entire component is destroyed. To solve it, we observed changes in the returned cursor using the [Mongo.Cursor.observe()](docs.meteor.com/api/collections.html#Mongo-Cursor-observe) method, and now whenever a chat is removed or chaned its belonging last message computation is gonna stop as well, thanks to a callbak we defined called `disposeChat()`.
 
-Iorder to be able to store a computation on a chat document we also need to update the chat model decleration to contain a `lastMessageComp` field:
+Inorder to be able to store a computation on a chat document we also need to update the chat model decleration to contain a `lastMessageComp` field:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.18"}}
 
