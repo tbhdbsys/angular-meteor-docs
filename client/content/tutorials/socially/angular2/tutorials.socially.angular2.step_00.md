@@ -24,21 +24,21 @@ Now let's create our app — write this in the command line:
 
     $ meteor create --example angular2-boilerplate socially
     
-Alternatively, use your web browser to access the link:
-
-    https://github.com/bsliran/angular2-meteor-base
-    
-Download the template application, and unzip the files inside. Rename the folder to "socially" and place it into the default directory.
-
-Now, we install npm packages:
-
-    $ npm install
-
-(Note: More explanation on NPM packages on the bottom of the page.)
+> Alternatively, use your web browser to access the link:
+>
+>    https://github.com/bsliran/angular2-meteor-base
+>    
+> Download the template application, and unzip the files inside. Rename the folder to "socially" and place it into the default directory.
 
 Now let's see what we've got. Go into the new folder:
 
     $ cd socially
+    
+Now, we install npm packages:
+
+    $ meteor npm install
+
+(Note: More explanation on NPM packages on the bottom of the page.)    
 
 Run the app like so:
 
