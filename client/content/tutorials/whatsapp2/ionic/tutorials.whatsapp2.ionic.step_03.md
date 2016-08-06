@@ -58,7 +58,7 @@ This collection is actually a reference to a [MongoDB](mongodb.com) collection, 
 
 Now we will go into the server's entry file located in `server/main.js` and we will use the chats collection we've just created to insert some chat documents. First we need to rename this file since we're using Typesript and we want it to have a `.ts` extension:
 
-    $ cd api/server
+    $ cd server
     $ mv main.js main.ts
 
 And afterwards we can go ahead and write our code:
