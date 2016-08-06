@@ -34,6 +34,8 @@ Now, we install npm packages:
 
     $ npm install
 
+(Note: More explanation on NPM packages on the bottom of the page.)
+
 Now let's see what we've got. Go into the new folder:
 
     $ cd socially
