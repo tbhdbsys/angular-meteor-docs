@@ -23,7 +23,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Realtime Meteor server',
     route: 'tutorials.whatsapp2.ionic.server',
     path: '/tutorials/whatsapp2/ionic/server',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_03.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_03.md',
+    video: '//www.youtube.com/embed/T_118SkJZ4o?list=UUJIcILt6086ts21-60g0bpw'
   },
   {
     id: '4',
