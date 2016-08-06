@@ -17,6 +17,12 @@ Open your command line and paste this command:
 
     $ curl https://install.meteor.com/ | sh
 
+Alternatively, use your web browser to access the link:
+
+    https://github.com/bsliran/angular2-meteor-base
+    
+Download the template application, and unzip the files inside. Rename the folder to "socially" and place it into the default directory.
+
 > If you are on a Windows machine, go [here](https://www.meteor.com/install) to install Meteor.
 
 Now let's create our app — write this in the command line:
