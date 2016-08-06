@@ -5,7 +5,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Initial setup',
     route: 'tutorials.whatsapp2.ionic.setup',
     path: '/tutorials/whatsapp2/ionic/setup',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_01.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_01.md',
+    video: '//www.youtube.com/embed/rpTAGoSmVcE?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '2',
@@ -13,7 +14,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Chats page',
     route: 'tutorials.whatsapp2.ionic.chats-page',
     path: '/tutorials/whatsapp2/ionic/chats-page',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_02.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_02.md',
+    video: '//www.youtube.com/embed/hZLyASyZiqo?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '3',
