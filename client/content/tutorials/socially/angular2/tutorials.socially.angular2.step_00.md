@@ -54,7 +54,7 @@ and look at the amazing app that's running on your computer!
 
 We now have a fully functional app which includes both a server and a client!
 
-We are going to add our own files for this tutorial. So let's start by deleting these files:
+We are going to add our own files for this tutorial. So let's start by deleting all the contents in these three folders:
 
     - /client             (delete)
     - /both               (delete)
