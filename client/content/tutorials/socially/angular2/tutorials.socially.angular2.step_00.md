@@ -56,8 +56,6 @@ We now have a fully functional app which includes both a server and a client!
 
 We are going to add our own files for this tutorial. So let's start by deleting these files:
 
-Which files? All the three below are folder names. Shall we really delete them totally? I can not see any new file in upcoming pages of this tutorial to add into the two folders "both" and "server".
-
     - /client             (delete)
     - /both               (delete)
     - /server             (delete)
