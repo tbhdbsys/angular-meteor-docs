@@ -24,7 +24,7 @@ WHATSAPP2_IONIC = [
     route: 'tutorials.whatsapp2.ionic.server',
     path: '/tutorials/whatsapp2/ionic/server',
     contentTemplate: 'tutorials.whatsapp2.ionic.step_03.md',
-    video: '//www.youtube.com/embed/T_118SkJZ4o?list=UUJIcILt6086ts21-60g0bpw'
+    video: '//www.youtube.com/embed/T_118SkJZ4o?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '4',
@@ -32,7 +32,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Messages page',
     route: 'tutorials.whatsapp2.ionic.messages-page',
     path: '/tutorials/whatsapp2/ionic/messages-page',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_04.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_04.md',
+    video: '//www.youtube.com/embed/FqyDObNCzqE?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '5',
