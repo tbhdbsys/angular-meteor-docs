@@ -77,7 +77,7 @@ Don't forget to import the packages we've just installed in the `index.js` file:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="3.8"}}
 
-We will also need to load `anular-meteor` into our app as a module dependency, since that's how `Angular`'s module system works:
+We will also need to load `angular-meteor` into our app as a module dependency, since that's how `Angular`'s module system works:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="3.9"}}
 
