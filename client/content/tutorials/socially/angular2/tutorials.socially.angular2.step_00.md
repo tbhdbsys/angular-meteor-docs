@@ -90,7 +90,7 @@ Don't worry if you're not familiar with TypeScript. Valid ES6 or ES5 JavaScript 
 
 > If you'd like to deep dive into TypeScript, we recommend the [official tutorial](http://www.typescriptlang.org/Tutorial).
 
-To start, we need to make sure our `tsconfig.json` file has the basic configurations below which are required to run an Angular 2.0 Meteor app.
+To start, we need to make sure our `tsconfig.json` file (in our root directory) has the basic configurations below which are required to run an Angular 2.0 Meteor app.  
 
 ```json
 {
