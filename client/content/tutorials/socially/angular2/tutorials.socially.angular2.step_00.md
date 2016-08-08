@@ -64,7 +64,7 @@ Now we can start building our app.
 
 Create a new `index.html` file in the client folder, and place this code inside. Then run the app again.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.3"}} 
 
 And Meteor build tool refreshes automatically and our app is updated in the browser.
 
