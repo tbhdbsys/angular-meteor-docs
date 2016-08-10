@@ -38,6 +38,8 @@ Also, let's clean-up `app.component.ts` to prepare it for the next steps:
 
 and the template for it, which is `app.component.html`:
 
+You will notice that the interface of your app has disappeared. But don't worry! It will come back later on.
+
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.4"}}
 
 # Routing
