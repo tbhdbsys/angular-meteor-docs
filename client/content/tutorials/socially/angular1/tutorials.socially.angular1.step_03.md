@@ -56,7 +56,7 @@ In this example, we return a MongoDB Cursor (the return value of `find`), which 
 A `helper` could be a function or any other variable type.
 
 * Functions will re-run every time something inside has changed and will bind the returned value to a scope variable and to the view
-* Regular values but be declared both as [Reactive Vars](http://docs.meteor.com/#/full/reactivevar_pkg) and scope variable. That means that they will bind directly to the view with Angular and also fire a Meteor change event to trigger a re-run if they are used inside a helper function or a Meteor.autorun  
+* Regular values will be declared both as [Reactive Vars](http://docs.meteor.com/#/full/reactivevar_pkg) and scope variable. That means that they will bind directly to the view with Angular and also fire a Meteor change event to trigger a re-run if they are used inside a helper function or a Meteor.autorun  
 
 > Example for two helpers with relationship: function that fetches search results (function helper) and string that used as search parameter (string helper). we will show more of those examples in the next chapters of the tutorials.
 
