@@ -105,7 +105,7 @@ Try running more actions like updating an object from the console and so on. Che
 
 # Upgrading to controllerAs syntax
 
-As a best practice, and as preparation to the future Angular 2.0, we recommend use `controllerAs` syntax, you can find more information about why and how to use it in [JohnPapa's styleguide](https://github.com/johnpapa/angular-styleguide#style-y030)
+As a best practice, and as preparation for the future Angular 2.0, we recommend use `controllerAs` syntax, you can find more information about why and how to use it in [JohnPapa's styleguide](https://github.com/johnpapa/angular-styleguide#style-y030)
 
 So first, let's give a name to our controller in the view:
 
