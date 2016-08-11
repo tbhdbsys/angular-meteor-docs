@@ -211,9 +211,9 @@ import templateUrl from './button.html';
 console.log(templateUrl); // outputs: imports/ui/button.html
 ```
 
-# Templates as a strings
+# Templates as strings
 
-There is no component without a template so instead of asynchronously loading a html file we can use `urigo:static-templates` package. It allows you to import template as a string.
+There is no component without a template so instead of asynchronously loading an html file we can use `urigo:static-templates` package. It allows you to import template as a string.
 
 Okay, so first step will be to remove `angular-templates`:
 
