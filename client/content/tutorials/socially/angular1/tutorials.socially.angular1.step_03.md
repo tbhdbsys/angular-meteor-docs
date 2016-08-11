@@ -164,7 +164,7 @@ Now we can use `<parties-list>` tag anywhere, and we will get the list of partie
 
 Since we're serious developers and Meteor gives us ability to use things from the future, let's move Socially to the next level!
 
-To make Socially easier to maintainable we can use es6 classes and modules.
+To make Socially easier to maintain we can use es6 classes and modules.
 
 Let's create a `imports` folder. It allows us to lazy-load modules.
 
