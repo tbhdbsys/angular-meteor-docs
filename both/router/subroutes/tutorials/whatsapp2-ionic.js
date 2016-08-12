@@ -41,7 +41,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Authentication',
     route: 'tutorials.whatsapp2.ionic.authentication',
     path: '/tutorials/whatsapp2/ionic/authentication',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_05.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_05.md',
+    video: '//www.youtube.com/embed/ONY1L9cD5BY?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '6',
