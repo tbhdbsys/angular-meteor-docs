@@ -50,7 +50,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Chats creation & removal',
     route: 'tutorials.whatsapp2.ionic.chats-mutations',
     path: '/tutorials/whatsapp2/ionic/chats-mutations',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_06.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_06.md',
+    video: '//www.youtube.com/embed/Y_6SU1dEWCA?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '7',
