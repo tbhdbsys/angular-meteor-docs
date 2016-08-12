@@ -109,7 +109,7 @@ Now we can define the route:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.11"}}
 
-As you can we used `:partyId` inside of the path string. This way we define parameters. For example, `localhost:3000/party/12` will point to the PartyDetailsComponent with `12` as the value of the `partyId` parameter.
+As you can see, we used `:partyId` inside of the path string. This way we define parameters. For example, `localhost:3000/party/12` will point to the PartyDetailsComponent with `12` as the value of the `partyId` parameter.
 
 We still have to add a link that redirects to party details.
 
