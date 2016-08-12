@@ -44,7 +44,7 @@ And in the messages component as well for the active chat:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.12"}}
 
-Now we want our changes to take effect. We want to get rid of the fabricated chats in the database, and replace them with users. To do so we need to reset our database. To do so, we need to stop the Meteor server, and type the followin command:
+Now we want our changes to take effect. We will reset the database so next time we run our Meteor server the users will be fabricated. To reset the database, first make sure the Meteor server is stopped and then type the following command:
 
     $ meteor reset
 
