@@ -59,7 +59,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Privacy & security',
     route: 'tutorials.whatsapp2.ionic.privacy',
     path: '/tutorials/whatsapp2/ionic/privacy',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_07.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_07.md',
+    video: '//www.youtube.com/embed/CGeClgrUSeQ?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '8',
