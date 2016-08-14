@@ -14,11 +14,11 @@ We will start by creating the Meteor project which will be placed inside the `ap
 
 Since we will be writing our app using Typescript and not Javascript, we will need to support it in our Meteor project as well, especially when the client and the server share some of the script files. To add this support let's add the following package to our Meteor project:
 
+    $ cd api
     $ meteor add meteortypescript:compiler
 
 And let's link the necessary Typescript assets in both projects so they can have the same declerations and rules:
 
-    $ cd api
     $ ln -s ../typings
     $ ln -s ../tsconfig.json
     $ ln -s ../tslint.json
