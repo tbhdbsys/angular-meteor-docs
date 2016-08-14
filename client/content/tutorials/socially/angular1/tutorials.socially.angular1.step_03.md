@@ -166,11 +166,11 @@ Since we're serious developers and Meteor gives us ability to use things from th
 
 To make Socially easier to maintain we can use es6 classes and modules.
 
-Let's create a `imports` folder. It allows us to lazy-load modules.
+Let's create an `imports` folder. It allows us to lazy-load modules.
 
 To fully move PartiesList component we have to create space for it.
 
-This is a structure of Socially app:
+This is a structure of the Socially app:
 
     client/
     imports/
@@ -201,7 +201,7 @@ As you can see in your browser, template is missing. It's also lazy-loaded.
 
 Let me explain to you what happened there.
 
-You could just import html file but with the latest version of `angular-templates` it's possible to get a full path of a used file. See the example below:
+You could just import the html file but with the latest version of `angular-templates` it's possible to get a full path of a used file. See the example below:
 
 ```js
 // You're inside: imports/ui/button.js
