@@ -41,7 +41,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Authentication',
     route: 'tutorials.whatsapp2.ionic.authentication',
     path: '/tutorials/whatsapp2/ionic/authentication',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_05.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_05.md',
+    video: '//www.youtube.com/embed/ONY1L9cD5BY?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '6',
@@ -49,7 +50,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Chats creation & removal',
     route: 'tutorials.whatsapp2.ionic.chats-mutations',
     path: '/tutorials/whatsapp2/ionic/chats-mutations',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_06.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_06.md',
+    video: '//www.youtube.com/embed/Y_6SU1dEWCA?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '7',
@@ -57,7 +59,8 @@ WHATSAPP2_IONIC = [
     seoTitle: 'Privacy & security',
     route: 'tutorials.whatsapp2.ionic.privacy',
     path: '/tutorials/whatsapp2/ionic/privacy',
-    contentTemplate: 'tutorials.whatsapp2.ionic.step_07.md'
+    contentTemplate: 'tutorials.whatsapp2.ionic.step_07.md',
+    video: '//www.youtube.com/embed/CGeClgrUSeQ?list=PLfEFEil62pk3dRXiC6sI--V1aVDkOW0Ls'
   },
   {
     id: '8',
