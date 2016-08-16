@@ -92,7 +92,7 @@ Our application routes are defined as follows:
 * **('/parties')**: The parties list view will be shown when the URL hash fragment is /parties. To construct this view, Angular 1 will use the parties-list Component.
 * **('/parties/:partyId')**: The party details view will be shown when the URL hash fragment matches '/parties/:partyId', where `:partyId` is a variable part of the URL. To construct the party details view, Angular will use the party-details Component.
 * **$urlRouterProvider.otherwise('/parties')**: Triggers a redirection to /parties when the browser address doesn't match either of our routes.
-* **$locationProvider.html5Mode(true)**: Sets the URL to look like a regular one. more about it [here](https://docs.angularjs.org/guide/$location#hashbang-and-html5-modes).
+* **$locationProvider.html5Mode(true)**: Sets the URL to look like a regular one. More about it [here](https://docs.angularjs.org/guide/$location#hashbang-and-html5-modes).
 * Each template is just a regular usage of our components.
 
 Note the use of the `:partyId` parameter in the second route declaration.
