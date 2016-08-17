@@ -14,7 +14,7 @@ We'll expand the `PartyDetails` by using `helpers` method, and we will use [find
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="6.1"}}
 
-In our example we find our relevant party by it's id, and used a regular MongoDB syntax to create our `findOne` query, which explained in Meteor's [collection.findOne](http://docs.meteor.com/#/full/findone) documentation.
+In our example we find our relevant party by its id, and used a regular MongoDB syntax to create our `findOne` query, which is explained in Meteor's [collection.findOne](http://docs.meteor.com/#/full/findone) documentation.
 
 So after declaring this helper, we can just use `this.party` in our Component's Controller, or `partyDetails.party` in our HTML view.
 
