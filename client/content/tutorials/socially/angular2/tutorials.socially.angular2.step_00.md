@@ -68,7 +68,7 @@ Create a new `index.html` file in the client folder, and place this code inside.
 
 And Meteor build tool refreshes automatically and our app is updated in the browser.
 
-Note that there is no `<html>` tag and no `<head>` tags in our code.
+Note that there is no `<html>` tag in our code.
 
 This is because of how Meteor structures and serves files to the client.
 
