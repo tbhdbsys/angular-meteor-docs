@@ -104,7 +104,7 @@ So first we set the new party's owner to our current user's id and then insert i
 
 Now, start the app in 2 different browsers and login with 2 different users.
 
-Test editing and removing your own parties, and try to do the same for parties owned by another user.
+Test edit and remove your own parties, and try to do the same for parties owned by another user.
 
 # Social login
 
@@ -114,7 +114,7 @@ To do this, we simply need to add the right packages in the console:
 
     meteor add accounts-facebook accounts-twitter
 
-Now run the app.  when you will first press the login buttons of the social login, meteor will show you a wizard that will help you define your app.
+Now run the app.  When you first press the login buttons of the social login, meteor will show you a wizard that will help you define your app.
 
 You can also skip the wizard and configure it manually like the explanation here: [http://docs.meteor.com/#meteor_loginwithexternalservice](http://docs.meteor.com/#meteor_loginwithexternalservice)
 
