@@ -108,7 +108,7 @@ Now you can specify if a component can be accessed only when a user is logged in
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.9"}}
 
 We created a new provider called `CanActivateForLoggedIn` that contains a boolean value with login state.
-As you can see we specified only the name of that provider inside `canActive` property.
+As you can see we specified only the name of that provider inside `canActivate` property.
 
 It's worth mentioning that guards can receive more than one provider.
 
