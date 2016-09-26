@@ -36,7 +36,9 @@ So let's do it:
 
 {{> DiffBox tutorialName="migration-angular2" step="7.4"}}
 
-> We use the root router because we are inside a child route.
+And we also need to add an import for Angular 2 Forms Module, so let's do it:
+
+{{> DiffBox tutorialName="migration-angular2" step="7.5"}}
 
 This Todo base project uses packages that intent to help developing Blaze Template with Meteor Accounts, and we no longer need it, and it is also "takes control" of sign-up, so we need to remove it.
 
@@ -44,24 +46,26 @@ So let's remove those packages, by running:
 
     meteor remove useraccounts:unstyled useraccounts:flow-routing softwarerero:accounts-t9n
 
-And we also perform some cleanup and remove some files that uses this packages - you can see those modifications in commit #7.5 (or [here](https://github.com/dotansimha/angular2-blaze-migration-tutorial/commit/6c1bab196ba03c8f5d2e933644411733acd62272))
+And we also perform some cleanup and remove some files that uses this packages - you can see those modifications in commit #7.6 (or [here](https://github.com/dotansimha/angular2-blaze-migration-tutorial/commit/6c1bab196ba03c8f5d2e933644411733acd62272))
 
 Great! now we need to make sure that there is an indication for the user that he's logged in, so let's go back to `MainContainerComponent` and and add `currentUser` field:
 
-{{> DiffBox tutorialName="migration-angular2" step="7.6"}}
+{{> DiffBox tutorialName="migration-angular2" step="7.7"}}
 
 > We put that code inside `autorun` because we want it to update when the user login or logout.
 
 Now we should be able to see the user's name if the main page - the only missing thing is to fix and add toggle for the user menu:
 
-{{> DiffBox tutorialName="migration-angular2" step="7.7"}}
+{{> DiffBox tutorialName="migration-angular2" step="7.8"}}
 
 Now, let's do the same for the `SigninComponent` - it's very similar:
 
-{{> DiffBox tutorialName="migration-angular2" step="7.8"}}
+{{> DiffBox tutorialName="migration-angular2" step="7.9"}}
 
 And the Component:
 
-{{> DiffBox tutorialName="migration-angular2" step="7.9"}}
+{{> DiffBox tutorialName="migration-angular2" step="7.10"}}
+
+That's it! we implemented the join/signin forms with Angular 2 !
 
 {{/template}}

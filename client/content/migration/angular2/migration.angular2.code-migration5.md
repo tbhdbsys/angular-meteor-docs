@@ -22,4 +22,12 @@ The `Lists_show_page` Template (`imports/ui/pages/lists-show-page.js`) loads the
 
 {{> DiffBox tutorialName="migration-angular2" step="5.3"}}
 
+We used an external Component, so we need to imports it's NgModule:
+
+{{> DiffBox tutorialName="migration-angular2" step="5.4"}}
+
+In this point - we have a fully working Angular 2 application that wraps the Blaze application!
+
+In the next steps, we will start to migrate and rewrite our Blaze Templates.
+
 {{/template}}

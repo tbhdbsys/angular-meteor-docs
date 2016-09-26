@@ -2,29 +2,23 @@
 
 So now that we are done with the migration, we need to perform some clean-ups and make sure that we remove all the old files.
 
-Let's start by removing the Blaze main import from the `main.ts` file:
-
-{{> DiffBox tutorialName="migration-angular2" step="10.1"}}
-
-Everything should work just fine - that's means that there is no more dependencies for the Blaze Templates!
-
-Next, let's join all the stylesheets we need under the same directory - `imports/styelsheets/`, now they are in `imports/ui/stylesheets/` (commit #10.2).
+Let's join all the stylesheets we need under the same directory - `imports/styelsheets/`, now they are in `imports/ui/stylesheets/` (commit #10.1).
 
 > Make sure to also take `imports/ui/components/lists-show.less` !
 
 And we also need to update the imports in the main less file:
 
-{{> DiffBox tutorialName="migration-angular2" step="10.3"}}
+{{> DiffBox tutorialName="migration-angular2" step="10.2"}}
 
 Now we can remove all the files we no longer use from `imports/ui/` directory - which are ALL of the files, except `errors.js` which we use, so let's move it to `/imports/` directory first, and them remove `imports/ui/` directory (commit #10.4).
+
+We can also removed all client startup files (`imports/startup/client`), since we no longer use them (in commit #10.3).
 
 And let's update the imports of `errors.js` file:
 
 {{> DiffBox tutorialName="migration-angular2" step="10.5" filename="client/imports/components/list-item.component.ts"}}
 
 {{> DiffBox tutorialName="migration-angular2" step="10.5" filename="client/imports/components/list-show.component.ts"}}
-
-We can also removed all client startup files (`imports/startup/client`), since we no longer use them (in commit #10.6).
 
 We can also now remove Meteor packages we no longer use that related to Blaze or Router!
 
@@ -36,6 +30,10 @@ And now we can also use the regular Angular 2 compilers package, so let's remove
 
     meteor remove angular2-with-blaze-compilers
     meteor add angular2-compilers less
+
+We can also remove the import of Blaze Template from the MainComponent:
+
+{{> DiffBox tutorialName="migration-angular2" step="10.6"}}
 
 And the last step, is to remove `.ng2` from the HTML files extension and update it to be `.html`, remember also to update it in the Component `templateUrl` !
 

@@ -14,7 +14,7 @@ TypeScript is the recommended language for writing Angular 2 application.
 
 The TypeScript compiler works for `.ts` files - so let's start by changing the main file (`client/main.js`) into TypeScript file.
 
-{{> DiffBox tutorialName="migration-angular2" step="1.6"}}
+{{> DiffBox tutorialName="migration-angular2" step="1.5"}}
 
 > Don't worry! TypeScript is just an extension for ES2016 - so all of your current code should work just fine!
 

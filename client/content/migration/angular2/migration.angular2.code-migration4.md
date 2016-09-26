@@ -1,27 +1,33 @@
 {{#template name="migration.angular2.code-migration4.md"}}
 
-The route `/` defined as a route that does not do much - it just finds the one of the To-do lists and redirects there (in `imports/ui/pages/root-redirector.js`) - to let's do the same!
-
-We will need to extend `MeteorComponent` in order to use Meteor features inside our Angular 2 Component:
+So let's create a new Component, named `ListRedirectorComponent` - this Component will find a default list, and redirect to it - we will use it as a default route (`/`) later.
 
 {{> DiffBox tutorialName="migration-angular2" step="4.1"}}
 
-And now let's find one of the lists and redirect to it by using the Router:
+> We are looking for a one record of a todo list, and when we have it - we will redirect to the `/lists` route when we have it.
+
+> In this point, we still does not have a Meteor subscription and our Lists collection will be empty - don't worry - we will fix it soon.
+
+> We also used `Tracker.autorun` to run that code when we get the actual data from the collection.
+
+And let's add the new Component into the NgModule:
 
 {{> DiffBox tutorialName="migration-angular2" step="4.2"}}
 
-> Note that we used Angular 2 dependency injection here - we just used the `router : Router` in the constructor and Angular 2 did his magic and provided us the instance of the Router.
-
-But now we have a problem - because the `Lists` collection is always empty! this happens because the Blaze code was the one to use `Meteor.subscribe` and subscribed to the actual data in the collection.
-
-So let's subscribe to the data in our collection - we need to use the `subscribe` method we get from `MeteorComponent` and wraps `Meteor.subscribe` and connects it to Angular 2 environment:
+And now let's add it as default route to our routes file:
 
 {{> DiffBox tutorialName="migration-angular2" step="4.3"}}
 
-> Note that you have to call `super()` when using `MeteorComponent` methods.
+Now, in order to get data in the collection, let's add a Meteor Subscription to the data:
 
-> We also used `this.autorun` to run that code when we get the actual data from the collection.
+{{> DiffBox tutorialName="migration-angular2" step="4.4"}}
 
-So now our main page redirects to one of the lists page when it's loaded - let's continue!
+We used `MeteorObservable` which is an implementation of Meteor that uses RxJS, so we subscribe the data from Meteor subscription, and the return value of it is an RxJS Observable object.
+
+Then we use `subscribe()` again in order to run the actual logic and register to the data subscription.
+
+> The RxJS Observable in this case, called when the Meteor Subscription is in "ready" state!
+
+So now our default Component redirects to one of the lists page when it's loaded - let's continue!
 
 {{/template}}

@@ -10,31 +10,37 @@ So let's start by commenting or removing the FlowRouter definitions:
 
 {{> DiffBox tutorialName="migration-angular2" step="3.1"}}
 
-And now let's define those routes using Angular 2 Router - the definition is in our main component file:
+And now let's define those routes using Angular 2 Router - the definition in a new file that in charge of the routes.
+
+We will start with a single route which in charge of the list view.
+
+Our goal is to create a route to display a specific To-do list, and we will later redirect to this page by default with a random list.
 
 {{> DiffBox tutorialName="migration-angular2" step="3.2"}}
 
-So what do we have here?
-
-- We imported and used `ROUTER_DIRECTIVES` in the Component declaration because we need to declare using those directive.
-- The directives we imported in use in the Component's template - notice that we use `router-outlet` tag - this tag will be the container of the current route.
-- We imported and used the `RouteConfig` decorator - we defined two routes and connected a Component for each route.
-- We imported and added `ROUTER_PROVIDERS` to the `bootstrap` call in order to load the providers of the Router.
-
-Also, we need to add `<base>` tag in our `<head>` for the router:
+Angular 2 routes creates a NgModule with our routes defined, so we need to import it into our module under `imports`:
 
 {{> DiffBox tutorialName="migration-angular2" step="3.3"}}
 
-
-Noticed that we used two components in the routes? `MainContainerComponent` and `ListShowComponent` - let's create a stub component for those components (we will implement them later).
+Also, we need to add `<base>` tag in our `<head>` for the router:
 
 {{> DiffBox tutorialName="migration-angular2" step="3.4"}}
 
+Noticed that we used a new component in the routes? `ListShowComponent` - let's create a stub component for this component (we will implement it later).
+
 {{> DiffBox tutorialName="migration-angular2" step="3.5"}}
 
-And now let's import these component in the main component:
+And now let's import this component in the routes file:
 
-{{> DiffBox tutorialName="migration-angular2" step="3.6"}}
+{{> DiffBox tutorialName="migration-angular2" step="3.6" filename="client/imports/app.routes.ts"}}
+
+And we need to declare that Component in our NgModule `declarations`:
+
+{{> DiffBox tutorialName="migration-angular2" step="3.6" filename="client/imports/app.module.ts"}}
+
+Now we need to point Angular 2 routes where to insert the route component, so we need to use `router-outlet` directive in our main component:
+
+{{> DiffBox tutorialName="migration-angular2" step="3.7"}}
 
 So now our app should be empty, because non of the existing Blaze Templates loaded (they were loaded by the Router according to the current URL).
 

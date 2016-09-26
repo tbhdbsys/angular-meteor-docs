@@ -46,15 +46,9 @@ So now our application is capable to use both Angular 2 and Blaze at the same ti
 
 We will add Angular2-Meteor and Angular 2 core from NPM:
 
-    meteor npm install --save angular2-meteor @angular/platform-browser-dynamic @angular/router-deprecated angular2-meteor-polyfills
+    meteor npm install --save angular2-meteor @angular/core @angular/compiler @angular/common @angular/router @angular/platform-browser @angular/platform-browser-dynamic @angular/forms meteor-rxjs reflect-metadata rxjs zone.js
 
 > This will install Angular2-Meteor, Angular 2 core, Angular 2 router and polyfills that required to run Angular2-Meteor.
-
-We also need to import Angular 2 dependencies, we want to make sure that these dependencies loaded first and once, so in order to verify it we created an Atmosphere package that import the required dependencies.
-
-Let's add the Angular 2 dependencies package:
-
-    meteor add barbatus:angular2-runtime
 
 In this example, the To-do app already have a dependency for LESS, so we need to remove it because the `angular2-with-blaze-compilers` already compilers them to match Angular 2 stylesheets.
 

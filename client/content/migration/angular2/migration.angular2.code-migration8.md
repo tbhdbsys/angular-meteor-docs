@@ -6,17 +6,25 @@ First, let's modify the template, we use the same techniques we learned in the p
 
 {{> DiffBox tutorialName="migration-angular2" step="8.1"}}
 
+And because we are using RxJS Observable as a wrapper for our data, we need to add `async` Pipe in our view:
+
+{{> DiffBox tutorialName="migration-angular2" step="8.2" filename="client/imports/components/list-show.ng2.html"}}
+
 Assuming you already got it, let's migrate the Template code into a Component:
 
-{{> DiffBox tutorialName="migration-angular2" step="8.2"}}
+{{> DiffBox tutorialName="migration-angular2" step="8.2" filename="client/imports/components/list-show.component.ts"}}
 
 > At the moment, we will use the exiting `Todo_item` template to show the items - we will later migrate it too - so we just pass the required params using `getContextForItem`.
 
-Great, now we need to implement the events we had in the Blaze Template, let's add them first to the view:
-
-{{> DiffBox tutorialName="migration-angular2" step="8.3"}}
-
 And now let's implement and migrate the code into the Component's class:
+
+{{> DiffBox tutorialName="migration-angular2" step="8.3" filename="client/imports/components/list-show.component.ts"}}
+
+And let's add the events in the view:
+
+{{> DiffBox tutorialName="migration-angular2" step="8.3" filename="client/imports/components/list-show.ng2.html"}}
+
+And remember we wrapped the Collection? we need to do the same for Todo Collection:
 
 {{> DiffBox tutorialName="migration-angular2" step="8.4"}}
 

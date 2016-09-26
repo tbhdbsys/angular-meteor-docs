@@ -15,9 +15,9 @@ So at the moment, the top most Blaze Template that loaded is the `App_Body` whic
 
 So let's start with the migration - our goal now is to migrate the `App_Body` so we can remove the Blaze files in the end of this step.
 
-The replacement of this component as the main component will be our `MainContainerComponent`.
+The replacement of this component as the main component will be our `MainComponent`.
 
-Let's start with the HTML template - we will create a new file named `client/imports/components/main-container.ng2.html` and copy the contents of the `App_Body` template from the file (`imports/ui/layouts/app-body.html`).
+Let's start with the HTML template - we will create a new file named `client/imports/components/main-component.ng2.html` and copy the contents of the `App_Body` template from the file (`imports/ui/layouts/app-body.html`).
 
 Now let's start to make some modifications to make that file a valid Angular 2 template - we need to remove all the Blaze UI bindings, if, each and such.
 
@@ -37,8 +37,7 @@ We will replace them as follow:
 So now we have the HTML template - we need to add some code to the Angular 2 Component:
 
 - We need to use the new template.
-- We need to add stubs for the methods we use in the template (`isConnected`, `isCurrentList`, `emailLocalPart`)
-- We need to declare the usage of `ROUTER_DIRECTIVES` (we now use `router-outlet`).
+- We need to add stubs for the methods we use in the template (`isConnected`, getter for `userEmail`)
 
 So let's do it:
 
@@ -46,93 +45,75 @@ So let's do it:
 
 > We also commented the code that in charge of redirection to a list page, we will handle that later.
 
-Now, we need to provide the `lists` object to the view - this will be that lists of Todo lists.
-
-We will create a `Mongo.Cursor` object according to the current code we have in `App_body` template helpers:
+Now, because we are implementing a replacement for App_body, we need to load the inner Template instead of the App_Body, so let's change it:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.3"}}
 
-> Notice that we put the definition inside `autorun` scope because we use `Meteor.user` method, which can change if the user login or logout.
+Now, we need to provide the `lists` object to the view - this will be that lists of Todo lists.
 
-Now let's implement the stub methods we created earlier, starting with `isConnected`:
+We will use MeteorObservable again, and create the `lists` as an Observable of the data in the Cursor (we will change the implementation of the Collection soon to support RxJS).
+
+> Because our MongoDB selector is depend on the use connection, and we want to update it when the user log in/out, we need to wrap our query with `Tracker.autorun`.
 
 {{> DiffBox tutorialName="migration-angular2" step="6.4"}}
 
-And `emailLocalPart`:
+> We used the `zone()` method in order to bind the async data fetch to the Angular 2 Zone of the current Component - so when the data changes - the Zone will trigger an update - and the view will update.
+
+Now we need to change the `Mongo.Collection` creation in order to have a Collection with RxJS API - there are multiple ways of doing it - in this case, we just wrap the existing Collection:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.5"}}
 
-Great. Now our next step is to use the existing `Lists_show_page` in the `ListShowComponent` instead of the existing.
+> You can use the `collection` property of the instance in order to get the actual `Mongo.Collection` that wrapped.
 
-First, let's make some modifications in the routes definitions because now we want to load only the template `Lists_show_page` inside the `MainContainerComponent`, and not as root route - it should go inside the main component of Angular 2.
-
-So let's remove the old definitions, and add `...` in the definition of the main route, to indicate that this route can have child routes:
+Now let's implement the stub methods we created earlier, starting with `isConnected`:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.6"}}
 
-And define the list-show route inside the `MainContainerComponent`:
+And the getter `userEmail`:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.7"}}
 
-Now let's update `ListShowComponent` to load `Lists_show_page` instead of `App_body`:
+Now let's keep implementing the missing logic in our `MainComponent` - starting with the router links and the active route indication:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.8"}}
 
-Remember the redirection we commented earlier? now let's add it, but now we will use another approach - we will create a route for that logic, and define it as default route - so when a client access `/` - the redirection component will run and redirect it to the `ListShowComponent`.
+We used a new Routes that not yet implemented - signin and join - so let's create stubs for them:
 
-So let's add the route first:
+{{> DiffBox tutorialName="migration-angular2" step="6.9" filename="client/imports/components/signin.component.ts"}}
 
-{{> DiffBox tutorialName="migration-angular2" step="6.9"}}
+{{> DiffBox tutorialName="migration-angular2" step="6.9" filename="client/imports/components/join.component.ts"}}
 
-And the actual component:
+And let's add them to the NgModule declaration:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.10"}}
 
-Now let's go back to the `MainContainerComponent` and keep implementing the missing logic
-
-We need to add some booleans we use in our view, and we need to implement `isCurrentList` method, which we use in the view to check if the a list item is the selected list:
+And let's add the routes to the Router definition:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.11"}}
 
-> We use `router.currentInstruction` to get the current active route in the Angular 2 router, and from that object we can get the active Component and it's route params.
-
-Few steps ago, we migrated the HTML template and we used a placeholders for the router's links - now let's replace them with real links:
+Let's implement `addNewList` action in our Component, which uses the existing logic from the old Blaze code:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.12"}}
 
-> The use `routerLink` which is a directive that creates a link to Angular 2 route.
-
-At the moment we are still missing the Join and Signin routes, so let's defined them:
+And let's bind the action in the view:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.13"}}
 
-And let's create stubs Components, we will later implement them:
+We need to make some changes in the implementation of the `methods.js` file, because we wrapped the collection with RxJS collection, so let's change the usage to use the actual Mongo.Collection object:
 
-{{> DiffBox tutorialName="migration-angular2" step="6.14" filename="client/imports/components/join.component.ts"}}
+{{> DiffBox tutorialName="migration-angular2" step="6.14"}}
 
-{{> DiffBox tutorialName="migration-angular2" step="6.14" filename="client/imports/components/signin.component.ts"}}
-
-Now the only missing things are the UI events for the buttons such logout and create new list.
-
-So first let's migrate the create new list code, and create a method on the Component:
+Let's implement `logout` method:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.15"}}
 
-And let's add the event registration in the view:
+And bind the click event to the method:
 
 {{> DiffBox tutorialName="migration-angular2" step="6.16"}}
 
-We will do the same for logout:
-
-{{> DiffBox tutorialName="migration-angular2" step="6.17"}}
-
-And use it in the view:
-
-{{> DiffBox tutorialName="migration-angular2" step="6.18"}}
-
 > The only missing thing at the moment is the `currentUser` field in this Component - we will add it in the next step.
 
-Now we can remove the old Blaze Templates from the project (commit #6.19).
+Now we can remove the old Blaze Templates from the project (commit #6.17).
 
 So at the moment, we have fully migrated Blaze Template and all the application features works as before!
 
