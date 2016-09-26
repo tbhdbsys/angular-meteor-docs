@@ -31,11 +31,12 @@ And now we can also use the regular Angular 2 compilers package, so let's remove
     meteor remove angular2-with-blaze-compilers
     meteor add angular2-compilers less
 
+And the last step, is to remove `.ng2` from the HTML files extension and update it to be `.html`, remember also to update it in the Component `templateUrl` !
+
 We can also remove the import of Blaze Template from the MainComponent:
 
 {{> DiffBox tutorialName="migration-angular2" step="10.6"}}
 
-And the last step, is to remove `.ng2` from the HTML files extension and update it to be `.html`, remember also to update it in the Component `templateUrl` !
 
 That's it! In the next chapter we will take about the next step of migration from Blaze to Angular 2.
 
