@@ -22,7 +22,7 @@ In an Angular-ish language we might call it *3 way data binding*.
 
 The way to handle data in Meteor is through the [`Mongo.Collection`](http://docs.meteor.com/#/full/mongo_collection) class. It is used to declare MongoDB collections and manipulate them.
 
-Thanks to [Minimongo](https://atmospherejs.com/meteor/minimongo), Meteor's client-side Mongo emulator, `Mongo.Collection` can be used from both client and server code.
+Thanks to [MiniMongo](https://atmospherejs.com/meteor/minimongo), Meteor's client-side Mongo emulator, `Mongo.Collection` can be used from both client and server code.
 
 In short, Meteor core's setup has:
 
@@ -31,19 +31,41 @@ In short, Meteor core's setup has:
 - a special protocol (called DDP) that synchronizes data between two databases
 - a bunch of small things that make creating an app with Meteor easier and more developer friendly!
 
+# RxJS and MeteorObservable
+
+Angular2-Meteor team also provides an additional package called `meteor-rxjs` which wraps Meteor's original API, and returns RxJs `Observable` instead of using callbacks or promises.
+
+`Observable` is very similar to `Promise`, only it has a continuation flow - which means a multiple `resolve`s.
+
+The lifecycle of `Observable` is built on three parts:
+
+- `next` - called each time the Observable changes.
+- `error` - called on error.
+- `complete` - calls when the data flow is done.
+
+If we try to connect it to our Meteor world and the world of Mongo Collection, so each time a Collection changes - the `next` callback called, and `complete` should not be called because we are using reactive data and we will always waiting for more updates.
+
+We will use this package instead of Meteor's API, because Angular 2 supports RxJS `Observable`s, and provides great features for those who uses it for their application - starting from iterating on object and a faster change detection.
+
+You can read more about `Observable`s and RxJS [here](http://reactivex.io/documentation/observable.html).
+
+> Note that RxJS documentation might be a little intimidating at the beginning - if you having difficult with it - try to read the examples we use in this tutorials and it's might help you.
+
 # Declare a Collection
 
 So first, let's define our first parties collection that will store all our parties.
 
-Add a file `both/collections/parties.collection.ts`:
+We will use `MeteorObservable` static methods to declare the Collection:
+
+So add a file `both/collections/parties.collection.ts`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.1"}}
 
 We've just created a file called `parties.collection.ts`, that contains a CommonJS module called `both/collections/parties`.
+
 This work is done by the TypeScript compiler behind the scenes.
 
-The TypeScript compiler converts `.ts` files to ES5, then registers a CommonJS module with the same name as
-the relative path to the file in the app.
+The TypeScript compiler converts `.ts` files to ES5, then registers a CommonJS module with the same name as the relative path to the file in the app.
 
 That's why we use the special word `export`. We are telling CommonJS what we are allowing the object to be exported from this module into the outside world.
 
@@ -58,18 +80,19 @@ one for client-side and one for server-side. This is often referred to as "isomo
 
 Now that we've created the collection, our client needs to subscribe to it's changes and bind it to our `this.parties` array.
 
-In order to make Angular understand Meteor collection, `angular2-meteor` includes providers.
-
-We added those providers in the first step by using `bootstrap` method from `angular2-meteor-auto-bootstrap` package.
+Because we use `MeteorObservable.Collection` instead of regular Meteor Collection, Angular 2 can easily support this type of data object, and iterate it without any modifications.
 
 Let's import the `Parties` from collections:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.2"}}
 
-and let's bind to the Cursor:
+And now we will create a query on our Collection, and because we used `MeteorObservable`, the return value of `find` will be a `Observable<any[]>` - which is an `Observable` that contains an array of Objects.
+
+And let's bind to the `Observable`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.3"}}
 
+> We used `zone()` method which is a wrapper for the regular `Observable` that do some *Magic* and connects the collection changes into our view using our Component's `Zone`.
 
 # Inserting Parties from the Console
 
@@ -108,8 +131,10 @@ Feel free to try running more actions like updating an object from the console, 
 # Initializing Data on Server Side
 
 Until now we've been inserting party documents to our collection using the Mongo console.
-It would be convenient though to have some initial data pre-loaded into our database. So,
-let's initialize our server with the same parties as we had before.
+
+It would be convenient though to have some initial data pre-loaded into our database.
+
+So, let's initialize our server with the same parties as we had before.
 
 Let's create a file `server/imports/fixtures/parties.ts` and implement `loadParties` method inside to load parties:
 
@@ -120,6 +145,7 @@ Then create `main.ts` to run this method on Meteor startup:
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
 
 Now run the app and you should see the list of parties on the screen.
+
 If not, please, run
 
     meteor reset
