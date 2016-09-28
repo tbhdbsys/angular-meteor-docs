@@ -17,7 +17,7 @@ Since we want to have multiple views in our app we have to move the current list
 
 Let's move the content of AppComponent in `app.component.ts` out into a `PartiesList` component.
 
-Create a new file called `parties-list.component.ts` and put it in `client/imports/parties` directory.
+Create a new file called `parties-list.component.ts` and put it in `client/imports/app/parties` directory.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.1"}}
 
@@ -38,60 +38,46 @@ Also, let's clean-up `app.component.ts` to prepare it for the next steps:
 
 and the template for it, which is `app.component.html`:
 
-You will notice that the interface of your app has disappeared. But don't worry! It will come back later on.
+> You will notice that the interface of your app has disappeared. But don't worry! It will come back later on.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.4"}}
 
-# Routing
-
-Time for a quick talk!
-
-`@angular/router` is completely different then the previous router which is `@angular/router-deprecated`.
-
-With the old router, we defined routes on top of a component using `@RouteConfig` decorator. With the new route we use provider called `provideRouter` to make the routes available in our app.
-
-Let's the code speak for himself.
-
-**Defining routes**
-
-We need to create an array of route definitions. The `RouterConfig` interface comes with help. This way we can be sure that properties of that object are correctly used.
-
-The very basic two properties are `path` and `component`. The path is to define the url and the other one is to bind a component to it.
-
-We will export our routes using `APP_ROUTER_PROVIDERS` variable.
-
-Let's warp it in the `app.routes.ts` file, here's what it suppose to look like:
+And let's add the new Component to the index file:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.5"}}
 
-Now we can use `APP_ROUTER_PROVIDERS` in the `bootstrap` function.
+# Routing
+
+
+`@angular/router` is the package in charge of Routing in Angular 2, and we will learn how to use it now.
+
+This package provides utils to define our routes, and get them as `NgModule` object we just include in our application.
+
+**Defining routes**
+
+We need to create an array of route definitions. The `Route` interface comes with help. This way we can be sure that properties of that object are correctly used.
+
+The very basic two properties are `path` and `component`. The path is to define the url and the other one is to bind a component to it.
+
+We will export our routes using `routes` variable.
+
+Let's warp it in the `app.routes.ts` file, here's what it suppose to look like:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.6"}}
 
-Our app still has to display the view somewhere. We'll use `routerOutlet` component to do this.
+Now we can use `routes` in the `NgModule`, with the `RouteModule` provided by Angular 2:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.7"}}
 
-We need to make it available in the `AppComponent`:
+Our app still has to display the view somewhere. We'll use `routerOutlet` component to do this.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.8"}}
 
-There are two ways to define the app base route.
+Now, because we use a router that based on the browser path and URL - we need to tell Angular 2 router which path is the base path.
 
-By using `APP_BASE_HREF` from `@angular/common`:
-
-    import { bootstrap } from '@angular/core';
-    import { APP_BASE_HREF } from '@angular/common'
-
-    bootstrap(AppComponent, [provide(APP_BASE_HREF, { useValue: '/' })]);
-
-Or simply defining
+We already have it because we used the Angular 2 boilerplate, but if you are looking for it - you can find it in `client/index.html` file:
 
     <base href="/">
-
-in the main html file.
-
-We already have it defined because of angular2-boilerplate usage.
 
 # Parties details
 
@@ -105,9 +91,13 @@ And add a simple template outline for the party details:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.10"}}
 
+And let's add the new Component to the index file:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.11" filename="client/imports/app/parties/index.ts"}}
+
 Now we can define the route:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.11" filename="client/imports/app/app.routes.ts"}}
 
 As you can see, we used `:partyId` inside of the path string. This way we define parameters. For example, `localhost:3000/party/12` will point to the PartyDetailsComponent with `12` as the value of the `partyId` parameter.
 
@@ -119,13 +109,9 @@ Let's add links to the new router details view from the list of parties.
 
 As we've already seen, each party link consists of two parts: the base `PartyDetailsComponent` URL and a party ID, represented by the `partyId` in the configuration. There is a special directive called `routerLink` that will help us to compose each URL.
 
-First we'll import the directive and specify it as a view directive in the `PartiesListComponent`:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.12"}}
-
 Now we can wrap our party in a `routerLink` and pass in the _id as a parameter. Note that the id is auto-generated when an item is inserted into a Mongo Collection.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.13"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.12"}}
 
 As you can see, we used an array. The first element is a path that we want to use and the next one is to provide a value of a parameter.
 
@@ -139,9 +125,14 @@ The next thing is to grab the `partyId` route parameter in order to load the cor
 
 In Angular 2, it's as simple as passing the `ActivatedRoute` argument to the `PartyDetails` constructor:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.13"}}
+
+> We used another RxJS feature called `map` - which transform the stream of data into another object - in this case, we want to get the `partyId` from the `params`, then we subscribe to the return value of this function - and the subscription will be called only with the `partyId` that we need.
+
+> As you might noticed, Angular 2 uses RxJS internally and exposes a lot of APIs using RxJS Observable!
 
 Dependency injection is employed heavily here by Angular 2 to do all the work behind the scenes.
+
 TypeScript first compiles this class with the class metadata that says what argument types this class expects in the constructor (i.e. `ActivatedRoute`),
 so Angular 2 knows what types to inject if asked to create an instance of this class.
 
@@ -151,25 +142,21 @@ parameters for the current URL. Right after that moment if a `PartyDetails` inst
 If you want to read more about dependency injection in Angular 2, you can find an extensive overview in this [article](http://blog.thoughtram.io/angular/2015/05/18/dependency-injection-in-angular-2.html).
 If you are curious about class metadata read more about it [here](http://blog.thoughtram.io/angular/2015/09/17/resolve-service-dependencies-in-angular-2.html).
 
-Let's now load a party instance using a received ID parameter:
+In order to avoid memory leaks and performance issues, we need to make sure that every time we use `subscribe` in our Component - we also use `unsubscribe` when the data is no longer interesting.
+
+In order to do so, we will use Angular 2 interface called `OnDestroy` and implement `ngOnDestroy` - which called when our Component is no longer in the view and removed from the DOM.
+
+So let's implement this:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.14"}}
+
+Now, we need to get the actual `Party` object with the ID we got from the Router, so let's use the `Parties` collection to get it:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="5.15"}}
 
-We also have to make it reactive, because we don't know if the subscription is ready by now.
+> `findOne` return the actual object instead of returning Observable or Cursor.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.16"}}
-
-> To read more about Tracker.autorun [click here](http://docs.meteor.com/api/tracker.html#Tracker-autorun).
-
-To apply any change of `party` to UI, we have to use `NgZone.run()` method.
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.17"}}
-
-> Official Angular2 docs about [NgZone](https://angular.io/docs/js/latest/api/core/index/NgZone-class.html)
-
-And render the party details on the page:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.18"}}
+In our next step we will display the party details inside our view!
 
 # Challenge
 
