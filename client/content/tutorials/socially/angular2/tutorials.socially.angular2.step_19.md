@@ -24,6 +24,8 @@ For example, in order to use **[ng2-pagination](https://www.npmjs.com/package/ng
 
     meteor npm install ng2-pagination --save
 
+You need to import the external module into your own `NgModule`, like we did in the previous steps.
+
 And then just use the ng2-pagination on your angular2-meteor project:
 
 ```js
@@ -45,10 +47,7 @@ import {
     </ul>
 
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  `,
-  directives: [ PaginationControlsCmp ],
-  pipes: [ PaginatePipe ],
-  providers: [ PaginationService ]
+  `
 })
 export class MyComponent {
   public collection: any[] = someArrayOfThings;  
