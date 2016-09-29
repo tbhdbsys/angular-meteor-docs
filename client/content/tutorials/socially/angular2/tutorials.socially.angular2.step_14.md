@@ -64,6 +64,8 @@ And then, change the component to handle the click event and invite a user:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="14.6"}}
 
+> We used `MeteorObservable.call` which triggers a Meteor server method, which triggers `next` callback when the server returns a response, and `error` when the server returns an error.
+
 ### Updating Invited Users Reactively
 
 One more thing before we are done with the party owner's invitation
@@ -74,15 +76,17 @@ when the invitation has been sent successfully.
 It's worth mentioning that each party should change appropriately
 when we invite a user — the party `invited` array should update
 in the local Mongo storage. If we wrap the line where
-we get the new party with the `autorun` method, this code should
+we get the new party with the `MeteorObservable.autorun` method, this code should
 re-run reactively:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="14.7"}}
 
+> Now each time the Party object changes, we will re-fetch it from the collection and assign it to the Component property. Our view known to update itself's because we used `zone()` operator in order to connect between Meteor data and Angular change detection.
+
 Now its time to update our users list.
 We'll move the line that gets the users list into a
 separate method, provided with the list of IDs of already invited users;
-and call it whenever we need: right in the above `autorun` method after the party assignment and in the subscription, like that:
+and call it whenever we need: right in the above `MeteorObservable.autorun` method after the party assignment and in the subscription, like that:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="14.8"}}
 
@@ -137,20 +141,11 @@ This is a perfect use case to add a new stateful pipe, which takes as
 an input a party and a one of the RSVP responses, and calculates the total number of responses
 associated with this, provided as a parameter we'll call "response".
 
-Add a new pipe to the `client/imports/shared/rsvp.pipe.ts` as follows:
+Add a new pipe to the `client/imports/app/shared/rsvp.pipe.ts` as follows:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="14.14"}}
 
-Let's take a look at our 'rsvp' pipe closely. The pipe extends `MeteorComponent` and
-uses its `autorun` method to watch for the party's updates.
-Whenever the party's `rsvp` array changes, new numbers will be
-displayed as required. That's the reason why this pipe is considered stateful:
-it not only transforms one value to another, but also subscribes to the updates.
-
-You may have noticed as well, that the new property `pure` is set to true
-in the `@Pipe` decorator, which tells Angular 2's check detection
-system to check this pipe on changes as well, i.e., in the same way as any other
-component.
+The RSVP Pipe fetches the party and returns the count of `rsvps` Array, due the fact that we binded the change detection of Angular 2 and the Meteor data change, each time the data changes, Angular 2 renders the view again, and the RSVP Pipe will run again and update the view with the new number.
 
 It's also worth mentioning that the arguments of a Pipe implementation inside a template are passed to the `transform` method in the same form. Only difference is that the first argument of `transform` is a value to be transformed. In our case, passed only the RSVP response, hence, we are taking the first
 value in the list.
@@ -160,7 +155,7 @@ An example:
 ```js
 // usage: text | subStr:20:50
 @Pipe({name: 'subStr'})
-class SubStrPipe {
+class SubStrPipe implements PipeTransform {
   transform(text: string, starts: number, ends: number) {
     return text.substring(starts, ends);
   }
@@ -171,7 +166,7 @@ Let's make use of this pipe in the `PartiesList` component:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="14.15"}}
 
-And then in the component itself:
+And let's add the new Pipe to the shared declarations file:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="14.16"}}
 
@@ -190,7 +185,7 @@ to a particular invitation. This step's challenge will be to add this status
 information onto the PartyDetails's view and make it update reactively.
 
 > Hint: In order to make it reactive, you'll need to add one more handler into
-> the party `autorun`, like the `getUsers` method in the this step above.
+> the party `MeteorObservable.autorun`, like the `getUsers` method in the this step above.
 
 # Summary
 
