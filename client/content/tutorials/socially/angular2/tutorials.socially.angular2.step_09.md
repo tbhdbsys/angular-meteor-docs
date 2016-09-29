@@ -58,15 +58,13 @@ We've just created a module, as you already know, one necessary thing is left â€
 
 [Meteor.subscribe](http://docs.meteor.com/#/full/meteor_subscribe) is the receiving end of Meteor.publish on the client.
 
-let's add the following line to subscribe to the `parties` publications:
+:et's add the following line to subscribe to the `parties` publications:
 
-    Meteor.subscribe('parties');
+    MeteorObservable.subscribe('parties').subscribe();
 
-It's very simple, isn't it? And when the subscription is completed, we select parties from the collection:
+> Note that the first `subscribe` belongs to Meteor API, and the return value in this case is an `Observable` because we used `MeteorObservable`. The second `subscribe` is a method of `Observable`.
 
-    Meteor.subscribe('parties', () => {
-      this.parties = Parties.find();
-    });
+> When using `MeteorObservable.subscribe`, the `next` callback called only once - when the subscription is ready to use.
 
 But beyond that simplicity there are two small issues we'll need to solve:
 
@@ -75,24 +73,15 @@ But beyond that simplicity there are two small issues we'll need to solve:
 Each subscription means that Meteor will continue synchronizing (or in Meteor terms, updating reactively) the particular set of data, we've just subscribed to, between server and client.
 If the PartiesList component gets destroyed, we need to inform Meteor to stop that synchronization, otherwise we'll produce a memory leak.
 
+In this case, we will use `OnDestroy` and implement `ngOnDestroy`, and we will use the `Subscription` object returned from our `Observable` - so when the Component is destroyed - the subscription will end.
+
 2) Updating Angular 2's UI
 
-We must inform Angular 2 to perform a UI refresh when new data arrives. In other words, we should setup a subscribe callback to run in Angular 2's zone.
+In order to connect Angular 2 and Meteor, we will use a special `Observable` operator called `zone()` - we use it on the Collection query object, so when the collection changes - the view will update.
 
-These two points were a strong reason to add a new class called `MeteorComponent`
-to the Angular2-Meteor package. `MeteorComponent` has two public methods: `subscribe` and `autorun`.
-If you inherit a component of this class and make use of these methods, you won't need to worry
-about cleanups: `MeteorComponent` will do them for you under the hood when it's needed.
-
-These methods also have a convenient boolean parameter called `autoBind`, which goes lastly.
-As its name suggests, we can tell `subscribe` to run the subscription callback in the change detection zone
-by setting the parameter to true.
-
-So, we are going to extend the `PartiesListComponent` component and make use of `this.subscribe`:
+So, we are going to extend the `PartiesListComponent` component and make use of `MeteorObservable.subscribe`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.4"}}
-
-> Note that we are calling `super()` so that the constructor of the component we are inheriting from will run as well
 
 Now run the app. Whoa, we've just made all the parties come back using pub/sub!
 
@@ -104,15 +93,15 @@ Add UI with the new "Public" checkbox to the right of the "Location" input;
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.5"}}
 
-Update Party in `both/interfaces/party.interface.ts` to include `public: boolean`;
+Update Party in `both/models/party.model.ts` to include `public: boolean`;
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.6"}}
 
-Change the `PartiesFormComponent` and its `addParty` method particularly to reflect changes on the UI;
+Change the initial data on the server in `parties.ts` to contain the `public` field as well:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.7"}}
 
-Change the initial data on the server in `parties.ts` to contain the `public` field as well:
+Now, let's add the public field to our Form declaration:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.8"}}
 
@@ -152,9 +141,13 @@ Looks like a lot of code, but it does something powerful. The privacy query, we 
 
 > Notice that we used `buildQuery.call(this)` calling syntax in order to make context of this method the same as in Meteor.publish and be able to use `this.userId` inside that method.
 
-Let's subscribe to the new publication in the PartyDetails to load one specific party:
+Let's subscribe to the new publication in the `PartyDetails` to load one specific party:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.11"}}
+
+We used `MeteorObservable.subscribe` with the parameter we got from the Router params, and do the same logic of OnDestroy.
+
+> Note that in this case, we use the Subscription of the `MeteorObservable.subscribe`, in order to know when the subscription is ready to use, and then we used `findOne` to get the actual object from the Collection.
 
 Run the app and click on one of the party links. You'll see that the party details page loads with full data as before.
 
