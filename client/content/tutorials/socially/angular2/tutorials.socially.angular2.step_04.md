@@ -17,7 +17,7 @@ First, let's create a simple form with a button that will add a new party.
 In Angular 2, we build a tree of components with the root `App` component and
 child components stemming out of it down to the leaves.
 
-Let's make a new component called `PartiesFormComponent`, and put it inside `parties` directory on the client-side (`client/imports/parties`).
+Let's make a new component called `PartiesFormComponent`, and put it inside `parties` directory on the client-side (`client/imports/app/parties`).
 
 > Notice that we are placing the file inside the `imports` folder.  
 > That is another Meteor special folder name that tells Meteor to load the modules inside it just when some other module is importing it.  
@@ -27,7 +27,7 @@ Let's make a new component called `PartiesFormComponent`, and put it inside `par
 Notice that we are exporting the class `PartiesFormComponent` using ES6 module syntax.
 As a result, you'll be able to import `PartiesFormComponent` in any other component as follows:
 
-    import { PartiesFormComponent } from 'client/imports/parties/parties-form.component';
+    import { PartiesFormComponent } from 'client/imports/app/parties/parties-form.component';
 
 By exporting and importing different modules, you create a modular structure of your app in ES6,
 which is similar to the modules in other script languages like Python.
@@ -43,9 +43,17 @@ We can load the new `PartiesForm` component on the page by placing the `<parties
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.3"}}
 
-There is one more required step in Angular 2 to load a component. The `App` component is not aware of child components unless you explicitly let it know what to look for. Add the `PartiesFormComponent` class as a directive of the `App`, like this:
+There is one more required step in Angular 2 to load a component - we need to declare it in the our `NgModule` so other Components know it existing and can use it.
+
+We will create a new file that `export`s an Array of `Component`s that needed to be declared in the `NgModule`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.4"}}
+
+And now let's load this Array of `Component`s into our `NgModule`:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.5"}}
+
+> The `...` is part of ES2016 language - it spreads the array like it was not an array, you can read more about it [here](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator).
 
 Now we have our parties-form directive showing on our app.
 
@@ -55,19 +63,17 @@ Now let's get back to the form and make it functional.
 
 ## Model-Driven Forms
 
-Since there was a breaking change in forms syntax, we should disable the ability of use deprecated API.
-We can achieve this by using `disableDeprecatedForms` function.
-
-We also need to add providers to our App, `provideForms()` comes with help.
-
-Both functions can be imported from `@angular/forms` module.
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.5"}}
-
-Let's construct our form model. There is a special class for this called [`FormBuilder`](https://angular.io/docs/ts/latest/api/common/FormBuilder-class.html).
-First, we should import necessary dependencies, then build the model and its future fields with help of the `FormBuilder` instance:
+In order to use features of Angular 2 for Forms - we need to import `FormsModule` into our `NgModule`, so let's do it:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.6"}}
+
+> Full documentation of `FormsModule` and a comprehensive tutorial is located [here](https://angular.io/docs/ts/latest/guide/forms.html).
+
+Let's construct our form model. There is a special class for this called [`FormBuilder`](https://angular.io/docs/ts/latest/api/common/FormBuilder-class.html).
+
+First, we should import necessary dependencies, then build the model and its future fields with help of the `FormBuilder` instance:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.7"}}
 
   > As you probably noticed, we used OnInit interface. It brings the ngOnInit method.
   It initialize the directive/component after Angular initializes the data-bound input properties.
@@ -102,20 +108,21 @@ We could also access the control values individually.
 
 Now let's move to the template. We have to bind to `formGroup` and add `formControlName` directives to our inputs.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.8"}}
 
 By `formGroup` we provide an instance of the `FormGroup`, in our case this is the `addForm`.
 
 But what about those `formControlName` directives? As you can see, we implemented them with values that match our `addForm` structure. Each `formControlName` binds value of a form element to the model.
 
 Now each time the user types inside these inputs, the value of the `addForm` and its controls will be automatically updated.
+
 Conversely, if `addForm` is changed outside of the HTML, the input values will be updated accordingly.
 
 Since `name` and `location` are required fields in our model, let's set up validation.
 
 In Angular2, it's less then easy, just add [`Validators.required`](https://angular.io/docs/ts/latest/api/common/Validators-class.html) as a second parameter to a required control:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.9"}}
 
 We can check `addForm.valid` property to determine if the form is valid:  
 
@@ -155,13 +162,14 @@ Since we decided to use `Model-driven Forms` we won't use it, but I think it's w
 Back to the tutorial!
 
 Let's bind a submit event to the add button.
+
 This event will trigger if the button is clicked, or if the user presses enter on the final field.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.10"}}
 
 In Angular 2, events are indicated by the round bracket () syntax. Here we are telling Angular to call a method `addParty` on submit. Let's add the addParty method to our PartiesFormComponent class.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.11"}}
 
 > Note: TypeScript doesn't know which controls properties are available so we have to put them in the squery brackets.
 
@@ -173,8 +181,7 @@ Now, let's add the ability to delete parties.
 
 Let's add an X button to each party in our party list:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.11"}}
-
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.12"}}
 
 Here again, we are binding an event to the class context and passing in the party as a parameter.
 
@@ -182,18 +189,34 @@ Let's go into the class and add that method.
 
 Add the method inside the AppComponent class in `app.component.ts`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.13"}}
 
 The Mongo Collection Parties has a method called "remove". We search for the relevant party by its identifier, `_id`, and delete it.
 
 Now try to delete a few parties. Since Meteor syncs data between clients, you can also watch them being removed from other browser clients.
 
+## Types
+
+So in order to get a better coded application, we will use the power of TypeScript and declare our types, models and interfaces of the database objects.
+
+First, we will get warning and errors from the TypeScript compiler, and we also get great IDE support if you uses WebStorm or VSCode.
+
+So first, let's create a base model for our database entities, which contains the `_id` field:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.14"}}
+
+And let's create a model for a single `Party` object:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.15"}}
+
+We will later use those to indicate the types of our collection and objects in the UI.
 
 # Summary
 
 In this chapter we've seen:
 
-- how easy it is to create a form and access its data using Angular 2's power
-- how easy it is to save that data to the storage using Meteor's power
+- How easy it is to create a form and access its data using Angular 2's power.
+- How easy it is to save that data to the storage using Meteor's power.
+- How to declare TypeScript interfaces and models.
 
 {{/template}}

@@ -16,13 +16,15 @@ We called this approach the _Model-Driven approach_.
 Also, it was mentioned that Angular 2 has support of two-way data binding
 through a special attribute, though with different syntax from Angular 1. We'll get to this shortly.
 
-Let's change `party-details.component.html` into a form, so that we can edit the party details:
+First, let's bind the party details into our view:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.1"}}
+
+Now, let's change `party-details.component.html` into a form, so that we can edit the party details:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="6.2"}}
 
-Notice we have a routerLink button on the page that redirects back to the list (from our previous step's challenge). Here is how to do that:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="6.1"}}
+> Notice we have a routerLink button on the page that redirects back to the list (from our previous step's challenge). Here is how to do that:
 
 ## ngModel
 

@@ -34,61 +34,13 @@ Keep in mind, type-checking is not delivered in the outputted JavaScript. It is 
 
 Some of the typings files have names `angular2.d.ts` and `meteor.d.ts`, which, as you can guess, are used to verify that API of Meteor and Angular 2 are being used correctly in your code
 
-But as you remember, we've mentioned so far only one declaration file `angular2-meteor.d.ts` and used it in the TypeScript config (on the first step), that's thanks to a special TypeScript syntax construction that can link together one declaration files with other declaration files as well as TypeScript files. If you look inside of `angular2-meteor.d.ts` you'll see Angular 2 and Meteor declaration files are linked there by:
-
-    /// <reference path="../angular2/angular2.d.ts" />
-    /// <reference path="../meteor/meteor.d.ts" />
-
-Let’s create our own declaration file for our project in order to learn this type-checking better.
+During this tutorial, we will create our own declaration file for our project in order to learn this type-checking better (we already created one of those earlier).
 
 ## Interfaces
 
-We are going to declare a `Party` interface. You should already be familiar with its properties: "name", "description" and "location". We can make the "Description" property optional.
+We are already declared a `Party` interface, and you should already be familiar with its properties: "name", "description" and "location". We can make the "Description" property optional.
 
 TypeScript's type-checking bases on the "shapes" that types have. And interfaces are TypeScript's means to describe these type "shapes", which is sometimes called "duck typing". More on that you can read [here](http://www.typescriptlang.org/docs/handbook/interfaces.html).
-
-Let's create our `party.interface.ts` file and place it inside the _both/interfaces_ folder with the following content:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.1"}}
-
-Let's start by clarifying the parties collection in `both/collections/parties.collection.ts`.
-Change the code to:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.2"}}
-
-As you can see, we used a generic type `Mongo.Collection<>` with the class parameter set to `Party` instead of just basic `Mongo.Collection` class.
-
-Now let’s fiddle with it. Go to the _client/imports/parties/parties-form.component.ts_ file and change "location" property to, say, "newLocation".
-
-Run the app.
-
-You should see in the console a warning saying in a nutshell: _there is no "newLocation" property defined on the `Party` type._
-
-Let’s torture it more. Go to the _client/imports/parties/parties-list.component.ts_.
-
-There you’ll see the "parties" property assigned to the `Mongo.Cursor<any>` type.
-
-As you can see, TypeScript considers this construct acceptable even there is no `Party` type mentioned.
-
-That's because `any` type accepts all types available in JavaScript, so TypeScript doesn't swear confronting to the OOP principles.
-
-But let’s change it to `Mongo.Cursor<string>`. Run the app and you will see the compiler is unhappy with you again.
-
-TypeScript doesn’t know how to convert `Mongo.Cursor<string>` to `Mongo.Cursor<Party>`, so it considers the assignment to be wrong.
-
-Isn't it cool?! We've made our app more bug resistant with only a few changes!
-
-Let's change `any` to `Party` in the `PartiesListComponent` and `PartyDetailsComponent` to make our code look right:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.3"}}
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.4"}}
-
-Last thing is to add `Party` in the data fixtures:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="7.5"}}
-
-We used `Party[]` because the `parties` variable is an array that holds Party objects.
 
 ## TypeScript Configuration and IDEs
 

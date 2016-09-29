@@ -171,17 +171,29 @@ First thing to do is to add `<app/>` element to the `<body/>`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.7"}}
 
-Great! We still need to tell the Angular2 framework which component should be loaded:
+Great! Now we have our root component, we will need to create NgModule.
+
+NgModule defines the Angular2 module - it's external modules that in use, declarations, providers, exports and defines the main component to bootstrap.
+
+You can read more about NgModule in [Angular 2 documentation](https://angular.io/docs/ts/latest/guide/ngmodule.html).
+
+Let's create our NgModule:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.8"}}
 
-As you can see, we used `angular2-meteor-auto-bootstrap` package.
+> We will import `BrowserModule` which is the basic and internal Component we will use later in our view templates.
 
-In order to make Angular understand Meteor, `angular2-meteor` includes providers.
+And let's declare our `AppComponent` and add it as root component that needed to be bootstraped:
 
-Adding those providers to each component is annoying so we've added a new `bootstrap` that overrides the basic bootstrap method from `@angular/platform-browser-dynamic` and adds some those additional providers to your app.
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.9"}}
 
-Let's run the app:
+Now we need to create an entry point for project - we will create it directly under `client` directory, because we wan't this file to be loaded when Meteor start's our project.
+
+The main entry file uses Angular 2 `bootstrapModule` with our new NgModule:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="0.10"}}
+
+Now let's run the app:
 
     $ meteor
 
@@ -209,7 +221,6 @@ Meteor supports [ES6 modules](https://developer.mozilla.org/en/docs/web/javascri
 This feature provides the ability to use `import` / `export` statements and gives you a full control for modules loading and dependencies.
 
 You can read more about how modules work and how it's based on CommonJS [on the Meteor docs](http://docs.meteor.com/#/full/modules).
-
 
 # Summary
 

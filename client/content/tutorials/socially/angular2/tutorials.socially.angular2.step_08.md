@@ -45,17 +45,17 @@ Now we are going to add `angular2-meteor-accounts-ui` which is a package that co
 
     $ meteor npm install --save angular2-meteor-accounts-ui
 
+Because Angular 2 works with modules, we need to import this package's module into our:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.2"}}
+
 Let's add the `<login-buttons>` tag below of the party form in the PartiesList's template:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.3"}}
 
-Then, import the dependencies:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
-
 Now let's create main stylesheet file (with `.scss` extension), and import the SCSS file from the package:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
 
 Run the code, you'll see a login link below the form. Click on the link and then "create  account" to sign up. Try to log in and log out.
 
@@ -84,42 +84,48 @@ Meteor's base accounts package provides two reactive functions that we are going
 use, [`Meteor.user()`](http://docs.meteor.com/#/full/meteor_user) and [`Meteor.userId()`](http://docs.meteor.com/#/full/meteor_users).
 
 For now, we are going to keep it simple in this app and allow every logged-in user to change a party.
-Change the click handler of the "Add" button in the `parties-form.component.ts`, `addParty`, to save the user ID as well. Also, it'd be useful to add an alert prompting the user to log in if she wants to add or update a party:
+It'd be useful to add an alert prompting the user to log in if she wants to add or update a party.
+
+Change the click handler of the "Add" button in the `parties-form.component.ts`, `addParty`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.6"}}
 
-> Notice that you'll need to update the Party interface in the `party.interface.ts` definition file with the optional new property: `owner?: string`.
-
-Let's do the user check in `party-details.component.ts`:
+Now, change it to save the user ID as well:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="8.7"}}
 
-Typing each time `Meteor.user()` or `Meteor.userId()` might seems tedious.
-Not to mention that there is no way to use these functions in the component templates currently.
+Notice that you'll need to update the Party interface in the `party.interface.ts` definition file with the optional new property: `owner?: string`:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.8"}}
+
+Let's verify the same logic for updating a party:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.9"}}
 
 # canActivate
 
 `CanActivate` is a one of three guard types in the new router. It decides if a route can be activated.
 
-> There is also the `CanActivateChild` which does the same what CanActivate but for a child and the `CanDeactivate` to decide if a route can be deactivated.
+Now you can specify if a component can be accessed only when a user is logged in using the `canActivate` property in the router definition.
 
-Now you can specify if a component can be accessed only when a user is logged in using the `canActivate` property in the `RouterConfig`.
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.10"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.9"}}
+We created a new provider called `canActivateForLoggedIn` that contains a boolean value with login state.
 
-We created a new provider called `CanActivateForLoggedIn` that contains a boolean value with login state.
 As you can see we specified only the name of that provider inside `canActive` property.
 
 It's worth mentioning that guards can receive more than one provider.
 
+Now, we only need to declare this provider in our NgModule:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="8.11"}}
+
 # InjectUser
 
-If you place `@InjectUser` above the PartiesFormComponent it will inject a new user property:
+If you place `@InjectUser` above the `PartiesFormComponent` it will inject a new user property:
 
 __`client/imports/parties/parties-form.component.ts`__:
 
-    ...
-    import { MeteorComponent } from 'angular2-meteor';
     import { InjectUser } from 'angular2-meteor-accounts-ui';
 
     import template from './parties-form.component.html';
@@ -129,20 +135,13 @@ __`client/imports/parties/parties-form.component.ts`__:
       template,
     })
     @InjectUser('user')
-    export class PartiesFormComponent extends MeteorComponent {
+    export class PartiesFormComponent {
       user: Meteor.User;
 
       constructor() {
-        super();
-        ...
         console.log(this.user);
       }
-      ...
     }
-
-> Notice that you have to extend `PartiesFormComponent` with `MeteorComponent` to make the user property reactive.
-> That's because this class adds a few Meteor specific methods to a child inheritor, used to implement reactivity (as above) or Meteor's pub/sub data transfer.
-> We'll learn more about MeteorComponent later on the next step, where we'll be subscribing to server publications.
 
 Call `this.user` and you will see that it returns the same object as `Meteor.user()`.
 The new property is reactive and can be used in any template, for example:
@@ -177,15 +176,12 @@ Let's add a `canActivate` method and `CanActivate` interface, where we get the c
 and check if the corresponding party's owner is the same as the currently logged-in user.
 
   __`client/imports/parties/party-details.component.ts`__:
-
     import { CanActivate } from '@angular/router';
-
     import template from './party-details.component.html';
 
     @Component({
       selector: 'party-details',
-      template,
-      directives: [ROUTER_DIRECTIVES]
+      template
     })
     export class PartyDetails implements CanActivate {
       ...

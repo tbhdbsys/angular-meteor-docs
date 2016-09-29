@@ -21,23 +21,35 @@ meaning "not in", to sift out users that have already been invited to this party
 We used [`$ne`](https://docs.mongodb.org/manual/reference/operator/query/ne/) to select ids
 that are "not equal" to the user's id.
 
-Next, import the users publication to be defined on the server during startup:
+As you can see above, we've introduced a new party property — "invited", which is going to be an array of all invited user IDs.
+
+Now, let's update the Party interface to contain the new field:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="13.2"}}
 
-As you can see above, we've introduced a new party property — "invited", which is going to be an array of all invited user IDs.
-
-Then, let's load the uninvited users of a particular party into the `PartyDetails` component:
+Next, import the users publication to be defined on the server during startup:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="13.3"}}
 
-Now, render the uninvited users on the `PartyDetails`'s page:
+Now, let's create a new Collection with RxJS support for the users collection. Meteor have a built-in users collection, so we just need to wrap it using `MongoObservable.fromExisting`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="13.4"}}
 
-Don't forget to update your `party.interface.ts` file to reflect changes of the `Party` interface:
+And let's create an interface for the User object:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="13.5"}}
+
+Then, let's load the uninvited users of a particular party into the `PartyDetails` component.
+
+We will use `MeteorObservable.subscribe` to subscribe to the data, and we use `.find` on the `Users` collection in order to fetch the user's details:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.6"}}
+
+Now, render the uninvited users on the `PartyDetails`'s page:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.7"}}
+
+> Remember? we use `async` Pipe because we use RxJS `Observable`
 
 # Implementing Pipes
 
@@ -45,22 +57,26 @@ In the previous section we rendered a list of user emails. In Meteor's [accounts
 
 For that purpose we could create a private component method and call it each time in the template to get the right display name, i.e., username or email. Instead, we'll implement a special pipe that handles this, at the same time, we'll learn how to create stateless pipes. One of the advantages of this approach in comparison to class methods is that we can use the same pipe in any component. You can read [the docs](https://angular.io/docs/ts/latest/guide/pipes.html) to know more about Angular2 Pipes.
 
-Let's add a new folder "client/imports/shared" and place a new file `display-name.pipe.ts`. We'll add our new `displayName` pipe inside of it:
+Let's add a new folder "client/imports/app/shared" and place a new file `display-name.pipe.ts`. We'll add our new `displayName` pipe inside of it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="13.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.8"}}
 
 As you can see, there are a couple of things to remember in order to create a pipe:
 
-- define a class with an implemented method `transform` inside
+- define a class that implements the `PipeTransform` interface, with an implemented method `transform` inside
 - place pipe metadata upon this class with the help of the `@Pipe` decorator to notify Angular 2 that this class essentially is a pipe
+
+Now, in order to use this Pipe, we need to declare it in the `NgModule`, so first let's create an index file for all of the shared declarations:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.9"}}
+
+And import the exposed Array in our `NgModule` definition:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.10"}}
 
 To make use of the created pipe, change the markup of the `PartyDetails`'s template to:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="13.7"}}
-
-And, finally, import the new pipe into the component and add it to the view decorator:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="13.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.11"}}
 
 If you were familiar with Angular 1's filters concept, you might believe that Angular 2's pipes are very similar. This is both true and not. While the view syntax and aims they are used for are the same, there are some important differences. The main one is that Angular 2 can now efficiently handle _stateful_ pipes, whereas stateful filters were discouraged in Angular 1. Another thing to note is that Angular 2 pipes are defined in the unique and elegant Angular 2 way, i.e., using classes and class metadata, the same as for components and their views.
 
@@ -72,7 +88,7 @@ In order to cement our knowledge of using pipes, try to create a current user st
 
 In this step, we learned about:
 
-- how to implement pipes in Angular 2, and how they differ filters in Angular 1
+- how to implement pipes in Angular 2, and how they different from filters in Angular 1
 - configuring our accounts-ui package
 - some Mongo query operators like `$nin` & `$ne`
 

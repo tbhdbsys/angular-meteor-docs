@@ -11,86 +11,75 @@ We will achieve this by creating separate views for web and for mobile  so be cr
 
 Using ionic is pretty simple - first, we need to install it:
 
-    $ meteor npm install ionic-angular@2.0.0-beta.10 --save
+    $ meteor npm install ionic-angular --save
 
-We also have to install one missing packages:
+We also have to install missing packages that required by Ionic:
 
-    $ meteor npm install @angular/http --save
+    $ meteor npm install @angular/http @angular/platform-server --save
 
 ### Separate web and mobile things
 
-We're going to have one main entry point that depends on two main components.
+We are going to have two different `NgModule`s, because of the differences in the imports and declarations between the two platforms (web and Ionic).
 
-Since there will be two main components we need to rename `app.component.ts` to `app.web.component.ts`, also `app.web.component.html`.
+We will also separate the main `Component` that in use.
 
-Great so far! You probably noticed that template also has to change:
+So let's start with the `AppComponent` that needed to be change to `app.component.web.ts`, and it's template that ness to be called `app.component.web.html`.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.3"}}
+Now update the usage of the template in the Component:
 
-Web version of the App component no longer needs web/mobile separation, it's going to use only web versions of all components.
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.4"}}
 
-Let's leave only the web version of the Login component inside `app.routes.ts`:
+And modify the import path in the module file:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.5"}}
 
-Since we're going to choose between mobile and web version of the App component we need to defer the bootstrap process somehow.
-
-Let's wrap `bootstrap` with a function called `runWeb`:
+Now let's take back the code we modified in the previous step (#21) and use only the original version of the Login component, because we do not want to have login in our Ionic version (it will be read only):
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.6"}}
 
-Do the same but for the future mobile version:
+Create a root Component for the mobile, and call it `AppMobileComponent`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.7"}}
 
-Now we can run proper version of our app depending on `Meteor.isCordova`:
+And let's create it's view:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.8"}}
 
-In the mobile environment, we need to wait for a device to be ready.
-The `deviceready` event comes with help:
+We used `ion-nav` which is the navigation bar of Ionic, we also declared that our root page is `rootPage` which we will add later.
+
+Now let's create an index file for the ionic component declarations:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.9"}}
 
-### Enhanced by Ionic
+## Modules Separation
 
-It seems like you're ready to start your journey with Ionic framework.
+In order to create two different versions of `NgModule` - one for each platform, we need to identify which platform are we running now - we already know how to do this from the previous step - we will use `Meteor.isCordova`.
 
-At the very beginning, we need to specify a navigation.
-Let's put this inside `app.mobile.component.html`:
+We will have a single `NgModule` called `AppModule`, but it's declaration will be different according to the platform.
+
+So we already know how the web module looks like, we just need to understand how mobile module defined when working with Ionic.
+
+First - we need to import `IonicModule` and declare our root Component there.
+
+We also need to declare `IonicApp` as our `bootstrap` Component, and add every Ionic `page` to the `entryComponents`.
+
+So let's create it and differ the platform:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.10"}}
 
-Now we can move on to create the App component:
+Our next step is to change our selector of the root Component.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.11"}}
+As we already know, the root Component of the web platform uses `<app>` tag as the selector, but in our case the root Component has to be `IonicApp` that uses `<ion-app>` tag.
 
-As you can see, there is no `selector` defined.
+So we need to have the ability to switch `<app>` to `<ion-app>` when using mobile platform.
 
-> With Angular2, you can bootstrap your App using a component with any selector you want.
-With ionic, that selector will be replaced with `ion-app`.
+There is a package called `ionic-selector` we can use in order to get this done, so let's add it:
 
-About other components:
+    $ meteor npm install --save ionic-selector
 
-> There is also no need to specify `selector` for other components but only if they are used as Pages.
-
-Ionic is based on Pages. Think of it as a view that is very similar to Angular2 router's view.
-
-Everything seems to be ready to be bootstraped. With Ionic, we won't be using Angular2's bootstrap, not even `angular2-meteor-auto-bootstrap`.
-
-**Time for `ionicBootstrap`**
-
-We have to use it to bootstrap an App. We also need to use few providers from `angular2-meteor`:
+Now let's use in before bootstrapping our module:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.12"}}
-
-**Different selector problem**
-
-Few steps ago I mentioned about `ion-app` selector. In Socially, we're using `<app/>` as the main component, so it's an issue for us, right now. But don't worry! We have a package for that! It's called [`ionic-selector`](https://github.com/jellyjs/ionic-selector).
-
-We need to install it:
-
-    $ meteor npm install ionic-selector --save
 
 What it does? It's changing tag name of the main component (`app` by default but you can specify any selector you want) to `ion-app`.
 
@@ -110,153 +99,81 @@ will be changed to:
 </body>
 ```
 
-Let's now implement it:
+## Ionic styles & icons
+
+Our next step is to load Ionic style and icons (called `ionicons`) only to the mobile platform.
+
+Start by adding the icons package:
+
+    $ meteor npm install --save ionicons
+
+Also, let's create a style file for the mobile and Ionic styles, and load the icons package to it:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.14"}}
 
-**Ionicons**
+And let's imports this file into our main styles file:
 
-Ionicons is a package that contains the premium icon font for Ionic Framework. It's 100% free and open source, which is amazing!
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.15"}}
 
-    $ meteor npm install ionicons --save
-
-We could import the main scss file of ionicons directly in the `client/main.scss` but let's create a file called `ionic.scss` inside of `client/imports`:
+Now we need to load Ionic stylesheet into our project - but we need to load it only to the mobile platform, without loading it to the web platform (otherwise, it will override our styles):
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.16"}}
 
-**Adding styles**
-
-We're not able to use the main scss file of ionic framework with Meteor but don't worry, we can fix it in few steps.
-
-Let's copy the `ionic.scss` file from `node_modules/ionic-angular/ionic.scss`:
+We also need to add some CSS classes in order to get a good result:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.17"}}
 
-Now we can add proper prefix for each import:
+And let's add the correct class to the `body`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.18"}}
 
-Replace the import of `node_modules/ionic-angular/components.core.scss` with its contents:
+> We created a mechanism that adds `web` or `mobile` class to `<body/>` element depends on environment.
+
+## Share logic between platforms
+
+We want to share the logic of `PartiesListComponent` without sharing it's styles and template - because we want a different looks between the platforms.
+
+In order to do so, let's take all of the logic we have in `PartiesListComponent` and take it to an external file that won't contain the Component decorator:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.19"}}
 
-Do the same for `fonts/ionicons`:
+And let's clean up the `PartiesListComponent`, and use the new class `PartiesList` as base class for this Component:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.20"}}
 
-But let's remove two imports:
+Now let's create a basic view and layout for the mobile platform, be creating a new Component called `PartiesListMobile`, starting with the view:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.21"}}
 
-What's left? Paths update!
+And it's Component, which is very similar to the web version, only it uses different template:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.22"}}
 
-Since `ionic.scss` is ready, we can implement it inside the `client/main.scss` file:
+Now let's add the mobile Component of the parties list to the index file:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.23"}}
 
-There are plenty of issues with Material Design's and Ionic's CSS rules. Let's take care of one as an example, so it will be easier to fix in the future.
-
-We will create a mechanism that adds `web` or `mobile` class to `<body/>` element depends on environment.
-
-First thing to do is to defined those classes:
+And let's add the Component we just created as `rootPage` for our Ionic application:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.24"}}
 
-As you can see, we fixed an issue with scrollbar.
-
-We all like JavaScript so let's move now to more interesting part! We will create a `setClass` function:
+Now we just need declare this Component as `entryComponents` in the `NgModule` definition, and make sure we have all the required external modules in the `NgModule` that loaded for the mobile:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.25"}}
 
-### Using Ionic components
-
-Our main Page would be `PartiesList`, just like in the web version of Socially.
-
-Since we want to keep the logic and only change a view, let's move whole PartiesList class to separate file `parties-list.class.ts`:
+Now we want to add the actual view to the mobile Component, so let's do it:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.26"}}
 
-We need to add few import statements:
+> We used `ion-card` which is an Ionic Component.
+
+And in order to have the ability to load images in the mobile platform, we need to add some logic to the `displayMainImage` Pipe, because Meteor's absolute URL is not the same in mobile:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.27"}}
 
-Let's also use `InjectUser` on that class:
+And let's add the image to the view:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="22.28"}}
-
-We should also update the name:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.30"}}
-
-It seems like we can move on to create a web version of PartiesList component.
-
-First thing to do is to rename `parties-list.component.ts` to `parties-list.web.component.ts`.
-
-Let's leave only necessary things:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.31"}}
-
-What we removed here?
-
-- `OnInit`
-- Meteor related things: `Mongo`, `ReactiveVar`, `Counts`, `InjectUser`, `MeteorComponent`
-- `Parties` collection with the `Party` interface
-
-What we changed?
-
-- Imported `PartiesList` class
-- Extended `PartiesListComponent` with it
-- Injected `PaginationService` and passed it to the parent class
-
-We also have to change the `template` and renamed template file to `parties-list.web.component.html`:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.32"}}
-
-Now we can create a basic view of the mobile version of App component:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.34"}}
-
-And the class of that component:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.35"}}
-
-Because we created two versions of PartiesList component, `app.routes.ts` needs to be updated:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.36"}}
-
-We want to display a list of parties with RSVPs. We can achieve this by adding `RsvpPipe` to the component:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.37"}}
-
-And by using `ionCard` component with few other very helpful components:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.38"}}
-
-Let's set PartiesList component as the default Page of our App:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.39"}}
-
-### Fixing jalik:ufs in development mode
-
-There is an issue with `jalik:ufs` package but only in development mode.
-
-UploadFS sets an absolute path of a file and saves it in collection.
-
-So if you upload a file in development there might be a problem when running an app with a different port.
-
-But we will take care of it!
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.40"}}
-
-Now we can just add it to the component:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.41"}}
-
-and implement it in the view:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.42"}}
 
 ### Fixing fonts
 
@@ -268,9 +185,9 @@ That plugin needs to know which font we want to use and where it should be avail
 
 Configuration is pretty easy, you will catch it by just looking on an example:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.44"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.30"}}
 
-Now `roboto-regular.ttf` is availbe under `http://localhost:3000/fonts/roboto-regular.ttf`.
+Now `roboto-regular.ttf` is available under `http://localhost:3000/fonts/roboto-regular.ttf`.
 
 And... You have an app that works with Ionic!
 

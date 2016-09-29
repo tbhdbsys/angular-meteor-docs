@@ -42,12 +42,14 @@ The PartiesForm component needs to be changed too to reflect type changes:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="16.3"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="16.7"}}
-
 Lastly, we are updating the parties publications. It's interesting to
 see what a small change is required to update the parties search by location: it needs only to point out that "location" property has been moved to "location.name", thanks to Mongo's flexible API:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="16.4"}}
+
+And also let's update it in the view:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.7"}}
 
 Now when we are done with updates, let's reset the database in case it has
 parties of the old type (remember how to do it? Execute `meteor reset`). Then, run the app to make sure that everything is alright and
@@ -60,11 +62,7 @@ Let's add a Meteor package that wraps around that Google Maps NPM package:
 
     $ meteor npm install angular2-google-maps --save
 
-As everything in Angular 2 now is based on the dependency injection's providers,
-this package is not an exception, and has some providers that make sense to install
-globally.
-
-Setting up global dependencies:
+And just like any other external package, we need to import the module into our `NgModule`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="16.6"}}
 
@@ -121,13 +119,9 @@ As you can see, we are looping through the all parties and adding a new marker f
 having checked if the current party has location coordinates available.
 We are also setting the minimum zoom and zero central coordinates on the map to set whole Earth view point initially.
 
-Lastly, import dependecies:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="16.12"}}
-
 # Summary
 
-It turned to be quite easy to add location cooordinates to the parties and make
+It turned to be quite easy to add location coordinates to the parties and make
 changes to the UI, which included Google Maps and location markers on them.
 
 Now we are all set to proceed to more radical visual design changes.
