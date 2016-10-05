@@ -23,27 +23,27 @@ Angular 2 has _common_ directives that provide additional functionality to HTML.
 # Component data
 
 Now we are going to create our initial data model and render it in the view.
-This code will go inside of our Socially class [`constructor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor). A constructor is a function that runs when a class is loaded, thus it loads the initial data for the class.
+This code will go inside of our AppComponent class [`constructor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor). A constructor is a function that runs when a class is loaded, thus it loads the initial data for the class.
 
-We can attach data with the context `this`, referring to the Socially class.
+We can attach data with the context `this`, referring to the AppComponent class.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="2.2"}}
 
 Run the app again.
 
     $ meteor
-    
-You'll see the data model, parties, is now instantiated within the Socially component.    
 
-So our code works now, but probably you IDE or console says something like:
+You'll see the data model, parties, is now instantiated within the AppComponent component.
 
-    client/app.ts (12, 10): Property 'parties' does not exist on type 'Socially'.
+As you probably noticed, we defined `parties` with a `any[]`. Little disclaimer. That's a TypeScript specific thing and it's called Type.
 
-That's a TypeScript error that won't prevent your app from running but will give you extra information about your app.
+What `parties: any[]` means? It tells to your IDE and TypeScript compiler that `parties` property is an array of any value. It could be an Object, Number etc.
 
-To help TypeScript check our app better, lets define our `parties` property as it is, a [type](http://www.typescriptlang.org/Handbook#basic-types) of array made up of [generic](http://www.typescriptlang.org/Handbook#generics) Objects.:
+In one of next chapters we will explain to you a lot more about [Types](http://www.typescriptlang.org/Handbook#basic-types).
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="2.3"}}
+Without this your IDE or console would say something like:
+
+    client/app.ts (13, 8): Property 'parties' does not exist on type 'AppComponent'.
 
 Although we haven't done much, we connected the dots between the presentation, the data, and the business logic.
 

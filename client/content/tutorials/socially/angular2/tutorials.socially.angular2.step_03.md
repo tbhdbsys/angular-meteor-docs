@@ -94,6 +94,10 @@ And let's bind to the `Observable`:
 
 > We used `zone()` method which is a wrapper for the regular `Observable` that do some *Magic* and connects the collection changes into our view using our Component's `Zone`.
 
+Because of that, we now need to add `AsyncPipe`:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.4"}}
+
 # Inserting Parties from the Console
 
 At this point we've implemented a rendering of a list of parties on the page.
@@ -138,11 +142,23 @@ So, let's initialize our server with the same parties as we had before.
 
 Let's create a file `server/imports/fixtures/parties.ts` and implement `loadParties` method inside to load parties:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
 
 Then create `main.ts` to run this method on Meteor startup:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.6"}}
+
+To make it fully TypeScript compatible, we need to define `Party` interface:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
+
+And add it in few places:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.8"}}
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.9"}}
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.10"}}
 
 Now run the app and you should see the list of parties on the screen.
 

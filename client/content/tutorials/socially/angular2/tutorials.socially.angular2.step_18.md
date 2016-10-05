@@ -65,13 +65,13 @@ PartiesForm component is done, so we can move one level higher in the component'
 
 To make it all look so much better, let's add couple of rules to css:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.9"}}
 
 # PartyDetails component
 
 We also need to update the PartyDetails component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.10"}}
 
 # Custom Authentication Components
 
@@ -81,11 +81,11 @@ First, let's remove the login-buttons from the navigation bar, and replace it wi
 
 We will also add `routerLink` to each button, and add logic to hide/show buttons according to the user's login state:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.11"}}
 
 Let's use `InjectUser` decorator, just like we did in one of the previous chapters.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.13"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.12"}}
 
 As you can see, we used `DisplayNamePipe` in the view so we have to import it.
 
@@ -99,7 +99,7 @@ First component, is to log in user to the app.
 
 We will need a form and the login method, so let's implement them:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.13"}}
 
 > Notice that we used `NgZone` in our constructor in order to get it from the Dependency Injection, and we used it before we update the result of the login action - we need to do this because the Meteor world does not update Angular's world, and we need to tell Angular when to update the view since the async result of the login action comes from Meteor's context.
 
@@ -115,55 +115,55 @@ In the callback of Meteor.loginWithPassword's method, we have the redirection to
 
 Let's add the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.14"}}
 
 We also need to define the `/login` route:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.16"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.15"}}
 
 And now let's create an index file for the auth files:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.17"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.16"}}
 
 And import the exposed Array into the `NgModule`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.18"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.17"}}
 
 ### Signup component
 
 The Signup component looks pretty much the same as the Login component. We just use different method, `Accounts.createUser()`. Here's [the link](http://docs.meteor.com/api/passwords.html#Accounts-createUser) to the documentation.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.19"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.18"}}
 
 And the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.20"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.19"}}
 
 And add it to the index file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.21"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.20"}}
 
 And the `/signup` route:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.22"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.21"}}
 
 ### Recover component
 
 This component is helfup when a user forgets his password. We'll use `Accounts.forgotPassword` method:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.23"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.22"}}
 
 Create the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.24"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.23"}}
 
 And add it to the index file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.25"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.24"}}
 
 And add the `/reset` route:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.26"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.25"}}
 
 That's it! we just implemented our own authentication components using Meteor's Accounts API and Angular2-Material!
 
