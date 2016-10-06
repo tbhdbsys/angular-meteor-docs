@@ -31,7 +31,7 @@ In short, Meteor core's setup has:
 - a special protocol (called DDP) that synchronizes data between two databases
 - a bunch of small things that make creating an app with Meteor easier and more developer friendly!
 
-# RxJS and MeteorObservable
+# RxJS and MongoObservable
 
 Angular2-Meteor team also provides an additional package called `meteor-rxjs` which wraps Meteor's original API, and returns RxJs `Observable` instead of using callbacks or promises.
 
@@ -55,7 +55,7 @@ You can read more about `Observable`s and RxJS [here](http://reactivex.io/docume
 
 So first, let's define our first parties collection that will store all our parties.
 
-We will use `MeteorObservable` static methods to declare the Collection:
+We will use `MongoObservable` static methods to declare the Collection:
 
 So add a file `both/collections/parties.collection.ts`:
 
@@ -80,13 +80,13 @@ one for client-side and one for server-side. This is often referred to as "isomo
 
 Now that we've created the collection, our client needs to subscribe to it's changes and bind it to our `this.parties` array.
 
-Because we use `MeteorObservable.Collection` instead of regular Meteor Collection, Angular 2 can easily support this type of data object, and iterate it without any modifications.
+Because we use `MongoObservable.Collection` instead of regular Meteor Collection, Angular 2 can easily support this type of data object, and iterate it without any modifications.
 
 Let's import the `Parties` from collections:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.2"}}
 
-And now we will create a query on our Collection, and because we used `MeteorObservable`, the return value of `find` will be a `Observable<any[]>` - which is an `Observable` that contains an array of Objects.
+And now we will create a query on our Collection, and because we used `MongoObservable`, the return value of `find` will be a `Observable<any[]>` - which is an `Observable` that contains an array of Objects.
 
 And let's bind to the `Observable`:
 
