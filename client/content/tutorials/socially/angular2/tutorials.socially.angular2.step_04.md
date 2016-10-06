@@ -175,6 +175,22 @@ In Angular 2, events are indicated by the round bracket () syntax. Here we are t
 
 Open a different browser, fill out the form, submit and see how the party is added on both clients.
 
+## Types
+
+In order to get a better coded application, we will use the power of TypeScript and declare our types, models and interfaces of the database objects.
+
+First, we will get warning and errors from the TypeScript compiler, and we also get great IDE support if you uses WebStorm or VSCode.
+
+So first, let's create a base model for our database entities, which contains the `_id` field:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.14"}}
+
+And let's create a model for a single `Party` object:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.15"}}
+
+We will later use those to indicate the types of our collection and objects in the UI.
+
 ### (click)
 
 Now, let's add the ability to delete parties.
@@ -194,22 +210,6 @@ Add the method inside the AppComponent class in `app.component.ts`:
 The Mongo Collection Parties has a method called "remove". We search for the relevant party by its identifier, `_id`, and delete it.
 
 Now try to delete a few parties. Since Meteor syncs data between clients, you can also watch them being removed from other browser clients.
-
-## Types
-
-So in order to get a better coded application, we will use the power of TypeScript and declare our types, models and interfaces of the database objects.
-
-First, we will get warning and errors from the TypeScript compiler, and we also get great IDE support if you uses WebStorm or VSCode.
-
-So first, let's create a base model for our database entities, which contains the `_id` field:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.14"}}
-
-And let's create a model for a single `Party` object:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.15"}}
-
-We will later use those to indicate the types of our collection and objects in the UI.
 
 # Summary
 
