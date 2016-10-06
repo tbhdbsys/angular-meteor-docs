@@ -79,7 +79,7 @@ Either that the owner parameter exists and it's the current logged in user (whic
 
 So now let's add the public flag to the parties and see how it affects the parties the client gets.
 
-Let's add a checkbox to the new party form in `ParyAdd`:
+Let's add a checkbox to the new party form in `PartyAdd`:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.7"}}
 
