@@ -141,7 +141,7 @@ Let's handle this event in the template first and then add a method to the `Part
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="12.11"}}
 
-As you can see, the pagination controls component fires the `onChange` event, calling the `onPageChanged` method with
+As you can see, the pagination controls component fires the `pageChange` event, calling the `onPageChanged` method with
 a special event object that contains the new page number to set. Add the `onPageChanged` method:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="12.12"}}
@@ -177,7 +177,7 @@ Let's publish the total number of parties as follows:
 {{> DiffBox tutorialName="meteor-angular2-socially" step="12.14"}}
 
 > Notice that we are passing `{ noReady: true }` in the last argument so
-> that the publication will be ready only after our main cursor is loads.
+> that the publication will be ready only after our main cursor is loaded, instead of waiting for Counts.
 
 We've just created the new _numberOfParties_ publication.
 Let's get it reactively on the client side using the `Counts` object, and, at the same time,
