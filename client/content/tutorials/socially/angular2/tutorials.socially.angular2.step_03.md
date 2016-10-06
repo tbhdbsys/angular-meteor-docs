@@ -67,7 +67,7 @@ This work is done by the TypeScript compiler behind the scenes.
 
 The TypeScript compiler converts `.ts` files to ES5, then registers a CommonJS module with the same name as the relative path to the file in the app.
 
-That's why we use the special word `export`. We are telling CommonJS what we are allowing the object to be exported from this module into the outside world.
+That's why we use the special word `export`. We are telling CommonJS that we are allowing the object to be exported from this module into the outside world.
 
 Meteor has a series of special folder names, including the `client` folder. All files within a folder named `client` are loaded on the client only. Likewise, files in a folder called `server` are loaded on the server only.
 
