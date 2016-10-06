@@ -20,7 +20,7 @@ First we need to remove the `autopublish` Meteor package.
 
 `autopublish` is added to any new Meteor project.
 Like it was mentioned before, it pushes a full copy of the database to each client.
-It helped us rapidly developer our app, but it's not so good for privacy...
+It helped us rapidly develop our app, but it's not so good for privacy...
 
 Write this command in the console:
 
@@ -87,7 +87,7 @@ Now run the app. Whoa, we've just made all the parties come back using pub/sub!
 
 As it's mentioned earlier, it'd be nice for the app to implement some basic security and show parties based on who owns them. Let's do it.
 
-Firstly, we'll add a new `public` field to the party data several steps:
+Firstly, we'll add a new `public` field to the party data through several steps:
 
 Add UI with the new "Public" checkbox to the right of the "Location" input;
 
