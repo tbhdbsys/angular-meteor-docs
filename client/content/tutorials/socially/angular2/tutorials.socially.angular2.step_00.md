@@ -187,7 +187,7 @@ And let's declare our `AppComponent` and add it as root component that needed to
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="0.9"}}
 
-Now we need to create an entry point for project - we will create it directly under `client` directory, because we wan't this file to be loaded when Meteor start's our project.
+Now we need to create an entry point for project - we will create it directly under `client` directory, because we want this file to be loaded when Meteor starts our project.
 
 The main entry file uses Angular 2 `bootstrapModule` with our new NgModule:
 
