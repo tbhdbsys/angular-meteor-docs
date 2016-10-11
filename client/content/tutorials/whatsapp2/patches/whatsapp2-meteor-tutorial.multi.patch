@@ -1140,45 +1140,37 @@ index 5869be0..772cc90 100644
 2.7.4
 
 
-From b60aeb44c538dba976bd4c4e57fd56aa43af63d9 Mon Sep 17 00:00:00 2001
+From 83fdc3348da6e7c445f1f6102d397b75e3f031a3 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:09:59 +0300
 Subject: [PATCH 016/120] Step 2.5: Added the chats page template
 
 ---
- client/imports/pages/chats/chats.component.html | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
+ client/imports/pages/chats/chats.component.html | 9 +++++++++
+ 1 file changed, 9 insertions(+)
  create mode 100644 client/imports/pages/chats/chats.component.html
 
 diff --git a/client/imports/pages/chats/chats.component.html b/client/imports/pages/chats/chats.component.html
 new file mode 100644
-index 0000000..2d72504
+index 0000000..0c55ce6
 --- /dev/null
 +++ b/client/imports/pages/chats/chats.component.html
-@@ -0,0 +1,17 @@
+@@ -0,0 +1,9 @@
 +<ion-header>
 +  <ion-navbar>
-+    <ion-title>Home</ion-title>
++    <ion-title>Chats</ion-title>
 +  </ion-navbar>
 +</ion-header>
 +
 +<ion-content padding>
-+  <h2>Welcome to Ionic!</h2>
-+  <p>
-+    This starter project comes with simple tabs-based layout for apps
-+    that are going to primarily use a Tabbed UI.
-+  </p>
-+  <p>
-+    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-+    update any existing page or create new pages.
-+  </p>
++  <h2>Welcome!</h2>
 +</ion-content>
 \ No newline at end of file
 -- 
 2.7.4
 
 
-From 2f91bf7661c54d508cc49ee5249abe3b933b2b87 Mon Sep 17 00:00:00 2001
+From f24fa778697f2524bcffae57b2ddf033174aadbc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:10:10 +0300
 Subject: [PATCH 017/120] Step 2.6: Added the chats page component
@@ -1211,7 +1203,7 @@ index 0000000..b79d011
 2.7.4
 
 
-From e66219c4965981a701e83b91ce587ae2529dc7a1 Mon Sep 17 00:00:00 2001
+From dd1dd795c755863402111d93b6814fadc8360dcc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:10:32 +0300
 Subject: [PATCH 018/120] Step 2.7: Added the chats page to the NgModule
@@ -1251,7 +1243,7 @@ index e2721dd..91af1b1 100644
 2.7.4
 
 
-From 453828ec6599241bb4a8758da75480a2f1f477d3 Mon Sep 17 00:00:00 2001
+From 41b7808ecd6dc3fdc2fbfeb3fe15b785feea789a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:11:22 +0300
 Subject: [PATCH 019/120] Step 2.8: Use the chats page component in ion-tabs
@@ -1289,7 +1281,7 @@ index 1c13731..4a7160d 100644
 2.7.4
 
 
-From bad99718abb1cbbc6abe8b217517e8ead8ad383e Mon Sep 17 00:00:00 2001
+From 8458ee32c66786e6b1769f4c142e7bf0e241784d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:53:01 +0300
 Subject: [PATCH 020/120] Step 2.9: Add whatsapp theme variable
@@ -1316,7 +1308,7 @@ index 186f82b..4022576 100644
 2.7.4
 
 
-From 9cf9eebada421d831d6a2282b1f44cf697683527 Mon Sep 17 00:00:00 2001
+From af027596bbca29041c3002d1c7b0594a74a30544 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:53:26 +0300
 Subject: [PATCH 021/120] Step 2.10: Added theme usage for tabs component
@@ -1342,7 +1334,7 @@ index 4a7160d..bcaed58 100644
 2.7.4
 
 
-From eac47c467a84093a1c49f64a896266bfb801ff6a Mon Sep 17 00:00:00 2001
+From 5467651a3c284fc9d4da82d57e98415120521ce6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:59:36 +0300
 Subject: [PATCH 022/120] Step 2.11: Added message model
@@ -1368,7 +1360,7 @@ index 0000000..1165f7f
 2.7.4
 
 
-From 7766ba06ff0425b0ab6b732886b028b953a38126 Mon Sep 17 00:00:00 2001
+From 29e7729e27a2953fe3d63494b9140d078eb5ad8c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:59:51 +0300
 Subject: [PATCH 023/120] Step 2.12: Added chat model
@@ -1397,7 +1389,7 @@ index 0000000..36e42ca
 2.7.4
 
 
-From b7cf0db76f9b3309c0dbfc992308042733830e98 Mon Sep 17 00:00:00 2001
+From b657200929761fe5d9252c50b37c10c496ebce4a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:01:22 +0300
 Subject: [PATCH 024/120] Step 2.13: Added moment
@@ -1441,7 +1433,7 @@ index 4a62321..d1f10e1 100644
 2.7.4
 
 
-From 627b6a847eccb1b78dd34a308d8447efd2ef7c11 Mon Sep 17 00:00:00 2001
+From 0a98cb60a269acc8f53a763e88ae1d7567e5c6b9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:15:02 +0300
 Subject: [PATCH 025/120] Step 2.14: Added list of stub chats
@@ -1524,25 +1516,24 @@ index b79d011..1d524c5 100644
 2.7.4
 
 
-From f8001a1f25581d9cb73cfad3e3f43e61ce93e6f6 Mon Sep 17 00:00:00 2001
+From 0dd557f66ac6d6a5c7ce61f9c49eb39e37f7c378 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:18:22 +0300
 Subject: [PATCH 026/120] Step 2.15: Added chats view layout
 
 ---
- client/imports/pages/chats/chats.component.html | 36 ++++++++++++++++---------
- 1 file changed, 23 insertions(+), 13 deletions(-)
+ client/imports/pages/chats/chats.component.html | 26 +++++++++++++++++++++----
+ 1 file changed, 22 insertions(+), 4 deletions(-)
 
 diff --git a/client/imports/pages/chats/chats.component.html b/client/imports/pages/chats/chats.component.html
-index 2d72504..54c523c 100644
+index 0c55ce6..54c523c 100644
 --- a/client/imports/pages/chats/chats.component.html
 +++ b/client/imports/pages/chats/chats.component.html
-@@ -1,17 +1,27 @@
+@@ -1,9 +1,27 @@
  <ion-header>
 -  <ion-navbar>
--    <ion-title>Home</ion-title>
 +  <ion-navbar color="whatsapp">
-+    <ion-title>Chats</ion-title>
+     <ion-title>Chats</ion-title>
 +
 +    <ion-buttons end>
 +      <button ion-button icon-only class="add-chat-button"><ion-icon name="person-add"></ion-icon></button>
@@ -1552,15 +1543,7 @@ index 2d72504..54c523c 100644
  </ion-header>
  
 -<ion-content padding>
--  <h2>Welcome to Ionic!</h2>
--  <p>
--    This starter project comes with simple tabs-based layout for apps
--    that are going to primarily use a Tabbed UI.
--  </p>
--  <p>
--    Take a look at the <code>src/pages/</code> directory to add or change tabs,
--    update any existing page or create new pages.
--  </p>
+-  <h2>Welcome!</h2>
 -</ion-content>
 \ No newline at end of file
 +<ion-content class="chats-page-content">
@@ -1583,7 +1566,7 @@ index 2d72504..54c523c 100644
 2.7.4
 
 
-From bf27fb55934f06299debead4e92478d13cd9c3ad Mon Sep 17 00:00:00 2001
+From 077f95ecad763a52738f75d9766f69627c438122 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:18:38 +0300
 Subject: [PATCH 027/120] Step 2.16: Added some css styles to the chats list
@@ -1624,7 +1607,7 @@ index 0000000..6470e09
 2.7.4
 
 
-From 686180e262cc7ba88088deb69d4cfea50a4adbb3 Mon Sep 17 00:00:00 2001
+From 3a56e77a646d7e086283948ee72d66b710ab7609 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:18:56 +0300
 Subject: [PATCH 028/120] Step 2.17: Import the new styles into the Component
@@ -1658,7 +1641,7 @@ index 1d524c5..815d4b6 100644
 2.7.4
 
 
-From 636e970031bc99812d5494e3ea72b2849dfef2c4 Mon Sep 17 00:00:00 2001
+From e778d03df6149d16df2722067cb935f1081be7a9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:20:11 +0300
 Subject: [PATCH 029/120] Step 2.18: Added angular moment package
@@ -1683,7 +1666,7 @@ index b116a8b..f99ebe5 100644
 2.7.4
 
 
-From ed91e14b7ce437fc821697a4d27b0e451f36f9bf Mon Sep 17 00:00:00 2001
+From 9af033012391c63df31f2840b81bbcba0d04ba69 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:20:34 +0300
 Subject: [PATCH 030/120] Step 2.19: Added MomentModule to the NgModule
@@ -1718,7 +1701,7 @@ index 91af1b1..b915e99 100644
 2.7.4
 
 
-From a55928869aa71f0b63438c6d0d290832c2c7374a Mon Sep 17 00:00:00 2001
+From 06554a479bf09d264d849e6147b44495b6f059fa Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:21:04 +0300
 Subject: [PATCH 031/120] Step 2.20: Use angular2-moment pipe
@@ -1744,7 +1727,7 @@ index 54c523c..a2878fb 100644
 2.7.4
 
 
-From 7d0eb1ed5d0441867221e9724176a1b7b2f944fa Mon Sep 17 00:00:00 2001
+From 8091478b5254625b4c4d8e28083a4aefd2829dd9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 20:50:52 +0200
 Subject: [PATCH 032/120] Step 2.21: Add declaration for .scss files
@@ -1772,7 +1755,7 @@ index 1684801..b7c82f2 100644
 2.7.4
 
 
-From 48ff810e3ea8850952d0c5f68ab41be964274c74 Mon Sep 17 00:00:00 2001
+From 6bbc0c525df942dd3055ac77216120142a9e4a81 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:23:19 +0300
 Subject: [PATCH 033/120] Step 3.1: Add the Chats collection
@@ -1796,7 +1779,7 @@ index 0000000..0f46dc2
 2.7.4
 
 
-From 4acdf3edd125c93645ab7aae593f2b93f625a16b Mon Sep 17 00:00:00 2001
+From f71c918e8aae6a58275110a4b2be6b302103678f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:23:32 +0300
 Subject: [PATCH 034/120] Step 3.2: Add the Messages collection
@@ -1820,7 +1803,7 @@ index 0000000..28e2eb6
 2.7.4
 
 
-From 3391cb51e9f657113ded62b8492e878fb884bb2a Mon Sep 17 00:00:00 2001
+From efce6e95d829fb397197db395b0f97fd4158ea07 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 12:13:08 +0300
 Subject: [PATCH 035/120] Step 3.3: Added the stub data to the server
@@ -1904,7 +1887,7 @@ index ca6ff2f..e84b373 100644
 2.7.4
 
 
-From 0f78eca745d56a67076666c6f25427b7f72e6438 Mon Sep 17 00:00:00 2001
+From f172960e27a4374e3671c6fed79b0b9c2c6395e0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 12:13:24 +0300
 Subject: [PATCH 036/120] Step 3.4: Add 'chatId' property to message model
@@ -1929,7 +1912,7 @@ index 1165f7f..c30bc6f 100644
 2.7.4
 
 
-From c093ff51022c213cc377f51d4c3104d3e3ed2c9d Mon Sep 17 00:00:00 2001
+From 5cc11f5cb881c45bbcc16e14934b4dcba023f887 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:07:11 +0300
 Subject: [PATCH 037/120] Step 3.5: Added lodash to the project
@@ -1967,7 +1950,7 @@ index d1f10e1..41d6907 100644
 2.7.4
 
 
-From 3c534e68cd9c1c817aa6ef03cf2aad5dbf66cfbb Mon Sep 17 00:00:00 2001
+From 91b09ab1191515bd2462efcca63c459a5b74a1d6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:07:34 +0300
 Subject: [PATCH 038/120] Step 3.6: Added the chats with the last message using
@@ -2080,7 +2063,7 @@ index 815d4b6..ef0180d 100644
 2.7.4
 
 
-From af8e15bdf22ca2e7be573abcca2a0b7a53537da3 Mon Sep 17 00:00:00 2001
+From 78de0d86fad3c99306a94b9c4bec5ae9e1d7ceab Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:10:33 +0300
 Subject: [PATCH 039/120] Step 4.1: Added showMessage method
@@ -2124,7 +2107,7 @@ index ef0180d..d590637 100644
 2.7.4
 
 
-From 8e62e92feb91522c757ed6b97028d22cee6a0304 Mon Sep 17 00:00:00 2001
+From 4fc234abd5fb195176483ccf8c623fabf56316e2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:10:54 +0300
 Subject: [PATCH 040/120] Step 4.2: Added the action to the button
@@ -2150,7 +2133,7 @@ index a2878fb..e4df49a 100644
 2.7.4
 
 
-From 3731f111eab7431c5974e37de9d1fdd5c1185e95 Mon Sep 17 00:00:00 2001
+From 5be481b0aa5658ec93d43b5f69a539d3179a8cd4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:38:38 +0300
 Subject: [PATCH 041/120] Step 4.3: Create a stub for the component
@@ -2192,7 +2175,7 @@ index 0000000..5829e6f
 2.7.4
 
 
-From b6a22db6335e49782a5f6cc6ce4e16c761fb5310 Mon Sep 17 00:00:00 2001
+From 294d5bf5f5435ea1487cba5eba1c4c67a336c62f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:38:51 +0300
 Subject: [PATCH 042/120] Step 4.4: Added the Component to the NgModule
@@ -2234,7 +2217,7 @@ index b915e99..2b2abe3 100644
 2.7.4
 
 
-From 7a7bc2b03dc83edf8833e50ac2b80918eab67e2a Mon Sep 17 00:00:00 2001
+From 52c0b17657078ebfdbfe90acf8faf7894e55c783 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:39:02 +0300
 Subject: [PATCH 043/120] Step 4.5: Added the correct import
@@ -2259,7 +2242,7 @@ index d590637..3a56693 100644
 2.7.4
 
 
-From 0e093517cf89178a33e936ca226ba651951c1ca5 Mon Sep 17 00:00:00 2001
+From 23881ed9777402b1cb1cc4b80621caaf400f8644 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:49:46 +0300
 Subject: [PATCH 044/120] Step 4.6: Add basic messages component
@@ -2321,7 +2304,7 @@ index 5829e6f..1da077c 100644
 2.7.4
 
 
-From 6eb41437f9254f62c1cfe63a1e8c7c4773e921fa Mon Sep 17 00:00:00 2001
+From dd8513bf850864ae21f0a15651f0d89e2cd917e1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:49:58 +0300
 Subject: [PATCH 045/120] Step 4.7: Add 'ownership' property to message model
@@ -2346,7 +2329,7 @@ index c30bc6f..d4b4f99 100644
 2.7.4
 
 
-From 9c4a3ca1ff4ac175361c4713f64148b05beebd5b Mon Sep 17 00:00:00 2001
+From ac5d76b726f3736622a31d0480b1d609ea2f6e2a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:50:10 +0300
 Subject: [PATCH 046/120] Step 4.8: Add basic messages view template
@@ -2392,7 +2375,7 @@ index 0000000..0ecb9a5
 2.7.4
 
 
-From daae8bc7399613650c1b838ce18454f3fa1529c0 Mon Sep 17 00:00:00 2001
+From 19fd0765056f3677ecbf9d86c19500c90fe38978 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:51:08 +0300
 Subject: [PATCH 047/120] Step 4.9: Add basic messages stylesheet
@@ -2506,7 +2489,7 @@ index 0000000..c30e573
 2.7.4
 
 
-From 4ea5a88d6b375ffc7f02b80b7aa3711c56663ef4 Mon Sep 17 00:00:00 2001
+From 7dbf24ad6713045522e513bdf2290d98be4cafc7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:51:19 +0300
 Subject: [PATCH 048/120] Step 4.10: Load the stylesheet into the Component
@@ -2539,7 +2522,7 @@ index 1da077c..14fcf7e 100644
 2.7.4
 
 
-From 070ddf72a390bf6efb54edfd0506273e2a18a515 Mon Sep 17 00:00:00 2001
+From c667a38e6fd4668e2131b80a4ed15a19d0ec5661 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:55:26 +0300
 Subject: [PATCH 049/120] Step 4.11: Added missing assets
@@ -3163,7 +3146,7 @@ HcmV?d00001
 2.7.4
 
 
-From 5908649c3dc11ea0ae0763f2c3189c1a584564ad Mon Sep 17 00:00:00 2001
+From 95d69db0a186996b6ef3473558a7fa2fbfa2f9e6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:59:51 +0300
 Subject: [PATCH 050/120] Step 4.12: Apply date format pipe to messages view
@@ -3190,7 +3173,7 @@ index 0ecb9a5..0c435de 100644
 2.7.4
 
 
-From caf5afd8b7af11a19e3bfcfe13fbd02634f2b65c Mon Sep 17 00:00:00 2001
+From fe9e658b7921fc71e5d0db511feb9b0166da26b7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:07:05 +0300
 Subject: [PATCH 051/120] Step 4.13: Add message editor to messages view
@@ -3232,7 +3215,7 @@ index 0c435de..9e6483e 100644
 2.7.4
 
 
-From 73358e77dc9d9a3d3326ed01ea86fd747d2330c6 Mon Sep 17 00:00:00 2001
+From 2d60197c6beb6f0485fbdf6175c8aaeac2541bc4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:07:20 +0300
 Subject: [PATCH 052/120] Step 4.14: Add message-editor style to messages
@@ -3275,7 +3258,7 @@ index c30e573..cf66263 100644
 2.7.4
 
 
-From 7324046364a984d27e9195cbe10b5364c476af6f Mon Sep 17 00:00:00 2001
+From 5138a605666433e9221bc7ded7a4ee842c15a382 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:07:42 +0300
 Subject: [PATCH 053/120] Step 4.15: Add 'sendMessage()' handler to messages
@@ -3327,7 +3310,7 @@ index 14fcf7e..f4fb96e 100644
 2.7.4
 
 
-From 07068e8ea07c629485b325dcb02815085041823c Mon Sep 17 00:00:00 2001
+From 960d1a217392667b757e703f5f0fb7dd659bf71a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:09:18 +0300
 Subject: [PATCH 054/120] Step 4.16: Add 'addMessage()' method to api
@@ -3366,7 +3349,7 @@ index 0000000..0fce545
 2.7.4
 
 
-From 696970675150f0573cb45acb3eda9f0467e7bde7 Mon Sep 17 00:00:00 2001
+From 691c9af5ab1b7b3fbbea451b39bbedd00ba84e03 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:09:45 +0300
 Subject: [PATCH 055/120] Step 4.17: Added import for the methods file
@@ -3389,7 +3372,7 @@ index de5d825..ea027c1 100644
 2.7.4
 
 
-From ee75c1f41ad668fe3b24bc78f54a969121a88567 Mon Sep 17 00:00:00 2001
+From 00ce0eec4663bb447b969a1b281cc86a0f7c6211 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:10:47 +0300
 Subject: [PATCH 056/120] Step 4.18: Add check
@@ -3411,7 +3394,7 @@ index d4f74d0..a3d868c 100644
 2.7.4
 
 
-From 1f43f509fad938da2131d79f0ff5c04295766bbe Mon Sep 17 00:00:00 2001
+From 3232e738aa3a8cb3aeddce65d61942044e9ca2f3 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:11:14 +0300
 Subject: [PATCH 057/120] Step 4.19: Add validations to 'addMessage()' method
@@ -3448,7 +3431,7 @@ index 0fce545..89c378b 100644
 2.7.4
 
 
-From 3ccb5e8a715a25048b948166232af684b3a4f52d Mon Sep 17 00:00:00 2001
+From 5a6ce121b9daad37e0d398e38f1b42cb09e8d658 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:27:11 +0300
 Subject: [PATCH 058/120] Step 4.20: Add an auto scroller to messages component
@@ -3530,7 +3513,7 @@ index f4fb96e..8afa0b3 100644
 2.7.4
 
 
-From 9b9c89632a8bf1d41f111380896aba44599eb669 Mon Sep 17 00:00:00 2001
+From e1467b6845fe7691fe7cdce70ab11eb8f5811f55 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 8 Oct 2016 11:23:08 +0200
 Subject: [PATCH 059/120] Step 5.1: Added accounts packages
@@ -3599,7 +3582,7 @@ index 7e1c968..dcb6fec 100644
 2.7.4
 
 
-From ca9c51cb7481561c7e9541739271e394ddcf1bb0 Mon Sep 17 00:00:00 2001
+From 9c5b1085a1cedad7b4a9204554398b7175519336 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Sun, 9 Oct 2016 13:13:10 +0200
 Subject: [PATCH 060/120] Step 5.2: Add declarations
@@ -3624,7 +3607,7 @@ index 41d6907..e996b05 100644
 2.7.4
 
 
-From 3cc8e07e468e2424d7bc1ea7b709836992c28aa2 Mon Sep 17 00:00:00 2001
+From 29751e2145f1f9adb62fd138607a56d1bb597f77 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Sun, 9 Oct 2016 13:17:57 +0200
 Subject: [PATCH 061/120] Step 5.3: Add authentication settings
@@ -3653,7 +3636,7 @@ index 0000000..fde02be
 2.7.4
 
 
-From c28eb4349ff4fcb05372a3c417095d9d3e10f22a Mon Sep 17 00:00:00 2001
+From 01fee15feee3306d2a74210e49bb664fd10f13f5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Sun, 9 Oct 2016 13:19:06 +0200
 Subject: [PATCH 062/120] Step 5.4: Run the App with settings
@@ -3679,7 +3662,7 @@ index 9ae0aec..6a9ef7b 100644
 2.7.4
 
 
-From 0ab902a0f9dffdabf035a66a10db214a384f8fd9 Mon Sep 17 00:00:00 2001
+From 7927ef78ac705b2f7318cee1e026dd9d4b9fa4ab Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 11:48:35 +0200
 Subject: [PATCH 063/120] Step 5.5: Define SMS settings
@@ -3708,7 +3691,7 @@ index 0000000..7885dd4
 2.7.4
 
 
-From c0a70a260551922e2eef86f08cc7bd6bac92de92 Mon Sep 17 00:00:00 2001
+From 26201a834542b25bcbd6d3a41fdedcf710842b8d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 11:48:52 +0200
 Subject: [PATCH 064/120] Step 5.6: Import those settings
@@ -3732,7 +3715,7 @@ index ea027c1..33fe19a 100644
 2.7.4
 
 
-From bcc54be9ffc0af5e437a504eef1983bf70fcdcec Mon Sep 17 00:00:00 2001
+From c38b19032c229f2f10b5ffcbe25aa75c200a6d6d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:05:03 +0200
 Subject: [PATCH 065/120] Step 5.7: Wait for user if logging in
@@ -3770,7 +3753,7 @@ index 2b50651..abdadfa 100644
 2.7.4
 
 
-From 7f28a6236b5638e8bcd8788697aee112e202251d Mon Sep 17 00:00:00 2001
+From 240c790b20e43b8498d256e03a4135be51aed723 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:05:50 +0200
 Subject: [PATCH 066/120] Step 5.8: Use LoginComponent if user is not logged in
@@ -3809,7 +3792,7 @@ index 772cc90..21bea68 100644
 2.7.4
 
 
-From 681af29ae7a0d69a5e0ef88f0d492cfbab88c41e Mon Sep 17 00:00:00 2001
+From e2a8fdb885b22e852e29f0ff5518d1edfdbda8bd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:06:19 +0200
 Subject: [PATCH 067/120] Step 5.9: Create LoginComponent
@@ -3904,7 +3887,7 @@ index 0000000..20f0bf1
 2.7.4
 
 
-From beb2509c634b736b7ad7ce23c9466c3574c393e5 Mon Sep 17 00:00:00 2001
+From e17844bd5dcb9fee0da7956e1c2645c7192369af Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:06:39 +0200
 Subject: [PATCH 068/120] Step 5.10: Add a template
@@ -3950,7 +3933,7 @@ index 0000000..f5b7823
 2.7.4
 
 
-From cc02d9b9c49dec2af86c73f318cb4ca5bb12b44e Mon Sep 17 00:00:00 2001
+From 7d05ed371cb52798810999112da374914df920ff Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:07:08 +0200
 Subject: [PATCH 069/120] Step 5.11: Define styles
@@ -3982,7 +3965,7 @@ index 0000000..ce2b50d
 2.7.4
 
 
-From 4d9c57c3a3310866934137f4ca7e108d1c3ede75 Mon Sep 17 00:00:00 2001
+From a24cc5046907c8c32c693ead03c6680d83ee5dc9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:08:01 +0200
 Subject: [PATCH 070/120] Step 5.12: Register LoginComponent in the AppModule
@@ -4026,7 +4009,7 @@ index 2b2abe3..977ace8 100644
 2.7.4
 
 
-From e4d180e5a44b297cb569794a8555e9853d660c55 Mon Sep 17 00:00:00 2001
+From 0b5d0c699ccf90f846e63c26e2eefd8e076706a7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:08:28 +0200
 Subject: [PATCH 071/120] Step 5.13: Add VerificationComponent
@@ -4106,7 +4089,7 @@ index 0000000..07455b8
 2.7.4
 
 
-From 8fb83795fd56bc8f089ddd6e850a403f350c4d5b Mon Sep 17 00:00:00 2001
+From 30a4365ad19ab88bd33ba20b216d313eab8b5f18 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:08:47 +0200
 Subject: [PATCH 072/120] Step 5.14: Create a template
@@ -4152,7 +4135,7 @@ index 0000000..099ce79
 2.7.4
 
 
-From 237e2fc553255b5686d1e6dc7194219b38ac8d7b Mon Sep 17 00:00:00 2001
+From ae9c01a00b6fb924709e118e29e77dc59fa2ce43 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:09:04 +0200
 Subject: [PATCH 073/120] Step 5.15: Define styles
@@ -4184,7 +4167,7 @@ index 0000000..ea09ad1
 2.7.4
 
 
-From f6060d3c9c36aa233f1ee91a35db98a7996f7c76 Mon Sep 17 00:00:00 2001
+From 9e8916e6ed08c54f6caeaac34389290cbe1620fd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:15:36 +0200
 Subject: [PATCH 074/120] Step 5.16: Register VerificationComponent
@@ -4229,7 +4212,7 @@ index 977ace8..fda49c9 100644
 2.7.4
 
 
-From a0cb485e62703c0ae042db32be8514a25fc05ed8 Mon Sep 17 00:00:00 2001
+From dbdd6c05b1cdc85c3a634cfa24d530d4e7cf8646 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:09:34 +0200
 Subject: [PATCH 075/120] Step 5.17: Add 'updateProfile' method
@@ -4274,7 +4257,7 @@ index 89c378b..3f6d2c2 100644
 2.7.4
 
 
-From 17ef52493b98bda19762245686f8ba7c16cf15f0 Mon Sep 17 00:00:00 2001
+From 82e749e73e774ab993cdcb551b3c37cffa06c1ce Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:09:54 +0200
 Subject: [PATCH 076/120] Step 5.18: Define Profile model
@@ -4299,7 +4282,7 @@ index 0000000..dde3134
 2.7.4
 
 
-From 1e417bb7c6bec34a8aed449f04ed5af2c71b175b Mon Sep 17 00:00:00 2001
+From 4719d07878fab10aa0c8d92882f8dff93fcdb395 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:10:19 +0200
 Subject: [PATCH 077/120] Step 5.19: Create ProfileComponent
@@ -4375,7 +4358,7 @@ index 0000000..ac09630
 2.7.4
 
 
-From db76c66900be32dbbb700e8d9d7da163c67a9fdc Mon Sep 17 00:00:00 2001
+From 7213b2661329a7ad6b081433fc76fac109e30a4f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:10:54 +0200
 Subject: [PATCH 078/120] Step 5.20: Create a template for ProfileComponent
@@ -4417,7 +4400,7 @@ index 0000000..013edbc
 2.7.4
 
 
-From 173832e51f30f3d01fa5298900ae5098720f5d60 Mon Sep 17 00:00:00 2001
+From b65b8409cd3a3ea59c30c44e6e9d30db451fdb84 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:11:26 +0200
 Subject: [PATCH 079/120] Step 5.21: Also the styles
@@ -4458,7 +4441,7 @@ index 0000000..e055000
 2.7.4
 
 
-From f067e6d7893ab34f8e064db03c16bebd3cbcf0dc Mon Sep 17 00:00:00 2001
+From 4ce07349d51f5dc3b56d6ef3ab72867b742126ee Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:18:00 +0200
 Subject: [PATCH 080/120] Step 5.22: Register ProfileComponent
@@ -4503,7 +4486,7 @@ index fda49c9..6261397 100644
 2.7.4
 
 
-From 051353a5593489a10244bfa5d60123f57da1bcc9 Mon Sep 17 00:00:00 2001
+From 66a975d326662a3f32e5484e3e4c15047b4729e0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:20:00 +0200
 Subject: [PATCH 081/120] Step 5.23: Add senderId property to addMessage method
@@ -4538,7 +4521,7 @@ index 3f6d2c2..1a75878 100644
 2.7.4
 
 
-From 58527c27747bc08e5b3ae3b0f8f043bf3530a235 Mon Sep 17 00:00:00 2001
+From ab293385c8cd296836527b22186d81e2a9e3c102 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:20:31 +0200
 Subject: [PATCH 082/120] Step 5.24: Add it also to the model
@@ -4563,7 +4546,7 @@ index d4b4f99..fe99e76 100644
 2.7.4
 
 
-From 1be80c9953328adfef5074b240ddc5789bd90ee0 Mon Sep 17 00:00:00 2001
+From c5260111c5a59f0804cd94c945a5aa43ebdba2b3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:26:21 +0200
 Subject: [PATCH 083/120] Step 5.25: Determine message ownership based on
@@ -4617,7 +4600,7 @@ index 8afa0b3..062034a 100644
 2.7.4
 
 
-From 0a6dd81d1debd54d59a5c6b713eba2396736e5fd Mon Sep 17 00:00:00 2001
+From 39131978d744191d69e238ecdcbb26560ae91866 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:53:02 +0200
 Subject: [PATCH 084/120] Step 5.26: Add options-popover to ChatsComponent
@@ -4674,7 +4657,7 @@ index 3a56693..70e507c 100644
 2.7.4
 
 
-From 81d8ae4ecbca105ba106a673bc459e515b1a8a30 Mon Sep 17 00:00:00 2001
+From 13a04401b2867a243a279c3665e631b9b08fbc4e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:53:29 +0200
 Subject: [PATCH 085/120] Step 5.27: Bind showOptions
@@ -4700,7 +4683,7 @@ index e4df49a..6b77651 100644
 2.7.4
 
 
-From 6e1162cc74b9e34a059df60503891c45a5a8b152 Mon Sep 17 00:00:00 2001
+From 4e867261e8bd6baaca4f8b08e806119614853778 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:53:59 +0200
 Subject: [PATCH 086/120] Step 5.28: Add ChatsOptionsComponent
@@ -4797,7 +4780,7 @@ index 0000000..bd4cd56
 2.7.4
 
 
-From e5c411812e5a42171bbdda6f14dffe8faa083f43 Mon Sep 17 00:00:00 2001
+From 69678c03f38898c063d7e187a93e335708f9164c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:54:21 +0200
 Subject: [PATCH 087/120] Step 5.29: Add the template
@@ -4836,7 +4819,7 @@ index 0000000..9017eb9
 2.7.4
 
 
-From 5120afd2e6b83a99b9369d28f94748a8efbb021b Mon Sep 17 00:00:00 2001
+From 6b5385ce0c3673a8897ae0921e08a9642f8442b3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:54:43 +0200
 Subject: [PATCH 088/120] Step 5.30: Define styles
@@ -4870,7 +4853,7 @@ index 0000000..be30282
 2.7.4
 
 
-From d05fa6769eca6bf6419a0ae22f13c830cdc227ef Mon Sep 17 00:00:00 2001
+From 34205c33fe2842c5d123404e5b2454e5a22ebbfb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:55:02 +0200
 Subject: [PATCH 089/120] Step 5.31: Register ChatsOptionsComponent
@@ -4915,7 +4898,7 @@ index 6261397..cfc710c 100644
 2.7.4
 
 
-From 923e18b114eb2722c2ea32606d162baa87c80b46 Mon Sep 17 00:00:00 2001
+From 07d608131d09d9e83b1004b7cbd79b534a7a7140 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:55:33 +0200
 Subject: [PATCH 090/120] Step 5.32: Add options-popover style to chats
@@ -4951,7 +4934,7 @@ index 6470e09..227c12c 100644
 2.7.4
 
 
-From b6d411553badc8d40d69611a674cbde7b25ea1ef Mon Sep 17 00:00:00 2001
+From 242caed0ff2699c38698e13c902121edd18be985 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:21:31 +0200
 Subject: [PATCH 091/120] Step 6.1: Add 'addChat' method to ChatsComponent
@@ -5002,7 +4985,7 @@ index 70e507c..45304d3 100644
 2.7.4
 
 
-From 63b8be27d13644040b90ee7be5bbfc74e34e2c01 Mon Sep 17 00:00:00 2001
+From ffea49f080aaf3eaece3dc5a725a053b32cff0ac Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:21:49 +0200
 Subject: [PATCH 092/120] Step 6.2: Bind that method
@@ -5028,7 +5011,7 @@ index 6b77651..ca566d2 100644
 2.7.4
 
 
-From 1972d8c2e9ea7c8c4e79e4ceeff450a80c405eb2 Mon Sep 17 00:00:00 2001
+From dd258b6fb66bac1ade3fc3558fc828aa74f2d4cf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:22:27 +0200
 Subject: [PATCH 093/120] Step 6.3: Define 'addChat' Method
@@ -5074,7 +5057,7 @@ index 1a75878..601b7e8 100644
 2.7.4
 
 
-From 76bc1930d5a256f37073959989164f1936784b30 Mon Sep 17 00:00:00 2001
+From d9ee927c5c015a3bb3becef65436316f1d40856b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:23:27 +0200
 Subject: [PATCH 094/120] Step 6.4: Add memberIds prop in Chat model
@@ -5099,7 +5082,7 @@ index 36e42ca..c4981f4 100644
 2.7.4
 
 
-From 0c743867b8b8c9873cbbcb59b1df348d1d4fcd39 Mon Sep 17 00:00:00 2001
+From 75328a498dd9c01aa2b9e8c07e0564dac53c1fbf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:24:09 +0200
 Subject: [PATCH 095/120] Step 6.5: Create Observable collection from
@@ -5125,7 +5108,7 @@ index 0000000..3da1168
 2.7.4
 
 
-From ae63b67180747ba09a5cee976df849a7fa3b89be Mon Sep 17 00:00:00 2001
+From 1782002b582b626c82a0512c3f666eecef8c72ec Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:24:33 +0200
 Subject: [PATCH 096/120] Step 6.6: Create a User model
@@ -5152,7 +5135,7 @@ index 0000000..b15b28a
 2.7.4
 
 
-From e4bd169881a3850f68b3a1518334cd82bbff6f72 Mon Sep 17 00:00:00 2001
+From 39e378fd0cc06c482ca223b32ba6463692b30445 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:25:01 +0200
 Subject: [PATCH 097/120] Step 6.7: Create NewChatComponent
@@ -5257,7 +5240,7 @@ index 0000000..83f1c7a
 2.7.4
 
 
-From 4a04700e4b684d7a319bd1e5d91d1f95bfa4204b Mon Sep 17 00:00:00 2001
+From f88dd277598864f535ddc2df2372fbc5245eff9f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:25:49 +0200
 Subject: [PATCH 098/120] Step 6.8: Create also a template
@@ -5296,7 +5279,7 @@ index 0000000..8d2238b
 2.7.4
 
 
-From 44adbec955ff435643bbec6b170a4100490674f0 Mon Sep 17 00:00:00 2001
+From 585489ef461ff80b81da909d38cef704fd2368b0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:26:07 +0200
 Subject: [PATCH 099/120] Step 6.9: Define some styles
@@ -5331,7 +5314,7 @@ index 0000000..a0698d8
 2.7.4
 
 
-From 4369d609b75ff33e096db2b0bdb7de496b383415 Mon Sep 17 00:00:00 2001
+From 8efad453f3efdd98e28a270e01574e5a0853ff53 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:26:29 +0200
 Subject: [PATCH 100/120] Step 6.10: Register that component
@@ -5376,7 +5359,7 @@ index cfc710c..dd4b8d5 100644
 2.7.4
 
 
-From b6bc862627d0dd517c1d67f5d1ace45f0d4ae392 Mon Sep 17 00:00:00 2001
+From aff5a102cc495f9930427f7a65cf2495ef22d439 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:27:19 +0200
 Subject: [PATCH 101/120] Step 6.11: Replace chats fabrication with users
@@ -5497,7 +5480,7 @@ index e84b373..2f61ab9 100644
 2.7.4
 
 
-From b732ed45b5cc20f608db7b5ca6e4d788caf13e42 Mon Sep 17 00:00:00 2001
+From 8ff205b7be2b30f54bf69529442b540a92d4a769 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 20:48:13 +0200
 Subject: [PATCH 102/120] Step 6.12: Add title and picture to chat
@@ -5556,7 +5539,7 @@ index 45304d3..8ce1b0d 100644
 2.7.4
 
 
-From 58f22715a1de9c1e8c54d090bc0329217c154e23 Mon Sep 17 00:00:00 2001
+From b381958681e794aa2138df80aa63a2e4e4e5ff21 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 21:48:02 +0200
 Subject: [PATCH 103/120] Step 7.1: Remove 'insecure' package
@@ -5631,7 +5614,7 @@ index dcb6fec..554273a 100644
 2.7.4
 
 
-From 7eb7cfd3cd4b7fc20a834b7e317e4e86a6116fe9 Mon Sep 17 00:00:00 2001
+From eb49be649c0635a82144ab00e8430128cb12c207 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 21:49:30 +0200
 Subject: [PATCH 104/120] Step 7.2: Define 'removeChat' Method
@@ -5669,7 +5652,7 @@ index 601b7e8..6a47ed3 100644
 2.7.4
 
 
-From 50d367784e54570a041bf931204db33c9bf1104e Mon Sep 17 00:00:00 2001
+From 7be7b244e09528f347f3fabc6dd7cdc6716efbdf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:12:34 +0200
 Subject: [PATCH 105/120] Step 7.3: Create MessagesOptionsComponent
@@ -5770,7 +5753,7 @@ index 0000000..bcf3e7f
 2.7.4
 
 
-From e6bb970130eb1458c2673d63c65209f74fbbb794 Mon Sep 17 00:00:00 2001
+From d8dc99b1cf89d23265291439640cea913ac4ec94 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:12:48 +0200
 Subject: [PATCH 106/120] Step 7.4: Create a template
@@ -5799,7 +5782,7 @@ index 0000000..b5c4947
 2.7.4
 
 
-From d81ec92d48162d2020b2d067579cfd0522711121 Mon Sep 17 00:00:00 2001
+From af44e14f9aa7ad477af7370b1b79e7a1e7550678 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:13:00 +0200
 Subject: [PATCH 107/120] Step 7.5: Add styles
@@ -5833,7 +5816,7 @@ index 0000000..be30282
 2.7.4
 
 
-From 3a990c117b26859f035d10d301731424ae57a861 Mon Sep 17 00:00:00 2001
+From 34d2bea37fe0eb7be877623aac26d8f436d07ed3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:13:19 +0200
 Subject: [PATCH 108/120] Step 7.6: Register the component
@@ -5878,7 +5861,7 @@ index dd4b8d5..adb48c5 100644
 2.7.4
 
 
-From 5fb6629d59136c44c85f6ccec87b2cd3e3e0df5e Mon Sep 17 00:00:00 2001
+From 192466182950e20f343ecc60bbe7d7ad4521c2c6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:13:52 +0200
 Subject: [PATCH 109/120] Step 7.7: Define component's method to open options
@@ -5939,7 +5922,7 @@ index 062034a..5c5235f 100644
 2.7.4
 
 
-From 982614eacb5589dcf1065febd032a5b35e23df95 Mon Sep 17 00:00:00 2001
+From 1537ef8856e8a3b26d8b5162764f11eee2af70ea Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:14:04 +0200
 Subject: [PATCH 110/120] Step 7.8: Implement it in the view
@@ -5965,7 +5948,7 @@ index 9e6483e..9f2d333 100644
 2.7.4
 
 
-From fc32547d2dee7bf85e71438e23ad838e250ea7fc Mon Sep 17 00:00:00 2001
+From ab1ecefbb5250f3d3d315ecc0f33cfe588c51a61 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:15:40 +0200
 Subject: [PATCH 111/120] Step 7.9: Add 'autopublish' package
@@ -6003,7 +5986,7 @@ index 554273a..0964295 100644
 2.7.4
 
 
-From 9645d8fd1cbab250c0bc58a4963979371be1555c Mon Sep 17 00:00:00 2001
+From 531408e2d8e4e952c67188705142ffc0e101766a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:18:00 +0200
 Subject: [PATCH 112/120] Step 7.10: Add 'reywood-publish-composite'
@@ -6038,7 +6021,7 @@ index 0964295..e4cf273 100644
 2.7.4
 
 
-From e5a133889d35470e1d668b8d842e5bfc4e1f46b8 Mon Sep 17 00:00:00 2001
+From c3e908d38aadd877634fe8ace415bbfbce7c8ff8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:19:32 +0200
 Subject: [PATCH 113/120] Step 7.11: Add typings for that package
@@ -6063,7 +6046,7 @@ index e996b05..4e318db 100644
 2.7.4
 
 
-From 7dd6699cbdc209e5182de97088b1ffa9e0380a19 Mon Sep 17 00:00:00 2001
+From bb5cf3af906f6dfa42d1e0790c83b0b36003d9a6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:22:12 +0200
 Subject: [PATCH 114/120] Step 7.12: Create publication for Users
@@ -6098,7 +6081,7 @@ index 0000000..dd48870
 2.7.4
 
 
-From 85b9ed5d1f275bc3334267b5a607aff97f934fe5 Mon Sep 17 00:00:00 2001
+From c8b0bbed2f9a63cdc0fd04f1ff0585232ae0e080 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:25:41 +0200
 Subject: [PATCH 115/120] Step 7.13: Add publication for Chats
@@ -6156,7 +6139,7 @@ index 0000000..a440ac2
 2.7.4
 
 
-From f1559ea9ea2431312fc0367b59912f2be3519251 Mon Sep 17 00:00:00 2001
+From 68c46b4df0d4c1136825f37544e91fbeb096697c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:26:52 +0200
 Subject: [PATCH 116/120] Step 7.14: Add publication for Messages
@@ -6188,7 +6171,7 @@ index 0000000..1a50b55
 2.7.4
 
 
-From ab0a664b659a98cd23805298f8c7a26363112728 Mon Sep 17 00:00:00 2001
+From 8ad24e784ca0c94d5cdedfbb7daf07c927423a51 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:27:48 +0200
 Subject: [PATCH 117/120] Step 7.15: Expose publications
@@ -6214,7 +6197,7 @@ index 33fe19a..1ca747b 100644
 2.7.4
 
 
-From eb1cf65218ff528afb89a0e6365df3345cadfb3e Mon Sep 17 00:00:00 2001
+From 4e58f5362f23195751287e0d1a924003b00d483e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Tue, 11 Oct 2016 10:13:05 +0200
 Subject: [PATCH 118/120] Step 7.16: Subscribe to 'chats'
@@ -6299,7 +6282,7 @@ index 8ce1b0d..9c541a7 100644
 2.7.4
 
 
-From 2257564718222e5c2668f1570a5f413e4ab00509 Mon Sep 17 00:00:00 2001
+From 7c56bdd8d872fbbd0bc4a43d083b39ada86464a2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Tue, 11 Oct 2016 10:13:23 +0200
 Subject: [PATCH 119/120] Step 7.17: Subscribe to 'users'
@@ -6329,7 +6312,7 @@ index 83f1c7a..bf03180 100644
 2.7.4
 
 
-From 3ddb87e806a64e8701864e6ac040055ed564bbf7 Mon Sep 17 00:00:00 2001
+From 43ee168a7c20d038730a40736ba669e7500a2708 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Tue, 11 Oct 2016 10:14:02 +0200
 Subject: [PATCH 120/120] Step 7.18: Subscribe to 'messages'
