@@ -2,7 +2,7 @@
 
 Our next step is about adding the ability to create new chats. So far we had the chats list and the users feature, we just need to connect them.
 
-We will open the new chat view using Ionic's modal dialog. The dialog is gonna pop up from the chats view once we click on the icon at the top right corner of the view. Let's implement the handler in the chats component first:
+We will open the new chat view using Ionic's modal dialog ([see documentation](http://ionicframework.com/docs/v2/components/#modals)). The dialog is gonna pop up from the chats view once we click on the icon at the top right corner of the view. Let's implement the handler in the chats component first:
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.1"}}
 
@@ -20,27 +20,30 @@ As you can see, a chat is inserted with an additional `memberIds` feild. Let's u
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.4"}}
 
-Now that we have the method ready we can go ahead and implement the new chat dialog:
+We're going to use `Meteor.users` so let's create a Observable Collection and call it `Users`:
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.5"}}
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.6"}}
 
+We used `fromExisting()` method which does exactly what the name says.
+
+Now that we have the method ready we can go ahead and implement the new chat dialog:
+
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.7"}}
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.8"}}
 
-Thanks to our new-chat dialog, we can create chats dynamically with no need in initial fabrication. Let's replace the chats fabrication with users fabrication in the Meteor server:
-
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.9"}}
-
-Since we changed the data fabrication method, the chat's title and picture are not hardcoded anymore, therefore they should be calculated in the components themselves. Let's calculate those fields in the chats component:
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.10"}}
 
+
+Thanks to our new-chat dialog, we can create chats dynamically with no need in initial fabrication. Let's replace the chats fabrication with users fabrication in the Meteor server:
+
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.11"}}
 
-And in the messages component as well for the active chat:
+Since we changed the data fabrication method, the chat's title and picture are not hardcoded anymore, therefore they should be calculated in the components themselves. Let's calculate those fields in the chats component:
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.12"}}
 
