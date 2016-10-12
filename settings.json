@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env" : {
+      "MONGO_URL": "mongodb://zol:zoltestpassword@candidate.0.mongolayer.com:10211/zoltestdb?replicaSet=set-532b87433667c51a3c00195a"
+    }
+  }
+}
