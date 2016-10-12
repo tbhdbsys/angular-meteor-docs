@@ -23,7 +23,7 @@ You can also run in a real mobile device, for more instructions, read the ["Mobi
 
 Before we can run Meteor and Angular 2 on mobile platform, we need to make sure that our Angular 2 NgModule initialized only when Meteor platform declares that it's ready, to do so, let's wrap the `bootstrapModule` with `Meteor.startup`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.2"}}
 
 ### Creating Mobile/Web Separation
 
@@ -31,19 +31,19 @@ We're going to keep the view and the component for the web under `*.component.we
 
 First thing to do is to rename `login.component.html` to `login.component.web.html`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.3"}}
 
 Let's do the same with `login.component.ts` file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.4"}}
 
 with one small change which is a new `template` property:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.5"}}
 
 And let's update the imports in the index file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.6"}}
 
 ### SMS verification
 
@@ -61,23 +61,23 @@ We will use an external package that extends Meteor's Accounts, called [accounts
 
 A template of a mobile version will be pretty much the same as for browsers:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.8"}}
 
 We can use the same directives in the component as in Web version, so let's create a basic component without any functionality:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.9"}}
 
 SMS verification is a two-step process. First thing to do is to verify a phone number.
 
 Let's create a form for that:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.10"}}
 
 It's a simple form, basically the same as the form with Email and password verification we did in previous chapters.
 
 We can now take care of the logic. Let's create a `send` method:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.11"}}
 
 What we did? Few things:
 
@@ -89,7 +89,7 @@ Great, we're half way there!
 
 Now we need to verify that code. We will keep all the logic under `verify` method:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.12"}}
 
 As you can see, we used `Accounts.verifyPhone` with proper arguments to call the verification process.
 
@@ -100,11 +100,11 @@ There are two more things that you should notice.
 
 We have all the logic, we still need to create a view for it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.13"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.13"}}
 
 And let's add the mobile version of the Component to the index file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.14"}}
 
 It seems like both versions are ready.
 
@@ -112,7 +112,7 @@ We can now move on to `client/app.routes.ts`.
 
 Just as you can use `Meteor.isServer` and `Meteor.isClient` to separate your client-side and server-side code, you can use `Meteor.isCordova` to separate your Cordova-specific code from the rest of your code.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="21.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="22.15"}}
 
 As you can see, we're importing both version of Login Component. But only one is being used, depending on Meteor.isCordova value.
 

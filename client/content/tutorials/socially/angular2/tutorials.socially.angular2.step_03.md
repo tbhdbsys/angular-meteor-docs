@@ -59,7 +59,7 @@ We will use `MongoObservable` static methods to declare the Collection:
 
 So add a file `both/collections/parties.collection.ts`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.1"}}
 
 We've just created a file called `parties.collection.ts`, that contains a CommonJS module called `both/collections/parties`.
 
@@ -84,19 +84,19 @@ Because we use `MongoObservable.Collection` instead of regular Meteor Collection
 
 Let's import the `Parties` from collections:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.2"}}
 
 And now we will create a query on our Collection, and because we used `MongoObservable`, the return value of `find` will be a `Observable<any[]>` - which is an `Observable` that contains an array of Objects.
 
 And let's bind to the `Observable`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.3"}}
 
 > We used `zone()` method which is a wrapper for the regular `Observable` that do some *Magic* and connects the collection changes into our view using our Component's `Zone`.
 
 Because of that, we now need to add `AsyncPipe`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.4"}}
 
 # Inserting Parties from the Console
 
@@ -142,23 +142,23 @@ So, let's initialize our server with the same parties as we had before.
 
 Let's create a file `server/imports/fixtures/parties.ts` and implement `loadParties` method inside to load parties:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.5"}}
 
 Then create `main.ts` to run this method on Meteor startup:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.6"}}
 
 To make it fully TypeScript compatible, we need to define `Party` interface:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.7"}}
 
 And add it in few places:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.8"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.9"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="3.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.10"}}
 
 Now run the app and you should see the list of parties on the screen.
 

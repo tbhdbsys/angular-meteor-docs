@@ -18,11 +18,11 @@ through a special attribute, though with different syntax from Angular 1. We'll 
 
 First, let's bind the party details into our view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="6.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="7.1"}}
 
 Now, let's change `party-details.component.html` into a form, so that we can edit the party details:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="6.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="7.2"}}
 
 > Notice we have a routerLink button on the page that redirects back to the list (from our previous step's challenge). Here is how to do that:
 
@@ -44,7 +44,7 @@ Notice that it updates automatically on changes. You can contrast this to `FormC
 
 As a finishing touch, let's add a submit event handler that saves the current party:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="6.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="7.3"}}
 
 # Summary
 

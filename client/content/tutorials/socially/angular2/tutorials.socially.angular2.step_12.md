@@ -33,13 +33,13 @@ You can find more information about the _find_ method in Mongo [here](http://doc
 Now, let's go to the `parties` subscription in the `server/imports/publications/parties.ts` file,
 add the `options` parameter to the subscription method, and then pass it to `Parties.find`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.1"}}
 
 On the client side, we are going to define three additional variables in the `PartiesList` component which our pagination will depend on:
 page size, current page number and name sort order.
 Secondly, we'll create a special _options_ object made up of these variables and pass it to the parties subscription:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.2"}}
 
 As was said before, we also need to query `Parties` on the client side with same parameters and options as we used on the server, i.e., parameters and options we pass to the server side.
 
@@ -47,7 +47,7 @@ In reality, though, we don't need _skip_ and _limit_ options in this case, since
 
 So, we will only add sorting:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.3"}}
 
 ### Reactive Changes
 
@@ -65,7 +65,7 @@ In our case - when the user changes the parameters of the Meteor subscription, w
 
 So let's do it. We will replace the regular variables with `Subject`s, and in order to trigger the notification in the first time, we will execute `next()` for the `Subject`s:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.4"}}
 
 Now we need to register to those changes notifications.
 
@@ -73,7 +73,7 @@ Because we need to register to multiple notifications (page size, current page, 
 
 So let's use it and update the subscription:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.5"}}
 
 > Notice that we also removes the Subscription and use `unsubscribe` because we want to drop the old subscription each time it changes.
 
@@ -106,22 +106,22 @@ transform a list of items according to the current state of the pagination servi
 
 First, let's import the pagination module into our `NgModule`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.7"}}
 
 Because of pagination pipe of ng2-pagination supports only arrays we'll use the `PaginationService`.
 Let's define the configuration:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.8"}}
 
 > `id` - this is the identifier of specific pagination, we use the default.
 
 We need to notify the pagination that the current page has been changed, so let's add it to the method where we handle the reactive changes:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.9"}}
 
 Now, add the pagination controls to the `parties-list.component.html` template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.10"}}
 
 In the configuration, we provided the current page number, the page size and a new value of total items in the list to paginate.
 
@@ -139,12 +139,12 @@ fires a special event when the user clicks on a page link, causing the current p
 
 Let's handle this event in the template first and then add a method to the `PartiesList` component itself:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.11"}}
 
 As you can see, the pagination controls component fires the `pageChange` event, calling the `onPageChanged` method with
 a special event object that contains the new page number to set. Add the `onPageChanged` method:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.12"}}
 
 At this moment, we have almost everything in place. Let's check if everything is working.
 We are going to have to add a lot of parties, at least, a couple of pages.
@@ -164,7 +164,7 @@ implemented. We can use the [tmeasday:publish-counts](https://github.com/percola
 
 This package is an example for a package that does not provide it's own Typings, so we will have to create `d.ts` file by our self according to the package API:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.15"}}
 
 This package exports a `Counts` object with all of the API methods we will need.
 
@@ -174,7 +174,7 @@ This package exports a `Counts` object with all of the API methods we will need.
 
 Let's publish the total number of parties as follows:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.14"}}
 
 > Notice that we are passing `{ noReady: true }` in the last argument so
 > that the publication will be ready only after our main cursor is loaded, instead of waiting for Counts.
@@ -183,7 +183,7 @@ We've just created the new _numberOfParties_ publication.
 Let's get it reactively on the client side using the `Counts` object, and, at the same time,
 introduce a new `partiesSize` property in the `PartiesList` component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.16"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.16"}}
 
 We used `MeteorObservable.autorun` because we wan't to know when there are changes regarding the data that comes from Meteor - so now every change of data, we will calculate the total number of parties and save it in our Component, then we will set it in the `PaginationService`.
 
@@ -203,11 +203,11 @@ respectively. Then, as you can see, we assign `nameOrder` to the party property 
 
 We'll add a new dropdown UI control with two orders to change, ascending and descending. Let's add it in front of our parties list:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.17"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.17"}}
 
 In the `PartiesList` component, we change the `nameOrder` property to be a reactive variable and add a `changeSortOrder` event handler, where we set the new sort order:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.18"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.18"}}
 
 > Calling `next` on `nameOrder` Subject, will trigger the change notification - and then the Meteor subscription will re-created with the new parameters!
 
@@ -226,11 +226,11 @@ Having that fixed, it should work properly in accordance with the added paginati
 So, let's add filtering parties by the location with the help of Mongo's regex API.
 It is going to look like this:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.19"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.19"}}
 
 On the client side, we are going to add a new reactive variable and set it to update when a user clicks on the search button:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="12.20"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="13.20"}}
 
 > Notice that we don't know what size to expect from the search
 > that's why we are re-setting the current page to 1.

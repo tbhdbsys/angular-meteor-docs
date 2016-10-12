@@ -11,7 +11,7 @@ In Angular, the view is a projection of the model through the HTML template. Thi
 
 Let's change our template to be dynamic:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="2.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.1"}}
 
 We replaced the hard-coded party list with the [NgFor](https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html) directive and two Angular expressions:
 
@@ -27,7 +27,7 @@ This code will go inside of our AppComponent class [`constructor`](https://devel
 
 We can attach data with the context `this`, referring to the AppComponent class.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="2.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="3.2"}}
 
 Run the app again.
 

@@ -19,7 +19,7 @@ Let's move the content of AppComponent in `app.component.ts` out into a `Parties
 
 Create a new file called `parties-list.component.ts` and put it in `client/imports/app/parties` directory.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.1"}}
 
 There are few things we did in that step:
 
@@ -30,21 +30,21 @@ There are few things we did in that step:
 
 Now we can copy `app.component.html` into the `parties` directory and rename it `parties-list.component.html`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.2"}}
 
 Also, let's clean-up `app.component.ts` to prepare it for the next steps:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.3"}}
 
 and the template for it, which is `app.component.html`:
 
 > You will notice that the interface of your app has disappeared. But don't worry! It will come back later on.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.4"}}
 
 And let's add the new Component to the index file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.5"}}
 
 # Routing
 
@@ -63,15 +63,15 @@ We will export our routes using `routes` variable.
 
 Let's warp it in the `app.routes.ts` file, here's what it suppose to look like:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.6"}}
 
 Now we can use `routes` in the `NgModule`, with the `RouteModule` provided by Angular 2:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.7"}}
 
 Our app still has to display the view somewhere. We'll use `routerOutlet` component to do this.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.8"}}
 
 Now, because we use a router that based on the browser path and URL - we need to tell Angular 2 router which path is the base path.
 
@@ -85,19 +85,19 @@ Let's add another view to the app: `PartyDetailsComponent`. Since it's not possi
 
 When we're finished, clicking on a party in the list should redirect us to the PartyDetailsComponent for more information.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.9"}}
 
 And add a simple template outline for the party details:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.10"}}
 
 And let's add the new Component to the index file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.11" filename="client/imports/app/parties/index.ts"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.11" filename="client/imports/app/parties/index.ts"}}
 
 Now we can define the route:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.11" filename="client/imports/app/app.routes.ts"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.11" filename="client/imports/app/app.routes.ts"}}
 
 As you can see, we used `:partyId` inside of the path string. This way we define parameters. For example, `localhost:3000/party/12` will point to the PartyDetailsComponent with `12` as the value of the `partyId` parameter.
 
@@ -111,7 +111,7 @@ As we've already seen, each party link consists of two parts: the base `PartyDet
 
 Now we can wrap our party in a `routerLink` and pass in the _id as a parameter. Note that the id is auto-generated when an item is inserted into a Mongo Collection.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.12"}}
 
 As you can see, we used an array. The first element is a path that we want to use and the next one is to provide a value of a parameter.
 
@@ -125,7 +125,7 @@ The next thing is to grab the `partyId` route parameter in order to load the cor
 
 In Angular 2, it's as simple as passing the `ActivatedRoute` argument to the `PartyDetails` constructor:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.13"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.13"}}
 
 > We used another RxJS feature called `map` - which transform the stream of data into another object - in this case, we want to get the `partyId` from the `params`, then we subscribe to the return value of this function - and the subscription will be called only with the `partyId` that we need.
 
@@ -148,11 +148,11 @@ In order to do so, we will use Angular 2 interface called `OnDestroy` and implem
 
 So let's implement this:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.14"}}
 
 Now, we need to get the actual `Party` object with the ID we got from the Router, so let's use the `Parties` collection to get it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="5.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="6.15"}}
 
 > `findOne` return the actual object instead of returning Observable or Cursor.
 
