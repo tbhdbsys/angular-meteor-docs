@@ -12,15 +12,31 @@ So let's remove this package by running this command:
 
     $ meteor remove insecure
 
-Now that we don't have the ability to remove whatever document we want anymore, we need to update the logic for the `removeChat()` method in our chats component.
-
-First we need to implement the corresponding method in our server:
+With that we're able to add ability to remove chats:
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.2"}}
 
-And now we need to call this method from the component:
+We have a Method, now we have to implement it in the UI.
+
+Each chat has two buttons, one for sending attachements and one to open options menu.
+
+Let's create that menu by creating a new component called `MessagesOptionsComponent`:
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.3"}}
+
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.4"}}
+
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.5"}}
+
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.6"}}
+
+Great! Now we can define component's method to open the options:
+
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.7"}}
+
+One thing missing, add this method to the view:
+
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.8"}}
 
 Right now all the chats are published to all the clients which is not very good for privacy. Let's fix that.
 
@@ -38,28 +54,39 @@ And we will install its belonging typings as well
 
 Now we need to explicitly define our publications. Let's start by sending the users' information.
 
-Create a file named `publications.ts` under the `api/server` dir with the following contents:
+Create a file named `users.publication.ts` under the `server/imports/publications` directory with the following contents:
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.7"}}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.12"}}
 
-Let's have a brief overview for each of the publications and update the corresponding components to subscribe to them.
+Do the same but for `Messages`:
+
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.14"}}
+
+Use `Meteor.publishComposite` from the package we installed and create a publication of `Chats`: 
+
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.13"}}
 
 The chats publication is a composite publication which is made of several nodes. First we gonna find all the relevant chats for the current user logged in. After we have the chats, we gonna return the following cursor for each chat document we found. First we gonna return all the last messages, and second we gonna return all the users we're currently chatting with.
 
+Those publications are still not visible by server:
+
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.15"}}
+
+
 Let's add the subscription for the chats publication in the chats component:
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.8"}}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.16"}}
 
 The users publication publishes all the users' profiles, and we need to use it in the new chat dialog whenever we wanna create a new chat.
 
 Let's subscribe to the users publication in the new chat component:
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.9"}}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.17"}}
 
-The messages publication is responsible for biringing all the relevant messages for a certain chat. This publication is actually parameterized and it requires us to pass a chat id during subscription.
+The messages publication is responsible for bringing all the relevant messages for a certain chat. This publication is actually parameterized and it requires us to pass a chat id during subscription.
 
 Let's subscribe to the messages publication in the messages component, and pass the current active chat id provided to us by the nav params:
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.10"}}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="7.18"}}
 
 {{/template}}
