@@ -23,7 +23,8 @@ Template.tutorialSelector.helpers({
 
     if (route.indexOf('tutorials/whatsapp/ionic') !== -1 ||
         route.indexOf('tutorials/whatsapp/meteor') !== -1 ||
-        route.indexOf('tutorials/whatsapp2/ionic') !== -1) {
+        route.indexOf('tutorials/whatsapp2/ionic') !== -1 ||
+        route.indexOf('tutorials/whatsapp2/meteor') !== -1) {
       return [];
     }
     else {
@@ -52,6 +53,9 @@ Template.sidebarDefault.helpers({
     }
     if (route.indexOf('tutorials/whatsapp2/ionic') !== -1) {
       return WHATSAPP2_IONIC;
+    }
+    if (route.indexOf('tutorials/whatsapp2/meteor') !== -1) {
+      return WHATSAPP2_METEOR;
     }
     else {
       return SOCIALLY_ANGULAR1;
