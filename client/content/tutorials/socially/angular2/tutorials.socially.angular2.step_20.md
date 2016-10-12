@@ -32,21 +32,21 @@ Let's start by creating `both/collections/images.collection.ts` file, and define
 
 Also we will use the stadard Mongo Collection API that allows us to defined auth-rules.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.2"}}
 
 Let's now create interfaces for both collections:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.3"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.4"}}
 
 And use them on Images and Thumbs collections:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.5"}}
 
 We have to create Stores for Images and Thumbs.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.6"}}
 
 Let's explain a bit what happened.
 
@@ -61,7 +61,7 @@ Since we transfer every uploaded file to ThumbsStore, we can now easily add file
 
 Let's resize every file to 32x32:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.7"}}
 
 We used [`gm`](https://github.com/aheckmann/gm) module, let's install it:
 
@@ -80,53 +80,53 @@ For our application, we would like to add ability to drag-and-drop images, so we
 
 And let's add it's module to ours:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.10"}}
 
 Now, let's create the `PartiesUpload` component. It will be responsible for uploading photos, starting with a stub of the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.11"}}
 
 And the `Component`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.12"}}
 
 And let's add it to our declarations file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.13"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.13"}}
 
 We want to use it in `PartiesForm`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.14"}}
 
 Now, let's implement `fileDrop` directive:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.15"}}
 
 As you can see we used `fileOver` event. It tells the component if file is over the drop zone.
 
 We can now handle it inside the component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.16"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.16"}}
 
 Second thing is to handle `onFileDrop` event:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.17"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.17"}}
 
 Now our component is able to catch any dropped file, so let's create a function to upload that file into server.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.18"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.18"}}
 
 Quick explanation. We need to know the name, the type and also the size of file we want to upload. We can get it from `data` object.
 
 Now we can move on to use that function in `PartiesUpload` component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.19"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.19"}}
 
 Now let's take a little break and solve those annoying missing modules errors. Since the uploading packages we used in the `upload` method are package that comes from Meteor Atmosphere and they not provide Typings (`.d.ts` files), we need to create one for them.
 
 Let's add it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.20"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.20"}}
 
 And you might see more errors because we used NodeJS API and we need to install it's `.d.ts` as well - this can be downloaded using `typings`:
 
@@ -134,7 +134,7 @@ And you might see more errors because we used NodeJS API and we need to install 
 
 Let's also add the `file-uploading` css class:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.22"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.22"}}
 
 ### Display Uploaded Images
 
@@ -142,65 +142,65 @@ Let's create a simple gallery to list the images in the new party form.
 
 First thing to do is to create a Publication for thumbnails:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.23"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.23"}}
 
 As you can see we also created a Publication for images. We will use it later.
 
 We still need to add it on the server-side:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.24"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.24"}}
 
 Now let's take care of UI. This will need to be reactive, so we will use again the `MeteorObservable` wrapper and RxJS.
 
 Let's create a `Subject` that will be in charge of notification regarding files actions:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.25"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.25"}}
 
 Let's now subscribe to `thumbs` publication with an array of those ids we created in the previous step:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.26"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.26"}}
 
 Now we can look for thumbnails that come from `ImagesStore`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.27"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.27"}}
 
 We still don't see any thumbnails, so let's add a view for the thumbs:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.28"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.28"}}
 
 Since we are working on a view right now, let's add some style.
 
 We need to create `parties-upload.component.scss` file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.29"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.29"}}
 
 and to import that file in `client/main.scss`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.30"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.30"}}
 
 Great! We can move on to the next step. Let's do something with the result of the `upload` function.
 
 We will create the `addFile` method that updates the `files` property, and we will add the actual array the in charge of the notifications in `files` (which is a `Subject` and only in charge of the notifications, not the actual data):
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.31"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.31"}}
 
 We want a communication between PartiesUpload and PartiesForm. Let's use `Output` decorator and the `EventEmitter` to notify PartiesForm component about every new file.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.32"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.32"}}
 
 On the receiving side of this connection we have the PartiesForm component.
 
 Create a method that handles an event with the new file and put images inside the FormBuilder.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.33"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.33"}}
 
 To keep Party interface up to date, we need to add `images` to it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.34"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.34"}}
 
 The last step will be to create an event binding for `onFile`.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.35"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.35"}}
 
 ### Display the main image of each party on the list
 
@@ -208,31 +208,31 @@ We will use Pipes to achieve this.
 
 Let's create the `DisplayMainImagePipe` inside `client/imports/app/shared/display-main-image.pipe.ts`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.36"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.36"}}
 
 Since we have it done, let's add it to PartiesList:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.37"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.37"}}
 
 We also need to subscribe to `images`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.38"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.38"}}
 
 We can now just implement it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.39"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.39"}}
 
 Add some css rules to keep the control of images:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.40"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.40"}}
 
 We still need to add the reset functionality to the component, since we want to manage what happens after images were added:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.41"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.41"}}
 
 By using `#upload` we get access to the PartiesUpload component's API. We can now use the `reset()`` method:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="20.42"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="21.42"}}
 
 And that's it!
 

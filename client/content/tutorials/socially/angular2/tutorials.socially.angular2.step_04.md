@@ -22,7 +22,7 @@ Let's make a new component called `PartiesFormComponent`, and put it inside `par
 > Notice that we are placing the file inside the `imports` folder.  
 > That is another Meteor special folder name that tells Meteor to load the modules inside it just when some other module is importing it.  
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.1"}}
 
 Notice that we are exporting the class `PartiesFormComponent` using ES6 module syntax.
 As a result, you'll be able to import `PartiesFormComponent` in any other component as follows:
@@ -37,21 +37,21 @@ Let's add a template for the new component.
 
 Add a file with the following form:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.2"}}
 
 We can load the new `PartiesForm` component on the page by placing the `<parties-form>` tag in the root template `app.html`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.3"}}
 
 There is one more required step in Angular 2 to load a component - we need to declare it in the our `NgModule` so other Components know it existing and can use it.
 
 We will create a new file that `export`s an Array of `Component`s that needed to be declared in the `NgModule`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.4"}}
 
 And now let's load this Array of `Component`s into our `NgModule`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.5"}}
 
 > The `...` is part of ES2016 language - it spreads the array like it was not an array, you can read more about it [here](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator).
 
@@ -65,7 +65,7 @@ Now let's get back to the form and make it functional.
 
 In order to use features of Angular 2 for Forms - we need to import `FormsModule` into our `NgModule`, so let's do it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.6"}}
 
 > Full documentation of `FormsModule` and a comprehensive tutorial is located [here](https://angular.io/docs/ts/latest/guide/forms.html).
 
@@ -73,7 +73,7 @@ Let's construct our form model. There is a special class for this called [`FormB
 
 First, we should import necessary dependencies, then build the model and its future fields with help of the `FormBuilder` instance:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.7"}}
 
   > As you probably noticed, we used OnInit interface. It brings the ngOnInit method.
   It initialize the directive/component after Angular initializes the data-bound input properties.
@@ -108,7 +108,7 @@ We could also access the control values individually.
 
 Now let's move to the template. We have to bind to `formGroup` and add `formControlName` directives to our inputs.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.8"}}
 
 By `formGroup` we provide an instance of the `FormGroup`, in our case this is the `addForm`.
 
@@ -122,7 +122,7 @@ Since `name` and `location` are required fields in our model, let's set up valid
 
 In Angular2, it's less then easy, just add [`Validators.required`](https://angular.io/docs/ts/latest/api/common/Validators-class.html) as a second parameter to a required control:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.9"}}
 
 We can check `addForm.valid` property to determine if the form is valid:  
 
@@ -165,11 +165,11 @@ Let's bind a submit event to the add button.
 
 This event will trigger if the button is clicked, or if the user presses enter on the final field.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.10"}}
 
 In Angular 2, events are indicated by the round bracket () syntax. Here we are telling Angular to call a method `addParty` on submit. Let's add the addParty method to our PartiesFormComponent class.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.11"}}
 
 > Note: TypeScript doesn't know which controls properties are available so we have to put them in the squery brackets.
 
@@ -183,11 +183,11 @@ First, we will get warning and errors from the TypeScript compiler, and we also 
 
 So first, let's create a base model for our database entities, which contains the `_id` field:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.14"}}
 
 And let's create a model for a single `Party` object:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.15"}}
 
 We will later use those to indicate the types of our collection and objects in the UI.
 
@@ -197,7 +197,7 @@ Now, let's add the ability to delete parties.
 
 Let's add an X button to each party in our party list:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.12"}}
 
 Here again, we are binding an event to the class context and passing in the party as a parameter.
 
@@ -205,7 +205,7 @@ Let's go into the class and add that method.
 
 Add the method inside the AppComponent class in `app.component.ts`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.13"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="5.13"}}
 
 The Mongo Collection Parties has a method called "remove". We search for the relevant party by its identifier, `_id`, and delete it.
 

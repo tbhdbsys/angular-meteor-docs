@@ -47,15 +47,15 @@ Now we are going to add `angular2-meteor-accounts-ui` which is a package that co
 
 Because Angular 2 works with modules, we need to import this package's module into our:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.2"}}
 
 Let's add the `<login-buttons>` tag below of the party form in the PartiesList's template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.3"}}
 
 Now let's create main stylesheet file (with `.scss` extension), and import the SCSS file from the package:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.4"}}
 
 Run the code, you'll see a login link below the form. Click on the link and then "create  account" to sign up. Try to log in and log out.
 
@@ -67,7 +67,7 @@ Now that we have our account system, we can start defining our security rules fo
 
 Let's go to the "collection" folder and specify what actions are allowed:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.5"}}
 
 In only 10 lines of code we've specified that inserts, updates and removes can only be completed if a user is logged in.
 
@@ -88,19 +88,19 @@ It'd be useful to add an alert prompting the user to log in if she wants to add 
 
 Change the click handler of the "Add" button in the `parties-form.component.ts`, `addParty`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.6"}}
 
 Now, change it to save the user ID as well:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.7"}}
 
 Notice that you'll need to update the Party interface in the `party.interface.ts` definition file with the optional new property: `owner?: string`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.8"}}
 
 Let's verify the same logic for updating a party:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.9"}}
 
 # canActivate
 
@@ -108,7 +108,7 @@ Let's verify the same logic for updating a party:
 
 Now you can specify if a component can be accessed only when a user is logged in using the `canActivate` property in the router definition.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.10"}}
 
 We created a new provider called `canActivateForLoggedIn` that contains a boolean value with login state.
 
@@ -118,7 +118,7 @@ It's worth mentioning that guards can receive more than one provider.
 
 Now, we only need to declare this provider in our NgModule:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="8.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="9.11"}}
 
 # InjectUser
 

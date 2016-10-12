@@ -64,7 +64,7 @@ Now we can start building our app.
 
 Create a new `index.html` file in the client folder, and place this code inside. Then run the app again.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="1.2"}}
 
 And Meteor build tool refreshes automatically and our app is updated in the browser.
 
@@ -140,7 +140,7 @@ that stem out of it. So let's create our root component.
 
 Create a new `app.component.ts` file inside of the `client` folder.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="1.3"}}
 
 First we're importing the dependency we needed from `@angular/core`.
 
@@ -150,11 +150,11 @@ The class, AppComponent, inherits from `@Component` which is part of Angular 2.
 
 We have defined the component, let's create the template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="1.4"}}
 
 Now, we can use it inside of the component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="1.5"}}
 
 **About templates**
 
@@ -169,7 +169,7 @@ Finally, we can `bootstrap` our component, thus, marking it as the root componen
 
 First thing to do is to add `<app/>` element to the `<body/>`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="1.6"}}
 
 Great! Now we have our root component, we will need to create NgModule.
 
@@ -179,19 +179,19 @@ You can read more about NgModule in [Angular 2 documentation](https://angular.io
 
 Let's create our NgModule:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="1.7"}}
 
 > We will import `BrowserModule` which is the basic and internal Component we will use later in our view templates.
 
 And let's declare our `AppComponent` and add it as root component that needed to be bootstraped:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="1.8"}}
 
 Now we need to create an entry point for project - we will create it directly under `client` directory, because we wan't this file to be loaded when Meteor start's our project.
 
 The main entry file uses Angular 2 `bootstrapModule` with our new NgModule:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="0.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="1.9"}}
 
 Now let's run the app:
 

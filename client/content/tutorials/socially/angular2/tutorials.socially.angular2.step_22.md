@@ -27,29 +27,29 @@ So let's start with the `AppComponent` that needed to be change to `app.componen
 
 Now update the usage of the template in the Component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.4"}}
 
 And modify the import path in the module file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.5"}}
 
 Now let's take back the code we modified in the previous step (#21) and use only the original version of the Login component, because we do not want to have login in our Ionic version (it will be read only):
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.6"}}
 
 Create a root Component for the mobile, and call it `AppMobileComponent`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.7"}}
 
 And let's create it's view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.8"}}
 
 We used `ion-nav` which is the navigation bar of Ionic, we also declared that our root page is `rootPage` which we will add later.
 
 Now let's create an index file for the ionic component declarations:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.9"}}
 
 ## Modules Separation
 
@@ -65,7 +65,7 @@ We also need to declare `IonicApp` as our `bootstrap` Component, and add every I
 
 So let's create it and differ the platform:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.10"}}
 
 Our next step is to change our selector of the root Component.
 
@@ -79,7 +79,7 @@ There is a package called `ionic-selector` we can use in order to get this done,
 
 Now let's use in before bootstrapping our module:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.12"}}
 
 What it does? It's changing tag name of the main component (`app` by default but you can specify any selector you want) to `ion-app`.
 
@@ -109,23 +109,23 @@ Start by adding the icons package:
 
 Also, let's create a style file for the mobile and Ionic styles, and load the icons package to it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.14"}}
 
 And let's imports this file into our main styles file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.15"}}
 
 Now we need to load Ionic stylesheet into our project - but we need to load it only to the mobile platform, without loading it to the web platform (otherwise, it will override our styles):
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.16"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.16"}}
 
 We also need to add some CSS classes in order to get a good result:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.17"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.17"}}
 
 And let's add the correct class to the `body`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.18"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.18"}}
 
 > We created a mechanism that adds `web` or `mobile` class to `<body/>` element depends on environment.
 
@@ -135,45 +135,45 @@ We want to share the logic of `PartiesListComponent` without sharing it's styles
 
 In order to do so, let's take all of the logic we have in `PartiesListComponent` and take it to an external file that won't contain the Component decorator:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.19"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.19"}}
 
 And let's clean up the `PartiesListComponent`, and use the new class `PartiesList` as base class for this Component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.20"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.20"}}
 
 Now let's create a basic view and layout for the mobile platform, be creating a new Component called `PartiesListMobile`, starting with the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.21"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.21"}}
 
 And it's Component, which is very similar to the web version, only it uses different template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.22"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.22"}}
 
 Now let's add the mobile Component of the parties list to the index file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.23"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.23"}}
 
 And let's add the Component we just created as `rootPage` for our Ionic application:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.24"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.24"}}
 
 Now we just need declare this Component as `entryComponents` in the `NgModule` definition, and make sure we have all the required external modules in the `NgModule` that loaded for the mobile:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.25"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.25"}}
 
 Now we want to add the actual view to the mobile Component, so let's do it:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.26"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.26"}}
 
 > We used `ion-card` which is an Ionic Component.
 
 And in order to have the ability to load images in the mobile platform, we need to add some logic to the `displayMainImage` Pipe, because Meteor's absolute URL is not the same in mobile:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.27"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.27"}}
 
 And let's add the image to the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.28"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.28"}}
 
 ### Fixing fonts
 
@@ -185,7 +185,7 @@ That plugin needs to know which font we want to use and where it should be avail
 
 Configuration is pretty easy, you will catch it by just looking on an example:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="22.30"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="23.30"}}
 
 Now `roboto-regular.ttf` is available under `http://localhost:3000/fonts/roboto-regular.ttf`.
 

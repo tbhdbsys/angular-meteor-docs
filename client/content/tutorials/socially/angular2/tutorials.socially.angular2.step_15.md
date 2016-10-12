@@ -37,14 +37,14 @@ the user property into the PartiesList component, since this is what our attribu
 binding will depend on. User injection was already mentioned in step 8,
 so let's make practical use of it now:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="15.1"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.1"}}
 
 As you can see, we've added a new `isOwner` method to the component,
 thus, we allow only a party owner to remove the party.
 
 Then, change the template to use the `hidden` attribute:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="15.2"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.2"}}
 
 Now run the app. Make sure you have added _barbatus:ng2-meteor-accounts_ for it to work.
 
@@ -65,13 +65,13 @@ Let's disable these inputs for users that are not owners.
 
 We will get an `isOwner` property when the party owner matches the logged-in user id:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="15.3"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.3"}}
 
 `isOwner` can be used before the subscription has finished, so we must check if the `party` property is available before checking if the party owner matches.
 
 Then, let's add our new `[disabled]` condition to the party details template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="15.4"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.4"}}
 
 # Using `ngIf`
 
@@ -86,11 +86,11 @@ and the invitation list to the party owners and to everybody if the party is pub
 
 We've already added our `isOwner` variable. Let's add two more: `isPublic` and `isInvited`.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="15.5"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.5"}}
 
 Then, make use of the properties in the template:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="15.6"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="16.6"}}
 
 # Summary
 
