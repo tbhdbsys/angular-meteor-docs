@@ -44,31 +44,31 @@ Let's now update those files:
 
 - `client/main.ts` - one small change
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.2"
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.1"
     filename="client/main.ts" }}
 
 - `client/imports/app/app.component.ts` - stays the same
 
 - `client/imports/app/app.component.html` - remove `<demo></demo>`
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.2"
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.1"
     filename="client/imports/app/app.component.html" }}
 
 - `client/imports/app/app.component.scss` - leave it empty
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.2"
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.1"
     filename="client/imports/app/app.component.scss" }}
 
 - `client/imports/app/app.module.ts` - remove Providers and Components
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.2"
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.1"
     filename="client/imports/app/app.module.ts" }}
 
 - `server/main.ts` - without any change
 
 - `server/imports/server-main/main.ts` - leave only Main class with empty `start()` method
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.2"
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.1"
     filename="server/imports/server-main/main.ts" }}
 
 ## Ionic 2
@@ -91,7 +91,7 @@ Ionic provides their own NgModule, called `IonicModule` (see [documentation](htt
 
 Let's use the `AppComponent` as the main component of our app (not the root component):
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.4" }}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.3" }}
 
 We removed `BrowserModule` since all the declarations and providers are included in `IonicModule`.
 
@@ -99,13 +99,13 @@ We also added [`IonicApp`](http://ionicframework.com/docs/v2/api/components/app/
 
 Now we have to change the root component's selector inside `client/index.html`:
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.5" }}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.4" }}
 
 ### Styles
 
 We need to create our own Ionic stylesheet based on the source:
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.6" }}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.5" }}
 
 You can just copy paste it.
 
@@ -119,7 +119,7 @@ That plugin needs to know which font we want to use and where it should be avail
 
 Configuration is pretty easy, you will catch it by just looking on an example:
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.8" }}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.7" }}
 
 Now `roboto-medium.ttf` is available under `http://localhost:3000/fonts/roboto-medium.ttf`.
 
@@ -131,7 +131,7 @@ Yes, with Ionic you're able to use any native functionality you need.
 
 Now we can use one of those functionalities. Let's work with Status Bar:
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.10" }}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.9" }}
 
 Do a quick overview:
 
@@ -157,7 +157,7 @@ To learn more about **Mobile** in Meteor read the [*"Mobile"* chapter](https://g
 
 We also need to add few meta tags:
 
-{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.12" }}
+{{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.11" }}
 
 
 ### Web
