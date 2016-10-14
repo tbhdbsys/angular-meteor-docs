@@ -24,6 +24,6 @@ DiffBox.registerTutorial('whatsapp2-ionic-tutorial', {
 });
 
 DiffBox.registerTutorial('whatsapp2-meteor-tutorial', {
-  gitHubRepoName: 'DAB0mB/ionic2-meteor-messenger',
+  gitHubRepoName: 'Urigo/Ionic2-MeteorCLI-WhatsApp',
   patchFilename: 'client/content/tutorials/whatsapp2/patches/whatsapp2-meteor-tutorial.multi.patch'
 });
