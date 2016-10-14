@@ -60,9 +60,9 @@ This style requires us to add some assets, first we will create a copy called `a
 
     $ mkdir public/assets
     $ cd public/assets
-    $ wget https://github.com/DAB0mB/ionic2-meteor-messenger/blob/master/www/assets/chat-background.jpg
-    $ wget https://github.com/DAB0mB/ionic2-meteor-messenger/blob/master/www/assets/message-mine.jpg
-    $ wget https://github.com/DAB0mB/ionic2-meteor-messenger/blob/master/www/assets/message-other.jpg
+    $ wget https://github.com/Urigo/Ionic2-MeteorCLI-WhatsApp/blob/master/www/assets/chat-background.jpg
+    $ wget https://github.com/Urigo/Ionic2-MeteorCLI-WhatsApp/blob/master/www/assets/message-mine.jpg
+    $ wget https://github.com/Urigo/Ionic2-MeteorCLI-WhatsApp/blob/master/www/assets/message-other.jpg
 
 Now we need to take care of the message's timestamp and format it, then again we gonna use `angular2-moment` only this time we gonna use a different format using the `AmDateFormat` pipe:
 
