@@ -1,19 +1,19 @@
-From 18dfae2516cbedfde09308da4cf31129ab4275a4 Mon Sep 17 00:00:00 2001
+From ac73ed3880a12eb5d76f603d9369f2428857921a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:04:49 +0300
 Subject: [PATCH 001/115] Step 0.1: Create project
 
 ---
  .gitignore                  |  1 +
- .meteor/.finished-upgraders | 13 +++++++++
+ .meteor/.finished-upgraders | 15 ++++++++++
  .meteor/.gitignore          |  1 +
  .meteor/.id                 |  7 +++++
- .meteor/packages            | 21 ++++++++++++++
+ .meteor/packages            | 22 ++++++++++++++
  .meteor/platforms           |  2 ++
  .meteor/release             |  1 +
- .meteor/versions            | 69 +++++++++++++++++++++++++++++++++++++++++++++
+ .meteor/versions            | 72 +++++++++++++++++++++++++++++++++++++++++++++
  package.json                | 10 +++++++
- 9 files changed, 125 insertions(+)
+ 9 files changed, 131 insertions(+)
  create mode 100644 .gitignore
  create mode 100644 .meteor/.finished-upgraders
  create mode 100644 .meteor/.gitignore
@@ -34,10 +34,10 @@ index 0000000..40b878d
 \ No newline at end of file
 diff --git a/.meteor/.finished-upgraders b/.meteor/.finished-upgraders
 new file mode 100644
-index 0000000..dacc2c0
+index 0000000..aa60704
 --- /dev/null
 +++ b/.meteor/.finished-upgraders
-@@ -0,0 +1,13 @@
+@@ -0,0 +1,15 @@
 +# This file contains information which helps Meteor properly upgrade your
 +# app when you run 'meteor update'. You should check it into version control
 +# with your project.
@@ -51,6 +51,8 @@ index 0000000..dacc2c0
 +1.2.0-cordova-changes
 +1.2.0-breaking-changes
 +1.3.0-split-minifiers-package
++1.4.0-remove-old-dev-bundle-link
++1.4.1-add-shell-server-package
 diff --git a/.meteor/.gitignore b/.meteor/.gitignore
 new file mode 100644
 index 0000000..4083037
@@ -73,31 +75,32 @@ index 0000000..c94ddbf
 +1t61tt4fa7omu1iengix
 diff --git a/.meteor/packages b/.meteor/packages
 new file mode 100644
-index 0000000..d4c8001
+index 0000000..801f3fc
 --- /dev/null
 +++ b/.meteor/packages
-@@ -0,0 +1,21 @@
+@@ -0,0 +1,22 @@
 +# Meteor packages used by this project, one per line.
 +# Check this file (and the other files in this directory) into your repository.
 +#
 +# 'meteor add' and 'meteor remove' will edit this file for you,
 +# but you can also edit it by hand.
 +
-+meteor-base             # Packages every Meteor app needs to have
-+mobile-experience       # Packages for a great mobile UX
-+mongo                   # The database Meteor supports right now
-+blaze-html-templates    # Compile .html files into Meteor Blaze views
-+reactive-var            # Reactive variable for tracker
-+jquery                  # Helpful client-side library
-+tracker                 # Meteor's client-side reactive programming library
++meteor-base@1.0.4             # Packages every Meteor app needs to have
++mobile-experience@1.0.4       # Packages for a great mobile UX
++mongo@1.1.12_1                   # The database Meteor supports right now
++blaze-html-templates@1.0.4    # Compile .html files into Meteor Blaze views
++reactive-var@1.0.10            # Reactive variable for tracker
++jquery@1.11.9                  # Helpful client-side library
++tracker@1.1.0                 # Meteor's client-side reactive programming library
 +
-+standard-minifier-css   # CSS minifier run for production mode
-+standard-minifier-js    # JS minifier run for production mode
-+es5-shim                # ECMAScript 5 compatibility for older browsers.
-+ecmascript              # Enable ECMAScript2015+ syntax in app code
++standard-minifier-css@1.2.0_1   # CSS minifier run for production mode
++standard-minifier-js@1.2.0_1    # JS minifier run for production mode
++es5-shim@4.6.14_1                # ECMAScript 5 compatibility for older browsers.
++ecmascript@0.5.8_1              # Enable ECMAScript2015+ syntax in app code
 +
-+autopublish             # Publish all data to the clients (for prototyping)
-+insecure                # Allow all DB writes from clients (for prototyping)
++autopublish@1.0.7             # Publish all data to the clients (for prototyping)
++insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
++shell-server
 diff --git a/.meteor/platforms b/.meteor/platforms
 new file mode 100644
 index 0000000..efeba1b
@@ -108,86 +111,89 @@ index 0000000..efeba1b
 +browser
 diff --git a/.meteor/release b/.meteor/release
 new file mode 100644
-index 0000000..4fd7a93
+index 0000000..2631a23
 --- /dev/null
 +++ b/.meteor/release
 @@ -0,0 +1 @@
-+METEOR@1.3
++METEOR@1.4.1.2
 diff --git a/.meteor/versions b/.meteor/versions
 new file mode 100644
-index 0000000..1430419
+index 0000000..8cc40eb
 --- /dev/null
 +++ b/.meteor/versions
-@@ -0,0 +1,69 @@
-+allow-deny@1.0.2
-+autopublish@1.0.5
-+autoupdate@1.2.6
-+babel-compiler@6.5.2
-+babel-runtime@0.1.6
-+base64@1.0.6
-+binary-heap@1.0.6
-+blaze@2.1.5
-+blaze-html-templates@1.0.2
-+blaze-tools@1.0.6
-+boilerplate-generator@1.0.6
-+caching-compiler@1.0.2
-+caching-html-compiler@1.0.4
-+callback-hook@1.0.6
-+check@1.1.2
-+ddp@1.2.3
-+ddp-client@1.2.3
-+ddp-common@1.2.3
-+ddp-server@1.2.4
-+deps@1.0.10
-+diff-sequence@1.0.3
-+ecmascript@0.4.1
-+ecmascript-runtime@0.2.8
-+ejson@1.0.9
-+es5-shim@4.5.8
-+fastclick@1.0.9
-+geojson-utils@1.0.6
-+hot-code-push@1.0.2
-+html-tools@1.0.7
-+htmljs@1.0.7
-+http@1.1.3
-+id-map@1.0.5
-+insecure@1.0.5
-+jquery@1.11.6
-+launch-screen@1.0.8
-+livedata@1.0.16
-+logging@1.0.10
-+meteor@1.1.12
-+meteor-base@1.0.2
-+minifier-css@1.1.9
-+minifier-js@1.1.9
-+minimongo@1.0.12
-+mobile-experience@1.0.2
-+mobile-status-bar@1.0.10
-+modules@0.5.1
-+modules-runtime@0.6.1
-+mongo@1.1.5
-+mongo-id@1.0.2
-+npm-mongo@1.4.41
-+observe-sequence@1.0.9
-+ordered-dict@1.0.5
-+promise@0.6.5
-+random@1.0.7
-+reactive-var@1.0.7
-+reload@1.1.6
-+retry@1.0.5
-+routepolicy@1.0.8
-+spacebars@1.0.9
-+spacebars-compiler@1.0.9
-+standard-minifier-css@1.0.4
-+standard-minifier-js@1.0.4
-+templating@1.1.7
-+templating-tools@1.0.2
-+tracker@1.0.11
-+ui@1.0.9
-+underscore@1.0.6
-+url@1.0.7
-+webapp@1.2.6
-+webapp-hashing@1.0.7
+@@ -0,0 +1,72 @@
++allow-deny@1.0.5
++autopublish@1.0.7
++autoupdate@1.2.11
++babel-compiler@6.9.1_1
++babel-runtime@0.1.11_1
++base64@1.0.9
++binary-heap@1.0.9
++blaze@2.1.9
++blaze-html-templates@1.0.5
++blaze-tools@1.0.10
++boilerplate-generator@1.0.10
++caching-compiler@1.1.7_1
++caching-html-compiler@1.0.7
++callback-hook@1.0.9
++check@1.2.3
++ddp@1.2.5
++ddp-client@1.2.9
++ddp-common@1.2.6
++ddp-server@1.2.10
++deps@1.0.12
++diff-sequence@1.0.6
++ecmascript@0.5.8_1
++ecmascript-runtime@0.3.14_1
++ejson@1.0.12
++es5-shim@4.6.14_1
++fastclick@1.0.12
++geojson-utils@1.0.9
++hot-code-push@1.0.4
++html-tools@1.0.11
++htmljs@1.0.11
++http@1.1.8
++id-map@1.0.8
++insecure@1.0.7
++jquery@1.11.9
++launch-screen@1.0.12
++livedata@1.0.18
++logging@1.1.15_1
++meteor@1.2.17_1
++meteor-base@1.0.4
++minifier-css@1.2.14_1
++minifier-js@1.2.14_1
++minimongo@1.0.17
++mobile-experience@1.0.4
++mobile-status-bar@1.0.12
++modules@0.7.6_1
++modules-runtime@0.7.6_1
++mongo@1.1.12_5
++mongo-id@1.0.5
++npm-mongo@2.2.10_1
++observe-sequence@1.0.13
++ordered-dict@1.0.8
++promise@0.8.7
++random@1.0.10
++reactive-var@1.0.10
++reload@1.1.10
++retry@1.0.8
++routepolicy@1.0.11
++shell-server@0.2.1
++spacebars@1.0.13
++spacebars-compiler@1.0.13
++standard-minifier-css@1.2.1
++standard-minifier-js@1.2.0_1
++templating@1.2.15
++templating-compiler@1.2.15
++templating-runtime@1.2.15
++templating-tools@1.0.5
++tracker@1.1.0
++ui@1.0.12
++underscore@1.0.9
++url@1.0.10
++webapp@1.3.11_1
++webapp-hashing@1.0.9
 diff --git a/package.json b/package.json
 new file mode 100644
 index 0000000..4277e98
@@ -205,71 +211,100 @@ index 0000000..4277e98
 +  }
 +}
 -- 
-2.5.0
+2.7.4
 
 
-From 2d3ccd010a8d46470e6f05bf1b95657ec661d1f5 Mon Sep 17 00:00:00 2001
+From b6ab7fa497f67f4bca478a2d51c904fef04a5f19 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:06:19 +0300
 Subject: [PATCH 002/115] Step 0.2: Initial setup
 
 ---
- .meteor/packages | 3 ++-
- .meteor/versions | 4 ++--
- package.json     | 6 ++++++
- 3 files changed, 10 insertions(+), 3 deletions(-)
+ .meteor/packages | 20 ++++++++++----------
+ .meteor/versions | 12 ++++--------
+ package.json     |  6 ++++++
+ 3 files changed, 20 insertions(+), 18 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index d4c8001..244a1d8 100644
+index 801f3fc..ebddab3 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -7,7 +7,6 @@
- meteor-base             # Packages every Meteor app needs to have
- mobile-experience       # Packages for a great mobile UX
- mongo                   # The database Meteor supports right now
--blaze-html-templates    # Compile .html files into Meteor Blaze views
- reactive-var            # Reactive variable for tracker
- jquery                  # Helpful client-side library
- tracker                 # Meteor's client-side reactive programming library
-@@ -19,3 +18,5 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
+@@ -4,19 +4,19 @@
+ # 'meteor add' and 'meteor remove' will edit this file for you,
+ # but you can also edit it by hand.
  
- autopublish             # Publish all data to the clients (for prototyping)
- insecure                # Allow all DB writes from clients (for prototyping)
+-meteor-base@1.0.4             # Packages every Meteor app needs to have
+-mobile-experience@1.0.4       # Packages for a great mobile UX
+-mongo@1.1.12_1                   # The database Meteor supports right now
+-blaze-html-templates@1.0.4    # Compile .html files into Meteor Blaze views
+-reactive-var@1.0.10            # Reactive variable for tracker
+-jquery@1.11.9                  # Helpful client-side library
+-tracker@1.1.0                 # Meteor's client-side reactive programming library
++meteor-base             # Packages every Meteor app needs to have
++mobile-experience       # Packages for a great mobile UX
++mongo                   # The database Meteor supports right now
++reactive-var            # Reactive variable for tracker
++jquery                  # Helpful client-side library
++tracker                 # Meteor's client-side reactive programming library
+ 
+ standard-minifier-css@1.2.0_1   # CSS minifier run for production mode
+ standard-minifier-js@1.2.0_1    # JS minifier run for production mode
+ es5-shim@4.6.14_1                # ECMAScript 5 compatibility for older browsers.
+ ecmascript@0.5.8_1              # Enable ECMAScript2015+ syntax in app code
+ 
+-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
+-insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+-shell-server
++autopublish             # Publish all data to the clients (for prototyping)
++insecure                # Allow all DB writes from clients (for prototyping)
 +dab0mb:ionic-assets
 +angular-templates
 diff --git a/.meteor/versions b/.meteor/versions
-index 1430419..bf91a90 100644
+index 8cc40eb..2507cd6 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,4 +1,5 @@
- allow-deny@1.0.2
-+angular-templates@1.0.2
- autopublish@1.0.5
- autoupdate@1.2.6
- babel-compiler@6.5.2
-@@ -6,13 +7,13 @@ babel-runtime@0.1.6
- base64@1.0.6
- binary-heap@1.0.6
- blaze@2.1.5
--blaze-html-templates@1.0.2
- blaze-tools@1.0.6
- boilerplate-generator@1.0.6
- caching-compiler@1.0.2
- caching-html-compiler@1.0.4
- callback-hook@1.0.6
- check@1.1.2
-+dab0mb:ionic-assets@1.2.4
- ddp@1.2.3
- ddp-client@1.2.3
- ddp-common@1.2.3
-@@ -59,7 +60,6 @@ spacebars@1.0.9
- spacebars-compiler@1.0.9
- standard-minifier-css@1.0.4
- standard-minifier-js@1.0.4
--templating@1.1.7
- templating-tools@1.0.2
- tracker@1.0.11
- ui@1.0.9
+ allow-deny@1.0.5
++angular-templates@1.0.9
+ autopublish@1.0.7
+ autoupdate@1.2.11
+ babel-compiler@6.9.1_1
+@@ -6,13 +7,12 @@ babel-runtime@0.1.11_1
+ base64@1.0.9
+ binary-heap@1.0.9
+ blaze@2.1.9
+-blaze-html-templates@1.0.5
+ blaze-tools@1.0.10
+ boilerplate-generator@1.0.10
+-caching-compiler@1.1.7_1
+-caching-html-compiler@1.0.7
++caching-compiler@1.0.6
+ callback-hook@1.0.9
+ check@1.2.3
++dab0mb:ionic-assets@1.3.2
+ ddp@1.2.5
+ ddp-client@1.2.9
+ ddp-common@1.2.6
+@@ -55,18 +55,14 @@ reactive-var@1.0.10
+ reload@1.1.10
+ retry@1.0.8
+ routepolicy@1.0.11
+-shell-server@0.2.1
+ spacebars@1.0.13
+ spacebars-compiler@1.0.13
+ standard-minifier-css@1.2.1
+ standard-minifier-js@1.2.0_1
+-templating@1.2.15
+-templating-compiler@1.2.15
+-templating-runtime@1.2.15
+-templating-tools@1.0.5
+ tracker@1.1.0
+ ui@1.0.12
+ underscore@1.0.9
++urigo:static-html-compiler@0.1.8
+ url@1.0.10
+ webapp@1.3.11_1
+ webapp-hashing@1.0.9
 diff --git a/package.json b/package.json
 index 4277e98..141c29d 100644
 --- a/package.json
@@ -288,10 +323,10 @@ index 4277e98..141c29d 100644
    }
  }
 -- 
-2.5.0
+2.7.4
 
 
-From 047a69981e1152c9acec2635da6f25d99a86ac7f Mon Sep 17 00:00:00 2001
+From fe670ee2905974bde6bd7201a1aa3553944ef6f3 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:11:10 +0300
 Subject: [PATCH 003/115] Step 1.1: Create main html file
@@ -331,10 +366,10 @@ index 0000000..a27b518
 +</body>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 87e9046738efe05630b81ceb79f89478c1f33daf Mon Sep 17 00:00:00 2001
+From 022ddc4e5b47de782ae194025ff9e16309bbf353 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:21:27 +0300
 Subject: [PATCH 004/115] Step 1.2: Create main app file
@@ -381,10 +416,10 @@ index 0000000..f9ab95c
 +  Angular.bootstrap(document, [App]);
 +}
 -- 
-2.5.0
+2.7.4
 
 
-From e8c5a61d23a64d8b0aece93a482d00865b7b20e3 Mon Sep 17 00:00:00 2001
+From f6d808e1dc0b6e7f566ff81b3129c849a44946b0 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:32:04 +0300
 Subject: [PATCH 005/115] Step 1.3: Add angular es6 class helpers
@@ -406,10 +441,10 @@ index 141c29d..e5e3d10 100644
      "angular-sanitize": "^1.5.3",
      "angular-ui-router": "^0.2.18",
 -- 
-2.5.0
+2.7.4
 
 
-From 751064efc9131caa79068d19cd75d50498bf7f3e Mon Sep 17 00:00:00 2001
+From 0cf90cca87ac64abc9276d5516c205e75fe9cb23 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:40:40 +0300
 Subject: [PATCH 006/115] Step 1.4: Add initial routes
@@ -451,10 +486,10 @@ index 0000000..17165ce
 +RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From f17de3ba6c0e957cd5e484ced65f53a2c53bae2f Mon Sep 17 00:00:00 2001
+From c6643ea41e129d8d9ad307c78ebc2cac65293a7b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:44:59 +0300
 Subject: [PATCH 007/115] Step 1.5: Load routes config
@@ -490,10 +525,10 @@ index f9ab95c..8b49417 100644
  if (Meteor.isCordova) {
    Angular.element(document).on('deviceready', onReady);
 -- 
-2.5.0
+2.7.4
 
 
-From 44dbc5110ab18c5fdbe7a64a52f2a59b358a2d5d Mon Sep 17 00:00:00 2001
+From 1240bcc14b7cb678f7886d5e9480df14ca3a5e28 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:13:21 +0300
 Subject: [PATCH 008/115] Step 1.6: Create tabs view
@@ -534,10 +569,10 @@ index 0000000..14ec5fb
 +</ion-tabs>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 4dc906974edf465a3e24f298eecf674f03585fb3 Mon Sep 17 00:00:00 2001
+From 7a7c750b3bb1069f346c5d71e37295d7be6c8d70 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:15:22 +0300
 Subject: [PATCH 009/115] Step 1.7: Create chats view
@@ -560,10 +595,10 @@ index 0000000..b1d926f
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 9b6e853d56d81e5fc8194be09622afe325d243b0 Mon Sep 17 00:00:00 2001
+From 002670bc13674a48fa4ad173e16373670aae469b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:16:27 +0300
 Subject: [PATCH 010/115] Step 1.8: Add IOS platform
@@ -581,10 +616,10 @@ index efeba1b..cc0f96a 100644
  browser
 +ios
 -- 
-2.5.0
+2.7.4
 
 
-From 28aa777570b8e3fd8b968268227e9456515269a4 Mon Sep 17 00:00:00 2001
+From 6c3db2ef9d73fbf80b6259f307b0f18e0b7fb27e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:19:07 +0300
 Subject: [PATCH 011/115] Step 1.9: Create chats controller
@@ -606,10 +641,10 @@ index 0000000..22b00f9
 +}
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 10617270d39a99cce843dba75fde3906afb1dca4 Mon Sep 17 00:00:00 2001
+From 18d6b773aabe487b61546790724e18a4c1a48442 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:20:52 +0300
 Subject: [PATCH 012/115] Step 1.10: Load chats controller
@@ -639,10 +674,10 @@ index 8b49417..b332f9e 100644
  
  // Startup
 -- 
-2.5.0
+2.7.4
 
 
-From b6e23158ba1372ff6d943149faa5a8b36965730e Mon Sep 17 00:00:00 2001
+From bb411bc9900022b8a7dde960ad1277bb88d64e03 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:24:25 +0300
 Subject: [PATCH 013/115] Step 1.11: Add moment npm package
@@ -665,10 +700,10 @@ index e5e3d10..3e9483f 100644
    }
  }
 -- 
-2.5.0
+2.7.4
 
 
-From aaef78e38e0f78f4d05d66eb50fbc66d795dee42 Mon Sep 17 00:00:00 2001
+From f76faa2c1c40f059284d07692b2a3f9dc6ab9e8a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:27:54 +0300
 Subject: [PATCH 014/115] Step 1.12: Add data stub to chats controller
@@ -741,10 +776,10 @@ index 22b00f9..909bdfd 100644
 +  }
 +}
 -- 
-2.5.0
+2.7.4
 
 
-From 5d65d31bf09e7fe6d5b6c697c4d1c8f146d78663 Mon Sep 17 00:00:00 2001
+From bff25409e218b6604251a8b31b2b264311ef7970 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:30:19 +0300
 Subject: [PATCH 015/115] Step 1.13: Connect chats controller to chats view
@@ -768,10 +803,10 @@ index 17165ce..43898c5 100644
          }
        });
 -- 
-2.5.0
+2.7.4
 
 
-From ba0cf6f520a37b7ff39f72e538bc9ca550c3e242 Mon Sep 17 00:00:00 2001
+From fe41a29875217ae2cb97d7f5c00223009e94d04a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:32:46 +0300
 Subject: [PATCH 016/115] Step 1.14: Add data stub to chats view
@@ -803,10 +838,10 @@ index b1d926f..73fd236 100644
  </ion-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 5077b792227066a70bc108f014d8e3ece679b635 Mon Sep 17 00:00:00 2001
+From c188682c0f2ff11d34e4e5e404811a253a81a6f7 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:53:13 +0300
 Subject: [PATCH 017/115] Step 1.15: Create calendar filter
@@ -841,10 +876,10 @@ index 0000000..f22da38
 +CalendarFilter.$name = 'calendar';
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 016b9a3670888b01fb49297a4e8d8c6c88157c15 Mon Sep 17 00:00:00 2001
+From c73de1869f2ee36ccd988ba3f062335cc0e155ea Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:54:53 +0300
 Subject: [PATCH 018/115] Step 1.16: Load calendar filter
@@ -874,10 +909,10 @@ index b332f9e..abe61c0 100644
  
  // Startup
 -- 
-2.5.0
+2.7.4
 
 
-From d3a00bb21fa1aa20e0c9564dc8e7b6496292f41c Mon Sep 17 00:00:00 2001
+From cfcb8d09a097e88e8ba79f9f5486c2e3d7b0f58a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:57:54 +0300
 Subject: [PATCH 019/115] Step 1.17: Apply calendar filter to chats view
@@ -900,10 +935,10 @@ index 73fd236..eaee732 100644
        </ion-item>
      </ion-list>
 -- 
-2.5.0
+2.7.4
 
 
-From 4ce67889db00468633fd290cef666f5f743b2fdc Mon Sep 17 00:00:00 2001
+From 962d2fa1903529d8913b91c60c3683d856689374 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 12:00:13 +0300
 Subject: [PATCH 020/115] Step 1.18: Add delete button to chats view
@@ -927,10 +962,10 @@ index eaee732..5286351 100644
      </ion-list>
    </ion-content>
 -- 
-2.5.0
+2.7.4
 
 
-From 9bab1ca916e484378ab786c78f14ef72360b46fe Mon Sep 17 00:00:00 2001
+From 3d70798869ec74de06f77d18cbc7a10330bf202a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:21:42 +0300
 Subject: [PATCH 021/115] Step 1.19: Add delete button logic to chats
@@ -954,21 +989,21 @@ index 909bdfd..20dcbeb 100644
 +  }
  }
 -- 
-2.5.0
+2.7.4
 
 
-From f2f352b65e9126b4c15e572bb6ad4c8e85050f3b Mon Sep 17 00:00:00 2001
+From 72484d96b9b916b6c3990763cf2177cabf226e54 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:22:46 +0300
 Subject: [PATCH 022/115] Step 1.20: Add sass meteor package
 
 ---
  .meteor/packages | 1 +
- .meteor/versions | 1 +
- 2 files changed, 2 insertions(+)
+ .meteor/versions | 3 ++-
+ 2 files changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 244a1d8..934f644 100644
+index ebddab3..ccdac92 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
 @@ -20,3 +20,4 @@ autopublish             # Publish all data to the clients (for prototyping)
@@ -977,22 +1012,31 @@ index 244a1d8..934f644 100644
  angular-templates
 +fourseven:scss
 diff --git a/.meteor/versions b/.meteor/versions
-index bf91a90..fc2fc94 100644
+index 2507cd6..f953362 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -25,6 +25,7 @@ ecmascript-runtime@0.2.8
- ejson@1.0.9
- es5-shim@4.5.8
- fastclick@1.0.9
-+fourseven:scss@3.4.1
- geojson-utils@1.0.6
- hot-code-push@1.0.2
- html-tools@1.0.7
+@@ -9,7 +9,7 @@ binary-heap@1.0.9
+ blaze@2.1.9
+ blaze-tools@1.0.10
+ boilerplate-generator@1.0.10
+-caching-compiler@1.0.6
++caching-compiler@1.1.7_1
+ callback-hook@1.0.9
+ check@1.2.3
+ dab0mb:ionic-assets@1.3.2
+@@ -24,6 +24,7 @@ ecmascript-runtime@0.3.14_1
+ ejson@1.0.12
+ es5-shim@4.6.14_1
+ fastclick@1.0.12
++fourseven:scss@3.10.0
+ geojson-utils@1.0.9
+ hot-code-push@1.0.4
+ html-tools@1.0.11
 -- 
-2.5.0
+2.7.4
 
 
-From 428cbef64825d16da37872855f80d180fe8d2f1c Mon Sep 17 00:00:00 2001
+From 4099bb7b655c19b116d7a8c7238edcb8c5e2c51b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:25:03 +0300
 Subject: [PATCH 023/115] Step 1.21: Add chats stylesheet
@@ -1019,10 +1063,10 @@ index 0000000..7c1b8d5
 +}
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From da679935cc13560ccf5030b98a99dc052596274d Mon Sep 17 00:00:00 2001
+From aad2ac60e3d8263a236653ea06ed9b8fa5763d8b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:31:05 +0300
 Subject: [PATCH 024/115] Step 2.1: Add meteor collections
@@ -1044,10 +1088,10 @@ index 0000000..531e6c2
 +export const Messages = new Mongo.Collection('messages');
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 4fdcc923fea708671df5c110a14d6960b018bf6a Mon Sep 17 00:00:00 2001
+From f7659477d0f0af7703cbee2779d125c9066210be Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:33:05 +0300
 Subject: [PATCH 025/115] Step 2.2: Create server bootstrap
@@ -1068,10 +1112,10 @@ index 0000000..948f7b0
 +});
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 30db24294dd73657e316ebbf8dd930c6c8ce71c3 Mon Sep 17 00:00:00 2001
+From 31f159fe066833d5dc247df93c799e37ff8b366a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:36:58 +0300
 Subject: [PATCH 026/115] Step 2.3: Add chats collection data stub
@@ -1153,10 +1197,10 @@ index 948f7b0..3724cfb 100644
  });
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 6948ce2ba10fc0af27a097557d35cf31f4aba988 Mon Sep 17 00:00:00 2001
+From 38994e79da7c069b7dc91e5ad1b0b6f58a70e1e2 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:41:36 +0300
 Subject: [PATCH 027/115] Step 2.4: Add chats collection helper to chats
@@ -1234,10 +1278,10 @@ index 20dcbeb..8c2b479 100644
  
    remove(chat) {
 -- 
-2.5.0
+2.7.4
 
 
-From afffed51fe74b4e50a4a4d590e3caf33acc53f39 Mon Sep 17 00:00:00 2001
+From 4ac730c3ea8702707ad58ce61899bbdffcee8751 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:51:05 +0300
 Subject: [PATCH 028/115] Step 2.5: Update delete button logic to use
@@ -1248,7 +1292,7 @@ Subject: [PATCH 028/115] Step 2.5: Update delete button logic to use
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index 8c2b479..2bd68e9 100644
+index 8c2b479..bf61e90 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
 @@ -13,6 +13,6 @@ export default class ChatsCtrl extends Controller {
@@ -1256,14 +1300,14 @@ index 8c2b479..2bd68e9 100644
  
    remove(chat) {
 -    this.data.splice(this.data.indexOf(chat), 1);
-+    this.data.remove(chat);
++    this.data.remove(chat._id);
    }
  }
 -- 
-2.5.0
+2.7.4
 
 
-From 5ba4d19e48e21dbb83d174b7e32dc50380b64225 Mon Sep 17 00:00:00 2001
+From a0f81d8a12a957b5af56b4499d4b49da40227167 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:05:22 +0300
 Subject: [PATCH 029/115] Step 3.1: Add chat route state
@@ -1293,10 +1337,10 @@ index 43898c5..2a7f2b9 100644
  
      this.$urlRouterProvider.otherwise('tab/chats');
 -- 
-2.5.0
+2.7.4
 
 
-From e15c9db4237c249983d03e1913b00068ca9e468f Mon Sep 17 00:00:00 2001
+From 4d138aa79e7e1b73ad19f5a7edf1f629222ea990 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:07:19 +0300
 Subject: [PATCH 030/115] Step 3.2: Add chat view
@@ -1319,10 +1363,10 @@ index 0000000..a2c5625
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 8d1a1e01b40d9f18b5b6d895635d14da2583701f Mon Sep 17 00:00:00 2001
+From e80af4a46c0d8cbfb951a83c258fbf83aeec3cd5 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:16:44 +0300
 Subject: [PATCH 031/115] Step 3.3: Add chat controller
@@ -1358,10 +1402,10 @@ index 0000000..ce67614
 +ChatCtrl.$inject = ['$stateParams'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 961ee4f688f5f341840685345d5d7048bfc42f3b Mon Sep 17 00:00:00 2001
+From b4d308f87ed5ead552372bc9c84e6f9fb980f136 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:18:32 +0300
 Subject: [PATCH 032/115] Step 3.4: Load chat controller
@@ -1391,10 +1435,10 @@ index abe61c0..371fc10 100644
    .load(RoutesConfig);
  
 -- 
-2.5.0
+2.7.4
 
 
-From 6317f3979b5d485eb601b6c5353da7bc5288b649 Mon Sep 17 00:00:00 2001
+From b1b40e273deb9df6e4a540049be0771fcfc2c395 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:22:17 +0300
 Subject: [PATCH 033/115] Step 3.5: Add reference to chat view in chats view
@@ -1418,10 +1462,10 @@ index 5286351..2d4d4c8 100644
          <h2>{{ chat.name }}</h2>
          <p>{{ chat.lastMessage.text }}</p>
 -- 
-2.5.0
+2.7.4
 
 
-From 24e32b93c600b7e3aa48c831927e43251f0c025a Mon Sep 17 00:00:00 2001
+From f48073ea6c7f2a4a46ff0e923392666df22f98c9 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:24:03 +0300
 Subject: [PATCH 034/115] Step 3.6: Add chat stylesheet
@@ -1446,10 +1490,10 @@ index 0000000..2637ff1
 +}
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 40f4d2974371ff24cfa1fa6f9c6b35aef63d6378 Mon Sep 17 00:00:00 2001
+From e98ca78ed701b8faeae9b9afbbec218aa2cbbd97 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:28:02 +0300
 Subject: [PATCH 035/115] Step 3.7: Add messages helper to chat controller
@@ -1480,10 +1524,10 @@ index ce67614..ff51fda 100644
          return Chats.findOne(this.chatId);
        }
 -- 
-2.5.0
+2.7.4
 
 
-From 172564b03059b3f41ebcbf57e83aeddc8d21f5b8 Mon Sep 17 00:00:00 2001
+From 547b70eefc43c43fe75978745c44cef9478a561a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:30:19 +0300
 Subject: [PATCH 036/115] Step 3.8: Add messages to chat view
@@ -1516,10 +1560,10 @@ index a2c5625..139aeae 100644
  </ion-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 11b4657c8d68821ee99f0120c55ca750e0d4ff42 Mon Sep 17 00:00:00 2001
+From c5353286ded11f5cee63e5d83881c87a0125637b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:12:43 +0300
 Subject: [PATCH 037/115] Step 3.9: Add message style to chat stylesheet
@@ -1618,10 +1662,10 @@ index 2637ff1..aefef95 100644
  }
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From cbbf28c3a879fd2c02138a70bac0e0eead49d1a0 Mon Sep 17 00:00:00 2001
+From a87d5046e3bb4a01e3432ed1ff4a06f2e483b860 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:35:24 +0300
 Subject: [PATCH 038/115] Step 3.10: Add assets
@@ -2252,10 +2296,10 @@ index 0000000..64093ae
 +<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 512 512" height="512px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M257.107,5C118.473,5,6.109,117.365,6.109,255.998C6.109,394.631,118.473,507,257.107,507  s250.998-112.37,250.998-251.002C508.105,117.365,395.74,5,257.107,5z M257.107,25.917c126.868,0,230.082,103.214,230.082,230.082  c0,55.815-19.997,107.043-53.19,146.926c-22.939-9.58-77.089-28.372-110.609-38.269c-2.859-0.898-3.309-1.042-3.309-12.94  c0-9.826,4.044-19.721,7.987-28.096c4.269-9.1,9.334-24.399,11.153-38.126c5.086-5.904,12.01-17.547,16.463-39.739  c3.901-19.559,2.083-26.677-0.51-33.357c-0.266-0.705-0.552-1.399-0.756-2.094c-0.981-4.586,0.367-28.413,3.718-46.899  c2.308-12.685-0.593-39.658-18.057-61.972c-11.03-14.105-32.131-31.416-70.675-33.826l-21.141,0.02  c-37.891,2.391-59.012,19.701-70.042,33.806c-17.464,22.315-20.364,49.288-18.056,61.963c3.37,18.495,4.698,42.322,3.738,46.816  c-0.204,0.786-0.49,1.481-0.776,2.186c-2.574,6.68-4.412,13.798-0.49,33.357c4.432,22.192,11.357,33.836,16.463,39.739  c1.798,13.726,6.864,29.026,11.153,38.126c3.125,6.659,4.596,15.718,4.596,28.525c0,11.898-0.45,12.042-3.126,12.889  c-34.663,10.234-89.834,30.17-110.404,39.178c-33.846-40.066-54.293-91.785-54.293-148.212  C27.025,129.13,130.239,25.917,257.107,25.917z M96.474,420.516c23.552-9.615,70.512-26.365,101.355-35.475  c17.935-5.658,17.935-20.763,17.935-32.896c0-10.06-0.694-24.89-6.577-37.431c-4.045-8.589-8.662-23.317-9.682-34.847  c-0.225-2.696-1.491-5.188-3.534-6.965c-2.962-2.595-8.988-12.093-12.828-31.252c-3.043-15.167-1.756-18.486-0.51-21.693  c0.531-1.369,1.042-2.717,1.451-4.239c2.512-9.181-0.287-39.341-3.33-56.07c-1.327-7.272,0.347-27.933,13.951-45.337  c12.194-15.595,30.659-24.287,54.211-25.788l19.834-0.021c24.185,1.522,42.65,10.214,54.865,25.809  c13.604,17.404,15.259,38.065,13.93,45.346c-3.023,16.72-5.842,46.879-3.33,56.05c0.43,1.532,0.919,2.88,1.451,4.249  c1.247,3.206,2.533,6.526-0.49,21.693c-3.839,19.16-9.886,28.658-12.848,31.252c-2.022,1.777-3.288,4.269-3.534,6.965  c-1.001,11.53-5.617,26.258-9.661,34.847c-4.637,9.856-9.968,22.98-9.968,37.002c0,12.134,0,27.239,18.118,32.948  c29.516,8.722,76.701,24.93,101.621,34.73c-41.608,41.199-98.781,66.691-161.797,66.691  C194.664,486.084,137.981,461.042,96.474,420.516z" fill="#37404D"/></svg>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From f70fed508eda14ab515862508376705901c60c5b Mon Sep 17 00:00:00 2001
+From d7fd42c9db58eb64c7a32f8af746b55563d31459 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:37:12 +0300
 Subject: [PATCH 039/115] Step 3.11: Add angular-moment npm package
@@ -2277,10 +2321,10 @@ index 3e9483f..c540d03 100644
      "angular-ui-router": "^0.2.18",
      "ionic-scripts": "0.0.1",
 -- 
-2.5.0
+2.7.4
 
 
-From ca43d07cffbb3b3bb0542eb1fbe04a56a9cd97aa Mon Sep 17 00:00:00 2001
+From 083157ec3b5651d80fc240e9fb423f239be0b530 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:39:18 +0300
 Subject: [PATCH 040/115] Step 3.12: Load angular-moment
@@ -2310,10 +2354,10 @@ index 371fc10..83ff376 100644
  ]);
  
 -- 
-2.5.0
+2.7.4
 
 
-From 15c25541f3c72361bb5c6932dfac7f4b36d58879 Mon Sep 17 00:00:00 2001
+From 7161060ca0cbc7afb20e759cb8d162e0e7ed071f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:40:58 +0300
 Subject: [PATCH 041/115] Step 3.13: Add moment filter to chat view
@@ -2336,10 +2380,10 @@ index 139aeae..f35bd17 100644
        </div>
      </div>
 -- 
-2.5.0
+2.7.4
 
 
-From 6e781337f85c25daeedcc1bfb58c0930bdfb3261 Mon Sep 17 00:00:00 2001
+From 751217878b25c894e4216e5ffd629fdf9c3017de Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:43:27 +0300
 Subject: [PATCH 042/115] Step 3.14: Add chatbox to chat view
@@ -2377,10 +2421,10 @@ index f35bd17..ac8112f 100644
  </ion-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From db1e590ae2b63a762e480655f32ece1d30824d3a Mon Sep 17 00:00:00 2001
+From d7521bd60c8a3e272857349effaaff7cee130254 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:45:55 +0300
 Subject: [PATCH 043/115] Step 3.15: Add chatbox logic to chat controller
@@ -2405,10 +2449,10 @@ index ff51fda..bcfe0be 100644
  ChatCtrl.$inject = ['$stateParams'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 6e99c9812ef2f50c9e43cc0a3ca6a2f2978e553e Mon Sep 17 00:00:00 2001
+From b822971776e8e922f0c9e618169baa0b9de6a413 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:47:56 +0300
 Subject: [PATCH 044/115] Step 3.16: Add input directive
@@ -2477,10 +2521,10 @@ index 0000000..8b1d6a9
 +InputDirective.$inject = ['$timeout'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 3ebba6788e241bf7f0769a1652d0da785238a496 Mon Sep 17 00:00:00 2001
+From df03b1f8a1443d012d0d0b264d7f9200ffc88a44 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 15 May 2016 22:38:06 +0300
 Subject: [PATCH 045/115] Step 3.17: Load input directive
@@ -2510,10 +2554,10 @@ index 83ff376..bb7c7c4 100644
    .load(RoutesConfig);
  
 -- 
-2.5.0
+2.7.4
 
 
-From 6df0ed4b1999ab7f243290ab3eea7453455d7711 Mon Sep 17 00:00:00 2001
+From 4640dc79ebd63830326e6aa335db12af88c8738f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 15 May 2016 22:38:25 +0300
 Subject: [PATCH 046/115] Step 3.18: Add chat view
@@ -2539,10 +2583,10 @@ index ac8112f..c08d5b2 100644
  
      <span ng-if="chat.message.length > 0">
 -- 
-2.5.0
+2.7.4
 
 
-From 06b064aabd0656c141f32612c2d1004b2f25cc42 Mon Sep 17 00:00:00 2001
+From 7002da4025d797f94d5f6ada8d6028f0aad8641f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 10 Apr 2016 22:53:57 +0300
 Subject: [PATCH 047/115] Step 3.19: Implement input directive handlers in chat
@@ -2609,10 +2653,10 @@ index bcfe0be..2c4a26c 100644
 \ No newline at end of file
 +ChatCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate'];
 -- 
-2.5.0
+2.7.4
 
 
-From 1c73ab190460611a65a552c63a8a2b378733b699 Mon Sep 17 00:00:00 2001
+From f5636fe51dffcc1a79a7ec6155a600b9cf038193 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:17:20 +0300
 Subject: [PATCH 048/115] Step 3.20: Add footer style to chat stylesheet
@@ -2657,10 +2701,10 @@ index aefef95..77f09da 100644
  }
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 0c1b7e760cf340094129b19662659d40e7fb841f Mon Sep 17 00:00:00 2001
+From 8d1f34159f354f00ae5a618036da4de1b95a0484 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:19:14 +0300
 Subject: [PATCH 049/115] Step 3.21: Implement new message method in chat
@@ -2697,10 +2741,10 @@ index 2c4a26c..59b99f1 100644
  
    inputUp () {
 -- 
-2.5.0
+2.7.4
 
 
-From 71e795407ef1ac56adf42a85c1b766b3a5567748 Mon Sep 17 00:00:00 2001
+From 4a8a4650774215aa7d4c937dd8c004ca2cd8bcc4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:20:51 +0300
 Subject: [PATCH 050/115] Step 3.22: Add new message meteor method
@@ -2731,10 +2775,10 @@ index 0000000..0bc5526
 +});
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From fe795638f470846f88831ab55babfa9f2f18579d Mon Sep 17 00:00:00 2001
+From 38ae65d6803b23d0c23eecdb91561e0f7a5f547f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:22:22 +0300
 Subject: [PATCH 051/115] Step 3.23: Add check meteor package
@@ -2744,7 +2788,7 @@ Subject: [PATCH 051/115] Step 3.23: Add check meteor package
  1 file changed, 1 insertion(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 934f644..b39011c 100644
+index ccdac92..8d23d51 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
 @@ -21,3 +21,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
@@ -2753,10 +2797,10 @@ index 934f644..b39011c 100644
  fourseven:scss
 +check
 -- 
-2.5.0
+2.7.4
 
 
-From 5b8a9bf0149cea4086a392d5ddc26bcefd0a5774 Mon Sep 17 00:00:00 2001
+From 1bee5fc41590544862195e12adbd329b7007a9d9 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:23:23 +0300
 Subject: [PATCH 052/115] Step 3.24: Validate new message method params
@@ -2782,89 +2826,80 @@ index 0bc5526..5256b0d 100644
  
      const messageId = Messages.insert(message);
 -- 
-2.5.0
+2.7.4
 
 
-From 6ef63380b442ebd5810f491464fb55715a667c34 Mon Sep 17 00:00:00 2001
+From d655f68dc5c6732443fde670a44d04b3dc900627 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:46:33 +0300
 Subject: [PATCH 053/115] Step 4.1: Add accounts meteor package
 
 ---
- .meteor/packages |  1 +
- .meteor/versions | 10 ++++++++++
- 2 files changed, 11 insertions(+)
+ .meteor/packages | 2 ++
+ .meteor/versions | 8 ++++++++
+ 2 files changed, 10 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index b39011c..4c151a5 100644
+index 8d23d51..bb92fb4 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -22,3 +22,4 @@ dab0mb:ionic-assets
+@@ -22,3 +22,5 @@ dab0mb:ionic-assets
  angular-templates
  fourseven:scss
  check
-+okland:accounts-phone
++npm-bcrypt@0.8.7
++mys:accounts-phone
 diff --git a/.meteor/versions b/.meteor/versions
-index fc2fc94..9cf6152 100644
+index f953362..6db36ff 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,3 +1,4 @@
-+accounts-base@1.2.4
- allow-deny@1.0.2
- angular-templates@1.0.2
- autopublish@1.0.5
-@@ -17,12 +18,14 @@ dab0mb:ionic-assets@1.2.4
- ddp@1.2.3
- ddp-client@1.2.3
- ddp-common@1.2.3
-+ddp-rate-limiter@1.0.2
- ddp-server@1.2.4
- deps@1.0.10
- diff-sequence@1.0.3
- ecmascript@0.4.1
- ecmascript-runtime@0.2.8
- ejson@1.0.9
-+email@1.0.10
- es5-shim@4.5.8
- fastclick@1.0.9
- fourseven:scss@3.4.1
-@@ -36,6 +39,7 @@ insecure@1.0.5
- jquery@1.11.6
- launch-screen@1.0.8
- livedata@1.0.16
-+localstorage@1.0.7
- logging@1.0.10
- meteor@1.1.12
- meteor-base@1.0.2
-@@ -48,17 +52,23 @@ modules@0.5.1
- modules-runtime@0.6.1
- mongo@1.1.5
- mongo-id@1.0.2
-+npm-bcrypt@0.7.8_2
- npm-mongo@1.4.41
- observe-sequence@1.0.9
-+okland:accounts-phone@0.0.21
- ordered-dict@1.0.5
- promise@0.6.5
- random@1.0.7
-+rate-limit@1.0.2
- reactive-var@1.0.7
- reload@1.1.6
- retry@1.0.5
- routepolicy@1.0.8
-+service-configuration@1.0.7
-+sha@1.0.5
- spacebars@1.0.9
- spacebars-compiler@1.0.9
-+srp@1.0.6
- standard-minifier-css@1.0.4
- standard-minifier-js@1.0.4
- templating-tools@1.0.2
++accounts-base@1.1.3
+ allow-deny@1.0.5
+ angular-templates@1.0.9
+ autopublish@1.0.7
+@@ -22,6 +23,7 @@ diff-sequence@1.0.6
+ ecmascript@0.5.8_1
+ ecmascript-runtime@0.3.14_1
+ ejson@1.0.12
++email@1.0.16
+ es5-shim@4.6.14_1
+ fastclick@1.0.12
+ fourseven:scss@3.10.0
+@@ -35,6 +37,7 @@ insecure@1.0.7
+ jquery@1.11.9
+ launch-screen@1.0.12
+ livedata@1.0.18
++localstorage@1.0.11
+ logging@1.1.15_1
+ meteor@1.2.17_1
+ meteor-base@1.0.4
+@@ -47,6 +50,8 @@ modules@0.7.6_1
+ modules-runtime@0.7.6_1
+ mongo@1.1.12_5
+ mongo-id@1.0.5
++mys:accounts-phone@0.0.21
++npm-bcrypt@0.9.1_1
+ npm-mongo@2.2.10_1
+ observe-sequence@1.0.13
+ ordered-dict@1.0.8
+@@ -56,8 +61,11 @@ reactive-var@1.0.10
+ reload@1.1.10
+ retry@1.0.8
+ routepolicy@1.0.11
++service-configuration@1.0.3
++sha@1.0.8
+ spacebars@1.0.13
+ spacebars-compiler@1.0.13
++srp@1.0.9
+ standard-minifier-css@1.2.1
+ standard-minifier-js@1.2.0_1
+ tracker@1.1.0
 -- 
-2.5.0
+2.7.4
 
 
-From 52d866e53278762bb745b01dd44f6ad99b57b9bd Mon Sep 17 00:00:00 2001
+From 8df7619154412ea0c8dd413bfecab880512b3fe5 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:26:21 +0300
 Subject: [PATCH 054/115] Step 4.2: Add angular-meteor-auth npm package
@@ -2886,10 +2921,10 @@ index c540d03..b629aa2 100644
      "angular-sanitize": "^1.5.3",
      "angular-ui-router": "^0.2.18",
 -- 
-2.5.0
+2.7.4
 
 
-From 3855aab11b76959ffa2f7d9af379d6e6817d7dd2 Mon Sep 17 00:00:00 2001
+From 063924e58b851bb03664af1d12411a69c95dc258 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:27:31 +0300
 Subject: [PATCH 055/115] Step 4.3: Load angular-meteor-auth module
@@ -2919,10 +2954,10 @@ index bb7c7c4..27adac8 100644
    'ionic'
  ]);
 -- 
-2.5.0
+2.7.4
 
 
-From 7441b6ce026f6c006a54755c977b8553ad98e110 Mon Sep 17 00:00:00 2001
+From 9016f604e2a9f8178d0f71ac931931700422fc8e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:50:40 +0300
 Subject: [PATCH 056/115] Step 4.4: Add SMS configuration
@@ -2947,10 +2982,10 @@ index 0000000..d77a645
 +}
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 6c6dd39b9627bd9057e9bf3054fef61234c0eb88 Mon Sep 17 00:00:00 2001
+From 78444e534d146ff5827c8717e374b22fb619d4fb Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:54:37 +0300
 Subject: [PATCH 057/115] Step 4.5: Create auth route states
@@ -2986,10 +3021,10 @@ index 2a7f2b9..d18af5e 100644
  
      this.$urlRouterProvider.otherwise('tab/chats');
 -- 
-2.5.0
+2.7.4
 
 
-From 6c82fd9938956845e34013fe57b34d482d41ab5a Mon Sep 17 00:00:00 2001
+From f50e2dc39fc764da15135b6cd0c5565fbd5935ea Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:57:33 +0300
 Subject: [PATCH 058/115] Step 4.6: Add login view
@@ -3022,10 +3057,10 @@ index 0000000..c9758d0
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 52c04289311cd0a9ebc7c2474074b9f5a5ba331c Mon Sep 17 00:00:00 2001
+From 23b3d4f7f545060189c32c2ccb9633d61180e022 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 00:17:17 +0300
 Subject: [PATCH 059/115] Step 4.7: Add login controller
@@ -3088,10 +3123,10 @@ index 0000000..a64d0d5
 +LoginCtrl.$inject = ['$state', '$ionicLoading', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 3a48b5713c4bbba640e9c5522d9d726d448b12e7 Mon Sep 17 00:00:00 2001
+From af879e073f6e6ccf1c136664ea750378fce6f504 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 00:43:16 +0300
 Subject: [PATCH 060/115] Step 4.8: Load login controller
@@ -3121,10 +3156,10 @@ index 27adac8..fed5de9 100644
    .load(CalendarFilter)
    .load(RoutesConfig);
 -- 
-2.5.0
+2.7.4
 
 
-From 6b2e9f039db583f3e93c823bf3091aac5ef3ec89 Mon Sep 17 00:00:00 2001
+From 7479bfb1b7d868f4ccc1e716ce9eba007dc06ff2 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 00:34:22 +0300
 Subject: [PATCH 061/115] Step 4.9: Add resolve to auth routes
@@ -3182,10 +3217,10 @@ index d18af5e..a98ef5a 100644
  RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 590428b79fcaedcac2851fccc83c953eda7a76b4 Mon Sep 17 00:00:00 2001
+From 8e9cd6994a7b298e285f487cccbda3494e64d163 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:42:50 +0300
 Subject: [PATCH 062/115] Step 4.10: Add routes runner
@@ -3233,10 +3268,10 @@ index a98ef5a..9c1ba1a 100644
 +export default [RoutesConfig, RoutesRunner];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 436253f11c15e8eb218b3164c64196dee49e34b0 Mon Sep 17 00:00:00 2001
+From 0b6beb1c2ed9108165b95c0fdc9cfe860a743607 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:44:46 +0300
 Subject: [PATCH 063/115] Step 4.11: Create routes runner
@@ -3268,10 +3303,10 @@ index fed5de9..6b21d0e 100644
  // Startup
  if (Meteor.isCordova) {
 -- 
-2.5.0
+2.7.4
 
 
-From 7082f8fa1abd8e75ac14d03d86a2a251d490cd39 Mon Sep 17 00:00:00 2001
+From c037c5ae17f905393928ef2ad0f139f25dea9375 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:47:03 +0300
 Subject: [PATCH 064/115] Step 4.12: Add login stylesheet
@@ -3295,10 +3330,10 @@ index 0000000..a6c2a96
 +}
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 1509126fee8862c76a20f29fb38d62b35254df94 Mon Sep 17 00:00:00 2001
+From d2f5fd5fd8f4456ea837ff4cf441990c0abfe6f9 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:48:42 +0300
 Subject: [PATCH 065/115] Step 4.13: Add confirmation view
@@ -3336,10 +3371,10 @@ index 0000000..23f4be1
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From aa9e2ae696eacd09c425ab34baf95ad9e3ec1447 Mon Sep 17 00:00:00 2001
+From 6e1b6c0a75c95ee3b22acd63ad6c26c797cff2e6 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:50:37 +0300
 Subject: [PATCH 066/115] Step 4.14: Create confirmation controller
@@ -3389,10 +3424,10 @@ index 0000000..285fd98
 +ConfirmationCtrl.$inject = ['$state', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 8f2726713e6c3db8b895a927a2b0ff5683c4df72 Mon Sep 17 00:00:00 2001
+From 6b599430011891720cecb475a4ce3cd87f91cd99 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:52:28 +0300
 Subject: [PATCH 067/115] Step 4.15: Load confirmation controller
@@ -3422,10 +3457,10 @@ index 6b21d0e..fffbb60 100644
    .load(InputDirective)
    .load(CalendarFilter)
 -- 
-2.5.0
+2.7.4
 
 
-From dd33f38dbec8ce80735da162ac0d410a4489a629 Mon Sep 17 00:00:00 2001
+From ca1363f8dbba4ed087e717986748e2efd7b66d34 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:53:56 +0300
 Subject: [PATCH 068/115] Step 4.16: Add profile view
@@ -3466,10 +3501,10 @@ index 0000000..c18fe20
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From cd8f0aa2828c46f4828979f08f55c3db9196f17e Mon Sep 17 00:00:00 2001
+From b414569b5f6247303616ce6f9330e92a7085e4c2 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 22:03:23 +0300
 Subject: [PATCH 069/115] Step 4.17: Create profile controller
@@ -3519,10 +3554,10 @@ index 0000000..a6628c9
 +ProfileCtrl.$inject = ['$state', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From ecff11667e4673ba7bcb5a41b1e8cc60c60b4b77 Mon Sep 17 00:00:00 2001
+From a21fbec233c7d77286fed58e8593114368f18840 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 22:06:29 +0300
 Subject: [PATCH 070/115] Step 4.18: Load profile controller
@@ -3552,10 +3587,10 @@ index fffbb60..7da5248 100644
    .load(CalendarFilter)
    .load(Routes);
 -- 
-2.5.0
+2.7.4
 
 
-From 0e41b6501ff7905d6876dbfe1cd20169ed72cd1d Mon Sep 17 00:00:00 2001
+From 4b2414a619816ebb2eb74333d596136555f8f999 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 22:08:01 +0300
 Subject: [PATCH 071/115] Step 4.19: Add profile stylesheet
@@ -3613,10 +3648,10 @@ index 0000000..ef4c6cc
 +}
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From ffb2c775b0b70a0ac2270f9c6ae6ab1bf12d6aa0 Mon Sep 17 00:00:00 2001
+From e3f68bc574c5bd3e8227833c0171164ec1465028 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:25:48 +0300
 Subject: [PATCH 072/115] Step 4.20: Add update name method
@@ -3651,10 +3686,10 @@ index 5256b0d..45d5aa9 100644
  });
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From e92b6356a00c0f5a14c7ba77d33f6575be1cfa38 Mon Sep 17 00:00:00 2001
+From 18bdc491d7517337fe4d7b1b597cc74393fbe45f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:49:24 +0300
 Subject: [PATCH 073/115] Step 4.21: Bind user to any new message
@@ -3687,10 +3722,10 @@ index 45d5aa9..0060ad1 100644
      const messageId = Messages.insert(message);
      Chats.update(message.chatId, { $set: { lastMessage: message } });
 -- 
-2.5.0
+2.7.4
 
 
-From eed1dcaf1ab12638a2eb72f129c046cb851ec499 Mon Sep 17 00:00:00 2001
+From 4da20a378eefdf25d934fb24d64cd3ef97bc50a2 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:51:43 +0300
 Subject: [PATCH 074/115] Step 4.22: Add settings route state
@@ -3720,10 +3755,10 @@ index 9c1ba1a..ea59297 100644
  
      this.$urlRouterProvider.otherwise('tab/chats');
 -- 
-2.5.0
+2.7.4
 
 
-From 0d71526cd992288fb06fd8679fadf8e7aa74149c Mon Sep 17 00:00:00 2001
+From 73c687bfe0f5b1e525d0e713664bb4f204e2acac Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:54:20 +0300
 Subject: [PATCH 075/115] Step 4.23: Add settings view
@@ -3748,10 +3783,10 @@ index 0000000..eadaf50
 +</ion-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 0814899a4caf0c181e17e30ae720d145b860c979 Mon Sep 17 00:00:00 2001
+From 87bd5193f188766f1c017aa50492069ff5629a44 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:55:04 +0300
 Subject: [PATCH 076/115] Step 4.24: Add settings controller
@@ -3792,10 +3827,10 @@ index 0000000..2e35fb1
 +SettingsCtrl.$inject = ['$state', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From e39ecb0738203f66012dbf3d2858c09d97ae4f22 Mon Sep 17 00:00:00 2001
+From e4d44e9f00f2178392a72c90ce8f6943d3944ca1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:53:42 +0300
 Subject: [PATCH 077/115] Step 4.25: Load settings controller
@@ -3825,10 +3860,10 @@ index 7da5248..ec96194 100644
    .load(CalendarFilter)
    .load(Routes);
 -- 
-2.5.0
+2.7.4
 
 
-From c8bad5c401b17326ef65287034a32cb74ffdb677 Mon Sep 17 00:00:00 2001
+From 7b6690b5f8f4c37516bc11dc2125f2ddf56226d1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:59:09 +0300
 Subject: [PATCH 078/115] Step 4.26: Classify message ownership
@@ -3851,10 +3886,10 @@ index c08d5b2..896eed8 100644
            <span class="message-timestamp">{{ message.timestamp | amDateFormat: 'HH:MM' }}</span>
          </div>
 -- 
-2.5.0
+2.7.4
 
 
-From b3915ebfb55be66815f8baadcd9ddc74d2d2658d Mon Sep 17 00:00:00 2001
+From 51b594b9c5d4fc592cdf9337a8abdda800d8d6b4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 10 Apr 2016 23:43:12 +0300
 Subject: [PATCH 079/115] Step 4.27: Add auto-scroll to chat controller
@@ -3895,10 +3930,10 @@ index 59b99f1..8f7291f 100644
      this.$timeout(() => {
        this.$ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
 -- 
-2.5.0
+2.7.4
 
 
-From da566e34f926191225e464f525a97e1292ea416a Mon Sep 17 00:00:00 2001
+From 19517928ff50f636187c0d6b72ff5ced3ca7756f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:09:27 +0300
 Subject: [PATCH 080/115] Step 5.1: Add new chat button
@@ -3921,10 +3956,10 @@ index 2d4d4c8..e1fd2b7 100644
      <ion-list>
        <ion-item ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'"
 -- 
-2.5.0
+2.7.4
 
 
-From 284079da9eebf64271ba7b24f305f32721f4ed83 Mon Sep 17 00:00:00 2001
+From 9c424c86fefb05cc5c6fcc5379006b742788e52c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:13:08 +0300
 Subject: [PATCH 081/115] Step 5.2: Add new chat button logic
@@ -3934,7 +3969,7 @@ Subject: [PATCH 081/115] Step 5.2: Add new chat button logic
  1 file changed, 6 insertions(+)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index 2bd68e9..e590107 100644
+index bf61e90..063fbed 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
 @@ -12,7 +12,13 @@ export default class ChatsCtrl extends Controller {
@@ -3946,16 +3981,16 @@ index 2bd68e9..e590107 100644
 +  }
 +
    remove(chat) {
-     this.data.remove(chat);
+     this.data.remove(chat._id);
    }
  }
 +
 +ChatsCtrl.$inject = ['NewChat'];
 -- 
-2.5.0
+2.7.4
 
 
-From 6d4e794bdc89734ae408e92211ac485f536c2457 Mon Sep 17 00:00:00 2001
+From 623abc034c3a3d46222a5f8373665f68dafc2d19 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:14:52 +0300
 Subject: [PATCH 082/115] Step 5.3: Add new chat modal view
@@ -3992,10 +4027,10 @@ index 0000000..16452f2
 +</ion-modal-view>
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 8f64415d911ed2e5cca317ae9d7f6c01717edce7 Mon Sep 17 00:00:00 2001
+From c5e220c4565be7ebf8427b845bb7d684a58a9cb0 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 15 May 2016 22:30:23 +0300
 Subject: [PATCH 083/115] Step 5.4: Create new chat service
@@ -4042,10 +4077,10 @@ index 0000000..c9fad5f
 +NewChatService.$inject = ['$rootScope', '$ionicModal'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 9897b4dcc29ad9bf72ad0204f66c04fc2adb409c Mon Sep 17 00:00:00 2001
+From e8f083048afb551ee2d8cf24f5e3a9e53945cc21 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 15 May 2016 22:30:40 +0300
 Subject: [PATCH 084/115] Step 5.5: Load new chat service
@@ -4075,10 +4110,10 @@ index ec96194..244c1fc 100644
  
  // Startup
 -- 
-2.5.0
+2.7.4
 
 
-From 428d2a74e77d108d444bb6985056692ebb149257 Mon Sep 17 00:00:00 2001
+From 689926a6d5dac618c50e90dbffb29ca9e0fcd8eb Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:27:03 +0300
 Subject: [PATCH 085/115] Step 5.6: Add new chat controller
@@ -4146,10 +4181,10 @@ index 0000000..ec42a00
 +NewChatCtrl.$inject = ['$state', 'NewChat', '$ionicPopup', '$log'];
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 89ff24b2db1aa22cce465b7ae13d41db15aed2fa Mon Sep 17 00:00:00 2001
+From 5a284b718fcc35d494f4c06dd56cb4fb6552ed1d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:50:34 +0300
 Subject: [PATCH 086/115] Step 5.7: Load new chat controller
@@ -4179,10 +4214,10 @@ index 244c1fc..175db75 100644
    .load(SettingsCtrl)
    .load(InputDirective)
 -- 
-2.5.0
+2.7.4
 
 
-From 52ad5ef69fcd1bc7297826e20bd38f463b0be1b1 Mon Sep 17 00:00:00 2001
+From 755ab8f96295a5962706fde4232aea08f220202b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:31:07 +0300
 Subject: [PATCH 087/115] Step 5.8: Add new chat method
@@ -4226,10 +4261,10 @@ index 0060ad1..f36891f 100644
  });
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 268bd3dab7f9de940db78d8fd2eab499d1e12c04 Mon Sep 17 00:00:00 2001
+From c4fa3e2c2829f66496dce7add742290dda128102 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:00:10 +0300
 Subject: [PATCH 088/115] Step 5.9: Call remove chat method
@@ -4239,23 +4274,23 @@ Subject: [PATCH 088/115] Step 5.9: Call remove chat method
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/client/scripts/controllers/chats.controller.js b/client/scripts/controllers/chats.controller.js
-index e590107..eabaf3f 100644
+index 063fbed..eabaf3f 100644
 --- a/client/scripts/controllers/chats.controller.js
 +++ b/client/scripts/controllers/chats.controller.js
 @@ -17,7 +17,7 @@ export default class ChatsCtrl extends Controller {
    }
  
    remove(chat) {
--    this.data.remove(chat);
+-    this.data.remove(chat._id);
 +    this.callMethod('removeChat', chat._id);
    }
  }
  
 -- 
-2.5.0
+2.7.4
 
 
-From a5432b198ee772b9433267f94defa6911622ed90 Mon Sep 17 00:00:00 2001
+From 32b728b0f2177a65e9ec55c0b6d21d33d8b9210e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:01:59 +0300
 Subject: [PATCH 089/115] Step 5.10: Add remove chat method
@@ -4295,10 +4330,10 @@ index f36891f..09faf2b 100644
  });
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 070ae02cc067cc646f60055314052e777dadc19a Mon Sep 17 00:00:00 2001
+From 28e31919f2844d2e0b6ed0577e21a8610ffcf362 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:06:30 +0300
 Subject: [PATCH 090/115] Step 5.11: Create chat name filter
@@ -4332,10 +4367,10 @@ index 0000000..0dc2283
 +
 +ChatNameFilter.$name = 'chatName';
 -- 
-2.5.0
+2.7.4
 
 
-From a13de28e620ef220ca37f1e3df050c379cfc0651 Mon Sep 17 00:00:00 2001
+From a80f301d880aabf2f87e900eb31b9a667b8011c7 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 18:01:46 +0300
 Subject: [PATCH 091/115] Step 5.12: Load chat name filter
@@ -4365,10 +4400,10 @@ index 175db75..247a6bc 100644
    .load(Routes);
  
 -- 
-2.5.0
+2.7.4
 
 
-From 7d9b44f521235109a17580ea91c0e3f0f10fae6d Mon Sep 17 00:00:00 2001
+From 29d38131eb467da83a1f10688b91ec22bbc1c9a7 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:10:10 +0300
 Subject: [PATCH 092/115] Step 5.13: Create chat picture filter
@@ -4403,10 +4438,10 @@ index 0000000..91533ff
 +ChatPictureFilter.$name = 'chatPicture';
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 2f8205af39ab8f631cf59e25df0355c125aa9702 Mon Sep 17 00:00:00 2001
+From 020a701eae9d93bf5fb29cdefc0c1896f95ea298 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 18:11:54 +0300
 Subject: [PATCH 093/115] Step 5.14: Load chat picture filter
@@ -4436,10 +4471,10 @@ index 247a6bc..313e394 100644
    .load(Routes);
  
 -- 
-2.5.0
+2.7.4
 
 
-From 0c08905c1a852498b2a605c0cde2270253e2017f Mon Sep 17 00:00:00 2001
+From b9bba6f86c8d6dbb735d59807daee4d73e56fb33 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:11:53 +0300
 Subject: [PATCH 094/115] Step 5.15: Apply chat filters in chats view
@@ -4464,10 +4499,10 @@ index e1fd2b7..d5b3e72 100644
          <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
          <i class="icon ion-chevron-right icon-accessory"></i>
 -- 
-2.5.0
+2.7.4
 
 
-From e4273e2e049a3b814ffdc1584ee62118e08994d5 Mon Sep 17 00:00:00 2001
+From 57f32800adc5e767ea8a83eea42a0e85a7129a70 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:13:20 +0300
 Subject: [PATCH 095/115] Step 5.16: Apply chat filters in chat view
@@ -4490,10 +4525,10 @@ index 896eed8..f450447 100644
    <ion-content class="chat" delegate-handle="chatScroll">
      <div class="message-list">
 -- 
-2.5.0
+2.7.4
 
 
-From 147ad4df9f2071b0159a754a2919038238f3e55b Mon Sep 17 00:00:00 2001
+From af7a548537bd667b2ac87dd34100cdb0cae51464 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:16:52 +0300
 Subject: [PATCH 096/115] Step 5.17: Create users with phone data stub
@@ -4591,25 +4626,25 @@ index 3724cfb..aeb796f 100644
  });
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From fb8f364169d2fab8e6058fd031cc9628010c94cb Mon Sep 17 00:00:00 2001
+From 6c638ce4fc63876c9ffd3b1e05dbf3f3bf63afb8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:17:42 +0300
 Subject: [PATCH 097/115] Step 5.18: Remove insecure meteor package
 
 ---
  .meteor/packages | 1 -
- .meteor/versions | 1 -
- 2 files changed, 2 deletions(-)
+ .meteor/versions | 7 ++++---
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 4c151a5..28e749c 100644
+index bb92fb4..bea99ae 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -17,7 +17,6 @@ es5-shim                # ECMAScript 5 compatibility for older browsers.
- ecmascript              # Enable ECMAScript2015+ syntax in app code
+@@ -17,7 +17,6 @@ es5-shim@4.6.14_1                # ECMAScript 5 compatibility for older browsers
+ ecmascript@0.5.8_1              # Enable ECMAScript2015+ syntax in app code
  
  autopublish             # Publish all data to the clients (for prototyping)
 -insecure                # Allow all DB writes from clients (for prototyping)
@@ -4617,22 +4652,50 @@ index 4c151a5..28e749c 100644
  angular-templates
  fourseven:scss
 diff --git a/.meteor/versions b/.meteor/versions
-index 9cf6152..9145a90 100644
+index 6db36ff..401a0c5 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -35,7 +35,6 @@ html-tools@1.0.7
- htmljs@1.0.7
- http@1.1.3
- id-map@1.0.5
--insecure@1.0.5
- jquery@1.11.6
- launch-screen@1.0.8
- livedata@1.0.16
+@@ -1,4 +1,4 @@
+-accounts-base@1.1.3
++accounts-base@1.2.12_1
+ allow-deny@1.0.5
+ angular-templates@1.0.9
+ autopublish@1.0.7
+@@ -17,6 +17,7 @@ dab0mb:ionic-assets@1.3.2
+ ddp@1.2.5
+ ddp-client@1.2.9
+ ddp-common@1.2.6
++ddp-rate-limiter@1.0.5
+ ddp-server@1.2.10
+ deps@1.0.12
+ diff-sequence@1.0.6
+@@ -33,7 +34,6 @@ html-tools@1.0.11
+ htmljs@1.0.11
+ http@1.1.8
+ id-map@1.0.8
+-insecure@1.0.7
+ jquery@1.11.9
+ launch-screen@1.0.12
+ livedata@1.0.18
+@@ -57,11 +57,12 @@ observe-sequence@1.0.13
+ ordered-dict@1.0.8
+ promise@0.8.7
+ random@1.0.10
++rate-limit@1.0.5
+ reactive-var@1.0.10
+ reload@1.1.10
+ retry@1.0.8
+ routepolicy@1.0.11
+-service-configuration@1.0.3
++service-configuration@1.0.10
+ sha@1.0.8
+ spacebars@1.0.13
+ spacebars-compiler@1.0.13
 -- 
-2.5.0
+2.7.4
 
 
-From 37261d47e346468a3cd71a4f22499d7474138f90 Mon Sep 17 00:00:00 2001
+From 93f9e4348207dcf3a4bc6404a5b1f6072dafbb35 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:18:22 +0300
 Subject: [PATCH 098/115] Step 6.1: Remove autopublish meteor package
@@ -4643,34 +4706,34 @@ Subject: [PATCH 098/115] Step 6.1: Remove autopublish meteor package
  2 files changed, 2 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 28e749c..8faaa53 100644
+index bea99ae..53e9140 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -16,7 +16,6 @@ standard-minifier-js    # JS minifier run for production mode
- es5-shim                # ECMAScript 5 compatibility for older browsers.
- ecmascript              # Enable ECMAScript2015+ syntax in app code
+@@ -16,7 +16,6 @@ standard-minifier-js@1.2.0_1    # JS minifier run for production mode
+ es5-shim@4.6.14_1                # ECMAScript 5 compatibility for older browsers.
+ ecmascript@0.5.8_1              # Enable ECMAScript2015+ syntax in app code
  
 -autopublish             # Publish all data to the clients (for prototyping)
  dab0mb:ionic-assets
  angular-templates
  fourseven:scss
 diff --git a/.meteor/versions b/.meteor/versions
-index 9145a90..ecbcce7 100644
+index 401a0c5..4451415 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,7 +1,6 @@
- accounts-base@1.2.4
- allow-deny@1.0.2
- angular-templates@1.0.2
--autopublish@1.0.5
- autoupdate@1.2.6
- babel-compiler@6.5.2
- babel-runtime@0.1.6
+ accounts-base@1.2.12_1
+ allow-deny@1.0.5
+ angular-templates@1.0.9
+-autopublish@1.0.7
+ autoupdate@1.2.11
+ babel-compiler@6.9.1_1
+ babel-runtime@0.1.11_1
 -- 
-2.5.0
+2.7.4
 
 
-From 0e189a35978302ef5f91a173eb8c33159ce92c49 Mon Sep 17 00:00:00 2001
+From 4cdf71a3d7f215620ecd2db14dbe5f50a0c23f59 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:19:34 +0300
 Subject: [PATCH 099/115] Step 6.2: Add publish-composite meteor package
@@ -4681,31 +4744,31 @@ Subject: [PATCH 099/115] Step 6.2: Add publish-composite meteor package
  2 files changed, 2 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 8faaa53..0b9c507 100644
+index 53e9140..e9eacfe 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -21,3 +21,4 @@ angular-templates
- fourseven:scss
+@@ -22,3 +22,4 @@ fourseven:scss
  check
- okland:accounts-phone
+ npm-bcrypt@0.8.7
+ mys:accounts-phone
 +reywood:publish-composite
 diff --git a/.meteor/versions b/.meteor/versions
-index ecbcce7..ece495e 100644
+index 4451415..b340cfc 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -61,6 +61,7 @@ rate-limit@1.0.2
- reactive-var@1.0.7
- reload@1.1.6
- retry@1.0.5
+@@ -60,6 +60,7 @@ rate-limit@1.0.5
+ reactive-var@1.0.10
+ reload@1.1.10
+ retry@1.0.8
 +reywood:publish-composite@1.4.2
- routepolicy@1.0.8
- service-configuration@1.0.7
- sha@1.0.5
+ routepolicy@1.0.11
+ service-configuration@1.0.10
+ sha@1.0.8
 -- 
-2.5.0
+2.7.4
 
 
-From ce212c2019ab66362f1260274e8b245fd32cb07c Mon Sep 17 00:00:00 2001
+From 08059640ef6f185b8bbb60cd448a44531e8e74f1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:20:53 +0300
 Subject: [PATCH 100/115] Step 6.3: Add users publication
@@ -4728,10 +4791,10 @@ index 0000000..4160aec
 +});
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 70aecaa254a957fd602b7b0c6a86acd701bbc7ca Mon Sep 17 00:00:00 2001
+From 1cc6790d9899953fbdc81d4abaa59f2f00e7c532 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:22:13 +0300
 Subject: [PATCH 101/115] Step 6.4: Add users subscription
@@ -4754,10 +4817,10 @@ index ec42a00..66d5876 100644
        users() {
          return Meteor.users.find({ _id: { $ne: this.currentUserId } });
 -- 
-2.5.0
+2.7.4
 
 
-From 485fcf86fe3ed29cd9a00fafa2439c4c3c8915a5 Mon Sep 17 00:00:00 2001
+From dcd053647e08433cb91df6d3586dafeff7878e70 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:26:21 +0300
 Subject: [PATCH 102/115] Step 6.5: Add chats publication
@@ -4804,10 +4867,10 @@ index 4160aec..211249f 100644
  });
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 818daa7f74990565f18531b6814569baa640e30c Mon Sep 17 00:00:00 2001
+From c1a03dec35f9f1575a137e8aaf337253fa2b7f39 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:32:44 +0300
 Subject: [PATCH 103/115] Step 6.6: Add chats subscription
@@ -4839,76 +4902,85 @@ index ea59297..d3d7a65 100644
        })
        .state('tab.chats', {
 -- 
-2.5.0
+2.7.4
 
 
-From cc4c0ba059c55f9e601c2136d48e3f3e5cfe3ea6 Mon Sep 17 00:00:00 2001
+From 82c3f82bcf925251bc21f6ccf28993be4f8d83ca Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:37:10 +0300
 Subject: [PATCH 104/115] Step 7.1: Add camera-ui meteor package
 
 ---
  .meteor/packages | 1 +
- .meteor/versions | 6 ++++++
- 2 files changed, 7 insertions(+)
+ .meteor/versions | 8 ++++++++
+ 2 files changed, 9 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 0b9c507..3a7f7d0 100644
+index e9eacfe..d4bec9b 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -22,3 +22,4 @@ fourseven:scss
- check
- okland:accounts-phone
+@@ -23,3 +23,4 @@ check
+ npm-bcrypt@0.8.7
+ mys:accounts-phone
  reywood:publish-composite
 +okland:camera-ui
 diff --git a/.meteor/versions b/.meteor/versions
-index ece495e..b287660 100644
+index b340cfc..25de5c4 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -36,9 +36,11 @@ http@1.1.3
- id-map@1.0.5
- jquery@1.11.6
- launch-screen@1.0.8
-+less@2.5.6
- livedata@1.0.16
- localstorage@1.0.7
- logging@1.0.10
+@@ -10,6 +10,7 @@ blaze@2.1.9
+ blaze-tools@1.0.10
+ boilerplate-generator@1.0.10
+ caching-compiler@1.1.7_1
++caching-html-compiler@1.0.7
+ callback-hook@1.0.9
+ check@1.2.3
+ dab0mb:ionic-assets@1.3.2
+@@ -35,9 +36,11 @@ http@1.1.8
+ id-map@1.0.8
+ jquery@1.11.9
+ launch-screen@1.0.12
++less@2.5.7
+ livedata@1.0.18
+ localstorage@1.0.11
+ logging@1.1.15_1
 +mdg:camera@1.1.5
- meteor@1.1.12
- meteor-base@1.0.2
- minifier-css@1.1.9
-@@ -54,22 +56,26 @@ npm-bcrypt@0.7.8_2
- npm-mongo@1.4.41
- observe-sequence@1.0.9
- okland:accounts-phone@0.0.21
+ meteor@1.2.17_1
+ meteor-base@1.0.4
+ minifier-css@1.2.14_1
+@@ -53,22 +56,27 @@ mys:accounts-phone@0.0.21
+ npm-bcrypt@0.9.1_1
+ npm-mongo@2.2.10_1
+ observe-sequence@1.0.13
 +okland:camera-ui@0.0.2
- ordered-dict@1.0.5
- promise@0.6.5
- random@1.0.7
- rate-limit@1.0.2
-+reactive-dict@1.1.5
- reactive-var@1.0.7
- reload@1.1.6
- retry@1.0.5
+ ordered-dict@1.0.8
+ promise@0.8.7
+ random@1.0.10
+ rate-limit@1.0.5
++reactive-dict@1.1.8
+ reactive-var@1.0.10
+ reload@1.1.10
+ retry@1.0.8
  reywood:publish-composite@1.4.2
- routepolicy@1.0.8
- service-configuration@1.0.7
-+session@1.1.3
- sha@1.0.5
- spacebars@1.0.9
- spacebars-compiler@1.0.9
- srp@1.0.6
- standard-minifier-css@1.0.4
- standard-minifier-js@1.0.4
-+templating@1.1.7
- templating-tools@1.0.2
- tracker@1.0.11
- ui@1.0.9
+ routepolicy@1.0.11
+ service-configuration@1.0.10
++session@1.1.6
+ sha@1.0.8
+ spacebars@1.0.13
+ spacebars-compiler@1.0.13
+ srp@1.0.9
+ standard-minifier-css@1.2.1
+ standard-minifier-js@1.2.0_1
++templating@1.1.14
++templating-tools@1.0.5
+ tracker@1.1.0
+ ui@1.0.12
+ underscore@1.0.9
 -- 
-2.5.0
+2.7.4
 
 
-From 76d6020a3508f294772ab59851a7cab27b13cd63 Mon Sep 17 00:00:00 2001
+From ccea61d6ab2f8743f41abc01d3640e0f53a70268 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:39:17 +0300
 Subject: [PATCH 105/115] Step 7.2: Add update picture method
@@ -4939,10 +5011,10 @@ index 09faf2b..9b0de15 100644
  });
 \ No newline at end of file
 -- 
-2.5.0
+2.7.4
 
 
-From 8c92f3861f3d795f2e00245e490eb4597e7cdb56 Mon Sep 17 00:00:00 2001
+From f5a6fe9ebb07ad2af51dacb630208e00b6d987db Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:43:58 +0300
 Subject: [PATCH 106/115] Step 7.3: Add update picture button to profile view
@@ -4971,10 +5043,10 @@ index c18fe20..2cbd896 100644
        </div>
      </a>
 -- 
-2.5.0
+2.7.4
 
 
-From fdc3c8052904dfa667909efb169df8c13eef82fa Mon Sep 17 00:00:00 2001
+From fc29fdb4647da41da9ddb69ac806cae0e01fee87 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:48:51 +0300
 Subject: [PATCH 107/115] Step 7.4: Add update picture logic to profile
@@ -5025,10 +5097,10 @@ index a6628c9..a6e56a7 100644
  
      this.$ionicPopup.alert({
 -- 
-2.5.0
+2.7.4
 
 
-From 94d9b012abb2ae3e3e0edfa36534ca6706912199 Mon Sep 17 00:00:00 2001
+From 8fadcffcbcaa4255db28afc0abfe0a539d607997 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:50:43 +0300
 Subject: [PATCH 108/115] Step 7.5: Update profile stylesheet
@@ -5051,10 +5123,10 @@ index ef4c6cc..41d7455 100644
        height: 100%;
        border-radius: 50%;
 -- 
-2.5.0
+2.7.4
 
 
-From c6f7f965465c9bb54b05c28ac1e51c9316910794 Mon Sep 17 00:00:00 2001
+From a06bec110c5be43f6889927ab457de9478fc97b6 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:53:13 +0300
 Subject: [PATCH 109/115] Step 7.6: Add reference to profile from settings view
@@ -5082,10 +5154,10 @@ index eadaf50..05b4deb 100644
 \ No newline at end of file
 +</ion-view>
 -- 
-2.5.0
+2.7.4
 
 
-From 51b773b7e58bd95b1db5a2ecbc82cceb737376ba Mon Sep 17 00:00:00 2001
+From 51e18c41e1e03fdcfe298db215c842376f778e41 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 10:33:36 +0300
 Subject: [PATCH 110/115] Step 8.1: Add send picture logic
@@ -5145,10 +5217,10 @@ index 8f7291f..2d5e4a8 100644
 -ChatCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate'];
 +ChatCtrl.$inject = ['$stateParams', '$timeout', '$ionicScrollDelegate', '$ionicPopup', '$log'];
 -- 
-2.5.0
+2.7.4
 
 
-From f0eb5b6184bede45141342d8ba1c48e2c612b1f2 Mon Sep 17 00:00:00 2001
+From 115658a99bfab1fcd2c80dc42b8530ad33d9d981 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:10:09 +0300
 Subject: [PATCH 111/115] Step 8.2: Invoke send picture logic on click
@@ -5171,10 +5243,10 @@ index f450447..00dce4b 100644
        <button class="button button-clear button-icon button-positive icon ion-ios-mic-outline"></button>
      </span>
 -- 
-2.5.0
+2.7.4
 
 
-From ed6e85c24bef9cd131ac39f50160a2bced5fda42 Mon Sep 17 00:00:00 2001
+From 0d2c67438b2eb3c49335a5bd4afa018c6089d783 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:12:36 +0300
 Subject: [PATCH 112/115] Step 8.3: Add picture message validation
@@ -5217,10 +5289,10 @@ index 9b0de15..8c74d4e 100644
      message.timestamp = new Date();
      message.userId = this.userId;
 -- 
-2.5.0
+2.7.4
 
 
-From ec6108a9361e3a9d1f5b7b5e6eb05961bc954157 Mon Sep 17 00:00:00 2001
+From 107fac35d0d3d46b5b913f23a5c17ad7da1f998f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:15:58 +0300
 Subject: [PATCH 113/115] Step 8.4: Add picture message type to chat view
@@ -5248,10 +5320,10 @@ index 00dce4b..461add3 100644
          </div>
        </div>
 -- 
-2.5.0
+2.7.4
 
 
-From 804df6ef65c8b0a43ccb3ab1ee306d33e7be1531 Mon Sep 17 00:00:00 2001
+From 6a6a187c2a98e79db4be46b6732c16b44226ef5c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:18:24 +0300
 Subject: [PATCH 114/115] Step 8.5: Add picture style to chat stylesheet
@@ -5291,10 +5363,10 @@ index 77f09da..e35382c 100644
      position: absolute;
      bottom: 2px;
 -- 
-2.5.0
+2.7.4
 
 
-From c10fb4601b11171e9c50443b7dee29044f47fcd3 Mon Sep 17 00:00:00 2001
+From 76aea7b3fc33a05db53707ba1cc98c6c63fa3fd4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:22:15 +0300
 Subject: [PATCH 115/115] Step 8.6: Add picture message indication in chats
@@ -5321,5 +5393,5 @@ index d5b3e72..b7b8f13 100644
          <i class="icon ion-chevron-right icon-accessory"></i>
          <ion-option-button class="button-assertive" ng-click="chats.remove(chat)">
 -- 
-2.5.0
+2.7.4
 
