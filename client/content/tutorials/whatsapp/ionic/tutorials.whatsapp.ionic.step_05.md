@@ -12,8 +12,8 @@ And second, we will update the client, and add authentication packages to it. We
 
 In terminal, type:
 
-    $ bower install accounts-phone --save
-    $ bower install angular-meteor --save
+    $ npm install accounts-phone --save
+    $ npm install angular-meteor-auth --save
 
 And import them in our `index.js`:
 

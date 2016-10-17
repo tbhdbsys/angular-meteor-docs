@@ -64,12 +64,12 @@ Let’s bring `Meteor`'s powerful client side tools that will help us easily syn
 
 Navigate the command line into your project’s root folder and type:
 
-    $ bower install meteor-client-side --save
-    $ bower install angular-meteor --save
+    $ npm install meteor-client-side --save
+    $ npm install angular-meteor --save
 
 Notice that we also installed `angular-meteor` package which will help us bring `Meteor`'s benefits into an `Angular` project.
 
-Our `bower.json` should look like so:
+Our `package.json` should look like so:
 
 {{> DiffBox tutorialName="ionic-tutorial" step="3.7"}}
 
