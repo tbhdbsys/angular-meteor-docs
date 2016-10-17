@@ -56,7 +56,7 @@ We will use `Moment` like before, but now let's add another package called [angu
 
 So adding the package is just like any other package we added so far. First, we will install it:
 
-    $ bower install angular-moment --save
+    $ npm install angular-moment --save
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.12"}}
 
