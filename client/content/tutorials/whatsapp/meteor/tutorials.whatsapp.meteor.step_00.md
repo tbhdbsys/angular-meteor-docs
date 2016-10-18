@@ -32,9 +32,13 @@ Next, we will replace `Blaze` (`Meteor`'s default templating engine) with `Angul
     $ meteor remove blaze-html-templates
     $ meteor add angular-templates
 
-We also need to make sure `Ionic` is installed:
+We also need to make sure `Ionic` is installed along with its dependencies:
 
     $ meteor add dab0mb:ionic-assets
+    $ meteor npm install angular@^1.5.0 --save
+    $ meteor npm install angular-animate@^1.4.3 --save
+    $ meteor npm install angular-sanitize@^1.4.3 --save
+    $ meteor npm install angular-ui-router@^0.2.13 --save
     $ meteor npm install ionic-scripts --save
 
 And finally, we will install `angular-meteor`:
