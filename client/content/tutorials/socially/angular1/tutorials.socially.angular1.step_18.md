@@ -34,8 +34,9 @@ Next, we want to inject the angular-material module into our Angular 1 applicati
 
 That's it, now we can use `angular-material` in our application layout.
 
-Let's add `Material Design Icons` to Socially:
+Let's add `Material Design Icons` and `Ionic Icons` to Socially:
 
+    meteor add pagebakers:ionicons
     meteor add planettraining:material-design-icons
 
 We have to define the `$mdIconProvider`.
