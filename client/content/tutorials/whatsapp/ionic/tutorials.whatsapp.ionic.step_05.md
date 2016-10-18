@@ -6,7 +6,8 @@ Before we go ahead and start extending our app, we will add few packages which w
 
 Firt we will update our `api` and add a meteor package called `accounts-phone` which gives us the ability to verify a user using an SMS code:
 
-    $ meteor add okland:accounts-phone
+    $ meteor add npm-bcrypt@0.8.7
+    $ meteor add mys:accounts-phone
 
 And second, we will update the client, and add authentication packages to it. We will add `accounts-phone` which is the same package we installed in our `api`, only this time it's for the client, and `angular-meteor-auth` which is an extension for `Angular` based on `angular-meteor`, and it contains different utility functions to help us implement authentication.
 
