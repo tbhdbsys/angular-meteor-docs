@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.meteor.step_07.md"}}
+{{> downloadPreviousStep stepName="step_06"}}
 
 So now we will add an ability to add a user profile image using the device's camera (e.g. phone or laptop).
 

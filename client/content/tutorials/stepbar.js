@@ -125,10 +125,16 @@ Template.improveDoc.helpers({
 Template.downloadPreviousStep.helpers({
   ghRepoName: function () {
     var rData = Router.current().data();
-    if (rData.parent.route == 'tutorials.socially.angular2'){
-      return 'https://github.com/Urigo/meteor-angular2.0-socially';
-    } else {
-      return 'https://github.com/Urigo/meteor-angular-socially';
+
+    switch (rData.parent.route) {
+      case 'tutorials.socially.angular1':
+        return 'https://github.com/Urigo/meteor-angular-socially';
+      case 'tutorials.socially.angular2':
+        return 'https://github.com/Urigo/meteor-angular2.0-socially';
+      case 'tutorials.whatsapp.ionic':
+        return 'https://github.com/DAB0mB/ionic-meteor-whatsapp';
+      case 'tutorials.whatsapp.meteor':
+        return 'https://github.com/DAB0mB/angular-meteor-whatsapp';
     }
   }
 });

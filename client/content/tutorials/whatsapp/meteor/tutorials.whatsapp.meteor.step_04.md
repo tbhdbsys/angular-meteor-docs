@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.meteor.step_04.md"}}
+{{> downloadPreviousStep stepName="step_03"}}
 
 On this step we will authenticate and identify users in our app.
 

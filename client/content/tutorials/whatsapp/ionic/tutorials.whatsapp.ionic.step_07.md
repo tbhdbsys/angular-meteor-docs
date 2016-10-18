@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.ionic.step_07.md"}}
+{{> downloadPreviousStep stepName="step_06"}}
 
 Right now all the chats are published to all the clients which is not very safe for privacy. Let's fix that.
 

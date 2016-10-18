@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.meteor.step_08.md"}}
+{{> downloadPreviousStep stepName="step_07"}}
 
 Our last step would be implementing image messages support. We will use the same package from the previous step to achieve that.
 

@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.ionic.step_02.md"}}
+{{> downloadPreviousStep stepName="step_01"}}
 
 Now that we've finished making our initial setup, let's dive into the code of our app.
 

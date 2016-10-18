@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.meteor.step_06.md"}}
+{{> downloadPreviousStep stepName="step_05"}}
 
 Right now all the chats are published to all the clients which is not very safe for privacy. Let's fix that.
 

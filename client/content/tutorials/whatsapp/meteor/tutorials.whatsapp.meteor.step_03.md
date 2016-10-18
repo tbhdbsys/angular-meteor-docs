@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.meteor.step_03.md"}}
+{{> downloadPreviousStep stepName="step_02"}}
 
 In this step we will add the chat view and the ability to send messages.
 
