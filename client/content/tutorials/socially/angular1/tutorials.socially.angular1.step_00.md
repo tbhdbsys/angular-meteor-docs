@@ -106,9 +106,9 @@ Now let's include that file into our main `index.html` file:
 
 But if you load this in your browser, **you won't see anything**. That's because we still need to **create the actual Angular app**, which we'll do next.
 
-> It's very important to note - the **paths are always absolute, not relative!**  so if `main.html` was inside a root folder of your app, you would have to place the whole path from the route app, doesn't matter where you're calling the file from.
+> Note: **paths are absolute, not relative!** You should always specify a full path regardless which file you're at. The path will begin from the app's root dir.
 
-> E.g. if `main.html` was in a root folder your include would look like:
+> E.g. let `main.html`, a file in the app's root dir, should be loaded like so:
 
     <div ng-include="'main.html'"></div>
 

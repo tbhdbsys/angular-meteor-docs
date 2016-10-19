@@ -102,6 +102,14 @@ And use it in the `PartiesList`:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="16.14"}}
 
+Depends on which version of google-maps you use, by now you might have encountered the following error message when trying to load the map component:
+
+    Oops! Something went wrong. This page didn't load Google Maps correctly. See the JavaScript console for technical details.
+
+The map fails to load because in the newer versions of google-maps an API key is mandatory. An API key is a code passed in by computer programs calling an API to identify the calling program, its developer, or its user to the Web site. To generate an API key go to [Google Maps API documentation page](https://developers.google.com/maps/documentation/javascript/get-api-key) and follow the instructions. **Each app should have it's own API key**, as for now we can just use an API key we generated for the sake of this tutorial, but once you go production mode, **replace the API key in the script below**:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="16.15"}}
+
 # Summary
 
 Run the app.  Look at how little code we needed to add maps support to our app.

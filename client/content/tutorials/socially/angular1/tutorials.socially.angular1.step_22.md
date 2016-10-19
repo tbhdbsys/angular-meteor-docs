@@ -81,7 +81,7 @@ Ok! We have both views. It's time to implement them and remove the old `partiesL
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="22.14"}}
 
-There is a terribly looking margin at the top of the first party. This will fix it:
+Since the layout of the view has changed, it's a bit broken and not functioning well. For example, in the mobile view we have a terribly looking margin at the top of the first party item, and in the web view we can't scroll the parties list. Here are some few adjustments which will make the layout work properly again:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="22.15"}}
 
