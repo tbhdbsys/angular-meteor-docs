@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.ionic.step_05.md"}}
+{{> downloadPreviousStep stepName="step_04"}}
 
 On this step we will authenticate and identify users in our app.
 

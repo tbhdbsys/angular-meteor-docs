@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.ionic.step_03.md"}}
+{{> downloadPreviousStep stepName="step_02"}}
 
 Now that we have the layout and some dummy data, let’s create a Meteor server and connect to it to make our app real.
 
