@@ -1,7 +1,7 @@
 From 3ed70a9541cbfe83cbfdbf6dd6a8aa93b48af4a5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:14:00 +0200
-Subject: [PATCH 001/412] Step 0.1: Create project
+Subject: [PATCH 001/413] Step 0.1: Create project
 
 ---
  .gitignore                  |  1 +
@@ -303,7 +303,7 @@ index 0000000..31a9e0e
 From 04c6f86f078098ce124f1dec399b88fddcdafeeb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:15:57 +0200
-Subject: [PATCH 002/412] Step 0.2: Remove project files
+Subject: [PATCH 002/413] Step 0.2: Remove project files
 
 ---
  client/main.css  |  1 -
@@ -401,7 +401,7 @@ index 31a9e0e..0000000
 From e2b83efe946e03e96ed9f5404dca47f7da85bcc4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:29:56 +0200
-Subject: [PATCH 003/412] Step 0.3: Create an empty html file
+Subject: [PATCH 003/413] Step 0.3: Create an empty html file
 
 ---
  client/index.html | 3 +++
@@ -424,7 +424,7 @@ index 0000000..ef412ef
 From 72b9d025897fa04ff6f8f44fa728dd312c22de69 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:33:17 +0200
-Subject: [PATCH 004/412] Step 0.4: Remove `blaze-html-templates` and
+Subject: [PATCH 004/413] Step 0.4: Remove `blaze-html-templates` and
  `ecmascript`
 
 ---
@@ -498,7 +498,7 @@ index 8cc40eb..9fcabc4 100644
 From 055084db2ea3b902cd009e8705421c71032e881c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:35:22 +0200
-Subject: [PATCH 005/412] Step 0.5: Add `angular-templates` and
+Subject: [PATCH 005/413] Step 0.5: Add `angular-templates` and
  `pbastowski:angular-babel`
 
 ---
@@ -569,7 +569,7 @@ index 9fcabc4..5358258 100644
 From 55365cc83bf1f45f3a811b96d4174e43ec6e3d65 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:36:09 +0200
-Subject: [PATCH 006/412] Step 0.6: Add `angular` and `angular-meteor`
+Subject: [PATCH 006/413] Step 0.6: Add `angular` and `angular-meteor`
 
 ---
  package.json | 2 ++
@@ -595,7 +595,7 @@ index 196e6e1..1fdb919 100644
 From 7399a7dc27516dda7a9cd8f19c1f5b152f922859 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:38:27 +0200
-Subject: [PATCH 007/412] Step 0.7: Move the main content to a new file
+Subject: [PATCH 007/413] Step 0.7: Move the main content to a new file
 
 ---
  client/main.html | 1 +
@@ -616,7 +616,7 @@ index 0000000..79ed426
 From 3cea70773ddf894b7c543ffc1cc8aa2936438d87 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:39:02 +0200
-Subject: [PATCH 008/412] Step 0.8: Add `ng-include` that loads the main.html
+Subject: [PATCH 008/413] Step 0.8: Add `ng-include` that loads the main.html
  file
 
 ---
@@ -639,7 +639,7 @@ index ef412ef..6378317 100644
 From f32b5f249da93d0694e91a029c68b4e1cb01d06e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:41:54 +0200
-Subject: [PATCH 009/412] Step 0.9: Add main.js with angular module
+Subject: [PATCH 009/413] Step 0.9: Add main.js with angular module
 
 ---
  client/main.js | 6 ++++++
@@ -665,7 +665,7 @@ index 0000000..558ad57
 From 9a3c46dc36f90b40720df2ef234c4b18352a29cd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:42:29 +0200
-Subject: [PATCH 010/412] Step 0.10: Add usage of `ng-app` in our app
+Subject: [PATCH 010/413] Step 0.10: Add usage of `ng-app` in our app
 
 ---
  client/index.html | 2 +-
@@ -687,7 +687,7 @@ index 6378317..f6b9ac4 100644
 From 62e38b66be49779206a63733abfea5521ccfe23e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:47:16 +0200
-Subject: [PATCH 011/412] Step 0.11: Add some AngularJS code !
+Subject: [PATCH 011/413] Step 0.11: Add some AngularJS code !
 
 ---
  client/main.html | 2 +-
@@ -707,7 +707,7 @@ index 79ed426..a9c8ddc 100644
 From eded909a9ce9667c2bdaa7298c27c54ffdf89a4b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:48:04 +0200
-Subject: [PATCH 012/412] Step 1.1: Add some static HTML the to main page
+Subject: [PATCH 012/413] Step 1.1: Add some static HTML the to main page
 
 ---
  client/main.html | 15 ++++++++++++++-
@@ -740,7 +740,7 @@ index a9c8ddc..dd1ef68 100644
 From 0d8995c1265393cf2efdaef03689f85c7126d388 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:49:31 +0200
-Subject: [PATCH 013/412] Step 2.1: Use dynamic template instead of static
+Subject: [PATCH 013/413] Step 2.1: Use dynamic template instead of static
 
 ---
  client/main.html | 22 ++++++++--------------
@@ -780,7 +780,7 @@ index dd1ef68..7f8c6d9 100644
 From ad2ce953ce81eded8f3e62ddb9c3df4627d3edf0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:50:30 +0200
-Subject: [PATCH 014/412] Step 2.2: Add the parties controller
+Subject: [PATCH 014/413] Step 2.2: Add the parties controller
 
 ---
  client/main.js | 16 ++++++++++++++--
@@ -817,7 +817,7 @@ index 558ad57..abc441c 100644
 From 40ee7395a2bb3c70d2e77f9d87b6a75b8168e770 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:51:13 +0200
-Subject: [PATCH 015/412] Step 2.3: Remove the DI manual decleration
+Subject: [PATCH 015/413] Step 2.3: Remove the DI manual decleration
 
 ---
  client/main.js | 6 ++++--
@@ -851,7 +851,7 @@ index abc441c..feb14f8 100644
 From 0c08274ce8ab934d35dbf184558b346c48afd4bd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:51:56 +0200
-Subject: [PATCH 016/412] Step 2.4: Add ng-strict-di directive to the app
+Subject: [PATCH 016/413] Step 2.4: Add ng-strict-di directive to the app
 
 ---
  client/index.html | 2 +-
@@ -873,7 +873,7 @@ index f6b9ac4..48c2d09 100644
 From e828d0869e9cce24eb8358ba0512e797b169d159 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:56:08 +0200
-Subject: [PATCH 017/412] Step 3.1: Add the parties collection
+Subject: [PATCH 017/413] Step 3.1: Add the parties collection
 
 ---
  collections/parties.js | 1 +
@@ -894,7 +894,7 @@ index 0000000..f78fa2c
 From 2dcd7414b0493e96f7e23b47e7ce66d0d40f4566 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 09:56:46 +0200
-Subject: [PATCH 018/412] Step 3.2: Add the parties collection helper
+Subject: [PATCH 018/413] Step 3.2: Add the parties collection helper
 
 ---
  client/main.js | 17 ++++++-----------
@@ -933,7 +933,7 @@ index feb14f8..1b17ade 100644
 From 1aa58ef97758b86a1c065b29c10a54c2f6d4b1ae Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:00:24 +0200
-Subject: [PATCH 019/412] Step 3.3: Add some data to the parties collection
+Subject: [PATCH 019/413] Step 3.3: Add some data to the parties collection
 
 ---
  server/startup.js | 18 ++++++++++++++++++
@@ -971,7 +971,7 @@ index 0000000..ad3fd85
 From 04b86b4d7cc2637fbdec678570c2e1791ded1ca7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:00:58 +0200
-Subject: [PATCH 020/412] Step 3.4: Change to use controllerAs syntax
+Subject: [PATCH 020/413] Step 3.4: Change to use controllerAs syntax
 
 ---
  client/main.html | 4 ++--
@@ -997,7 +997,7 @@ index 7f8c6d9..62eca58 100644
 From ee969910a00c42a65726aa16191a255741b00053 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:07:22 +0200
-Subject: [PATCH 021/412] Step 3.5: Change the parties controller to use
+Subject: [PATCH 021/413] Step 3.5: Change the parties controller to use
  $reactive and `this` instead of `$scope`
 
 ---
@@ -1030,7 +1030,7 @@ index 1b17ade..58efe3e 100644
 From c043d0507f314ea31cf5c3831464085b09ab8bcc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:12:43 +0200
-Subject: [PATCH 022/412] Step 3.6: Refactor PartiesListCtrl to be a component
+Subject: [PATCH 022/413] Step 3.6: Refactor PartiesListCtrl to be a component
 
 ---
  client/main.js | 20 ++++++++++++--------
@@ -1074,7 +1074,7 @@ index 58efe3e..a898321 100644
 From a05c139d5f3685e0819ae4ca4c3d7a0f5acc8b77 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:13:37 +0200
-Subject: [PATCH 023/412] Step 3.7: Change usage from controllerAs to
+Subject: [PATCH 023/413] Step 3.7: Change usage from controllerAs to
  components code-style - view
 
 ---
@@ -1097,7 +1097,7 @@ index 48c2d09..84f0ef3 100644
 From 7cf5e12d5eda91ab96930f5555724a77a1fade4e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:14:22 +0200
-Subject: [PATCH 024/412] Step 3.8: Move the parties list to a different HTML
+Subject: [PATCH 024/413] Step 3.8: Move the parties list to a different HTML
  file
 
 ---
@@ -1124,7 +1124,7 @@ index 0000000..64ac441
 From b16ac0f3bb257fcaa389f2dd08b1261da07bc83f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:25:52 +0200
-Subject: [PATCH 025/412] Step 3.9: Move PartiesList to imports
+Subject: [PATCH 025/413] Step 3.9: Move PartiesList to imports
 
 ---
  imports/ui/components/partiesList/partiesList.js | 27 ++++++++++++++++++++++++
@@ -1171,7 +1171,7 @@ index 0000000..a5a8a27
 From db13c67f9dfe113ae837058bfc8affad6dcdce77 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:26:25 +0200
-Subject: [PATCH 026/412] Step 3.10: Move PartiesList view to imports
+Subject: [PATCH 026/413] Step 3.10: Move PartiesList view to imports
 
 ---
  imports/ui/components/partiesList/partiesList.html | 6 ++++++
@@ -1197,7 +1197,7 @@ index 0000000..64ac441
 From 4d13a74491ed2643770f29875021873095c37036 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:27:59 +0200
-Subject: [PATCH 027/412] Step 3.11: Use PartiesList from imports
+Subject: [PATCH 027/413] Step 3.11: Use PartiesList from imports
 
 ---
  client/main.js | 22 +++++-----------------
@@ -1241,7 +1241,7 @@ index a898321..d643c33 100644
 From e9b4abd19f2926cc0d5a50652fb104c08f6f1aeb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:28:46 +0200
-Subject: [PATCH 028/412] Step 3.12: Remove old partiesList.html
+Subject: [PATCH 028/413] Step 3.12: Remove old partiesList.html
 
 ---
  client/partiesList.html | 6 ------
@@ -1267,7 +1267,7 @@ index 64ac441..0000000
 From 30f38bfef4ed274c5287501aca179b4abdbcc2e4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:29:23 +0200
-Subject: [PATCH 029/412] Step 3.13: Remove unused main.html
+Subject: [PATCH 029/413] Step 3.13: Remove unused main.html
 
 ---
  client/main.html | 8 --------
@@ -1295,7 +1295,7 @@ index 62eca58..0000000
 From e8029ef74b03657b2a89768b59a2f15bee8987f9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:29:59 +0200
-Subject: [PATCH 030/412] Step 3.14: Import template
+Subject: [PATCH 030/413] Step 3.14: Import template
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 +++-
@@ -1330,7 +1330,7 @@ index a5a8a27..ba6973f 100644
 From 8a227ea25382ba2d0f15089d069efd5bb1dddd05 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 12 May 2016 10:18:38 +0200
-Subject: [PATCH 031/412] Step 3.15: Add static-templates
+Subject: [PATCH 031/413] Step 3.15: Add static-templates
 
 ---
  .meteor/packages | 2 +-
@@ -1372,7 +1372,7 @@ index 5358258..cf253c0 100644
 From 58587acca7e14b6e5632c2a7a6a832416bf0e154 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 12 May 2016 10:19:21 +0200
-Subject: [PATCH 032/412] Step 3.16: Switch from templateUrl to template
+Subject: [PATCH 032/413] Step 3.16: Switch from templateUrl to template
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 ++--
@@ -1407,7 +1407,7 @@ index ba6973f..fc2bdd6 100644
 From e8e06bd7f7c9bb70a6e5fb0af54caca0fe85f7f3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:31:27 +0200
-Subject: [PATCH 033/412] Step 3.17: Create view for Socially component
+Subject: [PATCH 033/413] Step 3.17: Create view for Socially component
 
 ---
  imports/ui/components/socially/socially.html | 1 +
@@ -1428,7 +1428,7 @@ index 0000000..5e9673b
 From 4aa804d6d14025accbeef932cc47262a25629795 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:32:56 +0200
-Subject: [PATCH 034/412] Step 3.18: Create Socially component
+Subject: [PATCH 034/413] Step 3.18: Create Socially component
 
 ---
  imports/ui/components/socially/socially.js | 19 +++++++++++++++++++
@@ -1467,7 +1467,7 @@ index 0000000..2a99481
 From 85aefe9bd9dd566c6192f3c801f3d0a5895a5b57 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:33:26 +0200
-Subject: [PATCH 035/412] Step 3.19: Replace parties-list with socially
+Subject: [PATCH 035/413] Step 3.19: Replace parties-list with socially
 
 ---
  client/index.html | 2 +-
@@ -1489,7 +1489,7 @@ index 84f0ef3..e6d21ea 100644
 From 615fee114654862f342c2f37a20342426f607d07 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:34:53 +0200
-Subject: [PATCH 036/412] Step 3.20: Import Socially in main.js
+Subject: [PATCH 036/413] Step 3.20: Import Socially in main.js
 
 ---
  client/main.js | 7 +------
@@ -1517,7 +1517,7 @@ index d643c33..212f992 100644
 From 340a1be0bc12c86a751ed283e0811d836074a27f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:35:46 +0200
-Subject: [PATCH 037/412] Step 4.1: Create template for PartyAdd component
+Subject: [PATCH 037/413] Step 4.1: Create template for PartyAdd component
 
 ---
  imports/ui/components/partyAdd/partyAdd.html | 11 +++++++++++
@@ -1548,7 +1548,7 @@ index 0000000..a61cf04
 From ddfc630471d03ed838e8a0dda96bcfc39f53fe7e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:36:39 +0200
-Subject: [PATCH 038/412] Step 4.2: Create PartyAdd component
+Subject: [PATCH 038/413] Step 4.2: Create PartyAdd component
 
 ---
  imports/ui/components/partyAdd/partyAdd.js | 17 +++++++++++++++++
@@ -1585,7 +1585,7 @@ index 0000000..bec462e
 From 10746738d40313d346c15c559fb7df2305e3b10f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:37:19 +0200
-Subject: [PATCH 039/412] Step 4.3: Implement PartyAdd to the view
+Subject: [PATCH 039/413] Step 4.3: Implement PartyAdd to the view
 
 ---
  imports/ui/components/partiesList/partiesList.html | 2 ++
@@ -1608,7 +1608,7 @@ index 64ac441..229908b 100644
 From d3c1049b9b0eddd6e11056b55f47a497ff768bb4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:42:22 +0200
-Subject: [PATCH 040/412] Step 4.4: Add PartyAdd to PartiesList
+Subject: [PATCH 040/413] Step 4.4: Add PartyAdd to PartiesList
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 +++-
@@ -1643,7 +1643,7 @@ index fc2bdd6..9acb917 100644
 From b6875a9b4da6728e722cca6cb4a2cd701df96145 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:43:11 +0200
-Subject: [PATCH 041/412] Step 4.5: Add ng-model to the form inputs
+Subject: [PATCH 041/413] Step 4.5: Add ng-model to the form inputs
 
 ---
  imports/ui/components/partyAdd/partyAdd.html | 4 ++--
@@ -1673,7 +1673,7 @@ index a61cf04..f035ecd 100644
 From e94979085c8313965c3b0cdfa9fd1386e6f97c7d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:46:01 +0200
-Subject: [PATCH 042/412] Step 4.6: Add submit method to the button
+Subject: [PATCH 042/413] Step 4.6: Add submit method to the button
 
 ---
  imports/ui/components/partyAdd/partyAdd.html | 2 +-
@@ -1697,7 +1697,7 @@ index f035ecd..3508bef 100644
 From f6af315e636d0294a6f93be104d564c3a8f73243 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:47:30 +0200
-Subject: [PATCH 043/412] Step 4.7: Add submit method
+Subject: [PATCH 043/413] Step 4.7: Add submit method
 
 ---
  imports/ui/components/partyAdd/partyAdd.js | 10 +++++++++-
@@ -1731,7 +1731,7 @@ index bec462e..d864dbb 100644
 From 0418f4ad0f97254806b92dac0c759a5701d6b658 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:52:00 +0200
-Subject: [PATCH 044/412] Step 4.8: Move Parties to imports
+Subject: [PATCH 044/413] Step 4.8: Move Parties to imports
 
 ---
  imports/api/parties.js | 3 +++
@@ -1754,7 +1754,7 @@ index 0000000..e308632
 From db3cce9005c8c241bb9fbf5723fae816a247f7b7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:52:33 +0200
-Subject: [PATCH 045/412] Step 4.9: Remove old collection
+Subject: [PATCH 045/413] Step 4.9: Remove old collection
 
 ---
  collections/parties.js | 1 -
@@ -1775,7 +1775,7 @@ index f78fa2c..0000000
 From f3eba5cdcb10664bd7eb8bf9232d6fbed9405061 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:56:28 +0200
-Subject: [PATCH 046/412] Step 4.10: Import new module with Parties collection
+Subject: [PATCH 046/413] Step 4.10: Import new module with Parties collection
 
 ---
  server/startup.js | 3 +++
@@ -1799,7 +1799,7 @@ index ad3fd85..6ce39cd 100644
 From 7713c15fc242be6a7e7aae8c0b84d3082839b361 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 10:57:41 +0200
-Subject: [PATCH 047/412] Step 4.11: Import new module with Parties to
+Subject: [PATCH 047/413] Step 4.11: Import new module with Parties to
  PartiesList
 
 ---
@@ -1825,7 +1825,7 @@ index 9acb917..b9ef5c8 100644
 From 7a2fce409c87b635c2aebc2ab4e61c3d64053ab7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:00:20 +0200
-Subject: [PATCH 048/412] Step 4.12: Insert new party
+Subject: [PATCH 048/413] Step 4.12: Insert new party
 
 ---
  imports/ui/components/partyAdd/partyAdd.js | 8 +++++++-
@@ -1864,7 +1864,7 @@ index d864dbb..aa9b76f 100644
 From a462f3bb836707fff6e225eb8581bf50f321c0bc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:01:18 +0200
-Subject: [PATCH 049/412] Step 4.13: Create view for PartyRemove component
+Subject: [PATCH 049/413] Step 4.13: Create view for PartyRemove component
 
 ---
  imports/ui/components/partyRemove/partyRemove.html | 1 +
@@ -1885,7 +1885,7 @@ index 0000000..1295105
 From 7a8d665a98cf1187526f7b61e1d0b2a362b74225 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:04:08 +0200
-Subject: [PATCH 050/412] Step 4.14: Create PartyRemove component
+Subject: [PATCH 050/413] Step 4.14: Create PartyRemove component
 
 ---
  imports/ui/components/partyRemove/partyRemove.js | 21 +++++++++++++++++++++
@@ -1926,7 +1926,7 @@ index 0000000..646d78d
 From 0b876ed96f8fae9842d2df9a7696031203b21d6f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:05:10 +0200
-Subject: [PATCH 051/412] Step 4.15: Add party binding
+Subject: [PATCH 051/413] Step 4.15: Add party binding
 
 ---
  imports/ui/components/partyRemove/partyRemove.js | 3 +++
@@ -1953,7 +1953,7 @@ index 646d78d..fb007aa 100644
 From 86ec7ad99b2603f00f83471bc03a0476fea44540 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:06:30 +0200
-Subject: [PATCH 052/412] Step 4.16: Remove party from collection
+Subject: [PATCH 052/413] Step 4.16: Remove party from collection
 
 ---
  imports/ui/components/partyRemove/partyRemove.js | 5 ++++-
@@ -1985,7 +1985,7 @@ index fb007aa..ab73562 100644
 From e3679745ebe06351e7459d5b70a9a63a00611474 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:07:06 +0200
-Subject: [PATCH 053/412] Step 4.17: Add PartyRemove
+Subject: [PATCH 053/413] Step 4.17: Add PartyRemove
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 +++-
@@ -2020,7 +2020,7 @@ index b9ef5c8..d5d132a 100644
 From b8e7aa6966591245b0e6febde08635e5e42af67d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:08:02 +0200
-Subject: [PATCH 054/412] Step 4.18: Implement component
+Subject: [PATCH 054/413] Step 4.18: Implement component
 
 ---
  imports/ui/components/partiesList/partiesList.html | 1 +
@@ -2044,7 +2044,7 @@ index 229908b..24dedb1 100644
 From 0ecf424992c42ff7c42ee1ebfc367da2c19ba859 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 14:21:49 +0200
-Subject: [PATCH 055/412] Step 4.19: Add `sanjo:jasmine` and reporters
+Subject: [PATCH 055/413] Step 4.19: Add `sanjo:jasmine` and reporters
 
 ---
  .meteor/packages |  3 +++
@@ -2123,7 +2123,7 @@ index cf253c0..af73cb2 100644
 From 9688a663982efa889347c2b471d520248887c795 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 14:23:16 +0200
-Subject: [PATCH 056/412] Step 4.20: Add `test:watch` npm script
+Subject: [PATCH 056/413] Step 4.20: Add `test:watch` npm script
 
 ---
  package.json | 3 ++-
@@ -2150,7 +2150,7 @@ index 1fdb919..af9f43d 100644
 From f92de2be28647364575239f2140b334d94ebb612 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 14:24:39 +0200
-Subject: [PATCH 057/412] Step 4.21: Install `angular-mocks`
+Subject: [PATCH 057/413] Step 4.21: Install `angular-mocks`
 
 ---
  package.json | 3 +++
@@ -2176,7 +2176,7 @@ index af9f43d..1555b86 100644
 From bea74129e91215981e72782703d2e39762c48039 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 14:45:42 +0200
-Subject: [PATCH 058/412] Step 4.22: Tests of PartyAdd
+Subject: [PATCH 058/413] Step 4.22: Tests of PartyAdd
 
 ---
  .../components/partyAdd/client/partyAdd.tests.js   | 53 ++++++++++++++++++++++
@@ -2249,7 +2249,7 @@ index 0000000..cc1d35e
 From 97674052e75dec4f624ce1d4ba5c227e6e88998c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 14:50:11 +0200
-Subject: [PATCH 059/412] Step 4.23: Tests of PartyRemove
+Subject: [PATCH 059/413] Step 4.23: Tests of PartyRemove
 
 ---
  .../partyRemove/client/partyRemove.tests.js        | 37 ++++++++++++++++++++++
@@ -2306,7 +2306,7 @@ index 0000000..e8b6e97
 From ae7e87a1834c9950cc32f6837a987028975a5cff Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:09:16 +0200
-Subject: [PATCH 060/412] Step 5.1: Add ui-router
+Subject: [PATCH 060/413] Step 5.1: Add ui-router
 
 ---
  package.json | 1 +
@@ -2331,7 +2331,7 @@ index 1555b86..b8cdb95 100644
 From f79054bfab612744cb806ad51b83ed430faaa123 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:10:34 +0200
-Subject: [PATCH 061/412] Step 5.2: Add uiRouter to Socially
+Subject: [PATCH 061/413] Step 5.2: Add uiRouter to Socially
 
 ---
  imports/ui/components/socially/socially.js | 2 ++
@@ -2363,7 +2363,7 @@ index 2a99481..7cd7e96 100644
 From b14a6aa2d28f071943e259102968cf1d97d73726 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:11:08 +0200
-Subject: [PATCH 062/412] Step 5.3: Add base tag to main template
+Subject: [PATCH 062/413] Step 5.3: Add base tag to main template
 
 ---
  client/index.html | 3 +++
@@ -2387,7 +2387,7 @@ index e6d21ea..806f6ab 100644
 From a435217635c7f43bf0bf6bfad20fb670d37c050d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:11:52 +0200
-Subject: [PATCH 063/412] Step 5.4: Add uiView to Socially view
+Subject: [PATCH 063/413] Step 5.4: Add uiView to Socially view
 
 ---
  imports/ui/components/socially/socially.html | 2 +-
@@ -2407,7 +2407,7 @@ index 5e9673b..19b303a 100644
 From 13673b8624a5885807d993473bea06c860b1d4d2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:13:54 +0200
-Subject: [PATCH 064/412] Step 5.5: Define `parties` route
+Subject: [PATCH 064/413] Step 5.5: Define `parties` route
 
 ---
  imports/ui/components/partiesList/partiesList.js | 14 +++++++++++++-
@@ -2454,7 +2454,7 @@ index d5d132a..54e8ad3 100644
 From a4e5402debfa6b365ee0819e1096c3f341d93cc1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:15:19 +0200
-Subject: [PATCH 065/412] Step 5.6: Set html5Mode and `parties` as default
+Subject: [PATCH 065/413] Step 5.6: Set html5Mode and `parties` as default
  route
 
 ---
@@ -2487,7 +2487,7 @@ index 7cd7e96..b064f0d 100644
 From c4239dcd9e9b8feffcdd68192f0f27f75714d3f6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:16:09 +0200
-Subject: [PATCH 066/412] Step 5.7: Create view for Navigation component
+Subject: [PATCH 066/413] Step 5.7: Create view for Navigation component
 
 ---
  imports/ui/components/navigation/navigation.html | 3 +++
@@ -2510,7 +2510,7 @@ index 0000000..def2640
 From 89c124a0d3f4bd02f2177614b76c0d893b4dea14 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:17:01 +0200
-Subject: [PATCH 067/412] Step 5.8: Create Navigation component
+Subject: [PATCH 067/413] Step 5.8: Create Navigation component
 
 ---
  imports/ui/components/navigation/navigation.js | 14 ++++++++++++++
@@ -2544,7 +2544,7 @@ index 0000000..5e33f59
 From b0f44450baec12bab5fa0485ba4572ddf65a5291 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:17:37 +0200
-Subject: [PATCH 068/412] Step 5.9: Implement Navigation in the view
+Subject: [PATCH 068/413] Step 5.9: Implement Navigation in the view
 
 ---
  imports/ui/components/socially/socially.html | 2 ++
@@ -2565,7 +2565,7 @@ index 19b303a..7fdb2de 100644
 From 93c1ee9da09406e37507a5d6c5b27ef0abb5c7e0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:18:12 +0200
-Subject: [PATCH 069/412] Step 5.10: Add Navigation to Socially
+Subject: [PATCH 069/413] Step 5.10: Add Navigation to Socially
 
 ---
  imports/ui/components/socially/socially.js | 4 +++-
@@ -2600,7 +2600,7 @@ index b064f0d..c035c49 100644
 From ada5da84d63b6e7ffb14f7c624c4e5107869f135 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:19:42 +0200
-Subject: [PATCH 070/412] Step 5.11: Create view for the PartyDetails
+Subject: [PATCH 070/413] Step 5.11: Create view for the PartyDetails
 
 ---
  imports/ui/components/partyDetails/partyDetails.html | 1 +
@@ -2621,7 +2621,7 @@ index 0000000..3ea8425
 From 12c74fec9d8cd6795cf147ad23149c7122b821bc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:21:42 +0200
-Subject: [PATCH 071/412] Step 5.12: Create PartyDetails
+Subject: [PATCH 071/413] Step 5.12: Create PartyDetails
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 24 ++++++++++++++++++++++
@@ -2665,7 +2665,7 @@ index 0000000..de7b7bb
 From 1b4ae9db804e01bed14ddb9cacf7d3fdeb81ea68 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:22:56 +0200
-Subject: [PATCH 072/412] Step 5.13: Set partyDetails state
+Subject: [PATCH 072/413] Step 5.13: Set partyDetails state
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 15 +++++++++++++--
@@ -2705,7 +2705,7 @@ index de7b7bb..89b01b2 100644
 From eb1da760309cf7997a75a7d29041eec1f2f369ae Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:23:41 +0200
-Subject: [PATCH 073/412] Step 5.14: Add PartyDetails to Socially
+Subject: [PATCH 073/413] Step 5.14: Add PartyDetails to Socially
 
 ---
  imports/ui/components/socially/socially.js | 2 ++
@@ -2738,7 +2738,7 @@ index c035c49..db55196 100644
 From 6ad670675a2536886a16e3a698e344bf94f7b666 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:25:15 +0200
-Subject: [PATCH 074/412] Step 5.15: Add link
+Subject: [PATCH 074/413] Step 5.15: Add link
 
 ---
  imports/ui/components/partiesList/partiesList.html | 4 +++-
@@ -2766,7 +2766,7 @@ index 24dedb1..c1b07e2 100644
 From 7320ae6d3538428e0c6976b75b458c0c7d9f20a8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:30:15 +0200
-Subject: [PATCH 075/412] Step 6.1: Add party helper
+Subject: [PATCH 075/413] Step 6.1: Add party helper
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 13 ++++++++++++-
@@ -2808,7 +2808,7 @@ index 89b01b2..8027663 100644
 From e472718e3e1f39d70fe136a5576f4aaf749ebcfa Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:33:34 +0200
-Subject: [PATCH 076/412] Step 6.2: Add form with the party details to the
+Subject: [PATCH 076/413] Step 6.2: Add form with the party details to the
  party details page
 
 ---
@@ -2833,7 +2833,7 @@ index 3ea8425..8c1201f 100644
 From 8b0734f3ef3d5ce38af08c37c6f3d46359be5968 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:34:10 +0200
-Subject: [PATCH 077/412] Step 6.3: Add save and back buttons to the view
+Subject: [PATCH 077/413] Step 6.3: Add save and back buttons to the view
 
 ---
  imports/ui/components/partyDetails/partyDetails.html | 3 +++
@@ -2858,7 +2858,7 @@ index 8c1201f..b5c939b 100644
 From aead855e6d2570d0cc9d382188695f13cd6fc02f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:35:38 +0200
-Subject: [PATCH 078/412] Step 6.4: Implement save button on the component
+Subject: [PATCH 078/413] Step 6.4: Implement save button on the component
  logic
 
 ---
@@ -2894,7 +2894,7 @@ index 8027663..af77e46 100644
 From e458df46b4fda8a27b4238e89aaab2ca57fb393f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:36:24 +0200
-Subject: [PATCH 079/412] Step 6.5: Handle success and fail for data actions
+Subject: [PATCH 079/413] Step 6.5: Handle success and fail for data actions
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 6 ++++++
@@ -2924,7 +2924,7 @@ index af77e46..e63b6ef 100644
 From 695ee04429c77dbf642b341d7e6b347b3e5166b5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 15:11:57 +0200
-Subject: [PATCH 080/412] Step 6.6: Tests of PartyDetails
+Subject: [PATCH 080/413] Step 6.6: Tests of PartyDetails
 
 ---
  .../partyDetails/client/partyDetails.tests.js      | 49 ++++++++++++++++++++++
@@ -2993,7 +2993,7 @@ index 0000000..997304e
 From 5dd3ff84074d7f4a4d43791fe70039c36704a99a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:38:12 +0200
-Subject: [PATCH 081/412] Step 7.1: Move startup to imports
+Subject: [PATCH 081/413] Step 7.1: Move startup to imports
 
 ---
  imports/startup/fixtures.js | 21 +++++++++++++++++++++
@@ -3034,7 +3034,7 @@ index 0000000..d92fb48
 From 6bf5096e9284cf57d7e38808d8feeae067d9d659 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:39:27 +0200
-Subject: [PATCH 082/412] Step 7.2: Create main entry point on server-side
+Subject: [PATCH 082/413] Step 7.2: Create main entry point on server-side
 
 ---
  server/main.js | 1 +
@@ -3055,7 +3055,7 @@ index 0000000..40efcd1
 From e736749e92a26e625a964fb3bff62208f3a5dc32 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:40:16 +0200
-Subject: [PATCH 083/412] Step 7.3: Import Parties on server-side to be
+Subject: [PATCH 083/413] Step 7.3: Import Parties on server-side to be
  synchronized
 
 ---
@@ -3076,7 +3076,7 @@ index 40efcd1..d4c97f0 100644
 From 403e9166cec6c2da4d1cdb378df025d5d95bc8eb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:40:34 +0200
-Subject: [PATCH 084/412] Step 7.4: Remove old startup.js
+Subject: [PATCH 084/413] Step 7.4: Remove old startup.js
 
 ---
  server/startup.js | 21 ---------------------
@@ -3117,7 +3117,7 @@ index 6ce39cd..0000000
 From 2441a16e208e6c5279fe546fb47bbf9529bb4b3c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:41:57 +0200
-Subject: [PATCH 085/412] Step 8.1: Remove `insecure` package
+Subject: [PATCH 085/413] Step 8.1: Remove `insecure` package
 
 ---
  .meteor/packages | 1 -
@@ -3155,7 +3155,7 @@ index af73cb2..b20c468 100644
 From 5136daf550f7934125ade1c879766f996ea54dce Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:42:53 +0200
-Subject: [PATCH 086/412] Step 8.2: Add `accounts-password`
+Subject: [PATCH 086/413] Step 8.2: Add `accounts-password`
 
 ---
  .meteor/packages |  1 +
@@ -3238,7 +3238,7 @@ index b20c468..9f2aa1c 100644
 From 2217ed2a32a069d1f9f8869769ad1396d956972c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:44:10 +0200
-Subject: [PATCH 087/412] Step 8.3: Add `dotansimha:accounts-ui-angular`
+Subject: [PATCH 087/413] Step 8.3: Add `dotansimha:accounts-ui-angular`
 
 ---
  .meteor/packages | 1 +
@@ -3297,7 +3297,7 @@ index 9f2aa1c..b8b2453 100644
 From 8e3c87519bcd1eb706216601e173faae0331add4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:44:45 +0200
-Subject: [PATCH 088/412] Step 8.4: Add a dependecy for accounts-ui package
+Subject: [PATCH 088/413] Step 8.4: Add a dependecy for accounts-ui package
 
 ---
  imports/ui/components/socially/socially.js | 3 ++-
@@ -3324,7 +3324,7 @@ index db55196..e539bf1 100644
 From cc957b88f32a33ceebfe6b350aafd67bbcbdf8a6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 11:45:52 +0200
-Subject: [PATCH 089/412] Step 8.5: Add usage for login-buttons directive
+Subject: [PATCH 089/413] Step 8.5: Add usage for login-buttons directive
 
 ---
  imports/ui/components/socially/socially.html | 2 ++
@@ -3347,7 +3347,7 @@ index 7fdb2de..83c40e7 100644
 From c3bf4747db97d19fbbd0670f014a19e1a2c9423f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:01:43 +0200
-Subject: [PATCH 090/412] Step 8.6: Add allow logic to the model
+Subject: [PATCH 090/413] Step 8.6: Add allow logic to the model
 
 ---
  imports/api/parties.js | 12 ++++++++++++
@@ -3380,7 +3380,7 @@ index e308632..3e283c1 100644
 From 71205d41c4a096ae781782934a1cf56df1088854 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:02:37 +0200
-Subject: [PATCH 091/412] Step 8.7: Add current user to the new party
+Subject: [PATCH 091/413] Step 8.7: Add current user to the new party
 
 ---
  imports/ui/components/partyAdd/partyAdd.js | 3 +++
@@ -3414,7 +3414,7 @@ index aa9b76f..4c9052a 100644
 From 9001ddc9358d0d5dab05a1f4067b00ef4379599a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:03:33 +0200
-Subject: [PATCH 092/412] Step 8.8: Add facebook and twitter
+Subject: [PATCH 092/413] Step 8.8: Add facebook and twitter
 
 ---
  .meteor/packages |  2 ++
@@ -3489,7 +3489,7 @@ index b8b2453..04f7979 100644
 From 9f687dd3d827a1c7c714095f3ce6be16137801b9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:05:29 +0200
-Subject: [PATCH 093/412] Step 8.9: Add permissions limit to the party details
+Subject: [PATCH 093/413] Step 8.9: Add permissions limit to the party details
  page
 
 ---
@@ -3533,7 +3533,7 @@ index e63b6ef..565aa4b 100644
 From 7ecaa06d555cf7747fdb867d391918f3a2492d7f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Tue, 26 Apr 2016 13:20:33 +0200
-Subject: [PATCH 094/412] Step 8.10: Add the reason of rejection
+Subject: [PATCH 094/413] Step 8.10: Add the reason of rejection
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 2 +-
@@ -3559,7 +3559,7 @@ index 565aa4b..1767720 100644
 From b641547d7d375b401ba98b85dd545038b152db60 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Tue, 26 Apr 2016 13:22:23 +0200
-Subject: [PATCH 095/412] Step 8.11: Handle `AUTH_REQUIRED`
+Subject: [PATCH 095/413] Step 8.11: Handle `AUTH_REQUIRED`
 
 ---
  imports/ui/components/socially/socially.js | 15 ++++++++++++++-
@@ -3602,7 +3602,7 @@ index e539bf1..dec6060 100644
 From 7a5ecb7caf31c1826933f9589abb53ef6f9a63ed Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:08:59 +0200
-Subject: [PATCH 096/412] Step 9.1: Remove `autopublish`
+Subject: [PATCH 096/413] Step 9.1: Remove `autopublish`
 
 ---
  .meteor/packages | 1 -
@@ -3640,7 +3640,7 @@ index 04f7979..cc0865f 100644
 From ce67c6513d0725749b2f6ed2c09102f5c53a45bc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:14:30 +0200
-Subject: [PATCH 097/412] Step 9.2: Add the `parties` publication to the server
+Subject: [PATCH 097/413] Step 9.2: Add the `parties` publication to the server
 
 ---
  imports/api/parties/publish.js | 31 +++++++++++++++++++++++++++++++
@@ -3691,7 +3691,7 @@ index 0000000..590f23b
 From 2d58dfb2119ff0661b9d90aef165db7e5fb2f34c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:15:16 +0200
-Subject: [PATCH 098/412] Step 9.3: Move Parties to collection.js
+Subject: [PATCH 098/413] Step 9.3: Move Parties to collection.js
 
 ---
  imports/api/parties/collection.js | 15 +++++++++++++++
@@ -3726,7 +3726,7 @@ index 0000000..3e283c1
 From b421896a7e8b35a3fde44050294c128df6eb28dd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:15:55 +0200
-Subject: [PATCH 099/412] Step 9.4: Create entry point for Parties
+Subject: [PATCH 099/413] Step 9.4: Create entry point for Parties
 
 ---
  imports/api/parties/index.js | 3 +++
@@ -3749,7 +3749,7 @@ index 0000000..5f7ae00
 From aa66b079c64979094c721c532f539b2e275d2edd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:16:11 +0200
-Subject: [PATCH 100/412] Step 9.5: Remove old parties.js
+Subject: [PATCH 100/413] Step 9.5: Remove old parties.js
 
 ---
  imports/api/parties.js | 15 ---------------
@@ -3784,7 +3784,7 @@ index 3e283c1..0000000
 From c51ed1f62371a38d93c956c53b3bbbdce0fbba07 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:18:56 +0200
-Subject: [PATCH 101/412] Step 9.6: Add the `parties` subscription
+Subject: [PATCH 101/413] Step 9.6: Add the `parties` subscription
 
 ---
  imports/ui/components/partiesList/partiesList.js | 2 ++
@@ -3810,7 +3810,7 @@ index 54e8ad3..7aced57 100644
 From dbfedcf4d60f61b81aab11c0fc3dc3cda2255274 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:20:20 +0200
-Subject: [PATCH 102/412] Step 9.7: Add public party checkbox to the add new
+Subject: [PATCH 102/413] Step 9.7: Add public party checkbox to the add new
  party form
 
 ---
@@ -3838,7 +3838,7 @@ index 3508bef..4db1888 100644
 From 5cef270210b5ee78d8da009534753787580d614f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:20:49 +0200
-Subject: [PATCH 103/412] Step 9.8: Add is public checkbox to the party details
+Subject: [PATCH 103/413] Step 9.8: Add is public checkbox to the party details
  view
 
 ---
@@ -3864,7 +3864,7 @@ index b5c939b..4e0cc68 100644
 From 8af932527ae58ce474422a710a671984a593413a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:21:31 +0200
-Subject: [PATCH 104/412] Step 9.9: Add is public checkbox to the party details
+Subject: [PATCH 104/413] Step 9.9: Add is public checkbox to the party details
  component
 
 ---
@@ -3892,7 +3892,7 @@ index 1767720..903ec9d 100644
 From 4c99c5ea3011b60d40792e7b566412a7eac0ff58 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:22:34 +0200
-Subject: [PATCH 105/412] Step 9.10: Add `parties` subscription to the
+Subject: [PATCH 105/413] Step 9.10: Add `parties` subscription to the
  PartyDetails
 
 ---
@@ -3919,7 +3919,7 @@ index 903ec9d..9c6a6f7 100644
 From 731f072ce53847bc1762369941e291bdb9645023 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:24:09 +0200
-Subject: [PATCH 106/412] Step 9.11: Create the users publication
+Subject: [PATCH 106/413] Step 9.11: Create the users publication
 
 ---
  imports/api/users.js | 12 ++++++++++++
@@ -3951,7 +3951,7 @@ index 0000000..4c9fee9
 From cdc4e2e2d6a7318e4ab3cc314369b7780b25ebbf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:24:32 +0200
-Subject: [PATCH 107/412] Step 9.12: Add `users` publication to the server-side
+Subject: [PATCH 107/413] Step 9.12: Add `users` publication to the server-side
 
 ---
  server/main.js | 1 +
@@ -3972,7 +3972,7 @@ index d4c97f0..1acdc6c 100644
 From 07f8301409331dbabd7b696814eda433f243f8a9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:26:29 +0200
-Subject: [PATCH 108/412] Step 9.13: Add `users` subscription and helper
+Subject: [PATCH 108/413] Step 9.13: Add `users` subscription and helper
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 4 ++++
@@ -4006,7 +4006,7 @@ index 9c6a6f7..a526c43 100644
 From 094e26706c587d456153766835e99ff8f55bd75e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:27:20 +0200
-Subject: [PATCH 109/412] Step 9.14: Add the users list to the party details
+Subject: [PATCH 109/413] Step 9.14: Add the users list to the party details
  view
 
 ---
@@ -4035,7 +4035,7 @@ index 4e0cc68..99de077 100644
 From 319b335275c2f57c8546190e6f1d44c2156ebbcf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 15:44:26 +0200
-Subject: [PATCH 110/412] Step 9.15: Update tests of PartyAdd
+Subject: [PATCH 110/413] Step 9.15: Update tests of PartyAdd
 
 ---
  imports/ui/components/partyAdd/client/partyAdd.tests.js | 16 ++++++++++++++--
@@ -4093,7 +4093,7 @@ index cc1d35e..3d27875 100644
 From 0356c642ff063600d38030712d7eae171b4afbbd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 15:45:37 +0200
-Subject: [PATCH 111/412] Step 9.16: Update tests of PartyDetails
+Subject: [PATCH 111/413] Step 9.16: Update tests of PartyDetails
 
 ---
  imports/ui/components/partyDetails/client/partyDetails.tests.js | 6 ++++--
@@ -4130,7 +4130,7 @@ index 997304e..0f3aa3b 100644
 From 4c0c2e06e17ed328ecf9064039b7cfb0dc53459d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:29:01 +0200
-Subject: [PATCH 112/412] Step 11.1: Update the module initialization
+Subject: [PATCH 112/413] Step 11.1: Update the module initialization
 
 ---
  client/main.js | 17 ++++++++++++++++-
@@ -4168,7 +4168,7 @@ index 212f992..06731e1 100644
 From a6abf2211751f0cbf32f65d55fb1ccfa433f448c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:29:45 +0200
-Subject: [PATCH 113/412] Step 11.2: Remove the ngApp and ngStrictDi
+Subject: [PATCH 113/413] Step 11.2: Remove the ngApp and ngStrictDi
 
 ---
  client/index.html | 2 +-
@@ -4193,7 +4193,7 @@ index 806f6ab..0a26426 100644
 From 42108df8f5e2f3052e0f618aa2de705434636d4b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:32:51 +0200
-Subject: [PATCH 114/412] Step 12.1: Add options to the parties publish
+Subject: [PATCH 114/413] Step 12.1: Add options to the parties publish
 
 ---
  imports/api/parties/publish.js | 4 ++--
@@ -4227,7 +4227,7 @@ index 590f23b..65b8f38 100644
 From b2088326e9801856f5be3f01dfbd3198baf0ae79 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:33:40 +0200
-Subject: [PATCH 115/412] Step 12.2: Add the pagination default params
+Subject: [PATCH 115/413] Step 12.2: Add the pagination default params
 
 ---
  imports/ui/components/partiesList/partiesList.js | 6 ++++++
@@ -4257,7 +4257,7 @@ index 7aced57..a68c32d 100644
 From 2cd216800b304d8044ab4b316b66c6c041a1328a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:35:13 +0200
-Subject: [PATCH 116/412] Step 12.3: Add the params to the subscription
+Subject: [PATCH 116/413] Step 12.3: Add the params to the subscription
 
 ---
  imports/ui/components/partiesList/partiesList.js | 6 +++++-
@@ -4287,7 +4287,7 @@ index a68c32d..8c04090 100644
 From b49de92afd0bdac69564804fcbaf07e58d3ce496 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:36:07 +0200
-Subject: [PATCH 117/412] Step 12.4: Add the sort parameter to the collection
+Subject: [PATCH 117/413] Step 12.4: Add the sort parameter to the collection
  helper
 
 ---
@@ -4316,7 +4316,7 @@ index 8c04090..9d3493a 100644
 From 297c7e7a2a2489d4dd53c99f14667726438cae07 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:37:39 +0200
-Subject: [PATCH 118/412] Step 12.5: Install `angular-utils-pagination`
+Subject: [PATCH 118/413] Step 12.5: Install `angular-utils-pagination`
 
 ---
  package.json | 1 +
@@ -4341,7 +4341,7 @@ index b8cdb95..3df8d27 100644
 From 9cb4ce7774fb859d27952240114c75bf772818de Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:38:35 +0200
-Subject: [PATCH 119/412] Step 12.6: Add new dependency
+Subject: [PATCH 119/413] Step 12.6: Add new dependency
 
 ---
  imports/ui/components/partiesList/partiesList.js | 2 ++
@@ -4374,7 +4374,7 @@ index 9d3493a..cae9853 100644
 From 5f440c8d3312882723dd35dc954d3e28e62084cf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:39:32 +0200
-Subject: [PATCH 120/412] Step 12.7: Add usage to the dir-pagination directive
+Subject: [PATCH 120/413] Step 12.7: Add usage to the dir-pagination directive
 
 ---
  imports/ui/components/partiesList/partiesList.html | 2 +-
@@ -4400,7 +4400,7 @@ index c1b07e2..71b36ae 100644
 From fcf934d0873ee84028f72679f9dbbc7a0d20e426 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:39:54 +0200
-Subject: [PATCH 121/412] Step 12.8: Add the pagination controls to the view
+Subject: [PATCH 121/413] Step 12.8: Add the pagination controls to the view
 
 ---
  imports/ui/components/partiesList/partiesList.html | 2 ++
@@ -4423,7 +4423,7 @@ index 71b36ae..d4206d6 100644
 From d60b018bd1fb217d2111c4823ae9f6c4bfc0c75c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:40:29 +0200
-Subject: [PATCH 122/412] Step 12.9: Add the pageChanged method to the
+Subject: [PATCH 122/413] Step 12.9: Add the pageChanged method to the
  component
 
 ---
@@ -4452,7 +4452,7 @@ index cae9853..1d73e64 100644
 From 79f24ea6f12fa726594d94a2a11905c3abf1d42c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:41:20 +0200
-Subject: [PATCH 123/412] Step 12.10: Add `tmeasday:publish-counts`
+Subject: [PATCH 123/413] Step 12.10: Add `tmeasday:publish-counts`
 
 ---
  .meteor/packages | 1 +
@@ -4487,7 +4487,7 @@ index cc0865f..d6f5bc3 100644
 From 75c9fe36e393659635403addabfa7e7d3f3f1bf4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:42:27 +0200
-Subject: [PATCH 124/412] Step 12.11: Add usage of Counts
+Subject: [PATCH 124/413] Step 12.11: Add usage of Counts
 
 ---
  imports/api/parties/publish.js | 5 +++++
@@ -4521,7 +4521,7 @@ index 65b8f38..4932df2 100644
 From 13d90df7fb2a9a2e2f596911df7fa80056303109 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:44:44 +0200
-Subject: [PATCH 125/412] Step 12.12: Add the Count usage in the component
+Subject: [PATCH 125/413] Step 12.12: Add the Count usage in the component
 
 ---
  imports/ui/components/partiesList/partiesList.js | 5 +++++
@@ -4557,7 +4557,7 @@ index 1d73e64..6282160 100644
 From 1c41161754a2efac19da63722498215bd6543595 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:47:04 +0200
-Subject: [PATCH 126/412] Step 12.13: Create view for PartiesSort component
+Subject: [PATCH 126/413] Step 12.13: Create view for PartiesSort component
 
 ---
  imports/ui/components/partiesSort/partiesSort.html | 6 ++++++
@@ -4583,7 +4583,7 @@ index 0000000..cf2102b
 From fcfb5e4d679a4efa3bb0e4c1dd8101392c6d1eb7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:48:25 +0200
-Subject: [PATCH 127/412] Step 12.14: Create PartiesSort component
+Subject: [PATCH 127/413] Step 12.14: Create PartiesSort component
 
 ---
  imports/ui/components/partiesSort/partiesSort.js | 34 ++++++++++++++++++++++++
@@ -4637,7 +4637,7 @@ index 0000000..d5ff3fb
 From 300574dd3ec6923b5e35456a9566cc2de6f81d80 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:49:26 +0200
-Subject: [PATCH 128/412] Step 12.15: Add as a dependency
+Subject: [PATCH 128/413] Step 12.15: Add as a dependency
 
 ---
  imports/ui/components/partiesList/partiesList.js | 2 ++
@@ -4670,7 +4670,7 @@ index 6282160..3fa1641 100644
 From a874343753af6ec67d8766d475bf544ad0ee81c7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:50:20 +0200
-Subject: [PATCH 129/412] Step 12.16: Implement component
+Subject: [PATCH 129/413] Step 12.16: Implement component
 
 ---
  imports/ui/components/partiesList/partiesList.html | 2 ++
@@ -4695,7 +4695,7 @@ index d4206d6..0fe847e 100644
 From 1b2be971265817bd5cf61ff37c0af5a6ed424fd0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 12:51:09 +0200
-Subject: [PATCH 130/412] Step 12.17: Handle sort changes
+Subject: [PATCH 130/413] Step 12.17: Handle sort changes
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 ++++
@@ -4723,7 +4723,7 @@ index 3fa1641..199a0b8 100644
 From 9e1bf724dcce7d62be37b1b6ae0614ba85c49b11 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:12:35 +0200
-Subject: [PATCH 131/412] Step 12.18: Add searchString to `parties` publication
+Subject: [PATCH 131/413] Step 12.18: Add searchString to `parties` publication
 
 ---
  imports/api/parties/publish.js | 9 ++++++++-
@@ -4763,7 +4763,7 @@ index 4932df2..67c9bdb 100644
 From 3074e4fffd947c58d1a079dd526b0847b803a4e1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:15:46 +0200
-Subject: [PATCH 132/412] Step 12.19: Add searchText to subscription
+Subject: [PATCH 132/413] Step 12.19: Add searchText to subscription
 
 ---
  imports/ui/components/partiesList/partiesList.js | 8 +++++---
@@ -4797,7 +4797,7 @@ index 199a0b8..c7221df 100644
 From 0b87ff662a8cd844516b8ac9355f7fcae448df8c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:16:30 +0200
-Subject: [PATCH 133/412] Step 12.20: Add input with searchText as ngModel
+Subject: [PATCH 133/413] Step 12.20: Add input with searchText as ngModel
 
 ---
  imports/ui/components/partiesList/partiesList.html | 2 ++
@@ -4822,7 +4822,7 @@ index 0fe847e..3c411fe 100644
 From cda011b51c6d3a663692180af4c4d7cbaf800ea5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 15:59:07 +0200
-Subject: [PATCH 134/412] Step 12.21: Tests of PartiesSort
+Subject: [PATCH 134/413] Step 12.21: Tests of PartiesSort
 
 ---
  .../partiesSort/client/partiesSort.tests.js        | 54 ++++++++++++++++++++++
@@ -4896,7 +4896,7 @@ index 0000000..09d81b4
 From 1213f94b70d87d31834e4a5e00388e701ff5279e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:07:14 +0200
-Subject: [PATCH 135/412] Step 12.22: Tests of PartiesList
+Subject: [PATCH 135/413] Step 12.22: Tests of PartiesList
 
 ---
  .../partiesList/client/partiesList.tests.js        | 50 ++++++++++++++++++++++
@@ -4966,7 +4966,7 @@ index 0000000..176da85
 From 37485ccb6ac15f728999366befdd5094c55a0ea3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:23:07 +0200
-Subject: [PATCH 136/412] Step 13.1: Create UninvitedFilter
+Subject: [PATCH 136/413] Step 13.1: Create UninvitedFilter
 
 ---
  imports/ui/filters/uninvitedFilter.js | 20 ++++++++++++++++++++
@@ -5006,7 +5006,7 @@ index 0000000..77528fc
 From 1686a296ae3854bf6ed5524e2e7e54a28f221d46 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:24:04 +0200
-Subject: [PATCH 137/412] Step 13.2: Install `underscore`
+Subject: [PATCH 137/413] Step 13.2: Install `underscore`
 
 ---
  package.json | 3 ++-
@@ -5033,7 +5033,7 @@ index 3df8d27..9e6806d 100644
 From f58def4131ffe531cef6183eb7cb719a475bcc9a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:24:21 +0200
-Subject: [PATCH 138/412] Step 13.3: Use underscore
+Subject: [PATCH 138/413] Step 13.3: Use underscore
 
 ---
  imports/ui/filters/uninvitedFilter.js | 3 ++-
@@ -5065,7 +5065,7 @@ index 77528fc..cfe8d2d 100644
 From 5681077119a0daba8d6ee8a2f80c2c1315b91db6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:26:20 +0200
-Subject: [PATCH 139/412] Step 13.4: Move list of users to separate component
+Subject: [PATCH 139/413] Step 13.4: Move list of users to separate component
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 6 ++++++
@@ -5091,7 +5091,7 @@ index 0000000..ac0bbc7
 From 1c69cf79d3b4d79f2262e31466eb47c2df0cf476 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:30:02 +0200
-Subject: [PATCH 140/412] Step 13.5: Create PartyUninvited component
+Subject: [PATCH 140/413] Step 13.5: Create PartyUninvited component
 
 ---
  .../ui/components/partyUninvited/partyUninvited.js | 34 ++++++++++++++++++++++
@@ -5145,7 +5145,7 @@ index 0000000..8ae1e9b
 From ba2566d85ba809a6db42bce7e9d636aad85ea5a9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:30:46 +0200
-Subject: [PATCH 141/412] Step 13.6: Add UninvitedFilter
+Subject: [PATCH 141/413] Step 13.6: Add UninvitedFilter
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.js | 4 +++-
@@ -5180,7 +5180,7 @@ index 8ae1e9b..2489fc2 100644
 From 049d828ea7b5d635859592db708601d7ee250056 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:31:26 +0200
-Subject: [PATCH 142/412] Step 13.7: Implement filter
+Subject: [PATCH 142/413] Step 13.7: Implement filter
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 4 ++--
@@ -5206,7 +5206,7 @@ index ac0bbc7..c1ccda5 100644
 From ba95ca8cc72358ad5b8fba0cce81560b140e61b9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:32:22 +0200
-Subject: [PATCH 143/412] Step 13.8: Implement component in PartyDetails view
+Subject: [PATCH 143/413] Step 13.8: Implement component in PartyDetails view
 
 ---
  imports/ui/components/partyDetails/partyDetails.html | 7 +------
@@ -5234,7 +5234,7 @@ index 99de077..916f23e 100644
 From c2fcc4ad5cce44b0ce2919195b8233d9cb6a5425 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:33:20 +0200
-Subject: [PATCH 144/412] Step 13.9: Add to dependencies
+Subject: [PATCH 144/413] Step 13.9: Add to dependencies
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 4 +++-
@@ -5269,7 +5269,7 @@ index a526c43..5443915 100644
 From 788ddb03284bd86d9cc7128bb392a360d6e38d0f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:40:30 +0200
-Subject: [PATCH 145/412] Step 13.10: Create DisplayNameFilter
+Subject: [PATCH 145/413] Step 13.10: Create DisplayNameFilter
 
 ---
  imports/ui/filters/displayNameFilter.js | 25 +++++++++++++++++++++++++
@@ -5314,7 +5314,7 @@ index 0000000..57d9250
 From 425eec5918985e2f37a3e3a2b38c7738a615e084 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:41:15 +0200
-Subject: [PATCH 146/412] Step 13.11: Add as a dependency
+Subject: [PATCH 146/413] Step 13.11: Add as a dependency
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.js | 4 +++-
@@ -5349,7 +5349,7 @@ index 2489fc2..ca195d5 100644
 From e5aee5cf9afdbf23aca847c73223803df4f56f5d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:41:54 +0200
-Subject: [PATCH 147/412] Step 13.12: Use filter
+Subject: [PATCH 147/413] Step 13.12: Use filter
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 2 +-
@@ -5374,7 +5374,7 @@ index c1ccda5..9603f3a 100644
 From 4582ca578e97957c6ad3db18867e8729f7294ada Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:45:34 +0200
-Subject: [PATCH 148/412] Step 13.13: Create template for PartyCreator
+Subject: [PATCH 148/413] Step 13.13: Create template for PartyCreator
  component
 
 ---
@@ -5400,7 +5400,7 @@ index 0000000..de986fb
 From 28eaeb3d5e0b7cda9cac74bae1cd5186bcf5a005 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:45:54 +0200
-Subject: [PATCH 149/412] Step 13.14: Create PartyCreator component
+Subject: [PATCH 149/413] Step 13.14: Create PartyCreator component
 
 ---
  imports/ui/components/partyCreator/partyCreator.js | 49 ++++++++++++++++++++++
@@ -5469,7 +5469,7 @@ index 0000000..416d637
 From c3ff6649ca5928710823b1d4c464d4c0eed720e0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:46:14 +0200
-Subject: [PATCH 150/412] Step 13.15: Implement component
+Subject: [PATCH 150/413] Step 13.15: Implement component
 
 ---
  imports/ui/components/partiesList/partiesList.html | 1 +
@@ -5494,7 +5494,7 @@ index 3c411fe..2b18723 100644
 From eb8d90215a639e06810e520bb1fe465d05a81f65 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 16:46:39 +0200
-Subject: [PATCH 151/412] Step 13.16: Add as a dependency
+Subject: [PATCH 151/413] Step 13.16: Add as a dependency
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 +++-
@@ -5529,7 +5529,7 @@ index c7221df..919bf88 100644
 From da2dae94cfdf68103ce31eef1a1270aa74b08ac3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:06:21 +0200
-Subject: [PATCH 152/412] Step 13.17: Tests of PartyCreator
+Subject: [PATCH 152/413] Step 13.17: Tests of PartyCreator
 
 ---
  .../partyCreator/client/partyCreator.tests.js      | 81 ++++++++++++++++++++++
@@ -5630,7 +5630,7 @@ index 0000000..dabb0b5
 From 8b3b7ce408ae66f5cf125321a73f34dd812a3d9b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:18:32 +0200
-Subject: [PATCH 153/412] Step 14.1: Add `check` package
+Subject: [PATCH 153/413] Step 14.1: Add `check` package
 
 ---
  .meteor/packages | 1 +
@@ -5652,7 +5652,7 @@ index f33cc77..054963d 100644
 From a77a872096cf99d429551f581a5cfbe9284015c3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:21:04 +0200
-Subject: [PATCH 154/412] Step 14.2: Create invite method
+Subject: [PATCH 154/413] Step 14.2: Create invite method
 
 ---
  imports/api/parties/methods.js | 66 ++++++++++++++++++++++++++++++++++++++++++
@@ -5738,7 +5738,7 @@ index 0000000..dd75692
 From 8b1c7efc82876ac69d3938b88a4980c777c2da7c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:21:28 +0200
-Subject: [PATCH 155/412] Step 14.3: Import methods
+Subject: [PATCH 155/413] Step 14.3: Import methods
 
 ---
  imports/api/parties/index.js | 1 +
@@ -5760,7 +5760,7 @@ index 5f7ae00..96b72b2 100644
 From dcaf302bb181b6b3bb4ea8609126ebe4fe835dd7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:23:05 +0200
-Subject: [PATCH 156/412] Step 14.4: Add `email` package
+Subject: [PATCH 156/413] Step 14.4: Add `email` package
 
 ---
  .meteor/packages | 1 +
@@ -5782,7 +5782,7 @@ index 054963d..27dfd39 100644
 From ea3f6545d4d252d64998793f2755b61de7b005e0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:23:49 +0200
-Subject: [PATCH 157/412] Step 14.5: Import email from module
+Subject: [PATCH 157/413] Step 14.5: Import email from module
 
 ---
  imports/api/parties/methods.js | 1 +
@@ -5807,7 +5807,7 @@ index dd75692..054b42a 100644
 From 3d0a5b96d275a6814745220c8700ab3672096aea Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:25:59 +0200
-Subject: [PATCH 158/412] Step 14.6: Add invite method to PartyUninvited
+Subject: [PATCH 158/413] Step 14.6: Add invite method to PartyUninvited
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.js | 12 ++++++++++++
@@ -5843,7 +5843,7 @@ index ca195d5..7958f5a 100644
 From 065f2edfd1cee3ca9c647baecbece357ed108023 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:26:36 +0200
-Subject: [PATCH 159/412] Step 14.7: Add invite button
+Subject: [PATCH 159/413] Step 14.7: Add invite button
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 1 +
@@ -5867,7 +5867,7 @@ index 9603f3a..0cbb435 100644
 From c9fa34862b4d1f98f7c1ff673bf14ea713504ac4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:28:47 +0200
-Subject: [PATCH 160/412] Step 14.8: Update the parties subscription to include
+Subject: [PATCH 160/413] Step 14.8: Update the parties subscription to include
  invited
 
 ---
@@ -5901,7 +5901,7 @@ index 67c9bdb..0d4d340 100644
 From dff965b671934674c25b6159c2e1a6ff8edbe87d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:42:35 +0200
-Subject: [PATCH 161/412] Step 14.9: Add rsvp method
+Subject: [PATCH 161/413] Step 14.9: Add rsvp method
 
 ---
  imports/api/parties/methods.js | 79 +++++++++++++++++++++++++++++++++++++++++-
@@ -6003,7 +6003,7 @@ index 054b42a..e8aa1ad 100644
 From 55e4cd2835c9d6d4576cf754925c7abae8e4baf9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:45:36 +0200
-Subject: [PATCH 162/412] Step 14.10: Create PartyRsvp component
+Subject: [PATCH 162/413] Step 14.10: Create PartyRsvp component
 
 ---
  imports/ui/components/partyRsvp/partyRsvp.js | 44 ++++++++++++++++++++++++++++
@@ -6067,7 +6067,7 @@ index 0000000..17aeb99
 From 21872375d3f2f33ce732f5707dab6c78cb8898d9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:46:38 +0200
-Subject: [PATCH 163/412] Step 14.11: Create template
+Subject: [PATCH 163/413] Step 14.11: Create template
 
 ---
  imports/ui/components/partyRsvp/partyRsvp.html | 3 +++
@@ -6090,7 +6090,7 @@ index 0000000..ca15260
 From 65eeaf5be4a92a73f0e55cef3959bf3868cf9ec8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:48:22 +0200
-Subject: [PATCH 164/412] Step 14.12: Add component to the view
+Subject: [PATCH 164/413] Step 14.12: Add component to the view
 
 ---
  imports/ui/components/partiesList/partiesList.html | 1 +
@@ -6115,7 +6115,7 @@ index 2b18723..bced521 100644
 From a9d3b0f29218c9faa53c9ae00b6d5d63ba8bce7c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:48:36 +0200
-Subject: [PATCH 165/412] Step 14.13: Add as a dependency
+Subject: [PATCH 165/413] Step 14.13: Add as a dependency
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 +++-
@@ -6150,7 +6150,7 @@ index 919bf88..14efe13 100644
 From 255ebc470fbecd5cfd1cf6db02930bc607119e16 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:53:02 +0200
-Subject: [PATCH 166/412] Step 14.14: Create view for PartyRsvpsList component
+Subject: [PATCH 166/413] Step 14.14: Create view for PartyRsvpsList component
 
 ---
  imports/ui/components/partyRsvpsList/partyRsvpsList.html | 6 ++++++
@@ -6176,7 +6176,7 @@ index 0000000..efc38ed
 From f8027c92baf8a8884af4916a5a2baab175649ebd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:53:16 +0200
-Subject: [PATCH 167/412] Step 14.15: Create component
+Subject: [PATCH 167/413] Step 14.15: Create component
 
 ---
  .../ui/components/partyRsvpsList/partyRsvpsList.js   | 20 ++++++++++++++++++++
@@ -6216,7 +6216,7 @@ index 0000000..755c9f9
 From d66059832f3de1d6789aef3251629890c3231c8f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:53:32 +0200
-Subject: [PATCH 168/412] Step 14.16: Add to the view
+Subject: [PATCH 168/413] Step 14.16: Add to the view
 
 ---
  imports/ui/components/partiesList/partiesList.html | 1 +
@@ -6241,7 +6241,7 @@ index bced521..60dbea3 100644
 From 9d32fb405b304cdecd9db61b46e7f40ace6cac27 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:53:47 +0200
-Subject: [PATCH 169/412] Step 14.17: Also as a dependency
+Subject: [PATCH 169/413] Step 14.17: Also as a dependency
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 +++-
@@ -6276,7 +6276,7 @@ index 14efe13..42342ca 100644
 From 57f041492fdc82cb52d9fdad020b00b27b07d4cb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:57:13 +0200
-Subject: [PATCH 170/412] Step 14.18: Create view for PartyRsvpUsers component
+Subject: [PATCH 170/413] Step 14.18: Create view for PartyRsvpUsers component
 
 ---
  imports/ui/components/partyRsvpUsers/partyRsvpUsers.html | 5 +++++
@@ -6301,7 +6301,7 @@ index 0000000..445d426
 From a129328a4013010d3a9a21c9ad8b0f1b5db80aa8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:57:30 +0200
-Subject: [PATCH 171/412] Step 14.19: Create component
+Subject: [PATCH 171/413] Step 14.19: Create component
 
 ---
  .../ui/components/partyRsvpUsers/partyRsvpUsers.js | 29 ++++++++++++++++++++++
@@ -6350,7 +6350,7 @@ index 0000000..1b4f1fa
 From 2498b8e7b691878d506b8ebc7dac1b4d8ace0857 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:57:56 +0200
-Subject: [PATCH 172/412] Step 14.20: Use recently created component
+Subject: [PATCH 172/413] Step 14.20: Use recently created component
 
 ---
  imports/ui/components/partyRsvpsList/partyRsvpsList.html | 4 ++++
@@ -6375,7 +6375,7 @@ index efc38ed..2e1749d 100644
 From d76146c321a381bb9e208e8bedb7f92df10551f1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:58:15 +0200
-Subject: [PATCH 173/412] Step 14.21: Add as a dependency
+Subject: [PATCH 173/413] Step 14.21: Add as a dependency
 
 ---
  imports/ui/components/partyRsvpsList/partyRsvpsList.js | 4 +++-
@@ -6410,7 +6410,7 @@ index 755c9f9..c1ebd92 100644
 From f293caef541f53fc21eddce0c1b30d6d7baf95b2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 17:59:25 +0200
-Subject: [PATCH 174/412] Step 14.22: Create view for PartyUnanswered
+Subject: [PATCH 174/413] Step 14.22: Create view for PartyUnanswered
 
 ---
  imports/ui/components/partyUnanswered/partyUnanswered.html | 5 +++++
@@ -6435,7 +6435,7 @@ index 0000000..ecc1b45
 From 2e94e8fa07192324bb3f4e487e9f5daf9f66d3fe Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 18:02:22 +0200
-Subject: [PATCH 175/412] Step 14.23: Create component
+Subject: [PATCH 175/413] Step 14.23: Create component
 
 ---
  .../components/partyUnanswered/partyUnanswered.js  | 39 ++++++++++++++++++++++
@@ -6494,7 +6494,7 @@ index 0000000..39f2115
 From 882b6675bceb119c132c8b65703f5b65c1bb4759 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 18:02:52 +0200
-Subject: [PATCH 176/412] Step 14.24: Use recently created component
+Subject: [PATCH 176/413] Step 14.24: Use recently created component
 
 ---
  imports/ui/components/partiesList/partiesList.html | 1 +
@@ -6519,7 +6519,7 @@ index 60dbea3..4881e5c 100644
 From b7ff99407f1b5731d8f6f0835b699c933c0fd351 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 18:03:12 +0200
-Subject: [PATCH 177/412] Step 14.25: Add as a dependency
+Subject: [PATCH 177/413] Step 14.25: Add as a dependency
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 +++-
@@ -6554,7 +6554,7 @@ index 42342ca..a20e777 100644
 From b1b958159af8cbf7282c6a204b71cb3b7717bafa Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 18:03:38 +0200
-Subject: [PATCH 178/412] Step 14.26: Subscribe `users`
+Subject: [PATCH 178/413] Step 14.26: Subscribe `users`
 
 ---
  imports/ui/components/partiesList/partiesList.js | 2 ++
@@ -6580,7 +6580,7 @@ index a20e777..e745b39 100644
 From f86c72f381fceb60f89c5481b464119c213b2133 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 19:50:23 +0200
-Subject: [PATCH 179/412] Step 14.27: Tests of invite method
+Subject: [PATCH 179/413] Step 14.27: Tests of invite method
 
 ---
  imports/api/parties/methods.tests.js | 126 +++++++++++++++++++++++++++++++++++
@@ -6726,7 +6726,7 @@ index 0000000..56e770c
 From 212cca4df7c0d7a52447ecd93e832973978ceaa5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:00:03 +0200
-Subject: [PATCH 180/412] Step 14.28: Tests of rsvp Method
+Subject: [PATCH 180/413] Step 14.28: Tests of rsvp Method
 
 ---
  imports/api/parties/methods.tests.js | 54 +++++++++++++++++++++++++++++++++++-
@@ -6807,7 +6807,7 @@ index 56e770c..536a2b0 100644
 From 3f36c0c71bd0ee26fca9ff9f58bcb158d2269ea1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:07:36 +0200
-Subject: [PATCH 181/412] Step 15.1: Add ngShow to PartyAdd
+Subject: [PATCH 181/413] Step 15.1: Add ngShow to PartyAdd
 
 ---
  imports/ui/components/partiesList/partiesList.html | 2 +-
@@ -6830,7 +6830,7 @@ index 4881e5c..d6d4c83 100644
 From 16f2951d6ef2962af8e16c32c43974ed8c70334a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:09:16 +0200
-Subject: [PATCH 182/412] Step 15.2: Add isLoggedIn helper
+Subject: [PATCH 182/413] Step 15.2: Add isLoggedIn helper
 
 ---
  imports/ui/components/partiesList/partiesList.js | 3 +++
@@ -6857,7 +6857,7 @@ index e745b39..fcf7bbf 100644
 From d26d68e3f2b8ed31aef781b2de974a2ee145a487 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:09:45 +0200
-Subject: [PATCH 183/412] Step 15.3: Add usage for ng-hide
+Subject: [PATCH 183/413] Step 15.3: Add usage for ng-hide
 
 ---
  imports/ui/components/partiesList/partiesList.html | 3 +++
@@ -6882,7 +6882,7 @@ index d6d4c83..c3006d3 100644
 From 6361c311d0ead729a7dd708c2b6a0ebac36fce0d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:10:23 +0200
-Subject: [PATCH 184/412] Step 15.4: Add ngShow to PartyRsvp
+Subject: [PATCH 184/413] Step 15.4: Add ngShow to PartyRsvp
 
 ---
  imports/ui/components/partiesList/partiesList.html | 2 +-
@@ -6908,7 +6908,7 @@ index c3006d3..07d331f 100644
 From d37d38490012f875b3c771f1e35d849698148768 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:10:48 +0200
-Subject: [PATCH 185/412] Step 15.5: Add message for not-logged in users on the
+Subject: [PATCH 185/413] Step 15.5: Add message for not-logged in users on the
  RSVP buttons
 
 ---
@@ -6937,7 +6937,7 @@ index 07d331f..3b4a085 100644
 From b24ad4a20d028345706fea81660b7c1f934d6f2d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:12:56 +0200
-Subject: [PATCH 186/412] Step 15.6: Add isOwner method
+Subject: [PATCH 186/413] Step 15.6: Add isOwner method
 
 ---
  imports/ui/components/partiesList/partiesList.js | 7 +++++++
@@ -6972,7 +6972,7 @@ index fcf7bbf..58dd939 100644
 From afde0ffcd7c18555e54d354ceb016e08e0f7fe80 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:13:51 +0200
-Subject: [PATCH 187/412] Step 15.7: Add ngShow to PartyRemove
+Subject: [PATCH 187/413] Step 15.7: Add ngShow to PartyRemove
 
 ---
  imports/ui/components/partiesList/partiesList.html | 4 ++--
@@ -7004,7 +7004,7 @@ index 3b4a085..fbc61a9 100644
 From ec4523dc767db297f91b9cb16156fa042b20b923 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:15:08 +0200
-Subject: [PATCH 188/412] Step 15.8: Add ngIf to PartyUnanswered
+Subject: [PATCH 188/413] Step 15.8: Add ngIf to PartyUnanswered
 
 ---
  imports/ui/components/partiesList/partiesList.html | 7 ++++++-
@@ -7035,7 +7035,7 @@ index fbc61a9..c4cc2c1 100644
 From 6530dbbc9268291ad65aa7824fe1d1e948f45f77 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:16:17 +0200
-Subject: [PATCH 189/412] Step 15.9: Add canInvite method to the component
+Subject: [PATCH 189/413] Step 15.9: Add canInvite method to the component
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 8 ++++++++
@@ -7067,7 +7067,7 @@ index 5443915..aa4faf4 100644
 From 106d9a363662a9da5a7dbe7bf2134d4f3224b7eb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:18:07 +0200
-Subject: [PATCH 190/412] Step 15.10: Add ngShow to PartyUninvited
+Subject: [PATCH 190/413] Step 15.10: Add ngShow to PartyUninvited
 
 ---
  imports/ui/components/partyDetails/partyDetails.html | 2 +-
@@ -7090,7 +7090,7 @@ index 916f23e..ab7abd9 100644
 From a394ee05b848dc768be8e37d3c048de99ea9e819 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:18:54 +0200
-Subject: [PATCH 191/412] Step 15.11: Add info that everyone are already
+Subject: [PATCH 191/413] Step 15.11: Add info that everyone are already
  invited
 
 ---
@@ -7116,7 +7116,7 @@ index 0cbb435..86d2519 100644
 From 5e8c9517b70ba8634444c64b9ccadbf118c3422a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:19:54 +0200
-Subject: [PATCH 192/412] Step 15.12: Add isLoggedIn helper to the party
+Subject: [PATCH 192/413] Step 15.12: Add isLoggedIn helper to the party
  details component
 
 ---
@@ -7144,7 +7144,7 @@ index aa4faf4..351d9a8 100644
 From 4576ce38787d7c4fa897bb7706961f11c590ddaf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:20:39 +0200
-Subject: [PATCH 193/412] Step 15.13: Add usage for ng-disabled
+Subject: [PATCH 193/413] Step 15.13: Add usage for ng-disabled
 
 ---
  imports/ui/components/partyDetails/partyDetails.html | 6 +++---
@@ -7173,7 +7173,7 @@ index ab7abd9..e53812d 100644
 From 021a3f19ed2f0319874213aa49a62da546918d1f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:22:55 +0200
-Subject: [PATCH 194/412] Step 16.1: Install `angular-google-maps`
+Subject: [PATCH 194/413] Step 16.1: Install `angular-google-maps`
 
 ---
  package.json | 1 +
@@ -7198,7 +7198,7 @@ index 9e6806d..46fd0f7 100644
 From f24cf9827b59ce921251e02450d9d0b1d64f0241 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:23:36 +0200
-Subject: [PATCH 195/412] Step 16.2: Install `angular-simple-logger`
+Subject: [PATCH 195/413] Step 16.2: Install `angular-simple-logger`
 
 ---
  package.json | 1 +
@@ -7223,7 +7223,7 @@ index 46fd0f7..af5599d 100644
 From 8c53a405e3ae064e57857487c85a7d4d9a5649ec Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:24:57 +0200
-Subject: [PATCH 196/412] Step 16.3: Create template for PartyMap
+Subject: [PATCH 196/413] Step 16.3: Create template for PartyMap
 
 ---
  imports/ui/components/partyMap/partyMap.html | 5 +++++
@@ -7248,7 +7248,7 @@ index 0000000..e590420
 From fa6c5c5be63397d8418e8759539e390547ab4506 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:25:56 +0200
-Subject: [PATCH 197/412] Step 16.4: Create component
+Subject: [PATCH 197/413] Step 16.4: Create component
 
 ---
  imports/ui/components/partyMap/partyMap.js | 44 ++++++++++++++++++++++++++++++
@@ -7312,7 +7312,7 @@ index 0000000..824df5c
 From 9c58ed0b7861294fbbc2e5978f8a04cd2a0e17ef Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:27:32 +0200
-Subject: [PATCH 198/412] Step 16.5: Add some class
+Subject: [PATCH 198/413] Step 16.5: Add some class
 
 ---
  imports/ui/components/partyMap/partyMap.css | 4 ++++
@@ -7336,7 +7336,7 @@ index 0000000..f4b49f5
 From 959fd944fb5712c7d77aff02b664f6b9a5d1a943 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:28:08 +0200
-Subject: [PATCH 199/412] Step 16.6: Import styles
+Subject: [PATCH 199/413] Step 16.6: Import styles
 
 ---
  imports/ui/components/partyMap/partyMap.js | 1 +
@@ -7361,7 +7361,7 @@ index 824df5c..d240c5b 100644
 From fdb04f93af23d4c860461d3a42cdd9b266847aca Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:29:34 +0200
-Subject: [PATCH 200/412] Step 16.7: Add as a dependency to PartyDetails
+Subject: [PATCH 200/413] Step 16.7: Add as a dependency to PartyDetails
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 4 +++-
@@ -7396,7 +7396,7 @@ index 351d9a8..a81a8fa 100644
 From c7006e0635b9df4fc4e5a9dfeb7834fa9468fe0b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:42:54 +0200
-Subject: [PATCH 201/412] Step 16.8: Use in the view
+Subject: [PATCH 201/413] Step 16.8: Use in the view
 
 ---
  imports/ui/components/partyDetails/partyDetails.html | 2 ++
@@ -7419,7 +7419,7 @@ index e53812d..7354dd6 100644
 From 4f141be1486b91e88f838ee034085d371cd7ee1a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:44:36 +0200
-Subject: [PATCH 202/412] Step 16.9: Add actions
+Subject: [PATCH 202/413] Step 16.9: Add actions
 
 ---
  imports/ui/components/partyMap/partyMap.js | 21 +++++++++++++++++++--
@@ -7470,7 +7470,7 @@ index d240c5b..9db5069 100644
 From dfdbf02f6161f899d6aa256dcb6051186e930a33 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:45:34 +0200
-Subject: [PATCH 203/412] Step 16.10: Add location to be updated with a party
+Subject: [PATCH 203/413] Step 16.10: Add location to be updated with a party
 
 ---
  imports/ui/components/partyDetails/partyDetails.js | 3 ++-
@@ -7497,7 +7497,7 @@ index a81a8fa..471edc1 100644
 From 7c7883632d9787150d77e46cf2ab61383cf4674f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:49:27 +0200
-Subject: [PATCH 204/412] Step 16.11: Create view for PartiesMap
+Subject: [PATCH 204/413] Step 16.11: Create view for PartiesMap
 
 ---
  imports/ui/components/partiesMap/partiesMap.html | 5 +++++
@@ -7522,7 +7522,7 @@ index 0000000..a488738
 From 69c2f0d99cc2a08e18cb5cbe8641feca2ba48277 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:49:42 +0200
-Subject: [PATCH 205/412] Step 16.12: Create component
+Subject: [PATCH 205/413] Step 16.12: Create component
 
 ---
  imports/ui/components/partiesMap/partiesMap.js | 37 ++++++++++++++++++++++++++
@@ -7579,7 +7579,7 @@ index 0000000..1c94faf
 From 1c106fe5832bad911a11fa8337b15cdfc985bbae Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:49:56 +0200
-Subject: [PATCH 206/412] Step 16.13: Add as a dependency
+Subject: [PATCH 206/413] Step 16.13: Add as a dependency
 
 ---
  imports/ui/components/partiesList/partiesList.js | 2 ++
@@ -7612,7 +7612,7 @@ index 58dd939..a8e8e0f 100644
 From d1bc515ad0b717259e2fa3f7b326609b8924cc89 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 7 Apr 2016 20:50:10 +0200
-Subject: [PATCH 207/412] Step 16.14: Implement in the view
+Subject: [PATCH 207/413] Step 16.14: Implement in the view
 
 ---
  imports/ui/components/partiesList/partiesList.html | 3 +++
@@ -7633,10 +7633,34 @@ index c4cc2c1..a7984f6 100644
 2.7.4
 
 
-From 16fb56a442f9cafdea8aad2a2ec34cf4c6f1525a Mon Sep 17 00:00:00 2001
+From baf8e9502405f3f03b7b29728447839cf167ac5b Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Wed, 19 Oct 2016 12:06:02 -0200
+Subject: [PATCH 208/413] Step 16.15: Add Google Maps API key
+
+---
+ client/index.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/client/index.html b/client/index.html
+index 0a26426..3497cde 100644
+--- a/client/index.html
++++ b/client/index.html
+@@ -1,5 +1,6 @@
+ <head>
+   <base href="/">
++  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbphq9crcdpecbseKX3Yx2LPxMRqWK-rc"></script>
+ </head>
+ <body>
+   <socially></socially>
+-- 
+2.7.4
+
+
+From 13d076b25fa198589ad201c80d83ce505613ed25 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 00:31:49 +0200
-Subject: [PATCH 208/412] Step 17.1: Install `bootstrap`
+Subject: [PATCH 209/413] Step 17.1: Install `bootstrap`
 
 ---
  package.json | 1 +
@@ -7658,10 +7682,10 @@ index af5599d..158bf82 100644
 2.7.4
 
 
-From 632b7cc925876c1a63b38d4150ecf24c9177095f Mon Sep 17 00:00:00 2001
+From 9420976c78e4c2d3b48b5a455ecffb2017b1ca64 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 00:32:37 +0200
-Subject: [PATCH 209/412] Step 17.2: Add `less` package
+Subject: [PATCH 210/413] Step 17.2: Add `less` package
 
 ---
  .meteor/packages | 1 +
@@ -7680,10 +7704,10 @@ index 27dfd39..4e35175 100644
 2.7.4
 
 
-From 461952aa74517edceda5551eb9b1c41e64e24c37 Mon Sep 17 00:00:00 2001
+From c546d0d86e67f1f48028afe19f9709ffd7e92510 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 00:34:27 +0200
-Subject: [PATCH 210/412] Step 17.3: Add main.less
+Subject: [PATCH 211/413] Step 17.3: Add main.less
 
 ---
  client/main.less | 3 +++
@@ -7703,10 +7727,10 @@ index 0000000..1c1bc90
 2.7.4
 
 
-From aab5101e4ecd79ecb9f25b06232c51505b724fdf Mon Sep 17 00:00:00 2001
+From 30caf5a8f79375844e5c48af9d63b738b1e3ae8b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:03:30 +0200
-Subject: [PATCH 211/412] Step 17.4: Import bootstrap
+Subject: [PATCH 212/413] Step 17.4: Import bootstrap
 
 ---
  client/main.js | 1 +
@@ -7726,10 +7750,10 @@ index 06731e1..52cb827 100644
 2.7.4
 
 
-From 8b405c778931862d4c51870d56788d23bae02598 Mon Sep 17 00:00:00 2001
+From 5a5994ac8ef46ae5812077fc591cca8d46e0a6f3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:04:28 +0200
-Subject: [PATCH 212/412] Step 17.5: Import future Socially less file
+Subject: [PATCH 213/413] Step 17.5: Import future Socially less file
 
 ---
  client/main.less | 2 ++
@@ -7749,10 +7773,10 @@ index 1c1bc90..4368004 100644
 2.7.4
 
 
-From 49b30c0d08e9e51fd6eef0e02332248320521de1 Mon Sep 17 00:00:00 2001
+From 59093bb1edfc87be81a5da3419322b2072ef4e68 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:05:42 +0200
-Subject: [PATCH 213/412] Step 17.6: Refactor Socially
+Subject: [PATCH 214/413] Step 17.6: Refactor Socially
 
 ---
  imports/ui/components/socially/socially.html | 6 ++----
@@ -7774,10 +7798,10 @@ index 83c40e7..2e91050 100644
 2.7.4
 
 
-From 9cb04b8b0965da7569535ec7bb0e7210cec4b6b1 Mon Sep 17 00:00:00 2001
+From 4fa6bc4be39ee2baf6a44415ad78becfc84b8daa Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:06:24 +0200
-Subject: [PATCH 214/412] Step 17.7: Styles for Socially
+Subject: [PATCH 215/413] Step 17.7: Styles for Socially
 
 ---
  imports/ui/components/socially/socially.less | 3 +++
@@ -7797,26 +7821,27 @@ index 0000000..eec0480
 2.7.4
 
 
-From 4002e3258075e31a5a9f42ad8c2ace8b02e57b5f Mon Sep 17 00:00:00 2001
+From 41401c610024318fd4925ad0abedfc12dd1d904a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:06:51 +0200
-Subject: [PATCH 215/412] Step 17.8: Refactor index.html
+Subject: [PATCH 216/413] Step 17.8: Refactor index.html
 
 ---
  client/index.html | 5 +++++
  1 file changed, 5 insertions(+)
 
 diff --git a/client/index.html b/client/index.html
-index 0a26426..d4505ca 100644
+index 3497cde..937c41a 100644
 --- a/client/index.html
 +++ b/client/index.html
-@@ -1,5 +1,10 @@
+@@ -1,6 +1,11 @@
  <head>
 +  <meta charset="utf-8">
 +  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 +  <meta name="viewport" content="width=device-width, initial-scale=1">
    <base href="/">
 +  <title>Socially</title>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbphq9crcdpecbseKX3Yx2LPxMRqWK-rc"></script>
 +  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
  </head>
  <body>
@@ -7825,10 +7850,10 @@ index 0a26426..d4505ca 100644
 2.7.4
 
 
-From 19fd2977946b6b8302eef7f41cca8bd3c5b91859 Mon Sep 17 00:00:00 2001
+From 0558dd9e689d3470d72240af8b049e11b8916db1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:07:16 +0200
-Subject: [PATCH 216/412] Step 17.9: Refactor Navigation
+Subject: [PATCH 217/413] Step 17.9: Refactor Navigation
 
 ---
  imports/ui/components/navigation/navigation.html | 9 ++++++---
@@ -7852,10 +7877,10 @@ index def2640..2bcae64 100644
 2.7.4
 
 
-From 215d10fb6d306c7273f77bb7dd5684f025fafd69 Mon Sep 17 00:00:00 2001
+From 0e4c3cb39e109bea95f43d9497418f5aa6d0459f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:08:18 +0200
-Subject: [PATCH 217/412] Step 17.10: Styles for Navigation
+Subject: [PATCH 218/413] Step 17.10: Styles for Navigation
 
 ---
  imports/ui/components/navigation/navigation.less | 3 +++
@@ -7875,10 +7900,10 @@ index 0000000..4035b7b
 2.7.4
 
 
-From 2a3a74e513910724e8ec9c5c1837ba7a6b22221a Mon Sep 17 00:00:00 2001
+From ac625c6f00d0000ef563ece2d334ef3883d3402d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:08:50 +0200
-Subject: [PATCH 218/412] Step 17.11: Refactor PartiesList
+Subject: [PATCH 219/413] Step 17.11: Refactor PartiesList
 
 ---
  imports/ui/components/partiesList/partiesList.html | 94 ++++++++++++++--------
@@ -7991,10 +8016,10 @@ index a7984f6..29c4c69 100644
 2.7.4
 
 
-From a3c5f9884b49c78256859a5cc1c7eec2bee5ba48 Mon Sep 17 00:00:00 2001
+From 7cd565ed8e9573cc86625a90b3e0365e0ca113cb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:09:21 +0200
-Subject: [PATCH 219/412] Step 17.12: Styles for PartiesList
+Subject: [PATCH 220/413] Step 17.12: Styles for PartiesList
 
 ---
  imports/ui/components/partiesList/partiesList.less | 30 ++++++++++++++++++++++
@@ -8041,10 +8066,10 @@ index 0000000..6cd14df
 2.7.4
 
 
-From 32baca49c36de2c839229f8675eaba2711cfb035 Mon Sep 17 00:00:00 2001
+From 28b737b6cf8e43162ce7326034814afd3d40d447 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:09:54 +0200
-Subject: [PATCH 220/412] Step 17.13: Refactor PartyAdd
+Subject: [PATCH 221/413] Step 17.13: Refactor PartyAdd
 
 ---
  imports/ui/components/partyAdd/partyAdd.html | 31 ++++++++++++++++------------
@@ -8092,10 +8117,10 @@ index 4db1888..7c4d284 100644
 2.7.4
 
 
-From c53aec99b2f8000c56faf351bb26045de868ea56 Mon Sep 17 00:00:00 2001
+From fbf026c8d6190ca04bfe23ad13164aa798002325 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:10:22 +0200
-Subject: [PATCH 221/412] Step 17.14: Styles for PartyAdd
+Subject: [PATCH 222/413] Step 17.14: Styles for PartyAdd
 
 ---
  imports/ui/components/partyAdd/partyAdd.less | 10 ++++++++++
@@ -8122,10 +8147,10 @@ index 0000000..90b24c1
 2.7.4
 
 
-From 86e35fe889a7a14086e2dcf5ec58d8bbde26df6a Mon Sep 17 00:00:00 2001
+From f7671154cfe517806b7e2c3b95f3ebcacd0fa531 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:11:05 +0200
-Subject: [PATCH 222/412] Step 17.15: Import PartyAdd
+Subject: [PATCH 223/413] Step 17.15: Import PartyAdd
 
 ---
  imports/ui/components/partiesList/partiesList.less | 2 ++
@@ -8145,10 +8170,10 @@ index 6cd14df..645d165 100644
 2.7.4
 
 
-From 15cac68547d8a03ee3d968978d6235961ebf4b1b Mon Sep 17 00:00:00 2001
+From cf83a1cf1ce4fe124733085bda2d834c8de9f78f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:11:45 +0200
-Subject: [PATCH 223/412] Step 17.16: Refactor PartiesMap
+Subject: [PATCH 224/413] Step 17.16: Refactor PartiesMap
 
 ---
  imports/ui/components/partiesMap/partiesMap.html | 3 +++
@@ -8169,10 +8194,10 @@ index a488738..870b2f7 100644
 2.7.4
 
 
-From b092ce382327e8fa5c7ad87f66fb9acb9e2242bc Mon Sep 17 00:00:00 2001
+From 9c633326b9622d14c76649c0aa81ffe087a1ed52 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:12:13 +0200
-Subject: [PATCH 224/412] Step 17.17: Styles for PartiesMap
+Subject: [PATCH 225/413] Step 17.17: Styles for PartiesMap
 
 ---
  imports/ui/components/partiesMap/partiesMap.less | 9 +++++++++
@@ -8198,10 +8223,10 @@ index 0000000..020e970
 2.7.4
 
 
-From 482cde26345ffae1d331580cc2353d152785759a Mon Sep 17 00:00:00 2001
+From e1f3be531aafba4ee6261e50c3d6053b821ba5a8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:12:38 +0200
-Subject: [PATCH 225/412] Step 17.18: Import PartiesMap
+Subject: [PATCH 226/413] Step 17.18: Import PartiesMap
 
 ---
  imports/ui/components/partiesList/partiesList.less | 1 +
@@ -8220,10 +8245,10 @@ index 645d165..374d741 100644
 2.7.4
 
 
-From b72d356ae203494017e983ad8a1be3309dbe4088 Mon Sep 17 00:00:00 2001
+From 533aa895f26ed9962b80ca0a4016a493f7ed2908 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:13:05 +0200
-Subject: [PATCH 226/412] Step 17.19: Refactor PartiesSort
+Subject: [PATCH 227/413] Step 17.19: Refactor PartiesSort
 
 ---
  imports/ui/components/partiesSort/partiesSort.html | 10 ++++------
@@ -8248,10 +8273,10 @@ index cf2102b..b2a52b3 100644
 2.7.4
 
 
-From e7681f63e29373b8c6774d0a48cad3c0f4e93809 Mon Sep 17 00:00:00 2001
+From 0937965d1aac3e969298dfd5e45058d988af7176 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:13:38 +0200
-Subject: [PATCH 227/412] Step 17.20: Refactor PartyCreator
+Subject: [PATCH 228/413] Step 17.20: Refactor PartyCreator
 
 ---
  imports/ui/components/partyCreator/partyCreator.html | 2 +-
@@ -8272,10 +8297,10 @@ index de986fb..077739d 100644
 2.7.4
 
 
-From 2d92175bdf8a7fc1a6e4717c149ee0f081a44d2b Mon Sep 17 00:00:00 2001
+From 7ba0bbad19d0d0b57f066536f376e84825d0204b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:14:04 +0200
-Subject: [PATCH 228/412] Step 17.21: Styles for PartyCreator
+Subject: [PATCH 229/413] Step 17.21: Styles for PartyCreator
 
 ---
  imports/ui/components/partyCreator/partyCreator.less | 6 ++++++
@@ -8298,10 +8323,10 @@ index 0000000..4679f1f
 2.7.4
 
 
-From e52f5789cac5c6dde91489b6f1a42f4fa50bf87c Mon Sep 17 00:00:00 2001
+From 8f0c394899c370eb699f46d8c286ef227f9dd4a1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:14:40 +0200
-Subject: [PATCH 229/412] Step 17.22: Import PartyCreator
+Subject: [PATCH 230/413] Step 17.22: Import PartyCreator
 
 ---
  imports/ui/components/partiesList/partiesList.less | 1 +
@@ -8320,10 +8345,10 @@ index 374d741..e73e928 100644
 2.7.4
 
 
-From 65bd56b3fdb56c46e4773ead5cc09d977f4b5362 Mon Sep 17 00:00:00 2001
+From 74a7149c537f21ae6c855bf74939433982a8046a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:15:08 +0200
-Subject: [PATCH 230/412] Step 17.23: Refactor PartyRemove
+Subject: [PATCH 231/413] Step 17.23: Refactor PartyRemove
 
 ---
  imports/ui/components/partyRemove/partyRemove.html | 2 +-
@@ -8340,10 +8365,10 @@ index 1295105..ebe46ea 100644
 2.7.4
 
 
-From be81cdbbdcaf43b5e97ec2aadbdb94c026f932ab Mon Sep 17 00:00:00 2001
+From c6932dcfe29bed5c6b34d50a4e2eab3d123e5307 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:15:48 +0200
-Subject: [PATCH 231/412] Step 17.24: Refactor PartyRsvp
+Subject: [PATCH 232/413] Step 17.24: Refactor PartyRsvp
 
 ---
  imports/ui/components/partyRsvp/partyRsvp.html | 6 +++---
@@ -8364,10 +8389,10 @@ index ca15260..e4c078c 100644
 2.7.4
 
 
-From 22c82e2c928c7ab7a6bbe927595b432c76a3f305 Mon Sep 17 00:00:00 2001
+From 4a5bebfb7a556b5b10c198e2c15f4fb5556a5da1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:16:13 +0200
-Subject: [PATCH 232/412] Step 17.25: Styles for PartyRsvp
+Subject: [PATCH 233/413] Step 17.25: Styles for PartyRsvp
 
 ---
  imports/ui/components/partyRsvp/partyRsvp.less | 4 ++++
@@ -8388,10 +8413,10 @@ index 0000000..be52d51
 2.7.4
 
 
-From 637724ab97ee48cd5c6bb660d9f1431e6bb6269c Mon Sep 17 00:00:00 2001
+From 6e6e70aa55fe49841ad219b7cdc845d71347b851 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:17:04 +0200
-Subject: [PATCH 233/412] Step 17.26: Import PartyRsvp
+Subject: [PATCH 234/413] Step 17.26: Import PartyRsvp
 
 ---
  imports/ui/components/partiesList/partiesList.less | 1 +
@@ -8410,10 +8435,10 @@ index e73e928..be384ba 100644
 2.7.4
 
 
-From 6f1a504d0e1f1212e4bf8cb658d1a2d1a4285a93 Mon Sep 17 00:00:00 2001
+From 91cf1e0f8b9afc948c2f20320699977dcc0f70e5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:17:32 +0200
-Subject: [PATCH 234/412] Step 17.27: Refactor PartyRsvpsList
+Subject: [PATCH 235/413] Step 17.27: Refactor PartyRsvpsList
 
 ---
  .../components/partyRsvpsList/partyRsvpsList.html  | 36 ++++++++++++++++------
@@ -8464,10 +8489,10 @@ index 2e1749d..5c24b02 100644
 2.7.4
 
 
-From 1d182cdd595dcbf77d51212bde1ff29352976e3d Mon Sep 17 00:00:00 2001
+From b730eae2de2043a79f60896820930b6d4b1b12e8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:17:59 +0200
-Subject: [PATCH 235/412] Step 17.28: Styles for PartyRsvpsList
+Subject: [PATCH 236/413] Step 17.28: Styles for PartyRsvpsList
 
 ---
  .../components/partyRsvpsList/partyRsvpsList.less  | 24 ++++++++++++++++++++++
@@ -8508,10 +8533,10 @@ index 0000000..ca24446
 2.7.4
 
 
-From 513544ca2ea7ed22eff5ad1eb746f2e3244980af Mon Sep 17 00:00:00 2001
+From 9307a61ad4a1cd0237cfcfc0676e070639190d0e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:18:30 +0200
-Subject: [PATCH 236/412] Step 17.29: Import PartyRsvpsList
+Subject: [PATCH 237/413] Step 17.29: Import PartyRsvpsList
 
 ---
  imports/ui/components/partiesList/partiesList.less | 1 +
@@ -8530,10 +8555,10 @@ index be384ba..a1eac5c 100644
 2.7.4
 
 
-From 201a3c05ecb524d2a62a5cfa05620aa755fc9c77 Mon Sep 17 00:00:00 2001
+From f6c75d1fd30a4e53bc482d42d124539da3ab69af Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:19:03 +0200
-Subject: [PATCH 237/412] Step 17.30: Refactor PartyUninvited
+Subject: [PATCH 238/413] Step 17.30: Refactor PartyUninvited
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 12 ++++++------
@@ -8564,10 +8589,10 @@ index 86d2519..e9f9e1c 100644
 2.7.4
 
 
-From 6ccdf23557953a5769869869e4ea70051d486fd3 Mon Sep 17 00:00:00 2001
+From 307071982ff591f7339a17f2e034cd83e00b77a7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:26:22 +0200
-Subject: [PATCH 238/412] Step 17.31: Styles for PartyUninvited
+Subject: [PATCH 239/413] Step 17.31: Styles for PartyUninvited
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.less | 8 ++++++++
@@ -8592,10 +8617,10 @@ index 0000000..52b27fe
 2.7.4
 
 
-From f4dc096f6f7352600636f54cc7d21c3aa8e7bb2b Mon Sep 17 00:00:00 2001
+From d36faeeec0dcbbdd5ffa460e4caf488375574319 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:19:41 +0200
-Subject: [PATCH 239/412] Step 17.32: Refactor PartyDetails
+Subject: [PATCH 240/413] Step 17.32: Refactor PartyDetails
 
 ---
  .../ui/components/partyDetails/partyDetails.html   | 42 ++++++++++++++++------
@@ -8655,10 +8680,10 @@ index 7354dd6..4023174 100644
 2.7.4
 
 
-From 892e7cddb0ff2c7783be22db92ffd4e8cf64b4aa Mon Sep 17 00:00:00 2001
+From 93b69364f2e534b46f4e2ae7c836032030d24d50 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:20:17 +0200
-Subject: [PATCH 240/412] Step 17.33: Styles for PartyDetails
+Subject: [PATCH 241/413] Step 17.33: Styles for PartyDetails
 
 ---
  imports/ui/components/partyDetails/partyDetails.less | 9 +++++++++
@@ -8684,10 +8709,10 @@ index 0000000..bfea863
 2.7.4
 
 
-From 0adfb10838ea02b6e6cddd4364f7bbfa14e19dee Mon Sep 17 00:00:00 2001
+From 4993945b16938302d6b2db0df12eccaa790fc659 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:21:01 +0200
-Subject: [PATCH 241/412] Step 17.34: Styles for PartyMap
+Subject: [PATCH 242/413] Step 17.34: Styles for PartyMap
 
 ---
  imports/ui/components/partyMap/partyMap.less | 10 ++++++++++
@@ -8714,10 +8739,10 @@ index 0000000..3b4bed1
 2.7.4
 
 
-From 7126e722a2e07428039016a013e243190ddd54db Mon Sep 17 00:00:00 2001
+From 01822feb39d8b4c966960b34825cc7e2cab6c0dd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:21:22 +0200
-Subject: [PATCH 242/412] Step 17.35: Remove old css
+Subject: [PATCH 243/413] Step 17.35: Remove old css
 
 ---
  imports/ui/components/partyMap/partyMap.js | 1 -
@@ -8739,10 +8764,10 @@ index 9db5069..c062d30 100644
 2.7.4
 
 
-From cf2d6aa2b07c411bff2dd53fe8ffd83bf4cf0484 Mon Sep 17 00:00:00 2001
+From 5cd1f6625a67623f8d823555b6fdfe1245e58123 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:21:43 +0200
-Subject: [PATCH 243/412] Step 17.36: Delete old file
+Subject: [PATCH 244/413] Step 17.36: Delete old file
 
 ---
  imports/ui/components/partyMap/partyMap.css | 4 ----
@@ -8763,10 +8788,10 @@ index f4b49f5..0000000
 2.7.4
 
 
-From 1b2ee735bef625f17c424eaee5c04a9648f54edd Mon Sep 17 00:00:00 2001
+From d2650a853173384263a9167b34c1178af4b37109 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:22:35 +0200
-Subject: [PATCH 244/412] Step 17.37: Import PartyMap
+Subject: [PATCH 245/413] Step 17.37: Import PartyMap
 
 ---
  imports/ui/components/partyDetails/partyDetails.less | 1 +
@@ -8785,10 +8810,10 @@ index bfea863..a42c467 100644
 2.7.4
 
 
-From 224340560c3caae70f9cfc0dd30f741a789ebd2d Mon Sep 17 00:00:00 2001
+From 486e3588ce7ea7bdbb3cf0790d6f6089e9bffc74 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:23:50 +0200
-Subject: [PATCH 245/412] Step 17.38: Import missing files
+Subject: [PATCH 246/413] Step 17.38: Import missing files
 
 ---
  imports/ui/components/socially/socially.less | 5 +++++
@@ -8811,10 +8836,10 @@ index eec0480..3eabc12 100644
 2.7.4
 
 
-From aa4527424dffe24fbf0107412cdad448be936121 Mon Sep 17 00:00:00 2001
+From 15bd3a7ee7a37f15c8d174c58d1ba39e16f1957d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 01:32:24 +0200
-Subject: [PATCH 246/412] Step 17.39: Add checking methods
+Subject: [PATCH 247/413] Step 17.39: Add checking methods
 
 ---
  imports/ui/components/partyRsvp/partyRsvp.js | 18 ++++++++++++++++++
@@ -8874,10 +8899,10 @@ index 17aeb99..522cc38 100644
 2.7.4
 
 
-From ef6cf97e65767796edbc3aad6a431b17323b8272 Mon Sep 17 00:00:00 2001
+From 1e4a1c42c37881a7c85aa5eb0f2e2fcfcad63047 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:26:23 +0200
-Subject: [PATCH 247/412] Step 17.40: Remove unused partyRsvpUsers
+Subject: [PATCH 248/413] Step 17.40: Remove unused partyRsvpUsers
 
 ---
  imports/ui/components/partyRsvpUsers/partyRsvpUsers.html | 5 -----
@@ -8899,10 +8924,10 @@ index 445d426..0000000
 2.7.4
 
 
-From ddbddbe0e122597264fa08c0407c7f36a102b8de Mon Sep 17 00:00:00 2001
+From 60b841bf5af96b05c9ad6c8fb2f92372aba1d98b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:26:40 +0200
-Subject: [PATCH 248/412] Step 17.41: Remove unused partyUnanswered
+Subject: [PATCH 249/413] Step 17.41: Remove unused partyUnanswered
 
 ---
  .../partyUnanswered/partyUnanswered.html           |  5 ---
@@ -8971,10 +8996,10 @@ index 39f2115..0000000
 2.7.4
 
 
-From f14b78a25ca90b0cbf6c042faf665fd7c73de3ab Mon Sep 17 00:00:00 2001
+From c83ff57c034b991dae4e01cd3a7698c3fbe1bb70 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:27:20 +0200
-Subject: [PATCH 249/412] Step 17.42: Remove PartyUnanswered
+Subject: [PATCH 250/413] Step 17.42: Remove PartyUnanswered
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 +---
@@ -9006,10 +9031,10 @@ index a8e8e0f..ec99584 100644
 2.7.4
 
 
-From dc07816a305ae773704770fc5234455c849ec9c6 Mon Sep 17 00:00:00 2001
+From 85d559a4538ab13f65fb3711d6272e2b927f8744 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:27:38 +0200
-Subject: [PATCH 250/412] Step 17.43: Remove PartyRsvpUsers
+Subject: [PATCH 251/413] Step 17.43: Remove PartyRsvpUsers
 
 ---
  imports/ui/components/partyRsvpsList/partyRsvpsList.js | 4 +---
@@ -9041,10 +9066,10 @@ index c1ebd92..755c9f9 100644
 2.7.4
 
 
-From 2f277c96421c4541a441bf77da6f1df3da6758bd Mon Sep 17 00:00:00 2001
+From 56e093d717c13536e4d992c9e6995c877d799b5f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:37:40 +0200
-Subject: [PATCH 251/412] Step 18.1: Uninstall `bootstrap`
+Subject: [PATCH 252/413] Step 18.1: Uninstall `bootstrap`
 
 ---
  package.json | 1 -
@@ -9066,10 +9091,10 @@ index 158bf82..af5599d 100644
 2.7.4
 
 
-From 50e66e23ee0f6fc5bef5b57318426260f258cf9a Mon Sep 17 00:00:00 2001
+From 28143bc8864a4333696b02b2cac5dda879f56d43 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:38:13 +0200
-Subject: [PATCH 252/412] Step 18.2: Install `angular-material`
+Subject: [PATCH 253/413] Step 18.2: Install `angular-material`
 
 ---
  package.json | 4 ++++
@@ -9095,24 +9120,23 @@ index af5599d..8971ed8 100644
 2.7.4
 
 
-From b74a18234973f4443c261d306ce20f4a35d45ce5 Mon Sep 17 00:00:00 2001
+From 5a91b7b4571db41b64bdeb4d41455bbf308b6c2e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:38:56 +0200
-Subject: [PATCH 253/412] Step 18.3: Add css
+Subject: [PATCH 254/413] Step 18.3: Add css
 
 ---
- client/index.html | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ client/index.html | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/client/index.html b/client/index.html
-index d4505ca..4a914a1 100644
+index 937c41a..0b002e3 100644
 --- a/client/index.html
 +++ b/client/index.html
-@@ -4,7 +4,7 @@
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <base href="/">
+@@ -6,6 +6,7 @@
    <title>Socially</title>
--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbphq9crcdpecbseKX3Yx2LPxMRqWK-rc"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 +  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.7/angular-material.min.css">
  </head>
  <body>
@@ -9121,10 +9145,10 @@ index d4505ca..4a914a1 100644
 2.7.4
 
 
-From 85377ca9e7bc3a3b69645b412b9f05bcb366200b Mon Sep 17 00:00:00 2001
+From 5a9927d1302a6c292a04b3da75e9eb93431de4db Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:31:01 +0200
-Subject: [PATCH 254/412] Step 18.4: Remove bootstrap from main.js
+Subject: [PATCH 255/413] Step 18.4: Remove bootstrap from main.js
 
 ---
  client/main.js | 1 -
@@ -9144,10 +9168,10 @@ index 52cb827..06731e1 100644
 2.7.4
 
 
-From 56b201c97a25c224c068c876dd6fb561237f447a Mon Sep 17 00:00:00 2001
+From 6c4ed132b5d95bf933ce4bd835fe04345268b002 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:39:53 +0200
-Subject: [PATCH 255/412] Step 18.5: Add ngMaterial to Socially
+Subject: [PATCH 256/413] Step 18.5: Add ngMaterial to Socially
 
 ---
  imports/ui/components/socially/socially.js | 2 ++
@@ -9176,10 +9200,10 @@ index dec6060..e692001 100644
 2.7.4
 
 
-From 92e2570927693ee349373c0da73fc99494e81b5e Mon Sep 17 00:00:00 2001
+From 94d027c413d5b9c1f413bd0bd73563bc3db9cf41 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:41:34 +0200
-Subject: [PATCH 256/412] Step 18.6: Clean up Socially template
+Subject: [PATCH 257/413] Step 18.6: Clean up Socially template
 
 ---
  imports/ui/components/socially/socially.html | 4 ++--
@@ -9199,10 +9223,10 @@ index 2e91050..7fdb2de 100644
 2.7.4
 
 
-From e0e7a3cf54963caa75cfdf655badb14d6f1491e9 Mon Sep 17 00:00:00 2001
+From 5774ab0b68fb8cd01d03ec7dd17b3ba4225cff9c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:43:06 +0200
-Subject: [PATCH 257/412] Step 18.7: Refactor Navigation
+Subject: [PATCH 258/413] Step 18.7: Refactor Navigation
 
 ---
  imports/ui/components/navigation/navigation.html | 14 +++++++++-----
@@ -9232,10 +9256,10 @@ index 2bcae64..0b1d8a6 100644
 2.7.4
 
 
-From b49e1b91a67315614b6605bc4830b395dd925528 Mon Sep 17 00:00:00 2001
+From 3c9659fd7ddec577e2b45a89a66c6c679a3b8d0b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:43:40 +0200
-Subject: [PATCH 258/412] Step 18.8: Add space before loginButtons
+Subject: [PATCH 259/413] Step 18.8: Add space before loginButtons
 
 ---
  imports/ui/components/navigation/navigation.less | 4 +++-
@@ -9256,10 +9280,10 @@ index 4035b7b..87b8777 100644
 2.7.4
 
 
-From 60657f38642f3a9980a67d64f027b6539e5dc9a9 Mon Sep 17 00:00:00 2001
+From d2db5b8f5fd911dcc02e2468b82fa7da9572fda7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:44:33 +0200
-Subject: [PATCH 259/412] Step 18.9: Refactor PartiesList
+Subject: [PATCH 260/413] Step 18.9: Refactor PartiesList
 
 ---
  imports/ui/components/partiesList/partiesList.html | 99 ++++++++++------------
@@ -9383,10 +9407,10 @@ index 29c4c69..b6772eb 100644
 2.7.4
 
 
-From deab2c1cf93945a10a1a0ad6d367ae6dd99c8cc7 Mon Sep 17 00:00:00 2001
+From 987edf6e83e0e19066f091c44f88a95cea3da6fd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:45:55 +0200
-Subject: [PATCH 260/412] Step 18.10: Leave only one definition
+Subject: [PATCH 261/413] Step 18.10: Leave only one definition
 
 ---
  imports/ui/components/partiesList/partiesList.less | 35 ++--------------------
@@ -9439,10 +9463,10 @@ index a1eac5c..ba0839b 100644
 2.7.4
 
 
-From 7d1d9c9168f89c7d3647f47cd1f2efe018f377a1 Mon Sep 17 00:00:00 2001
+From 6f6da0474766d0717108e939518da09e8c9974c8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:46:45 +0200
-Subject: [PATCH 261/412] Step 18.11: Refactor PartiesMap
+Subject: [PATCH 262/413] Step 18.11: Refactor PartiesMap
 
 ---
  imports/ui/components/partiesMap/partiesMap.html | 3 ---
@@ -9463,10 +9487,10 @@ index 870b2f7..a488738 100644
 2.7.4
 
 
-From e3877def4fa5a8d10d8025f53ba81e19ae8bd179 Mon Sep 17 00:00:00 2001
+From 3d3dc4f7884a1d088d068252c81592ac8ffbb8d2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:47:31 +0200
-Subject: [PATCH 262/412] Step 18.12: Styles for PartiesMap
+Subject: [PATCH 263/413] Step 18.12: Styles for PartiesMap
 
 ---
  imports/ui/components/partiesMap/partiesMap.less | 2 +-
@@ -9488,10 +9512,10 @@ index 020e970..b69b834 100644
 2.7.4
 
 
-From 50a13eb0b5626a4417d5f1f60d4e609f95e95fe8 Mon Sep 17 00:00:00 2001
+From fff8fb35e2250b5630b79e47db1c294dbbebb749 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:13:36 +0200
-Subject: [PATCH 263/412] Step 18.13: Import in PartiesList
+Subject: [PATCH 264/413] Step 18.13: Import in PartiesList
 
 ---
  imports/ui/components/partiesList/partiesList.less | 2 ++
@@ -9511,10 +9535,10 @@ index ba0839b..d3f7da4 100644
 2.7.4
 
 
-From a090f5fa36be72da87ef8785825ef7fe702aecb0 Mon Sep 17 00:00:00 2001
+From a3427ca4306124707915547bac91df9b96e2cfee Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:48:05 +0200
-Subject: [PATCH 264/412] Step 18.14: Refactor PartiesSort
+Subject: [PATCH 265/413] Step 18.14: Refactor PartiesSort
 
 ---
  imports/ui/components/partiesSort/partiesSort.html | 14 ++++++++++----
@@ -9543,10 +9567,10 @@ index b2a52b3..0b7a94e 100644
 2.7.4
 
 
-From bbb7e4316c3271388d4997203086919a1d04d2b4 Mon Sep 17 00:00:00 2001
+From 557d1f893ffb65611039fd7250ebf4f4f0aac668 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:48:41 +0200
-Subject: [PATCH 265/412] Step 18.15: Refactor PartyAdd
+Subject: [PATCH 266/413] Step 18.15: Refactor PartyAdd
 
 ---
  imports/ui/components/partyAdd/partyAdd.html | 26 ++++++++++++++------------
@@ -9595,10 +9619,10 @@ index 7c4d284..6e504f0 100644
 2.7.4
 
 
-From b8841342411c0bdcd4d0be84615ccafa6a050fcc Mon Sep 17 00:00:00 2001
+From 409c4b3546c2cfe52f29ec3af8cb29e84de1d07a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:49:18 +0200
-Subject: [PATCH 266/412] Step 18.16: Remove styles for PartyAdd
+Subject: [PATCH 267/413] Step 18.16: Remove styles for PartyAdd
 
 ---
  imports/ui/components/partyAdd/partyAdd.less | 10 ----------
@@ -9625,10 +9649,10 @@ index 90b24c1..0000000
 2.7.4
 
 
-From fab460b38815d3a07c749ff7ecec815f377ee376 Mon Sep 17 00:00:00 2001
+From 7a42b4f1b7c5c3f1e8c46cf9d691d93fdda6ac0a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:50:00 +0200
-Subject: [PATCH 267/412] Step 18.17: Refactor PartyCreator
+Subject: [PATCH 268/413] Step 18.17: Refactor PartyCreator
 
 ---
  imports/ui/components/partyCreator/partyCreator.html | 2 +-
@@ -9649,10 +9673,10 @@ index 077739d..de986fb 100644
 2.7.4
 
 
-From 7c93c1c855f4eddbc54b8070f5c83f6bef42fdfa Mon Sep 17 00:00:00 2001
+From 1b7be54cd5f3287e6ba65e4cc4f0db40bbb1b515 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:50:35 +0200
-Subject: [PATCH 268/412] Step 18.18: Remove partyCreator.less
+Subject: [PATCH 269/413] Step 18.18: Remove partyCreator.less
 
 ---
  imports/ui/components/partyCreator/partyCreator.less | 6 ------
@@ -9675,10 +9699,10 @@ index 4679f1f..0000000
 2.7.4
 
 
-From f438e888e1f8030b7a080025c5485b23ad39f969 Mon Sep 17 00:00:00 2001
+From a87a8086223c41027f2f137b483c7f137c159290 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:08:43 +0200
-Subject: [PATCH 269/412] Step 18.19: Add `material-design-icons`
+Subject: [PATCH 270/413] Step 18.19: Add `material-design-icons`
 
 ---
  .meteor/packages |  2 ++
@@ -9759,10 +9783,10 @@ index d6f5bc3..bef3e68 100644
 2.7.4
 
 
-From 7f2a516215e4813896b18e7fc6c529d7dc679c9c Mon Sep 17 00:00:00 2001
+From e3164822c31128a47e5bb3325f0d15524d0c4362 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:10:01 +0200
-Subject: [PATCH 270/412] Step 18.20: Set icons
+Subject: [PATCH 271/413] Step 18.20: Set icons
 
 ---
  imports/ui/components/socially/socially.js | 20 +++++++++++++++++++-
@@ -9808,10 +9832,10 @@ index e692001..cad243b 100644
 2.7.4
 
 
-From 3543cc8c0ab86d6d6937e8b892eafbce2b0b0a9a Mon Sep 17 00:00:00 2001
+From 204f3cfb0d1d3c95563fc94ae831407a129996f8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:10:41 +0200
-Subject: [PATCH 271/412] Step 18.21: Refactor PartyRemove
+Subject: [PATCH 272/413] Step 18.21: Refactor PartyRemove
 
 ---
  imports/ui/components/partyRemove/partyRemove.html | 2 +-
@@ -9828,10 +9852,10 @@ index ebe46ea..fc1206c 100644
 2.7.4
 
 
-From c36a314fc5b0c2af1b46969bd392f00942fcda6a Mon Sep 17 00:00:00 2001
+From 5bcdd8853d9811dc24ea0f08f324b1ee0f386d98 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:11:20 +0200
-Subject: [PATCH 272/412] Step 18.22: Styles for PartyRemove
+Subject: [PATCH 273/413] Step 18.22: Styles for PartyRemove
 
 ---
  imports/ui/components/partyRemove/partyRemove.less | 3 +++
@@ -9851,10 +9875,10 @@ index 0000000..d7ad1f1
 2.7.4
 
 
-From 7f2cacd5c060012714ca5284a3fe78f212b92f92 Mon Sep 17 00:00:00 2001
+From f993b0b9f45abad431b0619d281c6046133247d0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:12:08 +0200
-Subject: [PATCH 273/412] Step 18.23: Import to PartiesList
+Subject: [PATCH 274/413] Step 18.23: Import to PartiesList
 
 ---
  imports/ui/components/partiesList/partiesList.less | 1 +
@@ -9873,10 +9897,10 @@ index d3f7da4..26a3d6b 100644
 2.7.4
 
 
-From 6135644ceb53fa69d451a1eb744ac601f9a48da8 Mon Sep 17 00:00:00 2001
+From 1d1cb05c5d939cbb9ef4478592c3d9e09a34af81 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:17:34 +0200
-Subject: [PATCH 274/412] Step 18.24: Refactor PartyRsvp
+Subject: [PATCH 275/413] Step 18.24: Refactor PartyRsvp
 
 ---
  imports/ui/components/partyRsvp/partyRsvp.html | 8 +++++---
@@ -9899,10 +9923,10 @@ index e4c078c..ec6302b 100644
 2.7.4
 
 
-From 4f66ab24925ecd2e3dcd50620013727a9e9d38ef Mon Sep 17 00:00:00 2001
+From 6e74bc490a62b229170a05b6ad77022e1f8d87bb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:18:08 +0200
-Subject: [PATCH 275/412] Step 18.25: Remove styles
+Subject: [PATCH 276/413] Step 18.25: Remove styles
 
 ---
  imports/ui/components/partyRsvp/partyRsvp.less | 4 ----
@@ -9923,10 +9947,10 @@ index be52d51..0000000
 2.7.4
 
 
-From 712c7934b8a1bb27669e4ec591988ab12db5a896 Mon Sep 17 00:00:00 2001
+From 3f444f8da64735b3a4ec622f230d9ead5e44ff02 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:19:01 +0200
-Subject: [PATCH 276/412] Step 18.26: Refactor PartyUninvited
+Subject: [PATCH 277/413] Step 18.26: Refactor PartyUninvited
 
 ---
  .../components/partyUninvited/partyUninvited.html  | 22 ++++++++++++----------
@@ -9963,10 +9987,10 @@ index e9f9e1c..84b3eaf 100644
 2.7.4
 
 
-From e194707e3fc0c5978db7f480e44c33da84ea95f0 Mon Sep 17 00:00:00 2001
+From 0098c02e56023dfc7f8b251889a73c8288a41c1e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:19:24 +0200
-Subject: [PATCH 277/412] Step 18.27: Remove unused styles
+Subject: [PATCH 278/413] Step 18.27: Remove unused styles
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.less | 8 --------
@@ -9991,10 +10015,10 @@ index 52b27fe..0000000
 2.7.4
 
 
-From ccea753834e29898d813164eb25b1d5faa23f873 Mon Sep 17 00:00:00 2001
+From 32c4bccb99fbc740caea5e093a36473d8a902bf8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:20:28 +0200
-Subject: [PATCH 278/412] Step 18.28: Add PartyRsvpsList less to PartiesList
+Subject: [PATCH 279/413] Step 18.28: Add PartyRsvpsList less to PartiesList
 
 ---
  imports/ui/components/partiesList/partiesList.less | 1 +
@@ -10013,10 +10037,10 @@ index 26a3d6b..6ac87dc 100644
 2.7.4
 
 
-From d0e6656079108f4c5cbd0cb394ea118e90b3b5ba Mon Sep 17 00:00:00 2001
+From 33dab648b52da6f1f01548433518966e10ff23aa Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:21:23 +0200
-Subject: [PATCH 279/412] Step 18.29: Update styles of PartyMap
+Subject: [PATCH 280/413] Step 18.29: Update styles of PartyMap
 
 ---
  imports/ui/components/partyMap/partyMap.less | 3 +--
@@ -10039,10 +10063,10 @@ index 3b4bed1..62f1643 100644
 2.7.4
 
 
-From 4b4c2e312a5068acdb38635bfc0190852f32ac51 Mon Sep 17 00:00:00 2001
+From 24d59e82da2d9650f4d78279cbdf1f809eac4e44 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:23:22 +0200
-Subject: [PATCH 280/412] Step 18.30: Refactor PartyDetails
+Subject: [PATCH 281/413] Step 18.30: Refactor PartyDetails
 
 ---
  .../ui/components/partyDetails/partyDetails.html   | 51 ++++++++++------------
@@ -10114,10 +10138,10 @@ index 4023174..59fe896 100644
 2.7.4
 
 
-From 45646aac07aaa2f97c323367e1cae65af297bb01 Mon Sep 17 00:00:00 2001
+From 98d9bcbdea325280efdd49e8dc0e9154b790d185 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:24:01 +0200
-Subject: [PATCH 281/412] Step 18.31: Leave only PartyMap inside PartyDetails
+Subject: [PATCH 282/413] Step 18.31: Leave only PartyMap inside PartyDetails
  less
 
 ---
@@ -10143,10 +10167,10 @@ index a42c467..bb42a69 100644
 2.7.4
 
 
-From f86e7f42656878f49634e4306f8c534decd3531c Mon Sep 17 00:00:00 2001
+From ab6a9b9659f5ad4a9c8e9f2cac0a42a8224cbdc5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:43:44 +0200
-Subject: [PATCH 282/412] Step 18.32: Create view for PartyAddButton
+Subject: [PATCH 283/413] Step 18.32: Create view for PartyAddButton
 
 ---
  imports/ui/components/partyAddButton/partyAddButton.html | 3 +++
@@ -10166,10 +10190,10 @@ index 0000000..6e37857
 2.7.4
 
 
-From faffa2c8c2e0870dc94e26318c131ed0f53e4ff5 Mon Sep 17 00:00:00 2001
+From fb94c8f4014b7b6aaf7019d01a7e2ada047f2329 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:45:15 +0200
-Subject: [PATCH 283/412] Step 18.33: Create PartyAddButton component
+Subject: [PATCH 284/413] Step 18.33: Create PartyAddButton component
 
 ---
  .../ui/components/partyAddButton/partyAddButton.js | 45 ++++++++++++++++++++++
@@ -10231,10 +10255,10 @@ index 0000000..cadd70c
 2.7.4
 
 
-From 75f42b4a00bfcb69ba5dfae9cd638c56b5f1fc48 Mon Sep 17 00:00:00 2001
+From 6ddf62be1e206e4ee28f12e74358717203281d8d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:46:03 +0200
-Subject: [PATCH 284/412] Step 18.34: Add view for modal window
+Subject: [PATCH 285/413] Step 18.34: Add view for modal window
 
 ---
  imports/ui/components/partyAddButton/partyAddModal.html | 16 ++++++++++++++++
@@ -10267,10 +10291,10 @@ index 0000000..3b490ec
 2.7.4
 
 
-From 30cf6a984ccd955a87cf37d6477027901942fba1 Mon Sep 17 00:00:00 2001
+From 9419a9a6f2eb0f0dfd49c33f86ffd76e071bf094 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:46:27 +0200
-Subject: [PATCH 285/412] Step 18.35: Add some style
+Subject: [PATCH 286/413] Step 18.35: Add some style
 
 ---
  imports/ui/components/partyAddButton/partyAddButton.less | 7 +++++++
@@ -10294,10 +10318,10 @@ index 0000000..73828f6
 2.7.4
 
 
-From e72f5a727f07b0de0734f0bea7508eddca857d49 Mon Sep 17 00:00:00 2001
+From 5c726ce48b44ade7180f143390c8da0ebd262689 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:47:55 +0200
-Subject: [PATCH 286/412] Step 18.36: Implement `done` expression to PartyAdd
+Subject: [PATCH 287/413] Step 18.36: Implement `done` expression to PartyAdd
 
 ---
  imports/ui/components/partyAdd/partyAdd.js | 8 ++++++++
@@ -10333,10 +10357,10 @@ index 4c9052a..ddef484 100644
 2.7.4
 
 
-From 89ab6c18e392415f06a25740756313933d605004 Mon Sep 17 00:00:00 2001
+From 51c702b522de0ec2e622f4e2128da1174c2cf36d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:48:44 +0200
-Subject: [PATCH 287/412] Step 18.37: Add PartyAddButton to PartiesList
+Subject: [PATCH 288/413] Step 18.37: Add PartyAddButton to PartiesList
 
 ---
  imports/ui/components/partiesList/partiesList.js | 4 ++--
@@ -10368,10 +10392,10 @@ index ec99584..17996c3 100644
 2.7.4
 
 
-From 73027bacf04d742888b917b9a1e5b1bb65bd3187 Mon Sep 17 00:00:00 2001
+From 3e3fd7283e6f313952c21393431171b29be3bd2c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:51:45 +0200
-Subject: [PATCH 288/412] Step 18.38: Implement PartyAddButton
+Subject: [PATCH 289/413] Step 18.38: Implement PartyAddButton
 
 ---
  imports/ui/components/partiesList/partiesList.html | 5 +----
@@ -10395,10 +10419,10 @@ index b6772eb..12987b3 100644
 2.7.4
 
 
-From d95f8642e628c8fb20348eb2d2f17930bde98500 Mon Sep 17 00:00:00 2001
+From 5229fbbdd1ab0b147bfa13361b602a76f465e854 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:51:59 +0200
-Subject: [PATCH 289/412] Step 18.39: Import styles
+Subject: [PATCH 290/413] Step 18.39: Import styles
 
 ---
  imports/ui/components/partiesList/partiesList.less | 1 +
@@ -10418,10 +10442,10 @@ index 6ac87dc..b0bc5dc 100644
 2.7.4
 
 
-From ed68e0d4da6bb497bbb677f5d12917c56b523e98 Mon Sep 17 00:00:00 2001
+From 436c60b930713334b1b1835b6417a536619799f3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:25:09 +0200
-Subject: [PATCH 290/412] Step 18.40: Create view for Auth
+Subject: [PATCH 291/413] Step 18.40: Create view for Auth
 
 ---
  imports/ui/components/auth/auth.html | 6 ++++++
@@ -10444,10 +10468,10 @@ index 0000000..28f7a45
 2.7.4
 
 
-From 1cc660fdb54dc8a2b832cbd61942fb30df899af5 Mon Sep 17 00:00:00 2001
+From ca493c11d7de39905b3b34034ff4427bde4450cf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:25:49 +0200
-Subject: [PATCH 291/412] Step 18.41: Create Auth component
+Subject: [PATCH 292/413] Step 18.41: Create Auth component
 
 ---
  imports/ui/components/auth/auth.js | 41 ++++++++++++++++++++++++++++++++++++++
@@ -10505,10 +10529,10 @@ index 0000000..faffdb3
 2.7.4
 
 
-From 8086046811ef636cb2e46f5ee8a36449ec2fd0e6 Mon Sep 17 00:00:00 2001
+From 630cb397407d6559195155cddcda9d2e7a528b72 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:42:53 +0200
-Subject: [PATCH 292/412] Step 18.42: View for Login
+Subject: [PATCH 293/413] Step 18.42: View for Login
 
 ---
  imports/ui/components/login/login.html | 72 ++++++++++++++++++++++++++++++++++
@@ -10597,10 +10621,10 @@ index 0000000..feb3443
 2.7.4
 
 
-From 58bdd22bf16f211e702622d702f960a7986723f3 Mon Sep 17 00:00:00 2001
+From 0eaedf656e46c131ad0e4d7d8ea6a7e098d32b39 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:44:02 +0200
-Subject: [PATCH 293/412] Step 18.43: Create Login
+Subject: [PATCH 294/413] Step 18.43: Create Login
 
 ---
  imports/ui/components/login/login.js | 61 ++++++++++++++++++++++++++++++++++++
@@ -10678,10 +10702,10 @@ index 0000000..4ae9c9e
 2.7.4
 
 
-From 265d52b6372c7fb47aac7d00bb772ddada1d82cd Mon Sep 17 00:00:00 2001
+From 24359ed774e24e226efdd1e751a72e23d3e37889 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:44:39 +0200
-Subject: [PATCH 294/412] Step 18.44: Add Login to Auth
+Subject: [PATCH 295/413] Step 18.44: Add Login to Auth
 
 ---
  imports/ui/components/auth/auth.js | 4 +++-
@@ -10713,10 +10737,10 @@ index faffdb3..e3290b8 100644
 2.7.4
 
 
-From 6c3b370e645b33e1362f0de20303cf023a1c1add Mon Sep 17 00:00:00 2001
+From cb55cb4ea14c004f0dcfe41e28001bd4671e479d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:45:38 +0200
-Subject: [PATCH 295/412] Step 18.45: View for Register
+Subject: [PATCH 296/413] Step 18.45: View for Register
 
 ---
  imports/ui/components/register/register.html | 72 ++++++++++++++++++++++++++++
@@ -10805,10 +10829,10 @@ index 0000000..37b42c6
 2.7.4
 
 
-From 406533474840815b528673f352fd1cab140de331 Mon Sep 17 00:00:00 2001
+From bd60538dc7e835cc8ac70ffca3b1d09d1f703ba8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:46:15 +0200
-Subject: [PATCH 296/412] Step 18.46: Create Register
+Subject: [PATCH 297/413] Step 18.46: Create Register
 
 ---
  imports/ui/components/register/register.js | 58 ++++++++++++++++++++++++++++++
@@ -10883,10 +10907,10 @@ index 0000000..ab4ae94
 2.7.4
 
 
-From 91615cc6eaf7323e5c3a382ca577ac592b7efeee Mon Sep 17 00:00:00 2001
+From 97f7fa99df974b1edf1c2bd776fbf1006a555788 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:46:55 +0200
-Subject: [PATCH 297/412] Step 18.47: Add Register to Auth
+Subject: [PATCH 298/413] Step 18.47: Add Register to Auth
 
 ---
  imports/ui/components/auth/auth.js | 4 +++-
@@ -10918,10 +10942,10 @@ index e3290b8..871e2fd 100644
 2.7.4
 
 
-From ab4080d9df2e7015d8cf8bb987ee980279f9bf30 Mon Sep 17 00:00:00 2001
+From ffd92dfcab1bf397524b1713cbc4f9e331c67859 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:47:29 +0200
-Subject: [PATCH 298/412] Step 18.48: View for Password
+Subject: [PATCH 299/413] Step 18.48: View for Password
 
 ---
  imports/ui/components/password/password.html | 40 ++++++++++++++++++++++++++++
@@ -10978,10 +11002,10 @@ index 0000000..94df2b0
 2.7.4
 
 
-From f769acf853ffcf4bd95fc35b0eefeeba4f9a2357 Mon Sep 17 00:00:00 2001
+From 661dd6654bcb4149bc85359d3588651383d09e22 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:48:03 +0200
-Subject: [PATCH 299/412] Step 18.49: Create Password
+Subject: [PATCH 300/413] Step 18.49: Create Password
 
 ---
  imports/ui/components/password/password.js | 56 ++++++++++++++++++++++++++++++
@@ -11054,10 +11078,10 @@ index 0000000..c417f95
 2.7.4
 
 
-From 010e95f3a44e2578193eaeb2b73762ef203a6600 Mon Sep 17 00:00:00 2001
+From 9b7a87a69519832ccd257a7d4303017d8376945e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:48:33 +0200
-Subject: [PATCH 300/412] Step 18.50: Add Password to Auth
+Subject: [PATCH 301/413] Step 18.50: Add Password to Auth
 
 ---
  imports/ui/components/auth/auth.js | 4 +++-
@@ -11089,10 +11113,10 @@ index 871e2fd..a87dd5e 100644
 2.7.4
 
 
-From 491ed0155bdffd1c1cf0c14c06f7ea140e340985 Mon Sep 17 00:00:00 2001
+From 25dfbf9de0d18a21dae01607366dc56bac98586b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:50:12 +0200
-Subject: [PATCH 301/412] Step 18.51: Add Auth to Socially
+Subject: [PATCH 302/413] Step 18.51: Add Auth to Socially
 
 ---
  imports/ui/components/socially/socially.js | 2 ++
@@ -11122,10 +11146,10 @@ index cad243b..21940eb 100644
 2.7.4
 
 
-From d8ea70afa972144ad24bbb74804c9494a5256887 Mon Sep 17 00:00:00 2001
+From 96c8f84989009a697d8e5b6c05dc80899098d335 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:50:46 +0200
-Subject: [PATCH 302/412] Step 18.52: Implement Auth
+Subject: [PATCH 303/413] Step 18.52: Implement Auth
 
 ---
  imports/ui/components/navigation/navigation.html | 3 ++-
@@ -11148,10 +11172,10 @@ index 0b1d8a6..2d81bc4 100644
 2.7.4
 
 
-From 1d6ba3eda40ba6d2ed1c030d866bbab6c444eafb Mon Sep 17 00:00:00 2001
+From 86147ad8145969bf484500d0746ea6e8ff996ead Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:51:45 +0200
-Subject: [PATCH 303/412] Step 18.53: Remove .less of Navigation
+Subject: [PATCH 304/413] Step 18.53: Remove .less of Navigation
 
 ---
  imports/ui/components/navigation/navigation.less | 5 -----
@@ -11173,10 +11197,10 @@ index 87b8777..0000000
 2.7.4
 
 
-From 6ea315574b395569d430fafd4125fa405aab430b Mon Sep 17 00:00:00 2001
+From 74862aef0d237713afa9fba4e734607ad9f22365 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:52:12 +0200
-Subject: [PATCH 304/412] Step 18.54: Remove import statement
+Subject: [PATCH 305/413] Step 18.54: Remove import statement
 
 ---
  imports/ui/components/socially/socially.less | 2 --
@@ -11198,10 +11222,10 @@ index 3eabc12..742f92d 100644
 2.7.4
 
 
-From eb3b5c927459507fd4f6c67b6e8e0ce2f8b57040 Mon Sep 17 00:00:00 2001
+From 52f87b62461bc1f2c492aaca46ef37a3da29d238 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:38:56 +0200
-Subject: [PATCH 305/412] Step 20.1: Add `jalik:ufs`
+Subject: [PATCH 306/413] Step 20.1: Add `jalik:ufs`
 
 ---
  .meteor/packages | 1 +
@@ -11240,10 +11264,10 @@ index bef3e68..dbae4b0 100644
 2.7.4
 
 
-From 78ab789112c28656581e428bc5e660251744a977 Mon Sep 17 00:00:00 2001
+From b88f821270a9ee72241e40a15df10c87bc9cf3ea Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:40:52 +0200
-Subject: [PATCH 306/412] Step 20.2: Add `jalik:ufs-gridfs`
+Subject: [PATCH 307/413] Step 20.2: Add `jalik:ufs-gridfs`
 
 ---
  .meteor/packages | 1 +
@@ -11275,10 +11299,10 @@ index dbae4b0..a60ade0 100644
 2.7.4
 
 
-From 57603c1a2a060206bdbd0822bfeea51044bd07a1 Mon Sep 17 00:00:00 2001
+From 298a49c613cf00d9501bd9362b177410f28ddaf1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:48:58 +0200
-Subject: [PATCH 307/412] Step 20.3: Create Images and Thumbs collections
+Subject: [PATCH 308/413] Step 20.3: Create Images and Thumbs collections
 
 ---
  imports/api/images/collection.js | 21 +++++++++++++++++++++
@@ -11316,10 +11340,10 @@ index 0000000..a522111
 2.7.4
 
 
-From a4b41517f180df893ad94080c72f075e24e86165 Mon Sep 17 00:00:00 2001
+From 32dc0b37181c3c9f27523c5b9b5f77bc2d495c93 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:50:11 +0200
-Subject: [PATCH 308/412] Step 20.4: Create ThumbsStore and ImagesStore
+Subject: [PATCH 309/413] Step 20.4: Create ThumbsStore and ImagesStore
 
 ---
  imports/api/images/store.js | 18 ++++++++++++++++++
@@ -11354,10 +11378,10 @@ index 0000000..58462c1
 2.7.4
 
 
-From 0f982d3bc43cf41aa5b2f9be7235ed79c53126ec Mon Sep 17 00:00:00 2001
+From b412c2554e7574be7f2147304bb7e9ebb875c7cd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:50:57 +0200
-Subject: [PATCH 309/412] Step 20.5: Create main export file of Images and
+Subject: [PATCH 310/413] Step 20.5: Create main export file of Images and
  Thumbs
 
 ---
@@ -11377,10 +11401,10 @@ index 0000000..9c18361
 2.7.4
 
 
-From a77a3c1ea51d9faa7fbe51ff3a15f805fbdd4c37 Mon Sep 17 00:00:00 2001
+From b6864862c79a56ecca39a3235cda50d7dce7da82 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:52:30 +0200
-Subject: [PATCH 310/412] Step 20.6: Resize images
+Subject: [PATCH 311/413] Step 20.6: Resize images
 
 ---
  imports/api/images/store.js | 14 +++++++++++++-
@@ -11415,10 +11439,10 @@ index 58462c1..a0fa6d6 100644
 2.7.4
 
 
-From c44f4b1be195c512170de0825c8c22c27f5168eb Mon Sep 17 00:00:00 2001
+From f2adce5797e91dca942134b8f1aa24167de9b4c0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:54:06 +0200
-Subject: [PATCH 311/412] Step 20.7: Install `gm`
+Subject: [PATCH 312/413] Step 20.7: Install `gm`
 
 ---
  package.json | 1 +
@@ -11440,10 +11464,10 @@ index 8971ed8..459c03c 100644
 2.7.4
 
 
-From 3e8c2feca9da1a255160522963dc50d0d5abcfb5 Mon Sep 17 00:00:00 2001
+From d9bc003cdeac262dba72eb1dcb7ae60f297d79e2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:58:21 +0200
-Subject: [PATCH 312/412] Step 20.8: Create view for PartyUpload
+Subject: [PATCH 313/413] Step 20.8: Create view for PartyUpload
 
 ---
  imports/ui/components/partyUpload/partyUpload.html | 9 +++++++++
@@ -11469,10 +11493,10 @@ index 0000000..d53d6c7
 2.7.4
 
 
-From 322e810a4875a1476af6c065fc3717cf5b863aa8 Mon Sep 17 00:00:00 2001
+From d3e4a1c3801a4d19afc7bf9af514fedfcf6018e8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:59:42 +0200
-Subject: [PATCH 313/412] Step 20.9: Create PartyUpload component
+Subject: [PATCH 314/413] Step 20.9: Create PartyUpload component
 
 ---
  imports/ui/components/partyUpload/partyUpload.js | 19 +++++++++++++++++++
@@ -11508,10 +11532,10 @@ index 0000000..571b3c1
 2.7.4
 
 
-From e6a1f8920fba4989fd90f264fb700db35e709ff7 Mon Sep 17 00:00:00 2001
+From 7fdc69e609637f404001453b1aef5e549ae1b459 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:01:32 +0200
-Subject: [PATCH 314/412] Step 20.10: Add to PartyAdd
+Subject: [PATCH 315/413] Step 20.10: Add to PartyAdd
 
 ---
  imports/ui/components/partyAdd/partyAdd.js | 4 +++-
@@ -11543,10 +11567,10 @@ index ddef484..47f09fe 100644
 2.7.4
 
 
-From 0fb8d5249640450e696d96333581dff81ab90053 Mon Sep 17 00:00:00 2001
+From de5b6969e80ee78c3d5ecd042873f8e57cccaeda Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:03:51 +0200
-Subject: [PATCH 315/412] Step 20.11: Implement to the view
+Subject: [PATCH 316/413] Step 20.11: Implement to the view
 
 ---
  imports/ui/components/partyAdd/partyAdd.html | 1 +
@@ -11566,10 +11590,10 @@ index 6e504f0..8946e6d 100644
 2.7.4
 
 
-From abe78fa5d1c75f7cda20d586a81206c0814c552e Mon Sep 17 00:00:00 2001
+From 21dc48e30e1b49e4f41843cd702c9590dc5869e3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:05:32 +0200
-Subject: [PATCH 316/412] Step 20.12: install `ng-file-upload`
+Subject: [PATCH 317/413] Step 20.12: install `ng-file-upload`
 
 ---
  package.json | 1 +
@@ -11591,10 +11615,10 @@ index 459c03c..0484324 100644
 2.7.4
 
 
-From 131a9b412a5ac7c8ef29b188bb7ab713578628bd Mon Sep 17 00:00:00 2001
+From c69da684a0541c6220c6172a7d2714f7e37cc9c3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:08:06 +0200
-Subject: [PATCH 317/412] Step 20.13: Add as a dependency
+Subject: [PATCH 318/413] Step 20.13: Add as a dependency
 
 ---
  imports/ui/components/partyUpload/partyUpload.js | 4 +++-
@@ -11625,10 +11649,10 @@ index 571b3c1..d4b7c6e 100644
 2.7.4
 
 
-From f01c1b301eaa7d6a460d01f31d9a6c98252eb3aa Mon Sep 17 00:00:00 2001
+From 4fc3a3f3fbb4453fd0483a1e4f8888caed4bae8d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:09:13 +0200
-Subject: [PATCH 318/412] Step 20.14: Add ngf-drop to the view
+Subject: [PATCH 319/413] Step 20.14: Add ngf-drop to the view
 
 ---
  imports/ui/components/partyUpload/partyUpload.html | 21 +++++++++++++++------
@@ -11667,10 +11691,10 @@ index d53d6c7..70e5af3 100644
 2.7.4
 
 
-From b4401d29dae2418e3e11c4d713258a2cbce5f4c1 Mon Sep 17 00:00:00 2001
+From c4f6445cbb9028fcff5c3745bbe12cbfb1e3df38 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:12:52 +0200
-Subject: [PATCH 319/412] Step 20.15: Handle file selection
+Subject: [PATCH 320/413] Step 20.15: Handle file selection
 
 ---
  imports/ui/components/partyUpload/partyUpload.js | 25 +++++++++++++++++++++++-
@@ -11716,10 +11740,10 @@ index d4b7c6e..7ad01f9 100644
 2.7.4
 
 
-From 48de3226c55118c1ac25c657b7029837e6e00e61 Mon Sep 17 00:00:00 2001
+From 604588a910b3ff8bdb1c83913c7b9ddc44e74ce6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:15:21 +0200
-Subject: [PATCH 320/412] Step 20.16: Add style
+Subject: [PATCH 321/413] Step 20.16: Add style
 
 ---
  imports/ui/components/partyUpload/partyUpload.less | 16 ++++++++++++++++
@@ -11752,10 +11776,10 @@ index 0000000..987a853
 2.7.4
 
 
-From fc8bf8866030b1c53f48e44849465f3976e138a7 Mon Sep 17 00:00:00 2001
+From 5116481977afebf62205c702fab273bb9dd4b705 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:15:42 +0200
-Subject: [PATCH 321/412] Step 20.17: Import in PartyAdd
+Subject: [PATCH 322/413] Step 20.17: Import in PartyAdd
 
 ---
  imports/ui/components/partyAdd/partyAdd.less | 1 +
@@ -11773,10 +11797,10 @@ index 0000000..18bfd78
 2.7.4
 
 
-From ffb0b64056d6d767e2817ce8317cfc5358bf3653 Mon Sep 17 00:00:00 2001
+From bb0dd1f8977b046a85a9a4dcf22ba62acc909091 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:16:18 +0200
-Subject: [PATCH 322/412] Step 20.18: Import in PartyAddButton
+Subject: [PATCH 323/413] Step 20.18: Import in PartyAddButton
 
 ---
  imports/ui/components/partyAddButton/partyAddButton.less | 1 +
@@ -11795,10 +11819,10 @@ index 73828f6..1b95052 100644
 2.7.4
 
 
-From 0481dc1b05f2781ef8cf9e69d7ef956526a402d5 Mon Sep 17 00:00:00 2001
+From 573ccdfeb9cc4a492d0ece9fdc78479c02ae9de3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:17:27 +0200
-Subject: [PATCH 323/412] Step 20.19: Install `ng-img-crop`
+Subject: [PATCH 324/413] Step 20.19: Install `ng-img-crop`
 
 ---
  package.json | 1 +
@@ -11820,10 +11844,10 @@ index 0484324..1ebcbea 100644
 2.7.4
 
 
-From 2eb5c44c173baac0e5582fad8157fde635a3976c Mon Sep 17 00:00:00 2001
+From 1bb84a659e78e2808243d1b752b262389c5701bc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:27:50 +0200
-Subject: [PATCH 324/412] Step 20.20: Add ngImgCrop
+Subject: [PATCH 325/413] Step 20.20: Add ngImgCrop
 
 ---
  imports/ui/components/partyUpload/partyUpload.js | 6 +++++-
@@ -11857,10 +11881,10 @@ index 7ad01f9..94f2de1 100644
 2.7.4
 
 
-From 40017c884f6fc563dfb5ef9235a0803eb2c014f1 Mon Sep 17 00:00:00 2001
+From aa2405ec977c129d5959d83a820a4ac471d51957 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:31:51 +0200
-Subject: [PATCH 325/412] Step 20.21: Use ngImgCrop
+Subject: [PATCH 326/413] Step 20.21: Use ngImgCrop
 
 ---
  imports/ui/components/partyUpload/partyUpload.html | 14 ++++++++++++++
@@ -11893,10 +11917,10 @@ index 70e5af3..2dd38e9 100644
 2.7.4
 
 
-From fc33e761fabd5773dd270d9fa2fd3110614113b2 Mon Sep 17 00:00:00 2001
+From 2a59819ec8af092ba718436fc73a51e549a32d18 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:32:11 +0200
-Subject: [PATCH 326/412] Step 20.22: Add styles
+Subject: [PATCH 327/413] Step 20.22: Add styles
 
 ---
  imports/ui/components/partyUpload/partyUpload.less | 9 +++++++++
@@ -11924,10 +11948,10 @@ index 987a853..645cee2 100644
 2.7.4
 
 
-From 2660eada6ba7c19a4dd1e8ec87c189a5ab0b3815 Mon Sep 17 00:00:00 2001
+From 2baf504137a3494288c676bc3cc0ec16e57ef0d6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:02:41 +0200
-Subject: [PATCH 327/412] Step 20.23: Add dataURLToBlob helper
+Subject: [PATCH 328/413] Step 20.23: Add dataURLToBlob helper
 
 ---
  imports/api/images/helpers.js | 31 +++++++++++++++++++++++++++++++
@@ -11975,10 +11999,10 @@ index 0000000..23f1350
 2.7.4
 
 
-From 655c009baed1f208f6f104fab09d427f654961ea Mon Sep 17 00:00:00 2001
+From 47ee505afdd353b2f9e4ced5dbb4820035e6957a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:05:04 +0200
-Subject: [PATCH 328/412] Step 20.24: Add blobToArrayBuffer helper
+Subject: [PATCH 329/413] Step 20.24: Add blobToArrayBuffer helper
 
 ---
  imports/api/images/helpers.js | 23 +++++++++++++++++++++++
@@ -12019,10 +12043,10 @@ index 23f1350..448f932 100644
 2.7.4
 
 
-From b3329bf6d57bbf0ab039903ed8263779d525f3e6 Mon Sep 17 00:00:00 2001
+From 7a30df87124558d47b0eea1aa809694b69796f5c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:08:29 +0200
-Subject: [PATCH 329/412] Step 20.25: Create `upload` method
+Subject: [PATCH 330/413] Step 20.25: Create `upload` method
 
 ---
  imports/api/images/methods.js | 33 +++++++++++++++++++++++++++++++++
@@ -12072,10 +12096,10 @@ index 0000000..e634901
 2.7.4
 
 
-From 1c6ece62c873a2933d80df1ad6cfb4169227eafa Mon Sep 17 00:00:00 2001
+From c0c80928bc287456bf6fb184ff9a2b5a5a0d7136 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:08:56 +0200
-Subject: [PATCH 330/412] Step 20.26: Export methods
+Subject: [PATCH 331/413] Step 20.26: Export methods
 
 ---
  imports/api/images/index.js | 1 +
@@ -12093,10 +12117,10 @@ index 9c18361..74293fe 100644
 2.7.4
 
 
-From ba8465b3278f4aa758121b48065c70ebdce41081 Mon Sep 17 00:00:00 2001
+From 2c7802033aef2b9afc2f5c993258fb6e646b17c9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:15:15 +0200
-Subject: [PATCH 331/412] Step 20.27: Implement `save` and `reset` methods
+Subject: [PATCH 332/413] Step 20.27: Implement `save` and `reset` methods
 
 ---
  imports/ui/components/partyUpload/partyUpload.js | 17 +++++++++++++++++
@@ -12147,10 +12171,10 @@ index 94f2de1..7dd2bd1 100644
 2.7.4
 
 
-From a009e043eb337ab73fdf9c46e9bca2702e10f403 Mon Sep 17 00:00:00 2001
+From e572a7f3100276791e82c3d9af62bfc896089964 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:16:03 +0200
-Subject: [PATCH 332/412] Step 20.28: Import Images on server side
+Subject: [PATCH 333/413] Step 20.28: Import Images on server side
 
 ---
  server/main.js | 1 +
@@ -12169,10 +12193,10 @@ index 1acdc6c..2b47936 100644
 2.7.4
 
 
-From f4435b7114e148d795267b2a40003801eccf4385 Mon Sep 17 00:00:00 2001
+From 28b26fd02ad035844ed6a7c73a89e52eb5f0c89b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:21:33 +0200
-Subject: [PATCH 333/412] Step 20.29: Display uploaded images
+Subject: [PATCH 334/413] Step 20.29: Display uploaded images
 
 ---
  imports/ui/components/partyUpload/partyUpload.html | 5 +++++
@@ -12196,10 +12220,10 @@ index 2dd38e9..124bfdb 100644
 2.7.4
 
 
-From 02763b604d2f1ee4b477597405a57c564d39cbc5 Mon Sep 17 00:00:00 2001
+From 493407a4d34a601b093a0ebf2c89bb5052e8cbb1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:22:36 +0200
-Subject: [PATCH 334/412] Step 20.30: Add styles
+Subject: [PATCH 335/413] Step 20.30: Add styles
 
 ---
  imports/ui/components/partyUpload/partyUpload.less | 16 ++++++++++++++++
@@ -12234,10 +12258,10 @@ index 645cee2..f781c1c 100644
 2.7.4
 
 
-From c64ce02deb572982c88ed0671fc465dcf63a7db1 Mon Sep 17 00:00:00 2001
+From ee2efe7160a2d4df947f3f2512fefb62af3bd5ed Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:24:09 +0200
-Subject: [PATCH 335/412] Step 20.31: Add `thumbs` and `images` publications
+Subject: [PATCH 336/413] Step 20.31: Add `thumbs` and `images` publications
 
 ---
  imports/api/images/publish.js | 17 +++++++++++++++++
@@ -12271,10 +12295,10 @@ index 0000000..5949c72
 2.7.4
 
 
-From ea34277bf24a08cceb589c6ba6a0af12428adfd6 Mon Sep 17 00:00:00 2001
+From 9cbe629323de0740bf810f0c0fa5b483bb0f615b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:24:36 +0200
-Subject: [PATCH 336/412] Step 20.32: Import publications
+Subject: [PATCH 337/413] Step 20.32: Import publications
 
 ---
  imports/api/images/index.js | 1 +
@@ -12293,10 +12317,10 @@ index 74293fe..57692b3 100644
 2.7.4
 
 
-From 839f358f6ca1880f38345cd758f24564525e95ce Mon Sep 17 00:00:00 2001
+From 7caa5998bb23e3641ee6d167faae9a52e137e190 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:29:08 +0200
-Subject: [PATCH 337/412] Step 20.33: Implement thumbnails
+Subject: [PATCH 338/413] Step 20.33: Implement thumbnails
 
 ---
  imports/ui/components/partyUpload/partyUpload.js | 23 ++++++++++++++++++++++-
@@ -12354,10 +12378,10 @@ index 7dd2bd1..100b85a 100644
 2.7.4
 
 
-From 8ed9160e1c87cbe3d371cdb871e10f414e2b3d43 Mon Sep 17 00:00:00 2001
+From c080951b9313e74b9cad3902cdfbb6df1f309c03 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:32:41 +0200
-Subject: [PATCH 338/412] Step 20.34: Install `angular-sortable-view`
+Subject: [PATCH 339/413] Step 20.34: Install `angular-sortable-view`
 
 ---
  package.json | 1 +
@@ -12379,10 +12403,10 @@ index 1ebcbea..ffe3f6d 100644
 2.7.4
 
 
-From 96c1b544801cb8b865359f05342358685afca8a1 Mon Sep 17 00:00:00 2001
+From d5af1ce6aabc6d4e658ca00c1ae5978c720aa863 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:33:09 +0200
-Subject: [PATCH 339/412] Step 20.35: Add as a dependency
+Subject: [PATCH 340/413] Step 20.35: Add as a dependency
 
 ---
  imports/ui/components/partyUpload/partyUpload.js | 4 +++-
@@ -12414,10 +12438,10 @@ index 100b85a..237ac4d 100644
 2.7.4
 
 
-From 1126b1f304ad8edb5c5ba350cadc812547765130 Mon Sep 17 00:00:00 2001
+From b8a6b6ebf58f4f9b614a41bd01ea4eec06094e50 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:33:31 +0200
-Subject: [PATCH 340/412] Step 20.36: Use directives on thumbnails
+Subject: [PATCH 341/413] Step 20.36: Use directives on thumbnails
 
 ---
  imports/ui/components/partyUpload/partyUpload.html | 6 +++---
@@ -12444,10 +12468,10 @@ index 124bfdb..14a3704 100644
 2.7.4
 
 
-From 14e48286e1c4cb1b9ec5c84f6350df32a7ef1584 Mon Sep 17 00:00:00 2001
+From 09242f5c90e594398ad47167c4f4a06001135aa1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:07 +0200
-Subject: [PATCH 341/412] Step 20.37: Define two-way data binding `files`
+Subject: [PATCH 342/413] Step 20.37: Define two-way data binding `files`
 
 ---
  imports/ui/components/partyUpload/partyUpload.js | 3 +++
@@ -12471,10 +12495,10 @@ index 237ac4d..400368e 100644
 2.7.4
 
 
-From 7a9df5320719238f2efadb87e18e7ec40d2d38dc Mon Sep 17 00:00:00 2001
+From a1a5cfb332190bef140e43723d1932e389a26e6d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:24 +0200
-Subject: [PATCH 342/412] Step 20.38: Create view for PartyImage
+Subject: [PATCH 343/413] Step 20.38: Create view for PartyImage
 
 ---
  imports/ui/components/partyImage/partyImage.html | 1 +
@@ -12492,10 +12516,10 @@ index 0000000..719c4a3
 2.7.4
 
 
-From 8a221230bca7bc241fd2405b236cd7bee918fd90 Mon Sep 17 00:00:00 2001
+From d9e64c1727bce17481ea3c97ccbf03fb14c1f521 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:39 +0200
-Subject: [PATCH 343/412] Step 20.39: Create PartyImage component
+Subject: [PATCH 344/413] Step 20.39: Create PartyImage component
 
 ---
  imports/ui/components/partyImage/partyImage.js | 37 ++++++++++++++++++++++++++
@@ -12549,10 +12573,10 @@ index 0000000..5b636b8
 2.7.4
 
 
-From 2f07a29cc57de2aab367beb1796cf18a61fe8c16 Mon Sep 17 00:00:00 2001
+From bd8e7be0d087672127f9c6326e33e3b156f27908 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:58 +0200
-Subject: [PATCH 344/412] Step 20.40: Implement PartyImage in PartiesList
+Subject: [PATCH 345/413] Step 20.40: Implement PartyImage in PartiesList
 
 ---
  imports/ui/components/partiesList/partiesList.html | 5 +++++
@@ -12578,10 +12602,10 @@ index 12987b3..de5d229 100644
 2.7.4
 
 
-From eb5580a319890f54b5431cc78d8d8facf435dd5a Mon Sep 17 00:00:00 2001
+From da10b58103632080dc994d9cca600c84eb2d0fe0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:34:24 +0200
-Subject: [PATCH 345/412] Step 20.41: Add PartyImage to PartiesList and
+Subject: [PATCH 346/413] Step 20.41: Add PartyImage to PartiesList and
  subscribe to `images`
 
 ---
@@ -12622,10 +12646,10 @@ index 17996c3..9e90e1f 100644
 2.7.4
 
 
-From 8eab702051616cd371a9668fc8c2c6fa73aa17f9 Mon Sep 17 00:00:00 2001
+From 6ecad087306318c11fe13135ec3ef6d6ea899c41 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:41:02 +0200
-Subject: [PATCH 346/412] Step 21.1: Add mobile platform
+Subject: [PATCH 347/413] Step 21.1: Add mobile platform
 
 ---
  .meteor/platforms | 3 ++-
@@ -12644,10 +12668,10 @@ index efeba1b..0b0ddcc 100644
 2.7.4
 
 
-From e09a8724f0a2fadc998076678b9f19c69fff4491 Mon Sep 17 00:00:00 2001
+From cb0137961a10e21fc0a417f080816150ef7d8677 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:43:34 +0200
-Subject: [PATCH 347/412] Step 21.2: Move login.html to web.html
+Subject: [PATCH 348/413] Step 21.2: Move login.html to web.html
 
 ---
  imports/ui/components/login/web.html | 70 ++++++++++++++++++++++++++++++++++++
@@ -12734,10 +12758,10 @@ index 0000000..1ac5b6f
 2.7.4
 
 
-From d9dd7606a593a760c5fac41660214fb582474847 Mon Sep 17 00:00:00 2001
+From c34b2feee9e54805306ed477157ed831b0c3b68a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:45:56 +0200
-Subject: [PATCH 348/412] Step 21.3: Add mobile view
+Subject: [PATCH 349/413] Step 21.3: Add mobile view
 
 ---
  imports/ui/components/login/mobile.html | 27 +++++++++++++++++++++++++++
@@ -12781,10 +12805,10 @@ index 0000000..112ba9e
 2.7.4
 
 
-From 8cd2fd1f68715a02d47d37076438f2b82443a0ed Mon Sep 17 00:00:00 2001
+From 80ae2f948d9c18c9b7ad7003f1bed2b3684e2b2d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:47:15 +0200
-Subject: [PATCH 349/412] Step 21.4: Move Login class to web.js
+Subject: [PATCH 350/413] Step 21.4: Move Login class to web.js
 
 ---
  imports/ui/components/login/web.js | 30 ++++++++++++++++++++++++++++++
@@ -12831,10 +12855,10 @@ index 0000000..bc7b752
 2.7.4
 
 
-From 7b72a02ea9f9d1efb94e76e0f5106bdc2b84a4ca Mon Sep 17 00:00:00 2001
+From d9c06262fbc148d199800eb06bd515fbc7dacd7c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:48:39 +0200
-Subject: [PATCH 350/412] Step 21.5: Create controller for mobile
+Subject: [PATCH 351/413] Step 21.5: Create controller for mobile
 
 ---
  imports/ui/components/login/mobile.js | 1 +
@@ -12852,10 +12876,10 @@ index 0000000..792f38c
 2.7.4
 
 
-From 9d893c50d5863a8b884ad45bea6e865942647eb0 Mon Sep 17 00:00:00 2001
+From 7ac157d7f2e2bf9b29fbd563c4420de6d9c4c7ad Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:49:48 +0200
-Subject: [PATCH 351/412] Step 21.6: Refactor login.js
+Subject: [PATCH 352/413] Step 21.6: Refactor login.js
 
 ---
  imports/ui/components/login/login.js | 42 +++++++-----------------------------
@@ -12927,10 +12951,10 @@ index 4ae9c9e..376fcaf 100644
 2.7.4
 
 
-From ea74b853bc4e77298fd7b6ab2fff54fba1db9b2b Mon Sep 17 00:00:00 2001
+From 1fc07b304a73f7d8ea806644cc83f04705d049f4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:50:03 +0200
-Subject: [PATCH 352/412] Step 21.7: Remove login.html
+Subject: [PATCH 353/413] Step 21.7: Remove login.html
 
 ---
  imports/ui/components/login/login.html | 72 ----------------------------------
@@ -13043,10 +13067,10 @@ index 1ac5b6f..af84461 100644
 2.7.4
 
 
-From e6bd86d851cb3bcac2616a170e40db49d1e44488 Mon Sep 17 00:00:00 2001
+From f3af17a383cacca40bb3b79aaaa1440cdafeb4ee Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:52:54 +0200
-Subject: [PATCH 353/412] Step 21.8: Add `okland:accounts-phone`
+Subject: [PATCH 354/413] Step 21.8: Add `okland:accounts-phone`
 
 ---
  .meteor/packages | 1 +
@@ -13078,10 +13102,10 @@ index a60ade0..c58233f 100644
 2.7.4
 
 
-From 5c9f0e6312d1944df7fff319f2eb3fd81f79afbd Mon Sep 17 00:00:00 2001
+From bbe4682ced1bd5a87e0877e5fb403145617b5f15 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:56:24 +0200
-Subject: [PATCH 354/412] Step 21.9: Add phone verification method
+Subject: [PATCH 355/413] Step 21.9: Add phone verification method
 
 ---
  imports/ui/components/login/mobile.js | 28 +++++++++++++++++++++++++++-
@@ -13124,10 +13148,10 @@ index 792f38c..c201eb2 100644
 2.7.4
 
 
-From 2f9866d94e1d0800fef97bc9d80feac65431f25e Mon Sep 17 00:00:00 2001
+From a434d6aff3af15927bd4ff329eb9b74be06b9dbf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:57:40 +0200
-Subject: [PATCH 355/412] Step 21.10: Add phone verification form
+Subject: [PATCH 356/413] Step 21.10: Add phone verification form
 
 ---
  imports/ui/components/login/mobile.html | 11 ++++++++++-
@@ -13165,10 +13189,10 @@ index 112ba9e..0b889a7 100644
 2.7.4
 
 
-From 2c3a72de4fecea55e1537dbaaa46b45a683aa992 Mon Sep 17 00:00:00 2001
+From 6fdb4e3a739dc044c1f864e131927a29070557d5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 21:00:05 +0200
-Subject: [PATCH 356/412] Step 21.11: Add code verification method
+Subject: [PATCH 357/413] Step 21.11: Add code verification method
 
 ---
  imports/ui/components/login/mobile.js | 15 ++++++++++++++-
@@ -13211,10 +13235,10 @@ index c201eb2..798d563 100644
 2.7.4
 
 
-From 1096ed6b27cdbd2c94f87edd3cb1a46b1f0c4d79 Mon Sep 17 00:00:00 2001
+From 220154306ba89f64f0e2806b920131268b678f3e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 21:01:13 +0200
-Subject: [PATCH 357/412] Step 21.12: Add code verification form
+Subject: [PATCH 358/413] Step 21.12: Add code verification form
 
 ---
  imports/ui/components/login/mobile.html | 10 +++++++++-
@@ -13245,10 +13269,10 @@ index 0b889a7..e93c1d5 100644
 2.7.4
 
 
-From 637720c8d134c465f97f4687506ca0f34d6bfd5f Mon Sep 17 00:00:00 2001
+From 3e7d7172905d3ce6084908dd5393fc8554594d00 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 10:58:52 +0200
-Subject: [PATCH 358/412] Step 22.1: Install `ionic-sdk`
+Subject: [PATCH 359/413] Step 22.1: Install `ionic-sdk`
 
 ---
  package.json | 1 +
@@ -13270,10 +13294,10 @@ index ffe3f6d..4c15c16 100644
 2.7.4
 
 
-From 2f59b693cfd658e6c983962caa7bff2879139984 Mon Sep 17 00:00:00 2001
+From 6ee573361af44460b33544e37499d9c056dd29b1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 10:59:31 +0200
-Subject: [PATCH 359/412] Step 22.2: Install `angular-sanitize`
+Subject: [PATCH 360/413] Step 22.2: Install `angular-sanitize`
 
 ---
  package.json | 1 +
@@ -13295,10 +13319,10 @@ index 4c15c16..056163e 100644
 2.7.4
 
 
-From 1d4341e4d70486421f5e57b372161004c5edaca0 Mon Sep 17 00:00:00 2001
+From 9118c45fdd5dd1e89d6daaa2db36eb326b6e9af3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:08:38 +0200
-Subject: [PATCH 360/412] Step 22.3: ngSanitize as a dependency
+Subject: [PATCH 361/413] Step 22.3: ngSanitize as a dependency
 
 ---
  imports/ui/components/socially/socially.js | 2 ++
@@ -13328,10 +13352,10 @@ index 21940eb..ada6751 100644
 2.7.4
 
 
-From a9b30e370d7045537335e2f3358aec08be919e1c Mon Sep 17 00:00:00 2001
+From a7feecf2480b4079617d50e1daa12978a0d7b7ff Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:48:44 +0200
-Subject: [PATCH 361/412] Step 22.4: Import ionic and add as a dependency
+Subject: [PATCH 362/413] Step 22.4: Import ionic and add as a dependency
 
 ---
  imports/ui/components/socially/socially.js | 5 ++++-
@@ -13364,10 +13388,10 @@ index ada6751..f72bc21 100644
 2.7.4
 
 
-From 9707a6f39cd2cf988b01bcc78e1a751f8f09cd0d Mon Sep 17 00:00:00 2001
+From 0361d9a11ff486b882c61fc5b9322f6750c2f014 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:49:08 +0200
-Subject: [PATCH 362/412] Step 22.5: Import ionic styles
+Subject: [PATCH 363/413] Step 22.5: Import ionic styles
 
 ---
  imports/ui/components/socially/socially.js | 1 +
@@ -13389,10 +13413,10 @@ index f72bc21..ac7ac39 100644
 2.7.4
 
 
-From fd33cb66869cf4a21a6350b2056eba85bcba8561 Mon Sep 17 00:00:00 2001
+From 3669e7368a60a57b090ac11e75c8c932fc514363 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:50:26 +0200
-Subject: [PATCH 363/412] Step 22.6: Create view of Socially for web
+Subject: [PATCH 364/413] Step 22.6: Create view of Socially for web
 
 ---
  imports/ui/components/socially/web.html | 3 +++
@@ -13412,10 +13436,10 @@ index 0000000..7fdb2de
 2.7.4
 
 
-From b48603ff124896ed1b231ec209765226fa4a11ee Mon Sep 17 00:00:00 2001
+From d8442683983e29b97372a0c30d3566cda6bc054a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:51:02 +0200
-Subject: [PATCH 364/412] Step 22.7: Create mobile view
+Subject: [PATCH 365/413] Step 22.7: Create mobile view
 
 ---
  imports/ui/components/socially/mobile.html | 3 +++
@@ -13435,10 +13459,10 @@ index 0000000..b0de4a9
 2.7.4
 
 
-From 9be59a891e5c58717f29acbfab1f8185d0761b88 Mon Sep 17 00:00:00 2001
+From 176f285a07fea86d5c456bc6d77cd2ba8b1f41f7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:53:48 +0200
-Subject: [PATCH 365/412] Step 22.8: Implement web and mobile views
+Subject: [PATCH 366/413] Step 22.8: Implement web and mobile views
 
 ---
  imports/ui/components/socially/socially.js | 6 +++++-
@@ -13472,10 +13496,10 @@ index ac7ac39..ff140a5 100644
 2.7.4
 
 
-From a6eb4e473067633690382cc3ebd83e56d1a84f05 Mon Sep 17 00:00:00 2001
+From 86dc0001012c625a7bbdb5cdf83a43b20c4c55a6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:17:24 +0200
-Subject: [PATCH 366/412] Step 22.9: Remove old view
+Subject: [PATCH 367/413] Step 22.9: Remove old view
 
 ---
  imports/ui/components/socially/socially.html | 3 ---
@@ -13495,10 +13519,10 @@ index 7fdb2de..0000000
 2.7.4
 
 
-From 0cd0de00182dda4dd3a4912abfcaa4c54553cba5 Mon Sep 17 00:00:00 2001
+From dfb46b1260a175ffaffbfeaf1f117a39727b01bd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:18:14 +0200
-Subject: [PATCH 367/412] Step 22.10: Add title
+Subject: [PATCH 368/413] Step 22.10: Add title
 
 ---
  imports/ui/components/socially/mobile.html | 3 +++
@@ -13519,10 +13543,10 @@ index b0de4a9..7751a6f 100644
 2.7.4
 
 
-From 168cc59b9e41cde85ad99283e89737f61917d986 Mon Sep 17 00:00:00 2001
+From c0d9256a545b7ec43fa491601f7417d73b9ee462 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:19:33 +0200
-Subject: [PATCH 368/412] Step 22.11: Create web view of PartiesList
+Subject: [PATCH 369/413] Step 22.11: Create web view of PartiesList
 
 ---
  imports/ui/components/partiesList/web.html | 57 ++++++++++++++++++++++++++++++
@@ -13596,10 +13620,10 @@ index 0000000..de5d229
 2.7.4
 
 
-From 70e90cbc9d4aa191b58e237c9b16b893f57feeff Mon Sep 17 00:00:00 2001
+From 61375368983621f456632b1b0e57ff71bcf1ed70 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:20:02 +0200
-Subject: [PATCH 369/412] Step 22.12: Remove old view
+Subject: [PATCH 370/413] Step 22.12: Remove old view
 
 ---
  imports/ui/components/partiesList/partiesList.html | 57 ----------------------
@@ -13673,10 +13697,10 @@ index de5d229..0000000
 2.7.4
 
 
-From 2fea39102e7994a6ade2d77a76e5644cead4d828 Mon Sep 17 00:00:00 2001
+From 0055abf72ef0f964efa8e259e901affc4b579554 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:20:56 +0200
-Subject: [PATCH 370/412] Step 22.13: Create mobile view
+Subject: [PATCH 371/413] Step 22.13: Create mobile view
 
 ---
  imports/ui/components/partiesList/mobile.html | 22 ++++++++++++++++++++++
@@ -13715,10 +13739,10 @@ index 0000000..c2c838a
 2.7.4
 
 
-From a51ff23106fb73b8abf363b5204b2bef493ca347 Mon Sep 17 00:00:00 2001
+From ba4f012bf25966de954ac8dc8adef90798215b9c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:21:54 +0200
-Subject: [PATCH 371/412] Step 22.14: Implement new views
+Subject: [PATCH 372/413] Step 22.14: Implement new views
 
 ---
  imports/ui/components/partiesList/partiesList.js | 5 ++++-
@@ -13752,10 +13776,10 @@ index 9e90e1f..df916d9 100644
 2.7.4
 
 
-From e251f748844feea27ee5d21c3ae7dea5b85a30b0 Mon Sep 17 00:00:00 2001
+From 13a42685de852e16b095168d5bca8cf954fceda0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:22:45 +0200
-Subject: [PATCH 372/412] Step 22.15: Remove top margin of the first card
+Subject: [PATCH 373/413] Step 22.15: Remove top margin of the first card
 
 ---
  imports/ui/components/partiesList/partiesList.less | 4 ++++
@@ -13780,10 +13804,10 @@ index b0bc5dc..08e59d6 100644
 2.7.4
 
 
-From 5d389b8468dd85b780949d836a79a2dc7da51f7d Mon Sep 17 00:00:00 2001
+From 6e7ade1c73d6788ccda72ca2d272e53d68211230 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:25:39 +0200
-Subject: [PATCH 373/412] Step 22.16: Create DisplayImageFilter
+Subject: [PATCH 374/413] Step 22.16: Create DisplayImageFilter
 
 ---
  imports/ui/filters/displayImageFilter.js | 26 ++++++++++++++++++++++++++
@@ -13826,10 +13850,10 @@ index 0000000..aa2dfda
 2.7.4
 
 
-From d0a1c710cdb6a3c58678332f9d4693f6fad3dd2e Mon Sep 17 00:00:00 2001
+From 2c42f3b460e2b566fb6aa6526666e0d06aa820f0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:26:55 +0200
-Subject: [PATCH 374/412] Step 22.17: Add new filter to PartyImage
+Subject: [PATCH 375/413] Step 22.17: Add new filter to PartyImage
 
 ---
  imports/ui/components/partyImage/partyImage.js | 4 +++-
@@ -13861,10 +13885,10 @@ index 5b636b8..64384c0 100644
 2.7.4
 
 
-From 1bd35e9533c88b3b160c47a79e6686b36475b159 Mon Sep 17 00:00:00 2001
+From 6c8624fde9030000904b88d4100bde7971a22c2c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:27:28 +0200
-Subject: [PATCH 375/412] Step 22.18: Implement DisplayImageFilter
+Subject: [PATCH 376/413] Step 22.18: Implement DisplayImageFilter
 
 ---
  imports/ui/components/partyImage/partyImage.html | 2 +-
@@ -13881,10 +13905,10 @@ index 719c4a3..04693e3 100644
 2.7.4
 
 
-From 309b2a61933543bbf615596d5d1b48e9b3ed4f36 Mon Sep 17 00:00:00 2001
+From 2d90255e49b07d1c340c92f37f17db17e6d9510c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:43:49 +0200
-Subject: [PATCH 376/412] Step 23.1: Remove pbastowski:angular-babel
+Subject: [PATCH 377/413] Step 23.1: Remove pbastowski:angular-babel
 
 ---
  .meteor/packages | 1 -
@@ -13919,10 +13943,10 @@ index c58233f..4a91d22 100644
 2.7.4
 
 
-From f21e3fdf331f9fb2fde65dbfa38b8d541387f489 Mon Sep 17 00:00:00 2001
+From 6ee4883b12260c1289bd7b512c2e276b199d50e3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:44:49 +0200
-Subject: [PATCH 377/412] Step 23.2: Add mys:typescript-ng-annotate
+Subject: [PATCH 378/413] Step 23.2: Add mys:typescript-ng-annotate
 
 ---
  .meteor/packages | 1 +
@@ -13963,10 +13987,10 @@ index 4a91d22..9877888 100644
 2.7.4
 
 
-From 3e90bf29ac9bff2e6567380f6d259bbf74be49e1 Mon Sep 17 00:00:00 2001
+From 526e8b259c7d4fdb9fb42fe83eb734e67bed00cf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:46:33 +0200
-Subject: [PATCH 378/412] Step 23.3: Rename main file and make few changes to
+Subject: [PATCH 379/413] Step 23.3: Rename main file and make few changes to
  support typescript
 
 ---
@@ -14030,10 +14054,10 @@ index 0000000..1b2a4c5
 2.7.4
 
 
-From c50efaa64e381167cffae75957fff7e01a0423f2 Mon Sep 17 00:00:00 2001
+From 821d60e9049cb75449f5978ec3080392dfa04177 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:49:27 +0200
-Subject: [PATCH 379/412] Step 23.4: Default imports of libraries inside
+Subject: [PATCH 380/413] Step 23.4: Default imports of libraries inside
  Socially component
 
 ---
@@ -14219,10 +14243,10 @@ index 0000000..35393c3
 2.7.4
 
 
-From 604911f1a42804616e56461e20a5107b4773072e Mon Sep 17 00:00:00 2001
+From 89e6ba79516b690b60b64527c0dd977464a8ba2f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:50:49 +0200
-Subject: [PATCH 380/412] Step 23.5: Default imports of components
+Subject: [PATCH 381/413] Step 23.5: Default imports of components
 
 ---
  imports/ui/components/socially/socially.ts | 16 ++++++++--------
@@ -14266,10 +14290,10 @@ index 35393c3..e982f1b 100644
 2.7.4
 
 
-From 4569b216998f332fc5e66b3c53ff35db613b3f64 Mon Sep 17 00:00:00 2001
+From 532b7812d9d55ce1191b415d25fbd842345f968a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:19:19 +0200
-Subject: [PATCH 381/412] Step 23.6: Move everything to typescript
+Subject: [PATCH 382/413] Step 23.6: Move everything to typescript
 
 ---
  imports/api/images/collection.js                   |  21 ---
@@ -19136,10 +19160,10 @@ index 0000000..2b47936
 2.7.4
 
 
-From a9b39ddf547e9887568749b5786f45e139e7c01b Mon Sep 17 00:00:00 2001
+From 6906650f9ee2122a023b517d580f3bdf06d1f97f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:20:56 +0200
-Subject: [PATCH 382/412] Step 23.7: Import underscore correctly inside Parties
+Subject: [PATCH 383/413] Step 23.7: Import underscore correctly inside Parties
  Methods
 
 ---
@@ -19160,10 +19184,10 @@ index e8aa1ad..b6c7ff9 100644
 2.7.4
 
 
-From 76c138075c303529380bb9ce999f33e899f590e9 Mon Sep 17 00:00:00 2001
+From 87e516d500600b0d0caff6e75f398ec0c5c93bc1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:28:32 +0200
-Subject: [PATCH 383/412] Step 23.8: Install angular2 modules
+Subject: [PATCH 384/413] Step 23.8: Install angular2 modules
 
 ---
  package.json | 17 +++++++++++++++--
@@ -19217,10 +19241,10 @@ index 056163e..191802a 100644
 2.7.4
 
 
-From 144a93714b43cb82e2a750a725aef69e71f9dce6 Mon Sep 17 00:00:00 2001
+From 42fca357ca5c8104836539dffa4d88189586f432 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:29:54 +0200
-Subject: [PATCH 384/412] Step 23.9: Create module with instance of
+Subject: [PATCH 385/413] Step 23.9: Create module with instance of
  UpgradeAdapter
 
 ---
@@ -19240,10 +19264,10 @@ index 0000000..66add32
 2.7.4
 
 
-From 7eb5c10c158a1fe2e75f25b631fcb4d320e11249 Mon Sep 17 00:00:00 2001
+From 5c6168184b8de158e7ca8d989b8bedca29ab5a71 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:34:01 +0200
-Subject: [PATCH 385/412] Step 23.10: bootstrap using UpgradeAdapter
+Subject: [PATCH 386/413] Step 23.10: bootstrap using UpgradeAdapter
 
 ---
  client/main.ts | 4 +++-
@@ -19272,10 +19296,10 @@ index 1b2a4c5..7da2f40 100644
 2.7.4
 
 
-From f36732b4e4ead3212f747cd59e31deb75f6bdd6c Mon Sep 17 00:00:00 2001
+From 51840c409f743cafd525befac67477ffe9910c0c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:36:26 +0200
-Subject: [PATCH 386/412] Step 23.11: Create displayNamePipe based on
+Subject: [PATCH 387/413] Step 23.11: Create displayNamePipe based on
  displayNameFilter
 
 ---
@@ -19317,10 +19341,10 @@ index 0000000..f1d9804
 2.7.4
 
 
-From eb962975b88a5101a1e907f1c757aef142c2f0f4 Mon Sep 17 00:00:00 2001
+From cb29cd6063d05c22656c1a058e6912df5c7ce567 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:37:50 +0200
-Subject: [PATCH 387/412] Step 23.12: Create UninvitedPipe based on
+Subject: [PATCH 388/413] Step 23.12: Create UninvitedPipe based on
  UninvitedFilter
 
 ---
@@ -19358,10 +19382,10 @@ index 0000000..523c74d
 2.7.4
 
 
-From 9796e4c08f25139110c6901dd5c53b8f7dba2f16 Mon Sep 17 00:00:00 2001
+From 43f8dfe8fc44f0bff3458b3522e6d6a09efa8e10 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:38:26 +0200
-Subject: [PATCH 388/412] Step 23.13: Return an empty array instead of false
+Subject: [PATCH 389/413] Step 23.13: Return an empty array instead of false
 
 ---
  imports/ui/filters/uninvitedPipe.ts | 2 +-
@@ -19384,10 +19408,10 @@ index 523c74d..b40208e 100644
 2.7.4
 
 
-From c0a7e1f023ac1f2a239f3bd678ebf912d50040d4 Mon Sep 17 00:00:00 2001
+From cd95e100ed8ffade18d8f0af211bc784c8c2134a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:41:15 +0200
-Subject: [PATCH 389/412] Step 23.14: Use Component decorator
+Subject: [PATCH 390/413] Step 23.14: Use Component decorator
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.ts | 5 +++++
@@ -19419,10 +19443,10 @@ index 7b9d39f..eb66e42 100644
 2.7.4
 
 
-From f7f3ac447590ccfc866f96dd189ab56d2a5f598b Mon Sep 17 00:00:00 2001
+From 4408e965066a364160992c3afeab2a70d6d10aa2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:42:41 +0200
-Subject: [PATCH 390/412] Step 23.15: Use Pipes instead of Filters
+Subject: [PATCH 391/413] Step 23.15: Use Pipes instead of Filters
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.ts | 14 ++++++++------
@@ -19467,10 +19491,10 @@ index eb66e42..8f0a56e 100644
 2.7.4
 
 
-From aa20bf0ab8c5cdd90993887c6f00647112d0a423 Mon Sep 17 00:00:00 2001
+From 00960bb93b79d11735d58f606b081a8ae62736d5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:43:28 +0200
-Subject: [PATCH 391/412] Step 23.16: Extend by MeteorComponent
+Subject: [PATCH 392/413] Step 23.16: Extend by MeteorComponent
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.ts | 4 +++-
@@ -19504,10 +19528,10 @@ index 8f0a56e..56de806 100644
 2.7.4
 
 
-From 289032aafbbbcfcb2eec206582338e8fb3104bac Mon Sep 17 00:00:00 2001
+From 512ec065fc35d518f148d33a63be99e45685a5fd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:44:43 +0200
-Subject: [PATCH 392/412] Step 23.17: Switch to MeteorComponent API
+Subject: [PATCH 393/413] Step 23.17: Switch to MeteorComponent API
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.ts | 11 +++--------
@@ -19541,10 +19565,10 @@ index 56de806..2f31a7c 100644
 2.7.4
 
 
-From 113deb4c9379c4eb147725bb1f4623fea1a2b396 Mon Sep 17 00:00:00 2001
+From 6662d8fcb57873c1e44b6f8aa0d1253e6292452e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:46:33 +0200
-Subject: [PATCH 393/412] Step 23.18: Use downgraded Ng2 Component
+Subject: [PATCH 394/413] Step 23.18: Use downgraded Ng2 Component
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.ts | 10 ++--------
@@ -19579,10 +19603,10 @@ index 2f31a7c..ea3094d 100644
 2.7.4
 
 
-From d839f4feff31a46cc001677eecd3cbb314cbe3f8 Mon Sep 17 00:00:00 2001
+From 977135c62e40cb6d211072e491060136a5da838f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:47:23 +0200
-Subject: [PATCH 394/412] Step 23.19: Define binding
+Subject: [PATCH 395/413] Step 23.19: Define binding
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.ts | 4 +++-
@@ -19613,10 +19637,10 @@ index ea3094d..677eb55 100644
 2.7.4
 
 
-From 45c4b6caa7116bdc3cda746d1e3474330c5d4313 Mon Sep 17 00:00:00 2001
+From 9ac17858cf5f5a763d45c07ab3386aff7dc95297 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:49:03 +0200
-Subject: [PATCH 395/412] Step 23.20: Remove prefix in template
+Subject: [PATCH 396/413] Step 23.20: Remove prefix in template
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 4 ++--
@@ -19643,10 +19667,10 @@ index 84b3eaf..0d7f5b3 100644
 2.7.4
 
 
-From e1fce62fa159157abcbc47803bde5e396ee4024f Mon Sep 17 00:00:00 2001
+From ff63fd17e47013b9d3cc33986ee0374286c8df21 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:50:26 +0200
-Subject: [PATCH 396/412] Step 23.21: Switch to pipes
+Subject: [PATCH 397/413] Step 23.21: Switch to pipes
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 6 +++---
@@ -19674,10 +19698,10 @@ index 0d7f5b3..4297572 100644
 2.7.4
 
 
-From 3f107e5e8d64ffdd5b5a7a23d25433d13c3b011c Mon Sep 17 00:00:00 2001
+From 670e5cfadcd03d5fa75414bbee2683fc082177a3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:50:47 +0200
-Subject: [PATCH 397/412] Step 23.22: Switch to ngFor
+Subject: [PATCH 398/413] Step 23.22: Switch to ngFor
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 2 +-
@@ -19700,10 +19724,10 @@ index 4297572..50de7a3 100644
 2.7.4
 
 
-From 05058f8e81b5423b2feaacb133ddc48ed9e99a1a Mon Sep 17 00:00:00 2001
+From c28bb013fc037ddd6e72eabb09fb36492aa3ef9e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:51:10 +0200
-Subject: [PATCH 398/412] Step 23.23: Switch to ngIf
+Subject: [PATCH 399/413] Step 23.23: Switch to ngIf
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 2 +-
@@ -19726,10 +19750,10 @@ index 50de7a3..ee66c5c 100644
 2.7.4
 
 
-From 36426413c40d3445300dda34397c870269951d2f Mon Sep 17 00:00:00 2001
+From 218f23674d916d7d5f18336e10009529bc39f4b2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:51:26 +0200
-Subject: [PATCH 399/412] Step 23.24: Switch to (click)
+Subject: [PATCH 400/413] Step 23.24: Switch to (click)
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.html | 2 +-
@@ -19752,10 +19776,10 @@ index ee66c5c..86907aa 100644
 2.7.4
 
 
-From 8220171e7d328d8e0a3bdc11e92b1eeebb5d760d Mon Sep 17 00:00:00 2001
+From 4ea1eca5f7850beefe7a63fde1fdd8005ed5be98 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:04:45 +0200
-Subject: [PATCH 400/412] Step 23.25: Use one-way binding
+Subject: [PATCH 401/413] Step 23.25: Use one-way binding
 
 ---
  imports/ui/components/partyDetails/partyDetails.html | 2 +-
@@ -19776,10 +19800,10 @@ index 59fe896..b958299 100644
 2.7.4
 
 
-From 0dae4247cd65d936520e101d0c1a46ce80add4d7 Mon Sep 17 00:00:00 2001
+From 16f06f9edca79fb30a308bd75ad915b396f24211 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:26:15 +0200
-Subject: [PATCH 401/412] Step 23.26: Implement Component decorator in
+Subject: [PATCH 402/413] Step 23.26: Implement Component decorator in
  PartyDetails
 
 ---
@@ -19818,10 +19842,10 @@ index f8f5565..0795403 100644
 2.7.4
 
 
-From 44ef173c9fc30b1f8dbccee48b25f6d65c2a83b1 Mon Sep 17 00:00:00 2001
+From e3753458266d2746be0c3ac4cf6e32b2f48352ec Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:26:55 +0200
-Subject: [PATCH 402/412] Step 23.27: upgrade PartyMap to be used inside Ng2
+Subject: [PATCH 403/413] Step 23.27: upgrade PartyMap to be used inside Ng2
  Component
 
 ---
@@ -19846,10 +19870,10 @@ index 0795403..366b7b3 100644
 2.7.4
 
 
-From f85d392f9cc8def74051a6012168f3b09881d1c0 Mon Sep 17 00:00:00 2001
+From 23eb82662b15f206c45a68ebce1fe733a510e34f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:28:14 +0200
-Subject: [PATCH 403/412] Step 23.28: Use MeteorComponent
+Subject: [PATCH 404/413] Step 23.28: Use MeteorComponent
 
 ---
  imports/ui/components/partyDetails/partyDetails.ts | 36 ++++++++++------------
@@ -19918,10 +19942,10 @@ index 366b7b3..37b516b 100644
 2.7.4
 
 
-From c257e34218fa2385e47ec5f3d11a79b531e6a1f1 Mon Sep 17 00:00:00 2001
+From e12c940566f76e2dfad47664a85d1e4a0ade4fef Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:29:10 +0200
-Subject: [PATCH 404/412] Step 23.29: Downgrade PartyDetails to ng1 directive
+Subject: [PATCH 405/413] Step 23.29: Downgrade PartyDetails to ng1 directive
 
 ---
  imports/ui/components/partyDetails/partyDetails.ts | 7 +------
@@ -19950,10 +19974,10 @@ index 37b516b..5013227 100644
 2.7.4
 
 
-From ad770923faee85967976d44e92e25be173bbf613 Mon Sep 17 00:00:00 2001
+From fea42615ac145b726807d164777d3ce25e9885b2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:30:13 +0200
-Subject: [PATCH 405/412] Step 23.30: Implement ng2 component inside ui-router
+Subject: [PATCH 406/413] Step 23.30: Implement ng2 component inside ui-router
  template
 
 ---
@@ -19982,10 +20006,10 @@ index 5013227..8ae4f5d 100644
 2.7.4
 
 
-From 83e06a544ebc5cbfa89b0aa6569e6b5b0da046d7 Mon Sep 17 00:00:00 2001
+From 07ca6e86a45a637a730b214798f90c18c9b118d2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:31:08 +0200
-Subject: [PATCH 406/412] Step 23.31: Define bindings
+Subject: [PATCH 407/413] Step 23.31: Define bindings
 
 ---
  imports/ui/components/partyDetails/partyDetails.ts | 6 +++---
@@ -20019,10 +20043,10 @@ index 8ae4f5d..7d0ae80 100644
 2.7.4
 
 
-From 7351aa74905a0ea361c0c3650b3a1a646dd70d86 Mon Sep 17 00:00:00 2001
+From 71e4bbefbab0b247d2bc8cfbcc2b4bd224c81b75 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:51:38 +0200
-Subject: [PATCH 407/412] Step 23.32: Remove ng1 from PartyUninvited
+Subject: [PATCH 408/413] Step 23.32: Remove ng1 from PartyUninvited
 
 ---
  imports/ui/components/partyUninvited/partyUninvited.ts | 12 +-----------
@@ -20070,10 +20094,10 @@ index 677eb55..239c1b2 100644
 2.7.4
 
 
-From 202b370b28303a7dc441cc169b61b65a01761dc0 Mon Sep 17 00:00:00 2001
+From f9f905b7bf52885db9ce3064e14578ed4a017664 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:53:13 +0200
-Subject: [PATCH 408/412] Step 23.33: Install material2
+Subject: [PATCH 409/413] Step 23.33: Install material2
 
 ---
  package.json | 7 +++++--
@@ -20108,10 +20132,10 @@ index 191802a..612a1ce 100644
 2.7.4
 
 
-From dea06e9417a94db8d795ef859d1390cacde44bd9 Mon Sep 17 00:00:00 2001
+From f81686dbc00e0ab92f3f28be0f75ab9b4877c1b1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:55:35 +0200
-Subject: [PATCH 409/412] Step 23.34: Import material2 directives
+Subject: [PATCH 410/413] Step 23.34: Import material2 directives
 
 ---
  imports/ui/components/partyDetails/partyDetails.ts | 6 ++++++
@@ -20145,10 +20169,10 @@ index 7d0ae80..44b0263 100644
 2.7.4
 
 
-From d725429749fdd351aab19a3c9e9356fa27983305 Mon Sep 17 00:00:00 2001
+From c61f3785ff4eccffd291d6b0c7403ee60d057bf1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 20:10:28 +0200
-Subject: [PATCH 410/412] Step 23.35: Implement material2
+Subject: [PATCH 411/413] Step 23.35: Implement material2
 
 ---
  imports/ui/components/partyDetails/partyDetails.html | 20 +++++++-------------
@@ -20198,10 +20222,10 @@ index b958299..6e15443 100644
 2.7.4
 
 
-From 5706831fd8b32683f13e161caf0fc6e3cae6dc33 Mon Sep 17 00:00:00 2001
+From 04762bcd4c1c491963914637749306cc83d8bc29 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 10:27:29 +0200
-Subject: [PATCH 411/412] Add README
+Subject: [PATCH 412/413] Add README
 
 ---
  README.md | 61 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -20279,10 +20303,10 @@ index 0000000..95fd557
 2.7.4
 
 
-From f6ef2b229ca9a7d2411decc5547971141ed58932 Mon Sep 17 00:00:00 2001
+From b3cb4721eca2b298ce9e324f16b3cc7f0193ad61 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 10:28:34 +0200
-Subject: [PATCH 412/412] Add EDIT_THIS_TUTORIAL.md
+Subject: [PATCH 413/413] Add EDIT_THIS_TUTORIAL.md
 
 ---
  EDIT_THIS_TUTORIAL.md | 192 ++++++++++++++++++++++++++++++++++++++++++++++++++
