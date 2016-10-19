@@ -1,5 +1,5 @@
 {{#template name="tutorials.whatsapp.meteor.step_02.md"}}
-
+{{> downloadPreviousStep stepName="step_01"}}
 
 In this step we are going to add several features to our project:
 

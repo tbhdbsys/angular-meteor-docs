@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.meteor.step_01.md"}}
+{{> downloadPreviousStep stepName="step_00"}}
 
 We will start by creating the project’s folder structure, `Meteor` has a special behavior for certain folders:
 

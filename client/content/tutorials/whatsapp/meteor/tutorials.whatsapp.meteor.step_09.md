@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.meteor.step_09.md"}}
+{{> downloadPreviousStep stepName="step_08"}}
 
 Congratulations!
 

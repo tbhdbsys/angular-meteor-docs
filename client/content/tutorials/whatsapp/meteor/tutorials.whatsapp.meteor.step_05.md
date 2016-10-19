@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp.meteor.step_05.md"}}
+{{> downloadPreviousStep stepName="step_04"}}
 
 Our next step is about adding new chats. So far we have the chats list implemented and user management, we just need to connect the two.
 
