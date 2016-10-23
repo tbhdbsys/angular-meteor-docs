@@ -13,7 +13,7 @@ Although it is possible to just replace the old JavaScript compiler with a TypeS
 
     meteor add mys:typescript-ng-annotate
 
-Once our app is fully migrated to Angular2, we will replace `mys:typescript-ng-annotate` with `barbatus:typescript`, a package which will provide you with a pure TypeScript compiler.
+Once our app is fully migrated to Angular2, we will replace `mys:typescript-ng-annotate` with `barbatus:typescript`, a package which will provide you with a pure TypeScript compiler. TypeScript compiler also relies on [declerations](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html), which can be installed via package manager called `typings`. Further informations about `typings` and how to install it can be found [here](https://github.com/typings/typings). This step is very long and its purpose is only to provide you with the right tools on how to upgrade your app, hence we're not going to focus on TypeScript deceleration files any further, but know that you might get related warnings during compilation time!
 
 Now that the compiler is ready we will start by switching our entry file into TypeScript:
 
