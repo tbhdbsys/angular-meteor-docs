@@ -45,6 +45,4 @@ And finally, we will install `angular-meteor`:
 
     $ meteor npm install angular-meteor --save
 
-Dependent libraries like `AngularJS` will be added automatically so you shouldn't worry about that.
-
 {{/template}}
