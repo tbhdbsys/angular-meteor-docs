@@ -20544,22 +20544,22 @@ index a106644..6d99f70 100644
 2.7.4
 
 
-From 5a1f1873926abc6e1198daff7a8f7d651dfc20d5 Mon Sep 17 00:00:00 2001
+From 94037181ed2143e8f49d975d57c36d905742ce2f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 10:27:29 +0200
 Subject: [PATCH 412/414] Add README
 
 ---
- README.md | 61 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 1 file changed, 61 insertions(+)
+ README.md | 71 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 71 insertions(+)
  create mode 100644 README.md
 
 diff --git a/README.md b/README.md
 new file mode 100644
-index 0000000..95fd557
+index 0000000..aee502e
 --- /dev/null
 +++ b/README.md
-@@ -0,0 +1,61 @@
+@@ -0,0 +1,71 @@
 +# meteor-angular-socially - [Tutorial's site](http://angular-meteor.com/tutorialIntro)
 +angular-meteor example and tutorial app.
 +
@@ -20611,7 +20611,6 @@ index 0000000..95fd557
 +Before starting the next assignment, make sure [your fork matches the current](https://github.com/Urigo/meteor-angular-socially/blob/master/guides/git.md ) assignment step branch (`step_NUMBER_u`) since only one Pull Request can be accepted.
 +
 +### How can I help?
-+
 +There are lots of way you can help make this experiment succeed and help shape a new format for teaching development skills:
 +Submit Pull Requests to improve this readme, add examples, write quick tutorials on how to work with git, etc.
 +Add new steps to angular-meteor-socially tutorial.
@@ -20619,13 +20618,24 @@ index 0000000..95fd557
 +Randomly pick submitted Pull Request and review them, offering advice and helping others improve their skills.
 +Submit Pull Request or open issues with proposals for [angular-meteor](https://github.com/Urigo/angular-meteor)
 +
++### How do I Start?
++First you'll have to install all dependent `npm` packages:
++
++    $ meteor npm install
++
++And to start the application, simply type:
++
++    $ meteor run
++
++You can also provide an optional `--port` option if you would like to run the app on a port different than 3000. Note whenever the app is being built you will receive some TypeScript compilations warnings. This is normal and caused due to Socially not being fully migrated to Angular2. Further information can be found in [step 23](https://www.angular-meteor.com/tutorials/socially/angular1/migration-to-angular2);
++
 +### Anything else?
 +[Open an issue](https://github.com/Urigo/meteor-angular-socially/issues/new), it's free.
 -- 
 2.7.4
 
 
-From 4b7d4a6f35546d84c53561a62cdfdc8e64b8c7e0 Mon Sep 17 00:00:00 2001
+From 61430858c2e57c06551b7dd95d42f44260e3578c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 10:28:34 +0200
 Subject: [PATCH 413/414] Add EDIT_THIS_TUTORIAL.md
@@ -20837,7 +20847,7 @@ index 0000000..b0f831a
 2.7.4
 
 
-From c93749cacaa52a4f80bb42bfe074abff6395ca3e Mon Sep 17 00:00:00 2001
+From c50df5496f93ed589ff2a3a5a3f67f8744fc3ee9 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Wed, 19 Oct 2016 13:15:21 -0200
 Subject: [PATCH 414/414] Add LICENSE
