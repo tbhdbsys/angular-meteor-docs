@@ -68,7 +68,7 @@ API_1_3_11 = function (version, basedOnTemplatesOf) {
             path: urlBase + "auth",
             title: "$auth",
             seoTitle: "$auth",
-            mdContent: "api." + version + ".auth"
+            mdContent: "api." + templatePrefix + ".auth"
           },
           {
             id: "08",
