@@ -8906,15 +8906,17 @@ index 17aeb99..522cc38 100644
 2.7.4
 
 
-From 1a01fb15bb36f979cc7ae806211edd6d38715f1a Mon Sep 17 00:00:00 2001
+From 341d3cd331a324c64a79f4ab4885130232326972 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:26:23 +0200
 Subject: [PATCH 248/414] Step 17.40: Remove unused partyRsvpUsers
 
 ---
- imports/ui/components/partyRsvpUsers/partyRsvpUsers.html | 5 -----
- 1 file changed, 5 deletions(-)
+ .../components/partyRsvpUsers/partyRsvpUsers.html  |  5 ----
+ .../ui/components/partyRsvpUsers/partyRsvpUsers.js | 29 ----------------------
+ 2 files changed, 34 deletions(-)
  delete mode 100644 imports/ui/components/partyRsvpUsers/partyRsvpUsers.html
+ delete mode 100644 imports/ui/components/partyRsvpUsers/partyRsvpUsers.js
 
 diff --git a/imports/ui/components/partyRsvpUsers/partyRsvpUsers.html b/imports/ui/components/partyRsvpUsers/partyRsvpUsers.html
 deleted file mode 100644
@@ -8927,11 +8929,46 @@ index 445d426..0000000
 -  -
 -  {{ partyRsvpUsers.type }}
 -</div>
+diff --git a/imports/ui/components/partyRsvpUsers/partyRsvpUsers.js b/imports/ui/components/partyRsvpUsers/partyRsvpUsers.js
+deleted file mode 100644
+index 1b4f1fa..0000000
+--- a/imports/ui/components/partyRsvpUsers/partyRsvpUsers.js
++++ /dev/null
+@@ -1,29 +0,0 @@
+-import angular from 'angular';
+-import angularMeteor from 'angular-meteor';
+-
+-import { Meteor } from 'meteor/meteor';
+-
+-import template from './partyRsvpUsers.html';
+-import { name as DisplayNameFilter } from '../../filters/displayNameFilter';
+-
+-class PartyRsvpUsers {
+-  getUserById(userId) {
+-    return Meteor.users.findOne(userId);
+-  }
+-}
+-
+-const name = 'partyRsvpUsers';
+-
+-// create a module
+-export default angular.module(name, [
+-  angularMeteor,
+-  DisplayNameFilter
+-]).component(name, {
+-  template,
+-  controllerAs: name,
+-  bindings: {
+-    rsvps: '<',
+-    type: '@'
+-  },
+-  controller: PartyRsvpUsers
+-});
 -- 
 2.7.4
 
 
-From fa0b7c4161195c526233cede216f2039b81dba71 Mon Sep 17 00:00:00 2001
+From 071309c60270f41744f73eaa48f8a963e8d2ab1d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:26:40 +0200
 Subject: [PATCH 249/414] Step 17.41: Remove unused partyUnanswered
@@ -9003,7 +9040,7 @@ index 39f2115..0000000
 2.7.4
 
 
-From 4425fcd0c2bb3d6d094105f4381561bfa0405722 Mon Sep 17 00:00:00 2001
+From 2544389d0083fe85d5555c620b24793dad271cd4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:27:20 +0200
 Subject: [PATCH 250/414] Step 17.42: Remove PartyUnanswered
@@ -9038,7 +9075,7 @@ index a8e8e0f..ec99584 100644
 2.7.4
 
 
-From 678d916d988e14c4ac168d2e4de9fdd3b90b46f8 Mon Sep 17 00:00:00 2001
+From 76ec2382ae81aa83772b80fa866aa173918cfb45 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:27:38 +0200
 Subject: [PATCH 251/414] Step 17.43: Remove PartyRsvpUsers
@@ -9073,7 +9110,7 @@ index c1ebd92..755c9f9 100644
 2.7.4
 
 
-From ef8abdeb9cf3d428bed87209fbe11ca29038f83c Mon Sep 17 00:00:00 2001
+From b59c012cc4a61dd00bf6714b6b799cda05981c12 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:37:40 +0200
 Subject: [PATCH 252/414] Step 18.1: Uninstall `bootstrap`
@@ -9098,7 +9135,7 @@ index 158bf82..af5599d 100644
 2.7.4
 
 
-From 2d3036c30c8db839ffda2b85550e9e18114b29d2 Mon Sep 17 00:00:00 2001
+From 2932110b2f1be6ff2b3d1cd13a2a2ff91be701e3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:38:13 +0200
 Subject: [PATCH 253/414] Step 18.2: Install `angular-material`
@@ -9127,7 +9164,7 @@ index af5599d..8971ed8 100644
 2.7.4
 
 
-From ab522557839ec72ff702fc66937b1c209c9304b2 Mon Sep 17 00:00:00 2001
+From 0d28c1d741b71865f876fc505abeac7471affced Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:38:56 +0200
 Subject: [PATCH 254/414] Step 18.3: Add css
@@ -9152,7 +9189,7 @@ index 937c41a..0b002e3 100644
 2.7.4
 
 
-From c4c53f415b5b3561561f2cd8f337d26559472e79 Mon Sep 17 00:00:00 2001
+From bc0e51a4acd4c32d80674e894132ab462d343864 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:31:01 +0200
 Subject: [PATCH 255/414] Step 18.4: Remove bootstrap from main.js
@@ -9175,7 +9212,7 @@ index 52cb827..06731e1 100644
 2.7.4
 
 
-From 479f2f936a2f45db067a22a02b401907010f9ed3 Mon Sep 17 00:00:00 2001
+From 0bf5ebce6c0eecee3045a962fc937d2e58d90edc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:39:53 +0200
 Subject: [PATCH 256/414] Step 18.5: Add ngMaterial to Socially
@@ -9207,7 +9244,7 @@ index dec6060..e692001 100644
 2.7.4
 
 
-From 5d58a33494fd18f4753c6cdd27f9316bfce88819 Mon Sep 17 00:00:00 2001
+From dac48564ecdabe4bbed034e1c3c52294cbc020b2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:41:34 +0200
 Subject: [PATCH 257/414] Step 18.6: Clean up Socially template
@@ -9230,7 +9267,7 @@ index 2e91050..7fdb2de 100644
 2.7.4
 
 
-From fcbab1379a9f72246e0db838150326a95c0a7dcc Mon Sep 17 00:00:00 2001
+From dc525cf76aeef37c0eeb64aa8f0a2e8c20715940 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:43:06 +0200
 Subject: [PATCH 258/414] Step 18.7: Refactor Navigation
@@ -9263,7 +9300,7 @@ index 2bcae64..0b1d8a6 100644
 2.7.4
 
 
-From b982dc76bbe052eca700c931f925cf2dff42f2ed Mon Sep 17 00:00:00 2001
+From 9afaae9ce20a222fc1ef91913c324203dc0f0e14 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:43:40 +0200
 Subject: [PATCH 259/414] Step 18.8: Add space before loginButtons
@@ -9287,7 +9324,7 @@ index 4035b7b..87b8777 100644
 2.7.4
 
 
-From 8e7c7e5186bfa04d432b461300d65c39643e1b39 Mon Sep 17 00:00:00 2001
+From 1ba25644808924ebb6e20e8bed57cda36c769932 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:44:33 +0200
 Subject: [PATCH 260/414] Step 18.9: Refactor PartiesList
@@ -9414,7 +9451,7 @@ index 29c4c69..b6772eb 100644
 2.7.4
 
 
-From d6aa3b86afc95a940fdc6164da9142cab0c5dd30 Mon Sep 17 00:00:00 2001
+From 319e054a82c6eac0c0ab77c1cafead89b4836e87 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:45:55 +0200
 Subject: [PATCH 261/414] Step 18.10: Leave only one definition
@@ -9470,7 +9507,7 @@ index a1eac5c..ba0839b 100644
 2.7.4
 
 
-From 92864f4aa5753207a3c9453765e08abb22f5ae39 Mon Sep 17 00:00:00 2001
+From 65cdf86c8e55931836e9547a79922c163889cca9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:46:45 +0200
 Subject: [PATCH 262/414] Step 18.11: Refactor PartiesMap
@@ -9494,7 +9531,7 @@ index 870b2f7..a488738 100644
 2.7.4
 
 
-From 7d3512baa16072ae35ccc37be582695a90202b6b Mon Sep 17 00:00:00 2001
+From 1ed757ad279f53e91884ded808e889ecf71b598a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:47:31 +0200
 Subject: [PATCH 263/414] Step 18.12: Styles for PartiesMap
@@ -9519,7 +9556,7 @@ index 020e970..b69b834 100644
 2.7.4
 
 
-From b9356f60ad065bd31a363a3ce43cbc3c7a364399 Mon Sep 17 00:00:00 2001
+From fd3f261932599595f7613b8e52d09750359627b9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:13:36 +0200
 Subject: [PATCH 264/414] Step 18.13: Import in PartiesList
@@ -9542,7 +9579,7 @@ index ba0839b..d3f7da4 100644
 2.7.4
 
 
-From 419614bfbe74c02aee213223b36f5a4c367b13e0 Mon Sep 17 00:00:00 2001
+From 6411cc8ed6145fc1085182fc90fb522b664c4bc7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:48:05 +0200
 Subject: [PATCH 265/414] Step 18.14: Refactor PartiesSort
@@ -9574,7 +9611,7 @@ index b2a52b3..0b7a94e 100644
 2.7.4
 
 
-From 9d237b308de69af92bb3304d47b9cbe45b23a014 Mon Sep 17 00:00:00 2001
+From f965655a2ac324be912a36a7124c756523a9a908 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:48:41 +0200
 Subject: [PATCH 266/414] Step 18.15: Refactor PartyAdd
@@ -9626,7 +9663,7 @@ index 7c4d284..6e504f0 100644
 2.7.4
 
 
-From 9f4cd8488e43a884c1eda2f05b690a95129f39dc Mon Sep 17 00:00:00 2001
+From e5be7c46c6824fa098b905ecf7ea7b1b1faf925c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:49:18 +0200
 Subject: [PATCH 267/414] Step 18.16: Remove styles for PartyAdd
@@ -9656,7 +9693,7 @@ index 90b24c1..0000000
 2.7.4
 
 
-From bd7d2747139b57d54dc789f202d258c19d5a3d0d Mon Sep 17 00:00:00 2001
+From 97c216fe89a5f6d4cecdcf51b553d5bdf4caa4ff Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:50:00 +0200
 Subject: [PATCH 268/414] Step 18.17: Refactor PartyCreator
@@ -9680,7 +9717,7 @@ index 077739d..de986fb 100644
 2.7.4
 
 
-From f3aeaffe9ffc99a8028f7b075f472fcac41093a4 Mon Sep 17 00:00:00 2001
+From b7b82196d7103d846db3a7f6f242828dd32d24c0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 02:50:35 +0200
 Subject: [PATCH 269/414] Step 18.18: Remove partyCreator.less
@@ -9706,7 +9743,7 @@ index 4679f1f..0000000
 2.7.4
 
 
-From 532169cdbcacf280608ff81549800b452d5e0b3b Mon Sep 17 00:00:00 2001
+From ba45f3f226af98315a290dec4454c2daf17c6fa2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:08:43 +0200
 Subject: [PATCH 270/414] Step 18.19: Add `material-design-icons`
@@ -9790,7 +9827,7 @@ index d6f5bc3..bef3e68 100644
 2.7.4
 
 
-From 2b22ffc87a1783496e179d18fb08284586a0b829 Mon Sep 17 00:00:00 2001
+From a5ead5db623389cfd147229759d206b8fbbf6680 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:10:01 +0200
 Subject: [PATCH 271/414] Step 18.20: Set icons
@@ -9839,7 +9876,7 @@ index e692001..cad243b 100644
 2.7.4
 
 
-From 89d89bcad2f90aba583872c6f3e82b60c9cec172 Mon Sep 17 00:00:00 2001
+From c06f2dbda49025bbbea51ecd709f8d952b4b7a52 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:10:41 +0200
 Subject: [PATCH 272/414] Step 18.21: Refactor PartyRemove
@@ -9859,7 +9896,7 @@ index ebe46ea..fc1206c 100644
 2.7.4
 
 
-From 8e56aee18deff0b0b1871efe3f6edd30bcd2abd3 Mon Sep 17 00:00:00 2001
+From fcc9384b7c35edba60499568beab13418a2fe80c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:11:20 +0200
 Subject: [PATCH 273/414] Step 18.22: Styles for PartyRemove
@@ -9882,7 +9919,7 @@ index 0000000..d7ad1f1
 2.7.4
 
 
-From 867b95ab2cddb62de2a31a97cc86f99a9ea3f1ad Mon Sep 17 00:00:00 2001
+From 17e1db02f63ca16eb00442f76cf664fda48d6f22 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:12:08 +0200
 Subject: [PATCH 274/414] Step 18.23: Import to PartiesList
@@ -9904,7 +9941,7 @@ index d3f7da4..26a3d6b 100644
 2.7.4
 
 
-From 1705aa967de21dca99fdfb24ab8b006750111703 Mon Sep 17 00:00:00 2001
+From e773d55a70e68a97894f8781204b1be5b6fd93b1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:17:34 +0200
 Subject: [PATCH 275/414] Step 18.24: Refactor PartyRsvp
@@ -9930,7 +9967,7 @@ index e4c078c..ec6302b 100644
 2.7.4
 
 
-From a2eadcc7f26e0819e93fe21f82b985fc20d7492c Mon Sep 17 00:00:00 2001
+From 43da80e2e6e175bdd5e463ed606357b2d126c73c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:18:08 +0200
 Subject: [PATCH 276/414] Step 18.25: Remove styles
@@ -9954,7 +9991,7 @@ index be52d51..0000000
 2.7.4
 
 
-From 0e331f2990e3e1315eb124cd6cc6925e8d4eb118 Mon Sep 17 00:00:00 2001
+From 0a45cf4e82995b1ae8350477984b1632f6dc190e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:19:01 +0200
 Subject: [PATCH 277/414] Step 18.26: Refactor PartyUninvited
@@ -9994,7 +10031,7 @@ index e9f9e1c..84b3eaf 100644
 2.7.4
 
 
-From f8f137c1a2b037ce19b815a4949f46381ace3bc9 Mon Sep 17 00:00:00 2001
+From 045f796267507d4eaadc581e7a542085ff13956b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:19:24 +0200
 Subject: [PATCH 278/414] Step 18.27: Remove unused styles
@@ -10022,7 +10059,7 @@ index 52b27fe..0000000
 2.7.4
 
 
-From 8f337b0cbe4a17c5709c99a7a51c06662520bb32 Mon Sep 17 00:00:00 2001
+From 23dca01a4f75f4be8bf2728608f5e059dba10933 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:20:28 +0200
 Subject: [PATCH 279/414] Step 18.28: Add PartyRsvpsList less to PartiesList
@@ -10044,7 +10081,7 @@ index 26a3d6b..6ac87dc 100644
 2.7.4
 
 
-From b149e969b6e7645aa062ffecd96604d7dc209aaf Mon Sep 17 00:00:00 2001
+From 3c380ef9d33ac49f9c73df94c8ff69163e7f9dec Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:21:23 +0200
 Subject: [PATCH 280/414] Step 18.29: Update styles of PartyMap
@@ -10070,7 +10107,7 @@ index 3b4bed1..62f1643 100644
 2.7.4
 
 
-From 314a4612ab5bfa9745bfe1026c819cdf34025ddf Mon Sep 17 00:00:00 2001
+From 4a2c47818a7392e766128187303fe1db9bd474ab Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:23:22 +0200
 Subject: [PATCH 281/414] Step 18.30: Refactor PartyDetails
@@ -10145,7 +10182,7 @@ index 58724af..e913815 100644
 2.7.4
 
 
-From 8f374cc55a16c4f606962ba0148156ecdf61f166 Mon Sep 17 00:00:00 2001
+From e159d21f2bea396d1a46ade557ca540c576939af Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:24:01 +0200
 Subject: [PATCH 282/414] Step 18.31: Leave only PartyMap inside PartyDetails
@@ -10174,7 +10211,7 @@ index a42c467..bb42a69 100644
 2.7.4
 
 
-From 986ddc0144b661a23d431bbba113b24d82c796fe Mon Sep 17 00:00:00 2001
+From 2b2cdc7752607ccffaf3ed990e7bae16df1ed1b3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:43:44 +0200
 Subject: [PATCH 283/414] Step 18.32: Create view for PartyAddButton
@@ -10197,7 +10234,7 @@ index 0000000..6e37857
 2.7.4
 
 
-From 6ded49f2f7c34f23559b5924aaaa134583b36a92 Mon Sep 17 00:00:00 2001
+From 9151807dd21bcc3aca770eaa2c91a62180efc78f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:45:15 +0200
 Subject: [PATCH 284/414] Step 18.33: Create PartyAddButton component
@@ -10262,7 +10299,7 @@ index 0000000..cadd70c
 2.7.4
 
 
-From dfdf9fd9cf739efabdaa75d468a5fdcb2b66a942 Mon Sep 17 00:00:00 2001
+From 0a5a97022da58df9d26831ea4fb4b4b607528ebb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:46:03 +0200
 Subject: [PATCH 285/414] Step 18.34: Add view for modal window
@@ -10298,7 +10335,7 @@ index 0000000..3b490ec
 2.7.4
 
 
-From 72d168127c5fa77aed3ac1315807aed52b54fe1b Mon Sep 17 00:00:00 2001
+From 903dd795eeef8763ebb44f550b3db550b0cb7db3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:46:27 +0200
 Subject: [PATCH 286/414] Step 18.35: Add some style
@@ -10323,7 +10360,7 @@ index 0000000..b765a6c
 2.7.4
 
 
-From b5ee75938e0f29994da827e2da926046ca3a5a92 Mon Sep 17 00:00:00 2001
+From eed04499d7982fbeb2453062b7f63ebf9603ed30 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:47:55 +0200
 Subject: [PATCH 287/414] Step 18.36: Implement `done` expression to PartyAdd
@@ -10362,7 +10399,7 @@ index 4c9052a..ddef484 100644
 2.7.4
 
 
-From 779060fa07ecc5f496cfcd9a10593faf83f4c1c9 Mon Sep 17 00:00:00 2001
+From 304d5f7e2823f898f25fd03593ebd2e4fbc5bb30 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:48:44 +0200
 Subject: [PATCH 288/414] Step 18.37: Add PartyAddButton to PartiesList
@@ -10397,7 +10434,7 @@ index ec99584..17996c3 100644
 2.7.4
 
 
-From 327e4f5a22e0ec73662c6d355d53150b4b25ea44 Mon Sep 17 00:00:00 2001
+From b02ad3bd871d758650f09b04df30058246e656bb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:51:45 +0200
 Subject: [PATCH 289/414] Step 18.38: Implement PartyAddButton
@@ -10424,7 +10461,7 @@ index b6772eb..12987b3 100644
 2.7.4
 
 
-From 6e9035f9114c1e3a0f92e94e1dfba04a0bd59485 Mon Sep 17 00:00:00 2001
+From c1a6bc1b4974ef2fa0a49f73554b62a9c938b940 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 11:51:59 +0200
 Subject: [PATCH 290/414] Step 18.39: Import styles
@@ -10447,7 +10484,7 @@ index 6ac87dc..b0bc5dc 100644
 2.7.4
 
 
-From 4422e6f8f2709f6f451238a8365911ece23841fb Mon Sep 17 00:00:00 2001
+From 6feccc29afc3af7836c997e071e8d0fc41bf05a1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:25:09 +0200
 Subject: [PATCH 291/414] Step 18.40: Create view for Auth
@@ -10473,7 +10510,7 @@ index 0000000..28f7a45
 2.7.4
 
 
-From 7f154d3881e03ec2ed585b58f412fb6710316cfb Mon Sep 17 00:00:00 2001
+From ab8c6828ebc192fabb0a112a2da10265f95a2f9c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:25:49 +0200
 Subject: [PATCH 292/414] Step 18.41: Create Auth component
@@ -10534,7 +10571,7 @@ index 0000000..faffdb3
 2.7.4
 
 
-From 84495de9423f7b2c46215f943ec65a156cd8a73f Mon Sep 17 00:00:00 2001
+From aaa697a72b40b5ccd04bfa8ec537fe7e775b0c7f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:42:53 +0200
 Subject: [PATCH 293/414] Step 18.42: View for Login
@@ -10626,7 +10663,7 @@ index 0000000..feb3443
 2.7.4
 
 
-From 8c449417cc60bb043ffc4bca5eab374818b487b3 Mon Sep 17 00:00:00 2001
+From a4a421d70fac045f1c223151437bd22802eb84c7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:44:02 +0200
 Subject: [PATCH 294/414] Step 18.43: Create Login
@@ -10707,7 +10744,7 @@ index 0000000..4ae9c9e
 2.7.4
 
 
-From 46b2ae4352c22bf0812da953bd850bc6df0ec7c4 Mon Sep 17 00:00:00 2001
+From fb9b1fad4df0da6b43a2d9c332f4974cfbd506bc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:44:39 +0200
 Subject: [PATCH 295/414] Step 18.44: Add Login to Auth
@@ -10742,7 +10779,7 @@ index faffdb3..e3290b8 100644
 2.7.4
 
 
-From b8f7e01962d6bda55afea097ff95bc3f97545a54 Mon Sep 17 00:00:00 2001
+From 0ed1cef01325d2cf79e6e620b2955fa3b9020962 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:45:38 +0200
 Subject: [PATCH 296/414] Step 18.45: View for Register
@@ -10834,7 +10871,7 @@ index 0000000..37b42c6
 2.7.4
 
 
-From 812f7057719ea1d7b3271408e14f4d6b57f2b824 Mon Sep 17 00:00:00 2001
+From ffd0c843776cf25567646c0a4f8641aeb508b68d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:46:15 +0200
 Subject: [PATCH 297/414] Step 18.46: Create Register
@@ -10912,7 +10949,7 @@ index 0000000..ab4ae94
 2.7.4
 
 
-From b9c3724d5fdd94a908def888fbb6d165bad700aa Mon Sep 17 00:00:00 2001
+From 61631e7adf6fc6ae1cafc89b4e430c2612ad2bcb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:46:55 +0200
 Subject: [PATCH 298/414] Step 18.47: Add Register to Auth
@@ -10947,7 +10984,7 @@ index e3290b8..871e2fd 100644
 2.7.4
 
 
-From 05bf37697cd6f15c127c917191b1da982406d703 Mon Sep 17 00:00:00 2001
+From 8665e306e87c595e45ef4ee63d5b67154f476a32 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:47:29 +0200
 Subject: [PATCH 299/414] Step 18.48: View for Password
@@ -11007,7 +11044,7 @@ index 0000000..94df2b0
 2.7.4
 
 
-From 85c36788e210627b8eb433df653823edf6e4543b Mon Sep 17 00:00:00 2001
+From 7c00b480d90341de61d978c6a632d848da3211db Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:48:03 +0200
 Subject: [PATCH 300/414] Step 18.49: Create Password
@@ -11083,7 +11120,7 @@ index 0000000..c417f95
 2.7.4
 
 
-From c3e4f21f5eced43d813072d86d1baa1e704a2ec3 Mon Sep 17 00:00:00 2001
+From 6fed7b6dafb8e5d8ce08f1f832a9ad7f78c6fb83 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:48:33 +0200
 Subject: [PATCH 301/414] Step 18.50: Add Password to Auth
@@ -11118,7 +11155,7 @@ index 871e2fd..a87dd5e 100644
 2.7.4
 
 
-From 0f21593640205eb7f1b74476778873b6840112e7 Mon Sep 17 00:00:00 2001
+From 4b2a047a7cbc6343e511ed7275af04e31e417c30 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:50:12 +0200
 Subject: [PATCH 302/414] Step 18.51: Add Auth to Socially
@@ -11151,7 +11188,7 @@ index cad243b..21940eb 100644
 2.7.4
 
 
-From 3a0befcb02d6764b02ff0de0744df95b5c699905 Mon Sep 17 00:00:00 2001
+From ccbb09fe3c64c015a7737744e069ca3c9a848e32 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:50:46 +0200
 Subject: [PATCH 303/414] Step 18.52: Implement Auth
@@ -11177,7 +11214,7 @@ index 0b1d8a6..2d81bc4 100644
 2.7.4
 
 
-From f86d864d18e11893f334a2229eb5e0abdb9896b9 Mon Sep 17 00:00:00 2001
+From d2ffe3634121f3622af3615a75dfbf9f3bf6e569 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:51:45 +0200
 Subject: [PATCH 304/414] Step 18.53: Remove .less of Navigation
@@ -11202,7 +11239,7 @@ index 87b8777..0000000
 2.7.4
 
 
-From f92293b06f3b39c3120f389b06cbf02363d4e5bf Mon Sep 17 00:00:00 2001
+From e263fb76b1326af73430101e65246bb162a3a58a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 03:52:12 +0200
 Subject: [PATCH 305/414] Step 18.54: Remove import statement
@@ -11227,7 +11264,7 @@ index 3eabc12..742f92d 100644
 2.7.4
 
 
-From 01d5d23711f3f1ae287ba142785796713abd4f37 Mon Sep 17 00:00:00 2001
+From 21414de74247ed56959b7bd2df6934521a56dd25 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:38:56 +0200
 Subject: [PATCH 306/414] Step 20.1: Add `jalik:ufs`
@@ -11269,7 +11306,7 @@ index bef3e68..dbae4b0 100644
 2.7.4
 
 
-From 736803ad38694952257c9b852bebf48e6ddcc8af Mon Sep 17 00:00:00 2001
+From 5fb53d616bd007b69751a6980b5fcd33d0dc6667 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:40:52 +0200
 Subject: [PATCH 307/414] Step 20.2: Add `jalik:ufs-gridfs`
@@ -11304,7 +11341,7 @@ index dbae4b0..a60ade0 100644
 2.7.4
 
 
-From 3e13e707f511b3f9968c9d40247c4a5d6d4e4c19 Mon Sep 17 00:00:00 2001
+From 45fbc3ef1a83cbf892b91624878631cdde14c74e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:48:58 +0200
 Subject: [PATCH 308/414] Step 20.3: Create Images and Thumbs collections
@@ -11345,7 +11382,7 @@ index 0000000..a522111
 2.7.4
 
 
-From 94458d3cd00e97ca247454ca4c33686112ec6f6f Mon Sep 17 00:00:00 2001
+From 75608f5b714822de02d2e71ae8f18622ac40f69d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:50:11 +0200
 Subject: [PATCH 309/414] Step 20.4: Create ThumbsStore and ImagesStore
@@ -11383,7 +11420,7 @@ index 0000000..58462c1
 2.7.4
 
 
-From 51038dd39eaa467a212c431f01e0ace40120dce6 Mon Sep 17 00:00:00 2001
+From ddbc7a42ea40b0887ca60aa5f1e24d31cd518ae9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:50:57 +0200
 Subject: [PATCH 310/414] Step 20.5: Create main export file of Images and
@@ -11406,7 +11443,7 @@ index 0000000..9c18361
 2.7.4
 
 
-From 503801ecf21e8ffd96729dbcc8ff28f301594708 Mon Sep 17 00:00:00 2001
+From c283781bb10abf34af2836633b3ae88a73d27883 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:52:30 +0200
 Subject: [PATCH 311/414] Step 20.6: Resize images
@@ -11444,7 +11481,7 @@ index 58462c1..a0fa6d6 100644
 2.7.4
 
 
-From 5868f7303ac858319e97e8c059adbb46bb88f148 Mon Sep 17 00:00:00 2001
+From eaf6c916155e53261dbc604971d7c9365a6024d6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:54:06 +0200
 Subject: [PATCH 312/414] Step 20.7: Install `gm`
@@ -11469,7 +11506,7 @@ index 8971ed8..459c03c 100644
 2.7.4
 
 
-From 6abbb41c3d7d5f7dac0f45ec5e7aef3a8706e86d Mon Sep 17 00:00:00 2001
+From 0995ca30cd7f2312a931543081187a8798958d36 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:58:21 +0200
 Subject: [PATCH 313/414] Step 20.8: Create view for PartyUpload
@@ -11498,7 +11535,7 @@ index 0000000..d53d6c7
 2.7.4
 
 
-From 372dbe7517950ec19ba0c61e2befa29be196824d Mon Sep 17 00:00:00 2001
+From 2def80ac004175fbfd6aabcf2ce54fabd4dfc376 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:59:42 +0200
 Subject: [PATCH 314/414] Step 20.9: Create PartyUpload component
@@ -11537,7 +11574,7 @@ index 0000000..571b3c1
 2.7.4
 
 
-From ffb19f805a1678b14a186fd0c76296f574ac4716 Mon Sep 17 00:00:00 2001
+From 3b2da8b9feb30509bdfccc13b717ad7ed4657fc4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:01:32 +0200
 Subject: [PATCH 315/414] Step 20.10: Add to PartyAdd
@@ -11572,7 +11609,7 @@ index ddef484..47f09fe 100644
 2.7.4
 
 
-From 154fdf6eca360fbefa6ec60e21ec5f9a8766748e Mon Sep 17 00:00:00 2001
+From 016f7082db9c8626a370961f3f8ac9ea7132846d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:03:51 +0200
 Subject: [PATCH 316/414] Step 20.11: Implement to the view
@@ -11595,7 +11632,7 @@ index 6e504f0..8946e6d 100644
 2.7.4
 
 
-From 893b4c1193398bce8b54b1b8b77478b3c6bccf52 Mon Sep 17 00:00:00 2001
+From aa38bb8b094e970106646de4b81eef6e2b9bdd11 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:05:32 +0200
 Subject: [PATCH 317/414] Step 20.12: install `ng-file-upload`
@@ -11620,7 +11657,7 @@ index 459c03c..0484324 100644
 2.7.4
 
 
-From cee2beb51f13311826d721af64d61e3cad519233 Mon Sep 17 00:00:00 2001
+From 5a1bcdee7784e767bb73262953a74876c7536f9f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:08:06 +0200
 Subject: [PATCH 318/414] Step 20.13: Add as a dependency
@@ -11654,7 +11691,7 @@ index 571b3c1..d4b7c6e 100644
 2.7.4
 
 
-From 6f7c809f264d244542fee31898f62b7f0939f206 Mon Sep 17 00:00:00 2001
+From 7f69b8aeacd406f47aa3fbeff275008e34a0e3f7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:09:13 +0200
 Subject: [PATCH 319/414] Step 20.14: Add ngf-drop to the view
@@ -11696,7 +11733,7 @@ index d53d6c7..70e5af3 100644
 2.7.4
 
 
-From 66b17c70413ce86b4ca6a9f61ca7813be220fe1d Mon Sep 17 00:00:00 2001
+From e6521403d34966758468ba5e60b769fc2788271c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:12:52 +0200
 Subject: [PATCH 320/414] Step 20.15: Handle file selection
@@ -11745,7 +11782,7 @@ index d4b7c6e..7ad01f9 100644
 2.7.4
 
 
-From 7401260024a36ab0a686c8d46ff113d6d946c5b7 Mon Sep 17 00:00:00 2001
+From b62966a28f091a8adcce04f84731fddefdba4b5a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:15:21 +0200
 Subject: [PATCH 321/414] Step 20.16: Add style
@@ -11781,7 +11818,7 @@ index 0000000..987a853
 2.7.4
 
 
-From 893ae37b4105655df1c5f48cc7d6fb79d692322d Mon Sep 17 00:00:00 2001
+From 4b21d53fdd6f40d5ad40b5b1aea33c94e2521104 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:15:42 +0200
 Subject: [PATCH 322/414] Step 20.17: Import in PartyAdd
@@ -11802,7 +11839,7 @@ index 0000000..18bfd78
 2.7.4
 
 
-From 14782fd03d3400b119f0f49e7e36bca32e5f8b62 Mon Sep 17 00:00:00 2001
+From 4087d4ebbcbd57336e50673fb60677b01a9fb389 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:16:18 +0200
 Subject: [PATCH 323/414] Step 20.18: Import in PartyAddButton
@@ -11824,7 +11861,7 @@ index b765a6c..9f2f5e2 100644
 2.7.4
 
 
-From 8ea2bdc59bd532e196f05be94dd74ab87c93bdd1 Mon Sep 17 00:00:00 2001
+From 7d334e8e4eaf725a4c928a47d088dc1031c49b8b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:17:27 +0200
 Subject: [PATCH 324/414] Step 20.19: Install `ng-img-crop`
@@ -11849,7 +11886,7 @@ index 0484324..1ebcbea 100644
 2.7.4
 
 
-From c599af7b1ec22660b702f07c8d9189b453f1e6c8 Mon Sep 17 00:00:00 2001
+From ce04b4d59e3867cd5d30121afd4b20233bd1c25b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:27:50 +0200
 Subject: [PATCH 325/414] Step 20.20: Add ngImgCrop
@@ -11886,7 +11923,7 @@ index 7ad01f9..94f2de1 100644
 2.7.4
 
 
-From bb04ccbba47b8592a3cce2f28aea6d8be2fa3e14 Mon Sep 17 00:00:00 2001
+From 82517adcea063afae4c894269ddbb86156069120 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:31:51 +0200
 Subject: [PATCH 326/414] Step 20.21: Use ngImgCrop
@@ -11922,7 +11959,7 @@ index 70e5af3..2dd38e9 100644
 2.7.4
 
 
-From 3fb8db6f34131905bd1e1bbf5de83a5e7ac1d832 Mon Sep 17 00:00:00 2001
+From bc041241375b7dd91e0144e2e1a7953c3c61c54e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:32:11 +0200
 Subject: [PATCH 327/414] Step 20.22: Add styles
@@ -11953,7 +11990,7 @@ index 987a853..645cee2 100644
 2.7.4
 
 
-From f508bfeb5b9dad305bfd270eb771b9da19418be5 Mon Sep 17 00:00:00 2001
+From 702e9650e4703c341ebc6adc3985a94db6996f96 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:02:41 +0200
 Subject: [PATCH 328/414] Step 20.23: Add dataURLToBlob helper
@@ -12004,7 +12041,7 @@ index 0000000..23f1350
 2.7.4
 
 
-From 7cb8ccf99acb3ec1de6b02845188c43b53c543c7 Mon Sep 17 00:00:00 2001
+From 23d1f7555c558d606c5701b9868631b004a54971 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:05:04 +0200
 Subject: [PATCH 329/414] Step 20.24: Add blobToArrayBuffer helper
@@ -12048,7 +12085,7 @@ index 23f1350..448f932 100644
 2.7.4
 
 
-From 08dd81a1ee5d516e101ce085ff1d200487642c81 Mon Sep 17 00:00:00 2001
+From 6f481c19a99569955b9879d2ed1dcc8a119a87ce Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:08:29 +0200
 Subject: [PATCH 330/414] Step 20.25: Create `upload` method
@@ -12101,7 +12138,7 @@ index 0000000..e634901
 2.7.4
 
 
-From b22a88d73c1c95105a53df52198b3c0765061bd5 Mon Sep 17 00:00:00 2001
+From f83d71b0cad77d8d76e681baff62c1094778b2a7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:08:56 +0200
 Subject: [PATCH 331/414] Step 20.26: Export methods
@@ -12122,7 +12159,7 @@ index 9c18361..74293fe 100644
 2.7.4
 
 
-From e4a1eb4249c22150220feef9ccc951391fab78eb Mon Sep 17 00:00:00 2001
+From b761331743a2f3ae1dd527f59371bab6450dc605 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:15:15 +0200
 Subject: [PATCH 332/414] Step 20.27: Implement `save` and `reset` methods
@@ -12176,7 +12213,7 @@ index 94f2de1..7dd2bd1 100644
 2.7.4
 
 
-From e01783f193d666d53124e5f4276fbe813bcd7de4 Mon Sep 17 00:00:00 2001
+From 28aaa8776e7b5e7d7e51b9eda80c380f56c3d1de Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:16:03 +0200
 Subject: [PATCH 333/414] Step 20.28: Import Images on server side
@@ -12198,7 +12235,7 @@ index 1acdc6c..2b47936 100644
 2.7.4
 
 
-From 6e2f45b8f9ff02aedbca14b38094123393bf1ead Mon Sep 17 00:00:00 2001
+From 6913d4ae632480f9d9082e47ad435929b229e5c9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:21:33 +0200
 Subject: [PATCH 334/414] Step 20.29: Display uploaded images
@@ -12225,7 +12262,7 @@ index 2dd38e9..124bfdb 100644
 2.7.4
 
 
-From 0c14b3b5a40148a18fcb04329813ea6d42fddc6c Mon Sep 17 00:00:00 2001
+From e559268638bfd7deaed4b44442e708f24ae7ec9e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:22:36 +0200
 Subject: [PATCH 335/414] Step 20.30: Add styles
@@ -12263,7 +12300,7 @@ index 645cee2..f781c1c 100644
 2.7.4
 
 
-From bfd2b9b7cfe2f9e701c572b5835aee8bc4a9475c Mon Sep 17 00:00:00 2001
+From 02b47014613d79e63deca0b8b549556a0640aed7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:24:09 +0200
 Subject: [PATCH 336/414] Step 20.31: Add `thumbs` and `images` publications
@@ -12300,7 +12337,7 @@ index 0000000..5949c72
 2.7.4
 
 
-From 08ee83500e060cb2de912cc4d31e8ab9d76cf204 Mon Sep 17 00:00:00 2001
+From 92e51923bae101ee46f3f2928cb699e265cd7e7b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:24:36 +0200
 Subject: [PATCH 337/414] Step 20.32: Import publications
@@ -12322,7 +12359,7 @@ index 74293fe..57692b3 100644
 2.7.4
 
 
-From f0ac5045f2249d187a00d2481d62e1f49f6531c6 Mon Sep 17 00:00:00 2001
+From a29525feec004ffd7c7d07d552e5d5bb2167c517 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:29:08 +0200
 Subject: [PATCH 338/414] Step 20.33: Implement thumbnails
@@ -12383,7 +12420,7 @@ index 7dd2bd1..100b85a 100644
 2.7.4
 
 
-From f58cdb4c7c96a35b781be8b7e383029551d899b2 Mon Sep 17 00:00:00 2001
+From d1665147269b85b7b384292e57af734dc3d8984c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:32:41 +0200
 Subject: [PATCH 339/414] Step 20.34: Install `angular-sortable-view`
@@ -12408,7 +12445,7 @@ index 1ebcbea..ffe3f6d 100644
 2.7.4
 
 
-From 8603b701525164d2d376de0f00e8e1b7dcdcd445 Mon Sep 17 00:00:00 2001
+From 621f3ecddf10b273c94463417b8e4f7dfd965631 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:33:09 +0200
 Subject: [PATCH 340/414] Step 20.35: Add as a dependency
@@ -12443,7 +12480,7 @@ index 100b85a..237ac4d 100644
 2.7.4
 
 
-From c0adda7abf2486e311a21e387bb839eac57657bd Mon Sep 17 00:00:00 2001
+From bc5aaf22ad0ebec2505ad25a04060bbcdd91bf8c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:33:31 +0200
 Subject: [PATCH 341/414] Step 20.36: Use directives on thumbnails
@@ -12473,7 +12510,7 @@ index 124bfdb..14a3704 100644
 2.7.4
 
 
-From 169ee036726f131036eca70b1ed8af0b8ab27ff7 Mon Sep 17 00:00:00 2001
+From 707244b6ed77ae963aa1f6160b160686de928660 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:07 +0200
 Subject: [PATCH 342/414] Step 20.37: Define two-way data binding `files`
@@ -12500,7 +12537,7 @@ index 237ac4d..400368e 100644
 2.7.4
 
 
-From 673855363cabcc56e03fe3e83fae09be6337b2b0 Mon Sep 17 00:00:00 2001
+From f8e2862ab3d8e0dc6c19c1acd811bd9d28c83f38 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:24 +0200
 Subject: [PATCH 343/414] Step 20.38: Create view for PartyImage
@@ -12521,7 +12558,7 @@ index 0000000..719c4a3
 2.7.4
 
 
-From fb27d5f1a013198ecb2777175f051c116726e512 Mon Sep 17 00:00:00 2001
+From 5ccf1b6d0135a8ff78109fa5de85d56c4b4b403f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:39 +0200
 Subject: [PATCH 344/414] Step 20.39: Create PartyImage component
@@ -12578,7 +12615,7 @@ index 0000000..5b636b8
 2.7.4
 
 
-From 32b11a325c516996ef0fc19358999bf50ea75bd9 Mon Sep 17 00:00:00 2001
+From 1920451db3c202f3836ba7b3c8fe80ae81878791 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:58 +0200
 Subject: [PATCH 345/414] Step 20.40: Implement PartyImage in PartiesList
@@ -12607,7 +12644,7 @@ index 12987b3..de5d229 100644
 2.7.4
 
 
-From 535d9b80e6bffdbd9d9d7dcae8fbf467b5807330 Mon Sep 17 00:00:00 2001
+From 0df45676eef2de3ae88dc32f2a34607bde8cf7a6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:34:24 +0200
 Subject: [PATCH 346/414] Step 20.41: Add PartyImage to PartiesList and
@@ -12651,7 +12688,7 @@ index 17996c3..9e90e1f 100644
 2.7.4
 
 
-From 655199f1066e544f1b304a85673a4fce123659cd Mon Sep 17 00:00:00 2001
+From 14bce726c6a80f77e60fe584e158f5d9b3b2c4eb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:41:02 +0200
 Subject: [PATCH 347/414] Step 21.1: Add mobile platform
@@ -12673,7 +12710,7 @@ index efeba1b..0b0ddcc 100644
 2.7.4
 
 
-From f153482de5b3946baad370ede74d19c7b31a1beb Mon Sep 17 00:00:00 2001
+From c5e1d0997b7e26338208006e9e30b2132fd73560 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:43:34 +0200
 Subject: [PATCH 348/414] Step 21.2: Move login.html to web.html
@@ -12763,7 +12800,7 @@ index 0000000..1ac5b6f
 2.7.4
 
 
-From a20d87318e348def515aa9c3253900f058bdb817 Mon Sep 17 00:00:00 2001
+From 670ac291dca2bb719751889e8ede9005cedff53e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:45:56 +0200
 Subject: [PATCH 349/414] Step 21.3: Add mobile view
@@ -12810,7 +12847,7 @@ index 0000000..112ba9e
 2.7.4
 
 
-From dcde2b00d5de3db7827e241b68ed49b809ba63c9 Mon Sep 17 00:00:00 2001
+From fa7826363afa2884539417e8b22d9dd739794ce2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:47:15 +0200
 Subject: [PATCH 350/414] Step 21.4: Move Login class to web.js
@@ -12860,7 +12897,7 @@ index 0000000..bc7b752
 2.7.4
 
 
-From 28f444ae75738d8d7ed782a85e2e14ba69fc7afa Mon Sep 17 00:00:00 2001
+From 0ddf2ef2e95ff0dcae1ad3974fdac726cae6c5ca Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:48:39 +0200
 Subject: [PATCH 351/414] Step 21.5: Create controller for mobile
@@ -12881,7 +12918,7 @@ index 0000000..792f38c
 2.7.4
 
 
-From 9c1d1f90aa4b8d513e7b18ab405d059ca883fa63 Mon Sep 17 00:00:00 2001
+From 2495c23a9018f79b5989e22099f3505e6c71269a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:49:48 +0200
 Subject: [PATCH 352/414] Step 21.6: Refactor login.js
@@ -12956,7 +12993,7 @@ index 4ae9c9e..376fcaf 100644
 2.7.4
 
 
-From 8620ad2acedd97a487b8cf9b7e865c8615f9c900 Mon Sep 17 00:00:00 2001
+From 8572c4d8ad65bb5d4b53ddec63d217a80e7403f1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:50:03 +0200
 Subject: [PATCH 353/414] Step 21.7: Remove login.html
@@ -13072,7 +13109,7 @@ index 1ac5b6f..af84461 100644
 2.7.4
 
 
-From 3955b4d2cace8fcad1e557ce0aabcc7ec0fe1115 Mon Sep 17 00:00:00 2001
+From 99d7eb889915e0cbb94d8891c21ee72a98e6bae9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:52:54 +0200
 Subject: [PATCH 354/414] Step 21.8: Add `okland:accounts-phone`
@@ -13107,7 +13144,7 @@ index a60ade0..c58233f 100644
 2.7.4
 
 
-From 3793de134308714ff209d31213db62eaf941cf11 Mon Sep 17 00:00:00 2001
+From 9808fcf69c32d39335c90e39d7e966e6d82623e2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:56:24 +0200
 Subject: [PATCH 355/414] Step 21.9: Add phone verification method
@@ -13153,7 +13190,7 @@ index 792f38c..c201eb2 100644
 2.7.4
 
 
-From a00e4ac6e9913e55daa81b021fbc16d421297037 Mon Sep 17 00:00:00 2001
+From 01626682d4321c75916859b3947a8cbcceca4658 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:57:40 +0200
 Subject: [PATCH 356/414] Step 21.10: Add phone verification form
@@ -13194,7 +13231,7 @@ index 112ba9e..0b889a7 100644
 2.7.4
 
 
-From 39d1f7a890440721055cc41557e310d8ba74a961 Mon Sep 17 00:00:00 2001
+From 1a863b46a291aacb29ef77bb74844583abab0ef6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 21:00:05 +0200
 Subject: [PATCH 357/414] Step 21.11: Add code verification method
@@ -13240,7 +13277,7 @@ index c201eb2..798d563 100644
 2.7.4
 
 
-From 1e9a8b14bcc4bcb01573bf6c46adc137a7b274de Mon Sep 17 00:00:00 2001
+From 3a8ff075d2079f00ba1cb60527314c6747cf2f6f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 21:01:13 +0200
 Subject: [PATCH 358/414] Step 21.12: Add code verification form
@@ -13274,7 +13311,7 @@ index 0b889a7..e93c1d5 100644
 2.7.4
 
 
-From ca8e8cd7ae8bc96f1bec18c326910c704072abf1 Mon Sep 17 00:00:00 2001
+From 4b6daa7c36d185fc83d9f363ad465c332a9b953f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 10:58:52 +0200
 Subject: [PATCH 359/414] Step 22.1: Install `ionic-sdk`
@@ -13299,7 +13336,7 @@ index ffe3f6d..4c15c16 100644
 2.7.4
 
 
-From 8eec8ccc2097d9a0495eed2ef0a281147bf4393c Mon Sep 17 00:00:00 2001
+From d27beb1ca6d19a6f16553242da837aee7c004163 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 10:59:31 +0200
 Subject: [PATCH 360/414] Step 22.2: Install `angular-sanitize`
@@ -13324,7 +13361,7 @@ index 4c15c16..056163e 100644
 2.7.4
 
 
-From 5e877637f270ece992f6e525c43dcfa20217e7c7 Mon Sep 17 00:00:00 2001
+From b2f1185a9c13c3d99817bcb227347a7743c6aa86 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:08:38 +0200
 Subject: [PATCH 361/414] Step 22.3: ngSanitize as a dependency
@@ -13357,7 +13394,7 @@ index 21940eb..ada6751 100644
 2.7.4
 
 
-From 0b6c8e6087d9ffb5b6c6d5744329e6de0be6dba3 Mon Sep 17 00:00:00 2001
+From 64c6667cd1bb95ffe7dcf6973ee80b35e121af31 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:48:44 +0200
 Subject: [PATCH 362/414] Step 22.4: Import ionic and add as a dependency
@@ -13393,7 +13430,7 @@ index ada6751..f72bc21 100644
 2.7.4
 
 
-From 21e8fa772de212e91a412b8682f69076917c2868 Mon Sep 17 00:00:00 2001
+From 59db0a59696733e9b4d0dcb395e43f8c86e86083 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:49:08 +0200
 Subject: [PATCH 363/414] Step 22.5: Import ionic styles
@@ -13418,7 +13455,7 @@ index f72bc21..ac7ac39 100644
 2.7.4
 
 
-From b79fcc1f83f029f6ed9a78b5a39299ca9723b0ef Mon Sep 17 00:00:00 2001
+From e5c1e4275131073cc675a4287a0cce6fbb781a4e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:50:26 +0200
 Subject: [PATCH 364/414] Step 22.6: Create view of Socially for web
@@ -13441,7 +13478,7 @@ index 0000000..7fdb2de
 2.7.4
 
 
-From 2da860299dcd52578a8605c4eb393dad345f220e Mon Sep 17 00:00:00 2001
+From e56f68b31b0ac87582ced2b6534d7c88ed2f26dc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:51:02 +0200
 Subject: [PATCH 365/414] Step 22.7: Create mobile view
@@ -13464,7 +13501,7 @@ index 0000000..b0de4a9
 2.7.4
 
 
-From 8d8be1332b878bc3d04c1fd258d9260efd9e068f Mon Sep 17 00:00:00 2001
+From 4248e3ee78f7e11c086edeb54070628c1e88f7b5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:53:48 +0200
 Subject: [PATCH 366/414] Step 22.8: Implement web and mobile views
@@ -13501,7 +13538,7 @@ index ac7ac39..ff140a5 100644
 2.7.4
 
 
-From 58093bb9f1e89d051b77b4e1fdacbea0281f1b67 Mon Sep 17 00:00:00 2001
+From 5721fb1625eee8e79a64c9e3e656c2f6f39a1b7a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:17:24 +0200
 Subject: [PATCH 367/414] Step 22.9: Remove old view
@@ -13524,7 +13561,7 @@ index 7fdb2de..0000000
 2.7.4
 
 
-From be5a8f5f5a5030ff72b14b162a96411b949bc9f4 Mon Sep 17 00:00:00 2001
+From 085f44b52bd7c12f9e245b1b6beb0a3aaa18e269 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:18:14 +0200
 Subject: [PATCH 368/414] Step 22.10: Add title
@@ -13548,7 +13585,7 @@ index b0de4a9..7751a6f 100644
 2.7.4
 
 
-From 0c5534177a718ae5cad4d299456d9eb614560585 Mon Sep 17 00:00:00 2001
+From 06412392ab9f90a5e492fbd4e42ae9f3d8632843 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:19:33 +0200
 Subject: [PATCH 369/414] Step 22.11: Create web view of PartiesList
@@ -13625,7 +13662,7 @@ index 0000000..b2234e9
 2.7.4
 
 
-From 6b02c49dfdc6bbfc512822951c6e0e3870b083f9 Mon Sep 17 00:00:00 2001
+From 7d99931b46fc1bb63fea08924a3e19bd41602828 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:20:02 +0200
 Subject: [PATCH 370/414] Step 22.12: Remove old view
@@ -13702,7 +13739,7 @@ index de5d229..0000000
 2.7.4
 
 
-From ec3004b20a315a5cd3dfc34de8166522b038bab9 Mon Sep 17 00:00:00 2001
+From 9f9481dd3e5aa721435fbfb033a4343f0830d137 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:20:56 +0200
 Subject: [PATCH 371/414] Step 22.13: Create mobile view
@@ -13744,7 +13781,7 @@ index 0000000..2fcaafd
 2.7.4
 
 
-From f8d21cc56cfa076726eaabd0e310342c9f916a48 Mon Sep 17 00:00:00 2001
+From a4fc3f20838be61686f51d8b42d00ca238f9512a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:21:54 +0200
 Subject: [PATCH 372/414] Step 22.14: Implement new views
@@ -13781,7 +13818,7 @@ index 9e90e1f..df916d9 100644
 2.7.4
 
 
-From 7403edc5a5d45d6909b73de1253ec0e2f283eeaf Mon Sep 17 00:00:00 2001
+From 3028413205aeeea427e12fb1a773afd347a2c857 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:22:45 +0200
 Subject: [PATCH 373/414] Step 22.15: Fix layout to match both mobile and web
@@ -13819,7 +13856,7 @@ index b0bc5dc..14df29c 100644
 2.7.4
 
 
-From 47efe322a28ce5a2216a0258d94df9d84a0a66ab Mon Sep 17 00:00:00 2001
+From 8a1d0ca86053f61ed5c7544dac0e5ce9495cb958 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:25:39 +0200
 Subject: [PATCH 374/414] Step 22.16: Create DisplayImageFilter
@@ -13865,7 +13902,7 @@ index 0000000..aa2dfda
 2.7.4
 
 
-From a4dc7fff092649ddd18215f721d29d4641c6897d Mon Sep 17 00:00:00 2001
+From 3adcdd3b66fa1c4080330d38b4bd54701ebbf76f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:26:55 +0200
 Subject: [PATCH 375/414] Step 22.17: Add new filter to PartyImage
@@ -13900,7 +13937,7 @@ index 5b636b8..64384c0 100644
 2.7.4
 
 
-From a5e2b8fb01f0bb9b3473056ccfbbed3b22166909 Mon Sep 17 00:00:00 2001
+From 5705ca8a2848bc9b9d3ab066f479aa8f744335f9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:27:28 +0200
 Subject: [PATCH 376/414] Step 22.18: Implement DisplayImageFilter
@@ -13920,7 +13957,7 @@ index 719c4a3..04693e3 100644
 2.7.4
 
 
-From 521817ed92a13367c5e6d4803491a1ba3d6d8b17 Mon Sep 17 00:00:00 2001
+From 35b7bf035e707f76e7eefb1ed1afb2e3e1bb73c8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:43:49 +0200
 Subject: [PATCH 377/414] Step 23.1: Remove pbastowski:angular-babel
@@ -13958,7 +13995,7 @@ index c58233f..4a91d22 100644
 2.7.4
 
 
-From 1414cf96ed657ca2da6fa40eae1ebbebdd7222c6 Mon Sep 17 00:00:00 2001
+From a32d6d223cbf6e1784889989028401eb74cc5481 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:44:49 +0200
 Subject: [PATCH 378/414] Step 23.2: Add mys:typescript-ng-annotate
@@ -14002,7 +14039,7 @@ index 4a91d22..9877888 100644
 2.7.4
 
 
-From d116d25cb5b91a8de84129b3b79179e778b2e800 Mon Sep 17 00:00:00 2001
+From a35713f698c5e6a08e079819163ca58357da4422 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:46:33 +0200
 Subject: [PATCH 379/414] Step 23.3: Rename main file and make few changes to
@@ -14010,8 +14047,8 @@ Subject: [PATCH 379/414] Step 23.3: Rename main file and make few changes to
 
 ---
  client/main.js | 19 -------------------
- client/main.ts | 19 +++++++++++++++++++
- 2 files changed, 19 insertions(+), 19 deletions(-)
+ client/main.ts | 57 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 57 insertions(+), 19 deletions(-)
  delete mode 100644 client/main.js
  create mode 100644 client/main.ts
 
@@ -14042,22 +14079,60 @@ index 06731e1..0000000
 -}
 diff --git a/client/main.ts b/client/main.ts
 new file mode 100644
-index 0000000..1b2a4c5
+index 0000000..1a17992
 --- /dev/null
 +++ b/client/main.ts
-@@ -0,0 +1,19 @@
+@@ -0,0 +1,57 @@
 +import * as angular from 'angular';
 +
 +import { Meteor } from 'meteor/meteor';
 +
-+import Socially from '../imports/ui/components/socially/socially';
++import { registerAuth } from '../imports/ui/components/auth/auth';
++import { registerLogin } from '../imports/ui/components/login/login';
++import { registerNavigation } from '../imports/ui/components/navigation/navigation';
++import { registerPartiesList } from '../imports/ui/components/partiesList/partiesList';
++import { registerPartiesMap } from '../imports/ui/components/partiesMap/partiesMap';
++import { registerPartiesSort } from '../imports/ui/components/partiesSort/partiesSort';
++import { registerPartyAdd } from '../imports/ui/components/partyAdd/partyAdd';
++import { registerPartyAddButton } from '../imports/ui/components/partyAddButton/partyAddButton';
++import { registerPartyCreator } from '../imports/ui/components/partyCreator/partyCreator';
++import { registerPartyDetails } from '../imports/ui/components/partyDetails/partyDetails';
++import { registerPartyImage } from '../imports/ui/components/partyImage/partyImage';
++import { registerPartyMap } from '../imports/ui/components/partyMap/partyMap';
++import { registerPartyRemove } from '../imports/ui/components/partyRemove/partyRemove';
++import { registerPartyRsvp } from '../imports/ui/components/partyRsvp/partyRsvp';
++import { registerPartyRsvpsList } from '../imports/ui/components/partyRsvpsList/partyRsvpsList';
++import { registerPartyUninvited } from '../imports/ui/components/partyUninvited/partyUninvited';
++import { registerPartyUpload } from '../imports/ui/components/partyUpload/partyUpload';
++import { registerPassword } from '../imports/ui/components/password/password';
++import { registerRegister } from '../imports/ui/components/register/register';
++import { registerSocially, SociallyNg1Module } from '../imports/ui/components/socially/socially';
++
++registerAuth();
++registerLogin();
++registerNavigation();
++registerPartiesList();
++registerPartiesMap();
++registerPartiesSort();
++registerPartyAdd();
++registerPartyAddButton();
++registerPartyCreator();
++registerPartyDetails();
++registerPartyImage();
++registerPartyMap();
++registerPartyRemove();
++registerPartyRsvp();
++registerPartyRsvpsList();
++registerPartyUninvited();
++registerPartyUpload();
++registerPassword();
++registerRegister();
++registerSocially();
 +
 +function onReady() {
 +  angular.bootstrap(document, [
-+    Socially.name
-+  ], {
-+    strictDi: true
-+  });
++    SociallyNg1Module.name
++  ]);
 +}
 +
 +if (Meteor.isCordova) {
@@ -14069,7 +14144,7 @@ index 0000000..1b2a4c5
 2.7.4
 
 
-From 5e379408f9247c7d5996a7d6c1b5bee641673c8f Mon Sep 17 00:00:00 2001
+From 664d6c5c7faaf7e01baae5e303cef0e9c5fc5dc3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:49:27 +0200
 Subject: [PATCH 380/414] Step 23.4: Default imports of libraries inside
@@ -14258,17 +14333,17 @@ index 0000000..35393c3
 2.7.4
 
 
-From 386d565a418697b7a63c0fd1cbea4a2f1e33f903 Mon Sep 17 00:00:00 2001
+From 032feaef9fce75c2c77a5aa253e3a2a0404641a9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:50:49 +0200
 Subject: [PATCH 381/414] Step 23.5: Default imports of components
 
 ---
- imports/ui/components/socially/socially.ts | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ imports/ui/components/socially/socially.ts | 37 +++++++++++++++++-------------
+ 1 file changed, 21 insertions(+), 16 deletions(-)
 
 diff --git a/imports/ui/components/socially/socially.ts b/imports/ui/components/socially/socially.ts
-index 35393c3..e982f1b 100644
+index 35393c3..775dd07 100644
 --- a/imports/ui/components/socially/socially.ts
 +++ b/imports/ui/components/socially/socially.ts
 @@ -11,10 +11,10 @@ import { Meteor } from 'meteor/meteor';
@@ -14279,14 +14354,20 @@ index 35393c3..e982f1b 100644
 -import { name as PartyDetails } from '../partyDetails/partyDetails';
 -import { name as Navigation } from '../navigation/navigation';
 -import { name as Auth } from '../auth/auth';
-+import PartiesList from '../partiesList/partiesList';
-+import PartyDetails from '../partyDetails/partyDetails';
-+import Navigation from '../navigation/navigation';
-+import Auth from '../auth/auth';
++import { PartiesListNg1Module } from '../partiesList/partiesList';
++import { PartyDetailsNg1Module } from '../partyDetails/partyDetails';
++import { NavigationNg1Module } from '../navigation/navigation';
++import { AuthNg1Module } from '../auth/auth';
  
  class Socially {}
  
-@@ -27,10 +27,10 @@ export default angular.module(name, [
+@@ -22,24 +22,29 @@ const name = 'socially';
+ const template = Meteor.isCordova ? mobileTemplate : webTemplate;
+ 
+ // create a module
+-export default angular.module(name, [
++export const SociallyNg1Module = angular.module(name, [
+   angularMeteor,
    ngMaterial,
    ngSanitize,
    uiRouter,
@@ -14294,18 +14375,39 @@ index 35393c3..e982f1b 100644
 -  PartyDetails,
 -  Navigation,
 -  Auth,
-+  PartiesList.name,
-+  PartyDetails.name,
-+  Navigation.name,
-+  Auth.name,
++  PartiesListNg1Module.name,
++  PartyDetailsNg1Module.name,
++  NavigationNg1Module.name,
++  AuthNg1Module.name,
    'accounts.ui',
    'ionic'
- ]).component(name, {
+-]).component(name, {
+-  template,
+-  controllerAs: name,
+-  controller: Socially
+-})
+-  .config(config)
+-  .run(run);
++]);
++
++export function registerSocially() {
++  SociallyNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      controller: Socially
++    })
++    .config(config)
++    .run(run);
++}
+ 
+ function config($locationProvider, $urlRouterProvider, $mdIconProvider) {
+   'ngInject';
 -- 
 2.7.4
 
 
-From 03607548f964febb2b4ef0545eb635d02bd76341 Mon Sep 17 00:00:00 2001
+From 02caf3243955f3aca6cea46d295d82586e967bbd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:19:19 +0200
 Subject: [PATCH 382/414] Step 23.6: Move everything to typescript
@@ -14338,61 +14440,59 @@ Subject: [PATCH 382/414] Step 23.6: Move everything to typescript
  imports/startup/fixtures.js                        |  21 ---
  imports/startup/fixtures.ts                        |  21 +++
  imports/ui/components/auth/auth.js                 |  47 ------
- imports/ui/components/auth/auth.ts                 |  47 ++++++
+ imports/ui/components/auth/auth.ts                 |  52 ++++++
  imports/ui/components/login/login.js               |  35 ----
- imports/ui/components/login/login.ts               |  35 ++++
+ imports/ui/components/login/login.ts               |  39 +++++
  imports/ui/components/login/mobile.js              |  40 -----
  imports/ui/components/login/mobile.ts              |  40 +++++
  imports/ui/components/login/web.js                 |  30 ----
  imports/ui/components/login/web.ts                 |  30 ++++
  imports/ui/components/navigation/navigation.js     |  14 --
- imports/ui/components/navigation/navigation.ts     |  14 ++
+ imports/ui/components/navigation/navigation.ts     |  19 +++
  .../partiesList/client/partiesList.tests.js        |  50 ------
  .../partiesList/client/partiesList.tests.ts        |  50 ++++++
  imports/ui/components/partiesList/partiesList.js   | 105 ------------
- imports/ui/components/partiesList/partiesList.ts   | 105 ++++++++++++
+ imports/ui/components/partiesList/partiesList.ts   | 110 +++++++++++++
  imports/ui/components/partiesMap/partiesMap.js     |  37 -----
- imports/ui/components/partiesMap/partiesMap.ts     |  37 +++++
+ imports/ui/components/partiesMap/partiesMap.ts     |  42 +++++
  .../partiesSort/client/partiesSort.tests.js        |  54 -------
  .../partiesSort/client/partiesSort.tests.ts        |  54 +++++++
  imports/ui/components/partiesSort/partiesSort.js   |  34 ----
- imports/ui/components/partiesSort/partiesSort.ts   |  34 ++++
+ imports/ui/components/partiesSort/partiesSort.ts   |  39 +++++
  .../components/partyAdd/client/partyAdd.tests.js   |  65 --------
  .../components/partyAdd/client/partyAdd.tests.ts   |  65 ++++++++
  imports/ui/components/partyAdd/partyAdd.js         |  44 -----
- imports/ui/components/partyAdd/partyAdd.ts         |  44 +++++
+ imports/ui/components/partyAdd/partyAdd.ts         |  49 ++++++
  .../ui/components/partyAddButton/partyAddButton.js |  45 ------
- .../ui/components/partyAddButton/partyAddButton.ts |  45 ++++++
+ .../ui/components/partyAddButton/partyAddButton.ts |  50 ++++++
  .../partyCreator/client/partyCreator.tests.js      |  81 ----------
  .../partyCreator/client/partyCreator.tests.ts      |  81 ++++++++++
  imports/ui/components/partyCreator/partyCreator.js |  49 ------
- imports/ui/components/partyCreator/partyCreator.ts |  49 ++++++
+ imports/ui/components/partyCreator/partyCreator.ts |  54 +++++++
  .../partyDetails/client/partyDetails.tests.js      |  51 ------
  .../partyDetails/client/partyDetails.tests.ts      |  51 ++++++
  imports/ui/components/partyDetails/partyDetails.js | 104 ------------
- imports/ui/components/partyDetails/partyDetails.ts | 104 ++++++++++++
+ imports/ui/components/partyDetails/partyDetails.ts | 109 +++++++++++++
  imports/ui/components/partyImage/partyImage.js     |  39 -----
- imports/ui/components/partyImage/partyImage.ts     |  39 +++++
+ imports/ui/components/partyImage/partyImage.ts     |  44 +++++
  imports/ui/components/partyMap/partyMap.js         |  61 -------
- imports/ui/components/partyMap/partyMap.ts         |  61 +++++++
+ imports/ui/components/partyMap/partyMap.ts         |  66 ++++++++
  .../partyRemove/client/partyRemove.tests.js        |  37 -----
  .../partyRemove/client/partyRemove.tests.ts        |  37 +++++
  imports/ui/components/partyRemove/partyRemove.js   |  27 ----
- imports/ui/components/partyRemove/partyRemove.ts   |  27 ++++
+ imports/ui/components/partyRemove/partyRemove.ts   |  32 ++++
  imports/ui/components/partyRsvp/partyRsvp.js       |  62 -------
- imports/ui/components/partyRsvp/partyRsvp.ts       |  62 +++++++
- .../ui/components/partyRsvpUsers/partyRsvpUsers.js |  29 ----
- .../ui/components/partyRsvpUsers/partyRsvpUsers.ts |  29 ++++
+ imports/ui/components/partyRsvp/partyRsvp.ts       |  67 ++++++++
  .../ui/components/partyRsvpsList/partyRsvpsList.js |  20 ---
- .../ui/components/partyRsvpsList/partyRsvpsList.ts |  20 +++
+ .../ui/components/partyRsvpsList/partyRsvpsList.ts |  25 +++
  .../ui/components/partyUninvited/partyUninvited.js |  50 ------
- .../ui/components/partyUninvited/partyUninvited.ts |  50 ++++++
+ .../ui/components/partyUninvited/partyUninvited.ts |  55 +++++++
  imports/ui/components/partyUpload/partyUpload.js   |  91 -----------
- imports/ui/components/partyUpload/partyUpload.ts   |  91 +++++++++++
+ imports/ui/components/partyUpload/partyUpload.ts   |  96 +++++++++++
  imports/ui/components/password/password.js         |  56 -------
- imports/ui/components/password/password.ts         |  56 +++++++
+ imports/ui/components/password/password.ts         |  60 +++++++
  imports/ui/components/register/register.js         |  58 -------
- imports/ui/components/register/register.ts         |  58 +++++++
+ imports/ui/components/register/register.ts         |  62 +++++++
  imports/ui/filters/displayImageFilter.js           |  26 ---
  imports/ui/filters/displayImageFilter.ts           |  26 +++
  imports/ui/filters/displayNameFilter.js            |  25 ---
@@ -14401,7 +14501,7 @@ Subject: [PATCH 382/414] Step 23.6: Move everything to typescript
  imports/ui/filters/uninvitedFilter.ts              |  21 +++
  server/main.js                                     |   4 -
  server/main.ts                                     |   4 +
- 90 files changed, 2076 insertions(+), 2076 deletions(-)
+ 88 files changed, 2139 insertions(+), 2047 deletions(-)
  delete mode 100644 imports/api/images/collection.js
  create mode 100644 imports/api/images/collection.ts
  delete mode 100644 imports/api/images/helpers.js
@@ -14472,8 +14572,6 @@ Subject: [PATCH 382/414] Step 23.6: Move everything to typescript
  create mode 100644 imports/ui/components/partyRemove/partyRemove.ts
  delete mode 100644 imports/ui/components/partyRsvp/partyRsvp.js
  create mode 100644 imports/ui/components/partyRsvp/partyRsvp.ts
- delete mode 100644 imports/ui/components/partyRsvpUsers/partyRsvpUsers.js
- create mode 100644 imports/ui/components/partyRsvpUsers/partyRsvpUsers.ts
  delete mode 100644 imports/ui/components/partyRsvpsList/partyRsvpsList.js
  create mode 100644 imports/ui/components/partyRsvpsList/partyRsvpsList.ts
  delete mode 100644 imports/ui/components/partyUninvited/partyUninvited.js
@@ -15874,10 +15972,10 @@ index a87dd5e..0000000
 -});
 diff --git a/imports/ui/components/auth/auth.ts b/imports/ui/components/auth/auth.ts
 new file mode 100644
-index 0000000..80c54d0
+index 0000000..b091db2
 --- /dev/null
 +++ b/imports/ui/components/auth/auth.ts
-@@ -0,0 +1,47 @@
+@@ -0,0 +1,52 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
@@ -15886,9 +15984,9 @@ index 0000000..80c54d0
 +
 +import template from './auth.html';
 +import DisplayNameFilter from '../../filters/displayNameFilter';
-+import Login from '../login/login';
-+import Register from '../register/register';
-+import Password from '../password/password';
++import { LoginNg1Module } from '../login/login';
++import { RegisterNg1Module } from '../register/register';
++import { PasswordNg1Module } from '../password/password';
 +
 +const name = 'auth';
 +
@@ -15914,17 +16012,22 @@ index 0000000..80c54d0
 +}
 +
 +// create a module
-+export default angular.module(name, [
++export const AuthNg1Module = angular.module(name, [
 +  angularMeteor,
 +  DisplayNameFilter.name,
-+  Login.name,
-+  Register.name,
-+  Password.name
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  controller: Auth
-+});
++  LoginNg1Module.name,
++  RegisterNg1Module.name,
++  PasswordNg1Module.name
++]);
++
++export function registerAuth() {
++  AuthNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      controller: Auth
++    });
++}
 diff --git a/imports/ui/components/login/login.js b/imports/ui/components/login/login.js
 deleted file mode 100644
 index 376fcaf..0000000
@@ -15968,10 +16071,10 @@ index 376fcaf..0000000
 -}
 diff --git a/imports/ui/components/login/login.ts b/imports/ui/components/login/login.ts
 new file mode 100644
-index 0000000..975d64f
+index 0000000..31c0f92
 --- /dev/null
 +++ b/imports/ui/components/login/login.ts
-@@ -0,0 +1,35 @@
+@@ -0,0 +1,39 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +import * as uiRouter from 'angular-ui-router';
@@ -15988,16 +16091,20 @@ index 0000000..975d64f
 +const controller = Meteor.isCordova ? LoginMobile : LoginWeb;
 +
 +// create a module
-+export default angular.module(name, [
++export const LoginNg1Module = angular.module(name, [
 +  angularMeteor,
 +  uiRouter
-+])
-+  .component(name, {
-+    template,
-+    controller,
-+    controllerAs: name
-+  })
-+  .config(config);
++]);
++
++export function registerLogin() {
++  LoginNg1Module
++    .component(name, {
++      template,
++      controller,
++      controllerAs: name
++    })
++    .config(config);
++}
 +
 +function config($stateProvider) {
 +  'ngInject';
@@ -16193,10 +16300,10 @@ index 5e33f59..0000000
 -});
 diff --git a/imports/ui/components/navigation/navigation.ts b/imports/ui/components/navigation/navigation.ts
 new file mode 100644
-index 0000000..e391793
+index 0000000..67acb8a
 --- /dev/null
 +++ b/imports/ui/components/navigation/navigation.ts
-@@ -0,0 +1,14 @@
+@@ -0,0 +1,19 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
@@ -16205,12 +16312,17 @@ index 0000000..e391793
 +const name = 'navigation';
 +
 +// create a module
-+export default angular.module(name, [
++export const NavigationNg1Module = angular.module(name, [
 +  angularMeteor
-+]).component(name, {
-+  template,
-+  controllerAs: name
-+});
++]);
++
++export function registerNavigation() {
++  NavigationNg1Module
++    .component(name, {
++      template,
++      controllerAs: name
++    });
++}
 diff --git a/imports/ui/components/partiesList/client/partiesList.tests.js b/imports/ui/components/partiesList/client/partiesList.tests.js
 deleted file mode 100644
 index 176da85..0000000
@@ -16436,10 +16548,10 @@ index df916d9..0000000
 -}
 diff --git a/imports/ui/components/partiesList/partiesList.ts b/imports/ui/components/partiesList/partiesList.ts
 new file mode 100644
-index 0000000..a2dfa94
+index 0000000..0d2fb0f
 --- /dev/null
 +++ b/imports/ui/components/partiesList/partiesList.ts
-@@ -0,0 +1,105 @@
+@@ -0,0 +1,110 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +import * as uiRouter from 'angular-ui-router';
@@ -16451,14 +16563,14 @@ index 0000000..a2dfa94
 +import webTemplate from './web.html';
 +import mobileTemplate from './mobile.html';
 +import { Parties } from '../../../api/parties';
-+import PartiesSort from '../partiesSort/partiesSort';
-+import PartiesMap from '../partiesMap/partiesMap';
-+import PartyAddButton from '../partyAddButton/partyAddButton';
-+import PartyRemove from '../partyRemove/partyRemove';
-+import PartyCreator from '../partyCreator/partyCreator';
-+import PartyRsvp from '../partyRsvp/partyRsvp';
-+import PartyRsvpsList from '../partyRsvpsList/partyRsvpsList';
-+import PartyImage from '../partyImage/partyImage';
++import { PartiesSortNg1Module } from '../partiesSort/partiesSort';
++import { PartiesMapNg1Module } from '../partiesMap/partiesMap';
++import { PartyAddButtonNg1Module } from '../partyAddButton/partyAddButton';
++import { PartyRemoveNg1Module } from '../partyRemove/partyRemove';
++import { PartyCreatorNg1Module } from '../partyCreator/partyCreator';
++import { PartyRsvpNg1Module } from '../partyRsvp/partyRsvp';
++import { PartyRsvpsListNg1Module } from '../partyRsvpsList/partyRsvpsList';
++import { PartyImageNg1Module } from '../partyImage/partyImage';
 +
 +class PartiesList {
 +  constructor($scope, $reactive) {
@@ -16518,24 +16630,29 @@ index 0000000..a2dfa94
 +const template = Meteor.isCordova ? mobileTemplate : webTemplate;
 +
 +// create a module
-+export default angular.module(name, [
++export const PartiesListNg1Module = angular.module(name, [
 +  angularMeteor,
 +  uiRouter,
 +  utilsPagination,
-+  PartiesSort.name,
-+  PartiesMap.name,
-+  PartyAddButton.name,
-+  PartyRemove.name,
-+  PartyCreator.name,
-+  PartyRsvp.name,
-+  PartyRsvpsList.name,
-+  PartyImage.name
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  controller: PartiesList
-+})
-+  .config(config);
++  PartiesSortNg1Module.name,
++  PartiesMapNg1Module.name,
++  PartyAddButtonNg1Module.name,
++  PartyRemoveNg1Module.name,
++  PartyCreatorNg1Module.name,
++  PartyRsvpNg1Module.name,
++  PartyRsvpsListNg1Module.name,
++  PartyImageNg1Module.name
++]);
++
++export function registerPartiesList() {
++  PartiesListNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      controller: PartiesList
++    })
++    .config(config);
++}
 +
 +function config($stateProvider) {
 +  'ngInject';
@@ -16590,10 +16707,10 @@ index 1c94faf..0000000
 -});
 diff --git a/imports/ui/components/partiesMap/partiesMap.ts b/imports/ui/components/partiesMap/partiesMap.ts
 new file mode 100644
-index 0000000..8c819e1
+index 0000000..66543d7
 --- /dev/null
 +++ b/imports/ui/components/partiesMap/partiesMap.ts
-@@ -0,0 +1,37 @@
+@@ -0,0 +1,42 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +import 'angular-simple-logger';
@@ -16619,18 +16736,23 @@ index 0000000..8c819e1
 +const name = 'partiesMap';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartiesMapNg1Module = angular.module(name, [
 +  angularMeteor,
 +  'nemLogging', // https://github.com/angular-ui/angular-google-maps/issues/1633
 +  'uiGmapgoogle-maps'
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  bindings: {
-+    parties: '='
-+  },
-+  controller: PartiesMap
-+});
++]);
++
++export function registerPartiesMap() {
++  PartiesMapNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      bindings: {
++        parties: '='
++      },
++      controller: PartiesMap
++    });
++}
 diff --git a/imports/ui/components/partiesSort/client/partiesSort.tests.js b/imports/ui/components/partiesSort/client/partiesSort.tests.js
 deleted file mode 100644
 index 09d81b4..0000000
@@ -16793,10 +16915,10 @@ index d5ff3fb..0000000
 -});
 diff --git a/imports/ui/components/partiesSort/partiesSort.ts b/imports/ui/components/partiesSort/partiesSort.ts
 new file mode 100644
-index 0000000..7eb5212
+index 0000000..1f52a88
 --- /dev/null
 +++ b/imports/ui/components/partiesSort/partiesSort.ts
-@@ -0,0 +1,34 @@
+@@ -0,0 +1,39 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
@@ -16819,18 +16941,23 @@ index 0000000..7eb5212
 +const name = 'partiesSort';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartiesSortNg1Module = angular.module(name, [
 +  angularMeteor
-+]).component(name, {
-+  template,
-+  bindings: {
-+    onChange: '&',
-+    property: '@',
-+    order: '@'
-+  },
-+  controllerAs: name,
-+  controller: PartiesSort
-+});
++]);
++
++export function registerPartiesSort() {
++  PartiesSortNg1Module
++    .component(name, {
++      template,
++      bindings: {
++        onChange: '&',
++        property: '@',
++        order: '@'
++      },
++      controllerAs: name,
++      controller: PartiesSort
++    });
++}
 diff --git a/imports/ui/components/partyAdd/client/partyAdd.tests.js b/imports/ui/components/partyAdd/client/partyAdd.tests.js
 deleted file mode 100644
 index 3d27875..0000000
@@ -17025,10 +17152,10 @@ index 47f09fe..0000000
 -});
 diff --git a/imports/ui/components/partyAdd/partyAdd.ts b/imports/ui/components/partyAdd/partyAdd.ts
 new file mode 100644
-index 0000000..7f47e79
+index 0000000..d843911
 --- /dev/null
 +++ b/imports/ui/components/partyAdd/partyAdd.ts
-@@ -0,0 +1,44 @@
+@@ -0,0 +1,49 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
@@ -17036,7 +17163,7 @@ index 0000000..7f47e79
 +
 +import template from './partyAdd.html';
 +import { Parties } from '../../../api/parties';
-+import PartyUpload from '../partyUpload/partyUpload';
++import { PartyUploadNg1Module } from '../partyUpload/partyUpload';
 +
 +class PartyAdd {
 +  constructor() {
@@ -17062,17 +17189,22 @@ index 0000000..7f47e79
 +const name = 'partyAdd';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyAddNg1Module = angular.module(name, [
 +  angularMeteor,
-+  PartyUpload.name
-+]).component(name, {
-+  template,
-+  bindings: {
-+    done: '&?'
-+  },
-+  controllerAs: name,
-+  controller: PartyAdd
-+});
++  PartyUploadNg1Module.name
++]);
++
++export function registerPartyAdd() {
++  PartyAddNg1Module
++    .component(name, {
++      template,
++      bindings: {
++        done: '&?'
++      },
++      controllerAs: name,
++      controller: PartyAdd
++    });
++}
 diff --git a/imports/ui/components/partyAddButton/partyAddButton.js b/imports/ui/components/partyAddButton/partyAddButton.js
 deleted file mode 100644
 index cadd70c..0000000
@@ -17126,16 +17258,16 @@ index cadd70c..0000000
 -});
 diff --git a/imports/ui/components/partyAddButton/partyAddButton.ts b/imports/ui/components/partyAddButton/partyAddButton.ts
 new file mode 100644
-index 0000000..e46f825
+index 0000000..94d3460
 --- /dev/null
 +++ b/imports/ui/components/partyAddButton/partyAddButton.ts
-@@ -0,0 +1,45 @@
+@@ -0,0 +1,50 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
 +import * as buttonTemplate from './partyAddButton.html';
 +import * as modalTemplate from './partyAddModal.html';
-+import PartyAdd from '../partyAdd/partyAdd';
++import { PartyAddNg1Module } from '../partyAdd/partyAdd';
 +
 +class PartyAddButton {
 +  constructor($mdDialog, $mdMedia) {
@@ -17167,14 +17299,19 @@ index 0000000..e46f825
 +const name = 'partyAddButton';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyAddButtonNg1Module = angular.module(name, [
 +  angularMeteor,
-+  PartyAdd.name
-+]).component(name, {
-+  template: buttonTemplate,
-+  controllerAs: name,
-+  controller: PartyAddButton
-+});
++  PartyAddNg1Module.name
++]);
++
++export function registerPartyAddButton() {
++  PartyAddButtonNg1Module
++    .component(name, {
++      template: buttonTemplate,
++      controllerAs: name,
++      controller: PartyAddButton
++    });
++}
 diff --git a/imports/ui/components/partyCreator/client/partyCreator.tests.js b/imports/ui/components/partyCreator/client/partyCreator.tests.js
 deleted file mode 100644
 index dabb0b5..0000000
@@ -17406,10 +17543,10 @@ index 416d637..0000000
 -});
 diff --git a/imports/ui/components/partyCreator/partyCreator.ts b/imports/ui/components/partyCreator/partyCreator.ts
 new file mode 100644
-index 0000000..dd52d6a
+index 0000000..e8ba879
 --- /dev/null
 +++ b/imports/ui/components/partyCreator/partyCreator.ts
-@@ -0,0 +1,49 @@
+@@ -0,0 +1,54 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
@@ -17448,17 +17585,22 @@ index 0000000..dd52d6a
 +const name = 'partyCreator';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyCreatorNg1Module = angular.module(name, [
 +  angularMeteor,
 +  DisplayNameFilter.name
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  bindings: {
-+    party: '<'
-+  },
-+  controller: PartyCreator
-+});
++]);
++
++export function registerPartyCreator() {
++  PartyCreatorNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      bindings: {
++        party: '<'
++      },
++      controller: PartyCreator
++    });
++}
 diff --git a/imports/ui/components/partyDetails/client/partyDetails.tests.js b/imports/ui/components/partyDetails/client/partyDetails.tests.js
 deleted file mode 100644
 index 0f3aa3b..0000000
@@ -17685,10 +17827,10 @@ index 86adc67..0000000
 -}
 diff --git a/imports/ui/components/partyDetails/partyDetails.ts b/imports/ui/components/partyDetails/partyDetails.ts
 new file mode 100644
-index 0000000..2b9be65
+index 0000000..84e1bb2
 --- /dev/null
 +++ b/imports/ui/components/partyDetails/partyDetails.ts
-@@ -0,0 +1,104 @@
+@@ -0,0 +1,109 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +import * as uiRouter from 'angular-ui-router';
@@ -17697,8 +17839,8 @@ index 0000000..2b9be65
 +
 +import template from './partyDetails.html';
 +import { Parties } from '../../../api/parties';
-+import PartyUninvited from '../partyUninvited/partyUninvited';
-+import PartyMap from '../partyMap/partyMap';
++import { PartyUninvitedNg1Module } from '../partyUninvited/partyUninvited';
++import { PartyMapNg1Module } from '../partyMap/partyMap';
 +
 +class PartyDetails {
 +  constructor($stateParams, $scope, $reactive) {
@@ -17764,17 +17906,22 @@ index 0000000..2b9be65
 +const name = 'partyDetails';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyDetailsNg1Module = angular.module(name, [
 +  angularMeteor,
 +  uiRouter,
-+  PartyUninvited.name,
-+  PartyMap.name
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  controller: PartyDetails
-+})
-+  .config(config);
++  PartyUninvitedNg1Module.name,
++  PartyMapNg1Module.name
++]);
++
++export function registerPartyDetails() {
++  PartyDetailsNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      controller: PartyDetails
++    })
++    .config(config);
++}
 +
 +function config($stateProvider) {
 +  'ngInject';
@@ -17840,10 +17987,10 @@ index 64384c0..0000000
 -});
 diff --git a/imports/ui/components/partyImage/partyImage.ts b/imports/ui/components/partyImage/partyImage.ts
 new file mode 100644
-index 0000000..b3ff95b
+index 0000000..84d5905
 --- /dev/null
 +++ b/imports/ui/components/partyImage/partyImage.ts
-@@ -0,0 +1,39 @@
+@@ -0,0 +1,44 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
@@ -17872,17 +18019,22 @@ index 0000000..b3ff95b
 +const name = 'partyImage';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyImageNg1Module = angular.module(name, [
 +  angularMeteor,
 +  DisplayImageFilter.name
-+]).component(name, {
-+  template,
-+  bindings: {
-+    images: '<'
-+  },
-+  controllerAs: name,
-+  controller: PartyImage
-+});
++]);
++
++export function registerPartyImage() {
++  PartyImageNg1Module
++    .component(name, {
++      template,
++      bindings: {
++        images: '<'
++      },
++      controllerAs: name,
++      controller: PartyImage
++    });
++}
 diff --git a/imports/ui/components/partyMap/partyMap.js b/imports/ui/components/partyMap/partyMap.js
 deleted file mode 100644
 index c062d30..0000000
@@ -17952,10 +18104,10 @@ index c062d30..0000000
 -});
 diff --git a/imports/ui/components/partyMap/partyMap.ts b/imports/ui/components/partyMap/partyMap.ts
 new file mode 100644
-index 0000000..56f6b99
+index 0000000..2dca6c5
 --- /dev/null
 +++ b/imports/ui/components/partyMap/partyMap.ts
-@@ -0,0 +1,61 @@
+@@ -0,0 +1,66 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +import 'angular-simple-logger';
@@ -18005,18 +18157,23 @@ index 0000000..56f6b99
 +const name = 'partyMap';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyMapNg1Module = angular.module(name, [
 +  angularMeteor,
 +  'nemLogging', // https://github.com/angular-ui/angular-google-maps/issues/1633
 +  'uiGmapgoogle-maps'
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  bindings: {
-+    location: '='
-+  },
-+  controller: PartyMap
-+});
++]);
++
++export function registerPartyMap() {
++  PartyMapNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      bindings: {
++        location: '='
++      },
++      controller: PartyMap
++    });
++}
 diff --git a/imports/ui/components/partyRemove/client/partyRemove.tests.js b/imports/ui/components/partyRemove/client/partyRemove.tests.js
 deleted file mode 100644
 index e8b6e97..0000000
@@ -18138,10 +18295,10 @@ index ab73562..0000000
 -});
 diff --git a/imports/ui/components/partyRemove/partyRemove.ts b/imports/ui/components/partyRemove/partyRemove.ts
 new file mode 100644
-index 0000000..8c991f1
+index 0000000..f4377cb
 --- /dev/null
 +++ b/imports/ui/components/partyRemove/partyRemove.ts
-@@ -0,0 +1,27 @@
+@@ -0,0 +1,32 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
@@ -18159,16 +18316,21 @@ index 0000000..8c991f1
 +const name = 'partyRemove';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyRemoveNg1Module = angular.module(name, [
 +  angularMeteor
-+]).component(name, {
-+  template,
-+  bindings: {
-+    party: '<'
-+  },
-+  controllerAs: name,
-+  controller: PartyRemove
-+});
++]);
++
++export function registerPartyRemove() {
++  PartyRemoveNg1Module
++    .component(name, {
++      template,
++      bindings: {
++        party: '<'
++      },
++      controllerAs: name,
++      controller: PartyRemove
++    });
++}
 diff --git a/imports/ui/components/partyRsvp/partyRsvp.js b/imports/ui/components/partyRsvp/partyRsvp.js
 deleted file mode 100644
 index 522cc38..0000000
@@ -18239,10 +18401,10 @@ index 522cc38..0000000
 -});
 diff --git a/imports/ui/components/partyRsvp/partyRsvp.ts b/imports/ui/components/partyRsvp/partyRsvp.ts
 new file mode 100644
-index 0000000..258fdf4
+index 0000000..1d99115
 --- /dev/null
 +++ b/imports/ui/components/partyRsvp/partyRsvp.ts
-@@ -0,0 +1,62 @@
+@@ -0,0 +1,67 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +import * as _ from 'underscore';
@@ -18295,86 +18457,21 @@ index 0000000..258fdf4
 +const name = 'partyRsvp';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyRsvpNg1Module = angular.module(name, [
 +  angularMeteor
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  bindings: {
-+    party: '<'
-+  },
-+  controller: PartyRsvp
-+});
-diff --git a/imports/ui/components/partyRsvpUsers/partyRsvpUsers.js b/imports/ui/components/partyRsvpUsers/partyRsvpUsers.js
-deleted file mode 100644
-index 1b4f1fa..0000000
---- a/imports/ui/components/partyRsvpUsers/partyRsvpUsers.js
-+++ /dev/null
-@@ -1,29 +0,0 @@
--import angular from 'angular';
--import angularMeteor from 'angular-meteor';
--
--import { Meteor } from 'meteor/meteor';
--
--import template from './partyRsvpUsers.html';
--import { name as DisplayNameFilter } from '../../filters/displayNameFilter';
--
--class PartyRsvpUsers {
--  getUserById(userId) {
--    return Meteor.users.findOne(userId);
--  }
--}
--
--const name = 'partyRsvpUsers';
--
--// create a module
--export default angular.module(name, [
--  angularMeteor,
--  DisplayNameFilter
--]).component(name, {
--  template,
--  controllerAs: name,
--  bindings: {
--    rsvps: '<',
--    type: '@'
--  },
--  controller: PartyRsvpUsers
--});
-diff --git a/imports/ui/components/partyRsvpUsers/partyRsvpUsers.ts b/imports/ui/components/partyRsvpUsers/partyRsvpUsers.ts
-new file mode 100644
-index 0000000..fa2190b
---- /dev/null
-+++ b/imports/ui/components/partyRsvpUsers/partyRsvpUsers.ts
-@@ -0,0 +1,29 @@
-+import * as angular from 'angular';
-+import * as angularMeteor from 'angular-meteor';
++])
 +
-+import { Meteor } from 'meteor/meteor';
-+
-+import template from './partyRsvpUsers.html';
-+import DisplayNameFilter from '../../filters/displayNameFilter';
-+
-+class PartyRsvpUsers {
-+  getUserById(userId) {
-+    return Meteor.users.findOne(userId);
-+  }
++export function registerPartyRsvp() {
++  PartyRsvpNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      bindings: {
++        party: '<'
++      },
++      controller: PartyRsvp
++    });
 +}
-+
-+const name = 'partyRsvpUsers';
-+
-+// create a module
-+export default angular.module(name, [
-+  angularMeteor,
-+  DisplayNameFilter.name
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  bindings: {
-+    rsvps: '<',
-+    type: '@'
-+  },
-+  controller: PartyRsvpUsers
-+});
 diff --git a/imports/ui/components/partyRsvpsList/partyRsvpsList.js b/imports/ui/components/partyRsvpsList/partyRsvpsList.js
 deleted file mode 100644
 index 755c9f9..0000000
@@ -18403,10 +18500,10 @@ index 755c9f9..0000000
 -});
 diff --git a/imports/ui/components/partyRsvpsList/partyRsvpsList.ts b/imports/ui/components/partyRsvpsList/partyRsvpsList.ts
 new file mode 100644
-index 0000000..8f29705
+index 0000000..8872f9c
 --- /dev/null
 +++ b/imports/ui/components/partyRsvpsList/partyRsvpsList.ts
-@@ -0,0 +1,20 @@
+@@ -0,0 +1,25 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
@@ -18417,16 +18514,21 @@ index 0000000..8f29705
 +const name = 'partyRsvpsList';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyRsvpsListNg1Module = angular.module(name, [
 +  angularMeteor
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  bindings: {
-+    rsvps: '<'
-+  },
-+  controller: PartyRsvpsList
-+});
++]);
++
++export function registerPartyRsvpsList() {
++  PartyRsvpsListNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      bindings: {
++        rsvps: '<'
++      },
++      controller: PartyRsvpsList
++    });
++}
 diff --git a/imports/ui/components/partyUninvited/partyUninvited.js b/imports/ui/components/partyUninvited/partyUninvited.js
 deleted file mode 100644
 index 7958f5a..0000000
@@ -18485,10 +18587,10 @@ index 7958f5a..0000000
 -});
 diff --git a/imports/ui/components/partyUninvited/partyUninvited.ts b/imports/ui/components/partyUninvited/partyUninvited.ts
 new file mode 100644
-index 0000000..7b9d39f
+index 0000000..4781e8b
 --- /dev/null
 +++ b/imports/ui/components/partyUninvited/partyUninvited.ts
-@@ -0,0 +1,50 @@
+@@ -0,0 +1,55 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +
@@ -18527,18 +18629,23 @@ index 0000000..7b9d39f
 +const name = 'partyUninvited';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyUninvitedNg1Module = angular.module(name, [
 +  angularMeteor,
 +  UninvitedFilter.name,
 +  DisplayNameFilter.name
-+]).component(name, {
-+  template,
-+  controllerAs: name,
-+  bindings: {
-+    party: '<'
-+  },
-+  controller: PartyUninvited
-+});
++]);
++
++export function registerPartyUninvited() {
++  PartyUninvitedNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      bindings: {
++        party: '<'
++      },
++      controller: PartyUninvited
++    });
++}
 diff --git a/imports/ui/components/partyUpload/partyUpload.js b/imports/ui/components/partyUpload/partyUpload.js
 deleted file mode 100644
 index 400368e..0000000
@@ -18638,10 +18745,10 @@ index 400368e..0000000
 -});
 diff --git a/imports/ui/components/partyUpload/partyUpload.ts b/imports/ui/components/partyUpload/partyUpload.ts
 new file mode 100644
-index 0000000..9323324
+index 0000000..39e04ce
 --- /dev/null
 +++ b/imports/ui/components/partyUpload/partyUpload.ts
-@@ -0,0 +1,91 @@
+@@ -0,0 +1,96 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +import * as ngFileUpload from 'ng-file-upload';
@@ -18720,19 +18827,24 @@ index 0000000..9323324
 +const name = 'partyUpload';
 +
 +// create a module
-+export default angular.module(name, [
++export const PartyUploadNg1Module = angular.module(name, [
 +  angularMeteor,
 +  ngFileUpload,
 +  'ngImgCrop',
 +  'angular-sortable-view'
-+]).component(name, {
-+  template,
-+  bindings: {
-+    files: '=?'
-+  },
-+  controllerAs: name,
-+  controller: PartyUpload
-+});
++]);
++
++export function registerPartyUpload() {
++  PartyUploadNg1Module
++    .component(name, {
++      template,
++      bindings: {
++        files: '=?'
++      },
++      controllerAs: name,
++      controller: PartyUpload
++    });
++}
 diff --git a/imports/ui/components/password/password.js b/imports/ui/components/password/password.js
 deleted file mode 100644
 index c417f95..0000000
@@ -18797,10 +18909,10 @@ index c417f95..0000000
 -}
 diff --git a/imports/ui/components/password/password.ts b/imports/ui/components/password/password.ts
 new file mode 100644
-index 0000000..40aed57
+index 0000000..f7ad1e0
 --- /dev/null
 +++ b/imports/ui/components/password/password.ts
-@@ -0,0 +1,56 @@
+@@ -0,0 +1,60 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +import * as uiRouter from 'angular-ui-router';
@@ -18838,16 +18950,20 @@ index 0000000..40aed57
 +const name = 'password';
 +
 +// create a module
-+export default angular.module(name, [
++export const PasswordNg1Module = angular.module(name, [
 +  angularMeteor,
 +  uiRouter
-+])
-+  .component(name, {
-+    template,
-+    controllerAs: name,
-+    controller: Register
-+  })
-+  .config(config);
++]);
++
++export function registerPassword() {
++  PasswordNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      controller: Register
++    })
++    .config(config);
++}
 +
 +function config($stateProvider) {
 +  'ngInject';
@@ -18923,10 +19039,10 @@ index ab4ae94..0000000
 -}
 diff --git a/imports/ui/components/register/register.ts b/imports/ui/components/register/register.ts
 new file mode 100644
-index 0000000..eb0fa26
+index 0000000..4f5850d
 --- /dev/null
 +++ b/imports/ui/components/register/register.ts
-@@ -0,0 +1,58 @@
+@@ -0,0 +1,62 @@
 +import * as angular from 'angular';
 +import * as angularMeteor from 'angular-meteor';
 +import * as uiRouter from 'angular-ui-router';
@@ -18967,16 +19083,20 @@ index 0000000..eb0fa26
 +const name = 'register';
 +
 +// create a module
-+export default angular.module(name, [
++export const RegisterNg1Module = angular.module(name, [
 +  angularMeteor,
 +  uiRouter
-+])
-+  .component(name, {
-+    template,
-+    controllerAs: name,
-+    controller: Register
-+  })
-+  .config(config);
++]);
++
++export function registerRegister() {
++  RegisterNg1Module
++    .component(name, {
++      template,
++      controllerAs: name,
++      controller: Register
++    })
++    .config(config);
++}
 +
 +function config($stateProvider) {
 +  'ngInject';
@@ -19189,7 +19309,7 @@ index 0000000..2b47936
 2.7.4
 
 
-From edadca35922a1b7d4f7757ff8ce044f1d11a7566 Mon Sep 17 00:00:00 2001
+From 74d7425d835981bd26f02f1dfcc35f4893a8b1fc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:20:56 +0200
 Subject: [PATCH 383/414] Step 23.7: Import underscore correctly inside Parties
@@ -19213,7 +19333,7 @@ index e8aa1ad..b6c7ff9 100644
 2.7.4
 
 
-From c3caec9d38e44703d7910b2a56ba5df350d50597 Mon Sep 17 00:00:00 2001
+From 505d00dff5c9b53f518f214f5a453c4a405c9b39 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:28:32 +0200
 Subject: [PATCH 384/414] Step 23.8: Install angular2 modules
@@ -19223,7 +19343,7 @@ Subject: [PATCH 384/414] Step 23.8: Install angular2 modules
  1 file changed, 15 insertions(+), 2 deletions(-)
 
 diff --git a/package.json b/package.json
-index 056163e..191802a 100644
+index 056163e..517e44b 100644
 --- a/package.json
 +++ b/package.json
 @@ -6,6 +6,13 @@
@@ -19260,9 +19380,9 @@ index 056163e..191802a 100644
      "ng-img-crop": "^0.2.0",
 -    "underscore": "^1.8.3"
 +    "reflect-metadata": "^0.1.8",
-+    "rxjs": "^5.0.0-rc.1",
++    "rxjs": "^5.0.0-beta.12",
 +    "underscore": "^1.8.3",
-+    "zone.js": "^0.6.25"
++    "zone.js": "^0.6.21"
    },
    "devDependencies": {
      "angular-mocks": "^1.5.3"
@@ -19270,72 +19390,160 @@ index 056163e..191802a 100644
 2.7.4
 
 
-From 366d6266c92b0c354c0b533e0b73890484e0f7cc Mon Sep 17 00:00:00 2001
+From 10b590d262f14bdb47bc9f31045ae2cf623eeee0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:29:54 +0200
 Subject: [PATCH 385/414] Step 23.9: Create module with instance of
  UpgradeAdapter
 
 ---
- imports/ui/upgradeAdapter.ts | 2 ++
- 1 file changed, 2 insertions(+)
- create mode 100644 imports/ui/upgradeAdapter.ts
+ client/main.ts | 43 +++++++++++++++++++++++--------------------
+ 1 file changed, 23 insertions(+), 20 deletions(-)
 
-diff --git a/imports/ui/upgradeAdapter.ts b/imports/ui/upgradeAdapter.ts
-new file mode 100644
-index 0000000..66add32
---- /dev/null
-+++ b/imports/ui/upgradeAdapter.ts
-@@ -0,0 +1,2 @@
+diff --git a/client/main.ts b/client/main.ts
+index 1a17992..92b3cc0 100644
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -1,4 +1,5 @@
+ import * as angular from 'angular';
 +import { UpgradeAdapter } from '@angular/upgrade';
-+export const upgradeAdapter = new UpgradeAdapter();
+ 
+ import { Meteor } from 'meteor/meteor';
+ 
+@@ -23,26 +24,28 @@ import { registerPassword } from '../imports/ui/components/password/password';
+ import { registerRegister } from '../imports/ui/components/register/register';
+ import { registerSocially, SociallyNg1Module } from '../imports/ui/components/socially/socially';
+ 
+-registerAuth();
+-registerLogin();
+-registerNavigation();
+-registerPartiesList();
+-registerPartiesMap();
+-registerPartiesSort();
+-registerPartyAdd();
+-registerPartyAddButton();
+-registerPartyCreator();
+-registerPartyDetails();
+-registerPartyImage();
+-registerPartyMap();
+-registerPartyRemove();
+-registerPartyRsvp();
+-registerPartyRsvpsList();
+-registerPartyUninvited();
+-registerPartyUpload();
+-registerPassword();
+-registerRegister();
+-registerSocially();
++const adapter = new UpgradeAdapter();
++
++registerAuth(adapter);
++registerLogin(adapter);
++registerNavigation(adapter);
++registerPartiesList(adapter);
++registerPartiesMap(adapter);
++registerPartiesSort(adapter);
++registerPartyAdd(adapter);
++registerPartyAddButton(adapter);
++registerPartyCreator(adapter);
++registerPartyDetails(adapter);
++registerPartyImage(adapter);
++registerPartyMap(adapter);
++registerPartyRemove(adapter);
++registerPartyRsvp(adapter);
++registerPartyRsvpsList(adapter);
++registerPartyUninvited(adapter);
++registerPartyUpload(adapter);
++registerPassword(adapter);
++registerRegister(adapter);
++registerSocially(adapter);
+ 
+ function onReady() {
+   angular.bootstrap(document, [
 -- 
 2.7.4
 
 
-From 845dfb9098cfae60240e4ad5f5f186564de374ee Mon Sep 17 00:00:00 2001
+From 619657ef02d0370f8fa7b0f24aea8df6dd4da47c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:34:01 +0200
 Subject: [PATCH 386/414] Step 23.10: bootstrap using UpgradeAdapter
 
 ---
- client/main.ts | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ client/main.ts | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
 
 diff --git a/client/main.ts b/client/main.ts
-index 1b2a4c5..7da2f40 100644
+index 92b3cc0..8228c81 100644
 --- a/client/main.ts
 +++ b/client/main.ts
-@@ -1,11 +1,13 @@
+@@ -1,4 +1,8 @@
 +import 'angular2-meteor-polyfills/browser';
  import * as angular from 'angular';
-+import { upgradeAdapter } from '../imports/ui/upgradeAdapter';
++import { NgModule } from '@angular/core';
++import { BrowserModule } from '@angular/platform-browser';
++import { FormsModule } from '@angular/forms';
+ import { UpgradeAdapter } from '@angular/upgrade';
  
  import { Meteor } from 'meteor/meteor';
+@@ -24,7 +28,15 @@ import { registerPassword } from '../imports/ui/components/password/password';
+ import { registerRegister } from '../imports/ui/components/register/register';
+ import { registerSocially, SociallyNg1Module } from '../imports/ui/components/socially/socially';
  
- import Socially from '../imports/ui/components/socially/socially';
+-const adapter = new UpgradeAdapter();
++@NgModule({
++  imports: [
++    BrowserModule,
++    FormsModule
++  ]
++})
++class AppNg2Module {}
++
++const adapter = new UpgradeAdapter(AppNg2Module);
+ 
+ registerAuth(adapter);
+ registerLogin(adapter);
+@@ -48,7 +60,7 @@ registerRegister(adapter);
+ registerSocially(adapter);
  
  function onReady() {
 -  angular.bootstrap(document, [
-+  upgradeAdapter.bootstrap(document.body, [
-     Socially.name
-   ], {
-     strictDi: true
++  adapter.bootstrap(document, [
+     SociallyNg1Module.name
+   ]);
+ }
 -- 
 2.7.4
 
 
-From d8b9f444701a89dc4930d7611bbf027755ad373e Mon Sep 17 00:00:00 2001
+From c6430949a0225978abfb9caf5ff00333994fa2b6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:36:26 +0200
 Subject: [PATCH 387/414] Step 23.11: Create displayNamePipe based on
  displayNameFilter
 
 ---
+ client/main.ts                        |  4 ++++
  imports/ui/filters/displayNamePipe.ts | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ 2 files changed, 28 insertions(+)
  create mode 100644 imports/ui/filters/displayNamePipe.ts
 
+diff --git a/client/main.ts b/client/main.ts
+index 8228c81..8a6f845 100644
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -27,8 +27,12 @@ import { registerPartyUpload } from '../imports/ui/components/partyUpload/partyU
+ import { registerPassword } from '../imports/ui/components/password/password';
+ import { registerRegister } from '../imports/ui/components/register/register';
+ import { registerSocially, SociallyNg1Module } from '../imports/ui/components/socially/socially';
++import { DisplayNamePipe } from '../imports/ui/filters/displayNamePipe';
+ 
+ @NgModule({
++  declarations: [
++    DisplayNamePipe
++  ],
+   imports: [
+     BrowserModule,
+     FormsModule
 diff --git a/imports/ui/filters/displayNamePipe.ts b/imports/ui/filters/displayNamePipe.ts
 new file mode 100644
 index 0000000..f1d9804
@@ -19370,17 +19578,36 @@ index 0000000..f1d9804
 2.7.4
 
 
-From b2dfc339e53b79db160293055287e212e7ce3d06 Mon Sep 17 00:00:00 2001
+From d5161e4ee244c15760525dad262e54f81a5c37c8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:37:50 +0200
 Subject: [PATCH 388/414] Step 23.12: Create UninvitedPipe based on
  UninvitedFilter
 
 ---
+ client/main.ts                      |  4 +++-
  imports/ui/filters/uninvitedPipe.ts | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+ 2 files changed, 23 insertions(+), 1 deletion(-)
  create mode 100644 imports/ui/filters/uninvitedPipe.ts
 
+diff --git a/client/main.ts b/client/main.ts
+index 8a6f845..90c34dd 100644
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -28,10 +28,12 @@ import { registerPassword } from '../imports/ui/components/password/password';
+ import { registerRegister } from '../imports/ui/components/register/register';
+ import { registerSocially, SociallyNg1Module } from '../imports/ui/components/socially/socially';
+ import { DisplayNamePipe } from '../imports/ui/filters/displayNamePipe';
++import { UninvitedPipe } from '../imports/ui/filters/uninvitedPipe';
+ 
+ @NgModule({
+   declarations: [
+-    DisplayNamePipe
++    DisplayNamePipe,
++    UninvitedPipe
+   ],
+   imports: [
+     BrowserModule,
 diff --git a/imports/ui/filters/uninvitedPipe.ts b/imports/ui/filters/uninvitedPipe.ts
 new file mode 100644
 index 0000000..523c74d
@@ -19411,7 +19638,7 @@ index 0000000..523c74d
 2.7.4
 
 
-From 5da691ddf6a39c1c2e78be34b5ba0e5f6134019d Mon Sep 17 00:00:00 2001
+From 2f72a5c094d5d5a2b6cd85ddf6da3547b5dc03c9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:38:26 +0200
 Subject: [PATCH 389/414] Step 23.13: Return an empty array instead of false
@@ -19437,17 +19664,41 @@ index 523c74d..b40208e 100644
 2.7.4
 
 
-From 002f7e5c44bd3552b78ce7143202427bbf41194a Mon Sep 17 00:00:00 2001
+From 50ab53c6e9aba9fe5ccb13daaeaea03a32d2461d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:41:15 +0200
 Subject: [PATCH 390/414] Step 23.14: Use Component decorator
 
 ---
- imports/ui/components/partyUninvited/partyUninvited.ts | 5 +++++
- 1 file changed, 5 insertions(+)
+ client/main.ts                                         | 5 +++--
+ imports/ui/components/partyUninvited/partyUninvited.ts | 7 ++++++-
+ 2 files changed, 9 insertions(+), 3 deletions(-)
 
+diff --git a/client/main.ts b/client/main.ts
+index 90c34dd..51644ea 100644
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -22,7 +22,7 @@ import { registerPartyMap } from '../imports/ui/components/partyMap/partyMap';
+ import { registerPartyRemove } from '../imports/ui/components/partyRemove/partyRemove';
+ import { registerPartyRsvp } from '../imports/ui/components/partyRsvp/partyRsvp';
+ import { registerPartyRsvpsList } from '../imports/ui/components/partyRsvpsList/partyRsvpsList';
+-import { registerPartyUninvited } from '../imports/ui/components/partyUninvited/partyUninvited';
++import { registerPartyUninvited, PartyUninvited } from '../imports/ui/components/partyUninvited/partyUninvited';
+ import { registerPartyUpload } from '../imports/ui/components/partyUpload/partyUpload';
+ import { registerPassword } from '../imports/ui/components/password/password';
+ import { registerRegister } from '../imports/ui/components/register/register';
+@@ -33,7 +33,8 @@ import { UninvitedPipe } from '../imports/ui/filters/uninvitedPipe';
+ @NgModule({
+   declarations: [
+     DisplayNamePipe,
+-    UninvitedPipe
++    UninvitedPipe,
++    PartyUninvited
+   ],
+   imports: [
+     BrowserModule,
 diff --git a/imports/ui/components/partyUninvited/partyUninvited.ts b/imports/ui/components/partyUninvited/partyUninvited.ts
-index 7b9d39f..eb66e42 100644
+index 4781e8b..0fe9347 100644
 --- a/imports/ui/components/partyUninvited/partyUninvited.ts
 +++ b/imports/ui/components/partyUninvited/partyUninvited.ts
 @@ -1,5 +1,6 @@
@@ -19457,70 +19708,61 @@ index 7b9d39f..eb66e42 100644
  
  import { Meteor } from 'meteor/meteor';
  
-@@ -7,6 +8,10 @@ import template from './partyUninvited.html';
+@@ -7,7 +8,11 @@ import template from './partyUninvited.html';
  import UninvitedFilter from '../../filters/uninvitedFilter';
  import DisplayNameFilter from '../../filters/displayNameFilter';
  
+-class PartyUninvited {
 +@Component({
 +  template,
 +  selector: 'party-uninvited'
 +})
- class PartyUninvited {
++export class PartyUninvited {
    constructor($scope) {
      'ngInject';
+ 
 -- 
 2.7.4
 
 
-From 9a9f6b8e4bdd79124ce0259e915296b26dd3a014 Mon Sep 17 00:00:00 2001
+From f74b04fc37db42431d271e7ea89c908aa3790116 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:42:41 +0200
 Subject: [PATCH 391/414] Step 23.15: Use Pipes instead of Filters
 
 ---
- imports/ui/components/partyUninvited/partyUninvited.ts | 14 ++++++++------
- 1 file changed, 8 insertions(+), 6 deletions(-)
+ imports/ui/components/partyUninvited/partyUninvited.ts | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
 
 diff --git a/imports/ui/components/partyUninvited/partyUninvited.ts b/imports/ui/components/partyUninvited/partyUninvited.ts
-index eb66e42..8f0a56e 100644
+index 0fe9347..2c923ec 100644
 --- a/imports/ui/components/partyUninvited/partyUninvited.ts
 +++ b/imports/ui/components/partyUninvited/partyUninvited.ts
-@@ -5,12 +5,16 @@ import { Component } from '@angular/core';
+@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
  import { Meteor } from 'meteor/meteor';
  
  import template from './partyUninvited.html';
 -import UninvitedFilter from '../../filters/uninvitedFilter';
 -import DisplayNameFilter from '../../filters/displayNameFilter';
-+import { UninvitedPipe } from '../../filters/uninvitedPipe';
-+import { DisplayNamePipe } from '../../filters/displayNamePipe';
  
  @Component({
    template,
--  selector: 'party-uninvited'
-+  selector: 'party-uninvited',
-+  pipes: [
-+    UninvitedPipe,
-+    DisplayNamePipe
-+  ]
- })
- class PartyUninvited {
-   constructor($scope) {
-@@ -42,9 +46,7 @@ const name = 'partyUninvited';
+@@ -42,9 +40,7 @@ const name = 'partyUninvited';
  
  // create a module
- export default angular.module(name, [
+ export const PartyUninvitedNg1Module = angular.module(name, [
 -  angularMeteor,
 -  UninvitedFilter.name,
 -  DisplayNameFilter.name
 +  angularMeteor
- ]).component(name, {
-   template,
-   controllerAs: name,
+ ]);
+ 
+ export function registerPartyUninvited() {
 -- 
 2.7.4
 
 
-From 51028975cc617383e62e7d6e45b87e7d8e6a009b Mon Sep 17 00:00:00 2001
+From 5a68caf5a8c7de3130dcf2ab4064b2dd0330f828 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:43:28 +0200
 Subject: [PATCH 392/414] Step 23.16: Extend by MeteorComponent
@@ -19530,7 +19772,7 @@ Subject: [PATCH 392/414] Step 23.16: Extend by MeteorComponent
  1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/imports/ui/components/partyUninvited/partyUninvited.ts b/imports/ui/components/partyUninvited/partyUninvited.ts
-index 8f0a56e..56de806 100644
+index 2c923ec..df97cc8 100644
 --- a/imports/ui/components/partyUninvited/partyUninvited.ts
 +++ b/imports/ui/components/partyUninvited/partyUninvited.ts
 @@ -1,6 +1,7 @@
@@ -19541,12 +19783,12 @@ index 8f0a56e..56de806 100644
  
  import { Meteor } from 'meteor/meteor';
  
-@@ -16,9 +17,10 @@ import { DisplayNamePipe } from '../../filters/displayNamePipe';
-     DisplayNamePipe
-   ]
+@@ -10,9 +11,10 @@ import template from './partyUninvited.html';
+   template,
+   selector: 'party-uninvited'
  })
--class PartyUninvited {
-+class PartyUninvited extends MeteorComponent {
+-export class PartyUninvited {
++export class PartyUninvited extends MeteorComponent {
    constructor($scope) {
      'ngInject';
 +    super();
@@ -19557,9 +19799,9 @@ index 8f0a56e..56de806 100644
 2.7.4
 
 
-From 61a937befe2d5fc8d6849716845ebb99195d4f82 Mon Sep 17 00:00:00 2001
-From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
-Date: Thu, 19 May 2016 18:44:43 +0200
+From 2f7b7aaabdf676f2ad67eed0563aa2b31a0e22cc Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Fri, 21 Oct 2016 19:50:28 -0200
 Subject: [PATCH 393/414] Step 23.17: Switch to MeteorComponent API
 
 ---
@@ -19567,13 +19809,13 @@ Subject: [PATCH 393/414] Step 23.17: Switch to MeteorComponent API
  1 file changed, 3 insertions(+), 8 deletions(-)
 
 diff --git a/imports/ui/components/partyUninvited/partyUninvited.ts b/imports/ui/components/partyUninvited/partyUninvited.ts
-index 56de806..2f31a7c 100644
+index df97cc8..fe58ab5 100644
 --- a/imports/ui/components/partyUninvited/partyUninvited.ts
 +++ b/imports/ui/components/partyUninvited/partyUninvited.ts
-@@ -18,16 +18,11 @@ import { DisplayNamePipe } from '../../filters/displayNamePipe';
-   ]
+@@ -12,16 +12,11 @@ import template from './partyUninvited.html';
+   selector: 'party-uninvited'
  })
- class PartyUninvited extends MeteorComponent {
+ export class PartyUninvited extends MeteorComponent {
 -  constructor($scope) {
 -    'ngInject';
 +  constructor() {
@@ -19594,45 +19836,41 @@ index 56de806..2f31a7c 100644
 2.7.4
 
 
-From d604d6fda6242e6af56ba1e2a555c44eb6627b8a Mon Sep 17 00:00:00 2001
-From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
-Date: Thu, 19 May 2016 18:46:33 +0200
+From adb26b404e34cb7f91d4f0652b328632eac403b0 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Fri, 21 Oct 2016 19:51:24 -0200
 Subject: [PATCH 394/414] Step 23.18: Use downgraded Ng2 Component
 
 ---
- imports/ui/components/partyUninvited/partyUninvited.ts | 10 ++--------
- 1 file changed, 2 insertions(+), 8 deletions(-)
+ imports/ui/components/partyUninvited/partyUninvited.ts | 11 ++---------
+ 1 file changed, 2 insertions(+), 9 deletions(-)
 
 diff --git a/imports/ui/components/partyUninvited/partyUninvited.ts b/imports/ui/components/partyUninvited/partyUninvited.ts
-index 2f31a7c..ea3094d 100644
+index fe58ab5..8910eec 100644
 --- a/imports/ui/components/partyUninvited/partyUninvited.ts
 +++ b/imports/ui/components/partyUninvited/partyUninvited.ts
-@@ -8,6 +8,7 @@ import { Meteor } from 'meteor/meteor';
- import template from './partyUninvited.html';
- import { UninvitedPipe } from '../../filters/uninvitedPipe';
- import { DisplayNamePipe } from '../../filters/displayNamePipe';
-+import { upgradeAdapter } from '../../upgradeAdapter';
- 
- @Component({
-   template,
-@@ -44,11 +45,4 @@ const name = 'partyUninvited';
- // create a module
- export default angular.module(name, [
+@@ -40,14 +40,7 @@ export const PartyUninvitedNg1Module = angular.module(name, [
    angularMeteor
--]).component(name, {
--  template,
--  controllerAs: name,
--  bindings: {
--    party: '<'
--  },
--  controller: PartyUninvited
--});
-+]).directive(name, upgradeAdapter.downgradeNg2Component(PartyUninvited));
+ ]);
+ 
+-export function registerPartyUninvited() {
++export function registerPartyUninvited(adapter) {
+   PartyUninvitedNg1Module
+-    .component(name, {
+-      template,
+-      controllerAs: name,
+-      bindings: {
+-        party: '<'
+-      },
+-      controller: PartyUninvited
+-    });
++    .directive(name, adapter.downgradeNg2Component(PartyUninvited))
+ }
 -- 
 2.7.4
 
 
-From d430fafc9bf1d04432484e11a2a554beb27f961a Mon Sep 17 00:00:00 2001
+From ec297793132265138453d0f5f1bc46d2aae56d08 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:47:23 +0200
 Subject: [PATCH 395/414] Step 23.19: Define binding
@@ -19642,7 +19880,7 @@ Subject: [PATCH 395/414] Step 23.19: Define binding
  1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/imports/ui/components/partyUninvited/partyUninvited.ts b/imports/ui/components/partyUninvited/partyUninvited.ts
-index ea3094d..677eb55 100644
+index 8910eec..0dcfb74 100644
 --- a/imports/ui/components/partyUninvited/partyUninvited.ts
 +++ b/imports/ui/components/partyUninvited/partyUninvited.ts
 @@ -1,6 +1,6 @@
@@ -19653,10 +19891,10 @@ index ea3094d..677eb55 100644
  import { MeteorComponent } from 'angular2-meteor';
  
  import { Meteor } from 'meteor/meteor';
-@@ -19,6 +19,8 @@ import { upgradeAdapter } from '../../upgradeAdapter';
-   ]
+@@ -12,6 +12,8 @@ import template from './partyUninvited.html';
+   selector: 'party-uninvited'
  })
- class PartyUninvited extends MeteorComponent {
+ export class PartyUninvited extends MeteorComponent {
 +  @Input() party: any;
 +
    constructor() {
@@ -19666,7 +19904,7 @@ index ea3094d..677eb55 100644
 2.7.4
 
 
-From bece44c6b18c7ce8d8668d370b7556158115f055 Mon Sep 17 00:00:00 2001
+From 06a9dc82d6ed4f5c2ec5d53b1b52f3c7ba0382d5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:49:03 +0200
 Subject: [PATCH 396/414] Step 23.20: Remove prefix in template
@@ -19696,7 +19934,7 @@ index 84b3eaf..0d7f5b3 100644
 2.7.4
 
 
-From 4d51444dbe4220fe4bbe4f3011bd7144e038aa6e Mon Sep 17 00:00:00 2001
+From 18ba4d66c0989b18f408f17dd1e0ccbf04842216 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:50:26 +0200
 Subject: [PATCH 397/414] Step 23.21: Switch to pipes
@@ -19727,7 +19965,7 @@ index 0d7f5b3..4297572 100644
 2.7.4
 
 
-From 61d560bd4ce569ab013e356afbef4c3b6517234c Mon Sep 17 00:00:00 2001
+From 9942dfb2ff2c5da9b900fb2ba74ff581cae89475 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:50:47 +0200
 Subject: [PATCH 398/414] Step 23.22: Switch to ngFor
@@ -19753,7 +19991,7 @@ index 4297572..50de7a3 100644
 2.7.4
 
 
-From f0661291c69afcada1accbdc64232406cca3ed1e Mon Sep 17 00:00:00 2001
+From 0e76e4c74486a18ba9924323b6b6daf2c8ea362e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:51:10 +0200
 Subject: [PATCH 399/414] Step 23.23: Switch to ngIf
@@ -19779,7 +20017,7 @@ index 50de7a3..ee66c5c 100644
 2.7.4
 
 
-From c7cee1080ec5803608261f5d7672e298237f4cbe Mon Sep 17 00:00:00 2001
+From 875ccc13e0aa0a633c4642ee08fbf1c881209937 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:51:26 +0200
 Subject: [PATCH 400/414] Step 23.24: Switch to (click)
@@ -19805,7 +20043,7 @@ index ee66c5c..86907aa 100644
 2.7.4
 
 
-From 266d4af97d1d001305f12f7b1b07db96abc3fa8a Mon Sep 17 00:00:00 2001
+From 532e35374beac5580db117f4ede6f78403e8a6e3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:04:45 +0200
 Subject: [PATCH 401/414] Step 23.25: Use one-way binding
@@ -19829,18 +20067,40 @@ index e913815..a106644 100644
 2.7.4
 
 
-From 9c96457bf568ba0536311bb15d1f0fa11a730882 Mon Sep 17 00:00:00 2001
+From caf2eda7a2fe0860cc2191b575f23855bc7575a2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:26:15 +0200
 Subject: [PATCH 402/414] Step 23.26: Implement Component decorator in
  PartyDetails
 
 ---
- imports/ui/components/partyDetails/partyDetails.ts | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ client/main.ts                                     | 3 ++-
+ imports/ui/components/partyDetails/partyDetails.ts | 7 ++++++-
+ 2 files changed, 8 insertions(+), 2 deletions(-)
 
+diff --git a/client/main.ts b/client/main.ts
+index 51644ea..4a9c11c 100644
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -16,7 +16,7 @@ import { registerPartiesSort } from '../imports/ui/components/partiesSort/partie
+ import { registerPartyAdd } from '../imports/ui/components/partyAdd/partyAdd';
+ import { registerPartyAddButton } from '../imports/ui/components/partyAddButton/partyAddButton';
+ import { registerPartyCreator } from '../imports/ui/components/partyCreator/partyCreator';
+-import { registerPartyDetails } from '../imports/ui/components/partyDetails/partyDetails';
++import { registerPartyDetails, PartyDetails } from '../imports/ui/components/partyDetails/partyDetails';
+ import { registerPartyImage } from '../imports/ui/components/partyImage/partyImage';
+ import { registerPartyMap } from '../imports/ui/components/partyMap/partyMap';
+ import { registerPartyRemove } from '../imports/ui/components/partyRemove/partyRemove';
+@@ -34,6 +34,7 @@ import { UninvitedPipe } from '../imports/ui/filters/uninvitedPipe';
+   declarations: [
+     DisplayNamePipe,
+     UninvitedPipe,
++    PartyDetails,
+     PartyUninvited
+   ],
+   imports: [
 diff --git a/imports/ui/components/partyDetails/partyDetails.ts b/imports/ui/components/partyDetails/partyDetails.ts
-index 2b9be65..d2e4918 100644
+index 84e1bb2..85ebf40 100644
 --- a/imports/ui/components/partyDetails/partyDetails.ts
 +++ b/imports/ui/components/partyDetails/partyDetails.ts
 @@ -1,6 +1,7 @@
@@ -19851,55 +20111,51 @@ index 2b9be65..d2e4918 100644
  
  import { Meteor } from 'meteor/meteor';
  
-@@ -8,7 +9,15 @@ import template from './partyDetails.html';
- import { Parties } from '../../../api/parties';
- import PartyUninvited from '../partyUninvited/partyUninvited';
- import PartyMap from '../partyMap/partyMap';
-+import { upgradeAdapter } from '../../upgradeAdapter';
+@@ -9,7 +10,11 @@ import { Parties } from '../../../api/parties';
+ import { PartyUninvitedNg1Module } from '../partyUninvited/partyUninvited';
+ import { PartyMapNg1Module } from '../partyMap/partyMap';
  
+-class PartyDetails {
 +@Component({
 +  template,
-+  selector: 'party-details',
-+  directives: [
-+    PartyUninvited
-+  ]
++  selector: 'party-details'
 +})
- class PartyDetails {
++export class PartyDetails {
    constructor($stateParams, $scope, $reactive) {
      'ngInject';
+ 
 -- 
 2.7.4
 
 
-From 8c94811f3f558314913b31d59673d5b2fa7ab64e Mon Sep 17 00:00:00 2001
+From be5d6cd5d913504851c189db00ce5a6c0fccc979 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:26:55 +0200
 Subject: [PATCH 403/414] Step 23.27: upgrade PartyMap to be used inside Ng2
  Component
 
 ---
- imports/ui/components/partyDetails/partyDetails.ts | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ client/main.ts | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/imports/ui/components/partyDetails/partyDetails.ts b/imports/ui/components/partyDetails/partyDetails.ts
-index d2e4918..1aa0ada 100644
---- a/imports/ui/components/partyDetails/partyDetails.ts
-+++ b/imports/ui/components/partyDetails/partyDetails.ts
-@@ -15,7 +15,8 @@ import { upgradeAdapter } from '../../upgradeAdapter';
-   template,
-   selector: 'party-details',
-   directives: [
--    PartyUninvited
-+    PartyUninvited,
-+    upgradeAdapter.upgradeNg1Component('partyMap'),
-   ]
- })
- class PartyDetails {
+diff --git a/client/main.ts b/client/main.ts
+index 4a9c11c..643f4fc 100644
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -46,6 +46,8 @@ class AppNg2Module {}
+ 
+ const adapter = new UpgradeAdapter(AppNg2Module);
+ 
++adapter.upgradeNg1Component('partyMap');
++
+ registerAuth(adapter);
+ registerLogin(adapter);
+ registerNavigation(adapter);
 -- 
 2.7.4
 
 
-From 123204a9876d01f676ac7ba09d024338f6a98ecf Mon Sep 17 00:00:00 2001
+From a3083e9048088a087c70c5fb0050644a5714785c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:28:14 +0200
 Subject: [PATCH 404/414] Step 23.28: Use MeteorComponent
@@ -19909,7 +20165,7 @@ Subject: [PATCH 404/414] Step 23.28: Use MeteorComponent
  1 file changed, 16 insertions(+), 25 deletions(-)
 
 diff --git a/imports/ui/components/partyDetails/partyDetails.ts b/imports/ui/components/partyDetails/partyDetails.ts
-index 1aa0ada..6ca8a0b 100644
+index 85ebf40..7e23f06 100644
 --- a/imports/ui/components/partyDetails/partyDetails.ts
 +++ b/imports/ui/components/partyDetails/partyDetails.ts
 @@ -2,6 +2,7 @@ import * as angular from 'angular';
@@ -19920,14 +20176,14 @@ index 1aa0ada..6ca8a0b 100644
  
  import { Meteor } from 'meteor/meteor';
  
-@@ -19,37 +20,27 @@ import { upgradeAdapter } from '../../upgradeAdapter';
-     upgradeAdapter.upgradeNg1Component('partyMap'),
-   ]
+@@ -14,37 +15,27 @@ import { PartyMapNg1Module } from '../partyMap/partyMap';
+   template,
+   selector: 'party-details'
  })
--class PartyDetails {
+-export class PartyDetails {
 -  constructor($stateParams, $scope, $reactive) {
 -    'ngInject';
-+class PartyDetails extends MeteorComponent {
++export class PartyDetails extends MeteorComponent {
 +  partyId: string;
 +  party: Object = {};
 +  users: Object[];
@@ -19977,39 +20233,40 @@ index 1aa0ada..6ca8a0b 100644
 2.7.4
 
 
-From 12f9f8309cb9bb8cac1dc88900997a02b3f8b186 Mon Sep 17 00:00:00 2001
+From 99a4ff85302d31423c0ec9463f548c75755bb3a7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:29:10 +0200
 Subject: [PATCH 405/414] Step 23.29: Downgrade PartyDetails to ng1 directive
 
 ---
- imports/ui/components/partyDetails/partyDetails.ts | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
+ imports/ui/components/partyDetails/partyDetails.ts | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
 
 diff --git a/imports/ui/components/partyDetails/partyDetails.ts b/imports/ui/components/partyDetails/partyDetails.ts
-index 6ca8a0b..da1b7db 100644
+index 7e23f06..3c86c00 100644
 --- a/imports/ui/components/partyDetails/partyDetails.ts
 +++ b/imports/ui/components/partyDetails/partyDetails.ts
-@@ -77,13 +77,8 @@ const name = 'partyDetails';
- export default angular.module(name, [
-   angularMeteor,
-   uiRouter,
--  PartyUninvited.name,
-   PartyMap.name
--]).component(name, {
--  template,
--  controllerAs: name,
--  controller: PartyDetails
--})
-+]).directive(name, upgradeAdapter.downgradeNg2Component(PartyDetails))
-   .config(config);
+@@ -76,13 +76,9 @@ export const PartyDetailsNg1Module = angular.module(name, [
+   PartyMapNg1Module.name
+ ]);
  
- function config($stateProvider) {
+-export function registerPartyDetails() {
++export function registerPartyDetails(adapter) {
+   PartyDetailsNg1Module
+-    .component(name, {
+-      template,
+-      controllerAs: name,
+-      controller: PartyDetails
+-    })
++    .directive(name, adapter.downgradeNg2Component(PartyDetails))
+     .config(config);
+ }
+ 
 -- 
 2.7.4
 
 
-From 4ea6e0fac17857b60e3acbde7d2ee7766134c097 Mon Sep 17 00:00:00 2001
+From f784868a85064a5a811d63d3ebb1202143c394c5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:30:13 +0200
 Subject: [PATCH 406/414] Step 23.30: Implement ng2 component inside ui-router
@@ -20020,10 +20277,10 @@ Subject: [PATCH 406/414] Step 23.30: Implement ng2 component inside ui-router
  1 file changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/imports/ui/components/partyDetails/partyDetails.ts b/imports/ui/components/partyDetails/partyDetails.ts
-index da1b7db..dc6e733 100644
+index 3c86c00..97b1a09 100644
 --- a/imports/ui/components/partyDetails/partyDetails.ts
 +++ b/imports/ui/components/partyDetails/partyDetails.ts
-@@ -86,7 +86,12 @@ function config($stateProvider) {
+@@ -87,7 +87,12 @@ function config($stateProvider) {
  
    $stateProvider.state('partyDetails', {
      url: '/parties/:partyId',
@@ -20041,7 +20298,7 @@ index da1b7db..dc6e733 100644
 2.7.4
 
 
-From 7cf89d325b731ad4b3df547a731cfd55cd03261f Mon Sep 17 00:00:00 2001
+From 1eda49744bc2e2bece02f6230b14fd939e677c69 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:31:08 +0200
 Subject: [PATCH 407/414] Step 23.31: Define bindings
@@ -20051,7 +20308,7 @@ Subject: [PATCH 407/414] Step 23.31: Define bindings
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/imports/ui/components/partyDetails/partyDetails.ts b/imports/ui/components/partyDetails/partyDetails.ts
-index dc6e733..515571a 100644
+index 97b1a09..8244554 100644
 --- a/imports/ui/components/partyDetails/partyDetails.ts
 +++ b/imports/ui/components/partyDetails/partyDetails.ts
 @@ -1,7 +1,7 @@
@@ -20063,10 +20320,10 @@ index dc6e733..515571a 100644
  import { MeteorComponent } from 'angular2-meteor';
  
  import { Meteor } from 'meteor/meteor';
-@@ -21,8 +21,8 @@ import { upgradeAdapter } from '../../upgradeAdapter';
-   ]
+@@ -16,8 +16,8 @@ import { PartyMapNg1Module } from '../partyMap/partyMap';
+   selector: 'party-details'
  })
- class PartyDetails extends MeteorComponent {
+ export class PartyDetails extends MeteorComponent {
 -  partyId: string;
 -  party: Object = {};
 +  @Input() partyId: string;
@@ -20078,17 +20335,60 @@ index dc6e733..515571a 100644
 2.7.4
 
 
-From 97286ae64fa41d5cb42f6e19d0a14d4b7cd66712 Mon Sep 17 00:00:00 2001
+From 8f378d6bd6cdae2d8c9a9df0bb2b20ec3dd313a7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:51:38 +0200
 Subject: [PATCH 408/414] Step 23.32: Remove ng1 from PartyUninvited
 
 ---
- imports/ui/components/partyUninvited/partyUninvited.ts | 12 +-----------
- 1 file changed, 1 insertion(+), 11 deletions(-)
+ client/main.ts                                         |  3 +--
+ imports/ui/components/partyDetails/partyDetails.ts     |  2 --
+ imports/ui/components/partyUninvited/partyUninvited.ts | 14 --------------
+ 3 files changed, 1 insertion(+), 18 deletions(-)
 
+diff --git a/client/main.ts b/client/main.ts
+index 643f4fc..758fae9 100644
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -22,7 +22,7 @@ import { registerPartyMap } from '../imports/ui/components/partyMap/partyMap';
+ import { registerPartyRemove } from '../imports/ui/components/partyRemove/partyRemove';
+ import { registerPartyRsvp } from '../imports/ui/components/partyRsvp/partyRsvp';
+ import { registerPartyRsvpsList } from '../imports/ui/components/partyRsvpsList/partyRsvpsList';
+-import { registerPartyUninvited, PartyUninvited } from '../imports/ui/components/partyUninvited/partyUninvited';
++import { PartyUninvited } from '../imports/ui/components/partyUninvited/partyUninvited';
+ import { registerPartyUpload } from '../imports/ui/components/partyUpload/partyUpload';
+ import { registerPassword } from '../imports/ui/components/password/password';
+ import { registerRegister } from '../imports/ui/components/register/register';
+@@ -63,7 +63,6 @@ registerPartyMap(adapter);
+ registerPartyRemove(adapter);
+ registerPartyRsvp(adapter);
+ registerPartyRsvpsList(adapter);
+-registerPartyUninvited(adapter);
+ registerPartyUpload(adapter);
+ registerPassword(adapter);
+ registerRegister(adapter);
+diff --git a/imports/ui/components/partyDetails/partyDetails.ts b/imports/ui/components/partyDetails/partyDetails.ts
+index 8244554..5f91845 100644
+--- a/imports/ui/components/partyDetails/partyDetails.ts
++++ b/imports/ui/components/partyDetails/partyDetails.ts
+@@ -8,7 +8,6 @@ import { Meteor } from 'meteor/meteor';
+ 
+ import template from './partyDetails.html';
+ import { Parties } from '../../../api/parties';
+-import { PartyUninvitedNg1Module } from '../partyUninvited/partyUninvited';
+ import { PartyMapNg1Module } from '../partyMap/partyMap';
+ 
+ @Component({
+@@ -72,7 +71,6 @@ const name = 'partyDetails';
+ export const PartyDetailsNg1Module = angular.module(name, [
+   angularMeteor,
+   uiRouter,
+-  PartyUninvitedNg1Module.name,
+   PartyMapNg1Module.name
+ ]);
+ 
 diff --git a/imports/ui/components/partyUninvited/partyUninvited.ts b/imports/ui/components/partyUninvited/partyUninvited.ts
-index 677eb55..239c1b2 100644
+index 0dcfb74..ac77e00 100644
 --- a/imports/ui/components/partyUninvited/partyUninvited.ts
 +++ b/imports/ui/components/partyUninvited/partyUninvited.ts
 @@ -1,5 +1,3 @@
@@ -20097,24 +20397,7 @@ index 677eb55..239c1b2 100644
  import { Component, Input } from '@angular/core';
  import { MeteorComponent } from 'angular2-meteor';
  
-@@ -8,7 +6,6 @@ import { Meteor } from 'meteor/meteor';
- import template from './partyUninvited.html';
- import { UninvitedPipe } from '../../filters/uninvitedPipe';
- import { DisplayNamePipe } from '../../filters/displayNamePipe';
--import { upgradeAdapter } from '../../upgradeAdapter';
- 
- @Component({
-   template,
-@@ -18,7 +15,7 @@ import { upgradeAdapter } from '../../upgradeAdapter';
-     DisplayNamePipe
-   ]
- })
--class PartyUninvited extends MeteorComponent {
-+export default class PartyUninvited extends MeteorComponent {
-   @Input() party: any;
- 
-   constructor() {
-@@ -41,10 +38,3 @@ class PartyUninvited extends MeteorComponent {
+@@ -34,15 +32,3 @@ export class PartyUninvited extends MeteorComponent {
      );
    }
  }
@@ -20122,24 +20405,29 @@ index 677eb55..239c1b2 100644
 -const name = 'partyUninvited';
 -
 -// create a module
--export default angular.module(name, [
+-export const PartyUninvitedNg1Module = angular.module(name, [
 -  angularMeteor
--]).directive(name, upgradeAdapter.downgradeNg2Component(PartyUninvited));
+-]);
+-
+-export function registerPartyUninvited(adapter) {
+-  PartyUninvitedNg1Module
+-    .directive(name, adapter.downgradeNg2Component(PartyUninvited))
+-}
 -- 
 2.7.4
 
 
-From 2c3f75c5a3c6f78b4298823e623a18f20dd79dcf Mon Sep 17 00:00:00 2001
+From 33d2ff53ad80f897cd5d6454acc065a913a37e7d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:53:13 +0200
 Subject: [PATCH 409/414] Step 23.33: Install material2
 
 ---
- package.json | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ package.json | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/package.json b/package.json
-index 191802a..612a1ce 100644
+index 517e44b..e301541 100644
 --- a/package.json
 +++ b/package.json
 @@ -13,6 +13,10 @@
@@ -20153,58 +20441,51 @@ index 191802a..612a1ce 100644
      "angular": "^1.5.3",
      "angular-animate": "^1.5.3",
      "angular-aria": "^1.5.3",
-@@ -35,8 +39,7 @@
-     "ng-img-crop": "^0.2.0",
-     "reflect-metadata": "^0.1.8",
-     "rxjs": "^5.0.0-rc.1",
--    "underscore": "^1.8.3",
--    "zone.js": "^0.6.25"
-+    "underscore": "^1.8.3"
-   },
-   "devDependencies": {
-     "angular-mocks": "^1.5.3"
 -- 
 2.7.4
 
 
-From 1faf0c3366c9a7de3fad3ed3e6beb470d2ed0e2c Mon Sep 17 00:00:00 2001
+From fdb197790f2eaf83d5325f7b97a75993bcf5be32 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:55:35 +0200
 Subject: [PATCH 410/414] Step 23.34: Import material2 directives
 
 ---
- imports/ui/components/partyDetails/partyDetails.ts | 6 ++++++
- 1 file changed, 6 insertions(+)
+ client/main.ts | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/imports/ui/components/partyDetails/partyDetails.ts b/imports/ui/components/partyDetails/partyDetails.ts
-index 515571a..d32473b 100644
---- a/imports/ui/components/partyDetails/partyDetails.ts
-+++ b/imports/ui/components/partyDetails/partyDetails.ts
-@@ -3,6 +3,9 @@ import * as angularMeteor from 'angular-meteor';
- import * as uiRouter from 'angular-ui-router';
- import { Component, Input, Output } from '@angular/core';
- import { MeteorComponent } from 'angular2-meteor';
-+import { MdButton } from '@angular2-material/button';
-+import { MdInput } from '@angular2-material/input';
-+import { MdCheckbox } from '@angular2-material/checkbox';
+diff --git a/client/main.ts b/client/main.ts
+index 758fae9..7c67853 100644
+--- a/client/main.ts
++++ b/client/main.ts
+@@ -5,6 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
+ import { FormsModule } from '@angular/forms';
+ import { UpgradeAdapter } from '@angular/upgrade';
  
++import { MdButtonModule } from '@angular2-material/button';
++import { MdInputModule } from '@angular2-material/input';
++import { MdCheckboxModule } from '@angular2-material/checkbox';
++
  import { Meteor } from 'meteor/meteor';
  
-@@ -18,6 +21,9 @@ import { upgradeAdapter } from '../../upgradeAdapter';
-   directives: [
-     PartyUninvited,
-     upgradeAdapter.upgradeNg1Component('partyMap'),
-+    MdButton,
-+    MdInput,
-+    MdCheckbox,
+ import { registerAuth } from '../imports/ui/components/auth/auth';
+@@ -39,7 +43,10 @@ import { UninvitedPipe } from '../imports/ui/filters/uninvitedPipe';
+   ],
+   imports: [
+     BrowserModule,
+-    FormsModule
++    FormsModule,
++    MdButtonModule.forRoot(),
++    MdInputModule.forRoot(),
++    MdCheckboxModule.forRoot()
    ]
  })
- class PartyDetails extends MeteorComponent {
+ class AppNg2Module {}
 -- 
 2.7.4
 
 
-From fffe4ba71d1e6ceee3d7f5bf167925710d37302e Mon Sep 17 00:00:00 2001
+From 4e3a8d7a77b27a53f9fc59c7cd6f0f85d50c3d33 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 20:10:28 +0200
 Subject: [PATCH 411/414] Step 23.35: Implement material2
@@ -20257,7 +20538,7 @@ index a106644..6d99f70 100644
 2.7.4
 
 
-From ba4d1f892e0f4be166fb883c466fcbb36da43e3c Mon Sep 17 00:00:00 2001
+From 3797dcfcbe21ad53489c907617d1c763056c518a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 10:27:29 +0200
 Subject: [PATCH 412/414] Add README
@@ -20338,7 +20619,7 @@ index 0000000..95fd557
 2.7.4
 
 
-From de5ee5f2663f7c1fdf7d5d1e5753157c7d77be37 Mon Sep 17 00:00:00 2001
+From 3c86468f5f51dd5c52ce3490246e6301fec2638e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 10:28:34 +0200
 Subject: [PATCH 413/414] Add EDIT_THIS_TUTORIAL.md
@@ -20550,7 +20831,7 @@ index 0000000..b0f831a
 2.7.4
 
 
-From cd00153087ccd486660e1e23610e1108ac87ecea Mon Sep 17 00:00:00 2001
+From d79bd7c0d42d27a6240640331f687a7e89edb2c3 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Wed, 19 Oct 2016 13:15:21 -0200
 Subject: [PATCH 414/414] Add LICENSE
