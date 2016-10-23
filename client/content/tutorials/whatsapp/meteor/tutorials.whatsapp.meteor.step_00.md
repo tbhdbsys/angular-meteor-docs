@@ -41,7 +41,18 @@ We also need to make sure `Ionic` is installed along with its dependencies:
     $ meteor npm install angular-ui-router@^0.2.13 --save
     $ meteor npm install ionic-scripts --save
 
-And finally, we will install `angular-meteor`:
+If you're an iOS user you might encounter some issues related to double tapping not being submitted correctly. This is caused due to a package automatically included by `Metoer` and it is called `mobile-experience` so we can have a more native feeling for our app once running on a mobile device, which is not always right across the board. This package is simply a cluster of the following packages:
+
+- `fastclick` - Avoid the 300ms touch delay.
+- `mobile-status-bar` - Avoid the status bar information covering up your app content.
+- `launch-screen` - Cover the app with a launch image so that people don’t have to see things loading.
+
+You can already figure out that the `fastclick` is a potential basis for our issue. So we will install the same packages `mobile-experience` provides us with, with an exception of `fastclick`:
+
+    $ meteor add mobile-status-bar
+    $ meteor add launch-screen
+
+And finally, we will install `angular-meteor`, of which this tutorial is all about:
 
     $ meteor npm install angular-meteor --save
 

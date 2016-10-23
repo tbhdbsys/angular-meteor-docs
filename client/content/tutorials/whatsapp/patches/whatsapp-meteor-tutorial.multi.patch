@@ -1,7 +1,7 @@
 From 51969f8ee970a8c93748e34221aea02b6182db32 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:04:49 +0300
-Subject: [PATCH 001/115] Step 0.1: Create project
+Subject: [PATCH 001/116] Step 0.1: Create project
 
 ---
  .gitignore                  |  1 +
@@ -214,22 +214,22 @@ index 0000000..4277e98
 2.7.4
 
 
-From 3b5c5e984856351cdf499139f6038bafdf0e77ea Mon Sep 17 00:00:00 2001
+From 7d5e2adbe2bbf1e089704d61b20a8ef409a72b38 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:06:19 +0300
-Subject: [PATCH 002/115] Step 0.2: Initial setup
+Subject: [PATCH 002/116] Step 0.2: Initial setup
 
 ---
- .meteor/packages | 20 ++++++++++----------
- .meteor/versions | 12 ++++--------
+ .meteor/packages | 21 +++++++++++----------
+ .meteor/versions | 14 ++++----------
  package.json     |  6 ++++++
- 3 files changed, 20 insertions(+), 18 deletions(-)
+ 3 files changed, 21 insertions(+), 20 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 801f3fc..ebddab3 100644
+index 801f3fc..f787476 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -4,19 +4,19 @@
+@@ -4,19 +4,20 @@
  # 'meteor add' and 'meteor remove' will edit this file for you,
  # but you can also edit it by hand.
  
@@ -241,7 +241,6 @@ index 801f3fc..ebddab3 100644
 -jquery@1.11.9                  # Helpful client-side library
 -tracker@1.1.0                 # Meteor's client-side reactive programming library
 +meteor-base             # Packages every Meteor app needs to have
-+mobile-experience       # Packages for a great mobile UX
 +mongo                   # The database Meteor supports right now
 +reactive-var            # Reactive variable for tracker
 +jquery                  # Helpful client-side library
@@ -259,8 +258,10 @@ index 801f3fc..ebddab3 100644
 +insecure                # Allow all DB writes from clients (for prototyping)
 +dab0mb:ionic-assets
 +angular-templates
++mobile-status-bar
++launch-screen
 diff --git a/.meteor/versions b/.meteor/versions
-index 8cc40eb..2507cd6 100644
+index 8cc40eb..a4e546d 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,4 +1,5 @@
@@ -285,7 +286,23 @@ index 8cc40eb..2507cd6 100644
  ddp@1.2.5
  ddp-client@1.2.9
  ddp-common@1.2.6
-@@ -55,18 +55,14 @@ reactive-var@1.0.10
+@@ -23,7 +23,6 @@ ecmascript@0.5.8_1
+ ecmascript-runtime@0.3.14_1
+ ejson@1.0.12
+ es5-shim@4.6.14_1
+-fastclick@1.0.12
+ geojson-utils@1.0.9
+ hot-code-push@1.0.4
+ html-tools@1.0.11
+@@ -40,7 +39,6 @@ meteor-base@1.0.4
+ minifier-css@1.2.14_1
+ minifier-js@1.2.14_1
+ minimongo@1.0.17
+-mobile-experience@1.0.4
+ mobile-status-bar@1.0.12
+ modules@0.7.6_1
+ modules-runtime@0.7.6_1
+@@ -55,18 +53,14 @@ reactive-var@1.0.10
  reload@1.1.10
  retry@1.0.8
  routepolicy@1.0.11
@@ -326,10 +343,10 @@ index 4277e98..141c29d 100644
 2.7.4
 
 
-From 3c37858c327729916784fb1e206c2bcdad71b820 Mon Sep 17 00:00:00 2001
+From 19ca14425b997a70460e8346c2c1d9aaea7d66c0 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:11:10 +0300
-Subject: [PATCH 003/115] Step 1.1: Create main html file
+Subject: [PATCH 003/116] Step 1.1: Create main html file
 
 ---
  client/index.html | 22 ++++++++++++++++++++++
@@ -369,10 +386,10 @@ index 0000000..a27b518
 2.7.4
 
 
-From 36a63ff42e44ea4e1859eb3d7cd188ac42b8585d Mon Sep 17 00:00:00 2001
+From 85eb9281ca81343b84ebfa6fc0f96a9fe4a30d65 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:21:27 +0300
-Subject: [PATCH 004/115] Step 1.2: Create main app file
+Subject: [PATCH 004/116] Step 1.2: Create main app file
 
 ---
  client/scripts/lib/app.js | 30 ++++++++++++++++++++++++++++++
@@ -419,10 +436,10 @@ index 0000000..f9ab95c
 2.7.4
 
 
-From cd544b19e4ac20311564474857dedd08a6430b9d Mon Sep 17 00:00:00 2001
+From 7747a3e3050138a31da0a4cb608bea6c122b2cf5 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:32:04 +0300
-Subject: [PATCH 005/115] Step 1.3: Add angular es6 class helpers
+Subject: [PATCH 005/116] Step 1.3: Add angular es6 class helpers
 
 ---
  package.json | 1 +
@@ -444,10 +461,10 @@ index 141c29d..e5e3d10 100644
 2.7.4
 
 
-From 8dd0a9402a302d7827c6e34f1ccd851ca7eeaa49 Mon Sep 17 00:00:00 2001
+From 4bf3541c2772e19260b7c579b14a8143e8edc8d1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:40:40 +0300
-Subject: [PATCH 006/115] Step 1.4: Add initial routes
+Subject: [PATCH 006/116] Step 1.4: Add initial routes
 
 ---
  client/scripts/routes.js | 24 ++++++++++++++++++++++++
@@ -489,10 +506,10 @@ index 0000000..17165ce
 2.7.4
 
 
-From c8d08772e7cca0d117ae9d49c9e189c02b3095be Mon Sep 17 00:00:00 2001
+From e60bca30650d889bc835f3bc76f0c50c3b020e77 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 1 Apr 2016 18:44:59 +0300
-Subject: [PATCH 007/115] Step 1.5: Load routes config
+Subject: [PATCH 007/116] Step 1.5: Load routes config
 
 ---
  client/scripts/lib/app.js | 5 +++++
@@ -528,10 +545,10 @@ index f9ab95c..8b49417 100644
 2.7.4
 
 
-From cd71f7385a2c76afd4e4c1aeabbab7ed3aa4d2fa Mon Sep 17 00:00:00 2001
+From 44a9b1e7a98a19faeb17dc44d833f22fa2a48899 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:13:21 +0300
-Subject: [PATCH 008/115] Step 1.6: Create tabs view
+Subject: [PATCH 008/116] Step 1.6: Create tabs view
 
 ---
  client/templates/tabs.html | 23 +++++++++++++++++++++++
@@ -572,10 +589,10 @@ index 0000000..14ec5fb
 2.7.4
 
 
-From d325c53ddb5f5f1eb27315c7c2a1d4b7074b0e05 Mon Sep 17 00:00:00 2001
+From 804b043e8f173c0a853c94583507248591599b3f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:15:22 +0300
-Subject: [PATCH 009/115] Step 1.7: Create chats view
+Subject: [PATCH 009/116] Step 1.7: Create chats view
 
 ---
  client/templates/chats.html | 5 +++++
@@ -598,10 +615,10 @@ index 0000000..b1d926f
 2.7.4
 
 
-From e35c475dbc7dafeab738deb164c7d6a93ffd5740 Mon Sep 17 00:00:00 2001
+From c6a4841c85f8b8944492dda66f33705b3d58c968 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:16:27 +0300
-Subject: [PATCH 010/115] Step 1.8: Add IOS platform
+Subject: [PATCH 010/116] Step 1.8: Add IOS platform
 
 ---
  .meteor/platforms | 1 +
@@ -619,10 +636,10 @@ index efeba1b..cc0f96a 100644
 2.7.4
 
 
-From 39865b6be9a565d07ebe4a9ddb802108ae5aa13a Mon Sep 17 00:00:00 2001
+From 7771c04838f20ec2717a98060e32d2f89a44ab7b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:19:07 +0300
-Subject: [PATCH 011/115] Step 1.9: Create chats controller
+Subject: [PATCH 011/116] Step 1.9: Create chats controller
 
 ---
  client/scripts/controllers/chats.controller.js | 6 ++++++
@@ -646,10 +663,10 @@ index 0000000..259d69d
 2.7.4
 
 
-From bcf7839b3bb528cc695412f63e3d449222d57c53 Mon Sep 17 00:00:00 2001
+From 2d783780833f4b4686e3453f1b82fa951cbb16da Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:20:52 +0300
-Subject: [PATCH 012/115] Step 1.10: Load chats controller
+Subject: [PATCH 012/116] Step 1.10: Load chats controller
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -679,10 +696,10 @@ index 8b49417..b332f9e 100644
 2.7.4
 
 
-From d4a4c64f7c86ebeabba9c1f951f1ea71432f911b Mon Sep 17 00:00:00 2001
+From 6b058210270265d15123250f7a28be3abe102a42 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:24:25 +0300
-Subject: [PATCH 013/115] Step 1.11: Add moment npm package
+Subject: [PATCH 013/116] Step 1.11: Add moment npm package
 
 ---
  package.json | 3 ++-
@@ -705,10 +722,10 @@ index e5e3d10..3e9483f 100644
 2.7.4
 
 
-From 8b18d125b86976f0587897174d91c7d20cce4072 Mon Sep 17 00:00:00 2001
+From 94bb96afae48f85a98afc1b063e3772f8e97e7ef Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:27:54 +0300
-Subject: [PATCH 014/115] Step 1.12: Add data stub to chats controller
+Subject: [PATCH 014/116] Step 1.12: Add data stub to chats controller
 
 ---
  client/scripts/controllers/chats.controller.js | 52 ++++++++++++++++++++++++++
@@ -782,10 +799,10 @@ index 259d69d..48e8505 100644
 2.7.4
 
 
-From 234344a112ed97e3e57e301c6c713022873a156d Mon Sep 17 00:00:00 2001
+From 9b43cf40565766ed77643fa5bd6a313f602527a7 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:30:19 +0300
-Subject: [PATCH 015/115] Step 1.13: Connect chats controller to chats view
+Subject: [PATCH 015/116] Step 1.13: Connect chats controller to chats view
 
 ---
  client/scripts/routes.js | 3 ++-
@@ -809,10 +826,10 @@ index 17165ce..43898c5 100644
 2.7.4
 
 
-From 51da5ae6e93d160d5cee020dbdcad19e5785d45f Mon Sep 17 00:00:00 2001
+From 5b5a937701c570a562d799ebbc4026db58ec0528 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:32:46 +0300
-Subject: [PATCH 016/115] Step 1.14: Add data stub to chats view
+Subject: [PATCH 016/116] Step 1.14: Add data stub to chats view
 
 ---
  client/templates/chats.html | 12 +++++++++++-
@@ -844,10 +861,10 @@ index b1d926f..73fd236 100644
 2.7.4
 
 
-From fbf857069da3571270a3ee935b3e23fafcdcb3cc Mon Sep 17 00:00:00 2001
+From 7cf24fb105afe707a6adefccea0101514ea236af Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:53:13 +0300
-Subject: [PATCH 017/115] Step 1.15: Create calendar filter
+Subject: [PATCH 017/116] Step 1.15: Create calendar filter
 
 ---
  client/scripts/filters/calendar.filter.js | 17 +++++++++++++++++
@@ -882,10 +899,10 @@ index 0000000..f22da38
 2.7.4
 
 
-From 37985d06a5cf6f99243770cb43f8a74300d493a6 Mon Sep 17 00:00:00 2001
+From b04f892ca61239bee7721897d1b3fed8d77bb936 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:54:53 +0300
-Subject: [PATCH 018/115] Step 1.16: Load calendar filter
+Subject: [PATCH 018/116] Step 1.16: Load calendar filter
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -915,10 +932,10 @@ index b332f9e..abe61c0 100644
 2.7.4
 
 
-From d37c08e1f4b6341d00054b0aef7af4617d838eeb Mon Sep 17 00:00:00 2001
+From d97b2ddc8a7dc1a576c77e6c48427301adc390a2 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 11:57:54 +0300
-Subject: [PATCH 019/115] Step 1.17: Apply calendar filter to chats view
+Subject: [PATCH 019/116] Step 1.17: Apply calendar filter to chats view
 
 ---
  client/templates/chats.html | 2 +-
@@ -941,10 +958,10 @@ index 73fd236..eaee732 100644
 2.7.4
 
 
-From 7922fcd915bc2253547720673011d8a3d4f56c21 Mon Sep 17 00:00:00 2001
+From 89e0a522d165284cd0f281db01d8c750aaafe517 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 12:00:13 +0300
-Subject: [PATCH 020/115] Step 1.18: Add delete button to chats view
+Subject: [PATCH 020/116] Step 1.18: Add delete button to chats view
 
 ---
  client/templates/chats.html | 3 +++
@@ -968,10 +985,10 @@ index eaee732..5286351 100644
 2.7.4
 
 
-From c6b9dbd107e0c95e0bbb216ba88b38ddfd38a30d Mon Sep 17 00:00:00 2001
+From e01bf980f18a9d33e1c727fcfd91c09ebe750b47 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:21:42 +0300
-Subject: [PATCH 021/115] Step 1.19: Add delete button logic to chats
+Subject: [PATCH 021/116] Step 1.19: Add delete button logic to chats
  controller
 
 ---
@@ -998,10 +1015,10 @@ index 48e8505..d744a3e 100644
 2.7.4
 
 
-From 0f8b406cfa6969a8407d7f732bd920d7c0f4cf0a Mon Sep 17 00:00:00 2001
+From affa7baca5d56709d99c2bf001e0a6513efddd87 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:22:46 +0300
-Subject: [PATCH 022/115] Step 1.20: Add sass meteor package
+Subject: [PATCH 022/116] Step 1.20: Add sass meteor package
 
 ---
  .meteor/packages | 1 +
@@ -1009,16 +1026,16 @@ Subject: [PATCH 022/115] Step 1.20: Add sass meteor package
  2 files changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index ebddab3..ccdac92 100644
+index f787476..46cf33c 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -20,3 +20,4 @@ autopublish             # Publish all data to the clients (for prototyping)
- insecure                # Allow all DB writes from clients (for prototyping)
- dab0mb:ionic-assets
+@@ -21,3 +21,4 @@ dab0mb:ionic-assets
  angular-templates
+ mobile-status-bar
+ launch-screen
 +fourseven:scss
 diff --git a/.meteor/versions b/.meteor/versions
-index 2507cd6..f953362 100644
+index a4e546d..3d004c7 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -9,7 +9,7 @@ binary-heap@1.0.9
@@ -1030,10 +1047,10 @@ index 2507cd6..f953362 100644
  callback-hook@1.0.9
  check@1.2.3
  dab0mb:ionic-assets@1.3.2
-@@ -24,6 +24,7 @@ ecmascript-runtime@0.3.14_1
+@@ -23,6 +23,7 @@ ecmascript@0.5.8_1
+ ecmascript-runtime@0.3.14_1
  ejson@1.0.12
  es5-shim@4.6.14_1
- fastclick@1.0.12
 +fourseven:scss@3.10.0
  geojson-utils@1.0.9
  hot-code-push@1.0.4
@@ -1042,10 +1059,10 @@ index 2507cd6..f953362 100644
 2.7.4
 
 
-From 9ab8980e584175569114992ce6998de1836ad87c Mon Sep 17 00:00:00 2001
+From 03063e006ce9b4ec5a8d55b58477d87c57a32160 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:25:03 +0300
-Subject: [PATCH 023/115] Step 1.21: Add chats stylesheet
+Subject: [PATCH 023/116] Step 1.21: Add chats stylesheet
 
 ---
  client/styles/chats.scss | 9 +++++++++
@@ -1072,10 +1089,10 @@ index 0000000..7c1b8d5
 2.7.4
 
 
-From d222fcedc61d70dc19ff60c3350de103003c021a Mon Sep 17 00:00:00 2001
+From 305f90ebe58b6a3a3fbb6f35d83b341d80c33e16 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:31:05 +0300
-Subject: [PATCH 024/115] Step 2.1: Add meteor collections
+Subject: [PATCH 024/116] Step 2.1: Add meteor collections
 
 ---
  lib/collections.js | 4 ++++
@@ -1097,10 +1114,10 @@ index 0000000..531e6c2
 2.7.4
 
 
-From 770069df2333d117144fb26a7669c81c89d101f8 Mon Sep 17 00:00:00 2001
+From 5f032a5249cbfd9f1d5aa1f1690868156276c410 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:33:05 +0300
-Subject: [PATCH 025/115] Step 2.2: Create server bootstrap
+Subject: [PATCH 025/116] Step 2.2: Create server bootstrap
 
 ---
  server/bootstrap.js | 3 +++
@@ -1121,10 +1138,10 @@ index 0000000..948f7b0
 2.7.4
 
 
-From e33053f09a41bd7267ffc18da9cbd9a42728246d Mon Sep 17 00:00:00 2001
+From dc5a7d5ad5ffcd9022307a65de9d8991feaf87f8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:36:58 +0300
-Subject: [PATCH 026/115] Step 2.3: Add chats collection data stub
+Subject: [PATCH 026/116] Step 2.3: Add chats collection data stub
 
 ---
  server/bootstrap.js | 63 +++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1206,10 +1223,10 @@ index 948f7b0..3724cfb 100644
 2.7.4
 
 
-From 6e2ab880d267b15821303ff4d455fa65d0d2f206 Mon Sep 17 00:00:00 2001
+From bc772318ed7ac0ffd5a1b718c0f8f4f9706a0544 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:41:36 +0300
-Subject: [PATCH 027/115] Step 2.4: Add chats collection helper to chats
+Subject: [PATCH 027/116] Step 2.4: Add chats collection helper to chats
  controller
 
 ---
@@ -1287,10 +1304,10 @@ index d744a3e..1478f85 100644
 2.7.4
 
 
-From af78ba343796ca96c262c5b7ddc6eac1429b5102 Mon Sep 17 00:00:00 2001
+From 9b4d89371b170a608a88c7f49665be39e993f448 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 15:51:05 +0300
-Subject: [PATCH 028/115] Step 2.5: Update delete button logic to use
+Subject: [PATCH 028/116] Step 2.5: Update delete button logic to use
  controller helper
 
 ---
@@ -1314,10 +1331,10 @@ index 1478f85..0f4efe3 100644
 2.7.4
 
 
-From cf9e04e640bb6e39a2f3d4879397ccd90cf63ccf Mon Sep 17 00:00:00 2001
+From 60e6796cb48fdd099057c55a8f0a8b724c0258e6 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:05:22 +0300
-Subject: [PATCH 029/115] Step 3.1: Add chat route state
+Subject: [PATCH 029/116] Step 3.1: Add chat route state
 
 ---
  client/scripts/routes.js | 9 +++++++++
@@ -1347,10 +1364,10 @@ index 43898c5..2a7f2b9 100644
 2.7.4
 
 
-From b53c7109c4b5ec3614bda37cd62c259cbdcf46ba Mon Sep 17 00:00:00 2001
+From fe401719778c1289113d673b060082fba2620118 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:07:19 +0300
-Subject: [PATCH 030/115] Step 3.2: Add chat view
+Subject: [PATCH 030/116] Step 3.2: Add chat view
 
 ---
  client/templates/chat.html | 5 +++++
@@ -1373,10 +1390,10 @@ index 0000000..a2c5625
 2.7.4
 
 
-From 1a4099bf71a55eff1973817ff46626c9fdf2d53e Mon Sep 17 00:00:00 2001
+From 2fbf439d1bd422d6eacd51891065f4f20c675b4e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:16:44 +0300
-Subject: [PATCH 031/115] Step 3.3: Add chat controller
+Subject: [PATCH 031/116] Step 3.3: Add chat controller
 
 ---
  client/scripts/controllers/chat.controller.js | 19 +++++++++++++++++++
@@ -1413,10 +1430,10 @@ index 0000000..ca56788
 2.7.4
 
 
-From 814f2473a772e93f9656b7cee91c9631b2aca92a Mon Sep 17 00:00:00 2001
+From d0f2d14de95c73afb86c7f9c3bfafef66960fe68 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:18:32 +0300
-Subject: [PATCH 032/115] Step 3.4: Load chat controller
+Subject: [PATCH 032/116] Step 3.4: Load chat controller
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -1446,10 +1463,10 @@ index abe61c0..371fc10 100644
 2.7.4
 
 
-From 25db5780e30df219312e001b5df8b1515296cf10 Mon Sep 17 00:00:00 2001
+From 6eb31bf86805f8231df3cb2453d19bde24e1153b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:22:17 +0300
-Subject: [PATCH 033/115] Step 3.5: Add reference to chat view in chats view
+Subject: [PATCH 033/116] Step 3.5: Add reference to chat view in chats view
 
 ---
  client/templates/chats.html | 3 ++-
@@ -1473,10 +1490,10 @@ index 5286351..2d4d4c8 100644
 2.7.4
 
 
-From b07672ab7dd3b27c15f19fc40d92ad3aedda7a13 Mon Sep 17 00:00:00 2001
+From e32f2173f7070e40c428e7d7d8bd4ccb88192919 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:24:03 +0300
-Subject: [PATCH 034/115] Step 3.6: Add chat stylesheet
+Subject: [PATCH 034/116] Step 3.6: Add chat stylesheet
 
 ---
  client/styles/chat.scss | 7 +++++++
@@ -1501,10 +1518,10 @@ index 0000000..2637ff1
 2.7.4
 
 
-From ade9d9e3e1d3982fa234527a3264c0599b8718d9 Mon Sep 17 00:00:00 2001
+From 48504f2f78905ca1d6e531f42bc8b91e6e197726 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:28:02 +0300
-Subject: [PATCH 035/115] Step 3.7: Add messages helper to chat controller
+Subject: [PATCH 035/116] Step 3.7: Add messages helper to chat controller
 
 ---
  client/scripts/controllers/chat.controller.js | 5 ++++-
@@ -1535,10 +1552,10 @@ index ca56788..257151d 100644
 2.7.4
 
 
-From 4d3473e676bd17aa2359604712d2270c60e093ad Mon Sep 17 00:00:00 2001
+From 2c7e209a696e9dabcf6f2454fb872b9656082c0f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:30:19 +0300
-Subject: [PATCH 036/115] Step 3.8: Add messages to chat view
+Subject: [PATCH 036/116] Step 3.8: Add messages to chat view
 
 ---
  client/templates/chat.html | 14 ++++++++++++--
@@ -1571,10 +1588,10 @@ index a2c5625..139aeae 100644
 2.7.4
 
 
-From cf4e7a45b91250dc786e7e15269c07454ded65c2 Mon Sep 17 00:00:00 2001
+From ebd270d4b59588307176b6ace89906791e2ca2ab Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:12:43 +0300
-Subject: [PATCH 037/115] Step 3.9: Add message style to chat stylesheet
+Subject: [PATCH 037/116] Step 3.9: Add message style to chat stylesheet
 
 ---
  client/styles/chat.scss | 79 +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1673,10 +1690,10 @@ index 2637ff1..aefef95 100644
 2.7.4
 
 
-From c4f996cb6b4df1b4c6df1880621b17a5ada6421d Mon Sep 17 00:00:00 2001
+From abd11da1258740383beccea632d0f238ac000733 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:35:24 +0300
-Subject: [PATCH 038/115] Step 3.10: Add assets
+Subject: [PATCH 038/116] Step 3.10: Add assets
 
 ---
  public/chat-background.jpg | Bin 0 -> 29275 bytes
@@ -2307,10 +2324,10 @@ index 0000000..64093ae
 2.7.4
 
 
-From 3a2c3ed6016ec8ea2577e78fcd73a2982e9dc3da Mon Sep 17 00:00:00 2001
+From c22e2067516d717b10bcbd18079c1084bc709dab Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:37:12 +0300
-Subject: [PATCH 039/115] Step 3.11: Add angular-moment npm package
+Subject: [PATCH 039/116] Step 3.11: Add angular-moment npm package
 
 ---
  package.json | 1 +
@@ -2332,10 +2349,10 @@ index 3e9483f..c540d03 100644
 2.7.4
 
 
-From 87829c4f45680b2bc52bf63d160c0c68787540cc Mon Sep 17 00:00:00 2001
+From b6e19d2cba0fbb9911924a7256a5643a50d31162 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:39:18 +0300
-Subject: [PATCH 040/115] Step 3.12: Load angular-moment
+Subject: [PATCH 040/116] Step 3.12: Load angular-moment
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -2365,10 +2382,10 @@ index 371fc10..83ff376 100644
 2.7.4
 
 
-From 58cb9058ccc8a6e66d1618094c1c6c639274f9e0 Mon Sep 17 00:00:00 2001
+From 0571e8d61bc640797719a55427a60b0279de50cc Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:40:58 +0300
-Subject: [PATCH 041/115] Step 3.13: Add moment filter to chat view
+Subject: [PATCH 041/116] Step 3.13: Add moment filter to chat view
 
 ---
  client/templates/chat.html | 2 +-
@@ -2391,10 +2408,10 @@ index 139aeae..f35bd17 100644
 2.7.4
 
 
-From 8aa0d9ae18590bc7fc867e73e3d4b1a86e8aa585 Mon Sep 17 00:00:00 2001
+From e9e32955e143759562f5387ea30f79775b1046cc Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:43:27 +0300
-Subject: [PATCH 042/115] Step 3.14: Add chatbox to chat view
+Subject: [PATCH 042/116] Step 3.14: Add chatbox to chat view
 
 ---
  client/templates/chat.html | 18 ++++++++++++++++++
@@ -2432,10 +2449,10 @@ index f35bd17..ac8112f 100644
 2.7.4
 
 
-From 9118ca67efed28f14545fdee579bf3ba8acd294d Mon Sep 17 00:00:00 2001
+From c39397ac23f1c1ead9219033ef2ceb70fb007bfc Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:45:55 +0300
-Subject: [PATCH 043/115] Step 3.15: Add chatbox logic to chat controller
+Subject: [PATCH 043/116] Step 3.15: Add chatbox logic to chat controller
 
 ---
  client/scripts/controllers/chat.controller.js | 3 +++
@@ -2459,10 +2476,10 @@ index 257151d..f2ae75e 100644
 2.7.4
 
 
-From fe792f2a03b605f5ca08cc3da3e614c6e97b2a3b Mon Sep 17 00:00:00 2001
+From 7d690a33f4457db808aeca558cc8284611489168 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 16:47:56 +0300
-Subject: [PATCH 044/115] Step 3.16: Add input directive
+Subject: [PATCH 044/116] Step 3.16: Add input directive
 
 ---
  client/scripts/directives/input.directive.js | 51 ++++++++++++++++++++++++++++
@@ -2531,10 +2548,10 @@ index 0000000..8b1d6a9
 2.7.4
 
 
-From dc2072b830ae8dc1506188859faac45f4971256e Mon Sep 17 00:00:00 2001
+From 572281ac31d3c7a069b374457724b6566c1d24c8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 15 May 2016 22:38:06 +0300
-Subject: [PATCH 045/115] Step 3.17: Load input directive
+Subject: [PATCH 045/116] Step 3.17: Load input directive
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -2564,10 +2581,10 @@ index 83ff376..bb7c7c4 100644
 2.7.4
 
 
-From 03770f30e8f984d79e8f3393dd2df45f6374f36f Mon Sep 17 00:00:00 2001
+From c837a0dd4d213867a4a93495d7cc51c56fdda555 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 15 May 2016 22:38:25 +0300
-Subject: [PATCH 046/115] Step 3.18: Add chat view
+Subject: [PATCH 046/116] Step 3.18: Add chat view
 
 ---
  client/templates/chat.html | 5 ++++-
@@ -2593,10 +2610,10 @@ index ac8112f..c08d5b2 100644
 2.7.4
 
 
-From ce14faf5f8f3661f64a1aefc995ed147b07a11a1 Mon Sep 17 00:00:00 2001
+From 511175c77584093ca4669838be3818e5a65ddb46 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 10 Apr 2016 22:53:57 +0300
-Subject: [PATCH 047/115] Step 3.19: Implement input directive handlers in chat
+Subject: [PATCH 047/116] Step 3.19: Implement input directive handlers in chat
  controller
 
 ---
@@ -2664,10 +2681,10 @@ index f2ae75e..8ed495c 100644
 2.7.4
 
 
-From 90ba758ae1b5630be4097c47534349793a7be7f7 Mon Sep 17 00:00:00 2001
+From 1e2a590c0fc1c9a293b2fddc8362cd3c654b2fed Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:17:20 +0300
-Subject: [PATCH 048/115] Step 3.20: Add footer style to chat stylesheet
+Subject: [PATCH 048/116] Step 3.20: Add footer style to chat stylesheet
 
 ---
  client/styles/chat.scss | 18 +++++++++++++++++-
@@ -2712,10 +2729,10 @@ index aefef95..77f09da 100644
 2.7.4
 
 
-From 2ea2f3394b13d45a81237d3eac669b435c79cb1c Mon Sep 17 00:00:00 2001
+From db4a60307cce022cf73633c623c14b6323b75041 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:19:14 +0300
-Subject: [PATCH 049/115] Step 3.21: Implement new message method in chat
+Subject: [PATCH 049/116] Step 3.21: Implement new message method in chat
  controller
 
 ---
@@ -2752,10 +2769,10 @@ index 8ed495c..6108aa3 100644
 2.7.4
 
 
-From e8b6f95356e9fd43b4e3db67dd3e2995a5b2417e Mon Sep 17 00:00:00 2001
+From 618bc6c9d02e272d06f041748bfdb184bbc703d5 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:20:51 +0300
-Subject: [PATCH 050/115] Step 3.22: Add new message meteor method
+Subject: [PATCH 050/116] Step 3.22: Add new message meteor method
 
 ---
  lib/methods.js | 13 +++++++++++++
@@ -2786,32 +2803,32 @@ index 0000000..0bc5526
 2.7.4
 
 
-From 489877ec40347957ca4f0c1b2d5d207856f0164e Mon Sep 17 00:00:00 2001
+From d750b789a2a286ddc1e262a152269e6444d274dc Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:22:22 +0300
-Subject: [PATCH 051/115] Step 3.23: Add check meteor package
+Subject: [PATCH 051/116] Step 3.23: Add check meteor package
 
 ---
  .meteor/packages | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index ccdac92..8d23d51 100644
+index 46cf33c..cc90ff2 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -21,3 +21,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
- dab0mb:ionic-assets
- angular-templates
+@@ -22,3 +22,4 @@ angular-templates
+ mobile-status-bar
+ launch-screen
  fourseven:scss
 +check
 -- 
 2.7.4
 
 
-From 86049344f3405212dcc01d3529a598c2041f1714 Mon Sep 17 00:00:00 2001
+From 1b3695a11577c65e2ad4878c237d7c1409e4c826 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 17:23:23 +0300
-Subject: [PATCH 052/115] Step 3.24: Validate new message method params
+Subject: [PATCH 052/116] Step 3.24: Validate new message method params
 
 ---
  lib/methods.js | 5 +++++
@@ -2837,10 +2854,10 @@ index 0bc5526..5256b0d 100644
 2.7.4
 
 
-From c2f493ae2c8ef5ca108855dc888011484233d9e1 Mon Sep 17 00:00:00 2001
+From 5d49f81581328defbbd135eccf45b910e1f774f4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:46:33 +0300
-Subject: [PATCH 053/115] Step 4.1: Add accounts meteor package
+Subject: [PATCH 053/116] Step 4.1: Add accounts meteor package
 
 ---
  .meteor/packages | 2 ++
@@ -2848,17 +2865,17 @@ Subject: [PATCH 053/115] Step 4.1: Add accounts meteor package
  2 files changed, 10 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 8d23d51..bb92fb4 100644
+index cc90ff2..4bc226c 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -22,3 +22,5 @@ dab0mb:ionic-assets
- angular-templates
+@@ -23,3 +23,5 @@ mobile-status-bar
+ launch-screen
  fourseven:scss
  check
 +npm-bcrypt@0.8.7
 +mys:accounts-phone
 diff --git a/.meteor/versions b/.meteor/versions
-index f953362..6db36ff 100644
+index 3d004c7..a48a19e 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,3 +1,4 @@
@@ -2872,9 +2889,9 @@ index f953362..6db36ff 100644
  ejson@1.0.12
 +email@1.0.16
  es5-shim@4.6.14_1
- fastclick@1.0.12
  fourseven:scss@3.10.0
-@@ -35,6 +37,7 @@ insecure@1.0.7
+ geojson-utils@1.0.9
+@@ -34,6 +36,7 @@ insecure@1.0.7
  jquery@1.11.9
  launch-screen@1.0.12
  livedata@1.0.18
@@ -2882,7 +2899,7 @@ index f953362..6db36ff 100644
  logging@1.1.15_1
  meteor@1.2.17_1
  meteor-base@1.0.4
-@@ -47,6 +50,8 @@ modules@0.7.6_1
+@@ -45,6 +48,8 @@ modules@0.7.6_1
  modules-runtime@0.7.6_1
  mongo@1.1.12_5
  mongo-id@1.0.5
@@ -2891,7 +2908,7 @@ index f953362..6db36ff 100644
  npm-mongo@2.2.10_1
  observe-sequence@1.0.13
  ordered-dict@1.0.8
-@@ -56,8 +61,11 @@ reactive-var@1.0.10
+@@ -54,8 +59,11 @@ reactive-var@1.0.10
  reload@1.1.10
  retry@1.0.8
  routepolicy@1.0.11
@@ -2907,10 +2924,10 @@ index f953362..6db36ff 100644
 2.7.4
 
 
-From 03dd04a7c923ff6b43c9e1fb5bc5a578bf4f1a06 Mon Sep 17 00:00:00 2001
+From 6ad6486a0b8229e9a9a192850559e4d8a6e1b9ed Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:26:21 +0300
-Subject: [PATCH 054/115] Step 4.2: Add angular-meteor-auth npm package
+Subject: [PATCH 054/116] Step 4.2: Add angular-meteor-auth npm package
 
 ---
  package.json | 1 +
@@ -2932,10 +2949,10 @@ index c540d03..b629aa2 100644
 2.7.4
 
 
-From d397c25ce9d37e9df1dc6fc85760b6311d76c9a7 Mon Sep 17 00:00:00 2001
+From 98980aea1c6451e499da2da03bdb6fd141d16c84 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:27:31 +0300
-Subject: [PATCH 055/115] Step 4.3: Load angular-meteor-auth module
+Subject: [PATCH 055/116] Step 4.3: Load angular-meteor-auth module
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -2965,10 +2982,10 @@ index bb7c7c4..27adac8 100644
 2.7.4
 
 
-From 36edd52c2515430325f2785eaa98ee0bb8f668bb Mon Sep 17 00:00:00 2001
+From be20e67f53681f47ba98651520a0e36d0b352d45 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:50:40 +0300
-Subject: [PATCH 056/115] Step 4.4: Add SMS configuration
+Subject: [PATCH 056/116] Step 4.4: Add SMS configuration
 
 ---
  server/sms.js | 7 +++++++
@@ -2993,10 +3010,10 @@ index 0000000..d77a645
 2.7.4
 
 
-From 49f121873e65763c90759f418b9c2e27312ab8cf Mon Sep 17 00:00:00 2001
+From c5cf88604b38da58ff89ee03544dc9d17654a5bd Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:54:37 +0300
-Subject: [PATCH 057/115] Step 4.5: Create auth route states
+Subject: [PATCH 057/116] Step 4.5: Create auth route states
 
 ---
  client/scripts/routes.js | 15 +++++++++++++++
@@ -3032,10 +3049,10 @@ index 2a7f2b9..d18af5e 100644
 2.7.4
 
 
-From d4779e1799e706628bf23bac7fe3b7de025020c9 Mon Sep 17 00:00:00 2001
+From 462660ce7479b028dd5f21a41f77d4f85917dfea Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sat, 2 Apr 2016 23:57:33 +0300
-Subject: [PATCH 058/115] Step 4.6: Add login view
+Subject: [PATCH 058/116] Step 4.6: Add login view
 
 ---
  client/templates/login.html | 15 +++++++++++++++
@@ -3068,10 +3085,10 @@ index 0000000..c9758d0
 2.7.4
 
 
-From 4a9d4e0c933378523478dd5017f395b27ea103f9 Mon Sep 17 00:00:00 2001
+From 77de6c361452f0dbd42bd281c6cdd77542a63c00 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 00:17:17 +0300
-Subject: [PATCH 059/115] Step 4.7: Add login controller
+Subject: [PATCH 059/116] Step 4.7: Add login controller
 
 ---
  client/scripts/controllers/login.controller.js | 46 ++++++++++++++++++++++++++
@@ -3135,10 +3152,10 @@ index 0000000..6285e97
 2.7.4
 
 
-From d07357f947002c78a1d7abd79c4841e5bf04dd22 Mon Sep 17 00:00:00 2001
+From 5434d72a84d894ee0d3a1e1c95b81d7b2c64926b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 00:43:16 +0300
-Subject: [PATCH 060/115] Step 4.8: Load login controller
+Subject: [PATCH 060/116] Step 4.8: Load login controller
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -3168,10 +3185,10 @@ index 27adac8..fed5de9 100644
 2.7.4
 
 
-From 457bbb599808f64ff804ae43fddb699f7b826bb4 Mon Sep 17 00:00:00 2001
+From ad61f706819fd51d652f5f2127b76807d9b2924d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 00:34:22 +0300
-Subject: [PATCH 061/115] Step 4.9: Add resolve to auth routes
+Subject: [PATCH 061/116] Step 4.9: Add resolve to auth routes
 
 ---
  client/scripts/routes.js | 20 ++++++++++++++++++--
@@ -3229,10 +3246,10 @@ index d18af5e..a98ef5a 100644
 2.7.4
 
 
-From bfea89d9af95ded3e8806a26beff8c70c5f6902b Mon Sep 17 00:00:00 2001
+From 6497dadbb238d15c7313d443bb6fd7f469e6e807 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:42:50 +0300
-Subject: [PATCH 062/115] Step 4.10: Add routes runner
+Subject: [PATCH 062/116] Step 4.10: Add routes runner
 
 ---
  client/scripts/routes.js | 23 ++++++++++++++++++++---
@@ -3280,10 +3297,10 @@ index a98ef5a..9c1ba1a 100644
 2.7.4
 
 
-From 69cea019b7f6db6ae3090784458734dbe72a3b0a Mon Sep 17 00:00:00 2001
+From 04663f0f8a2714a0ccdbc09801662b391b1c124d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:44:46 +0300
-Subject: [PATCH 063/115] Step 4.11: Create routes runner
+Subject: [PATCH 063/116] Step 4.11: Create routes runner
 
 ---
  client/scripts/lib/app.js | 4 ++--
@@ -3315,10 +3332,10 @@ index fed5de9..6b21d0e 100644
 2.7.4
 
 
-From a534c75b3724cb8e512f94a6a7c0e0989168be38 Mon Sep 17 00:00:00 2001
+From 0a37f309b2fe309a2beef6d572aa87be3c0fb480 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:47:03 +0300
-Subject: [PATCH 064/115] Step 4.12: Add login stylesheet
+Subject: [PATCH 064/116] Step 4.12: Add login stylesheet
 
 ---
  client/styles/login.scss | 6 ++++++
@@ -3342,10 +3359,10 @@ index 0000000..a6c2a96
 2.7.4
 
 
-From 033ce58dbe60881d2f4ee145c6979818377e7880 Mon Sep 17 00:00:00 2001
+From ee02886487b0a81e79be4907eb29a82202caf38d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:48:42 +0300
-Subject: [PATCH 065/115] Step 4.13: Add confirmation view
+Subject: [PATCH 065/116] Step 4.13: Add confirmation view
 
 ---
  client/templates/confirmation.html | 20 ++++++++++++++++++++
@@ -3383,10 +3400,10 @@ index 0000000..23f4be1
 2.7.4
 
 
-From f096de60f487a958ea55ea1f0dc81af6f0daf4cf Mon Sep 17 00:00:00 2001
+From 03833d2da3c87f016f4045b60393da07f7da0149 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:50:37 +0300
-Subject: [PATCH 066/115] Step 4.14: Create confirmation controller
+Subject: [PATCH 066/116] Step 4.14: Create confirmation controller
 
 ---
  .../scripts/controllers/confirmation.controller.js | 33 ++++++++++++++++++++++
@@ -3437,10 +3454,10 @@ index 0000000..de7cfda
 2.7.4
 
 
-From f8fee1a60991f44efde7cdaff8853478dd6df2b5 Mon Sep 17 00:00:00 2001
+From 28a2c458e1662c06f654995c93a08adcb81f8d78 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:52:28 +0300
-Subject: [PATCH 067/115] Step 4.15: Load confirmation controller
+Subject: [PATCH 067/116] Step 4.15: Load confirmation controller
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -3470,10 +3487,10 @@ index 6b21d0e..fffbb60 100644
 2.7.4
 
 
-From 17df4ff73976d8fc9a7df5a2d8190dd2602d18c6 Mon Sep 17 00:00:00 2001
+From e6d91db55686aab20a721c796fb4b4e46d4ce663 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 21:53:56 +0300
-Subject: [PATCH 068/115] Step 4.16: Add profile view
+Subject: [PATCH 068/116] Step 4.16: Add profile view
 
 ---
  client/templates/profile.html | 23 +++++++++++++++++++++++
@@ -3514,10 +3531,10 @@ index 0000000..c18fe20
 2.7.4
 
 
-From fa76812af7d4472374e31d8652e220c459bf7eff Mon Sep 17 00:00:00 2001
+From 005a311747938b510e623f32d7c03383fdec148e Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 22:03:23 +0300
-Subject: [PATCH 069/115] Step 4.17: Create profile controller
+Subject: [PATCH 069/116] Step 4.17: Create profile controller
 
 ---
  client/scripts/controllers/profile.controller.js | 33 ++++++++++++++++++++++++
@@ -3568,10 +3585,10 @@ index 0000000..805152b
 2.7.4
 
 
-From ef0f20de3e06e757712c48f4d5325434dace5fb2 Mon Sep 17 00:00:00 2001
+From 6f22f5a8ada242e9350f0b573c885f5ab79af3f8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 22:06:29 +0300
-Subject: [PATCH 070/115] Step 4.18: Load profile controller
+Subject: [PATCH 070/116] Step 4.18: Load profile controller
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -3601,10 +3618,10 @@ index fffbb60..7da5248 100644
 2.7.4
 
 
-From 4cb0b45e50713794083eefb3892e811ae97c92a3 Mon Sep 17 00:00:00 2001
+From 57fbc923ca9742643d1b01aa1661d3c2c2d16460 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 22:08:01 +0300
-Subject: [PATCH 071/115] Step 4.19: Add profile stylesheet
+Subject: [PATCH 071/116] Step 4.19: Add profile stylesheet
 
 ---
  client/styles/profile.scss | 40 ++++++++++++++++++++++++++++++++++++++++
@@ -3662,10 +3679,10 @@ index 0000000..ef4c6cc
 2.7.4
 
 
-From 4d83d37feaf3841b3487a1fdaffba4817d7d543e Mon Sep 17 00:00:00 2001
+From 9e8b77efe58f2cb2dc0919901b906dfc87562ade Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:25:48 +0300
-Subject: [PATCH 072/115] Step 4.20: Add update name method
+Subject: [PATCH 072/116] Step 4.20: Add update name method
 
 ---
  lib/methods.js | 14 ++++++++++++++
@@ -3700,10 +3717,10 @@ index 5256b0d..45d5aa9 100644
 2.7.4
 
 
-From ae687578b876c4271d42dd76c0797fb2ead24bf1 Mon Sep 17 00:00:00 2001
+From a981866ac03034a6f372b797500b6c67786d70de Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:49:24 +0300
-Subject: [PATCH 073/115] Step 4.21: Bind user to any new message
+Subject: [PATCH 073/116] Step 4.21: Bind user to any new message
 
 ---
  lib/methods.js | 6 ++++++
@@ -3736,10 +3753,10 @@ index 45d5aa9..0060ad1 100644
 2.7.4
 
 
-From d8775fd8f833ca055eb74f2b1f419a4027aea785 Mon Sep 17 00:00:00 2001
+From 80fdec8d53b0d377c0bc03d2176ce14f8dcddbd9 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:51:43 +0300
-Subject: [PATCH 074/115] Step 4.22: Add settings route state
+Subject: [PATCH 074/116] Step 4.22: Add settings route state
 
 ---
  client/scripts/routes.js | 9 +++++++++
@@ -3769,10 +3786,10 @@ index 9c1ba1a..ea59297 100644
 2.7.4
 
 
-From 0f45bb77be0b19ce597ae64271259d888b8912f1 Mon Sep 17 00:00:00 2001
+From 4d9b9b756adb8646247e4c18ca1dbc0a670b8ee6 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:54:20 +0300
-Subject: [PATCH 075/115] Step 4.23: Add settings view
+Subject: [PATCH 075/116] Step 4.23: Add settings view
 
 ---
  client/templates/settings.html | 7 +++++++
@@ -3797,10 +3814,10 @@ index 0000000..eadaf50
 2.7.4
 
 
-From 18edd339640256f133fe5ef18b7c304f867560cd Mon Sep 17 00:00:00 2001
+From 968dc3f4314120bea8f98f046428ad60bd1e02e1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:55:04 +0300
-Subject: [PATCH 076/115] Step 4.24: Add settings controller
+Subject: [PATCH 076/116] Step 4.24: Add settings controller
 
 ---
  client/scripts/controllers/settings.controller.js | 23 +++++++++++++++++++++++
@@ -3841,10 +3858,10 @@ index 0000000..2e35fb1
 2.7.4
 
 
-From e6c3cd4d5cf9c974e59ae0f81ca22b7b9622725c Mon Sep 17 00:00:00 2001
+From 21f19bee03fcf29b7a1c780e813d663251fc1a6f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:53:42 +0300
-Subject: [PATCH 077/115] Step 4.25: Load settings controller
+Subject: [PATCH 077/116] Step 4.25: Load settings controller
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -3874,10 +3891,10 @@ index 7da5248..ec96194 100644
 2.7.4
 
 
-From bc6559a4c6322b7452637219cac1a1877ebc2472 Mon Sep 17 00:00:00 2001
+From 33fdf6db0823efe1a43544bf3848e1da3c67f767 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 3 Apr 2016 23:59:09 +0300
-Subject: [PATCH 078/115] Step 4.26: Classify message ownership
+Subject: [PATCH 078/116] Step 4.26: Classify message ownership
 
 ---
  client/templates/chat.html | 2 +-
@@ -3900,10 +3917,10 @@ index c08d5b2..896eed8 100644
 2.7.4
 
 
-From 825fcc403b4eba2db6e1f797ef0a40087454bcdb Mon Sep 17 00:00:00 2001
+From b588a0cea2096cbd21e6f22deaf646d95b011b58 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 10 Apr 2016 23:43:12 +0300
-Subject: [PATCH 079/115] Step 4.27: Add auto-scroll to chat controller
+Subject: [PATCH 079/116] Step 4.27: Add auto-scroll to chat controller
 
 ---
  client/scripts/controllers/chat.controller.js | 13 +++++++++++++
@@ -3944,10 +3961,10 @@ index 6108aa3..023be12 100644
 2.7.4
 
 
-From 3d7ad9f864cd0585f3849e1dda8267ea9aeac21d Mon Sep 17 00:00:00 2001
+From 1173eff8b164269862c32ce5c70b2dfa41408072 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:09:27 +0300
-Subject: [PATCH 080/115] Step 5.1: Add new chat button
+Subject: [PATCH 080/116] Step 5.1: Add new chat button
 
 ---
  client/templates/chats.html | 4 ++++
@@ -3970,10 +3987,10 @@ index 2d4d4c8..e1fd2b7 100644
 2.7.4
 
 
-From 8f2a8001064ac6a993e72d9c5bab37e05fcab302 Mon Sep 17 00:00:00 2001
+From 6e310ec23dcc24b3969f077d8f7ed0554b0aef2c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:13:08 +0300
-Subject: [PATCH 081/115] Step 5.2: Add new chat button logic
+Subject: [PATCH 081/116] Step 5.2: Add new chat button logic
 
 ---
  client/scripts/controllers/chats.controller.js | 7 ++++++-
@@ -4004,10 +4021,10 @@ index 0f4efe3..991d264 100644
 2.7.4
 
 
-From 59e7428cd01db1ce2c445f09d9ab1928a90e97bc Mon Sep 17 00:00:00 2001
+From f07b6d71a635b63d6045732fb1789345a6404f26 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:14:52 +0300
-Subject: [PATCH 082/115] Step 5.3: Add new chat modal view
+Subject: [PATCH 082/116] Step 5.3: Add new chat modal view
 
 ---
  client/templates/new-chat.html | 19 +++++++++++++++++++
@@ -4044,10 +4061,10 @@ index 0000000..16452f2
 2.7.4
 
 
-From bcc65abf7b9104d8ca7d04a0f289abb33e48daec Mon Sep 17 00:00:00 2001
+From 129a69e3d49bc5666b018174cfd8f98ec9a7c209 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 15 May 2016 22:30:23 +0300
-Subject: [PATCH 083/115] Step 5.4: Create new chat service
+Subject: [PATCH 083/116] Step 5.4: Create new chat service
 
 ---
  client/scripts/services/new-chat.service.js | 29 +++++++++++++++++++++++++++++
@@ -4094,10 +4111,10 @@ index 0000000..c9fad5f
 2.7.4
 
 
-From 35f124a2b2b9c9561b545c03fad495089d820e1c Mon Sep 17 00:00:00 2001
+From 084eafd1430a88e2edc801244e7869a86278d6d0 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Sun, 15 May 2016 22:30:40 +0300
-Subject: [PATCH 084/115] Step 5.5: Load new chat service
+Subject: [PATCH 084/116] Step 5.5: Load new chat service
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -4127,10 +4144,10 @@ index ec96194..244c1fc 100644
 2.7.4
 
 
-From ed26b968c704bb92b5426693433c191d79ccb0ad Mon Sep 17 00:00:00 2001
+From ddc1c6231ca9836ffda6b4fb5322794118b5dfd8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:27:03 +0300
-Subject: [PATCH 085/115] Step 5.6: Add new chat controller
+Subject: [PATCH 085/116] Step 5.6: Add new chat controller
 
 ---
  client/scripts/controllers/new-chat.controller.js | 51 +++++++++++++++++++++++
@@ -4199,10 +4216,10 @@ index 0000000..8bbcaed
 2.7.4
 
 
-From b253807e0336409f18fa283dc202876c0729a341 Mon Sep 17 00:00:00 2001
+From d3501b6b94dc29327755cc6a1028057876d5b1ea Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 12:50:34 +0300
-Subject: [PATCH 086/115] Step 5.7: Load new chat controller
+Subject: [PATCH 086/116] Step 5.7: Load new chat controller
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -4232,10 +4249,10 @@ index 244c1fc..175db75 100644
 2.7.4
 
 
-From 21f564d34c3d6e8700f8d0d81330a52093907636 Mon Sep 17 00:00:00 2001
+From 21b5c4969283518807031ac2ff8bbc596966991c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 4 Apr 2016 00:31:07 +0300
-Subject: [PATCH 087/115] Step 5.8: Add new chat method
+Subject: [PATCH 087/116] Step 5.8: Add new chat method
 
 ---
  lib/methods.js | 23 +++++++++++++++++++++++
@@ -4279,10 +4296,10 @@ index 0060ad1..f36891f 100644
 2.7.4
 
 
-From 2c313d32d021672a91e57f16ae195ab4cf39b2d8 Mon Sep 17 00:00:00 2001
+From 80f09e7deacb50179b8bf834a7646debd1b5c63f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:00:10 +0300
-Subject: [PATCH 088/115] Step 5.9: Call remove chat method
+Subject: [PATCH 088/116] Step 5.9: Call remove chat method
 
 ---
  client/scripts/controllers/chats.controller.js | 2 +-
@@ -4305,10 +4322,10 @@ index 991d264..000a276 100644
 2.7.4
 
 
-From 0904085394cae9c6c529f03bf343422ac1c755f4 Mon Sep 17 00:00:00 2001
+From 411c306895df10517345a21a5f9786184e5bc7c3 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:01:59 +0300
-Subject: [PATCH 089/115] Step 5.10: Add remove chat method
+Subject: [PATCH 089/116] Step 5.10: Add remove chat method
 
 ---
  lib/methods.js | 19 +++++++++++++++++++
@@ -4348,10 +4365,10 @@ index f36891f..09faf2b 100644
 2.7.4
 
 
-From 64a11db9d07e1cb8063c6702f9f23fb1614bdd5f Mon Sep 17 00:00:00 2001
+From 16cc6f4183ba90ac119116f6a652d214ea3cc8fa Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:06:30 +0300
-Subject: [PATCH 090/115] Step 5.11: Create chat name filter
+Subject: [PATCH 090/116] Step 5.11: Create chat name filter
 
 ---
  client/scripts/filters/chat-name.filter.js | 17 +++++++++++++++++
@@ -4385,10 +4402,10 @@ index 0000000..0dc2283
 2.7.4
 
 
-From eb0e1af3ddaff19f48f54ae9a53471fcfae6f9ef Mon Sep 17 00:00:00 2001
+From 61023db7060473aa61a21ba48ec007cffb168f94 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 18:01:46 +0300
-Subject: [PATCH 091/115] Step 5.12: Load chat name filter
+Subject: [PATCH 091/116] Step 5.12: Load chat name filter
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -4418,10 +4435,10 @@ index 175db75..247a6bc 100644
 2.7.4
 
 
-From a87fb35b7b9252f0bad49ac71c21302d1e84e701 Mon Sep 17 00:00:00 2001
+From 3fdc62d1dd67fb03e716c42618d3a534f57588d9 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:10:10 +0300
-Subject: [PATCH 092/115] Step 5.13: Create chat picture filter
+Subject: [PATCH 092/116] Step 5.13: Create chat picture filter
 
 ---
  client/scripts/filters/chat-picture.filter.js | 17 +++++++++++++++++
@@ -4456,10 +4473,10 @@ index 0000000..91533ff
 2.7.4
 
 
-From 7bad592c862fa3552054e5159791bb0926bf9438 Mon Sep 17 00:00:00 2001
+From 387e6f367f1bfea75e8c76dc53eff5260f6a0ee3 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 18:11:54 +0300
-Subject: [PATCH 093/115] Step 5.14: Load chat picture filter
+Subject: [PATCH 093/116] Step 5.14: Load chat picture filter
 
 ---
  client/scripts/lib/app.js | 2 ++
@@ -4489,10 +4506,10 @@ index 247a6bc..313e394 100644
 2.7.4
 
 
-From 3f660b4e1e2853ddc19543e549e592b08dfd6674 Mon Sep 17 00:00:00 2001
+From 0cc97348ce993cf5b4059d1b9d1607e3781c1c68 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:11:53 +0300
-Subject: [PATCH 094/115] Step 5.15: Apply chat filters in chats view
+Subject: [PATCH 094/116] Step 5.15: Apply chat filters in chats view
 
 ---
  client/templates/chats.html | 4 ++--
@@ -4517,10 +4534,10 @@ index e1fd2b7..d5b3e72 100644
 2.7.4
 
 
-From 5e1d0e3d6af71f43a3c5a4f030f2e020fcf8a181 Mon Sep 17 00:00:00 2001
+From 39f518a5ae9e5a3b481953908f43efcd93edcc8d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:13:20 +0300
-Subject: [PATCH 095/115] Step 5.16: Apply chat filters in chat view
+Subject: [PATCH 095/116] Step 5.16: Apply chat filters in chat view
 
 ---
  client/templates/chat.html | 4 ++--
@@ -4543,10 +4560,10 @@ index 896eed8..f450447 100644
 2.7.4
 
 
-From 0f04c9bb0a283ec8b91f6c5361574af6474898f9 Mon Sep 17 00:00:00 2001
+From 047cb12d930ce0eb5977a436f5f93a35f8799b09 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:16:52 +0300
-Subject: [PATCH 096/115] Step 5.17: Create users with phone data stub
+Subject: [PATCH 096/116] Step 5.17: Create users with phone data stub
 
 ---
  server/bootstrap.js | 71 ++++++++++++-----------------------------------------
@@ -4644,10 +4661,10 @@ index 3724cfb..aeb796f 100644
 2.7.4
 
 
-From daf82f897b89d05109e4920490e1cc670f7dabef Mon Sep 17 00:00:00 2001
+From 0656642739f9d4f8ab3a6bac8ee3939c4489127d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:17:42 +0300
-Subject: [PATCH 097/115] Step 5.18: Remove insecure meteor package
+Subject: [PATCH 097/116] Step 5.18: Remove insecure meteor package
 
 ---
  .meteor/packages | 1 -
@@ -4655,19 +4672,19 @@ Subject: [PATCH 097/115] Step 5.18: Remove insecure meteor package
  2 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index bb92fb4..bea99ae 100644
+index 4bc226c..79e006d 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -17,7 +17,6 @@ es5-shim@4.6.14_1                # ECMAScript 5 compatibility for older browsers
+@@ -16,7 +16,6 @@ es5-shim@4.6.14_1                # ECMAScript 5 compatibility for older browsers
  ecmascript@0.5.8_1              # Enable ECMAScript2015+ syntax in app code
  
  autopublish             # Publish all data to the clients (for prototyping)
 -insecure                # Allow all DB writes from clients (for prototyping)
  dab0mb:ionic-assets
  angular-templates
- fourseven:scss
+ mobile-status-bar
 diff --git a/.meteor/versions b/.meteor/versions
-index 6db36ff..401a0c5 100644
+index a48a19e..79319c0 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,4 +1,4 @@
@@ -4684,7 +4701,7 @@ index 6db36ff..401a0c5 100644
  ddp-server@1.2.10
  deps@1.0.12
  diff-sequence@1.0.6
-@@ -33,7 +34,6 @@ html-tools@1.0.11
+@@ -32,7 +33,6 @@ html-tools@1.0.11
  htmljs@1.0.11
  http@1.1.8
  id-map@1.0.8
@@ -4692,7 +4709,7 @@ index 6db36ff..401a0c5 100644
  jquery@1.11.9
  launch-screen@1.0.12
  livedata@1.0.18
-@@ -57,11 +57,12 @@ observe-sequence@1.0.13
+@@ -55,11 +55,12 @@ observe-sequence@1.0.13
  ordered-dict@1.0.8
  promise@0.8.7
  random@1.0.10
@@ -4710,10 +4727,10 @@ index 6db36ff..401a0c5 100644
 2.7.4
 
 
-From d8e1eb79ad3a111908c67b5b964d08ff0cbfa9f3 Mon Sep 17 00:00:00 2001
+From c22bb56b39c9bef3230f597d141fb05171026321 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:18:22 +0300
-Subject: [PATCH 098/115] Step 6.1: Remove autopublish meteor package
+Subject: [PATCH 098/116] Step 6.1: Remove autopublish meteor package
 
 ---
  .meteor/packages | 1 -
@@ -4721,19 +4738,19 @@ Subject: [PATCH 098/115] Step 6.1: Remove autopublish meteor package
  2 files changed, 2 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index bea99ae..53e9140 100644
+index 79e006d..f92a1f2 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -16,7 +16,6 @@ standard-minifier-js@1.2.0_1    # JS minifier run for production mode
+@@ -15,7 +15,6 @@ standard-minifier-js@1.2.0_1    # JS minifier run for production mode
  es5-shim@4.6.14_1                # ECMAScript 5 compatibility for older browsers.
  ecmascript@0.5.8_1              # Enable ECMAScript2015+ syntax in app code
  
 -autopublish             # Publish all data to the clients (for prototyping)
  dab0mb:ionic-assets
  angular-templates
- fourseven:scss
+ mobile-status-bar
 diff --git a/.meteor/versions b/.meteor/versions
-index 401a0c5..4451415 100644
+index 79319c0..d4e7f92 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,7 +1,6 @@
@@ -4748,10 +4765,10 @@ index 401a0c5..4451415 100644
 2.7.4
 
 
-From dcd717aeefc0d62e89d5d6414730226184db3edf Mon Sep 17 00:00:00 2001
+From f83a05db5f7415c6e5eeba2b70700780682504c8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:19:34 +0300
-Subject: [PATCH 099/115] Step 6.2: Add publish-composite meteor package
+Subject: [PATCH 099/116] Step 6.2: Add publish-composite meteor package
 
 ---
  .meteor/packages | 1 +
@@ -4759,19 +4776,19 @@ Subject: [PATCH 099/115] Step 6.2: Add publish-composite meteor package
  2 files changed, 2 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 53e9140..e9eacfe 100644
+index f92a1f2..79e68e8 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -22,3 +22,4 @@ fourseven:scss
+@@ -23,3 +23,4 @@ fourseven:scss
  check
  npm-bcrypt@0.8.7
  mys:accounts-phone
 +reywood:publish-composite
 diff --git a/.meteor/versions b/.meteor/versions
-index 4451415..b340cfc 100644
+index d4e7f92..218be04 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -60,6 +60,7 @@ rate-limit@1.0.5
+@@ -58,6 +58,7 @@ rate-limit@1.0.5
  reactive-var@1.0.10
  reload@1.1.10
  retry@1.0.8
@@ -4783,10 +4800,10 @@ index 4451415..b340cfc 100644
 2.7.4
 
 
-From 5ad62a49c2c5fa22a261715dee3d9b3ad91f6357 Mon Sep 17 00:00:00 2001
+From b90bae9deee7a3e6675b205ab6930b43892ee365 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:20:53 +0300
-Subject: [PATCH 100/115] Step 6.3: Add users publication
+Subject: [PATCH 100/116] Step 6.3: Add users publication
 
 ---
  server/publications.js | 5 +++++
@@ -4809,10 +4826,10 @@ index 0000000..4160aec
 2.7.4
 
 
-From bc577eb9581e4cff4adb1168eb6b053e97a0d50e Mon Sep 17 00:00:00 2001
+From d8666b9fd1340a3f176887d2a5b06bf78a036ca2 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:22:13 +0300
-Subject: [PATCH 101/115] Step 6.4: Add users subscription
+Subject: [PATCH 101/116] Step 6.4: Add users subscription
 
 ---
  client/scripts/controllers/new-chat.controller.js | 2 ++
@@ -4835,10 +4852,10 @@ index 8bbcaed..b18d89c 100644
 2.7.4
 
 
-From 0cd68f844d04cd616dfb0929231fc2c9517e6f83 Mon Sep 17 00:00:00 2001
+From 016fd8e5d2b8145656613e590e7cbaa94771335c Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:26:21 +0300
-Subject: [PATCH 102/115] Step 6.5: Add chats publication
+Subject: [PATCH 102/116] Step 6.5: Add chats publication
 
 ---
  server/publications.js | 26 ++++++++++++++++++++++++++
@@ -4885,10 +4902,10 @@ index 4160aec..211249f 100644
 2.7.4
 
 
-From 96a85d21bd5dfccab78a9af35821eb353321de1b Mon Sep 17 00:00:00 2001
+From c49233d6e5070e9ef277cdc1d6e73dbd0dd62e00 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:32:44 +0300
-Subject: [PATCH 103/115] Step 6.6: Add chats subscription
+Subject: [PATCH 103/116] Step 6.6: Add chats subscription
 
 ---
  client/scripts/routes.js | 6 +++++-
@@ -4920,10 +4937,10 @@ index ea59297..d3d7a65 100644
 2.7.4
 
 
-From cfb4b8015f82b11b77d47d1329a725091c5a6f98 Mon Sep 17 00:00:00 2001
+From 1bbbf70f6d2330991437a033e840a9f4caa79145 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:37:10 +0300
-Subject: [PATCH 104/115] Step 7.1: Add camera-ui meteor package
+Subject: [PATCH 104/116] Step 7.1: Add camera-ui meteor package
 
 ---
  .meteor/packages | 1 +
@@ -4931,16 +4948,16 @@ Subject: [PATCH 104/115] Step 7.1: Add camera-ui meteor package
  2 files changed, 9 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index e9eacfe..d4bec9b 100644
+index 79e68e8..1936e41 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -23,3 +23,4 @@ check
+@@ -24,3 +24,4 @@ check
  npm-bcrypt@0.8.7
  mys:accounts-phone
  reywood:publish-composite
 +okland:camera-ui
 diff --git a/.meteor/versions b/.meteor/versions
-index b340cfc..25de5c4 100644
+index 218be04..df08ea0 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -10,6 +10,7 @@ blaze@2.1.9
@@ -4951,7 +4968,7 @@ index b340cfc..25de5c4 100644
  callback-hook@1.0.9
  check@1.2.3
  dab0mb:ionic-assets@1.3.2
-@@ -35,9 +36,11 @@ http@1.1.8
+@@ -34,9 +35,11 @@ http@1.1.8
  id-map@1.0.8
  jquery@1.11.9
  launch-screen@1.0.12
@@ -4963,7 +4980,7 @@ index b340cfc..25de5c4 100644
  meteor@1.2.17_1
  meteor-base@1.0.4
  minifier-css@1.2.14_1
-@@ -53,22 +56,27 @@ mys:accounts-phone@0.0.21
+@@ -51,22 +54,27 @@ mys:accounts-phone@0.0.21
  npm-bcrypt@0.9.1_1
  npm-mongo@2.2.10_1
  observe-sequence@1.0.13
@@ -4995,10 +5012,10 @@ index b340cfc..25de5c4 100644
 2.7.4
 
 
-From 49df2a6a6290e7fa272e940f49ab4cb7300e6e7f Mon Sep 17 00:00:00 2001
+From c890e9b167dfdf50c09d16d1df071608f713707a Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:39:17 +0300
-Subject: [PATCH 105/115] Step 7.2: Add update picture method
+Subject: [PATCH 105/116] Step 7.2: Add update picture method
 
 ---
  lib/methods.js | 10 ++++++++++
@@ -5029,10 +5046,10 @@ index 09faf2b..9b0de15 100644
 2.7.4
 
 
-From 6db50b8c2ea11cc073f1177f181a12c8302e0972 Mon Sep 17 00:00:00 2001
+From 3dc592aee15c8c264d79d6ba1de147c0277edeb4 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:43:58 +0300
-Subject: [PATCH 106/115] Step 7.3: Add update picture button to profile view
+Subject: [PATCH 106/116] Step 7.3: Add update picture button to profile view
 
 ---
  client/templates/profile.html | 8 ++++++--
@@ -5061,10 +5078,10 @@ index c18fe20..2cbd896 100644
 2.7.4
 
 
-From 0c36c9bd59e4b158a442231f16cfd89fe4f9a017 Mon Sep 17 00:00:00 2001
+From 734f1e7396d7218ce567d560edb8af60625c335b Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:48:51 +0300
-Subject: [PATCH 107/115] Step 7.4: Add update picture logic to profile
+Subject: [PATCH 107/116] Step 7.4: Add update picture logic to profile
  controller
 
 ---
@@ -5122,10 +5139,10 @@ index 805152b..d50895c 100644
 2.7.4
 
 
-From bb470d2dabafc9212c2ecbd98b68e477a7471bfd Mon Sep 17 00:00:00 2001
+From c20798ef9792244d4daf23a8fa6d113abe146bfa Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:50:43 +0300
-Subject: [PATCH 108/115] Step 7.5: Update profile stylesheet
+Subject: [PATCH 108/116] Step 7.5: Update profile stylesheet
 
 ---
  client/styles/profile.scss | 2 ++
@@ -5148,10 +5165,10 @@ index ef4c6cc..41d7455 100644
 2.7.4
 
 
-From c74d5751cc8bf6d1d4b4298fa82f84448b1597ae Mon Sep 17 00:00:00 2001
+From 53f735c21869dad7d1516052df437d1082f789a1 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 00:53:13 +0300
-Subject: [PATCH 109/115] Step 7.6: Add reference to profile from settings view
+Subject: [PATCH 109/116] Step 7.6: Add reference to profile from settings view
 
 ---
  client/templates/settings.html | 8 +++++++-
@@ -5179,10 +5196,10 @@ index eadaf50..05b4deb 100644
 2.7.4
 
 
-From 98657c52dfcf698b81162b4d1f0d6f4c958d515e Mon Sep 17 00:00:00 2001
+From 0779bdde4789daa8d177a649656748d0127c1942 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 10:33:36 +0300
-Subject: [PATCH 110/115] Step 8.1: Add send picture logic
+Subject: [PATCH 110/116] Step 8.1: Add send picture logic
 
 ---
  client/scripts/controllers/chat.controller.js | 26 +++++++++++++++++++++++++-
@@ -5243,10 +5260,10 @@ index 023be12..1bc9dca 100644
 2.7.4
 
 
-From eeffd1edb5cc8b3ea5a8f23368c19c55defa6883 Mon Sep 17 00:00:00 2001
+From 7edca47d65c1b6cfa13f92ddb07e54b8b37e1696 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:10:09 +0300
-Subject: [PATCH 111/115] Step 8.2: Invoke send picture logic on click
+Subject: [PATCH 111/116] Step 8.2: Invoke send picture logic on click
 
 ---
  client/templates/chat.html | 2 +-
@@ -5269,10 +5286,10 @@ index f450447..00dce4b 100644
 2.7.4
 
 
-From 9d37c4e519cf5acda18a22f2d917c34b3a6213a0 Mon Sep 17 00:00:00 2001
+From 0186522f831a77ed89f61f8e9efa5433b135d297 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:12:36 +0300
-Subject: [PATCH 112/115] Step 8.3: Add picture message validation
+Subject: [PATCH 112/116] Step 8.3: Add picture message validation
 
 ---
  lib/methods.js | 17 +++++++++++++----
@@ -5315,10 +5332,10 @@ index 9b0de15..8c74d4e 100644
 2.7.4
 
 
-From ccb7429b115e05f748b86bad64e6bcb685947a14 Mon Sep 17 00:00:00 2001
+From 04f1e65ac4657deb956752ac91222f2903eae90f Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:15:58 +0300
-Subject: [PATCH 113/115] Step 8.4: Add picture message type to chat view
+Subject: [PATCH 113/116] Step 8.4: Add picture message type to chat view
 
 ---
  client/templates/chat.html | 7 ++++++-
@@ -5346,10 +5363,10 @@ index 00dce4b..461add3 100644
 2.7.4
 
 
-From f88d2a945e3a3fd50ead744ec4091f318927acbc Mon Sep 17 00:00:00 2001
+From 6e409f35984f1775e2d9cc83ef934c21dc1d51e8 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:18:24 +0300
-Subject: [PATCH 114/115] Step 8.5: Add picture style to chat stylesheet
+Subject: [PATCH 114/116] Step 8.5: Add picture style to chat stylesheet
 
 ---
  client/styles/chat.scss | 12 +++++++++++-
@@ -5389,10 +5406,10 @@ index 77f09da..e35382c 100644
 2.7.4
 
 
-From 83cc7ffb5c8ffe571e8e6fd41af974c2cf28b74c Mon Sep 17 00:00:00 2001
+From 26454f17c3b460237a276e53a2d8665b9f64ccbe Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 8 Apr 2016 11:22:15 +0300
-Subject: [PATCH 115/115] Step 8.6: Add picture message indication in chats
+Subject: [PATCH 115/116] Step 8.6: Add picture message indication in chats
  view
 
 ---
@@ -5415,6 +5432,47 @@ index d5b3e72..b7b8f13 100644
          <span class="last-message-timestamp">{{ chat.lastMessage.timestamp | calendar }}</span>
          <i class="icon ion-chevron-right icon-accessory"></i>
          <ion-option-button class="button-assertive" ng-click="chats.remove(chat)">
+-- 
+2.7.4
+
+
+From efc6d917c4ae45a81f304eb93904c9fcd8179408 Mon Sep 17 00:00:00 2001
+From: DAB0mB <emanor6@gmail.com>
+Date: Tue, 18 Oct 2016 13:28:04 -0200
+Subject: [PATCH 116/116] Add LICENSE
+
+---
+ LICENSE | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+ create mode 100644 LICENSE
+
+diff --git a/LICENSE b/LICENSE
+new file mode 100644
+index 0000000..2334c4a
+--- /dev/null
++++ b/LICENSE
+@@ -0,0 +1,21 @@
++The MIT License (MIT)
++
++Copyright (c) 2016 Uri Goldshtein
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
 -- 
 2.7.4
 
