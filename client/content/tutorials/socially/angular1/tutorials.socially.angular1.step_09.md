@@ -1,110 +1,55 @@
 {{#template name="tutorials.socially.angular1.step_09.md"}}
 {{> downloadPreviousStep stepName="step_08"}}
 
+Publications and subscriptions are one of Meteor's most powerful features. It will take care of privacy and make sure that you don't to access someone else's information unless you have permissions to do so. You can look at it as a replacement for a RESTful API. More information and a deeper look at Meteor's publication and subscription system can be found [here](https://docs.meteor.com/api/pubsub.html#Meteor-publish).
 
-Publish and subscribe to data is very different from other methods, such as using REST APIs. So don't miss the articles in the section below for deeper understanding how they work.
+So back to our app implementation, why is this even relevant? Because our app doesn't have any privacy. Each user can see all parties available on database, a behavior which we're not interested in. But let's set an exception, an exception, a party which is flagged as `party` can be viewed by anyone.
 
-
-Right now our app has no privacy, every user can see all the parties on the screen.
-
-So let's add a `public` flag on parties - if a party is public we will let anyone see it, but if a party is private, only the owner can see it.
-
-First we need to remove the `autopublish` Meteor package.
-
-`autopublish` is added to any new Meteor project. It pushes a full copy of the database to each client.
-It helped us until now, but it's not so good for privacy...
-
-Write this command in the console:
+By default, a newly created Meteor project will be initialized with an `autopublish` package, a package which will publish all datasets. This is a good practice for development, not for production. So the first thing we should before implementing any publication would be typing the following command in the terminal:
 
     meteor remove autopublish
 
+Obviously, if you will refresh the app now you will see no parties, because the auto-publication has been removed and you have access to non of them. To set a new publication we will use a method called [Meteor.publish()](http://docs.meteor.com/#/full/meteor_publish). The publication function is relevant only to the server, because it's its job to publish the data, and the user should subscribe to that data, but no need to jump the gun, we will get to it in a glance.
 
-Now run the app. You can't see any parties.
-
-So now we need to tell Meteor what parties should it publish to the clients.
-
-To do that we will use Meteor's [publish function](http://docs.meteor.com/#/full/meteor_publish).
-
-Publish functions should go only in the server so the client won't have access to them.
-
-Let's create a new file named `publish.js` inside the *imports/api/parties* folder.
-
-Inside the file insert this code:
+Let's create a new file located under `imports/api/parties/publish.js` where all our parties publications are going to be defined. Here's how the initial publication should look like:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.2"}}
 
-Let's also move collection to separate file:
+The first parameter of a publication should be its name and the second parameter should be it's handler. A publication should **always** return a cursor. That cursor we determine which data will be available to our client once he subscribes to that publication. More information about `Mongo.Collection.prototype.find()` can be found [here](http://docs.mongodb.org/manual/reference/method/db.collection.find/).
+
+The returned cursor is returned by a Mongo query so it's easy to understand if you're familiar with MongoDB's API, but in our case what the query does it basically fetches all the parties owned by the currently logged in user and it fetches all the public parties, since they are relevant to the logged in user as well regardless of who he is.
+
+Now we will move the parties collection file from `parties.js` to `parties/collection.js` so our code can be organized properly and we won't have party files spread all over:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.3"}}
 
-Replace `parties.js` with `index.js`:
+Now we want existing importations of the parties collection to stay the same, so we will make our `parties` dir export the parties collection whenever we import it by creating the following file:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.4"}}
 
-Update the following files which use `parties` in import to `index`
-
-* imports/ui/components/partiesList/partiesList.js
-* imports/ui/components/partyAdd/partyAdd.js
-* imports/ui/components/partyDetails/partyDetails.js
-* imports/ui/components/partyRemove/partyRemove.js
-* server/startup.js
-
-Let's see what has been changed:
-
-* We have `Meteor.publish` - a function to define what to publish from the server to the client
-* The first parameter is the name of the subscription. The client will subscribe to that name
-* The second parameter is a function that defines what will be returned in the subscription
-* We moved everything to separate files
-* We removed parties.js and create index.js (it allows us to control what should or not be exported and imported)
-
-You can find out more about MongoDB `find()` method [here](http://docs.mongodb.org/manual/reference/method/db.collection.find/)
-
-That function will determine what data will be returned and the permissions needed.
-
-In our case the first name parameter is **"parties"**. So we will need to subscribe to the **"parties"** collection in the client, so let's do it, using `this.subscribe` method:
+Our parties publication is finally set. Let's go ahead and add a subscription to the `parties` dataset in the client using a function provided to us by `angular-meteor` called [this.subscribe()](https://www.angular-meteor.com/api/1.3.11/subscribe):
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.6"}}
 
-> Our publish function can also take parameters.  In that case, we would also need to pass the parameters from the client.
+The first argument of the subscription is gonna be the name of its belonging publication and the rest of the arguments are gonna be the parameters sent to the publication's handler. More information about `Meteor.subscribe()` can be found [here](https://docs.meteor.com/api/pubsub.html#Meteor-subscribe).
 
-> For more information about the `subscribe` service [click here](/api/reactive-context)
-
-In the second parameter of the publish function, we define a function uses the Mongo API to return the wanted documents (document are the JSON-style data structure of MongoDB).
-
-So we create a query on the Parties collection.
-
-Inside the find method we use the [$or](http://docs.mongodb.org/manual/reference/operator/query/or/), [$and](http://docs.mongodb.org/manual/reference/operator/query/and/) and [$exists](http://docs.mongodb.org/manual/reference/operator/query/exists/) Mongo operators to pull our wanted parties:
-
-Either that the owner parameter exists and it's the current logged in user (which we have access to with the command `this.userId`), or that the party's public flag exists and it's set as true.
-
-So now let's add the public flag to the parties and see how it affects the parties the client gets.
-
-Let's add a checkbox to the new party form in `PartyAdd`:
+If you remember, our publication had an exception of parties which are public. Right no there is no functionality which reveals public parties in the view, in which case we will have to update it. We will start by adding a check-box to the `PartyAdd` view representing if the party currently being added is public or not:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.7"}}
 
-Notice how easy it is to bind a checkbox to a model with Angular 1!
-
-Let's add the same to the `PartyDetails` component:
+Notice how easy it is to bind the view to a model when using Angular's API. Let's apply the same additions to the `PartyDetails` component.
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.8"}}
 
-And we will add the ability to set this flag when updating a party details:
+This requires us to update its controller as well.
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.9"}}
 
-Have you noticed that PartiesDetails is missing something? Yes, it is!
+And of course, don't forget to subscribe to the `parties` dataset:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="9.10"}}
 
-Now let's run the app.
-
-Log in with 2 different users in 2 different browsers (you can use 2 different browsers, such as Chrome and Firefox, or use the anonymous mode on the same browser - e.g. incognito mode on Chrome, private browsing in Firefox or inPrivate mode in Edge).
-
-In each of the users create a few public parties and a few private ones.
-
-Now log out and see which user sees which parties.
-
+Now we can run our app and test it. To do so, log in with two different accounts, create new parties and mess around with it. To log in with two different accounts we recommend opening two instances of the browser, once of them is gonna be incognito, and them you can log in without interrupting the other account.
 
 In the next step, we will want to invite users to private parties. For that, we will need to get all the users, but only their emails without other data which will hurt their privacy.
 
