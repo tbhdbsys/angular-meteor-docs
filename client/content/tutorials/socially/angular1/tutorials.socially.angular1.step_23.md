@@ -13,11 +13,21 @@ Although it is possible to just replace the old JavaScript compiler with a TypeS
 
     meteor add mys:typescript-ng-annotate
 
-Once our app is fully migrated to Angular2, we will replace `mys:typescript-ng-annotate` with `barbatus:typescript`, a package which will provide you with a pure TypeScript compiler. TypeScript compiler also relies on [declerations](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html), which can be installed via package manager called `typings`. Further informations about `typings` and how to install it can be found [here](https://github.com/typings/typings). This step is very long and its purpose is only to provide you with the right tools on how to upgrade your app, hence we're not going to focus on TypeScript deceleration files any further, but know that you might get related warnings during compilation time!
+Once our app is fully migrated to Angular2, we will replace `mys:typescript-ng-annotate` with `barbatus:typescript`, a package which will provide you with a pure TypeScript compiler. TypeScript compiler also relies on [declerations](https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html), which can be installed via package manager called `typings`. Further informations about `typings` and how to install it can be found [here](https://github.com/typings/typings). As for now just add the following configuration files:
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.3" filename="typings.json"}}
+
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.3" filename="typings.d.ts"}}
+
+And run the following command which will install the declarations defined in the configuration files we've just added:
+
+    $ typings install
+
+By now if will you run the app you will receive warning notifications by the TypeScript compiler. This is caused due to our app not being fully migrated to TypeScript. Once you finish the upgrading process and your app is purely based on Angular2 with proper declarations you shall receive no warnings.
 
 Now that the compiler is ready we will start by switching our entry file into TypeScript:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.3"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.4"}}
 
 Not only we changed the extension of the file, but we also made some adjustments to its content. All Angular1 modules registrations are now manually invoked, due to dependency on the upgrade who's gonna take part further in this tutorial. In addition, the way we import the `angular` library have changed.
 
@@ -35,23 +45,23 @@ import * as angular from 'angular';
 
 Now we gonna go through a component transformation. We will start with the Socially component since it is the root component of our app. We will first change the way we import Angular-related libraries, just like demonstrated above:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.4"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.5"}}
 
 Second, we will specify the exported module as an Angular1 module, since we're dealing with two module systems which come both from Angular1 and Angular2, and we will implement a registration which is called from the entry file like we showed earlier:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.5"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.6"}}
 
 Now we gonna simply switch **all** the file extensions from `.js` to `.ts` and repeat the recent process for each component. This process is a pain so if you don't wanna deal with it just git-checkout the next step of this tutorial.
 
 Once your'e done we shall change the way we import the `underscore` library otherwise our app might break:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.7" filename="imports/api/parties/methods.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.8" filename="imports/api/parties/methods.ts"}}
 
 ## Upgrading to Angular2
 
 Since we wanna use Angular2 we will have to install its essential packages:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.8"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.9"}}
 
 Raw commands are listed below:
 
@@ -74,11 +84,11 @@ Raw commands are listed below:
 
 Now will start replacing our Angular1 components with Angular2 components, and it would be helpful if we could just do it gradually and not all at once, one component at a time. This is where the [Upgrade Adapter]([Upgrade Adapter](https://angular.io/docs/ts/latest/guide/upgrade.html) kicks in. The adapter will give us the ability to downgrade Angular2 so they can be registered to Angular1 modules, and upgrade Angular1 components so they can be registered to Angular2 modules, thereby we can have a hybrid app. Let's get into business by initializing a new instance of the `UpgradeAdapter` and passing it as an argument to each module registration:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.9"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.10"}}
 
 **Note that you have to share the same instance of the adapter otherwise the application might not work as expected**. Once we have our adapter we will create an Angular2 module which will represent our Angular2 app's module, and bootstrap our application using the adapter:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.10"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.11"}}
 
 ## Filters to Pipes
 
@@ -86,11 +96,11 @@ Angular1 filters have the same functionality as Angular2 pipes. Further details 
 
 We will start with the `displayName` pipe. This is how it should look like:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.11" filename="imports/ui/filters/displayNamePipe.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.12" filename="imports/ui/filters/displayNamePipe.ts"}}
 
 And after we create a pipe it should be declared our app's Angular2 module:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.11" filename="client/main.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.12" filename="client/main.ts"}}
 
 The key concepts of this convertion are:
 
@@ -101,99 +111,99 @@ The key concepts of this convertion are:
 
 The same process should be applied for `uninvited` pipe as well:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.12" filename="imports/ui/filters/uninvitedPipe.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.13" filename="imports/ui/filters/uninvitedPipe.ts"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.12" filename="client/main.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.13" filename="client/main.ts"}}
 
 We can't return `false` inside an `ngFor` directive so let's replace it with an empty array:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.13"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.14"}}
 
 ## Preparing Angular1 component for migration
 
 We will focus on the `PartyUninvited` to start with. Let's decorate it with a [Component decorator](https://angular.io/docs/ts/latest/cookbook/a1-a2-quick-reference.html#!#controllers-components):
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.14" filename="imports/ui/components/partyUninvited.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.15" filename="imports/ui/components/partyUninvited.ts"}}
 
 And like the pipe creation process we will also have to declare a component whenever we create it:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.14" filename="client/main.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.15" filename="client/main.ts"}}
 
 Since this is an Angular2 component it relies on pipes rather than filters, so we can remove the filters' importations:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.15"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.16"}}
 
 ## Switching to angular2-meteor
 
 Switching to `angular2-meteor` would be an integral part of the migration. We will extend our component by `MeteorComponent` so angular2-meteor's API would be available for use
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.16"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.17"}}
 
 Once it's done we will replace angular-meteor's API with angular2-meteor's.
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.17"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.18"}}
 
 Now that we have our Angular2 component ready, we need to use it in our Angular1 module. The UpgradeAdapter's prototype contains a function called `downgradeNg2Component` which will transform an Angular2 component into an Angular1 directive, once it is transformed we can declare it in our Angular1 module:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.18"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.19"}}
 
 **Note that a component is a actually a directive so registering a directive achieves the same result**.
 
 The bindings of our Angular1 component can be translated to Angular2 using the [Input](https://angular.io/docs/ts/latest/cookbook/component-communication.html) decorator.
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.19"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.20"}}
 
 We will no longer use prefixed variables inside our template since Angular2's template engine doesn't support it:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.20"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.21"}}
 
 Our template uses Pipes instead of Filters, so we will make the following adjustments:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.21"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.22"}}
 
 The `ngFor` directive of Angular2 is equivalent to Angular1's `ng-for`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.22"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.23"}}
 
 And `ng-if` directive is now `ngIf`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.23"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.24"}}
 
 Events are registered using (parenthesis) rather than an `ng` prefix:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.24"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.25"}}
 
 Since PartyUninvited is a Angular2 component we have to change the way we're passing a value:
 
 Bound attributes should be notated with \[square brackets\]:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.25"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.26"}}
 
 Now let's do the same for `PartyDetails`. First we will turn it into a component:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.26" filename="imports/ui/components/partyDetails.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.27" filename="imports/ui/components/partyDetails.ts"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.26" filename="main/client.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.27" filename="main/client.ts"}}
 
 Since `PartyDetails` component is dependent on an Angular1 component which outside our project's scope, we will have to upgrade it using the `upgradeNg1Component` method:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.27"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.28"}}
 
 Then again, we will extend the `MeteorComponent`:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.28"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.29"}}
 
 And we will downgrade our newly created component so it can be loaded with Angular1's module system:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.29"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.30"}}
 
 Our router might be implemented using Angular1's router, but the template can be Angular2's:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.30"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.31"}}
 
 Let's take care of the properties binding in the `PartyDetails` component:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.31"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.32"}}
 
 Further information about the `Output` decorator can be found [here](https://angular.io/docs/ts/latest/cookbook/component-communication.html).
 
@@ -201,32 +211,29 @@ Further information about the `Output` decorator can be found [here](https://ang
 
 Once a component is fully integrated with Angular2, everything related to Angular1 can be removed, in this case, the `PartyUninvited` component:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.32" filename="imports/ui/components/partyUninvited/partyUninvited.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.33" filename="imports/ui/components/partyUninvited/partyUninvited.ts"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.32" filename="imports/ui/components/partyUninvited/partyDetails.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.33" filename="imports/ui/components/partyUninvited/partyDetails.ts"}}
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.32" filename="client/main.ts"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.33" filename="client/main.ts"}}
 
 ## Using Material2
 
 Indeed, We can also move our app's design stracture to Angular2 and reserve the API. Let's install the necessary packages
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.33"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.34"}}
 
 Raw commands are listed below:
 
-    $ npm install --save @angular2-material/core
-    $ npm install --save @angular2-material/checkbox
-    $ npm install --save @angular2-material/button
-    $ npm install --save @angular2-material/input
+    $ npm install --save @angular/material
 
 We now have `md-checkbox`, `md-button` and `md-input` available for us. But will first need to declare those:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.34"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.35"}}
 
 Now that material2 is fully registered we can safely replace `PartyDetails` template with Angular2's:
 
-{{> DiffBox tutorialName="meteor-angular1-socially" step="23.35"}}
+{{> DiffBox tutorialName="meteor-angular1-socially" step="23.36"}}
 
 The upgrading process for Socially might take a while and can be done in many different ways, but hopefully you got the concept. If your'e not familiar with Angular2-Metoer the following [tutorial](/tutorials/socially/angular2/bootstrapping) might come in handy.
 
