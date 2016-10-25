@@ -26,6 +26,8 @@ Now, let's change `party-details.component.html` into a form, so that we can edi
 
 > Notice we have a routerLink button on the page that redirects back to the list (from our previous step's challenge). Here is how to do that:
 
+> We added an `ngIf` directive to conditionally display the form when the party data is available.
+
 ## ngModel
 
 [ngModel](https://angular.io/docs/js/latest/api/common/NgModel-directive.html) binds a HTML form to the component's model, which can be an object of any type, in comparison to

@@ -26,16 +26,6 @@ One of the biggest issues in JavaScript is making code less bug-prone and more s
 
 This was, for sure, one of the problems the TypeScript team were striving to solve: to create a language that would inherit the flexibility of JavaScript while, at the same time, having effective and optional type-checking with minimum effort required from the user.
 
-## Type Declaration Files
-
-As you may have noticed, Angular2-Meteor package itself installs a number of type declaration (`.d.ts`) files into the _typings_ folder. These are files of a special kind where you describe the interfaces for your classes along with signatures of the methods and types of the parameters they take, so that TypeScript will be able to refer to these files to verify the correctness of your class's API. Of course, the flexibility is still there so if you don’t want to declare types you can skip them right away.
-
-Keep in mind, type-checking is not delivered in the outputted JavaScript. It is only extra sugar for your development environment, and adds no weight to the outputted .js file.
-
-Some of the typings files have names `angular2.d.ts` and `meteor.d.ts`, which, as you can guess, are used to verify that API of Meteor and Angular 2 are being used correctly in your code
-
-During this tutorial, we will create our own declaration file for our project in order to learn this type-checking better (we already created one of those earlier).
-
 ## Interfaces
 
 We are already declared a `Party` interface, and you should already be familiar with its properties: "name", "description" and "location". We can make the "Description" property optional.

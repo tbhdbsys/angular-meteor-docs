@@ -167,6 +167,26 @@ And add the `/reset` route:
 
 That's it! we just implemented our own authentication components using Meteor's Accounts API and Angular2-Material!
 
+> Note that the recovery email won't be sent to the actual email address, since you need to configure `email` package to work with your email provider. you can read more about it [here](https://docs.meteor.com/api/email.html).
+
+# Layout and Flex
+
+In order to use flex and layout that defined in Material, we need to add a bug CSS file into our project, that defined CSS classes for `flex` and `layout`.
+
+You can find the CSS file content [here](https://github.com/Urigo/meteor-angular2.0-socially/blob/364a8e6ce26b3dba5b8dc89421a09a261fe6369e/client/imports/material-layout.scss).
+
+So let's copy it's content and add it to `meteor-angular2.0-socially/client/imports/material-layout.scss`.
+
+Now let's add it to the main SCSS file imports:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.27"}}
+
+And let's add another CSS class missing:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.28"}}
+
+> The import of this CSS file is temporary, and we will need to use it only because `angular2-material` is still in beta and not implemented all the features.
+
 # Summary
 
 In this chapter we replaced Boostrap4 with Angular2-Material, and updated all the view and layout to match the component we got from it.
