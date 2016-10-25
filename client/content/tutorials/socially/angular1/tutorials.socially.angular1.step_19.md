@@ -3,12 +3,11 @@
 
 This part of the tutorial will cover the usage of third-party libraries with angular-meteor.
 
-Parts of this tutorial are also relevant for users who uses only Meteor, without angular-meteor, because the solution for third-party libraries comes from Meteor packaging manager - **Atmosphere**.
+Parts of this tutorial are also relevant for users who uses only Meteor, without angular-meteor, because the solution for third-party libraries comes from Meteor packaging manager - [Atmosphere](atmospherejs.com).
 
-With release of Meteor 1.3 it is also possible to use **NPM**! It opens a lot of new opportunities. In fact, if it possible you should always use packages from NPM instead of Atmosphere.
+With release of Meteor 1.3 it is also possible to use [NPM](npmjs.com)! It opens a lot of new opportunities since most JavasScript third-party libraries are hosted by this package manager. In fact, if it possible you should always use packages from NPM instead of Atmosphere.
 
 In this part of the tutorial we will show multiple solution for the same problem - using third-party libraries with Meteor and angular-meteor.
-
 
 Every Angular 1 developer knows and uses third-party libraries (like angular-ui-bootstrap, ui-router, etc..), but because we do not have the ability to easily include the ".js" file on our "head" tag - we need another solutions.
 
@@ -64,8 +63,6 @@ angular.module('myModule', [
 
 # More about packages
 
-Atmosphere packages has few advantages over node modules. The most important one is that you cannot specify in node module which files should be on the client-side and which will be used on the server-side. You can always create two packages with -client and -server suffixes.
-
-We recommend you to read more about packages in [Meteor Docs](http://docs.meteor.com/#/full/packagejs).
+Atmosphere packages are packages written specifically for Meteor and have several advantages over NPM when used with Meteor. Despite the encouragement of using NPM packages you might need to use Atmosphere packages from time to time when for example you wanna include non-javascript files including style sheets and different assets, or you want to modify Meteor's build process. A full comparison between the two can be found in [Meteor's docs](http://docs.meteor.com/#/full/packagejs).
 
 {{/template}}
