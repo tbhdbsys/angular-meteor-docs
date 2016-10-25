@@ -65,13 +65,23 @@ And now let's add SASS file for the party details:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.10"}}
 
-import it into the main SASS file:
+Now let's add some styles and colors using SASS to the main file:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.11"}}
 
-And use those new cool styles in the view of the party details:
+Now let's use Angular 2 Component styles, which bundles the styles into the Component, without effecting other Component's styles (you can red more about it [here](https://angular.io/docs/ts/latest/guide/component-styles.html))
+
+So let's add it to the parties list:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.12"}}
+
+And to the party details:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.13"}}
+
+And use those new cool styles in the view of the party details:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.14"}}
 
 
 # Summary
