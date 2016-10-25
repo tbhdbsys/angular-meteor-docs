@@ -69,19 +69,23 @@ Let's add that permission to the publish parties method:
 
 ### Serve Email
 
-NOTE: If you want to test email functionality locally with your own gmail account, create a new file called `environments.js` in the `server/startup/` directory. Add the following lines substituting [YOUR_EMAIL] and [YOUR_PASSWORD].  
+If you would like test email functionality locally with your own GMail account, create a new file called located in `server/startup/environments.js`, and add the following lines substituting [YOUR_EMAIL] and [YOUR_PASSWORD]:
 
-    Meteor.startup(function () {
-        process.env.MAIL_URL="smtp://[YOUR_EMAIL]@gmail.com:[YOUR_PASSWORD]@smtp.gmail.com:465/";
-    })
+```js
+Meteor.startup(function () {
+    process.env.MAIL_URL="smtp://[YOUR_EMAIL]@gmail.com:[YOUR_PASSWORD]@smtp.gmail.com:465/";
+})
+```
 
-You may need to set your gmail account to use [Less Secure Apps](https://www.google.com/settings/u/2/security/lesssecureapps).
+You may need to set your GMail account to use [Less Secure Apps](https://www.google.com/settings/u/2/security/lesssecureapps). Once it's done, you can use Meteor's [emailing package](https://docs.meteor.com/api/email.html) which can be installed by typing the following command:
 
-In production you could use a service like Mandrill with this [Meteor Mandrill Package](https://atmospherejs.com/wylio/mandrill).
+    $ meteor add email
+
+For development, setting your own email explicitly is a good practice because it's quick and easy. However, you don't want to set your email account in production mode, since everyone can see it. A recommended solution would be using an emailing service like `EmailJS`. More information about EmailJS can be found [here](emailjs.com).
 
 Great!
 
-Now test the app.  Create a private party with user1.  Then invite user2. Log in as user2 and check if he can see the party in his own parties list.
+Now test the app. Create a private party with user1. Then invite user2. Log in as user2 and check if he can see the party in his own parties list.
 
 Now let's add the RSVP functionality so invited users can respond to invitations.
 
