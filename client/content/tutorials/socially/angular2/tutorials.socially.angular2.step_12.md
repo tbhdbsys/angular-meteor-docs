@@ -272,7 +272,7 @@ __`server/imports/fixtures/parties.ts`__:
 
 Fake is loaded in Meteor as a global, you may want to declare it for TypeScript.
 
-__`typings/fake.d.ts`__:
+You can add it to the end of the `typings.d.ts` file:
 
     declare var Fake: {
         sentence(words: number): string;
