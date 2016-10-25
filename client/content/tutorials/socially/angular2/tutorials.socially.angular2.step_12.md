@@ -162,7 +162,7 @@ implemented. We can use the [tmeasday:publish-counts](https://github.com/percola
 
     $ meteor add tmeasday:publish-counts
 
-This package is an example for a package that does not provide it's own Typings, so we will have to create `d.ts` file by our self according to the package API:
+This package is an example for a package that does not provide it's own TypeScript declaration file, so we will have to manually create and add it to the `typings.d.ts` file according to the package API:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="13.15"}}
 
