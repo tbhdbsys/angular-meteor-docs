@@ -23,9 +23,9 @@ Angular 2 has _common_ directives that provide additional functionality to HTML.
 # Component data
 
 Now we are going to create our initial data model and render it in the view.
-This code will go inside of our AppComponent class [`constructor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor). A constructor is a function that runs when a class is loaded, thus it loads the initial data for the class.
+This code will go inside of our `AppComponent` class [`constructor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor). A constructor is a function that runs when a class is loaded, thus it loads the initial data for the class.
 
-We can attach data with the context `this`, referring to the AppComponent class.
+We can attach data with the context `this`, referring to the `AppComponent` class.
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="3.2"}}
 
@@ -33,7 +33,7 @@ Run the app again.
 
     $ meteor
 
-You'll see the data model, parties, is now instantiated within the AppComponent component.
+You'll see the data model, parties, is now instantiated within the `AppComponent` component.
 
 As you probably noticed, we defined `parties` with a `any[]`. Little disclaimer. That's a TypeScript specific thing and it's called Type.
 

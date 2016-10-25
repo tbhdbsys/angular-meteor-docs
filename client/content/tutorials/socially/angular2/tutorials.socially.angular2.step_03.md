@@ -156,9 +156,9 @@ And add it in few places:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="4.8"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.9" filename="client/imports/app/app.component.ts"}}
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="4.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="4.9" filename="server/imports/fixtures/parties.ts"}}
 
 Now run the app and you should see the list of parties on the screen.
 

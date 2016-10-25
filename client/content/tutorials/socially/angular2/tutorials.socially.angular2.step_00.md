@@ -96,38 +96,43 @@ To start, we need to make sure our `tsconfig.json` file (in our root directory) 
 {
   "compilerOptions": {
     "target": "es5",
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "module": "commonjs",
-    "isolatedModules": false,
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "removeComments": false,
-    "noImplicitAny": false,
     "sourceMap": true
   },
   "exclude": [
     "node_modules"
   ],
-  "compileOnSave": false
+  "files": [
+    "typings.d.ts"
+  ],
+  "compileOnSave": false,
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit": true
+  }
 }
 ```
 
 To learn more about Typescript compiler options, [click here](http://www.typescriptlang.org/docs/handbook/compiler-options.html).
 
-### TypeScript Typings
+### @types
 
 We need to let Typescript know about all the types in the libraries we depend upon.
 
-In order to do that — thus adding full type-checking support at this stage — we'll use a special tool for typings installation
-and management called `typings`. You can find more information about it [here](https://github.com/typings/typings).
+In order to do that — thus adding full type-checking support at this stage — we'll use NPM packages that provides `d.ts` files, which are the TypeScript declaration files.
 
-If you look into the typings folder, you'll find there a definition file called `index.d.ts`.
+This is a top level definition file, called `typings.d.ts` which imports all the other types declarations, and the `tsconfig.json` file imports this file.
 
-This is a top level definition file that links all other definition files installed by `typings`.
+Those repositories called `@types`, and you might find some of them already in the Angular 2 boilerplate, and we will later add more `@types` and write some of our own.
 
-> Note that in some cases, your IDE can mark your code as "error" or "warning" because of missing Typings - this will not prevent you from running your app, but it is highly recommended to resolve those errors.
-
-> Also in order to be able to use typings properly, it is recommended to install [node.js](https://nodejs.org).
+For example, package like `chai` that not written in TypeScript, does not provide it's own `.d.ts` file, so we need to also install `@types/chai` from NPM in order to get TypeScript support for this package.
 
 # Root Component
 
