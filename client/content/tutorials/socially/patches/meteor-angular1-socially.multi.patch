@@ -11343,69 +11343,58 @@ index dbae4b0..a60ade0 100644
 2.7.4
 
 
-From c7a04589f24e7a5ec0ddf75fa106bacc01dc31a5 Mon Sep 17 00:00:00 2001
+From 7ee2c1fd1a3a71574edd9cae088a930598ed2553 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:48:58 +0200
 Subject: [PATCH 308/415] Step 20.3: Create Images and Thumbs collections
 
 ---
- imports/api/images/collection.js | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ imports/api/images/collection.js | 5 +++++
+ 1 file changed, 5 insertions(+)
  create mode 100644 imports/api/images/collection.js
 
 diff --git a/imports/api/images/collection.js b/imports/api/images/collection.js
 new file mode 100644
-index 0000000..a522111
+index 0000000..c85171c
 --- /dev/null
 +++ b/imports/api/images/collection.js
-@@ -0,0 +1,21 @@
+@@ -0,0 +1,5 @@
 +import { Meteor } from 'meteor/meteor';
 +import { Mongo } from 'meteor/mongo';
 +
 +export const Images = new Mongo.Collection('images');
 +export const Thumbs = new Mongo.Collection('thumbs');
-+
-+function loggedIn(userId) {
-+  return !!userId;
-+}
-+
-+Thumbs.allow({
-+  insert: loggedIn,
-+  update: loggedIn,
-+  remove: loggedIn
-+});
-+
-+Images.allow({
-+  insert: loggedIn,
-+  update: loggedIn,
-+  remove: loggedIn
-+});
 -- 
 2.7.4
 
 
-From 82ae24260bcda2028ae7e807f7428c7692685873 Mon Sep 17 00:00:00 2001
+From b8de68c6fb9ef1876effab037fab29e02c83dd08 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:50:11 +0200
 Subject: [PATCH 309/415] Step 20.4: Create ThumbsStore and ImagesStore
 
 ---
- imports/api/images/store.js | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ imports/api/images/store.js | 32 ++++++++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
  create mode 100644 imports/api/images/store.js
 
 diff --git a/imports/api/images/store.js b/imports/api/images/store.js
 new file mode 100644
-index 0000000..58462c1
+index 0000000..3dd791f
 --- /dev/null
 +++ b/imports/api/images/store.js
-@@ -0,0 +1,18 @@
+@@ -0,0 +1,32 @@
 +import { UploadFS } from 'meteor/jalik:ufs';
 +import { Images, Thumbs } from './collection';
 +
 +export const ThumbsStore = new UploadFS.store.GridFS({
 +  collection: Thumbs,
-+  name: 'thumbs'
++  name: 'thumbs',
++  permissions: new UploadFS.StorePermissions({
++    insert: loggedIn,
++    update: loggedIn,
++    remove: loggedIn
++  })
 +});
 +
 +export const ImagesStore = new UploadFS.store.GridFS({
@@ -11416,13 +11405,23 @@ index 0000000..58462c1
 +  }),
 +  copyTo: [
 +    ThumbsStore
-+  ]
++  ],
++  permissions: new UploadFS.StorePermissions({
++    insert: loggedIn,
++    update: loggedIn,
++    remove: loggedIn
++  })
 +});
++
++function loggedIn(userId) {
++  return !!userId;
++}
+\ No newline at end of file
 -- 
 2.7.4
 
 
-From 325a228e4d0b6e161ead341421a4fc8f1ce9c574 Mon Sep 17 00:00:00 2001
+From 3ddd922b7ce68daf9ba2c4e9565854289037a246 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:50:57 +0200
 Subject: [PATCH 310/415] Step 20.5: Create main export file of Images and
@@ -11445,7 +11444,7 @@ index 0000000..9c18361
 2.7.4
 
 
-From 9ec0f8eb5f08db983c512f294601748e17a6a228 Mon Sep 17 00:00:00 2001
+From 5e93dfd2743e79f180db25823f5cacaa14b804f0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:52:30 +0200
 Subject: [PATCH 311/415] Step 20.6: Resize images
@@ -11455,15 +11454,15 @@ Subject: [PATCH 311/415] Step 20.6: Resize images
  1 file changed, 13 insertions(+), 1 deletion(-)
 
 diff --git a/imports/api/images/store.js b/imports/api/images/store.js
-index 58462c1..a0fa6d6 100644
+index 3dd791f..393f235 100644
 --- a/imports/api/images/store.js
 +++ b/imports/api/images/store.js
-@@ -3,7 +3,19 @@ import { Images, Thumbs } from './collection';
- 
- export const ThumbsStore = new UploadFS.store.GridFS({
-   collection: Thumbs,
--  name: 'thumbs'
-+  name: 'thumbs',
+@@ -8,7 +8,19 @@ export const ThumbsStore = new UploadFS.store.GridFS({
+     insert: loggedIn,
+     update: loggedIn,
+     remove: loggedIn
+-  })
++  }),
 +  transformWrite(from, to, fileId, file) {
 +    // Resize to 32x32
 +    const gm = require('gm');
@@ -11483,7 +11482,7 @@ index 58462c1..a0fa6d6 100644
 2.7.4
 
 
-From 370cd2baffceb7722ca37912b6c4fdc1f99d2d35 Mon Sep 17 00:00:00 2001
+From 06e8f4d8a060216e8904d3fdab7731038c1b03b5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:54:06 +0200
 Subject: [PATCH 312/415] Step 20.7: Install `gm`
@@ -11508,7 +11507,7 @@ index 8971ed8..459c03c 100644
 2.7.4
 
 
-From c2095cae2a76b0cc109041750a2c4453feda38e7 Mon Sep 17 00:00:00 2001
+From 4ffb35d78041e2fb3b867249c87fe3df4f1a7fad Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:58:21 +0200
 Subject: [PATCH 313/415] Step 20.8: Create view for PartyUpload
@@ -11537,7 +11536,7 @@ index 0000000..d53d6c7
 2.7.4
 
 
-From 0f4f8db98b2115b306009a2e535359651947f025 Mon Sep 17 00:00:00 2001
+From ea5dd8c93b95faa1c4a54ad68f16fe4c6ffbf7f5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 12:59:42 +0200
 Subject: [PATCH 314/415] Step 20.9: Create PartyUpload component
@@ -11576,7 +11575,7 @@ index 0000000..571b3c1
 2.7.4
 
 
-From e0f333cf6c3b124566d9b3f1b305a1a17a01d9d7 Mon Sep 17 00:00:00 2001
+From 7785e1f5c764869527640e7468a36fcd1dcc6473 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:01:32 +0200
 Subject: [PATCH 315/415] Step 20.10: Add to PartyAdd
@@ -11611,7 +11610,7 @@ index 97d9b98..0ac9f9c 100644
 2.7.4
 
 
-From 6c2a56077b7b3d4b1aa552e2bf8000d774d0d585 Mon Sep 17 00:00:00 2001
+From cbd64a94039bb21e729e00e93026481a4fdb7738 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:03:51 +0200
 Subject: [PATCH 316/415] Step 20.11: Implement to the view
@@ -11634,7 +11633,7 @@ index 6e504f0..8946e6d 100644
 2.7.4
 
 
-From d66306168473bfe629714c5bbb39cc6d9964ea5f Mon Sep 17 00:00:00 2001
+From 7872520f788688e3b344703acd298616ff7daefe Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:05:32 +0200
 Subject: [PATCH 317/415] Step 20.12: install `ng-file-upload`
@@ -11659,7 +11658,7 @@ index 459c03c..0484324 100644
 2.7.4
 
 
-From 5cd78f717dcb98eb79de82c31c0b8d967b2e876e Mon Sep 17 00:00:00 2001
+From f64780c6eb842d3e0c5479b179875df4f026f4a9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:08:06 +0200
 Subject: [PATCH 318/415] Step 20.13: Add as a dependency
@@ -11693,7 +11692,7 @@ index 571b3c1..d4b7c6e 100644
 2.7.4
 
 
-From c0dfc361340c0b8598ff2006835bb1d3ca6ea113 Mon Sep 17 00:00:00 2001
+From 34b9af6580dd9aafb77603dc1b3076df928fa22d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:09:13 +0200
 Subject: [PATCH 319/415] Step 20.14: Add ngf-drop to the view
@@ -11735,7 +11734,7 @@ index d53d6c7..70e5af3 100644
 2.7.4
 
 
-From 9ab8b1f3c460f4c28242209f1d89b2d8cd882e07 Mon Sep 17 00:00:00 2001
+From 4f738e82e4f7022908e39ff6484a903a9b3da418 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:12:52 +0200
 Subject: [PATCH 320/415] Step 20.15: Handle file selection
@@ -11784,7 +11783,7 @@ index d4b7c6e..7ad01f9 100644
 2.7.4
 
 
-From 0699cd65305d013c5abb5cc21e80a300620fe9fb Mon Sep 17 00:00:00 2001
+From 324579ca4134340f94ed06a2f90a9579751b1972 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:15:21 +0200
 Subject: [PATCH 321/415] Step 20.16: Add style
@@ -11820,7 +11819,7 @@ index 0000000..987a853
 2.7.4
 
 
-From 9f74a1b7dfd04741853e2a1c046b12b5b2c24f5e Mon Sep 17 00:00:00 2001
+From bdd38717221ba951365b594f8c74b4af60fadccf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:15:42 +0200
 Subject: [PATCH 322/415] Step 20.17: Import in PartyAdd
@@ -11841,7 +11840,7 @@ index 0000000..18bfd78
 2.7.4
 
 
-From 37e7eca0675b466e015b4a6cdea1d266dfc806fc Mon Sep 17 00:00:00 2001
+From 49155e48962d96eafa5c1356b63b05b737ed2200 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:16:18 +0200
 Subject: [PATCH 323/415] Step 20.18: Import in PartyAddButton
@@ -11863,7 +11862,7 @@ index b765a6c..9f2f5e2 100644
 2.7.4
 
 
-From 1420e1ab04090fb56f6ce88b374749e75724a1a0 Mon Sep 17 00:00:00 2001
+From e5d017f90356d17d2469ee296829bf975004cc6e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:17:27 +0200
 Subject: [PATCH 324/415] Step 20.19: Install `ng-img-crop`
@@ -11888,7 +11887,7 @@ index 0484324..1ebcbea 100644
 2.7.4
 
 
-From abb445c0d080886abffcc87f657c49527e5c3368 Mon Sep 17 00:00:00 2001
+From 8bfb7d305753153787f8ce8dd9861637b619f672 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:27:50 +0200
 Subject: [PATCH 325/415] Step 20.20: Add ngImgCrop
@@ -11925,7 +11924,7 @@ index 7ad01f9..94f2de1 100644
 2.7.4
 
 
-From 585e567325ddb782870d8ce8eca3a61b243cdf70 Mon Sep 17 00:00:00 2001
+From 6ea9d31436a7923b1665bd4b3796ff8d583f3ba8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:31:51 +0200
 Subject: [PATCH 326/415] Step 20.21: Use ngImgCrop
@@ -11961,7 +11960,7 @@ index 70e5af3..2dd38e9 100644
 2.7.4
 
 
-From 9710b1bc0d16465ce3160e83ba35cb84a7b58295 Mon Sep 17 00:00:00 2001
+From 952627f819193540ff380d1a4922df4fd9ab8250 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 13:32:11 +0200
 Subject: [PATCH 327/415] Step 20.22: Add styles
@@ -11992,7 +11991,7 @@ index 987a853..645cee2 100644
 2.7.4
 
 
-From 607265001d916605d9d2f691ff3e4c00c5d88ed6 Mon Sep 17 00:00:00 2001
+From 91b9f23094fb0a3340fe437539eb6e3d1e9e8881 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:02:41 +0200
 Subject: [PATCH 328/415] Step 20.23: Add dataURLToBlob helper
@@ -12043,7 +12042,7 @@ index 0000000..23f1350
 2.7.4
 
 
-From 4fc101f447b1d61f308c3aee58f9c95ad5f2f28c Mon Sep 17 00:00:00 2001
+From 72ba1385f47aad797650329fcf6ff412ebba2d17 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:05:04 +0200
 Subject: [PATCH 329/415] Step 20.24: Add blobToArrayBuffer helper
@@ -12087,7 +12086,7 @@ index 23f1350..448f932 100644
 2.7.4
 
 
-From 0c2f950adaf1a4ebc4860897caafab9ed17a8ab5 Mon Sep 17 00:00:00 2001
+From 93d6feceeadd28e582a8adbe29a79d26427f0bc7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:08:29 +0200
 Subject: [PATCH 330/415] Step 20.25: Create `upload` method
@@ -12137,7 +12136,7 @@ index 0000000..c107dd0
 2.7.4
 
 
-From 9870cc107d6498d29083e8cc6027c954a6808cc9 Mon Sep 17 00:00:00 2001
+From d99484aa9ae331673cd42f77b173014be00c1371 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:08:56 +0200
 Subject: [PATCH 331/415] Step 20.26: Export methods
@@ -12158,7 +12157,7 @@ index 9c18361..74293fe 100644
 2.7.4
 
 
-From 16ca6ddb52b178ba88e3534a94a31f3975936e82 Mon Sep 17 00:00:00 2001
+From 5dcc75c943c59e468f1f92227a429ab06e355ab0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:15:15 +0200
 Subject: [PATCH 332/415] Step 20.27: Implement `save` and `reset` methods
@@ -12212,7 +12211,7 @@ index 94f2de1..7dd2bd1 100644
 2.7.4
 
 
-From b8501ee06cf018615bb6818b8af6f766985a8007 Mon Sep 17 00:00:00 2001
+From 0e4a1f481e009d1496aa5639989c80766bc6a2ae Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:16:03 +0200
 Subject: [PATCH 333/415] Step 20.28: Import Images on server side
@@ -12234,7 +12233,7 @@ index 1acdc6c..2b47936 100644
 2.7.4
 
 
-From 44d118c385467e88b429e96ced21832525ed8524 Mon Sep 17 00:00:00 2001
+From f830537407bc87275e6fbe4ee5bacb995f3e7f68 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:21:33 +0200
 Subject: [PATCH 334/415] Step 20.29: Display uploaded images
@@ -12261,7 +12260,7 @@ index 2dd38e9..124bfdb 100644
 2.7.4
 
 
-From e8877cc3cb91991fa525e6f23dd809fc16ed974f Mon Sep 17 00:00:00 2001
+From b934103a729fd26eae5b3716de90792ec0c54802 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:22:36 +0200
 Subject: [PATCH 335/415] Step 20.30: Add styles
@@ -12299,7 +12298,7 @@ index 645cee2..f781c1c 100644
 2.7.4
 
 
-From 3518219027f1f1bb1053f64a5c0202e8723fa10f Mon Sep 17 00:00:00 2001
+From c4bc862921e813b51f98e517668e3699e3938d43 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:24:09 +0200
 Subject: [PATCH 336/415] Step 20.31: Add `thumbs` and `images` publications
@@ -12336,7 +12335,7 @@ index 0000000..5949c72
 2.7.4
 
 
-From 0b89ef017d35a21fa45e8cfe5d57f89a273e181d Mon Sep 17 00:00:00 2001
+From 47db60d16d1c18645fc3ca08c5a8b0e9c8b70ec2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:24:36 +0200
 Subject: [PATCH 337/415] Step 20.32: Import publications
@@ -12358,7 +12357,7 @@ index 74293fe..57692b3 100644
 2.7.4
 
 
-From 4210d0c6186a10b52c7b96404269f1dcc2ffa081 Mon Sep 17 00:00:00 2001
+From 38540859fb38d047b3a9a8cbaf18224605375ea4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:29:08 +0200
 Subject: [PATCH 338/415] Step 20.33: Implement thumbnails
@@ -12419,7 +12418,7 @@ index 7dd2bd1..100b85a 100644
 2.7.4
 
 
-From 4da928186da089d03eed7eee1129deaa3b33a88b Mon Sep 17 00:00:00 2001
+From 85330a6b7babe39f2b6798a67a89d44f1aacc728 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:32:41 +0200
 Subject: [PATCH 339/415] Step 20.34: Install `angular-sortable-view`
@@ -12444,7 +12443,7 @@ index 1ebcbea..ffe3f6d 100644
 2.7.4
 
 
-From f9412b48a2830f2c709f07a58d9d17c832e28b7e Mon Sep 17 00:00:00 2001
+From 89d2b7e504d48ed192359472095e76a4451eb626 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:33:09 +0200
 Subject: [PATCH 340/415] Step 20.35: Add as a dependency
@@ -12479,7 +12478,7 @@ index 100b85a..237ac4d 100644
 2.7.4
 
 
-From faa55201e9c130475d8001a66f04dafb440f2dc1 Mon Sep 17 00:00:00 2001
+From cc741ad137b8efc0103aa6c9898fdccbddfacf6f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 14:33:31 +0200
 Subject: [PATCH 341/415] Step 20.36: Use directives on thumbnails
@@ -12509,7 +12508,7 @@ index 124bfdb..14a3704 100644
 2.7.4
 
 
-From a2e23671e41dd76e0bceda4657a18f0d043ffd8a Mon Sep 17 00:00:00 2001
+From c27dcc6f4fa99b90bc13c5acc96f849d18cd8b15 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:07 +0200
 Subject: [PATCH 342/415] Step 20.37: Define two-way data binding `files`
@@ -12536,7 +12535,7 @@ index 237ac4d..400368e 100644
 2.7.4
 
 
-From f72a6dfad97a142ad9a464dbf896601d53cdc76d Mon Sep 17 00:00:00 2001
+From 531916d4fbdef69db872fcd17b46a0c2f777f8fb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:24 +0200
 Subject: [PATCH 343/415] Step 20.38: Create view for PartyImage
@@ -12557,7 +12556,7 @@ index 0000000..719c4a3
 2.7.4
 
 
-From d1a6b20e3394d742cecb96a17bdde4977f2413fc Mon Sep 17 00:00:00 2001
+From abb0d15c152fa03daef4e28bd6f4bb199d8ff23e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:39 +0200
 Subject: [PATCH 344/415] Step 20.39: Create PartyImage component
@@ -12614,7 +12613,7 @@ index 0000000..5b636b8
 2.7.4
 
 
-From bff068464ed0da44e486c325bbb69fe798115d99 Mon Sep 17 00:00:00 2001
+From f7b40b0de15486c93ca0cb526b8f2cecb66ef9bb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:33:58 +0200
 Subject: [PATCH 345/415] Step 20.40: Implement PartyImage in PartiesList
@@ -12643,7 +12642,7 @@ index 12987b3..de5d229 100644
 2.7.4
 
 
-From 25a12a9812ab6435442e69663912eaef6efe8467 Mon Sep 17 00:00:00 2001
+From 39621d08a739d032df70ae9127c67f58141d014d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Wed, 13 Apr 2016 15:34:24 +0200
 Subject: [PATCH 346/415] Step 20.41: Add PartyImage to PartiesList and
@@ -12687,7 +12686,7 @@ index 17996c3..9e90e1f 100644
 2.7.4
 
 
-From e385103e07b9c82044bec6ccaab4b6353afc20e2 Mon Sep 17 00:00:00 2001
+From 65758d2ffe05983824ab36288ea428fe65926dfd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:41:02 +0200
 Subject: [PATCH 347/415] Step 21.1: Add mobile platform
@@ -12709,7 +12708,7 @@ index efeba1b..0b0ddcc 100644
 2.7.4
 
 
-From cd47036b888eaafc43ddc611b8502aff5e7ba720 Mon Sep 17 00:00:00 2001
+From 45d33ba4efc6e780e566fe1a247f79a74e3b15fa Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:43:34 +0200
 Subject: [PATCH 348/415] Step 21.2: Move login.html to web.html
@@ -12799,7 +12798,7 @@ index 0000000..1ac5b6f
 2.7.4
 
 
-From 2b21aae9cf66c21009e42cc5b1820d861a2faeb0 Mon Sep 17 00:00:00 2001
+From c67343c5a10cd4ca3f2f890c8503f897334fbc2f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:45:56 +0200
 Subject: [PATCH 349/415] Step 21.3: Add mobile view
@@ -12846,7 +12845,7 @@ index 0000000..112ba9e
 2.7.4
 
 
-From ea04426ed19d3339aa507266197b667d565e5b52 Mon Sep 17 00:00:00 2001
+From ae63e341e31c3f34395938b4c06c837d7b5120f9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:47:15 +0200
 Subject: [PATCH 350/415] Step 21.4: Move Login class to web.js
@@ -12896,7 +12895,7 @@ index 0000000..bc7b752
 2.7.4
 
 
-From f19a9886012b98d3dddcc6318d2fbfc42615debb Mon Sep 17 00:00:00 2001
+From 8be838140dead1d673ebeb4de3f51c1cca55ce84 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:48:39 +0200
 Subject: [PATCH 351/415] Step 21.5: Create controller for mobile
@@ -12917,7 +12916,7 @@ index 0000000..792f38c
 2.7.4
 
 
-From c1e4812b717dff3e8a7b7e796c850c0265a035e2 Mon Sep 17 00:00:00 2001
+From 5104c6da527ae0b82ed27a7ba8ac599d6ecfd6a0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:49:48 +0200
 Subject: [PATCH 352/415] Step 21.6: Refactor login.js
@@ -12992,7 +12991,7 @@ index 4ae9c9e..376fcaf 100644
 2.7.4
 
 
-From aae36c50df074edd34ade018471fe2f8d14f38e0 Mon Sep 17 00:00:00 2001
+From 20be090cdbddae856557eba59094a0c4d55228e0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:50:03 +0200
 Subject: [PATCH 353/415] Step 21.7: Remove login.html
@@ -13108,7 +13107,7 @@ index 1ac5b6f..af84461 100644
 2.7.4
 
 
-From e459fec8e8926cc28480bc1414132a5234dd5184 Mon Sep 17 00:00:00 2001
+From 646dabf52b2f84f7f41575a9277fedab06d65d69 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:52:54 +0200
 Subject: [PATCH 354/415] Step 21.8: Add `okland:accounts-phone`
@@ -13143,7 +13142,7 @@ index a60ade0..c58233f 100644
 2.7.4
 
 
-From f0ee52779e8322b9c8c526c434916412161e1455 Mon Sep 17 00:00:00 2001
+From a498b178bc3cd1379cf9d9266297dfe1ed4e4304 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:56:24 +0200
 Subject: [PATCH 355/415] Step 21.9: Add phone verification method
@@ -13189,7 +13188,7 @@ index 792f38c..c201eb2 100644
 2.7.4
 
 
-From b3e5f2dbbad13c7d20a19e5867e7dc1fa18319a7 Mon Sep 17 00:00:00 2001
+From 3fbfe9db5c2ce74a44619ef72faf99a25ff78b41 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 20:57:40 +0200
 Subject: [PATCH 356/415] Step 21.10: Add phone verification form
@@ -13230,7 +13229,7 @@ index 112ba9e..0b889a7 100644
 2.7.4
 
 
-From 089461b4cf4866523d172a08ec911b10f2a57a62 Mon Sep 17 00:00:00 2001
+From 10d20c0dee953c5854840eed1d687421120ad85f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 21:00:05 +0200
 Subject: [PATCH 357/415] Step 21.11: Add code verification method
@@ -13276,7 +13275,7 @@ index c201eb2..798d563 100644
 2.7.4
 
 
-From 4893e0ee9fd310ffcae2ba06429cf8405f7ab111 Mon Sep 17 00:00:00 2001
+From 1c19b88d8f42b7d4d5bea02dc024b836571e182e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 14 Apr 2016 21:01:13 +0200
 Subject: [PATCH 358/415] Step 21.12: Add code verification form
@@ -13310,7 +13309,7 @@ index 0b889a7..e93c1d5 100644
 2.7.4
 
 
-From 5b819a198c5757e3565c0960be83932c1cc7b860 Mon Sep 17 00:00:00 2001
+From be7c729b0da952f05b9a4fc9a415b1c79b5ff862 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 10:58:52 +0200
 Subject: [PATCH 359/415] Step 22.1: Install `ionic-sdk`
@@ -13335,7 +13334,7 @@ index ffe3f6d..4c15c16 100644
 2.7.4
 
 
-From 8f2599bda3f6ec4d9fb053a42c5329ea0fa0c9ab Mon Sep 17 00:00:00 2001
+From 913a6306edd97496df3872b19176027dd7474e76 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 10:59:31 +0200
 Subject: [PATCH 360/415] Step 22.2: Install `angular-sanitize`
@@ -13360,7 +13359,7 @@ index 4c15c16..056163e 100644
 2.7.4
 
 
-From 0362e78e17631ed50a0434f2ea21dad960941324 Mon Sep 17 00:00:00 2001
+From 25d73496fbdc6669efa669a8a111ee246d47f169 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:08:38 +0200
 Subject: [PATCH 361/415] Step 22.3: ngSanitize as a dependency
@@ -13393,7 +13392,7 @@ index 21940eb..ada6751 100644
 2.7.4
 
 
-From 489a924e484ae53f5b5c137613e546fc29434a81 Mon Sep 17 00:00:00 2001
+From 508ce66594ccb11b3d7def943528444b7d6111b9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:48:44 +0200
 Subject: [PATCH 362/415] Step 22.4: Import ionic and add as a dependency
@@ -13429,7 +13428,7 @@ index ada6751..f72bc21 100644
 2.7.4
 
 
-From 53dd4de390b411a4f01d583974d03fc5c4ce11b0 Mon Sep 17 00:00:00 2001
+From a2be824178dc34a07055834bb66ff1341d60f789 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:49:08 +0200
 Subject: [PATCH 363/415] Step 22.5: Import ionic styles
@@ -13454,7 +13453,7 @@ index f72bc21..ac7ac39 100644
 2.7.4
 
 
-From d37cd9aa2865977aebd014c3e40590f975330809 Mon Sep 17 00:00:00 2001
+From 2d387886ffddb8efcec159ad54350bc346955978 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:50:26 +0200
 Subject: [PATCH 364/415] Step 22.6: Create view of Socially for web
@@ -13477,7 +13476,7 @@ index 0000000..7fdb2de
 2.7.4
 
 
-From a8bb92b854a0ade4c3166e161ed45eeb27efa15a Mon Sep 17 00:00:00 2001
+From 6c10e97bdfdc033263d875012eff86e320e20c28 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:51:02 +0200
 Subject: [PATCH 365/415] Step 22.7: Create mobile view
@@ -13500,7 +13499,7 @@ index 0000000..b0de4a9
 2.7.4
 
 
-From 762f3e1e4822aaa1922ea4c0522ffd528f7b39f7 Mon Sep 17 00:00:00 2001
+From 575cb2676856612a56d65194c9fca9d486cc6f67 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 11:53:48 +0200
 Subject: [PATCH 366/415] Step 22.8: Implement web and mobile views
@@ -13537,7 +13536,7 @@ index ac7ac39..ff140a5 100644
 2.7.4
 
 
-From 2b7b70eba8da6511d6176b741ac18e71eedbce63 Mon Sep 17 00:00:00 2001
+From a679a3382936fb352465c907a532f7f97cdf64ce Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:17:24 +0200
 Subject: [PATCH 367/415] Step 22.9: Remove old view
@@ -13560,7 +13559,7 @@ index 7fdb2de..0000000
 2.7.4
 
 
-From 2c813ac0c5a1a2e0c1ef716c41f64d19e0d9c108 Mon Sep 17 00:00:00 2001
+From f8f37f53f199be94c40f4095432e8021e3ed06ef Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:18:14 +0200
 Subject: [PATCH 368/415] Step 22.10: Add title
@@ -13584,7 +13583,7 @@ index b0de4a9..7751a6f 100644
 2.7.4
 
 
-From 730b55f3ae082a9822552a7741cde53c74d24956 Mon Sep 17 00:00:00 2001
+From 07c14856aec2f10d27428530e17680aa777ef3e8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:19:33 +0200
 Subject: [PATCH 369/415] Step 22.11: Create web view of PartiesList
@@ -13661,7 +13660,7 @@ index 0000000..b2234e9
 2.7.4
 
 
-From e798d357c29550adf3af883a1a3329669a95f35e Mon Sep 17 00:00:00 2001
+From a54d927935efdbbaf6588e1d80a5949e2b1c16ec Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:20:02 +0200
 Subject: [PATCH 370/415] Step 22.12: Remove old view
@@ -13738,7 +13737,7 @@ index de5d229..0000000
 2.7.4
 
 
-From 276bcbc17aadc874bb8dfa926ff0c81710dccb1d Mon Sep 17 00:00:00 2001
+From 3546797f4101abb5ca4edd8ca6039b04f03dbda7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:20:56 +0200
 Subject: [PATCH 371/415] Step 22.13: Create mobile view
@@ -13780,7 +13779,7 @@ index 0000000..2fcaafd
 2.7.4
 
 
-From bc9f2cefd127bedee63223347894f8f78f65d50d Mon Sep 17 00:00:00 2001
+From 984e8f9ec227d31f400759b66e4dcc2edb48570d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:21:54 +0200
 Subject: [PATCH 372/415] Step 22.14: Implement new views
@@ -13817,7 +13816,7 @@ index 9e90e1f..df916d9 100644
 2.7.4
 
 
-From 2714a30627a1a313704f05823c14d8c90fdee071 Mon Sep 17 00:00:00 2001
+From 3224ec6a4db9927375f069b2ba3666ce0f8933e0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:22:45 +0200
 Subject: [PATCH 373/415] Step 22.15: Fix layout to match both mobile and web
@@ -13855,7 +13854,7 @@ index b0bc5dc..14df29c 100644
 2.7.4
 
 
-From 8482be437b2b4fe831f90e50981b9d8623204241 Mon Sep 17 00:00:00 2001
+From db47d0860ea0518e05daa371a5b22d3db8f9188f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:25:39 +0200
 Subject: [PATCH 374/415] Step 22.16: Create DisplayImageFilter
@@ -13901,7 +13900,7 @@ index 0000000..aa2dfda
 2.7.4
 
 
-From 6b1465a05e97a283fed47f0eea7bc63e243358ba Mon Sep 17 00:00:00 2001
+From 08ef826aa26e7839b487924311029bf9819b8ee6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:26:55 +0200
 Subject: [PATCH 375/415] Step 22.17: Add new filter to PartyImage
@@ -13936,7 +13935,7 @@ index 5b636b8..64384c0 100644
 2.7.4
 
 
-From 21364fbf1b4770ad72aa6c1a17cb2d3417e5d400 Mon Sep 17 00:00:00 2001
+From 8f020e28719983116f0ef70773ea8ed2fc090b0b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 25 Apr 2016 15:27:28 +0200
 Subject: [PATCH 376/415] Step 22.18: Implement DisplayImageFilter
@@ -13956,7 +13955,7 @@ index 719c4a3..04693e3 100644
 2.7.4
 
 
-From 03a42cba3af54e080cd4faa6cf3e33422946928e Mon Sep 17 00:00:00 2001
+From 51b5a17dcadd246b700a20d41c33c37a55330c65 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:43:49 +0200
 Subject: [PATCH 377/415] Step 23.1: Remove pbastowski:angular-babel
@@ -13994,7 +13993,7 @@ index c58233f..4a91d22 100644
 2.7.4
 
 
-From 23d5f5805c2b6fd5bec2132c4076739e1b7ae324 Mon Sep 17 00:00:00 2001
+From 254286eb8153a62b7741be46af74eba556d35c2d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:44:49 +0200
 Subject: [PATCH 378/415] Step 23.2: Add mys:typescript-ng-annotate
@@ -14038,7 +14037,7 @@ index 4a91d22..9877888 100644
 2.7.4
 
 
-From 911a41c10a1560b89354d8122b41acba5e3c4531 Mon Sep 17 00:00:00 2001
+From 32d9f9439f6d72aeb2b6c843064e15e00b15e790 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 24 Oct 2016 11:24:14 -0200
 Subject: [PATCH 379/415] Step 23.3: Add typings configuration files
@@ -19022,7 +19021,7 @@ index 0000000..804afbe
 2.7.4
 
 
-From 65e1f7fb51838b7af670166cee83aa07679d0155 Mon Sep 17 00:00:00 2001
+From 46015aa64ab4ea95c90ef87db1bb6f80f98eb0f1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:46:33 +0200
 Subject: [PATCH 380/415] Step 23.4: Rename main file and make few changes to
@@ -19127,7 +19126,7 @@ index 0000000..1a17992
 2.7.4
 
 
-From b6f015929021372db548a112452da948db026e52 Mon Sep 17 00:00:00 2001
+From 85fd70299621a49fbc9d6f088b00b740fe4caa90 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:49:27 +0200
 Subject: [PATCH 381/415] Step 23.5: Default imports of libraries inside
@@ -19316,7 +19315,7 @@ index 0000000..35393c3
 2.7.4
 
 
-From 03c0c81b5464489d4d038cb8d28a976260c5c6aa Mon Sep 17 00:00:00 2001
+From 6b01910d33b2191cd00a47c7dd8091bc7ccffb7e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 17:50:49 +0200
 Subject: [PATCH 382/415] Step 23.6: Default imports of components
@@ -19390,14 +19389,14 @@ index 35393c3..775dd07 100644
 2.7.4
 
 
-From 59224350bff5ed080f68bb565a7976f55fd6802e Mon Sep 17 00:00:00 2001
+From a46eb7952d2f772c51a9111f09a09c2778cd3896 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:19:19 +0200
 Subject: [PATCH 383/415] Step 23.7: Move everything to typescript
 
 ---
- imports/api/images/collection.js                   |  21 ---
- imports/api/images/collection.ts                   |  21 +++
+ imports/api/images/collection.js                   |   5 -
+ imports/api/images/collection.ts                   |   5 +
  imports/api/images/helpers.js                      |  54 -------
  imports/api/images/helpers.ts                      |  54 +++++++
  imports/api/images/index.js                        |   4 -
@@ -19406,8 +19405,8 @@ Subject: [PATCH 383/415] Step 23.7: Move everything to typescript
  imports/api/images/methods.ts                      |  30 ++++
  imports/api/images/publish.js                      |  17 --
  imports/api/images/publish.ts                      |  17 ++
- imports/api/images/store.js                        |  30 ----
- imports/api/images/store.ts                        |  30 ++++
+ imports/api/images/store.js                        |  44 -----
+ imports/api/images/store.ts                        |  44 +++++
  imports/api/parties/collection.js                  |  15 --
  imports/api/parties/collection.ts                  |  15 ++
  imports/api/parties/index.js                       |   4 -
@@ -19484,7 +19483,7 @@ Subject: [PATCH 383/415] Step 23.7: Move everything to typescript
  imports/ui/filters/uninvitedFilter.ts              |  21 +++
  server/main.js                                     |   4 -
  server/main.ts                                     |   4 +
- 88 files changed, 2138 insertions(+), 2046 deletions(-)
+ 88 files changed, 2136 insertions(+), 2044 deletions(-)
  delete mode 100644 imports/api/images/collection.js
  create mode 100644 imports/api/images/collection.ts
  delete mode 100644 imports/api/images/helpers.js
@@ -19576,58 +19575,26 @@ Subject: [PATCH 383/415] Step 23.7: Move everything to typescript
 
 diff --git a/imports/api/images/collection.js b/imports/api/images/collection.js
 deleted file mode 100644
-index a522111..0000000
+index c85171c..0000000
 --- a/imports/api/images/collection.js
 +++ /dev/null
-@@ -1,21 +0,0 @@
+@@ -1,5 +0,0 @@
 -import { Meteor } from 'meteor/meteor';
 -import { Mongo } from 'meteor/mongo';
 -
 -export const Images = new Mongo.Collection('images');
 -export const Thumbs = new Mongo.Collection('thumbs');
--
--function loggedIn(userId) {
--  return !!userId;
--}
--
--Thumbs.allow({
--  insert: loggedIn,
--  update: loggedIn,
--  remove: loggedIn
--});
--
--Images.allow({
--  insert: loggedIn,
--  update: loggedIn,
--  remove: loggedIn
--});
 diff --git a/imports/api/images/collection.ts b/imports/api/images/collection.ts
 new file mode 100644
-index 0000000..a522111
+index 0000000..c85171c
 --- /dev/null
 +++ b/imports/api/images/collection.ts
-@@ -0,0 +1,21 @@
+@@ -0,0 +1,5 @@
 +import { Meteor } from 'meteor/meteor';
 +import { Mongo } from 'meteor/mongo';
 +
 +export const Images = new Mongo.Collection('images');
 +export const Thumbs = new Mongo.Collection('thumbs');
-+
-+function loggedIn(userId) {
-+  return !!userId;
-+}
-+
-+Thumbs.allow({
-+  insert: loggedIn,
-+  update: loggedIn,
-+  remove: loggedIn
-+});
-+
-+Images.allow({
-+  insert: loggedIn,
-+  update: loggedIn,
-+  remove: loggedIn
-+});
 diff --git a/imports/api/images/helpers.js b/imports/api/images/helpers.js
 deleted file mode 100644
 index 448f932..0000000
@@ -19888,16 +19855,21 @@ index 0000000..5949c72
 +}
 diff --git a/imports/api/images/store.js b/imports/api/images/store.js
 deleted file mode 100644
-index a0fa6d6..0000000
+index 393f235..0000000
 --- a/imports/api/images/store.js
 +++ /dev/null
-@@ -1,30 +0,0 @@
+@@ -1,44 +0,0 @@
 -import { UploadFS } from 'meteor/jalik:ufs';
 -import { Images, Thumbs } from './collection';
 -
 -export const ThumbsStore = new UploadFS.store.GridFS({
 -  collection: Thumbs,
 -  name: 'thumbs',
+-  permissions: new UploadFS.StorePermissions({
+-    insert: loggedIn,
+-    update: loggedIn,
+-    remove: loggedIn
+-  }),
 -  transformWrite(from, to, fileId, file) {
 -    // Resize to 32x32
 -    const gm = require('gm');
@@ -19920,20 +19892,35 @@ index a0fa6d6..0000000
 -  }),
 -  copyTo: [
 -    ThumbsStore
--  ]
+-  ],
+-  permissions: new UploadFS.StorePermissions({
+-    insert: loggedIn,
+-    update: loggedIn,
+-    remove: loggedIn
+-  })
 -});
+-
+-function loggedIn(userId) {
+-  return !!userId;
+-}
+\ No newline at end of file
 diff --git a/imports/api/images/store.ts b/imports/api/images/store.ts
 new file mode 100644
-index 0000000..a0fa6d6
+index 0000000..393f235
 --- /dev/null
 +++ b/imports/api/images/store.ts
-@@ -0,0 +1,30 @@
+@@ -0,0 +1,44 @@
 +import { UploadFS } from 'meteor/jalik:ufs';
 +import { Images, Thumbs } from './collection';
 +
 +export const ThumbsStore = new UploadFS.store.GridFS({
 +  collection: Thumbs,
 +  name: 'thumbs',
++  permissions: new UploadFS.StorePermissions({
++    insert: loggedIn,
++    update: loggedIn,
++    remove: loggedIn
++  }),
 +  transformWrite(from, to, fileId, file) {
 +    // Resize to 32x32
 +    const gm = require('gm');
@@ -19956,8 +19943,18 @@ index 0000000..a0fa6d6
 +  }),
 +  copyTo: [
 +    ThumbsStore
-+  ]
++  ],
++  permissions: new UploadFS.StorePermissions({
++    insert: loggedIn,
++    update: loggedIn,
++    remove: loggedIn
++  })
 +});
++
++function loggedIn(userId) {
++  return !!userId;
++}
+\ No newline at end of file
 diff --git a/imports/api/parties/collection.js b/imports/api/parties/collection.js
 deleted file mode 100644
 index 3e283c1..0000000
@@ -24290,7 +24287,7 @@ index 0000000..2b47936
 2.7.4
 
 
-From e1e0283d3bbcaefcc06643960dc0089c7094cbd6 Mon Sep 17 00:00:00 2001
+From c654e038cf115b8bff414266dd2c500ed3b2f4e9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:20:56 +0200
 Subject: [PATCH 384/415] Step 23.8: Import underscore correctly inside Parties
@@ -24314,7 +24311,7 @@ index e8aa1ad..b6c7ff9 100644
 2.7.4
 
 
-From e2173c16e647d55280cb271b7ca2e3a1c9753b37 Mon Sep 17 00:00:00 2001
+From 36444fe2d0a5e2de1b7348fbd8f8e5baf2db4156 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:28:32 +0200
 Subject: [PATCH 385/415] Step 23.9: Install angular2 modules
@@ -24371,7 +24368,7 @@ index 056163e..517e44b 100644
 2.7.4
 
 
-From 4e41b11c2273d2b6dfe66be95300d2bc27102373 Mon Sep 17 00:00:00 2001
+From c80b517df6b3d21fdbbf80e1ffdecd17789ce9db Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:29:54 +0200
 Subject: [PATCH 386/415] Step 23.10: Create module with instance of
@@ -24444,7 +24441,7 @@ index 1a17992..92b3cc0 100644
 2.7.4
 
 
-From de62ff4a05b39e4bc3615400569502c8b06fc805 Mon Sep 17 00:00:00 2001
+From 4cdceab448802c5ba4d3e2be623359a01a717de2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:34:01 +0200
 Subject: [PATCH 387/415] Step 23.11: bootstrap using UpgradeAdapter
@@ -24496,7 +24493,7 @@ index 92b3cc0..e5d0ad7 100644
 2.7.4
 
 
-From 4e631d0f8fe040ad518dc3b4e17bedfb28b883da Mon Sep 17 00:00:00 2001
+From 32510de5a240b798a1b6ba76b38d5ce01d220a64 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:36:26 +0200
 Subject: [PATCH 388/415] Step 23.12: Create displayNamePipe based on
@@ -24559,7 +24556,7 @@ index 0000000..f1d9804
 2.7.4
 
 
-From 8aee59e9aa1db98320c4cd17660f93fbe8fad775 Mon Sep 17 00:00:00 2001
+From 7d69fd8ff51162d3c9be83950f8982780b64553f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:37:50 +0200
 Subject: [PATCH 389/415] Step 23.13: Create UninvitedPipe based on
@@ -24619,7 +24616,7 @@ index 0000000..523c74d
 2.7.4
 
 
-From 4bd33c2c7f397ec8463202f3b3ec9726182eb5f6 Mon Sep 17 00:00:00 2001
+From e1d54bf089c5a4613c6cc7b443b0576df38d49b5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:38:26 +0200
 Subject: [PATCH 390/415] Step 23.14: Return an empty array instead of false
@@ -24645,7 +24642,7 @@ index 523c74d..b40208e 100644
 2.7.4
 
 
-From fbe4cd6795256f193d4ea5467c32d77aab028148 Mon Sep 17 00:00:00 2001
+From 67acc66c7175d0ff4fc8f4200b60943983b8924a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:41:15 +0200
 Subject: [PATCH 391/415] Step 23.15: Use Component decorator
@@ -24706,7 +24703,7 @@ index 4781e8b..0fe9347 100644
 2.7.4
 
 
-From 1ad349bc653c62e5fa195ba40febc62d444e336c Mon Sep 17 00:00:00 2001
+From 28705bf7033a4439b52b7d9a67eeaede427698a0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:42:41 +0200
 Subject: [PATCH 392/415] Step 23.16: Use Pipes instead of Filters
@@ -24743,7 +24740,7 @@ index 0fe9347..2c923ec 100644
 2.7.4
 
 
-From 72ee6e54397bf6c16cce9fc9bb3ae24e74a21baa Mon Sep 17 00:00:00 2001
+From 78498d47b3c533a7c867472736cd105657b58043 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:43:28 +0200
 Subject: [PATCH 393/415] Step 23.17: Extend by MeteorComponent
@@ -24780,7 +24777,7 @@ index 2c923ec..df97cc8 100644
 2.7.4
 
 
-From dac9fc33f5bb015b76265bf599853784c7b87ec1 Mon Sep 17 00:00:00 2001
+From cb69a00f904fb91dbac7a58f40c3b9f273b4e83d Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 21 Oct 2016 19:50:28 -0200
 Subject: [PATCH 394/415] Step 23.18: Switch to MeteorComponent API
@@ -24817,7 +24814,7 @@ index df97cc8..fe58ab5 100644
 2.7.4
 
 
-From ec8b50223b1002a7469e63126ca689c7edf8aa9f Mon Sep 17 00:00:00 2001
+From af6ac21d48228ca19a9186107f63dbe17edef993 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Fri, 21 Oct 2016 19:51:24 -0200
 Subject: [PATCH 395/415] Step 23.19: Use downgraded Ng2 Component
@@ -24851,7 +24848,7 @@ index fe58ab5..8910eec 100644
 2.7.4
 
 
-From f191847c8625d582ff973e3126a387e844e8a5c2 Mon Sep 17 00:00:00 2001
+From 02d09f2f692757c6b9130227afb5305a9d2bd36b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:47:23 +0200
 Subject: [PATCH 396/415] Step 23.20: Define binding
@@ -24885,7 +24882,7 @@ index 8910eec..0dcfb74 100644
 2.7.4
 
 
-From 40157c90df1a869850edcc6d81ef22af42fa6942 Mon Sep 17 00:00:00 2001
+From 72d9f9e18186558257dbfc4388b61ca2e717fb29 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:49:03 +0200
 Subject: [PATCH 397/415] Step 23.21: Remove prefix in template
@@ -24915,7 +24912,7 @@ index 84b3eaf..0d7f5b3 100644
 2.7.4
 
 
-From fb5ce6e071d1cfa141ff5667ba7c02e1e4e40800 Mon Sep 17 00:00:00 2001
+From b3c4076b073a2446986e78e6b2a5456a3bb3c8a4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:50:26 +0200
 Subject: [PATCH 398/415] Step 23.22: Switch to pipes
@@ -24946,7 +24943,7 @@ index 0d7f5b3..4297572 100644
 2.7.4
 
 
-From 1f6251bf3e34b3eed1bf0f5ad73b7a2779567636 Mon Sep 17 00:00:00 2001
+From a483dadacbffe956ca0366f09af4e99151bcfba0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:50:47 +0200
 Subject: [PATCH 399/415] Step 23.23: Switch to ngFor
@@ -24972,7 +24969,7 @@ index 4297572..50de7a3 100644
 2.7.4
 
 
-From 0a298509b7a51bab1a007e05d4353d7b53d4a757 Mon Sep 17 00:00:00 2001
+From caaac6c3a8cc2e74fb36d6c7e9f33ebca4e7ff8f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:51:10 +0200
 Subject: [PATCH 400/415] Step 23.24: Switch to ngIf
@@ -24998,7 +24995,7 @@ index 50de7a3..ee66c5c 100644
 2.7.4
 
 
-From e41201420236c7d19ade170c1c72f574ad8f490f Mon Sep 17 00:00:00 2001
+From 4c43eb0ff273552044bd88fc83d90f19a0e30cca Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 18:51:26 +0200
 Subject: [PATCH 401/415] Step 23.25: Switch to (click)
@@ -25024,7 +25021,7 @@ index ee66c5c..86907aa 100644
 2.7.4
 
 
-From 8345e9015847c9ed7783886ea5d7dfc8b6b0e545 Mon Sep 17 00:00:00 2001
+From 527b3cdc74b1f56f150a2f94a91784536ea27fd7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:04:45 +0200
 Subject: [PATCH 402/415] Step 23.26: Use one-way binding
@@ -25048,7 +25045,7 @@ index e913815..a106644 100644
 2.7.4
 
 
-From b260634f6a6441bb484e4ec86eb8faf641272c57 Mon Sep 17 00:00:00 2001
+From 81bae7b31e1b8cc8dc88e4360145100f118af53e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:26:15 +0200
 Subject: [PATCH 403/415] Step 23.27: Implement Component decorator in
@@ -25109,7 +25106,7 @@ index 84e1bb2..85ebf40 100644
 2.7.4
 
 
-From 0af9e26686a8921aab137c4cc9ebcec642e836fc Mon Sep 17 00:00:00 2001
+From e751906332197f8ca2a55339bc2ff6a44155f938 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:26:55 +0200
 Subject: [PATCH 404/415] Step 23.28: upgrade PartyMap to be used inside Ng2
@@ -25136,7 +25133,7 @@ index 46c9dc7..34a644d 100644
 2.7.4
 
 
-From db875f82dfc91d10731e8116f2c34725d18ad16e Mon Sep 17 00:00:00 2001
+From a5bc7e02a854c677adfc97c6a8ff32e04dbc66db Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:28:14 +0200
 Subject: [PATCH 405/415] Step 23.29: Use MeteorComponent
@@ -25214,7 +25211,7 @@ index 85ebf40..7e23f06 100644
 2.7.4
 
 
-From ded7a2c88857760b014ca392aa1878deed6ecab1 Mon Sep 17 00:00:00 2001
+From 9ce3c2e628b9d7e004f2b82e3b1bd599541abecc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:29:10 +0200
 Subject: [PATCH 406/415] Step 23.30: Downgrade PartyDetails to ng1 directive
@@ -25247,7 +25244,7 @@ index 7e23f06..3c86c00 100644
 2.7.4
 
 
-From 5f8e83c61becbcd4d8df61c75983bc2f3aab1f93 Mon Sep 17 00:00:00 2001
+From afc432569ef8aba7cc79b9943e005886ec4bbe14 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:30:13 +0200
 Subject: [PATCH 407/415] Step 23.31: Implement ng2 component inside ui-router
@@ -25279,7 +25276,7 @@ index 3c86c00..97b1a09 100644
 2.7.4
 
 
-From 2a58aa81714e3d4442a0fcf2a14f2ffc639c1f22 Mon Sep 17 00:00:00 2001
+From c5eff8e9f76739375c0034eafba92070270eac13 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:31:08 +0200
 Subject: [PATCH 408/415] Step 23.32: Define bindings
@@ -25316,7 +25313,7 @@ index 97b1a09..8244554 100644
 2.7.4
 
 
-From 1e4dcee3c7627ae1e9ba1be65d57d868c8f69923 Mon Sep 17 00:00:00 2001
+From d8bcc3cf29cabe8de37175461b340b838c75953f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:51:38 +0200
 Subject: [PATCH 409/415] Step 23.33: Remove ng1 from PartyUninvited
@@ -25398,7 +25395,7 @@ index 0dcfb74..ac77e00 100644
 2.7.4
 
 
-From 5482727ac5d4a1e01b5245b0a64c1b441d93b069 Mon Sep 17 00:00:00 2001
+From 082deb4d253b0393d1be5188ad59516bec0ee8e3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:53:13 +0200
 Subject: [PATCH 410/415] Step 23.34: Install material2
@@ -25423,7 +25420,7 @@ index 517e44b..5a06e5b 100644
 2.7.4
 
 
-From 19b1332f2f965f5eaeb5afcef757873866567df0 Mon Sep 17 00:00:00 2001
+From 4b067591d2d7a1088869f03ccbd7be48fcc9d94f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 19:55:35 +0200
 Subject: [PATCH 411/415] Step 23.35: Import material2 directives
@@ -25458,7 +25455,7 @@ index 662240f..b30ebfc 100644
 2.7.4
 
 
-From 30ba055b770e8873beaffc6ac78ed9a6061b9507 Mon Sep 17 00:00:00 2001
+From 34eacdc7c9e8ae66c99bbef9f35f86edbd0a71a3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Thu, 19 May 2016 20:10:28 +0200
 Subject: [PATCH 412/415] Step 23.36: Implement material2
@@ -25511,7 +25508,7 @@ index a106644..6d99f70 100644
 2.7.4
 
 
-From 0d07c75cc65faceda03cd78576030dd9cace0345 Mon Sep 17 00:00:00 2001
+From 026daf2b5ab2a26042a58f934cbe79da0067398d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 10:27:29 +0200
 Subject: [PATCH 413/415] Add README
@@ -25606,7 +25603,7 @@ index 0000000..6ee9ff1
 2.7.4
 
 
-From b5a2c175e5e9c98fb3c28ab3da72ae19a22b9a3a Mon Sep 17 00:00:00 2001
+From 1ceceb0d6159ff59bc615c2db12f2fefbb070669 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@ster-project.pl>
 Date: Mon, 11 Apr 2016 10:28:34 +0200
 Subject: [PATCH 414/415] Add EDIT_THIS_TUTORIAL.md
@@ -25818,7 +25815,7 @@ index 0000000..b0f831a
 2.7.4
 
 
-From d3b6f76a7f778d952b6220045747537c4f18cf67 Mon Sep 17 00:00:00 2001
+From 4c4f49ed35f39f8c69208a83968776ebb72a5a73 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Wed, 19 Oct 2016 13:15:21 -0200
 Subject: [PATCH 415/415] Add LICENSE
