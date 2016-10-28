@@ -9,7 +9,8 @@
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="authVersion" id="authVersion-contents">
-                <li class="active"><a href="#auth0-3-0" aria-controls="auth0-3-0" role="tab" data-toggle="tab">auth 0.3.0</a></li>
+                <li class="active"><a href="#auth1-1-1" aria-controls="auth1-1-1" role="tab" data-toggle="tab">auth 1.1.1</a></li>
+                <li><a href="#auth0-3-0" aria-controls="auth0-3-0" role="tab" data-toggle="tab">auth 0.3.0</a></li>
                 <li><a href="#auth0-2-0" aria-controls="auth0-2-0" role="tab" data-toggle="tab">auth 0.2.0</a></li>
             </ul>
         </li>
@@ -151,7 +152,7 @@ It's value is `true` if a login method (such as `Meteor.loginWithPassword`, `Met
 
   {{/markdown}}
         </div>
-        <div role="tabpanel" class="tab-pane active" id="auth0-3-0">
+        <div role="tabpanel" class="tab-pane" id="auth0-3-0">
 {{#markdown}}
 
 # $auth 0.3.0
@@ -224,6 +225,177 @@ Waits for the user to finish the login process. Our waiting can be stopped manua
       <a href="" class="label type-hint type-hint-function">Function</a>
     </td>
     <td>A validation function which will be invoked with the user once the login process has been succedded. If the returned value is `true` then the returned promised will be resolved. Else, if the returned value is 'false' the returned promise will be rejected with 'FORBIDDEN'. Else, if the returned value is a string or an error they will be rejected by the promise as is.</td>
+    <td>No</td>
+  </tr>
+  </tbody>
+</table>
+
+#### Return value
+
+Returns a promise which will be fulfilled accordingly. If the login process has been failed the promise will be rejected with 'AUTH_REQUIRED'. Else, the validation function will be invoked with the logged in user, and if the user is valid the promise will be resolved with the logged in user. Also, a 'stop' method is defined on the promise in case we would like to stop our waiting.
+
+------
+
+#### Examples
+
+Running a piece of code only once logged in:
+
+```js
+angular.module('myApp').directive('myComponent', function() {
+  return {
+    link: function($scope) {
+      $scope.awaitUser().then(() => {
+        let currentUser = $scope.currentUser;
+      });
+    }
+  };
+});
+```
+
+Usage with $auth service:
+
+```js
+$stateProvider
+  .state({
+      template: '<my-component></my-component>',
+      resolve: {
+        user: ($auth) => {
+          return $auth.awaitUser();
+        }
+      }
+  });
+```
+
+Usage with validation method:
+
+```js
+$stateProvider
+  .state({
+    template: '<my-component></my-component>',
+    resolve: {
+      user: ($auth) => {
+        return $auth.awaitUser((user) => {
+          if (user.firstName === 'Uri') {
+            return true;
+          }
+          else {
+            return 'You are not Uri!';
+          }
+        }
+      }
+    }
+  });
+```
+
+Waiting for a regular user:
+
+```js
+myModule.controller('MyCtrl', ['$scope', '$reactive', function($scope, $reactive) {
+  $reactive(this).attach($scope);
+
+  this.$awaitUser().then((user) => {
+    console.log('The user has logged in successfully!', user);
+  }, (err) => {
+    console.log('There was an error in login process', err);
+  });
+}]);
+```
+
+Waiting for an admin:
+
+```js
+myModule.controller('MyCtrl', ['$scope', '$reactive', function($scope, $reactive) {
+  $reactive(this).attach($scope);
+
+  this.$awaitUser((user) => {
+    return user.role === "Admin";
+  }).then((admin) => {
+    console.log('An admin has logged in successfully!', admin);
+  }, (err) => {
+    if (err === "AUTH_REQUIRED")
+      console.log('There was an error in login process');
+    else if (err === "FORBIDDEN")
+      console.log('A user has logged in who isn\'t an admin');
+  });
+}]);
+```
+
+      {{/markdown}}
+        </div>
+
+        <div role="tabpanel" class="tab-pane active" id="auth1-1-1">
+{{#markdown}}
+
+# $auth 1.1.1
+
+{{> srcRef root="angular-meteor-auth/blob/master" src="angular-meteor-auth.js"}}
+
+An extension for the scope which comes in a seperate package called `angular-meteor-auth` and provides us with authentication related methods and properties. For syntactic sugar, you may also use the `$auth` service, e.g. `$auth.awaitUser()` which is equivalent to `$rootScope.$awaitUser()`.
+
+## Installation
+
+You will need to add the package to your project and add it's module as a dependency to your AngularJS app:
+
+```bash
+meteor add accounts-base
+meteor add angular-meteor-auth
+```
+
+```js
+angular.module('myApp', [
+  'angular-meteor',
+  'angular-meteor.auth'
+]);
+```
+
+Note that `accounts-base`package needs to be installed in order for this module to work, otherwise an error will be thrown.
+
+## Properties
+
+The following properties will be added to the `$scope` / `view model` during initialization and will be updated reactively:
+
+- currentUser - The current user logged in. Reactivated by [Accounts.user](http://docs.meteor.com/#/full/meteor_user).
+- currentUserId - The current user's id. Reactivated by [Accounts.userId](http://docs.meteor.com/#/full/meteor_userid).
+- isLoggingIn - Inticates whenever we try to log in. Reactivated by [Accounts.loggingIn](http://docs.meteor.com/#/full/meteor_loggingin).
+
+#### Example
+
+```html
+<div ng-show="vm.isLoggingIn">Logging in...</div>
+<div ng-show="vm.currentUser">I am visible only for logged in users!</div>
+<div ng-hide="vm.currentUser">I am visible only for guests!</div>
+```
+
+## Methods
+
+{{/markdown}}
+As an addition to the methods below, methods from v0.2.0 are also available (See <span id="pane-activator-0-2-0">{{#paneActivator target="#auth0-2-0"}}reference{{/paneActivator}}</span>).
+{{#markdown}}
+
+### $awaitUser
+
+Waits for the user to finish the login process. Our waiting can be stopped manually or automatically once our `$scope` has been destroyed.
+
+------
+
+#### Arguments
+
+<table class="variables-matrix input-arguments">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Details</th>
+    <th>Required</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>validationFn</td>
+    <td>
+      <a href="" class="label type-hint type-hint-function">Function</a>
+    </td>
+    <td>A validation function which will be invoked with the user once the login process has been succeeded. If the returned value is `true` then the returned promised will be resolved. Else, if the returned value is `false` the returned promise will be rejected with `FORBIDDEN`. Else, if the returned value is a string or an error they will be rejected by the promise as is. An async validation can be done if the returned value is a promise which fulfills the rules just mentioned.</td>
     <td>No</td>
   </tr>
   </tbody>
