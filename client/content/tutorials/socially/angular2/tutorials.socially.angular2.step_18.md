@@ -21,57 +21,67 @@ Now we need to add angular2-material to our project - so let's do that.
 
 Run the following command in your Terminal:
 
-    $ meteor npm install @angular2-material/core @angular2-material/button @angular2-material/card @angular2-material/checkbox @angular2-material/input @angular2-material/list @angular2-material/toolbar --save
+    $ meteor npm install @angular/material@2.0.0-alpha.9
 
-We installed:
-
-- core package
-- button
-- card
-- checkbox
-- input
-- toolbar
-- list
-
-Now let's load the modules into our `NgModule`:
+Now let's load the module into our `NgModule`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="19.4"}}
 
 Like we did in the previous chapter - let's take care of the navigation bar first.
 
-We use directives and components from Angular2-Material - such as `md-toolbar`.
+We will use directives and components from Angular2-Material - such as `md-toolbar`.
 
-Let's use it in the main component's template:
+Let's use it in the app component's template:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="19.5"}}
 
-And let's add `.fill-remaining-space` CSS class:
+And let's create a stylesheet file for the `AppComponent`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="19.6"}}
+
+And import it into our Component:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.7"}}
+
+And let's add `.fill-remaining-space` CSS class we used, and let's create a Angular 2 Material theme with the colors we like (full documentation about themes is [here](https://github.com/angular/material2/blob/master/docs/theming.md))
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.8"}}
 
 # PartiesForm component
 
 Let's replace the `label` and the `input` with simply the `md-input` and `md-checkbox` and make the `button` look material:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.7"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.9"}}
 
 We use the `mdInput` component which is a wrapper for regular HTML input with style and cool layout.
+
+Now let's add CSS styles:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.10"}}
+
+Now we need to make some changes in our Component's code - we will inject the user (using `InjectUser`), import the new stylesheet and add the ability to set the new party location using a Google map Component:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.11"}}
 
 # PartiesList component
 
 PartiesForm component is done, so we can move one level higher in the component's tree. Time for the list of parties:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.8"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.12"}}
 
 To make it all look so much better, let's add couple of rules to css:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.9"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.13"}}
 
 # PartyDetails component
 
 We also need to update the PartyDetails component:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.10"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.14"}}
+
+And let's update the styles:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.15"}}
 
 # Custom Authentication Components
 
@@ -81,11 +91,11 @@ First, let's remove the login-buttons from the navigation bar, and replace it wi
 
 We will also add `routerLink` to each button, and add logic to hide/show buttons according to the user's login state:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.16"}}
 
 Let's use `InjectUser` decorator, just like we did in one of the previous chapters.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.12"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.17"}}
 
 As you can see, we used `DisplayNamePipe` in the view so we have to import it.
 
@@ -99,7 +109,7 @@ First component, is to log in user to the app.
 
 We will need a form and the login method, so let's implement them:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.13"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.18"}}
 
 > Notice that we used `NgZone` in our constructor in order to get it from the Dependency Injection, and we used it before we update the result of the login action - we need to do this because the Meteor world does not update Angular's world, and we need to tell Angular when to update the view since the async result of the login action comes from Meteor's context.
 
@@ -115,55 +125,55 @@ In the callback of Meteor.loginWithPassword's method, we have the redirection to
 
 Let's add the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.14"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.19"}}
 
 We also need to define the `/login` route:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.15"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.20"}}
 
 And now let's create an index file for the auth files:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.16"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.21"}}
 
 And import the exposed Array into the `NgModule`:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.17"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.22"}}
 
 ### Signup component
 
 The Signup component looks pretty much the same as the Login component. We just use different method, `Accounts.createUser()`. Here's [the link](http://docs.meteor.com/api/passwords.html#Accounts-createUser) to the documentation.
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.18"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.23"}}
 
 And the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.19"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.24"}}
 
 And add it to the index file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.20"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.25"}}
 
 And the `/signup` route:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.21"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.26"}}
 
 ### Recover component
 
 This component is helfup when a user forgets his password. We'll use `Accounts.forgotPassword` method:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.22"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.27"}}
 
 Create the view:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.23"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.28"}}
 
 And add it to the index file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.24"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.29"}}
 
 And add the `/reset` route:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.25"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.30"}}
 
 That's it! we just implemented our own authentication components using Meteor's Accounts API and Angular2-Material!
 
@@ -173,17 +183,17 @@ That's it! we just implemented our own authentication components using Meteor's 
 
 In order to use flex and layout that defined in Material, we need to add a bug CSS file into our project, that defined CSS classes for `flex` and `layout`.
 
-You can find the CSS file content [here](https://github.com/Urigo/meteor-angular2.0-socially/blob/364a8e6ce26b3dba5b8dc89421a09a261fe6369e/client/imports/material-layout.scss).
+You can find the CSS file content [here](https://github.com/Urigo/meteor-angular2.0-socially/blob/246f008895980e63ab19f19c6b184f4eb632723c/client/imports/material-layout.scss).
 
 So let's copy it's content and add it to `meteor-angular2.0-socially/client/imports/material-layout.scss`.
 
 Now let's add it to the main SCSS file imports:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.27"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.32"}}
 
 And let's add another CSS class missing:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="19.28"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="19.33"}}
 
 > The import of this CSS file is temporary, and we will need to use it only because `angular2-material` is still in beta and not implemented all the features.
 
