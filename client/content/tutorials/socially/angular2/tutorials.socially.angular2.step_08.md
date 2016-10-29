@@ -3,9 +3,9 @@
 
 In this section we'll look at how to:
 
-- implement security for an app using Meteor and Angular 2 API
-- setup user accounts in meteor using a login and password
-- restrict access to views based on user permissions
+- Implement security for an app using Meteor and Angular 2 API
+- Setup user accounts in meteor using email and password
+- Restrict access to views based on user permissions
 
 # Removing Insecure
 
@@ -51,10 +51,6 @@ Because Angular 2 works with modules, we need to import this package's module in
 Let's add the `<login-buttons>` tag below of the party form in the PartiesList's template:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.3"}}
-
-Now let's create main stylesheet file (with `.scss` extension), and import the SCSS file from the package:
-
-{{> DiffBox tutorialName="meteor-angular2-socially" step="9.4"}}
 
 Run the code, you'll see a login link below the form. Click on the link and then "create  account" to sign up. Try to log in and log out.
 
@@ -126,7 +122,8 @@ If you place `@InjectUser` above the `PartiesFormComponent` it will inject a new
 __`client/imports/parties/parties-form.component.ts`__:
 
     import { InjectUser } from 'angular2-meteor-accounts-ui';
-
+    import { Meteor } from 'meteor/meteor';
+    import { OnInit } from '@angular/core';
     import template from './parties-form.component.html';
 
     @Component({
@@ -134,10 +131,10 @@ __`client/imports/parties/parties-form.component.ts`__:
       template,
     })
     @InjectUser('user')
-    export class PartiesFormComponent {
+    export class PartiesFormComponent implements OnInit {
       user: Meteor.User;
 
-      constructor() {
+      ngOnInit() {
         console.log(this.user);
       }
     }
@@ -175,6 +172,7 @@ Let's add a `canActivate` method and `CanActivate` interface, where we get the c
 and check if the corresponding party's owner is the same as the currently logged-in user.
 
   __`client/imports/parties/party-details.component.ts`__:
+  
     import { CanActivate } from '@angular/router';
     import template from './party-details.component.html';
 
@@ -183,7 +181,7 @@ and check if the corresponding party's owner is the same as the currently logged
       template
     })
     export class PartyDetails implements CanActivate {
-      ...
+      // ...
 
       canActivate() {
         const party = Parties.findOne(this.partyId);
