@@ -175,10 +175,10 @@ SOCIALLY_ANGULAR2 = [
   },
   {
     id: "20",
-    title: 'Handling Files with CollectionFS',
-    seoTitle: 'Handling Files with CollectionFS',
-    route: "tutorials.socially.angular2.handling-files-with-collectionfs",
-    path: "/tutorials/socially/angular2/handling-files-with-collectionfs",
+    title: 'Handling Files with UploadFS',
+    seoTitle: 'Handling Files with UploadFS',
+    route: "tutorials.socially.angular2.handling-files-with-uploadfs",
+    path: "/tutorials/socially/angular2/handling-files-with-uploadfs",
     contentTemplate: 'tutorials.socially.angular2.step_20.md'
   },
   {
