@@ -64,7 +64,7 @@ Now every change that happens to the `$scope.parties` variable will automaticall
 
 But we still don't have data in that collection, so let's add some by initializing our server with the same parties we had before.
 
-Let's create a file named `startup.js` in the server folder, and add this content:
+Let's create a file named `main.js` in the server folder, and add this content:
 
 {{> DiffBox tutorialName="meteor-angular1-socially" step="3.3"}}
 
