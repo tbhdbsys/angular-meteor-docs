@@ -83,6 +83,8 @@ And let's update the styles:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="19.15"}}
 
+> In this point, you can also remove the `colors.scss` - it's no longer in use!
+
 # Custom Authentication Components
 
 Our next step will replace the `login-buttons` which is a simple and non-styled login/signup component - we will add our custom authentication component with custom style.

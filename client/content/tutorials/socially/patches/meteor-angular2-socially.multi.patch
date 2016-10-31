@@ -1,7 +1,7 @@
-From 123daf1b38a9d26d56cf3f7b0b35baa34ec46fe4 Mon Sep 17 00:00:00 2001
+From 27d9cf44a61a4846cbf06e5d386f102d81a7e408 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Mon, 10 Oct 2016 21:46:52 -0200
-Subject: [PATCH 001/276] Step 1.1: Remove both, client and server
+Subject: [PATCH 001/277] Step 1.1: Remove both, client and server
 
 ---
  both/collections/demo.collection.ts               |  4 -
@@ -534,10 +534,10 @@ index de5d825..0000000
 2.7.4 (Apple Git-66)
 
 
-From c74de75e85ff76dc59c814f13553f27c182b9886 Mon Sep 17 00:00:00 2001
+From 2ff70b544f1e257435b1779369f174359cc42d5b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 16:13:29 +0200
-Subject: [PATCH 002/276] Step 1.2: Create index.html
+Subject: [PATCH 002/277] Step 1.2: Create index.html
 
 ---
  client/index.html | 6 ++++++
@@ -561,10 +561,10 @@ index 0000000..292767b
 2.7.4 (Apple Git-66)
 
 
-From 63f930f092b321dfdc8b87d9b6174f7fbf38fedd Mon Sep 17 00:00:00 2001
+From af4e8ba4c79dde3dc3f7b50426aadb9aa0c36f09 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 16:14:27 +0200
-Subject: [PATCH 003/276] Step 1.3: Create App component
+Subject: [PATCH 003/277] Step 1.3: Create App component
 
 ---
  client/imports/app/app.component.ts | 6 ++++++
@@ -587,10 +587,10 @@ index 0000000..9c5caf4
 2.7.4 (Apple Git-66)
 
 
-From 79d381b945629773aa81a928f54c2d436fca45ff Mon Sep 17 00:00:00 2001
+From aa6b3e4c837f3e2f0194b22997a085eaa32e5212 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 16:14:59 +0200
-Subject: [PATCH 004/276] Step 1.4: Create template for the App component
+Subject: [PATCH 004/277] Step 1.4: Create template for the App component
 
 ---
  client/imports/app/app.component.html | 1 +
@@ -609,10 +609,10 @@ index 0000000..c57eff5
 2.7.4 (Apple Git-66)
 
 
-From 136bdb35f0b1e919a8a4cca44a23dd628211381f Mon Sep 17 00:00:00 2001
+From a21ae5a43b4901d2be0aa1d8601f4e7df6fe3b90 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 16:15:41 +0200
-Subject: [PATCH 005/276] Step 1.5: Implement template
+Subject: [PATCH 005/277] Step 1.5: Implement template
 
 ---
  client/imports/app/app.component.ts | 5 ++++-
@@ -637,10 +637,10 @@ index 9c5caf4..91e1a06 100644
 2.7.4 (Apple Git-66)
 
 
-From 22eedca3388965920fc95c588d89e4b2acd975d8 Mon Sep 17 00:00:00 2001
+From 87bbdca9200a54b42d2342d7807b45f29d957cbf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 16:16:18 +0200
-Subject: [PATCH 006/276] Step 1.6: Add App component to index.html
+Subject: [PATCH 006/277] Step 1.6: Add App component to index.html
 
 ---
  client/index.html | 2 +-
@@ -662,10 +662,10 @@ index 292767b..4e8596c 100644
 2.7.4 (Apple Git-66)
 
 
-From a8df02bb21c31f374494f08bcc5d849e7a80c661 Mon Sep 17 00:00:00 2001
+From 04c0ac5e3011a5d57e53af9e8406cfafb76b530d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 16:19:05 +0200
-Subject: [PATCH 007/276] Step 1.7: Create AppModule
+Subject: [PATCH 007/277] Step 1.7: Create AppModule
 
 ---
  client/imports/app/app.module.ts | 9 +++++++++
@@ -692,10 +692,10 @@ index 0000000..6eda2d2
 2.7.4 (Apple Git-66)
 
 
-From 1c3ca6f9cfad738fb36b82e86f7b279ebce31c14 Mon Sep 17 00:00:00 2001
+From 333dd8a30ea6eb4102c8afa32b3d6fb38722f00b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 16:20:10 +0200
-Subject: [PATCH 008/276] Step 1.8: Add App component to App module
+Subject: [PATCH 008/277] Step 1.8: Add App component to App module
 
 ---
  client/imports/app/app.module.ts | 8 ++++++++
@@ -728,10 +728,10 @@ index 6eda2d2..50a22d6 100644
 2.7.4 (Apple Git-66)
 
 
-From 7d740ebb28d32df68895963a3639a6df3510cc0b Mon Sep 17 00:00:00 2001
+From 5f20b1f2b327d80a8b70f596e21a760deb1dd633 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 16:22:46 +0200
-Subject: [PATCH 009/276] Step 1.9: Create main entry point
+Subject: [PATCH 009/277] Step 1.9: Create main entry point
 
 ---
  client/main.ts | 8 ++++++++
@@ -757,10 +757,10 @@ index 0000000..c5323fd
 2.7.4 (Apple Git-66)
 
 
-From 3f04692ca5d92e6f1298801a6b24b2889c3f24eb Mon Sep 17 00:00:00 2001
+From f8a032fce247380122789f23c2a16df12c2db3f3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:02:38 +0200
-Subject: [PATCH 010/276] Step 2.1: Add static HTML to the main component view
+Subject: [PATCH 010/277] Step 2.1: Add static HTML to the main component view
 
 ---
  client/imports/app/app.component.html | 15 ++++++++++++++-
@@ -792,10 +792,10 @@ index c57eff5..9ea318e 100644
 2.7.4 (Apple Git-66)
 
 
-From 8c25d44d2e8eec46243b7ccc330724120b5bace2 Mon Sep 17 00:00:00 2001
+From b45107efba5a1dc505fda334e9482eb794dcabee Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:04:31 +0200
-Subject: [PATCH 011/276] Step 3.1: Add dynamic html to the App component
+Subject: [PATCH 011/277] Step 3.1: Add dynamic html to the App component
 
 ---
  client/imports/app/app.component.html | 23 +++++++++--------------
@@ -835,10 +835,10 @@ index 9ea318e..b750655 100644
 2.7.4 (Apple Git-66)
 
 
-From 0de5ec4a0122e4f5255c603458eab8aaaeaef32d Mon Sep 17 00:00:00 2001
+From 8b3237f8ba432d05384eb7c51411349b915dcf33 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:05:17 +0200
-Subject: [PATCH 012/276] Step 3.2: Load parties data into app
+Subject: [PATCH 012/277] Step 3.2: Load parties data into app
 
 ---
  client/imports/app/app.component.ts | 21 ++++++++++++++++++++-
@@ -877,10 +877,10 @@ index 91e1a06..834d1ea 100644
 2.7.4 (Apple Git-66)
 
 
-From 2e4119fc853efd8005a38b0dc7eaf2aa5aefde48 Mon Sep 17 00:00:00 2001
+From 80279a42215e0ad09cb724f72c72d3ec342192f1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:35:10 +0200
-Subject: [PATCH 013/276] Step 4.1: Add Parties collection
+Subject: [PATCH 013/277] Step 4.1: Add Parties collection
 
 ---
  both/collections/parties.collection.ts | 3 +++
@@ -900,10 +900,10 @@ index 0000000..65011f1
 2.7.4 (Apple Git-66)
 
 
-From 28867650f498390587ffe84d2e99f882480a3e97 Mon Sep 17 00:00:00 2001
+From 891b6378751a86fa9517461482ef99cf342670f6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:36:03 +0200
-Subject: [PATCH 014/276] Step 4.2: Import Parties collection
+Subject: [PATCH 014/277] Step 4.2: Import Parties collection
 
 ---
  client/imports/app/app.component.ts | 2 ++
@@ -925,10 +925,10 @@ index 834d1ea..ecfc241 100644
 2.7.4 (Apple Git-66)
 
 
-From 62dc5aed875ee60054069ba37d0e246d295d15ae Mon Sep 17 00:00:00 2001
+From b21706e1435e266b6052215eb3c145b1cd15bf65 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:38:50 +0200
-Subject: [PATCH 015/276] Step 4.3: Bind MongoObservable to Angular
+Subject: [PATCH 015/277] Step 4.3: Bind MongoObservable to Angular
 
 ---
  client/imports/app/app.component.ts | 18 +++---------------
@@ -973,10 +973,10 @@ index ecfc241..1d5e50c 100644
 2.7.4 (Apple Git-66)
 
 
-From b5fbcafc793946203ef49d48592cac19d82ef317 Mon Sep 17 00:00:00 2001
+From 27558309b971269e766ad604bbe84cc22df81d07 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:42:21 +0200
-Subject: [PATCH 016/276] Step 4.4: Use AsyncPipe
+Subject: [PATCH 016/277] Step 4.4: Use AsyncPipe
 
 ---
  client/imports/app/app.component.html | 2 +-
@@ -998,10 +998,10 @@ index b750655..cc8d5c5 100644
 2.7.4 (Apple Git-66)
 
 
-From c08fedbb37be597d565666f21386dbaf51fcba3b Mon Sep 17 00:00:00 2001
+From 64939e929b1ac6bd75906815bcc76c389bcfdcbc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:40:42 +0200
-Subject: [PATCH 017/276] Step 4.5: Add initial Parties
+Subject: [PATCH 017/277] Step 4.5: Add initial Parties
 
 ---
  server/imports/fixtures/parties.ts | 21 +++++++++++++++++++++
@@ -1040,10 +1040,10 @@ index 0000000..63b055b
 2.7.4 (Apple Git-66)
 
 
-From 0d3a982b9ee1c2e594e6f3b475ecd5889c136c00 Mon Sep 17 00:00:00 2001
+From af66dfe8d8f606fb7f65faf1432a6bd7cf1866b9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:41:39 +0200
-Subject: [PATCH 018/276] Step 4.6: Load initial Parties
+Subject: [PATCH 018/277] Step 4.6: Load initial Parties
 
 ---
  server/main.ts | 7 +++++++
@@ -1067,10 +1067,10 @@ index 0000000..cf58a8d
 2.7.4 (Apple Git-66)
 
 
-From c32cea99e9d301e4aa59ac120dd870b2c3e9e55a Mon Sep 17 00:00:00 2001
+From dbd93a5a1a236c0409256eb7f6ce67036a6bb931 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:51:56 +0200
-Subject: [PATCH 019/276] Step 4.7: Define Party interface
+Subject: [PATCH 019/277] Step 4.7: Define Party interface
 
 ---
  both/models/party.model.ts | 5 +++++
@@ -1092,10 +1092,10 @@ index 0000000..388567d
 2.7.4 (Apple Git-66)
 
 
-From 6177e050953f0b729438a546b0f32e1712923d9e Mon Sep 17 00:00:00 2001
+From 3c21349de7a2b1daad2680a5b06fecccc4db3862 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:53:05 +0200
-Subject: [PATCH 020/276] Step 4.8: Add Party type to Parties collection
+Subject: [PATCH 020/277] Step 4.8: Add Party type to Parties collection
 
 ---
  both/collections/parties.collection.ts | 4 +++-
@@ -1116,10 +1116,10 @@ index 65011f1..8146c60 100644
 2.7.4 (Apple Git-66)
 
 
-From d43a1c903f8a9b7f47752164f7e2c7ba4382ade3 Mon Sep 17 00:00:00 2001
+From 02c38db2c8c1b839591bfbc7cb16120353cf1eae Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 17:53:54 +0200
-Subject: [PATCH 021/276] Step 4.9: Add Party type to data fixtures
+Subject: [PATCH 021/277] Step 4.9: Add Party type to data fixtures
 
 ---
  client/imports/app/app.component.ts | 3 ++-
@@ -1175,10 +1175,10 @@ index 63b055b..4f6d555 100644
 2.7.4 (Apple Git-66)
 
 
-From 951c319c37d0ef0e2e47ed6f1bba206ea8755cc3 Mon Sep 17 00:00:00 2001
+From c9d1ab09a0fe61a8c8410796de90bf10b3d75fe1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:08:58 +0200
-Subject: [PATCH 022/276] Step 5.1: Create PartiesForm component
+Subject: [PATCH 022/277] Step 5.1: Create PartiesForm component
 
 ---
  client/imports/app/parties/parties-form.component.ts | 9 +++++++++
@@ -1204,10 +1204,10 @@ index 0000000..36df898
 2.7.4 (Apple Git-66)
 
 
-From e27a1e9ca2aa79d3c140887339e016ff0579055c Mon Sep 17 00:00:00 2001
+From ddd836ec48a295098130c257041d83e9f00e76b6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:10:01 +0200
-Subject: [PATCH 023/276] Step 5.2: Create template of PartiesForm
+Subject: [PATCH 023/277] Step 5.2: Create template of PartiesForm
 
 ---
  client/imports/app/parties/parties-form.component.html | 12 ++++++++++++
@@ -1237,10 +1237,10 @@ index 0000000..4f908e7
 2.7.4 (Apple Git-66)
 
 
-From 562b3f49c2d496fffba7ea069c3645343d2d716b Mon Sep 17 00:00:00 2001
+From 856bee81c4d3b61111dbf535b9329f0287cb8d7d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:10:46 +0200
-Subject: [PATCH 024/276] Step 5.3: Add PartiesForm to App
+Subject: [PATCH 024/277] Step 5.3: Add PartiesForm to App
 
 ---
  client/imports/app/app.component.html | 2 ++
@@ -1261,10 +1261,10 @@ index cc8d5c5..9e780a4 100644
 2.7.4 (Apple Git-66)
 
 
-From 70ef4209993ffea9aa0f8b4b5542217414a7c9a4 Mon Sep 17 00:00:00 2001
+From 23ea2dca560bb5b1c45d520b29410ec1147e6b1f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:13:04 +0200
-Subject: [PATCH 025/276] Step 5.4: Create index for parties with declarations
+Subject: [PATCH 025/277] Step 5.4: Create index for parties with declarations
 
 ---
  client/imports/app/parties/index.ts | 5 +++++
@@ -1286,10 +1286,10 @@ index 0000000..c5e7e18
 2.7.4 (Apple Git-66)
 
 
-From 73fe5ddb3295fe87c91746a6999f4b4e32c21c8b Mon Sep 17 00:00:00 2001
+From cbdc1d45dd6fad5718a15879aec9572437e99f95 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:13:23 +0200
-Subject: [PATCH 026/276] Step 5.5: Add parties declarations to AppModule
+Subject: [PATCH 026/277] Step 5.5: Add parties declarations to AppModule
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -1320,10 +1320,10 @@ index 50a22d6..e3a487a 100644
 2.7.4 (Apple Git-66)
 
 
-From b954a8a9a8e3c840d455b7bfc2ec91921f9033db Mon Sep 17 00:00:00 2001
+From 52cd47e2a5fa34f63f97e2a1b5026c8e4616e3b4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:14:46 +0200
-Subject: [PATCH 027/276] Step 5.6: Import Forms modules
+Subject: [PATCH 027/277] Step 5.6: Import Forms modules
 
 ---
  client/imports/app/app.module.ts | 5 ++++-
@@ -1354,10 +1354,10 @@ index e3a487a..8e8c303 100644
 2.7.4 (Apple Git-66)
 
 
-From 4b92a73bb69056197f35d810d8a5a1d689cf1f6d Mon Sep 17 00:00:00 2001
+From 1094ecb1b9d08b046108859287363c3dc9dda0ce Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:17:31 +0200
-Subject: [PATCH 028/276] Step 5.7: Create form model
+Subject: [PATCH 028/277] Step 5.7: Create form model
 
 ---
  client/imports/app/parties/parties-form.component.ts | 19 +++++++++++++++++--
@@ -1398,10 +1398,10 @@ index 36df898..d98ae60 100644
 2.7.4 (Apple Git-66)
 
 
-From 04252c081190237ff67e7d62871ebc2b72e1318f Mon Sep 17 00:00:00 2001
+From 8d55738b6f900f34f392ea35ddba3d6ebe8d8063 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:18:39 +0200
-Subject: [PATCH 029/276] Step 5.8: Implement form directives
+Subject: [PATCH 029/277] Step 5.8: Implement form directives
 
 ---
  client/imports/app/parties/parties-form.component.html | 10 +++++-----
@@ -1434,10 +1434,10 @@ index 4f908e7..d707240 100644
 2.7.4 (Apple Git-66)
 
 
-From 90b0b34e8397eba47e861d8444476d97e98aeb2a Mon Sep 17 00:00:00 2001
+From e958ee93f8430ef2a949550554a256f3d5ec3651 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:19:25 +0200
-Subject: [PATCH 030/276] Step 5.9: Add validators
+Subject: [PATCH 030/277] Step 5.9: Add validators
 
 ---
  client/imports/app/parties/parties-form.component.ts | 6 +++---
@@ -1470,10 +1470,10 @@ index d98ae60..bb47f4b 100644
 2.7.4 (Apple Git-66)
 
 
-From 4fb427adb15d855de21c9f9c2dbc45a632b9f688 Mon Sep 17 00:00:00 2001
+From 1f6e2927a2d7ecbad023070998a6ed36da15445a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:20:00 +0200
-Subject: [PATCH 031/276] Step 5.10: Add ngSubmit to the form
+Subject: [PATCH 031/277] Step 5.10: Add ngSubmit to the form
 
 ---
  client/imports/app/parties/parties-form.component.html | 2 +-
@@ -1493,10 +1493,10 @@ index d707240..98f90ca 100644
 2.7.4 (Apple Git-66)
 
 
-From 8491de815714c2a5551d9f5a10660ccb9f5dca63 Mon Sep 17 00:00:00 2001
+From d7c6b0e0554bbefae71204d486a6bc41db38f34a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:23:47 +0200
-Subject: [PATCH 032/276] Step 5.11: Add addParty method
+Subject: [PATCH 032/277] Step 5.11: Add addParty method
 
 ---
  client/imports/app/parties/parties-form.component.ts | 10 ++++++++++
@@ -1532,10 +1532,10 @@ index bb47f4b..511812d 100644
 2.7.4 (Apple Git-66)
 
 
-From 9655f38a96cb99e3490301d77a17a53119555937 Mon Sep 17 00:00:00 2001
+From 161b29b55dfcaf6495792a579142109b6e4a6ce9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:24:18 +0200
-Subject: [PATCH 033/276] Step 5.12: Add remove button
+Subject: [PATCH 033/277] Step 5.12: Add remove button
 
 ---
  client/imports/app/app.component.html | 1 +
@@ -1558,10 +1558,10 @@ index 9e780a4..0820d66 100644
 2.7.4 (Apple Git-66)
 
 
-From 6bd0906517851a512cfb9e8f2cc8d19156cb1134 Mon Sep 17 00:00:00 2001
+From f7d7ba2f618de8c524bb93be786c9c16109955cf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:25:25 +0200
-Subject: [PATCH 034/276] Step 5.13: Implement removeParty method
+Subject: [PATCH 034/277] Step 5.13: Implement removeParty method
 
 ---
  client/imports/app/app.component.ts | 4 ++++
@@ -1584,10 +1584,10 @@ index 99a4495..02d31fc 100644
 2.7.4 (Apple Git-66)
 
 
-From 72a40e9d9ba32851469064c4587a3fae3e194804 Mon Sep 17 00:00:00 2001
+From bad0f95447c871ec57251fe874a26ae4940b0487 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:26:25 +0200
-Subject: [PATCH 035/276] Step 5.14: Create CollectionObject model
+Subject: [PATCH 035/277] Step 5.14: Create CollectionObject model
 
 ---
  both/models/collection-object.model.ts | 3 +++
@@ -1608,10 +1608,10 @@ index 0000000..f83638e
 2.7.4 (Apple Git-66)
 
 
-From c5ff132b1b2c7c3ddebc38dbd7b9e32004c70c20 Mon Sep 17 00:00:00 2001
+From 375d42b5854bcc245cd4c076e24c46679523a8bb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:27:11 +0200
-Subject: [PATCH 036/276] Step 5.15: Extend Party by CollectionObject model
+Subject: [PATCH 036/277] Step 5.15: Extend Party by CollectionObject model
 
 ---
  both/models/party.model.ts | 4 +++-
@@ -1633,10 +1633,10 @@ index 388567d..fd5a709 100644
 2.7.4 (Apple Git-66)
 
 
-From bbc922432aa23cf9ac69fc23542eecaac17d2012 Mon Sep 17 00:00:00 2001
+From 773f919288736b3d8e303db7ecb7e7dd67d5ffe9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:31:20 +0200
-Subject: [PATCH 037/276] Step 6.1: Create PartiesList component
+Subject: [PATCH 037/277] Step 6.1: Create PartiesList component
 
 ---
  .../imports/app/parties/parties-list.component.ts  | 23 ++++++++++++++++++++++
@@ -1676,10 +1676,10 @@ index 0000000..bb09b1c
 2.7.4 (Apple Git-66)
 
 
-From 33c9fb35174fa23dcd0d87e13c49c27b75a830cf Mon Sep 17 00:00:00 2001
+From 9b069ca05c016c4fd64205e69b671ebf0fdfaac9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 25 Oct 2016 14:36:04 +0300
-Subject: [PATCH 038/276] Step 6.2: Copy contents of app.html to PartiesList
+Subject: [PATCH 038/277] Step 6.2: Copy contents of app.html to PartiesList
  template
 
 ---
@@ -1710,10 +1710,10 @@ index 0000000..49136a9
 2.7.4 (Apple Git-66)
 
 
-From e4cc343c9385ac5a7a58cdb71436a66ac1588d79 Mon Sep 17 00:00:00 2001
+From 65dbddc3439e0f164cfaebf0553306e93ece1aac Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 25 Oct 2016 14:36:19 +0300
-Subject: [PATCH 039/276] Step 6.3: Clean up App component
+Subject: [PATCH 039/277] Step 6.3: Clean up App component
 
 ---
  client/imports/app/app.component.ts | 16 +---------------
@@ -1752,10 +1752,10 @@ index 02d31fc..91e1a06 100644
 2.7.4 (Apple Git-66)
 
 
-From aab6063a266cafbfbb998cfed74c824f86a4b40b Mon Sep 17 00:00:00 2001
+From e6de13b557b5b98ef8e982b8ad9a7a473a3f78fb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:33:33 +0200
-Subject: [PATCH 040/276] Step 6.4: Clean up App template
+Subject: [PATCH 040/277] Step 6.4: Clean up App template
 
 ---
  client/imports/app/app.component.html | 13 +------------
@@ -1785,10 +1785,10 @@ index 0820d66..281c686 100644
 2.7.4 (Apple Git-66)
 
 
-From 1692b5faa8d3e9f7b28a5d887ef440f00590757c Mon Sep 17 00:00:00 2001
+From ef3474e903b605693f6911edf75375a7466eab5f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:34:43 +0200
-Subject: [PATCH 041/276] Step 6.5: Add PartiesList to parties declarations
+Subject: [PATCH 041/277] Step 6.5: Add PartiesList to parties declarations
 
 ---
  client/imports/app/parties/index.ts | 4 +++-
@@ -1811,10 +1811,10 @@ index c5e7e18..06ca4d7 100644
 2.7.4 (Apple Git-66)
 
 
-From 53eb3f9cd579850fcb43699a6259b9cdfa0ea325 Mon Sep 17 00:00:00 2001
+From 04ae4a0d68aa74f0834d79b9ea400b24e44e6524 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:36:34 +0200
-Subject: [PATCH 042/276] Step 6.6: Define routes
+Subject: [PATCH 042/277] Step 6.6: Define routes
 
 ---
  client/imports/app/app.routes.ts | 7 +++++++
@@ -1838,10 +1838,10 @@ index 0000000..8f6b8bb
 2.7.4 (Apple Git-66)
 
 
-From 5f911a2a8815ed4af43c4134b26c710b381b7317 Mon Sep 17 00:00:00 2001
+From 93debc262fb7a60818f11ee941b702cc6b7a5196 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:37:43 +0200
-Subject: [PATCH 043/276] Step 6.7: Register RouterModule
+Subject: [PATCH 043/277] Step 6.7: Register RouterModule
 
 ---
  client/imports/app/app.module.ts | 5 ++++-
@@ -1875,10 +1875,10 @@ index 8e8c303..192c630 100644
 2.7.4 (Apple Git-66)
 
 
-From 592deb81a80e361c7dfa220db2ca955ea085a4c2 Mon Sep 17 00:00:00 2001
+From 3597668b1cebb9df37196f8084d559c64ffdc182 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:39:51 +0200
-Subject: [PATCH 044/276] Step 6.8: Implement routerOutlet
+Subject: [PATCH 044/277] Step 6.8: Implement routerOutlet
 
 ---
  client/imports/app/app.component.html | 4 +++-
@@ -1899,10 +1899,10 @@ index 281c686..b426778 100644
 2.7.4 (Apple Git-66)
 
 
-From 2747e39fdd44d7046c12c28372c9d90092c0683a Mon Sep 17 00:00:00 2001
+From 9eaeb2aa5b04ed9448010a630e92dffc76e5f72b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:46:44 +0200
-Subject: [PATCH 045/276] Step 6.9: Add PartyDetails component
+Subject: [PATCH 045/277] Step 6.9: Add PartyDetails component
 
 ---
  client/imports/app/parties/party-details.component.ts | 9 +++++++++
@@ -1928,10 +1928,10 @@ index 0000000..67c86ab
 2.7.4 (Apple Git-66)
 
 
-From 1db9a267d5065c39545d9f4c6991836f3409d91c Mon Sep 17 00:00:00 2001
+From 10cce65ecd0317d709e02926e32ce698461e5edc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:47:24 +0200
-Subject: [PATCH 046/276] Step 6.10: Create template for PartyDetails
+Subject: [PATCH 046/277] Step 6.10: Create template for PartyDetails
 
 ---
  client/imports/app/parties/party-details.component.html | 5 +++++
@@ -1954,10 +1954,10 @@ index 0000000..a3da9f4
 2.7.4 (Apple Git-66)
 
 
-From 2190d5f703cbe2b0d9be275bd5dd54f5f5e07338 Mon Sep 17 00:00:00 2001
+From c633867e631da96a65e5344c7289786f9cf1b16f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:48:22 +0200
-Subject: [PATCH 047/276] Step 6.11: Add component to declarations
+Subject: [PATCH 047/277] Step 6.11: Add component to declarations
 
 ---
  client/imports/app/app.routes.ts    | 4 +++-
@@ -1998,10 +1998,10 @@ index 06ca4d7..ae09066 100644
 2.7.4 (Apple Git-66)
 
 
-From 8a5ead67588e9eda2a3378487b366a3e8b352ae5 Mon Sep 17 00:00:00 2001
+From b3533e5b6e32300bd49264fa25004001f506847b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:49:46 +0200
-Subject: [PATCH 048/276] Step 6.12: Use routerLink in PartiesList component
+Subject: [PATCH 048/277] Step 6.12: Use routerLink in PartiesList component
 
 ---
  client/imports/app/parties/parties-list.component.html | 2 +-
@@ -2024,10 +2024,10 @@ index 49136a9..488ba09 100644
 2.7.4 (Apple Git-66)
 
 
-From 51738989676ea15c5117f6ff0b11adf937ea6b47 Mon Sep 17 00:00:00 2001
+From 48767eacfc687ea8717ce25a7062b3c16e43025c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:52:55 +0200
-Subject: [PATCH 049/276] Step 6.13: Subscribe to get the partyId
+Subject: [PATCH 049/277] Step 6.13: Subscribe to get the partyId
 
 ---
  client/imports/app/parties/party-details.component.ts | 19 +++++++++++++++++--
@@ -2068,10 +2068,10 @@ index 67c86ab..55c5b8b 100644
 2.7.4 (Apple Git-66)
 
 
-From 46267577c4f1d112c173784727ad6faf13793618 Mon Sep 17 00:00:00 2001
+From 08f694c5480d21a03688999a2c63b277de9d2297 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:54:26 +0200
-Subject: [PATCH 050/276] Step 6.14: Unsubscribe when component is being
+Subject: [PATCH 050/277] Step 6.14: Unsubscribe when component is being
  destroyed
 
 ---
@@ -2118,10 +2118,10 @@ index 55c5b8b..1f2562b 100644
 2.7.4 (Apple Git-66)
 
 
-From e4407c6805b453c2d31710ade08e91034bdc2527 Mon Sep 17 00:00:00 2001
+From 488d0faebcf85f2ad9cbd99e04ebf092b98ae6aa Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:57:48 +0200
-Subject: [PATCH 051/276] Step 6.15: Load party details
+Subject: [PATCH 051/277] Step 6.15: Load party details
 
 ---
  client/imports/app/parties/party-details.component.ts | 12 ++++++++++--
@@ -2170,10 +2170,10 @@ index 1f2562b..6c53448 100644
 2.7.4 (Apple Git-66)
 
 
-From 1a37045f09e9061a68dd9251a9c20b8f1ef8ee3d Mon Sep 17 00:00:00 2001
+From 406f7f63667b945b7e313ac3283f56543b639dbe Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:57:57 +0200
-Subject: [PATCH 052/276] Step 7.1: Display party details
+Subject: [PATCH 052/277] Step 7.1: Display party details
 
 ---
  client/imports/app/parties/party-details.component.html | 8 +++++---
@@ -2199,10 +2199,10 @@ index a3da9f4..d6fd3fb 100644
 2.7.4 (Apple Git-66)
 
 
-From 17401d74880cdea5ced7c84e7abae17b137bbc35 Mon Sep 17 00:00:00 2001
+From 71431500d09435fc336c00fd3f8aff359c11a292 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 18:58:51 +0200
-Subject: [PATCH 053/276] Step 7.2: Create form inside PartyDetails template
+Subject: [PATCH 053/277] Step 7.2: Create form inside PartyDetails template
 
 ---
  client/imports/app/parties/party-details.component.html | 16 +++++++++++-----
@@ -2237,10 +2237,10 @@ index d6fd3fb..aef5bae 100644
 2.7.4 (Apple Git-66)
 
 
-From b465a9a72fb54750b31b169569b255556ac37947 Mon Sep 17 00:00:00 2001
+From 0936dbf3a1f19ca2778ea8d8772d48cfbd726434 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 19:01:57 +0200
-Subject: [PATCH 054/276] Step 7.3: Add submit event handler
+Subject: [PATCH 054/277] Step 7.3: Add submit event handler
 
 ---
  client/imports/app/parties/party-details.component.ts | 10 ++++++++++
@@ -2271,10 +2271,10 @@ index 6c53448..3abaa71 100644
 2.7.4 (Apple Git-66)
 
 
-From c030cc061be8b377a131969593991c44f949bb03 Mon Sep 17 00:00:00 2001
+From fdfb6f010583887d86f055952590f609fc95bf8a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 20:40:52 +0200
-Subject: [PATCH 055/276] Step 9.1: Add accounts
+Subject: [PATCH 055/277] Step 9.1: Add accounts
 
 ---
  .meteor/packages |  2 +-
@@ -2409,10 +2409,10 @@ index 8a50023..20de53a 100644
 2.7.4 (Apple Git-66)
 
 
-From 59dc1c17245fbf24bbeeb6e67f51105c8585f09e Mon Sep 17 00:00:00 2001
+From 1ded14b0b991caa6cf6488737f8915925c71cdb3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 20:41:37 +0200
-Subject: [PATCH 056/276] Step 9.2: Import AccountsModule
+Subject: [PATCH 056/277] Step 9.2: Import AccountsModule
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -2444,10 +2444,10 @@ index 192c630..1e7e1ac 100644
 2.7.4 (Apple Git-66)
 
 
-From 12d2027c041a0487cac1836b12a97e33bdd760d2 Mon Sep 17 00:00:00 2001
+From ddd4a79978ea3f4c06c6169929f302d4eb5800aa Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 20:42:08 +0200
-Subject: [PATCH 057/276] Step 9.3: Use LoginButtons component
+Subject: [PATCH 057/277] Step 9.3: Use LoginButtons component
 
 ---
  client/imports/app/parties/parties-list.component.html | 1 +
@@ -2468,10 +2468,10 @@ index 488ba09..20400c4 100644
 2.7.4 (Apple Git-66)
 
 
-From 5288802823d27e5b20274ef0349f077cbda896a3 Mon Sep 17 00:00:00 2001
+From 48a93a04e8082c128c52200ca56be01e3e97a668 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 21:20:37 +0200
-Subject: [PATCH 058/276] Step 9.5: Add Parties collection security
+Subject: [PATCH 058/277] Step 9.5: Add Parties collection security
 
 ---
  both/collections/parties.collection.ts | 11 +++++++++++
@@ -2502,10 +2502,10 @@ index 8146c60..731b244 100644
 2.7.4 (Apple Git-66)
 
 
-From 419c320f5bb6924049c9f689707851d271c955d2 Mon Sep 17 00:00:00 2001
+From 567f420052dee306fd1c5866601115556560d1a7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 21:27:52 +0200
-Subject: [PATCH 059/276] Step 9.6: Check access in PartiesForm
+Subject: [PATCH 059/277] Step 9.6: Check access in PartiesForm
 
 ---
  client/imports/app/parties/parties-form.component.ts | 6 ++++++
@@ -2538,10 +2538,10 @@ index 511812d..565cf77 100644
 2.7.4 (Apple Git-66)
 
 
-From b281068dc6191e6824713b5b5cc15375b824fd4b Mon Sep 17 00:00:00 2001
+From d7979f408f5c91f35da0d3f49af907542cf65988 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 21:30:05 +0200
-Subject: [PATCH 060/276] Step 9.7: Add owner
+Subject: [PATCH 060/277] Step 9.7: Add owner
 
 ---
  client/imports/app/parties/parties-form.component.ts | 2 +-
@@ -2564,10 +2564,10 @@ index 565cf77..978f6e4 100644
 2.7.4 (Apple Git-66)
 
 
-From fe9cd8d4f13904229cb0fb76c08675269e71af8e Mon Sep 17 00:00:00 2001
+From 5e2465a0dec8995e0fa38a96682fff422ddd035a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 21:30:44 +0200
-Subject: [PATCH 061/276] Step 9.8: Define owner in Party type
+Subject: [PATCH 061/277] Step 9.8: Define owner in Party type
 
 ---
  both/models/party.model.ts | 1 +
@@ -2587,10 +2587,10 @@ index fd5a709..5b20610 100644
 2.7.4 (Apple Git-66)
 
 
-From d5fd06376989af8f9dcd6b64eefb144129e9d93e Mon Sep 17 00:00:00 2001
+From 12aff4fab49591538babc816f79e4f2a452a38af Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 21:32:09 +0200
-Subject: [PATCH 062/276] Step 9.9: Check access to update a party
+Subject: [PATCH 062/277] Step 9.9: Check access to update a party
 
 ---
  client/imports/app/parties/party-details.component.ts | 8 +++++++-
@@ -2625,10 +2625,10 @@ index 3abaa71..0032c65 100644
 2.7.4 (Apple Git-66)
 
 
-From 45447051e0f581db058d48dafc57b0372c2d9fb0 Mon Sep 17 00:00:00 2001
+From f11012031e378adb5a1d5751ab2bb73c3f62e644 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 21:37:13 +0200
-Subject: [PATCH 063/276] Step 9.10: Require user to access PartyDetails
+Subject: [PATCH 063/277] Step 9.10: Require user to access PartyDetails
 
 ---
  client/imports/app/app.routes.ts | 8 +++++++-
@@ -2659,10 +2659,10 @@ index fef7277..c5812a4 100644
 2.7.4 (Apple Git-66)
 
 
-From cab145df9488dab982421a4eda7352fed719354f Mon Sep 17 00:00:00 2001
+From 1ba1757af308933bba50fcca4e5f4eace1547f15 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Wed, 21 Sep 2016 21:37:31 +0200
-Subject: [PATCH 064/276] Step 9.11: Add ROUTES_PROVIDERS
+Subject: [PATCH 064/277] Step 9.11: Add ROUTES_PROVIDERS
 
 ---
  client/imports/app/app.module.ts | 5 ++++-
@@ -2695,10 +2695,10 @@ index 1e7e1ac..139b880 100644
 2.7.4 (Apple Git-66)
 
 
-From b4431224e2e4b2ba867168219c3dc82128cff72f Mon Sep 17 00:00:00 2001
+From 841244e94aab6c45fc0a6603883f386c0490cacf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 12:54:25 +0200
-Subject: [PATCH 065/276] Step 10.1: Remove autopublish package
+Subject: [PATCH 065/277] Step 10.1: Remove autopublish package
 
 ---
  .meteor/packages | 1 -
@@ -2733,10 +2733,10 @@ index c9b7512..eba1c60 100644
 2.7.4 (Apple Git-66)
 
 
-From 10f9d51ee83c9f0633a6803e1a40e9de759008cf Mon Sep 17 00:00:00 2001
+From 1372576609d1e17fb7ede6a061bea40e1e654bf0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 12:56:22 +0200
-Subject: [PATCH 066/276] Step 10.2: Publish Parties collection
+Subject: [PATCH 066/277] Step 10.2: Publish Parties collection
 
 ---
  server/imports/publications/parties.ts | 4 ++++
@@ -2757,10 +2757,10 @@ index 0000000..08ef863
 2.7.4 (Apple Git-66)
 
 
-From 61e566d5bb8a322b687a4cdd69012fd45506745e Mon Sep 17 00:00:00 2001
+From 9f3960b11443f56f371f47a187aba8815495e336 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 12:57:35 +0200
-Subject: [PATCH 067/276] Step 10.3: Add publication to server-side entry point
+Subject: [PATCH 067/277] Step 10.3: Add publication to server-side entry point
 
 ---
  server/main.ts | 2 ++
@@ -2783,10 +2783,10 @@ index cf58a8d..7f8e626 100644
 2.7.4 (Apple Git-66)
 
 
-From 3a884696c85d57e04a38382cf4f38814b1d260f5 Mon Sep 17 00:00:00 2001
+From 8b636f000dc6e79136772d3615914ccf4fc6a9f5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 13:54:06 +0200
-Subject: [PATCH 068/276] Step 10.4: Subscribe to Parties publication
+Subject: [PATCH 068/277] Step 10.4: Subscribe to Parties publication
 
 ---
  client/imports/app/parties/parties-list.component.ts | 14 +++++++++++---
@@ -2832,10 +2832,10 @@ index bb09b1c..93be382 100644
 2.7.4 (Apple Git-66)
 
 
-From 4e4dc7af521229b15381b9ee7a9764782fb6ed5c Mon Sep 17 00:00:00 2001
+From c7e46656f5385632670aae4afb3046bee9cf320c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:02:19 +0200
-Subject: [PATCH 069/276] Step 10.5: Add checkbox for public property
+Subject: [PATCH 069/277] Step 10.5: Add checkbox for public property
 
 ---
  client/imports/app/parties/parties-form.component.html | 3 +++
@@ -2860,10 +2860,10 @@ index 98f90ca..3cc8990 100644
 2.7.4 (Apple Git-66)
 
 
-From ea540ee9e7ef3562590bed4fa83ccfee3bab0fa5 Mon Sep 17 00:00:00 2001
+From a9a87f17609ef48e93c1a5dc425496aa09473f12 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:05:09 +0200
-Subject: [PATCH 070/276] Step 10.6: Update Party interface
+Subject: [PATCH 070/277] Step 10.6: Update Party interface
 
 ---
  both/models/party.model.ts | 3 ++-
@@ -2885,10 +2885,10 @@ index 5b20610..2526c11 100644
 2.7.4 (Apple Git-66)
 
 
-From e61604673b244a467f69dacdbbc6994a7625eda8 Mon Sep 17 00:00:00 2001
+From 085e24098729569abb399f5e3e1832446a6c35e4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:05:26 +0200
-Subject: [PATCH 071/276] Step 10.7: Update parties initials
+Subject: [PATCH 071/277] Step 10.7: Update parties initials
 
 ---
  server/imports/fixtures/parties.ts | 9 ++++++---
@@ -2924,10 +2924,10 @@ index 4f6d555..6c7b374 100644
 2.7.4 (Apple Git-66)
 
 
-From 8d086aa1888a08b3ff4ae49e6c0a99585aab8f6d Mon Sep 17 00:00:00 2001
+From e51882d763f17ed4117db3197e479a8e9697aaa6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:06:19 +0200
-Subject: [PATCH 072/276] Step 10.8: Add public property to form builder
+Subject: [PATCH 072/277] Step 10.8: Add public property to form builder
 
 ---
  client/imports/app/parties/parties-form.component.ts | 3 ++-
@@ -2951,10 +2951,10 @@ index 978f6e4..0823749 100644
 2.7.4 (Apple Git-66)
 
 
-From 8789ea7415b2bbcc8de8d93cd9e0c8da0f2e152d Mon Sep 17 00:00:00 2001
+From bc7bdb1b1b17a125bb8b981f71cafc63147a156e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:09:53 +0200
-Subject: [PATCH 073/276] Step 10.9: Limit data sent to the client
+Subject: [PATCH 073/277] Step 10.9: Limit data sent to the client
 
 ---
  server/imports/publications/parties.ts | 22 +++++++++++++++++++++-
@@ -2994,10 +2994,10 @@ index 08ef863..b7652bb 100644
 2.7.4 (Apple Git-66)
 
 
-From 2469a2d23954638eaaab53a7d489727202a7a563 Mon Sep 17 00:00:00 2001
+From d976877ad92fa06957298a58e2201c8aac5c598c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:13:28 +0200
-Subject: [PATCH 074/276] Step 10.10: Add party publication
+Subject: [PATCH 074/277] Step 10.10: Add party publication
 
 ---
  server/imports/publications/parties.ts | 26 +++++++++++++++++++++++---
@@ -3049,10 +3049,10 @@ index b7652bb..5314c57 100644
 2.7.4 (Apple Git-66)
 
 
-From 889d5065cdc44d433034a77b75869ef4d6649606 Mon Sep 17 00:00:00 2001
+From 644fc386c3dbab823324198125c5cbdf557d9f99 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:22:47 +0200
-Subject: [PATCH 075/276] Step 10.11: Subscribe to the party publication
+Subject: [PATCH 075/277] Step 10.11: Subscribe to the party publication
 
 ---
  client/imports/app/parties/party-details.component.ts | 15 ++++++++++++---
@@ -3109,10 +3109,10 @@ index 0032c65..9c7a9e7 100644
 2.7.4 (Apple Git-66)
 
 
-From 0f0e16043448c7b72300db3ee3ce1441135c232f Mon Sep 17 00:00:00 2001
+From 367492fb28bf7d7e03dc4e80ab1e51ffdc2a2041 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:24:27 +0200
-Subject: [PATCH 076/276] Step 10.12: Add search input
+Subject: [PATCH 076/277] Step 10.12: Add search input
 
 ---
  client/imports/app/parties/parties-list.component.html | 5 ++++-
@@ -3136,10 +3136,10 @@ index 20400c4..bd2f99c 100644
 2.7.4 (Apple Git-66)
 
 
-From 99003d53aa8ac7938551c794a99966a0a9733051 Mon Sep 17 00:00:00 2001
+From 5c2e3a15e3ae61967cfee1bd65d43fd6d0b5632e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:37:54 +0200
-Subject: [PATCH 077/276] Step 10.13: Add search method
+Subject: [PATCH 077/277] Step 10.13: Add search method
 
 ---
  client/imports/app/parties/parties-list.component.ts | 4 ++++
@@ -3164,10 +3164,10 @@ index 93be382..b80de38 100644
 2.7.4 (Apple Git-66)
 
 
-From 7feb31b0726491cb0a027d62c4bad0507cfeb6fc Mon Sep 17 00:00:00 2001
+From 7278abb580f631336695aef944e027fde6575fab Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Thu, 22 Sep 2016 14:37:40 +0200
-Subject: [PATCH 078/276] Step 13.1: Add options to the parties publication
+Subject: [PATCH 078/277] Step 13.1: Add options to the parties publication
 
 ---
  server/imports/publications/parties.ts | 8 ++++++--
@@ -3196,10 +3196,10 @@ index 5314c57..1e5d5df 100644
 2.7.4 (Apple Git-66)
 
 
-From 6174678fb9716e132eecf7c96aaa07fd0c3b6fd0 Mon Sep 17 00:00:00 2001
+From 735379c4ef7795d43e1b7d7bf3cc922537c8ad19 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:24:11 +0200
-Subject: [PATCH 079/276] Step 13.2: Define options and use it in the
+Subject: [PATCH 079/277] Step 13.2: Define options and use it in the
  subscription
 
 ---
@@ -3253,10 +3253,10 @@ index b80de38..c9be502 100644
 2.7.4 (Apple Git-66)
 
 
-From 77511957abab235512f5a4370c6d9a3f53cb9149 Mon Sep 17 00:00:00 2001
+From ce3b9fd9b950b3b83f36095d8af319c430b7a527 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:27:05 +0200
-Subject: [PATCH 080/276] Step 13.3: Add sorting by party name to PartiesList
+Subject: [PATCH 080/277] Step 13.3: Add sorting by party name to PartiesList
 
 ---
  client/imports/app/parties/parties-list.component.ts | 6 +++++-
@@ -3283,10 +3283,10 @@ index c9be502..4930912 100644
 2.7.4 (Apple Git-66)
 
 
-From 27e1a567d338d51e517727a5b078cbc19cc37298 Mon Sep 17 00:00:00 2001
+From 4598f22cdc7e1f721155433b2d1d18d514de5ab3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:29:02 +0200
-Subject: [PATCH 081/276] Step 13.4: Turn primitive values into Subjects
+Subject: [PATCH 081/277] Step 13.4: Turn primitive values into Subjects
 
 ---
  client/imports/app/parties/parties-list.component.ts | 11 ++++++++---
@@ -3331,10 +3331,10 @@ index 4930912..30a8be4 100644
 2.7.4 (Apple Git-66)
 
 
-From 3f73f8d8744a9b726ac55274405321e93df707ab Mon Sep 17 00:00:00 2001
+From 1682fbca2a3ab2830dca9b62b3de3682e086db70 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:46:28 +0200
-Subject: [PATCH 082/276] Step 13.5: Re-subscribe on current page changes
+Subject: [PATCH 082/277] Step 13.5: Re-subscribe on current page changes
 
 ---
  .../imports/app/parties/parties-list.component.ts  | 38 +++++++++++++++-------
@@ -3408,10 +3408,10 @@ index 30a8be4..0960bbb 100644
 2.7.4 (Apple Git-66)
 
 
-From b7bb17da2245541663d3f88391422608d104afaf Mon Sep 17 00:00:00 2001
+From 39e6dfde4e5f6dcc17c39f0535ea287fa19d8335 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:51:56 +0200
-Subject: [PATCH 083/276] Step 13.6: Install ng2-pagination
+Subject: [PATCH 083/277] Step 13.6: Install ng2-pagination
 
 ---
  package.json | 1 +
@@ -3433,10 +3433,10 @@ index 20de53a..63869fa 100644
 2.7.4 (Apple Git-66)
 
 
-From b66819d0905d4b6876b38b6004350c04581662d3 Mon Sep 17 00:00:00 2001
+From 951f7fe66fc1f327b473b0c23939c35eae682bce Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:53:03 +0200
-Subject: [PATCH 084/276] Step 13.7: Import Ng2PaginationModule
+Subject: [PATCH 084/277] Step 13.7: Import Ng2PaginationModule
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -3468,10 +3468,10 @@ index 139b880..65145a8 100644
 2.7.4 (Apple Git-66)
 
 
-From 45a2c319db007a0f4454480df4fe24b4a72501df Mon Sep 17 00:00:00 2001
+From 72048ea7a024af4ff8996c4575f7ccf8b1c914c8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:54:54 +0200
-Subject: [PATCH 085/276] Step 13.8: Register configuration of pagination
+Subject: [PATCH 085/277] Step 13.8: Register configuration of pagination
 
 ---
  client/imports/app/parties/parties-list.component.ts | 12 ++++++++++++
@@ -3518,10 +3518,10 @@ index 0960bbb..aacb366 100644
 2.7.4 (Apple Git-66)
 
 
-From 5152e4e2b43ff4ed020f63b4b899c477e547feaa Mon Sep 17 00:00:00 2001
+From 54fbf5c4bb24c7fdd8fb6b17df20524a8d2d2756 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:56:31 +0200
-Subject: [PATCH 086/276] Step 13.9: Update current page when options change
+Subject: [PATCH 086/277] Step 13.9: Update current page when options change
 
 ---
  client/imports/app/parties/parties-list.component.ts | 2 ++
@@ -3544,10 +3544,10 @@ index aacb366..bc1fa19 100644
 2.7.4 (Apple Git-66)
 
 
-From c8d05ee55b1b5db4f469fe8c0927f090dcad6d3d Mon Sep 17 00:00:00 2001
+From ba499016add948382445fe34f0f70c575d60b2a3 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:58:16 +0200
-Subject: [PATCH 087/276] Step 13.10: Add pagination to the list
+Subject: [PATCH 087/277] Step 13.10: Add pagination to the list
 
 ---
  client/imports/app/parties/parties-list.component.html | 2 ++
@@ -3569,10 +3569,10 @@ index bd2f99c..d72d6f5 100644
 2.7.4 (Apple Git-66)
 
 
-From 5fbc9b12ad0de5aa954bfa8cef1f6062395d052b Mon Sep 17 00:00:00 2001
+From 286e84a98c2a35e0387f9fcc998e7d660b1d7850 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:58:41 +0200
-Subject: [PATCH 088/276] Step 13.11: Add pageChange event binding
+Subject: [PATCH 088/277] Step 13.11: Add pageChange event binding
 
 ---
  client/imports/app/parties/parties-list.component.html | 2 +-
@@ -3594,10 +3594,10 @@ index d72d6f5..4e998d4 100644
 2.7.4 (Apple Git-66)
 
 
-From 7bd6d46c883c208e5129fb32f4fdcec55c948680 Mon Sep 17 00:00:00 2001
+From 2a8745fe4c2bc3fc8510265cda8ba87d30383978 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 12:59:27 +0200
-Subject: [PATCH 089/276] Step 13.12: Add event handler for pageChange
+Subject: [PATCH 089/277] Step 13.12: Add event handler for pageChange
 
 ---
  client/imports/app/parties/parties-list.component.ts | 4 ++++
@@ -3622,10 +3622,10 @@ index bc1fa19..d360f15 100644
 2.7.4 (Apple Git-66)
 
 
-From ea394a076786b0f5e6b5e462882b6cdb867d706a Mon Sep 17 00:00:00 2001
+From b2268590d6d7635b9e6f603d643f716bcd30d774 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 13:01:25 +0200
-Subject: [PATCH 090/276] Step 13.13: Add tmeasday:publish-counts
+Subject: [PATCH 090/277] Step 13.13: Add tmeasday:publish-counts
 
 ---
  .meteor/packages | 1 +
@@ -3657,10 +3657,10 @@ index eba1c60..346c2b9 100644
 2.7.4 (Apple Git-66)
 
 
-From c1c36ea7de90d751313f5a8f273dc6d763083d64 Mon Sep 17 00:00:00 2001
+From de84e3d65f40ccd08701f2e9684ec8ffcd5df793 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 13:15:05 +0200
-Subject: [PATCH 091/276] Step 13.14: Publish total number of parties
+Subject: [PATCH 091/277] Step 13.14: Publish total number of parties
 
 ---
  server/imports/publications/parties.ts | 4 ++++
@@ -3690,10 +3690,10 @@ index 1e5d5df..f772e48 100644
 2.7.4 (Apple Git-66)
 
 
-From 610c02feb5691f650e223e97a8d701d58cabea86 Mon Sep 17 00:00:00 2001
+From 2894eb7afb121b8643eeef83bcaf61ce24028203 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 13:15:19 +0200
-Subject: [PATCH 092/276] Step 13.15: Add declaration of counts package
+Subject: [PATCH 092/277] Step 13.15: Add declaration of counts package
 
 ---
  typings.d.ts | 13 ++++++++++++-
@@ -3725,10 +3725,10 @@ index 6982da6..88c4daf 100644
 2.7.4 (Apple Git-66)
 
 
-From 913eb07c0a26e03f14ff33486ea8b8b296791c96 Mon Sep 17 00:00:00 2001
+From 8f38df2159d159fd6f458bb577a712cea9725796 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 13:32:27 +0200
-Subject: [PATCH 093/276] Step 13.16: Handle reactive updates of the parties
+Subject: [PATCH 093/277] Step 13.16: Handle reactive updates of the parties
  total number
 
 ---
@@ -3786,10 +3786,10 @@ index d360f15..b725d0c 100644
 2.7.4 (Apple Git-66)
 
 
-From ed92c2c0e478b346fa7fc6bdb7dd7b64bcda2be0 Mon Sep 17 00:00:00 2001
+From 97e8202e4c040ad4be561e5a71b5d5f785c4ed59 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 14:07:04 +0200
-Subject: [PATCH 094/276] Step 13.17: Add the sort order dropdown
+Subject: [PATCH 094/277] Step 13.17: Add the sort order dropdown
 
 ---
  client/imports/app/parties/parties-list.component.html | 9 +++++++++
@@ -3819,10 +3819,10 @@ index 4e998d4..f1083e3 100644
 2.7.4 (Apple Git-66)
 
 
-From f4fd78fc08c85b27d1e49d0089a97933df48af70 Mon Sep 17 00:00:00 2001
+From 9e39a54e710ecf4d3648c35717d2c5437d3be863 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 14:18:38 +0200
-Subject: [PATCH 095/276] Step 13.18: Re-subscribe when sort order changes
+Subject: [PATCH 095/277] Step 13.18: Re-subscribe when sort order changes
 
 ---
  client/imports/app/parties/parties-list.component.ts | 4 ++++
@@ -3847,10 +3847,10 @@ index b725d0c..1a3201c 100644
 2.7.4 (Apple Git-66)
 
 
-From 9f2c1f45693675c6ba16a669cc49514cc8e5d6c3 Mon Sep 17 00:00:00 2001
+From c151b8df5462afcf59f88fd7b35ac699cb460847 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 14:30:35 +0200
-Subject: [PATCH 096/276] Step 13.19: Add search by the party location using
+Subject: [PATCH 096/277] Step 13.19: Add search by the party location using
  regex
 
 ---
@@ -3906,10 +3906,10 @@ index f772e48..34c9470 100644
 2.7.4 (Apple Git-66)
 
 
-From 1bbbc1d7dfa86f8a55ee2ed27ecec28996a22fca Mon Sep 17 00:00:00 2001
+From 15c03f5372900669ceed0a879c3d2c1d406bd1cc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 14:33:46 +0200
-Subject: [PATCH 097/276] Step 13.20: Add reactive search by location
+Subject: [PATCH 097/277] Step 13.20: Add reactive search by location
 
 ---
  client/imports/app/parties/parties-list.component.ts | 12 ++++++++----
@@ -3970,10 +3970,10 @@ index 1a3201c..f94da32 100644
 2.7.4 (Apple Git-66)
 
 
-From 4f621e8accc3d3218fc173c7c3ce7faeee577ffd Mon Sep 17 00:00:00 2001
+From 07b7addc748c8a2d90c7facce4366ee8608d4a87 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:27:03 +0200
-Subject: [PATCH 098/276] Step 14.1: Add uninvited users publication
+Subject: [PATCH 098/277] Step 14.1: Add uninvited users publication
 
 ---
  server/imports/publications/users.ts | 18 ++++++++++++++++++
@@ -4008,10 +4008,10 @@ index 0000000..c320f41
 2.7.4 (Apple Git-66)
 
 
-From c12da97bd83a87704c19c083714d55bae15bc42e Mon Sep 17 00:00:00 2001
+From 87344633e831062302bf19e2be2f8cd6c04afb44 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:28:24 +0200
-Subject: [PATCH 099/276] Step 14.2: Add invited to Party interface
+Subject: [PATCH 099/277] Step 14.2: Add invited to Party interface
 
 ---
  both/models/party.model.ts | 1 +
@@ -4031,10 +4031,10 @@ index 2526c11..64e6ae1 100644
 2.7.4 (Apple Git-66)
 
 
-From 43e13951527d8459c2b23bc6720d5f43b1858dfd Mon Sep 17 00:00:00 2001
+From f8807312522548defc74e020b00d8fcce7cddbcb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:28:59 +0200
-Subject: [PATCH 100/276] Step 14.3: Use it on the server
+Subject: [PATCH 100/277] Step 14.3: Use it on the server
 
 ---
  server/main.ts | 3 ++-
@@ -4058,10 +4058,10 @@ index 7f8e626..f6356dd 100644
 2.7.4 (Apple Git-66)
 
 
-From 565ae8694544fe3c6e5d0847a83df247541cf19c Mon Sep 17 00:00:00 2001
+From 92836a789ec4d9a9390d3e6aa0ad36aef1e585d6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:42:28 +0200
-Subject: [PATCH 101/276] Step 14.4: Create Users collection from Meteor.users
+Subject: [PATCH 101/277] Step 14.4: Create Users collection from Meteor.users
 
 ---
  both/collections/users.collection.ts | 4 ++++
@@ -4082,10 +4082,10 @@ index 0000000..dbd121b
 2.7.4 (Apple Git-66)
 
 
-From 4fccbf80c0fe4a86cadead10a8a8a9dce8cd2e7f Mon Sep 17 00:00:00 2001
+From 71b437ec845ca6ce3ad125ba956fb842e1b59bac Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:42:57 +0200
-Subject: [PATCH 102/276] Step 14.5: Create also User interface
+Subject: [PATCH 102/277] Step 14.5: Create also User interface
 
 ---
  both/models/user.model.ts | 3 +++
@@ -4105,10 +4105,10 @@ index 0000000..08eeec5
 2.7.4 (Apple Git-66)
 
 
-From a4501d40635fbedcee57b87b40bc2dbde3f7300e Mon Sep 17 00:00:00 2001
+From b8e4e19f63debbd5ffe4768c15e4fa56fa43b2d2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:45:17 +0200
-Subject: [PATCH 103/276] Step 14.6: Implement subscription of uninvited users
+Subject: [PATCH 103/277] Step 14.6: Implement subscription of uninvited users
 
 ---
  client/imports/app/parties/party-details.component.ts | 18 ++++++++++++++++++
@@ -4173,10 +4173,10 @@ index 9c7a9e7..246243e 100644
 2.7.4 (Apple Git-66)
 
 
-From 79edfb36cd727f54d80e8946f50944b09b4d6c18 Mon Sep 17 00:00:00 2001
+From 8d36d8057b24235b63926289c9d7e42a4ead2a01 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:46:28 +0200
-Subject: [PATCH 104/276] Step 14.7: Display list of uninvited users
+Subject: [PATCH 104/277] Step 14.7: Display list of uninvited users
 
 ---
  client/imports/app/parties/party-details.component.html | 9 ++++++++-
@@ -4204,10 +4204,10 @@ index aef5bae..2ce1e72 100644
 2.7.4 (Apple Git-66)
 
 
-From 046d519abbf7c9318541a6e3c093c739b816e0d0 Mon Sep 17 00:00:00 2001
+From cc6c6d110c74969a48f5c37274dbddd8c6e4bf27 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:50:06 +0200
-Subject: [PATCH 105/276] Step 14.8: Create DisplayNamePipe
+Subject: [PATCH 105/277] Step 14.8: Create DisplayNamePipe
 
 ---
  client/imports/app/shared/display-name.pipe.ts | 25 +++++++++++++++++++++++++
@@ -4249,10 +4249,10 @@ index 0000000..40efbb6
 2.7.4 (Apple Git-66)
 
 
-From 4f82f679d14e2ef082c5ad0b5b512830bb25ed63 Mon Sep 17 00:00:00 2001
+From 367a7f7917a76738d59914e52bbf1a099108c73d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:51:10 +0200
-Subject: [PATCH 106/276] Step 14.9: Make space for shared declarations
+Subject: [PATCH 106/277] Step 14.9: Make space for shared declarations
 
 ---
  client/imports/app/shared/index.ts | 5 +++++
@@ -4274,10 +4274,10 @@ index 0000000..d9104e8
 2.7.4 (Apple Git-66)
 
 
-From 65d6bde3b38d7412648c0270d3716f519c29ffef Mon Sep 17 00:00:00 2001
+From bd16b62e88747d9a898f209deed504c1d91b36b6 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:51:49 +0200
-Subject: [PATCH 107/276] Step 14.10: Import those declarations to AppModule
+Subject: [PATCH 107/277] Step 14.10: Import those declarations to AppModule
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -4309,10 +4309,10 @@ index 65145a8..383ed58 100644
 2.7.4 (Apple Git-66)
 
 
-From 86f3855fc7e1acb2b3ae475c8284879e13de455b Mon Sep 17 00:00:00 2001
+From 24f60039761c0fee24b524da5fe5b6005861b30e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 23 Sep 2016 17:54:00 +0200
-Subject: [PATCH 108/276] Step 14.11: Use this Pipe in PartyDetails
+Subject: [PATCH 108/277] Step 14.11: Use this Pipe in PartyDetails
 
 ---
  client/imports/app/parties/party-details.component.html | 2 +-
@@ -4334,10 +4334,10 @@ index 2ce1e72..78e0c41 100644
 2.7.4 (Apple Git-66)
 
 
-From c8a09e112065d359d0c40e2fd0802f25d28ee857 Mon Sep 17 00:00:00 2001
+From d2ee2ee7b1529ae52adb875d0d9d2ebe728a4bd7 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:24:02 +0300
-Subject: [PATCH 109/276] Step 15.1: Add a party invitation method
+Subject: [PATCH 109/277] Step 15.1: Add a party invitation method
 
 ---
  both/methods/parties.methods.ts | 47 +++++++++++++++++++++++++++++++++++++++++
@@ -4402,10 +4402,10 @@ index 0000000..cc324f9
 2.7.4 (Apple Git-66)
 
 
-From 930b5703a3d5a2f536e5a978fc8192bc49790b97 Mon Sep 17 00:00:00 2001
+From e5e709fa3a078f247857d3905759711ff7e94244 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:24:34 +0300
-Subject: [PATCH 110/276] Step 15.2: Import methods on the server side
+Subject: [PATCH 110/277] Step 15.2: Import methods on the server side
 
 ---
  server/main.ts | 3 ++-
@@ -4429,10 +4429,10 @@ index f6356dd..7979c05 100644
 2.7.4 (Apple Git-66)
 
 
-From 61a3385a1ea03207bb8c08df082f65eb5a186840 Mon Sep 17 00:00:00 2001
+From 09346ce039fc52683d8452fd966cf3edd6b12702 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:25:20 +0300
-Subject: [PATCH 111/276] Step 15.3: Import methods on the client side
+Subject: [PATCH 111/277] Step 15.3: Import methods on the client side
 
 ---
  client/main.ts | 2 ++
@@ -4455,10 +4455,10 @@ index c5323fd..45d1530 100644
 2.7.4 (Apple Git-66)
 
 
-From 2a95d6cdb6b0ea48a7d949bbf36739f37b65c91f Mon Sep 17 00:00:00 2001
+From ad273b68e48234ded33955b6ca012f7b0bfe5500 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:27:04 +0300
-Subject: [PATCH 112/276] Step 15.4: Add check and email packages
+Subject: [PATCH 112/277] Step 15.4: Add check and email packages
 
 ---
  .meteor/packages | 2 ++
@@ -4478,10 +4478,10 @@ index 97bd58e..22ef14f 100644
 2.7.4 (Apple Git-66)
 
 
-From 66150b3edd4d1e71e72c81d4462c0b268ce66b75 Mon Sep 17 00:00:00 2001
+From 1008b8b7dda14c8a8b8a72e50c0cf1bcd08de2ea Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:29:09 +0300
-Subject: [PATCH 113/276] Step 15.5: Add invite method
+Subject: [PATCH 113/277] Step 15.5: Add invite method
 
 ---
  client/imports/app/parties/party-details.component.html | 1 +
@@ -4502,10 +4502,10 @@ index 78e0c41..28c9588 100644
 2.7.4 (Apple Git-66)
 
 
-From be79d8f7c2877b7e94d484489def53ab6167ec96 Mon Sep 17 00:00:00 2001
+From bbdab9747e7bb9a5c24e8ad1211a04ac6e69f108 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:31:02 +0300
-Subject: [PATCH 114/276] Step 15.6: Add the click handler in the Component
+Subject: [PATCH 114/277] Step 15.6: Add the click handler in the Component
 
 ---
  client/imports/app/parties/party-details.component.ts | 8 ++++++++
@@ -4534,10 +4534,10 @@ index 246243e..d17eb1f 100644
 2.7.4 (Apple Git-66)
 
 
-From cc93b1681b682fc3c7edf456100bb85a01c04ba0 Mon Sep 17 00:00:00 2001
+From a9119aa6c734dcbf6949f71132c7304a3c5320f3 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:42:39 +0300
-Subject: [PATCH 115/276] Step 15.7: Get the party reactively
+Subject: [PATCH 115/277] Step 15.7: Get the party reactively
 
 ---
  client/imports/app/parties/party-details.component.ts | 4 +++-
@@ -4562,10 +4562,10 @@ index d17eb1f..fb07803 100644
 2.7.4 (Apple Git-66)
 
 
-From a60b38605a2ca67a2a798824dbf49b49ad874818 Mon Sep 17 00:00:00 2001
+From 9011b8621d84099af4db4ad5f098bc94426380bc Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:44:39 +0300
-Subject: [PATCH 116/276] Step 15.8: Update the users list reactively
+Subject: [PATCH 116/277] Step 15.8: Update the users list reactively
 
 ---
  client/imports/app/parties/party-details.component.ts | 18 +++++++++++++-----
@@ -4615,10 +4615,10 @@ index fb07803..8d877f6 100644
 2.7.4 (Apple Git-66)
 
 
-From f4b73105d0881502dc2bedbda6b8e34527a6dd86 Mon Sep 17 00:00:00 2001
+From de2323a1bfb05124008e20a7e35794e5ca6ce307 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:47:08 +0300
-Subject: [PATCH 117/276] Step 15.9: Show private parties to the invited and
+Subject: [PATCH 117/277] Step 15.9: Show private parties to the invited and
  owners only
 
 ---
@@ -4646,10 +4646,10 @@ index 34c9470..4742280 100644
 2.7.4 (Apple Git-66)
 
 
-From 5fa53ac2a1809c85380ce596fc209fcf7cf60d72 Mon Sep 17 00:00:00 2001
+From 5f99526f385b75b594e128c07246c838ab5de846 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:48:03 +0300
-Subject: [PATCH 118/276] Step 15.10: Add a reply method
+Subject: [PATCH 118/277] Step 15.10: Add a reply method
 
 ---
  both/methods/parties.methods.ts | 45 +++++++++++++++++++++++++++++++++++++++++
@@ -4715,10 +4715,10 @@ index cc324f9..ac0bfc7 100644
 2.7.4 (Apple Git-66)
 
 
-From 76a636240d785e8e72583c4b3a2d582f7ad1ae9c Mon Sep 17 00:00:00 2001
+From ab476408cc8d4a9d31cf7c367d7e86246acc5a00 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:48:46 +0300
-Subject: [PATCH 119/276] Step 15.11: Add RSVP interface
+Subject: [PATCH 119/277] Step 15.11: Add RSVP interface
 
 ---
  both/models/party.model.ts | 6 ++++++
@@ -4744,10 +4744,10 @@ index 64e6ae1..9f7c41e 100644
 2.7.4 (Apple Git-66)
 
 
-From b58c92b6945d7d5d56ee8f24dae429f2451acf44 Mon Sep 17 00:00:00 2001
+From 9684e4d7ea3bb979681a8c5d1e2c2945bcf69076 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:49:22 +0300
-Subject: [PATCH 120/276] Step 15.12: Add reponse buttons
+Subject: [PATCH 120/277] Step 15.12: Add reponse buttons
 
 ---
  client/imports/app/parties/party-details.component.html | 7 +++++++
@@ -4772,10 +4772,10 @@ index 28c9588..a3e173d 100644
 2.7.4 (Apple Git-66)
 
 
-From a692c05a80eb395c82492c4d83d1408efa414f7d Mon Sep 17 00:00:00 2001
+From d7d4e04926cc79c2475db2f10def8b3ba9c22fa6 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:51:03 +0300
-Subject: [PATCH 121/276] Step 15.13: Add reply method to PartyDetails
+Subject: [PATCH 121/277] Step 15.13: Add reply method to PartyDetails
  component
 
 ---
@@ -4805,10 +4805,10 @@ index 8d877f6..e70f680 100644
 2.7.4 (Apple Git-66)
 
 
-From 0e7efb7366f0b69b893815aa2b94c4439538de36 Mon Sep 17 00:00:00 2001
+From f773c903612e65ab57f8a3299c5ffe3f1daaf5d3 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:59:23 +0300
-Subject: [PATCH 122/276] Step 15.14: Add a new response counting pipe
+Subject: [PATCH 122/277] Step 15.14: Add a new response counting pipe
 
 ---
  client/imports/app/shared/rsvp.pipe.ts | 22 ++++++++++++++++++++++
@@ -4848,10 +4848,10 @@ index 0000000..5b5938c
 2.7.4 (Apple Git-66)
 
 
-From 143bf638c71527d7fc87fd1ee5587c3662c4b2e0 Mon Sep 17 00:00:00 2001
+From 2c07ce97915d2279c28f2bee0afa4edc1af27edb Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:59:34 +0300
-Subject: [PATCH 123/276] Step 15.15: Display response statistics on the list
+Subject: [PATCH 123/277] Step 15.15: Display response statistics on the list
 
 ---
  client/imports/app/parties/parties-list.component.html | 6 ++++++
@@ -4878,10 +4878,10 @@ index f1083e3..40e51d2 100644
 2.7.4 (Apple Git-66)
 
 
-From 27c345cf0ffc79fb191949cb647ca709f64c6d87 Mon Sep 17 00:00:00 2001
+From fefaaa3bf039b7a3154746e060ea22d398ffa000 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 10:59:44 +0300
-Subject: [PATCH 124/276] Step 15.16: Import RsvpPipe
+Subject: [PATCH 124/277] Step 15.16: Import RsvpPipe
 
 ---
  client/imports/app/shared/index.ts | 4 +++-
@@ -4904,10 +4904,10 @@ index d9104e8..12c7d64 100644
 2.7.4 (Apple Git-66)
 
 
-From adc8b97d40f0df05c9f16dae51e2d6db3e050083 Mon Sep 17 00:00:00 2001
+From 5e27a180518924b48e0cb369ef27889bf027f621 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:42:55 +0300
-Subject: [PATCH 125/276] Step 16.1: Inject Meteor User and add isOwner method
+Subject: [PATCH 125/277] Step 16.1: Inject Meteor User and add isOwner method
 
 ---
  client/imports/app/parties/parties-list.component.ts | 7 +++++++
@@ -4956,10 +4956,10 @@ index f94da32..2e45027 100644
 2.7.4 (Apple Git-66)
 
 
-From 92c7bf977da15767ca3475b4bf9f91b41898e73b Mon Sep 17 00:00:00 2001
+From e5b43d97a07eb0b2a4df9f7532eb1e573d030627 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:43:04 +0300
-Subject: [PATCH 126/276] Step 16.2: Use the hidden attribute in the
+Subject: [PATCH 126/277] Step 16.2: Use the hidden attribute in the
  PartiestList
 
 ---
@@ -4990,10 +4990,10 @@ index 40e51d2..a94ea42 100644
 2.7.4 (Apple Git-66)
 
 
-From 2be1e25e8d4bb9941d044e6c59438602a6afd03d Mon Sep 17 00:00:00 2001
+From 02468f89871269efc916826e10b745e5614fbdfe Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:43:14 +0300
-Subject: [PATCH 127/276] Step 16.3: Add isOwner property
+Subject: [PATCH 127/277] Step 16.3: Add isOwner property
 
 ---
  client/imports/app/parties/party-details.component.ts | 7 +++++++
@@ -5042,10 +5042,10 @@ index e70f680..7562d03 100644
 2.7.4 (Apple Git-66)
 
 
-From 194884f1857b55c7e29199ac342fafb77cc1c5f7 Mon Sep 17 00:00:00 2001
+From b43aa867fe7f34856add5081738c4288f471a588 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:43:20 +0300
-Subject: [PATCH 128/276] Step 16.4: Add disabled attribute bindings
+Subject: [PATCH 128/277] Step 16.4: Add disabled attribute bindings
 
 ---
  client/imports/app/parties/party-details.component.html | 8 ++++----
@@ -5078,10 +5078,10 @@ index a3e173d..a00a045 100644
 2.7.4 (Apple Git-66)
 
 
-From d3980953bd810a07cb5aedaaff8322e6b3074a63 Mon Sep 17 00:00:00 2001
+From 9395dc9334a4057bf44450ca4688da9a64b8b3a8 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:44:34 +0300
-Subject: [PATCH 129/276] Step 16.5: Add isPublic and isInvited properties
+Subject: [PATCH 129/277] Step 16.5: Add isPublic and isInvited properties
 
 ---
  client/imports/app/parties/party-details.component.ts | 17 ++++++++++++++++-
@@ -5126,10 +5126,10 @@ index 7562d03..d498a6e 100644
 2.7.4 (Apple Git-66)
 
 
-From 8fa8987ae67226922bf12574fa69ca9bac1e0a9a Mon Sep 17 00:00:00 2001
+From 8594f69aabb0306f4857cd22039051a80e36db19 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:46:12 +0300
-Subject: [PATCH 130/276] Step 16.6: Make use of properties in the template
+Subject: [PATCH 130/277] Step 16.6: Make use of properties in the template
 
 ---
  .../imports/app/parties/party-details.component.html   | 18 ++++++++++--------
@@ -5169,10 +5169,10 @@ index a00a045..7abe835 100644
 2.7.4 (Apple Git-66)
 
 
-From 880b9b66190cc7abd71ee25040592286dcd7efb1 Mon Sep 17 00:00:00 2001
+From d104323f5f17c194f0bda6a97d8a1c96ddb45035 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:48:18 +0300
-Subject: [PATCH 131/276] Step 17.1: Extend party location with coords
+Subject: [PATCH 131/277] Step 17.1: Extend party location with coords
 
 ---
  both/models/party.model.ts | 8 +++++++-
@@ -5207,10 +5207,10 @@ index 9f7c41e..5e62f1b 100644
 2.7.4 (Apple Git-66)
 
 
-From a0a74b9ea566bef71c5d15d89f598ed64e626785 Mon Sep 17 00:00:00 2001
+From 5415686375170250c8de4356cf3b82321b6b0d8c Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:49:10 +0300
-Subject: [PATCH 132/276] Step 17.2: Change initial parties accordingly
+Subject: [PATCH 132/277] Step 17.2: Change initial parties accordingly
 
 ---
  server/imports/fixtures/parties.ts | 12 +++++++++---
@@ -5251,10 +5251,10 @@ index 6c7b374..3b3b8cf 100644
 2.7.4 (Apple Git-66)
 
 
-From 1b7a153a034a1303394fb9a6323a00024e570fef Mon Sep 17 00:00:00 2001
+From 51d6428fdc1ec9a47f272b0c263391e5423ffdb4 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:50:53 +0300
-Subject: [PATCH 133/276] Step 17.3: Change party creation component
+Subject: [PATCH 133/277] Step 17.3: Change party creation component
 
 ---
  client/imports/app/parties/parties-form.component.ts | 10 +++++++++-
@@ -5285,10 +5285,10 @@ index 0823749..3a213f0 100644
 2.7.4 (Apple Git-66)
 
 
-From 83ee406bc3cd989897c17e35f22b0cd04090ebf8 Mon Sep 17 00:00:00 2001
+From b3675c5a7cd00c1e525e343ad31082321bfb14e4 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:51:39 +0300
-Subject: [PATCH 134/276] Step 17.4: Reflect type changes in the parties search
+Subject: [PATCH 134/277] Step 17.4: Reflect type changes in the parties search
 
 ---
  server/imports/publications/parties.ts | 2 +-
@@ -5311,10 +5311,10 @@ index 4742280..d1c8e00 100644
 2.7.4 (Apple Git-66)
 
 
-From 6ea164cb4ad8340de9f1682e14e0e5606f166305 Mon Sep 17 00:00:00 2001
+From 971778d654a743fb014e074923d239ae0b0e2c5e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:53:13 +0300
-Subject: [PATCH 135/276] Step 17.5: Install angular2-google-maps
+Subject: [PATCH 135/277] Step 17.5: Install angular2-google-maps
 
 ---
  package.json | 1 +
@@ -5336,10 +5336,10 @@ index 63869fa..534f962 100644
 2.7.4 (Apple Git-66)
 
 
-From 7c39a1d81bcf1027f39b99ba2f4f0423aefe2cca Mon Sep 17 00:00:00 2001
+From b561feefd5ae4dffb458c10d3e5abfda84b50b0a Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:55:17 +0300
-Subject: [PATCH 136/276] Step 17.6: Import google maps module
+Subject: [PATCH 136/277] Step 17.6: Import google maps module
 
 ---
  client/imports/app/app.module.ts | 6 +++++-
@@ -5373,10 +5373,10 @@ index 383ed58..0240ddf 100644
 2.7.4 (Apple Git-66)
 
 
-From 1f8ed83b35b82f7a0228f5b8a13c7f1cabdb4f68 Mon Sep 17 00:00:00 2001
+From c86e3dc6078b05c30c1cd59ac637a9f0d1abebb2 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 11:55:43 +0300
-Subject: [PATCH 137/276] Step 17.7: Change ngModel to location.name
+Subject: [PATCH 137/277] Step 17.7: Change ngModel to location.name
 
 ---
  client/imports/app/parties/party-details.component.html | 2 +-
@@ -5399,10 +5399,10 @@ index 7abe835..26f21ca 100644
 2.7.4 (Apple Git-66)
 
 
-From c18cd52548943a3fdd8c4663a1c0b37ee8be14bc Mon Sep 17 00:00:00 2001
+From 0e7f6cef771604db5a79bbad97c9036c9851f7c9 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:19:47 +0300
-Subject: [PATCH 138/276] Step 17.8: Use in a template
+Subject: [PATCH 138/277] Step 17.8: Use in a template
 
 ---
  client/imports/app/parties/party-details.component.html | 12 ++++++++++++
@@ -5433,10 +5433,10 @@ index 26f21ca..151fb03 100644
 2.7.4 (Apple Git-66)
 
 
-From 3784fe5b6b301e89d48668bc90c552527766b398 Mon Sep 17 00:00:00 2001
+From bf158a2074ede372cfb97687daa6cf0cf4995cbd Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:19:54 +0300
-Subject: [PATCH 139/276] Step 17.9: Add maps logic to the component
+Subject: [PATCH 139/277] Step 17.9: Add maps logic to the component
 
 ---
  client/imports/app/parties/party-details.component.ts | 18 ++++++++++++++++++
@@ -5489,10 +5489,10 @@ index d498a6e..7b8d963 100644
 2.7.4 (Apple Git-66)
 
 
-From c20e04150b0b44f2ed6a3b716cd6740f90f5242f Mon Sep 17 00:00:00 2001
+From b1788572afe2a0cb828af7986ef9204a98ad00d4 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:22:56 +0300
-Subject: [PATCH 140/276] Step 17.10: Add maps styles
+Subject: [PATCH 140/277] Step 17.10: Add maps styles
 
 ---
  client/main.scss | 4 ++++
@@ -5514,10 +5514,10 @@ index 0000000..d570355
 2.7.4 (Apple Git-66)
 
 
-From 56cb05627bb165f8f2e9347d4bc2fee2de9097aa Mon Sep 17 00:00:00 2001
+From 80b112ad0e256380d505d2c828c89b2cc831aa3e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:25:46 +0300
-Subject: [PATCH 141/276] Step 17.11: Add all parties locations on the map
+Subject: [PATCH 141/277] Step 17.11: Add all parties locations on the map
 
 ---
  client/imports/app/parties/parties-list.component.html | 15 ++++++++++++++-
@@ -5560,10 +5560,10 @@ index a94ea42..043f2ff 100644
 2.7.4 (Apple Git-66)
 
 
-From ab4bfa068729c246c76008aa01614cc1dd91abd6 Mon Sep 17 00:00:00 2001
+From 3e00e0bd1657dfa4b4fe0551683e02c430f20994 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:43:17 +0300
-Subject: [PATCH 142/276] Step 18.1: Install Bootstrap 4
+Subject: [PATCH 142/277] Step 18.1: Install Bootstrap 4
 
 ---
  package.json | 1 +
@@ -5585,10 +5585,10 @@ index 534f962..094b457 100644
 2.7.4 (Apple Git-66)
 
 
-From cd5975787cbd29b2eed0dfd19598211ca3c7245d Mon Sep 17 00:00:00 2001
+From 7987bcd82cc48e41641cf9259316b3e9d343d8bf Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:44:18 +0300
-Subject: [PATCH 143/276] Step 18.2: Import bootstrap style into the main style
+Subject: [PATCH 143/277] Step 18.2: Import bootstrap style into the main style
  file
 
 ---
@@ -5609,10 +5609,10 @@ index d570355..65392b5 100644
 2.7.4 (Apple Git-66)
 
 
-From 9d50a37b3b311e60b70904f0a7ebba76e648759e Mon Sep 17 00:00:00 2001
+From 8218b8800c96898b5209cb67e5392886a5b62d3c Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:44:23 +0300
-Subject: [PATCH 144/276] Step 18.3: Add bootstrap navbar
+Subject: [PATCH 144/277] Step 18.3: Add bootstrap navbar
 
 ---
  client/imports/app/app.component.html | 5 ++++-
@@ -5635,10 +5635,10 @@ index b426778..b3c49f0 100644
 2.7.4 (Apple Git-66)
 
 
-From 4ab01c3424723ef970e4ac67741199731d0a5b7b Mon Sep 17 00:00:00 2001
+From c94186dc00ce7bf367b7361476118676880770f9 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:49:04 +0300
-Subject: [PATCH 145/276] Step 18.4: Remove LoginButtons from a template
+Subject: [PATCH 145/277] Step 18.4: Remove LoginButtons from a template
 
 ---
  client/imports/app/parties/parties-list.component.html | 2 --
@@ -5661,10 +5661,10 @@ index 043f2ff..96fd80f 100644
 2.7.4 (Apple Git-66)
 
 
-From 15aa471480c5edbe39a3c9fd657ef98bccc18e41 Mon Sep 17 00:00:00 2001
+From aee8a7c7352e255c06baea06607a30f50f07c854 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:49:33 +0300
-Subject: [PATCH 146/276] Step 18.5: Add login buttons to the navigation bar
+Subject: [PATCH 146/277] Step 18.5: Add login buttons to the navigation bar
 
 ---
  client/imports/app/app.component.html | 1 +
@@ -5685,10 +5685,10 @@ index b3c49f0..dffc2ea 100644
 2.7.4 (Apple Git-66)
 
 
-From 43ae707815ee8eeded54e15207313509ae868528 Mon Sep 17 00:00:00 2001
+From ca15c85c6a8a18ea70fd57afe5bd0c4eefe9e270 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:50:05 +0300
-Subject: [PATCH 147/276] Step 18.6: Add fonts and FontAwesome
+Subject: [PATCH 147/277] Step 18.6: Add fonts and FontAwesome
 
 ---
  client/index.html | 3 +++
@@ -5711,10 +5711,10 @@ index 4e8596c..264730d 100644
 2.7.4 (Apple Git-66)
 
 
-From 4658324763d6d3070739538f90c73c6ce775d49f Mon Sep 17 00:00:00 2001
+From 94652a31cf0e2d79b2f21da9aad72bcd3fc0ec13 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:53:42 +0300
-Subject: [PATCH 148/276] Step 18.7: Update the new party form
+Subject: [PATCH 148/277] Step 18.7: Update the new party form
 
 ---
  .../app/parties/parties-form.component.html        | 30 +++++++++++++---------
@@ -5763,10 +5763,10 @@ index 3cc8990..c791629 100644
 2.7.4 (Apple Git-66)
 
 
-From e4aa9c1359c16d00acae71a87bbe1c9701f75944 Mon Sep 17 00:00:00 2001
+From 67e916bd169e8f2a3e1c29293a7b6798ed38039c Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:55:08 +0300
-Subject: [PATCH 149/276] Step 18.8: Update parties list layout
+Subject: [PATCH 149/277] Step 18.8: Update parties list layout
 
 ---
  .../app/parties/parties-list.component.html        | 134 +++++++++++++++------
@@ -5921,22 +5921,24 @@ index 96fd80f..0629b28 100644
 2.7.4 (Apple Git-66)
 
 
-From 20853b9012f9ac1dc3fa4cf1a377a8febce916b3 Mon Sep 17 00:00:00 2001
+From 12433315c0a417d2a2a6afcac71b91efbabffccc Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:56:18 +0300
-Subject: [PATCH 150/276] Step 18.9: Add styles for PartiesList
+Subject: [PATCH 150/277] Step 18.9: Add styles for PartiesList
 
 ---
- .../app/parties/parties-list.component.scss        | 125 +++++++++++++++++++++
- 1 file changed, 125 insertions(+)
+ .../app/parties/parties-list.component.scss        | 127 +++++++++++++++++++++
+ 1 file changed, 127 insertions(+)
  create mode 100644 client/imports/app/parties/parties-list.component.scss
 
 diff --git a/client/imports/app/parties/parties-list.component.scss b/client/imports/app/parties/parties-list.component.scss
 new file mode 100644
-index 0000000..2cd8d06
+index 0000000..3e09211
 --- /dev/null
 +++ b/client/imports/app/parties/parties-list.component.scss
-@@ -0,0 +1,125 @@
+@@ -0,0 +1,127 @@
++@import "../colors";
++
 +.ma-add-button-container {
 +  button.btn {
 +    background: $color3;
@@ -6067,10 +6069,10 @@ index 0000000..2cd8d06
 2.7.4 (Apple Git-66)
 
 
-From fa5d9b4bbc294cb50f2b48eb1e911443663df56e Mon Sep 17 00:00:00 2001
+From 1ecde7fd54b976163177d6c2929cfd24b683911c Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:56:48 +0300
-Subject: [PATCH 151/276] Step 18.10: Add styles for the party details page
+Subject: [PATCH 151/277] Step 18.10: Add styles for the party details page
 
 ---
  .../app/parties/party-details.component.scss       | 32 ++++++++++++++++++++++
@@ -6120,23 +6122,24 @@ index 0000000..82dcfc3
 2.7.4 (Apple Git-66)
 
 
-From 05cc85015b420b5a82c38301e8bdefb034989283 Mon Sep 17 00:00:00 2001
+From 27651ae744b3f97c995d752396567391c145a161 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:57:37 +0300
-Subject: [PATCH 152/276] Step 18.11: Add components styles in main style entry
+Subject: [PATCH 152/277] Step 18.11: Add components styles in main style entry
  point
 
 ---
- client/main.scss | 38 ++++++++++++++++++++++++++++++++++++--
- 1 file changed, 36 insertions(+), 2 deletions(-)
+ client/imports/app/colors.scss |  7 +++++++
+ client/main.scss               | 33 ++++++++++++++++++++++++++++++---
+ 2 files changed, 37 insertions(+), 3 deletions(-)
+ create mode 100644 client/imports/app/colors.scss
 
-diff --git a/client/main.scss b/client/main.scss
-index 65392b5..556cb1b 100644
---- a/client/main.scss
-+++ b/client/main.scss
-@@ -1,6 +1,40 @@
- @import "{}/node_modules/bootstrap/scss/bootstrap.scss";
- 
+diff --git a/client/imports/app/colors.scss b/client/imports/app/colors.scss
+new file mode 100644
+index 0000000..8c50009
+--- /dev/null
++++ b/client/imports/app/colors.scss
+@@ -0,0 +1,7 @@
 +$color1 : #2F2933;
 +$color2 : #01A2A6;
 +$color3 : #29D9C2;
@@ -6144,6 +6147,15 @@ index 65392b5..556cb1b 100644
 +$color5 : #FFFFA6;
 +$color6 : #2F2933;
 +$color7 : #FF6F69;
+\ No newline at end of file
+diff --git a/client/main.scss b/client/main.scss
+index 65392b5..5dc2452 100644
+--- a/client/main.scss
++++ b/client/main.scss
+@@ -1,6 +1,33 @@
+-@import "{}/node_modules/bootstrap/scss/bootstrap.scss";
++@import "../node_modules/bootstrap/scss/bootstrap.scss";
++@import "./imports/app/colors.scss";
 +
 +html, body {
 +  height: 100%;
@@ -6153,7 +6165,7 @@ index 65392b5..556cb1b 100644
 +  background-color: #f8f8f8;
 +  font-family: 'Muli', sans-serif;
 +}
-+
+ 
  .sebm-google-map-container {
 -  width: 400px;
 -  height: 400px;
@@ -6182,10 +6194,10 @@ index 65392b5..556cb1b 100644
 2.7.4 (Apple Git-66)
 
 
-From d389790695c2a855c80640d04514e9176f50eb21 Mon Sep 17 00:00:00 2001
+From 31692bfc209ed3486709ba9fa0f2046d825eece9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 25 Oct 2016 13:19:34 +0300
-Subject: [PATCH 153/276] Step 18.12: Import parties list style
+Subject: [PATCH 153/277] Step 18.12: Import parties list style
 
 ---
  client/imports/app/parties/parties-list.component.ts | 4 +++-
@@ -6217,10 +6229,10 @@ index 2e45027..341adea 100644
 2.7.4 (Apple Git-66)
 
 
-From 8f2c78dd2b7920da3d73b89213c14e704404079e Mon Sep 17 00:00:00 2001
+From 67e8a8b9b2e22b86ae5bbf6386d60694b5d20e60 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 25 Oct 2016 13:19:55 +0300
-Subject: [PATCH 154/276] Step 18.13: Import party details style
+Subject: [PATCH 154/277] Step 18.13: Import party details style
 
 ---
  client/imports/app/parties/party-details.component.ts | 4 +++-
@@ -6248,10 +6260,10 @@ index 7b8d963..cc3f5de 100644
 2.7.4 (Apple Git-66)
 
 
-From 7d62facc4a8a9fe157d783be8d402e74246dbd76 Mon Sep 17 00:00:00 2001
+From 6532a7bf4ec617f07490df8d51d973bdee5c7792 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:58:27 +0300
-Subject: [PATCH 155/276] Step 18.14: Update the layout of the party details
+Subject: [PATCH 155/277] Step 18.14: Update the layout of the party details
  page
 
 ---
@@ -6366,10 +6378,10 @@ index 151fb03..c7fc234 100644
 2.7.4 (Apple Git-66)
 
 
-From 2b640376e2be91681907669a7f1876bb4be52324 Mon Sep 17 00:00:00 2001
+From cae8b6962c75abaf481b394ae601cd1ce0ddb2c1 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:59:21 +0300
-Subject: [PATCH 156/276] Step 19.1: Uninstall bootstrap
+Subject: [PATCH 156/277] Step 19.1: Uninstall bootstrap
 
 ---
  package.json | 1 -
@@ -6391,33 +6403,32 @@ index 094b457..534f962 100644
 2.7.4 (Apple Git-66)
 
 
-From fd9ff82bf9485629e42c7ff620d4882295702547 Mon Sep 17 00:00:00 2001
+From d5c93d3b77341205ea7d2d37822ab7723c7160c2 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 12:59:34 +0300
-Subject: [PATCH 157/276] Step 19.2: Remove bootstrap scss
+Subject: [PATCH 157/277] Step 19.2: Remove bootstrap scss
 
 ---
- client/main.scss | 2 --
- 1 file changed, 2 deletions(-)
+ client/main.scss | 1 -
+ 1 file changed, 1 deletion(-)
 
 diff --git a/client/main.scss b/client/main.scss
-index 556cb1b..ced3c67 100644
+index 5dc2452..6a989da 100644
 --- a/client/main.scss
 +++ b/client/main.scss
-@@ -1,5 +1,3 @@
--@import "{}/node_modules/bootstrap/scss/bootstrap.scss";
--
- $color1 : #2F2933;
- $color2 : #01A2A6;
- $color3 : #29D9C2;
+@@ -1,4 +1,3 @@
+-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+ @import "./imports/app/colors.scss";
+ 
+ html, body {
 -- 
 2.7.4 (Apple Git-66)
 
 
-From 85f702f298d1080ca7c8764eff0cdba86446629f Mon Sep 17 00:00:00 2001
+From 096693de1ea80edf7c37fd02e3215b465a88afd3 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:00:35 +0300
-Subject: [PATCH 158/276] Step 19.3: Install @angular/material package
+Subject: [PATCH 158/277] Step 19.3: Install @angular/material package
 
 ---
  package.json | 1 +
@@ -6439,10 +6450,10 @@ index 534f962..1a1b1ab 100644
 2.7.4 (Apple Git-66)
 
 
-From 1f98f4506c853a9c56272bacad1f1611554cd47e Mon Sep 17 00:00:00 2001
+From 19a311742808a73686b740ad7407444aa6eb4b33 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:02:15 +0300
-Subject: [PATCH 159/276] Step 19.4: Imported the angular2-material modules
+Subject: [PATCH 159/277] Step 19.4: Imported the angular2-material modules
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -6474,10 +6485,10 @@ index 0240ddf..af364ac 100644
 2.7.4 (Apple Git-66)
 
 
-From 44880e7cf8c6ac85e97e737574c68a8c8068c391 Mon Sep 17 00:00:00 2001
+From 750a6529351aae3076de548c1526ee9185439c62 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:21:11 +0300
-Subject: [PATCH 160/276] Step 19.5: Change the nav bar and the layout
+Subject: [PATCH 160/277] Step 19.5: Change the nav bar and the layout
 
 ---
  client/imports/app/app.component.html | 13 ++++++-------
@@ -6507,10 +6518,10 @@ index dffc2ea..be09207 100644
 2.7.4 (Apple Git-66)
 
 
-From 806ad4adb846e838a90089ea4399288e77ed6988 Mon Sep 17 00:00:00 2001
+From 5c3e01c446ea75345136fbec40dddd258931669b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 29 Oct 2016 12:04:47 +0300
-Subject: [PATCH 161/276] Step 19.6: Added app component style file
+Subject: [PATCH 161/277] Step 19.6: Added app component style file
 
 ---
  client/imports/app/app.component.scss | 8 ++++++++
@@ -6536,10 +6547,10 @@ index 0000000..9076154
 2.7.4 (Apple Git-66)
 
 
-From b70b809b89729257a7bc46034c9c8c467a07d93c Mon Sep 17 00:00:00 2001
+From 0a206aed6baf65a4ca44e37548da0071a4a48825 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 29 Oct 2016 12:05:00 +0300
-Subject: [PATCH 162/276] Step 19.7: Import app component style
+Subject: [PATCH 162/277] Step 19.7: Import app component style
 
 ---
  client/imports/app/app.component.ts | 4 +++-
@@ -6566,22 +6577,25 @@ index 91e1a06..ff68df0 100644
 2.7.4 (Apple Git-66)
 
 
-From c5d91c195f08d1108c99004eebe166afd2b2a4ef Mon Sep 17 00:00:00 2001
+From 7ced71b9f2fc0eafc1ecccea6094063094d628df Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:21:21 +0300
-Subject: [PATCH 163/276] Step 19.8: Added CSS and material theme definition
+Subject: [PATCH 163/277] Step 19.8: Added CSS and material theme definition
 
 ---
- client/main.scss | 32 +++++++++++++-------------------
- 1 file changed, 13 insertions(+), 19 deletions(-)
+ client/main.scss | 32 ++++++++++++--------------------
+ 1 file changed, 12 insertions(+), 20 deletions(-)
 
 diff --git a/client/main.scss b/client/main.scss
-index ced3c67..9d9fcef 100644
+index 6a989da..c9bbcf0 100644
 --- a/client/main.scss
 +++ b/client/main.scss
-@@ -1,3 +1,12 @@
+@@ -1,32 +1,24 @@
+-@import "./imports/app/colors.scss";
 +@import '../node_modules/@angular/material/core/theming/all-theme';
-+
+ 
+-html, body {
+-  height: 100%;
 +@include md-core();
 +$app-primary: md-palette($md-light-blue, 500, 100, 700);
 +$app-accent:  md-palette($md-pink, A200, A100, A400);
@@ -6589,15 +6603,6 @@ index ced3c67..9d9fcef 100644
 +$app-theme: md-light-theme($app-primary, $app-accent, $app-warn);
 +@include angular-material-theme($app-theme);
 +
- $color1 : #2F2933;
- $color2 : #01A2A6;
- $color3 : #29D9C2;
-@@ -6,33 +15,18 @@ $color5 : #FFFFA6;
- $color6 : #2F2933;
- $color7 : #FF6F69;
- 
--html, body {
--  height: 100%;
 +.fill-remaining-space {
 +  flex: 1 1 auto;
  }
@@ -6635,10 +6640,10 @@ index ced3c67..9d9fcef 100644
 2.7.4 (Apple Git-66)
 
 
-From d4768ea8d9ee88c00b46596545fbbc5befc00493 Mon Sep 17 00:00:00 2001
+From d9ea0038eb4ec52afe54755d82a0894d2c588de0 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:22:18 +0300
-Subject: [PATCH 164/276] Step 19.9: Update the view of the parties form
+Subject: [PATCH 164/277] Step 19.9: Update the view of the parties form
 
 ---
  .../app/parties/parties-form.component.html        | 61 +++++++++++++++-------
@@ -6716,10 +6721,10 @@ index c791629..00f3185 100644
 2.7.4 (Apple Git-66)
 
 
-From 9e208c23f4327d1a1eca7ce0b81ed5a02228ea0f Mon Sep 17 00:00:00 2001
+From e079dde31099be517c71d99701a343659e874f0b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 29 Oct 2016 13:46:03 +0300
-Subject: [PATCH 165/276] Step 19.10: Added styles for parties form
+Subject: [PATCH 165/277] Step 19.10: Added styles for parties form
 
 ---
  .../app/parties/parties-form.component.scss        | 54 ++++++++++++++++++++++
@@ -6791,10 +6796,10 @@ index 0000000..a5f1471
 2.7.4 (Apple Git-66)
 
 
-From b82c37f7003d5be748ad52b50e33d955f436add4 Mon Sep 17 00:00:00 2001
+From 820ebdaea4eb23cd9172ac0ce5c24fde6c8e772b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 29 Oct 2016 13:46:35 +0300
-Subject: [PATCH 166/276] Step 19.11: Inject user and import styles into the
+Subject: [PATCH 166/277] Step 19.11: Inject user and import styles into the
  form
 
 ---
@@ -6855,10 +6860,10 @@ index 3a213f0..25a58dd 100644
 2.7.4 (Apple Git-66)
 
 
-From 7b43eb03b01f499c83d3d885e157bc8acb303cc1 Mon Sep 17 00:00:00 2001
+From cc010f9ab59f3b3683389c9d277a1eb7ff5b2146 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 29 Oct 2016 14:34:17 +0300
-Subject: [PATCH 167/276] Step 19.12: Updated the layout of the parties list
+Subject: [PATCH 167/277] Step 19.12: Updated the layout of the parties list
 
 ---
  .../app/parties/parties-list.component.html        | 156 ++++++++-------------
@@ -7035,20 +7040,29 @@ index 0629b28..0e0e287 100644
 2.7.4 (Apple Git-66)
 
 
-From 0fbc80c3903cbda29fd6c54075b4da19fc7fc6d8 Mon Sep 17 00:00:00 2001
+From 66375b879f59d42acfdeb0b2407ff49ad50095e6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 29 Oct 2016 14:34:31 +0300
-Subject: [PATCH 168/276] Step 19.13: Updated the styles of the parties list
+Subject: [PATCH 168/277] Step 19.13: Updated the styles of the parties list
 
 ---
- .../app/parties/parties-list.component.scss        | 164 +++++++--------------
- 1 file changed, 55 insertions(+), 109 deletions(-)
+ .../app/parties/parties-list.component.scss        | 166 +++++++--------------
+ 1 file changed, 55 insertions(+), 111 deletions(-)
 
 diff --git a/client/imports/app/parties/parties-list.component.scss b/client/imports/app/parties/parties-list.component.scss
-index 2cd8d06..6a695e7 100644
+index 3e09211..6a695e7 100644
 --- a/client/imports/app/parties/parties-list.component.scss
 +++ b/client/imports/app/parties/parties-list.component.scss
-@@ -1,125 +1,71 @@
+@@ -1,127 +1,71 @@
+-@import "../colors";
++.parties-list-container {
++  align-items: center;
++  display: flex;
++  flex-flow: row wrap;
++  margin: 0 auto;
++  width: 100%;
++  display: table;
+ 
 -.ma-add-button-container {
 -  button.btn {
 -    background: $color3;
@@ -7060,26 +7074,19 @@ index 2cd8d06..6a695e7 100644
 -    }
 -  }
 -}
-+.parties-list-container {
-+  align-items: center;
-+  display: flex;
-+  flex-flow: row wrap;
-+  margin: 0 auto;
-+  width: 100%;
-+  display: table;
- 
+-
 -.ma-parties-col {
 -  padding-top: 20px;
+-}
+-
+-.ma-filters {
+-  margin-bottom: 10px;
 -}
 +  .parties-list {
 +    display: table-cell;
 +    width: 50%;
 +    vertical-align: top;
  
--.ma-filters {
--  margin-bottom: 10px;
--}
--
 -.ma-party-item {
 -  .ma-party-name {
 -    margin-bottom: 20px;
@@ -7234,10 +7241,10 @@ index 2cd8d06..6a695e7 100644
 2.7.4 (Apple Git-66)
 
 
-From ff519ed18652e827e278d7f11b46acd724a893a3 Mon Sep 17 00:00:00 2001
+From ee35b7c22284afd8f78631d7bee0969835f9e8fc Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:34:03 +0300
-Subject: [PATCH 169/276] Step 19.14: Update the layout of the party details
+Subject: [PATCH 169/277] Step 19.14: Update the layout of the party details
 
 ---
  .../app/parties/party-details.component.html       | 109 ++++++++++-----------
@@ -7366,10 +7373,10 @@ index c7fc234..7bcaa85 100644
 2.7.4 (Apple Git-66)
 
 
-From 4022fefef2fba857dd7b7b89875aee8a672fdf27 Mon Sep 17 00:00:00 2001
+From 137f6e859340d877f3ce3de47895e3ebd6c2d107 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 29 Oct 2016 16:49:13 +0300
-Subject: [PATCH 170/276] Step 19.15: Updated the styles of the party details
+Subject: [PATCH 170/277] Step 19.15: Updated the styles of the party details
 
 ---
  .../app/parties/party-details.component.scss       | 39 +++++++++-------------
@@ -7433,10 +7440,10 @@ index 82dcfc3..d4073f2 100644
 2.7.4 (Apple Git-66)
 
 
-From 3250c2c5e29b6b4be49ac8d76ee6f3c6980bc2ff Mon Sep 17 00:00:00 2001
+From b2952b1caad3ea40ac488d3adad0561e0f5129f0 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:34:54 +0300
-Subject: [PATCH 171/276] Step 19.16: Replace login buttons with custom buttons
+Subject: [PATCH 171/277] Step 19.16: Replace login buttons with custom buttons
 
 ---
  client/imports/app/app.component.html | 9 ++++++++-
@@ -7466,10 +7473,38 @@ index be09207..ee2644e 100644
 2.7.4 (Apple Git-66)
 
 
-From 3f0b3d9b75b74f6267726df9a16fcef96c1b1bbc Mon Sep 17 00:00:00 2001
+From bc0bf24a087c4599cb0df41e92efff4bb4fc3b0f Mon Sep 17 00:00:00 2001
+From: Dotan Simha <dotansimha@gmail.com>
+Date: Mon, 31 Oct 2016 16:34:48 +0200
+Subject: [PATCH 172/277] Removed old colors file
+
+---
+ client/imports/app/colors.scss | 7 -------
+ 1 file changed, 7 deletions(-)
+ delete mode 100644 client/imports/app/colors.scss
+
+diff --git a/client/imports/app/colors.scss b/client/imports/app/colors.scss
+deleted file mode 100644
+index 8c50009..0000000
+--- a/client/imports/app/colors.scss
++++ /dev/null
+@@ -1,7 +0,0 @@
+-$color1 : #2F2933;
+-$color2 : #01A2A6;
+-$color3 : #29D9C2;
+-$color4 : #BDF271;
+-$color5 : #FFFFA6;
+-$color6 : #2F2933;
+-$color7 : #FF6F69;
+\ No newline at end of file
+-- 
+2.7.4 (Apple Git-66)
+
+
+From 21224dad35903e4fc6f3de1ff691a26a3407db5a Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:35:54 +0300
-Subject: [PATCH 172/276] Step 19.17: Add auth logic to the App component
+Subject: [PATCH 173/277] Step 19.17: Add auth logic to the App component
 
 ---
  client/imports/app/app.component.ts | 12 +++++++++++-
@@ -7505,10 +7540,10 @@ index ff68df0..09074c8 100644
 2.7.4 (Apple Git-66)
 
 
-From 3a47047f5afda1ad37e218f624589c58740e5b77 Mon Sep 17 00:00:00 2001
+From 4ff8b460aa8f40564ae4ea44705cb9e5b2e0aff0 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:46:12 +0300
-Subject: [PATCH 173/276] Step 19.18: Create LoginComponent
+Subject: [PATCH 174/277] Step 19.18: Create LoginComponent
 
 ---
  client/imports/app/auth/login.component.ts | 40 ++++++++++++++++++++++++++++++
@@ -7566,10 +7601,10 @@ index 0000000..ed740de
 2.7.4 (Apple Git-66)
 
 
-From 3dc12ae3a1bda798592808deba72cc91c36eec7e Mon Sep 17 00:00:00 2001
+From 1e0adb92b2760c61e7b4afcb88e1e048e55a71bf Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:46:21 +0300
-Subject: [PATCH 174/276] Step 19.19: Create a template for LoginComponent
+Subject: [PATCH 175/277] Step 19.19: Create a template for LoginComponent
 
 ---
  client/imports/app/auth/login.component.html | 37 ++++++++++++++++++++++++++++
@@ -7624,10 +7659,10 @@ index 0000000..7501a27
 2.7.4 (Apple Git-66)
 
 
-From 110841ec8948fa9dc62fc668a0bc1ce88fa6217c Mon Sep 17 00:00:00 2001
+From 0221583768c0a96b5fb9147b4cd41a86d74648c3 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:46:33 +0300
-Subject: [PATCH 175/276] Step 19.20: Add the login route
+Subject: [PATCH 176/277] Step 19.20: Add the login route
 
 ---
  client/imports/app/app.routes.ts | 4 +++-
@@ -7655,10 +7690,10 @@ index c5812a4..83e37a2 100644
 2.7.4 (Apple Git-66)
 
 
-From 62ed6b032f0895e05d4b3b06e3677b3273ae0456 Mon Sep 17 00:00:00 2001
+From 11c5c4054836c6c006df3821bf5f2cf934ae9f9d Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:46:49 +0300
-Subject: [PATCH 176/276] Step 19.21: Create the index file for auth component
+Subject: [PATCH 177/277] Step 19.21: Create the index file for auth component
 
 ---
  client/imports/app/auth/index.ts | 5 +++++
@@ -7680,10 +7715,10 @@ index 0000000..c8c17d6
 2.7.4 (Apple Git-66)
 
 
-From 9d25871f3717c0676c1102c3e548f8a0d5a7ba5e Mon Sep 17 00:00:00 2001
+From f37f2cb5f3f183558acf58c8c41360b370f9218b Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:47:01 +0300
-Subject: [PATCH 177/276] Step 19.22: Updated the NgModule imports
+Subject: [PATCH 178/277] Step 19.22: Updated the NgModule imports
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -7715,10 +7750,10 @@ index af364ac..8a061ac 100644
 2.7.4 (Apple Git-66)
 
 
-From e57d3b60ca790ce7af71d5bc2d975ad99f17ba2b Mon Sep 17 00:00:00 2001
+From ac9f1662cc70ac4401b07b308412a6c5e5034a07 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:50:22 +0300
-Subject: [PATCH 178/276] Step 19.23: Added the signup component
+Subject: [PATCH 179/277] Step 19.23: Added the signup component
 
 ---
  client/imports/app/auth/singup.component.ts | 43 +++++++++++++++++++++++++++++
@@ -7779,10 +7814,10 @@ index 0000000..eed82b2
 2.7.4 (Apple Git-66)
 
 
-From 9f51731ca4d6e50a0aa1c0f8986a5947ce51306c Mon Sep 17 00:00:00 2001
+From 1742fb7f4af81fd76e202b4c6fd98b0457a3e85c Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:50:30 +0300
-Subject: [PATCH 179/276] Step 19.24: Added the signup view
+Subject: [PATCH 180/277] Step 19.24: Added the signup view
 
 ---
  client/imports/app/auth/signup.component.html | 32 +++++++++++++++++++++++++++
@@ -7832,10 +7867,10 @@ index 0000000..eccbff8
 2.7.4 (Apple Git-66)
 
 
-From ca55a08fbeb6c22dd038e0db7b5ee565d5533c98 Mon Sep 17 00:00:00 2001
+From 04175730dcf4b7d5bcb0a1bbeb4cd61cf5b01a14 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:50:49 +0300
-Subject: [PATCH 180/276] Step 19.25: Added signup component to the index file
+Subject: [PATCH 181/277] Step 19.25: Added signup component to the index file
 
 ---
  client/imports/app/auth/index.ts | 4 +++-
@@ -7858,10 +7893,10 @@ index c8c17d6..fa4ee3e 100644
 2.7.4 (Apple Git-66)
 
 
-From d9272fad78c95516d67e605f8de6db30be4b2265 Mon Sep 17 00:00:00 2001
+From 362caa0aa19b161e305a3bf47644790a77295c93 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:51:05 +0300
-Subject: [PATCH 181/276] Step 19.26: Added signup route
+Subject: [PATCH 182/277] Step 19.26: Added signup route
 
 ---
  client/imports/app/app.routes.ts | 4 +++-
@@ -7890,10 +7925,10 @@ index 83e37a2..d9ad40c 100644
 2.7.4 (Apple Git-66)
 
 
-From 049cab04a6559ecd9f43ee2ff5b4069ee5332510 Mon Sep 17 00:00:00 2001
+From 23a8156222b2ddaa163adb7925ccb8a015759fa9 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:53:55 +0300
-Subject: [PATCH 182/276] Step 19.27: Create the recover component
+Subject: [PATCH 183/277] Step 19.27: Create the recover component
 
 ---
  client/imports/app/auth/recover.component.ts | 41 ++++++++++++++++++++++++++++
@@ -7952,10 +7987,10 @@ index 0000000..6b520c6
 2.7.4 (Apple Git-66)
 
 
-From a340a68146ff3db70444ade7af8d2340e09aee1d Mon Sep 17 00:00:00 2001
+From ec39018781dfc3a70281eeaf2546d3749d798b4a Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:54:00 +0300
-Subject: [PATCH 183/276] Step 19.28: Create the recover component view
+Subject: [PATCH 184/277] Step 19.28: Create the recover component view
 
 ---
  client/imports/app/auth/recover.component.html | 31 ++++++++++++++++++++++++++
@@ -8004,10 +8039,10 @@ index 0000000..192629d
 2.7.4 (Apple Git-66)
 
 
-From 3c41a9cf78b1e5b05440221d34e04967f6541336 Mon Sep 17 00:00:00 2001
+From af5d413e04a535c853ec616e74adb959006e2bdf Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:54:09 +0300
-Subject: [PATCH 184/276] Step 19.29: Added the recover component to the index
+Subject: [PATCH 185/277] Step 19.29: Added the recover component to the index
  file
 
 ---
@@ -8033,10 +8068,10 @@ index fa4ee3e..7e5754e 100644
 2.7.4 (Apple Git-66)
 
 
-From b53f4a44374f87297c7f11736a28c07d8885550b Mon Sep 17 00:00:00 2001
+From 197487eb86c91d1997aa7755ea9db1fc25479a7e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:54:19 +0300
-Subject: [PATCH 185/276] Step 19.30: Added the recover route
+Subject: [PATCH 186/277] Step 19.30: Added the recover route
 
 ---
  client/imports/app/app.routes.ts | 4 +++-
@@ -8066,10 +8101,10 @@ index d9ad40c..efefd60 100644
 2.7.4 (Apple Git-66)
 
 
-From 246f008895980e63ab19f19c6b184f4eb632723c Mon Sep 17 00:00:00 2001
+From f56e3c36d3527192dfe795fdc281ab7499b45bdb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 18 Oct 2016 16:59:07 +0300
-Subject: [PATCH 186/276] Step 19.31: Added material responsive CSS file
+Subject: [PATCH 187/277] Step 19.31: Added material responsive CSS file
 
 ---
  client/imports/material-layout.scss | 19112 ++++++++++++++++++++++++++++++++++
@@ -27198,20 +27233,20 @@ index 0000000..142f4fd
 2.7.4 (Apple Git-66)
 
 
-From 93036246d1643acd99607212aa2d96dad96b2222 Mon Sep 17 00:00:00 2001
+From 0733efe17e48d8f50b45248c504697fe78272893 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 18 Oct 2016 16:59:32 +0300
-Subject: [PATCH 187/276] Step 19.32: Added import in the main scss file
+Subject: [PATCH 188/277] Step 19.32: Added import in the main scss file
 
 ---
  client/main.scss | 2 ++
  1 file changed, 2 insertions(+)
 
 diff --git a/client/main.scss b/client/main.scss
-index 9d9fcef..52885da 100644
+index c9bbcf0..182630b 100644
 --- a/client/main.scss
 +++ b/client/main.scss
-@@ -30,3 +30,5 @@ body {
+@@ -22,3 +22,5 @@ body {
    width: 450px;
    height: 450px;
  }
@@ -27222,20 +27257,20 @@ index 9d9fcef..52885da 100644
 2.7.4 (Apple Git-66)
 
 
-From 29c1b5e5ed6b15b5131527679bd79fcdf20eb446 Mon Sep 17 00:00:00 2001
+From 810fa01e4e7376b31626c8b0c1075efc0017a205 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 18 Oct 2016 17:11:14 +0300
-Subject: [PATCH 188/276] Step 19.33: Added missing CSS
+Subject: [PATCH 189/277] Step 19.33: Added missing CSS
 
 ---
  client/main.scss | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git a/client/main.scss b/client/main.scss
-index 52885da..b9e3f55 100644
+index 182630b..0fd8fdd 100644
 --- a/client/main.scss
 +++ b/client/main.scss
-@@ -31,4 +31,8 @@ body {
+@@ -23,4 +23,8 @@ body {
    height: 450px;
  }
  
@@ -27249,10 +27284,10 @@ index 52885da..b9e3f55 100644
 2.7.4 (Apple Git-66)
 
 
-From 9b90a23e0cc4aa3e8f7ee2d01b67e315274cebde Mon Sep 17 00:00:00 2001
+From f96aa37c4a70085f21213de8dce9f97de3a0d63a Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:57:57 +0300
-Subject: [PATCH 189/276] Step 21.1: Added jalik:ufs and jalik:ufs-gridfs
+Subject: [PATCH 190/277] Step 21.1: Added jalik:ufs and jalik:ufs-gridfs
 
 ---
  .meteor/packages | 2 ++
@@ -27301,10 +27336,10 @@ index 346c2b9..3d957f9 100644
 2.7.4 (Apple Git-66)
 
 
-From 0ae1a8ed9951edb4ab40fdf730753e4cefd2b283 Mon Sep 17 00:00:00 2001
+From ad50a625cbb12c21a5b6408ff6ef53cbc9bddaab Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:59:30 +0300
-Subject: [PATCH 190/276] Step 21.2: Create Images and Thumbs collections
+Subject: [PATCH 191/277] Step 21.2: Create Images and Thumbs collections
 
 ---
  both/collections/images.collection.ts | 5 +++++
@@ -27326,10 +27361,10 @@ index 0000000..efda337
 2.7.4 (Apple Git-66)
 
 
-From d54f8247050adf388fc33662435f5fc0409ed580 Mon Sep 17 00:00:00 2001
+From dc3313fd56f7672a3c41c5ed6825818959997a62 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 13:59:58 +0300
-Subject: [PATCH 191/276] Step 21.3: Define Image interface
+Subject: [PATCH 192/277] Step 21.3: Define Image interface
 
 ---
  both/models/image.model.ts | 15 +++++++++++++++
@@ -27362,10 +27397,10 @@ index 0000000..c4918e1
 2.7.4 (Apple Git-66)
 
 
-From eb14318f3904e34f980189add76b86a1d821137a Mon Sep 17 00:00:00 2001
+From 2dceb745c2482e949f5a88c0dc84c9c2ecef3faa Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:00:20 +0300
-Subject: [PATCH 192/276] Step 21.4: Define Thumbs interface
+Subject: [PATCH 193/277] Step 21.4: Define Thumbs interface
 
 ---
  both/models/image.model.ts | 5 +++++
@@ -27390,10 +27425,10 @@ index c4918e1..9464d8a 100644
 2.7.4 (Apple Git-66)
 
 
-From 2fc953c2b7a96c3b2d700dfc752fa402beae5beb Mon Sep 17 00:00:00 2001
+From 1160b8a01f6083cff12fe9a086ad9cf016797998 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:00:46 +0300
-Subject: [PATCH 193/276] Step 21.5: Add interfaces to Mongo Collections
+Subject: [PATCH 194/277] Step 21.5: Add interfaces to Mongo Collections
 
 ---
  both/collections/images.collection.ts | 5 +++--
@@ -27416,10 +27451,10 @@ index efda337..2c5ab30 100644
 2.7.4 (Apple Git-66)
 
 
-From 04dc053fdac5aaf3af6e785e1a322f97fd0196cc Mon Sep 17 00:00:00 2001
+From a0953092573aebb6f29396dcf082db9e1ddd3845 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:01:42 +0300
-Subject: [PATCH 194/276] Step 21.6: Create stores for Images and Thumbs
+Subject: [PATCH 195/277] Step 21.6: Create stores for Images and Thumbs
 
 ---
  both/collections/images.collection.ts | 32 ++++++++++++++++++++++++++++++++
@@ -27472,10 +27507,10 @@ index 2c5ab30..91374f3 100644
 2.7.4 (Apple Git-66)
 
 
-From 8bcb69c1409151cef50f309bc73f0d969029cfe7 Mon Sep 17 00:00:00 2001
+From c22d0938e70dca61b31d938f9af4856b77544bf7 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:02:18 +0300
-Subject: [PATCH 195/276] Step 21.7: Resize images
+Subject: [PATCH 196/277] Step 21.7: Resize images
 
 ---
  both/collections/images.collection.ts | 14 +++++++++++++-
@@ -27510,10 +27545,10 @@ index 91374f3..22db0ca 100644
 2.7.4 (Apple Git-66)
 
 
-From 0eebb7d4ce7c42abff5972a05536c938753effe7 Mon Sep 17 00:00:00 2001
+From e5ee473563b041bd60ed6e9388d4055635eda711 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 25 Oct 2016 13:31:03 +0300
-Subject: [PATCH 196/276] Step 21.8: Added NodeJS typings
+Subject: [PATCH 197/277] Step 21.8: Added NodeJS typings
 
 ---
  package.json | 7 ++++---
@@ -27550,10 +27585,10 @@ index 1a1b1ab..b7a163a 100644
 2.7.4 (Apple Git-66)
 
 
-From 9eb4a2eb7a55dbf7c61eb1a81730bd086baebbbc Mon Sep 17 00:00:00 2001
+From e98f3738cde62ccee589511d60bae3b171b5aad1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 25 Oct 2016 13:55:55 +0300
-Subject: [PATCH 197/276] Step 21.9: Import NodeJS @types
+Subject: [PATCH 198/277] Step 21.9: Import NodeJS @types
 
 ---
  typings.d.ts | 1 +
@@ -27575,10 +27610,10 @@ index 88c4daf..2376734 100644
 2.7.4 (Apple Git-66)
 
 
-From 4d47735e9051eb8a6a1b6a3d78ba8c9a72ba010b Mon Sep 17 00:00:00 2001
+From 253ade2e86211a4c4ec6eb38b87c4480fd0b47a3 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:02:54 +0300
-Subject: [PATCH 198/276] Step 21.10: Install gm
+Subject: [PATCH 199/277] Step 21.10: Install gm
 
 ---
  package.json | 3 +++
@@ -27608,10 +27643,10 @@ index b7a163a..98f182a 100644
 2.7.4 (Apple Git-66)
 
 
-From e97a7837cbdff7fc81999ba1f9c8fa14e6d803b4 Mon Sep 17 00:00:00 2001
+From 70b51a6936ddfd355b5a9b0f5cc71de7c86d1f7d Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:24:07 +0300
-Subject: [PATCH 199/276] Step 21.11: Install angular2-file-drop
+Subject: [PATCH 200/277] Step 21.11: Install angular2-file-drop
 
 ---
  package.json | 1 +
@@ -27633,10 +27668,10 @@ index 98f182a..d9fe4bd 100644
 2.7.4 (Apple Git-66)
 
 
-From 469ed0ec18a4d4457244b15d0603757bc6259571 Mon Sep 17 00:00:00 2001
+From 1d2db00bfbc3022ad259caa3d3b4b51ec1122f5f Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:24:19 +0300
-Subject: [PATCH 200/276] Step 21.12: Include file drop module
+Subject: [PATCH 201/277] Step 21.12: Include file drop module
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -27668,10 +27703,10 @@ index 8a061ac..5139c77 100644
 2.7.4 (Apple Git-66)
 
 
-From 48d9f57ed616f86b4a89c246fa71a3ef2747ec20 Mon Sep 17 00:00:00 2001
+From e9b2541c3d25304c6cc7c3912dfc41383e0ebba8 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:25:01 +0300
-Subject: [PATCH 201/276] Step 21.13: Create a view for an upload
+Subject: [PATCH 202/277] Step 21.13: Create a view for an upload
 
 ---
  client/imports/app/parties/parties-upload.component.html | 5 +++++
@@ -27694,10 +27729,10 @@ index 0000000..828dd4c
 2.7.4 (Apple Git-66)
 
 
-From f7213364eb99a14138b0f50280e0aa8da6e33a26 Mon Sep 17 00:00:00 2001
+From de93d0eb950fd78d6a8bd50a1ca76a808df57798 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:25:46 +0300
-Subject: [PATCH 202/276] Step 21.14: Create a PartiesUpload component
+Subject: [PATCH 203/277] Step 21.14: Create a PartiesUpload component
 
 ---
  client/imports/app/parties/parties-upload.component.ts | 11 +++++++++++
@@ -27726,10 +27761,10 @@ index 0000000..36a61be
 2.7.4 (Apple Git-66)
 
 
-From 433d66b33c49959612f02875bae101d940c54eb0 Mon Sep 17 00:00:00 2001
+From b6d5b7e7b6a4f6ed138700b0b07178c22549637c Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:25:59 +0300
-Subject: [PATCH 203/276] Step 21.15: Added  PartiesUpload component to the
+Subject: [PATCH 204/277] Step 21.15: Added  PartiesUpload component to the
  index file
 
 ---
@@ -27757,10 +27792,10 @@ index ae09066..7a1b315 100644
 2.7.4 (Apple Git-66)
 
 
-From c92dfc1f5c21601a1e7d52a5a887bd3db048acef Mon Sep 17 00:00:00 2001
+From 85981234a186a1cc5f106ec5e67db4c622e3d774 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:26:53 +0300
-Subject: [PATCH 204/276] Step 21.16: Use PartiesUploadComponent inside the
+Subject: [PATCH 205/277] Step 21.16: Use PartiesUploadComponent inside the
  form
 
 ---
@@ -27783,10 +27818,10 @@ index 00f3185..95c4668 100644
 2.7.4 (Apple Git-66)
 
 
-From 501667f981801d0965d46e286a8065140b330423 Mon Sep 17 00:00:00 2001
+From 1c5a9a8e2931141dc12f22a57853b461f619c610 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:27:41 +0300
-Subject: [PATCH 205/276] Step 21.17: Add bindings to FileDrop
+Subject: [PATCH 206/277] Step 21.17: Add bindings to FileDrop
 
 ---
  client/imports/app/parties/parties-upload.component.html | 5 ++++-
@@ -27811,10 +27846,10 @@ index 828dd4c..4c77c63 100644
 2.7.4 (Apple Git-66)
 
 
-From e3c40a444a976bcdd735c7162a77fe98b5d84de5 Mon Sep 17 00:00:00 2001
+From a0cda4b8b2af5857e411688deac8fc74f4f3e287 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:28:09 +0300
-Subject: [PATCH 206/276] Step 21.18: Handle fileIsOver
+Subject: [PATCH 207/277] Step 21.18: Handle fileIsOver
 
 ---
  client/imports/app/parties/parties-upload.component.ts | 6 ++++++
@@ -27841,10 +27876,10 @@ index 36a61be..48d42e0 100644
 2.7.4 (Apple Git-66)
 
 
-From 5668647edb09d50bac02f37bef92596656a10ce9 Mon Sep 17 00:00:00 2001
+From eaf062224a958e51a838a283f40fa80643282dab Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:28:34 +0300
-Subject: [PATCH 207/276] Step 21.19: Implement onFileDrop method
+Subject: [PATCH 208/277] Step 21.19: Implement onFileDrop method
 
 ---
  client/imports/app/parties/parties-upload.component.ts | 4 ++++
@@ -27868,10 +27903,10 @@ index 48d42e0..1e95a62 100644
 2.7.4 (Apple Git-66)
 
 
-From d9540bdb32ca51844c20c2a1862e20e1099f49bf Mon Sep 17 00:00:00 2001
+From 7619de259cc18ff24b19d608575cca5499bc49a3 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:30:38 +0300
-Subject: [PATCH 208/276] Step 21.20: Implement the upload method
+Subject: [PATCH 209/277] Step 21.20: Implement the upload method
 
 ---
  both/methods/images.methods.ts | 23 +++++++++++++++++++++++
@@ -27912,10 +27947,10 @@ index 0000000..8bfb27e
 2.7.4 (Apple Git-66)
 
 
-From 26646e0cd9ef2f3404f43b64d36f955b4b4681f4 Mon Sep 17 00:00:00 2001
+From b033b4e898c5781671a4f885a1221da8a221b19a Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:31:37 +0300
-Subject: [PATCH 209/276] Step 21.21: Use the upload function
+Subject: [PATCH 210/277] Step 21.21: Use the upload function
 
 ---
  client/imports/app/parties/parties-upload.component.ts | 14 +++++++++++++-
@@ -27963,10 +27998,10 @@ index 1e95a62..8e6180b 100644
 2.7.4 (Apple Git-66)
 
 
-From 4aae0cb9bdd46d856d24828daa0375ac30f464ca Mon Sep 17 00:00:00 2001
+From 71e5415aec9fa03afd14fa446967d0f9a8113a20 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:32:31 +0300
-Subject: [PATCH 210/276] Step 21.22: Declare meteor/jalik:ufs module
+Subject: [PATCH 211/277] Step 21.22: Declare meteor/jalik:ufs module
 
 ---
  typings/jalik-ufs.d.ts | 11 +++++++++++
@@ -27995,10 +28030,10 @@ index 0000000..f2d4383
 2.7.4 (Apple Git-66)
 
 
-From 4691529c50c89f5efc3b44f755e2fbf371ae5794 Mon Sep 17 00:00:00 2001
+From 1f63acb1fa843ec5a814cdea59cb5577cda5e5aa Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:34:11 +0300
-Subject: [PATCH 211/276] Step 21.23: Implement classes
+Subject: [PATCH 212/277] Step 21.23: Implement classes
 
 ---
  client/imports/app/parties/parties-upload.component.html | 2 +-
@@ -28020,10 +28055,10 @@ index 4c77c63..63918dc 100644
 2.7.4 (Apple Git-66)
 
 
-From 25742d32c3d3fff458fc6840196e57f4da412479 Mon Sep 17 00:00:00 2001
+From a7b79af90411622c2471fa98d4945891be25457b Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:34:51 +0300
-Subject: [PATCH 212/276] Step 21.24: Implement publications of Images and
+Subject: [PATCH 213/277] Step 21.24: Implement publications of Images and
  Thumbs
 
 ---
@@ -28057,10 +28092,10 @@ index 0000000..1367a0c
 2.7.4 (Apple Git-66)
 
 
-From 13216ee5fbf048a0ccc48b638d7fbb36dbb66d57 Mon Sep 17 00:00:00 2001
+From f5209b4c0b9faf2c8e38f8117b1bad9a30b6be2e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:35:15 +0300
-Subject: [PATCH 213/276] Step 21.25: Import those publications in the server
+Subject: [PATCH 214/277] Step 21.25: Import those publications in the server
  entry point
 
 ---
@@ -28083,10 +28118,10 @@ index 7979c05..92ff846 100644
 2.7.4 (Apple Git-66)
 
 
-From 98b831dd335beb48f2ba23cb5a2c51229b444217 Mon Sep 17 00:00:00 2001
+From 01cc4fac08c5dd94d29d78b64b03b13d4606de97 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:41:14 +0300
-Subject: [PATCH 214/276] Step 21.26: Use RxJS to keep track of files
+Subject: [PATCH 215/277] Step 21.26: Use RxJS to keep track of files
 
 ---
  client/imports/app/parties/parties-upload.component.ts | 5 ++++-
@@ -28121,10 +28156,10 @@ index 8e6180b..f51ae47 100644
 2.7.4 (Apple Git-66)
 
 
-From 1e36b4231fffef8840fbe9077a75bb4f57fc5059 Mon Sep 17 00:00:00 2001
+From 824095cc534c98760844d6280fc1ff20494251bc Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:41:55 +0300
-Subject: [PATCH 215/276] Step 21.27: Subscribe to the thumbs publication
+Subject: [PATCH 216/277] Step 21.27: Subscribe to the thumbs publication
 
 ---
  .../imports/app/parties/parties-upload.component.ts  | 20 +++++++++++++++++---
@@ -28178,10 +28213,10 @@ index f51ae47..33a0c75 100644
 2.7.4 (Apple Git-66)
 
 
-From b6a206dcee63876ddf67eb4e0898bc71faf792a4 Mon Sep 17 00:00:00 2001
+From 2b6e44dfd45a9f3a4af38fd04b9fb99008e8719f Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:45:34 +0300
-Subject: [PATCH 216/276] Step 21.28: Look for the thumbnails
+Subject: [PATCH 217/277] Step 21.28: Look for the thumbnails
 
 ---
  client/imports/app/parties/parties-upload.component.ts | 14 ++++++++++++--
@@ -28231,10 +28266,10 @@ index 33a0c75..cdba392 100644
 2.7.4 (Apple Git-66)
 
 
-From 7a0821f180c698aef2e2f2aa585075bd3f47817a Mon Sep 17 00:00:00 2001
+From 194f501efe87e960a1eb7e05baee6acd566cfbba Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:46:04 +0300
-Subject: [PATCH 217/276] Step 21.29: Implement the thumbnails in the view
+Subject: [PATCH 218/277] Step 21.29: Implement the thumbnails in the view
 
 ---
  client/imports/app/parties/parties-upload.component.html | 6 ++++++
@@ -28260,10 +28295,10 @@ index 63918dc..1697d45 100644
 2.7.4 (Apple Git-66)
 
 
-From b68bd6c67b9b2294f77fbdeb69c3dd98a62d8ea2 Mon Sep 17 00:00:00 2001
+From 1ae8e04a732a4ab8f9f72e879a63373c3a5456a4 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:46:34 +0300
-Subject: [PATCH 218/276] Step 21.30: Basic styles
+Subject: [PATCH 219/277] Step 21.30: Basic styles
 
 ---
  .../app/parties/parties-upload.component.scss      | 46 ++++++++++++++++++++++
@@ -28327,10 +28362,10 @@ index 0000000..823e601
 2.7.4 (Apple Git-66)
 
 
-From d75fe5a9adb18338198df91dd561675eda7da972 Mon Sep 17 00:00:00 2001
+From c961d4deb90ca153ea6e8417f875928b0a86b4bf Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 25 Oct 2016 13:24:03 +0300
-Subject: [PATCH 219/276] Step 21.31: Added import for the styles file
+Subject: [PATCH 220/277] Step 21.31: Added import for the styles file
 
 ---
  client/imports/app/parties/parties-upload.component.ts | 4 +++-
@@ -28362,10 +28397,10 @@ index cdba392..e33859a 100644
 2.7.4 (Apple Git-66)
 
 
-From b17043e3a8bd53b8aa03066e8c2ebe7309367614 Mon Sep 17 00:00:00 2001
+From 2f40ea4a937765568a78deaafddb96cb231b09de Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 14:49:01 +0300
-Subject: [PATCH 220/276] Step 21.32: Handle file upload
+Subject: [PATCH 221/277] Step 21.32: Handle file upload
 
 ---
  client/imports/app/parties/parties-upload.component.ts | 9 ++++++++-
@@ -28408,10 +28443,10 @@ index e33859a..8b40f32 100644
 2.7.4 (Apple Git-66)
 
 
-From 8f05874ccbaedc4ed206a7009f4a55a39141fe4c Mon Sep 17 00:00:00 2001
+From b40ea34d83647328f38b77df29450395cf930dc1 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:10:26 +0300
-Subject: [PATCH 221/276] Step 21.33: Emit event with the new file
+Subject: [PATCH 222/277] Step 21.33: Emit event with the new file
 
 ---
  client/imports/app/parties/parties-upload.component.ts | 4 +++-
@@ -28447,10 +28482,10 @@ index 8b40f32..f2ad44d 100644
 2.7.4 (Apple Git-66)
 
 
-From 07ecd299300204159e0b8ef38931fc01d716e92a Mon Sep 17 00:00:00 2001
+From ea4d85a80d996ce7fddd54d14684b5c683378609 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:11:01 +0300
-Subject: [PATCH 222/276] Step 21.34: Add images to the PartiesForm component
+Subject: [PATCH 223/277] Step 21.34: Add images to the PartiesForm component
 
 ---
  client/imports/app/parties/parties-form.component.ts | 6 ++++++
@@ -28489,10 +28524,10 @@ index 25a58dd..845930f 100644
 2.7.4 (Apple Git-66)
 
 
-From 9a70cbab0c0415b6f7ca0d2bfb64f2bbd1c5c6ed Mon Sep 17 00:00:00 2001
+From adfebb736a31768ebe90e36974fa91c1493385e6 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:11:29 +0300
-Subject: [PATCH 223/276] Step 21.35: Add images property to the Party
+Subject: [PATCH 224/277] Step 21.35: Add images property to the Party
  interface
 
 ---
@@ -28515,10 +28550,10 @@ index 5e62f1b..eb4b3e4 100644
 2.7.4 (Apple Git-66)
 
 
-From cee51e7a631c584bbc41b796529e4e38b8965721 Mon Sep 17 00:00:00 2001
+From cf2c45e614aeae308bb8ef7d237c17b79c6b4b61 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:11:51 +0300
-Subject: [PATCH 224/276] Step 21.36: Bind the onFile event
+Subject: [PATCH 225/277] Step 21.36: Bind the onFile event
 
 ---
  client/imports/app/parties/parties-form.component.html | 2 +-
@@ -28541,10 +28576,10 @@ index 95c4668..5d3a5fe 100644
 2.7.4 (Apple Git-66)
 
 
-From 23978463060b7b598c0ae97363581b6006448da0 Mon Sep 17 00:00:00 2001
+From 3eaaabe76a284ad7023eb8ec7feae5afad973942 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:14:00 +0300
-Subject: [PATCH 225/276] Step 21.37: Create DisplayMainImage pipe
+Subject: [PATCH 226/277] Step 21.37: Create DisplayMainImage pipe
 
 ---
  .../imports/app/shared/display-main-image.pipe.ts  | 25 ++++++++++++++++++++++
@@ -28587,10 +28622,10 @@ index 0000000..c98e952
 2.7.4 (Apple Git-66)
 
 
-From 3336ffb741f0901f80664451972634140da866eb Mon Sep 17 00:00:00 2001
+From a1305f984d3a327a68951c62ad7d3a7d3ba9832a Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:14:26 +0300
-Subject: [PATCH 226/276] Step 21.38: Add DisplayMainImage pipe
+Subject: [PATCH 227/277] Step 21.38: Add DisplayMainImage pipe
 
 ---
  client/imports/app/shared/index.ts | 4 +++-
@@ -28615,10 +28650,10 @@ index 12c7d64..37c6cf1 100644
 2.7.4 (Apple Git-66)
 
 
-From 92e77c9b1bbc0d4e318f7be45309a3e460299468 Mon Sep 17 00:00:00 2001
+From 6dab26bdf8e57acc1316e2af52db4125bc7d1d5f Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:15:56 +0300
-Subject: [PATCH 227/276] Step 21.39: Subscribe to the images publication
+Subject: [PATCH 228/277] Step 21.39: Subscribe to the images publication
 
 ---
  client/imports/app/parties/parties-list.component.ts | 4 ++++
@@ -28655,10 +28690,10 @@ index 341adea..bd5e2bb 100644
 2.7.4 (Apple Git-66)
 
 
-From 4c7f12b3ade3f45b59e86e94352d9a4072f2caba Mon Sep 17 00:00:00 2001
+From a972687b12ffa980eaa8569c225716f94c5d43f0 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:16:31 +0300
-Subject: [PATCH 228/276] Step 21.40: Implement the pipe
+Subject: [PATCH 229/277] Step 21.40: Implement the pipe
 
 ---
  client/imports/app/parties/parties-list.component.html | 1 +
@@ -28680,10 +28715,10 @@ index 0e0e287..43e78e3 100644
 2.7.4 (Apple Git-66)
 
 
-From d44640ea8c2b266d3dc5bdf262fc0d1acaa22960 Mon Sep 17 00:00:00 2001
+From cd6a51c23fbbcddd1ffd045a2dff460ae8515856 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:16:52 +0300
-Subject: [PATCH 229/276] Step 21.41: Add some styles
+Subject: [PATCH 230/277] Step 21.41: Add some styles
 
 ---
  client/imports/app/parties/parties-list.component.scss | 5 +++++
@@ -28709,10 +28744,10 @@ index 6a695e7..811e9f9 100644
 2.7.4 (Apple Git-66)
 
 
-From 16846533bb8e72e07f058df163b20bd6f2f84e27 Mon Sep 17 00:00:00 2001
+From 63812323afef8bc36120ac92d05e64974fece3d2 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:17:53 +0300
-Subject: [PATCH 230/276] Step 21.42: Add the reset method to PartiesUpload
+Subject: [PATCH 231/277] Step 21.42: Add the reset method to PartiesUpload
  component
 
 ---
@@ -28738,10 +28773,10 @@ index f2ad44d..80eeeb7 100644
 2.7.4 (Apple Git-66)
 
 
-From 465e1f4272d70859bb57506e6d8d72330213bb35 Mon Sep 17 00:00:00 2001
+From 6145a0153e7dcaacc340fa28e17917e42358bd93 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:18:33 +0300
-Subject: [PATCH 231/276] Step 21.43: Reset files on ngSubmit
+Subject: [PATCH 232/277] Step 21.43: Reset files on ngSubmit
 
 ---
  client/imports/app/parties/parties-form.component.html | 2 +-
@@ -28764,10 +28799,10 @@ index 5d3a5fe..e132086 100644
 2.7.4 (Apple Git-66)
 
 
-From ecd65e72d3f095acbd5679be8f3d701cc09c87e4 Mon Sep 17 00:00:00 2001
+From 3a7dab39a9ed48c4c2bda82a534f6f6d0b9ffb71 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:34:29 +0300
-Subject: [PATCH 232/276] Step 22.1: Add mobile platform
+Subject: [PATCH 233/277] Step 22.1: Add mobile platform
 
 ---
  .meteor/platforms | 4 +++-
@@ -28787,10 +28822,10 @@ index efeba1b..2d49a85 100644
 2.7.4 (Apple Git-66)
 
 
-From 9b15b672cbbf0e32de31e48176408ad028bd8914 Mon Sep 17 00:00:00 2001
+From 546e67cd69bcc76aa4ef756dd798ac2a2041a044 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 11:26:49 +0300
-Subject: [PATCH 233/276] Step 22.2: Wrapped Angular 2 bootstrap with Meteor
+Subject: [PATCH 234/277] Step 22.2: Wrapped Angular 2 bootstrap with Meteor
  startup
 
 ---
@@ -28817,10 +28852,10 @@ index 45d1530..7c00907 100644
 2.7.4 (Apple Git-66)
 
 
-From 50dc499ef7d228650d6a85d2f59cea5f7b2d626a Mon Sep 17 00:00:00 2001
+From 85156187a16db755a6e7d652055cfdeb5fafd235 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:34:43 +0300
-Subject: [PATCH 234/276] Step 22.3: Rename to login.web.component.html
+Subject: [PATCH 235/277] Step 22.3: Rename to login.web.component.html
 
 ---
  client/imports/app/auth/login.component.html     | 37 ------------------------
@@ -28921,10 +28956,10 @@ index 0000000..7501a27
 2.7.4 (Apple Git-66)
 
 
-From d406cc780a9c1deb19eb0c5e652570c7784cebb0 Mon Sep 17 00:00:00 2001
+From f8b7bd68afcdc4c9d6fc200919a331291160d295 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:34:55 +0300
-Subject: [PATCH 235/276] Step 22.4: Do the same for login.component.ts
+Subject: [PATCH 236/277] Step 22.4: Do the same for login.component.ts
 
 ---
  client/imports/app/auth/login.component.ts     | 40 --------------------------
@@ -29031,10 +29066,10 @@ index 0000000..ed740de
 2.7.4 (Apple Git-66)
 
 
-From a77f15d2f0857e79db72f42364f945b871ab1ea4 Mon Sep 17 00:00:00 2001
+From c88cd7cfb67b0dfe091de6977b82ef6dc7ceb17a Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:35:10 +0300
-Subject: [PATCH 236/276] Step 22.5: Update the template
+Subject: [PATCH 237/277] Step 22.5: Update the template
 
 ---
  client/imports/app/auth/login.component.web.ts | 2 +-
@@ -29057,10 +29092,10 @@ index ed740de..81d0e24 100644
 2.7.4 (Apple Git-66)
 
 
-From b35351d64f787c3316a9d131756c14e7c7d2194d Mon Sep 17 00:00:00 2001
+From e4e2d8dae5c94fb0618aceff8804c54e1c6dd98c Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:37:42 +0300
-Subject: [PATCH 237/276] Step 22.6: Update the index file
+Subject: [PATCH 238/277] Step 22.6: Update the index file
 
 ---
  client/imports/app/auth/index.ts | 2 +-
@@ -29080,10 +29115,10 @@ index 7e5754e..228cb9c 100644
 2.7.4 (Apple Git-66)
 
 
-From 5b23b84e95ba7480f6e5ad1089944358e2b377f7 Mon Sep 17 00:00:00 2001
+From 8467342cf22eee5e9f277a8fc54cc7a0e39553b5 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:38:00 +0300
-Subject: [PATCH 238/276] Step 22.7: Add accounts-phone package
+Subject: [PATCH 239/277] Step 22.7: Add accounts-phone package
 
 ---
  .meteor/packages | 1 +
@@ -29115,10 +29150,10 @@ index 3d957f9..7a4a0c6 100644
 2.7.4 (Apple Git-66)
 
 
-From e4a2177c6b4b1d2986fad40c20489bf7fecfb756 Mon Sep 17 00:00:00 2001
+From f51b5cb52277919ce2c8daf3dcb775997092918e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:39:01 +0300
-Subject: [PATCH 239/276] Step 22.8: Create a view for the mobile login
+Subject: [PATCH 240/277] Step 22.8: Create a view for the mobile login
 
 ---
  client/imports/app/auth/login.component.mobile.html | 19 +++++++++++++++++++
@@ -29155,10 +29190,10 @@ index 0000000..cd71ab3
 2.7.4 (Apple Git-66)
 
 
-From efa9b7a5554df050ec982ec00c00fc71a5bc769a Mon Sep 17 00:00:00 2001
+From 6a03833431e709f1fee7cdca1c3d092285baa33d Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:40:04 +0300
-Subject: [PATCH 240/276] Step 22.9: Create mobile version of Login component
+Subject: [PATCH 241/277] Step 22.9: Create mobile version of Login component
 
 ---
  client/imports/app/auth/login.component.mobile.ts | 17 +++++++++++++++++
@@ -29193,10 +29228,10 @@ index 0000000..75a6e78
 2.7.4 (Apple Git-66)
 
 
-From d2f59c59a7fcf62e93d7f293a5cd8ce20e3e8d79 Mon Sep 17 00:00:00 2001
+From f9045e138e13db3ba49772ef19faa5c3c3915782 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:40:42 +0300
-Subject: [PATCH 241/276] Step 22.10: Add a form with phone number to provide
+Subject: [PATCH 242/277] Step 22.10: Add a form with phone number to provide
 
 ---
  client/imports/app/auth/login.component.mobile.html | 10 ++++++++++
@@ -29227,10 +29262,10 @@ index cd71ab3..2154629 100644
 2.7.4 (Apple Git-66)
 
 
-From 5adf2b6647753edd7fdf1789d8cad3b7bcaaa964 Mon Sep 17 00:00:00 2001
+From fe313f6f0aa8dc98870eebbe5c76a6ed0e958257 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:42:13 +0300
-Subject: [PATCH 242/276] Step 22.11: Implement a phone number verification
+Subject: [PATCH 243/277] Step 22.11: Implement a phone number verification
 
 ---
  client/imports/app/auth/login.component.mobile.ts | 28 ++++++++++++++++++++---
@@ -29286,10 +29321,10 @@ index 75a6e78..651abdc 100644
 2.7.4 (Apple Git-66)
 
 
-From b2838d137095f7ca457bd878c916cd6dcc3f01fa Mon Sep 17 00:00:00 2001
+From 6f51f890bfcba7eb635618da56e4fcfaa315da14 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:43:17 +0300
-Subject: [PATCH 243/276] Step 22.12: Implement a code verification
+Subject: [PATCH 244/277] Step 22.12: Implement a code verification
 
 ---
  client/imports/app/auth/login.component.mobile.ts | 23 +++++++++++++++++++++++
@@ -29347,10 +29382,10 @@ index 651abdc..4695bda 100644
 2.7.4 (Apple Git-66)
 
 
-From 02f46330bb97d1750aa0b4342af08ce4faeae104 Mon Sep 17 00:00:00 2001
+From e7ca061b6abc5690ba7473648943fd9d1284d8ae Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:44:00 +0300
-Subject: [PATCH 244/276] Step 22.13: Create a form with code verification
+Subject: [PATCH 245/277] Step 22.13: Create a form with code verification
 
 ---
  client/imports/app/auth/login.component.mobile.html | 12 +++++++++++-
@@ -29390,10 +29425,10 @@ index 2154629..f6dc6b7 100644
 2.7.4 (Apple Git-66)
 
 
-From 89629edb5dfdd3e165bb946b79223eaae079f0f0 Mon Sep 17 00:00:00 2001
+From ac9bbd072a08bd70f3ce12d13b679923e6c6aa27 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:46:50 +0300
-Subject: [PATCH 245/276] Step 22.14: Added MobileLoginComponent to the index
+Subject: [PATCH 246/277] Step 22.14: Added MobileLoginComponent to the index
  file
 
 ---
@@ -29421,10 +29456,10 @@ index 228cb9c..dbca5ff 100644
 2.7.4 (Apple Git-66)
 
 
-From 6d1ede6b1d3fd91d46ffc3cce5dbaf76364f8940 Mon Sep 17 00:00:00 2001
+From 02832d9b7248f2d6bf86806ff6f4257140fe3a44 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Tue, 27 Sep 2016 16:47:36 +0300
-Subject: [PATCH 246/276] Step 22.15: Choose mobile or web version
+Subject: [PATCH 247/277] Step 22.15: Choose mobile or web version
 
 ---
  client/imports/app/app.routes.ts | 5 +++--
@@ -29456,10 +29491,10 @@ index efefd60..bb84cb5 100644
 2.7.4 (Apple Git-66)
 
 
-From 9ffb7f33c5f4fdf2e23a521e7443501a2764a80b Mon Sep 17 00:00:00 2001
+From 5436c1adf8db2979d256bcb703c3cfbc249432a8 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:06:32 +0300
-Subject: [PATCH 247/276] Step 23.1: Install ionic-angular and missing angular
+Subject: [PATCH 248/277] Step 23.1: Install ionic-angular and missing angular
  dependencis
 
 ---
@@ -29493,10 +29528,10 @@ index d9fe4bd..f0ecc91 100644
 2.7.4 (Apple Git-66)
 
 
-From be5ba44c1f11803e8ee257d1ed4aa73d5e91fec5 Mon Sep 17 00:00:00 2001
+From 1df330f249c14fa6ca5b55761d94b4057457c9c0 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:08:01 +0300
-Subject: [PATCH 248/276] Step 23.2: Rename to app.component.web.ts
+Subject: [PATCH 249/277] Step 23.2: Rename to app.component.web.ts
 
 ---
  client/imports/app/app.component.ts     | 21 ---------------------
@@ -29563,10 +29598,10 @@ index 0000000..09074c8
 2.7.4 (Apple Git-66)
 
 
-From 4fca6ea3234c1ac11025430ba9825601ca4f78a7 Mon Sep 17 00:00:00 2001
+From d08b99a5d297db7cdb09f180ef9e27e751fadf44 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:08:11 +0300
-Subject: [PATCH 249/276] Step 23.3: Rename to app.component.web.html
+Subject: [PATCH 250/277] Step 23.3: Rename to app.component.web.html
 
 ---
  client/imports/app/app.component.html     | 13 -------------
@@ -29619,10 +29654,10 @@ index 0000000..ee2644e
 2.7.4 (Apple Git-66)
 
 
-From e625bf4347fcafc673318d265bc773fcc5b848bd Mon Sep 17 00:00:00 2001
+From cd5b737b6870214ebcebc4ae79bb2bef0583ba27 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:08:40 +0300
-Subject: [PATCH 250/276] Step 23.4: Updated the template import
+Subject: [PATCH 251/277] Step 23.4: Updated the template import
 
 ---
  client/imports/app/app.component.web.ts | 2 +-
@@ -29645,10 +29680,10 @@ index 09074c8..98264c9 100644
 2.7.4 (Apple Git-66)
 
 
-From fcecf5f82aa799860ca2c301ef4acf5f6c6d9f50 Mon Sep 17 00:00:00 2001
+From ac6285e27dbd3f3ee44ba6bb3ce864edfa504463 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:09:49 +0300
-Subject: [PATCH 251/276] Step 23.5: Updated the main component import
+Subject: [PATCH 252/277] Step 23.5: Updated the main component import
 
 ---
  client/imports/app/app.module.ts | 2 +-
@@ -29671,10 +29706,10 @@ index 5139c77..a1cbd5a 100644
 2.7.4 (Apple Git-66)
 
 
-From 7ff591ddd3bb9583945e45269dc1df72b3de2bc1 Mon Sep 17 00:00:00 2001
+From 2851cbee67bae79661a779e230958c73a0204d03 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:10:36 +0300
-Subject: [PATCH 252/276] Step 23.6: Use web version of Login component in
+Subject: [PATCH 253/277] Step 23.6: Use web version of Login component in
  routing
 
 ---
@@ -29704,10 +29739,10 @@ index bb84cb5..85f5669 100644
 2.7.4 (Apple Git-66)
 
 
-From 5ae08a22651d33e1dd9cb24322da4473f63ae2d6 Mon Sep 17 00:00:00 2001
+From 110df792878f60a609bf87178239a49e034ff6bc Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:16:31 +0300
-Subject: [PATCH 253/276] Step 23.7: Created the main mobile component
+Subject: [PATCH 254/277] Step 23.7: Created the main mobile component
 
 ---
  client/imports/app/mobile/app.component.mobile.ts | 13 +++++++++++++
@@ -29738,10 +29773,10 @@ index 0000000..ae661d6
 2.7.4 (Apple Git-66)
 
 
-From 5c08a128236ed78ddb6f1bc0a489047b3913d567 Mon Sep 17 00:00:00 2001
+From cc924bf75d9488335f8d70deb7bcac73ef311f96 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:16:41 +0300
-Subject: [PATCH 254/276] Step 23.8: Created the main mobile component view
+Subject: [PATCH 255/277] Step 23.8: Created the main mobile component view
 
 ---
  client/imports/app/mobile/app.component.mobile.html | 1 +
@@ -29760,10 +29795,10 @@ index 0000000..a94744b
 2.7.4 (Apple Git-66)
 
 
-From 3d2f51a8de28d1b736e1859eecaa665c4ceb14b1 Mon Sep 17 00:00:00 2001
+From b5d17649852abaabf10f4bfb72836a1a1a063b4a Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:17:03 +0300
-Subject: [PATCH 255/276] Step 23.9: Created index file for mobile declarations
+Subject: [PATCH 256/277] Step 23.9: Created index file for mobile declarations
 
 ---
  client/imports/app/mobile/index.ts | 5 +++++
@@ -29786,10 +29821,10 @@ index 0000000..b92e848
 2.7.4 (Apple Git-66)
 
 
-From 56266c62e460aadbfd9a6588c28c2c5e0a1b72ee Mon Sep 17 00:00:00 2001
+From 0d37b4cb56052ad3b78b1ae229e048cb950609e5 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:17:32 +0300
-Subject: [PATCH 256/276] Step 23.10: Imported mobile declarations and added
+Subject: [PATCH 257/277] Step 23.10: Imported mobile declarations and added
  conditional main component bootstrap
 
 ---
@@ -29893,10 +29928,10 @@ index a1cbd5a..9c33cda 100644
 2.7.4 (Apple Git-66)
 
 
-From 99bf5d67c07c304897fe77c84a8530bc9f1effa4 Mon Sep 17 00:00:00 2001
+From e676e8e85790b5a0547ab985a02c93f87ec7f48d Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:38:32 +0300
-Subject: [PATCH 257/276] Step 23.11: Added ionic-selector package
+Subject: [PATCH 258/277] Step 23.11: Added ionic-selector package
 
 ---
  package.json | 1 +
@@ -29918,10 +29953,10 @@ index f0ecc91..7df1f9e 100644
 2.7.4 (Apple Git-66)
 
 
-From a4e10586414a95d4304de2709767f73ca261fd28 Mon Sep 17 00:00:00 2001
+From 1975d94db33e1f1176524a34985f290cd43bc26d Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:39:16 +0300
-Subject: [PATCH 258/276] Step 23.12: Use ionic-selector package
+Subject: [PATCH 259/277] Step 23.12: Use ionic-selector package
 
 ---
  client/main.ts | 6 ++++++
@@ -29950,10 +29985,10 @@ index 7c00907..5cbb885 100644
 2.7.4 (Apple Git-66)
 
 
-From ce97b9d3491fc6bdf5bca4a3e1a050054d5136a4 Mon Sep 17 00:00:00 2001
+From aacffe4f28dd2ff484a6b1bcd1f2ba42f77c0a18 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:42:58 +0300
-Subject: [PATCH 259/276] Step 23.13: Install ionicons
+Subject: [PATCH 260/277] Step 23.13: Install ionicons
 
 ---
  package.json | 1 +
@@ -29975,10 +30010,10 @@ index 7df1f9e..cf3ed9c 100644
 2.7.4 (Apple Git-66)
 
 
-From 7ff91757069ce835ffdcf1bf3afb3f706aaf39ec Mon Sep 17 00:00:00 2001
+From 2d669c7aa64cf464b810576bd9891a61db8d6605 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:43:51 +0300
-Subject: [PATCH 260/276] Step 23.14: Create ionic.scss and add ionicons to it
+Subject: [PATCH 261/277] Step 23.14: Create ionic.scss and add ionicons to it
 
 ---
  client/imports/app/mobile/ionic.scss | 1 +
@@ -29997,17 +30032,17 @@ index 0000000..0dec7a3
 2.7.4 (Apple Git-66)
 
 
-From ef8edabb6ddcf9331ef2bfbde1cc3eba91f02246 Mon Sep 17 00:00:00 2001
+From 703cd294e583edf8862ee1b9830b3d496995afc1 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:48:45 +0300
-Subject: [PATCH 261/276] Step 23.15: Import ionic.scss to main file
+Subject: [PATCH 262/277] Step 23.15: Import ionic.scss to main file
 
 ---
  client/main.scss | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/client/main.scss b/client/main.scss
-index b9e3f55..a02f4f6 100644
+index 0fd8fdd..241aabd 100644
 --- a/client/main.scss
 +++ b/client/main.scss
 @@ -1,4 +1,5 @@
@@ -30020,10 +30055,10 @@ index b9e3f55..a02f4f6 100644
 2.7.4 (Apple Git-66)
 
 
-From 72d49dc61cff6d64a5464b1bb43519e7b37bc28e Mon Sep 17 00:00:00 2001
+From da34324184309a7b9a23371a92b92f543a7965a9 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:59:06 +0300
-Subject: [PATCH 262/276] Step 23.16: Imported the main css file of ionic
+Subject: [PATCH 263/277] Step 23.16: Imported the main css file of ionic
 
 ---
  client/imports/app/mobile/app.component.mobile.ts | 4 ++++
@@ -30048,10 +30083,10 @@ index ae661d6..212bc29 100644
 2.7.4 (Apple Git-66)
 
 
-From e991e1a12473eabcf4ffbf141ffad903efffe5b7 Mon Sep 17 00:00:00 2001
+From 0ffcd5a00c18e47eab89dc0b78358cd48fcf03f6 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:49:15 +0300
-Subject: [PATCH 263/276] Step 23.17: Add two classes to fix an issue with
+Subject: [PATCH 264/277] Step 23.17: Add two classes to fix an issue with
  overflow
 
 ---
@@ -30059,10 +30094,10 @@ Subject: [PATCH 263/276] Step 23.17: Add two classes to fix an issue with
  1 file changed, 9 insertions(+)
 
 diff --git a/client/main.scss b/client/main.scss
-index a02f4f6..a7c08e1 100644
+index 241aabd..4dcc626 100644
 --- a/client/main.scss
 +++ b/client/main.scss
-@@ -27,6 +27,15 @@ body {
+@@ -19,6 +19,15 @@ body {
    margin: 0;
  }
  
@@ -30082,10 +30117,10 @@ index a02f4f6..a7c08e1 100644
 2.7.4 (Apple Git-66)
 
 
-From a45392e97049ea4670ee568b995b9ac7ba11c4d7 Mon Sep 17 00:00:00 2001
+From 568c6532ef0f0991f7a184a38c413ac2600fe1f2 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 12:50:18 +0300
-Subject: [PATCH 264/276] Step 23.18: Set the proper class on body
+Subject: [PATCH 265/277] Step 23.18: Set the proper class on body
 
 ---
  client/main.ts | 11 +++++++++++
@@ -30120,10 +30155,10 @@ index 5cbb885..26bd39d 100644
 2.7.4 (Apple Git-66)
 
 
-From 9cfb7ac2a27d64faf2a35e1804c55a450911e52f Mon Sep 17 00:00:00 2001
+From ab83e5c17869233d7041fe770d5512a2c4a86b89 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:04:53 +0300
-Subject: [PATCH 265/276] Step 23.19: Take the logic of parties list to
+Subject: [PATCH 266/277] Step 23.19: Take the logic of parties list to
  external class
 
 ---
@@ -30254,10 +30289,10 @@ index 0000000..705824d
 2.7.4 (Apple Git-66)
 
 
-From b7e7b733527002236067074a750a79c327ccd8b3 Mon Sep 17 00:00:00 2001
+From 761d7100ee969a07aca37347a94a0686bfeeede2 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:05:07 +0300
-Subject: [PATCH 266/276] Step 23.20: Create a clean parties list for web
+Subject: [PATCH 267/277] Step 23.20: Create a clean parties list for web
  display
 
 ---
@@ -30403,10 +30438,10 @@ index bd5e2bb..ce59033 100644
 2.7.4 (Apple Git-66)
 
 
-From 50fe49b5db54ddc2cafa50ed773cdefb1bd28172 Mon Sep 17 00:00:00 2001
+From 461c2e55ef6ba2e5073f3bce9b0358662ecf5ebe Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:06:01 +0300
-Subject: [PATCH 267/276] Step 23.21: Create a basic view of the mobile version
+Subject: [PATCH 268/277] Step 23.21: Create a basic view of the mobile version
 
 ---
  client/imports/app/mobile/parties-list.component.mobile.html | 8 ++++++++
@@ -30431,10 +30466,10 @@ index 0000000..36c6831
 2.7.4 (Apple Git-66)
 
 
-From 9004de0b4cfaad08d57b6c67faf006739b553fe9 Mon Sep 17 00:00:00 2001
+From f1ce1678620233ed913e3d2851eefb9e3e8fb673 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:07:44 +0300
-Subject: [PATCH 268/276] Step 23.22: Create the mobile version of PartiesList
+Subject: [PATCH 269/277] Step 23.22: Create the mobile version of PartiesList
  component
 
 ---
@@ -30467,10 +30502,10 @@ index 0000000..34b7ee1
 2.7.4 (Apple Git-66)
 
 
-From e3312a9cee3e9b4e62d87be377964fff3f7304dc Mon Sep 17 00:00:00 2001
+From 1349ae1658f7b4f01bc5aeaa189c99650451441e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:08:28 +0300
-Subject: [PATCH 269/276] Step 23.23: Added PartiesListMobile component to the
+Subject: [PATCH 270/277] Step 23.23: Added PartiesListMobile component to the
  index file
 
 ---
@@ -30495,10 +30530,10 @@ index b92e848..e6203fc 100644
 2.7.4 (Apple Git-66)
 
 
-From fb78853a70294c0c502dfb5f5361c554d61cf404 Mon Sep 17 00:00:00 2001
+From cc79553e3de145cf86e1a38b26200f42ae2329b6 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:14:30 +0300
-Subject: [PATCH 270/276] Step 23.24: Added the rootPage
+Subject: [PATCH 271/277] Step 23.24: Added the rootPage
 
 ---
  client/imports/app/mobile/app.component.mobile.ts | 5 ++++-
@@ -30532,10 +30567,10 @@ index 212bc29..2b70422 100644
 2.7.4 (Apple Git-66)
 
 
-From 162011821a2d2346d9e31b1f1522c07b8f31e5eb Mon Sep 17 00:00:00 2001
+From a17900307c125bc7f0b32903ece24c3793b3dc20 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:15:32 +0300
-Subject: [PATCH 271/276] Step 23.25: Update the module imports and entry point
+Subject: [PATCH 272/277] Step 23.25: Update the module imports and entry point
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -30573,10 +30608,10 @@ index 9c33cda..5af0312 100644
 2.7.4 (Apple Git-66)
 
 
-From 5c488c5206104fac2769853e9e048372f7b4f1f3 Mon Sep 17 00:00:00 2001
+From 2056cd62ffcad5e3ef315c6633ebf5818b2ad25f Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:26:29 +0300
-Subject: [PATCH 272/276] Step 23.26: Add name, description ad RSVPs to the
+Subject: [PATCH 273/277] Step 23.26: Add name, description ad RSVPs to the
  view
 
 ---
@@ -30621,10 +30656,10 @@ index 36c6831..fc0c5b3 100644
 2.7.4 (Apple Git-66)
 
 
-From 8efb09f897c0774aecf6870aea4e8eeadad1d666 Mon Sep 17 00:00:00 2001
+From bbe8f639f7b89f19a4f0d9373c6115b4db744905 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:28:06 +0300
-Subject: [PATCH 273/276] Step 23.27: Fix an issuewith a absolute path of an
+Subject: [PATCH 274/277] Step 23.27: Fix an issuewith a absolute path of an
  image
 
 ---
@@ -30661,10 +30696,10 @@ index c98e952..dda5f05 100644
 2.7.4 (Apple Git-66)
 
 
-From 65849cb6427b95d88a475a73946c95042342e461 Mon Sep 17 00:00:00 2001
+From 845e078286dc070955db6c023e82ce899107603e Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:28:57 +0300
-Subject: [PATCH 274/276] Step 23.28: Use the main image pipe
+Subject: [PATCH 275/277] Step 23.28: Use the main image pipe
 
 ---
  client/imports/app/mobile/parties-list.component.mobile.html | 1 +
@@ -30686,10 +30721,10 @@ index fc0c5b3..02e5489 100644
 2.7.4 (Apple Git-66)
 
 
-From b4593e7085a914c0e9198db510d874f390d052b9 Mon Sep 17 00:00:00 2001
+From 748ffdd0ff74fa49f4e863a4912a5e8c239b6706 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:30:25 +0300
-Subject: [PATCH 275/276] Step 23.29: Add mys:fonts
+Subject: [PATCH 276/277] Step 23.29: Add mys:fonts
 
 ---
  .meteor/packages | 1 +
@@ -30721,10 +30756,10 @@ index 7a4a0c6..f91e3b8 100644
 2.7.4 (Apple Git-66)
 
 
-From c188b8bf9ef6e0ce02e810e23a4f58f27793e9bf Mon Sep 17 00:00:00 2001
+From 6aefd399fa09a833d1504bdf91b9546b079fa4f8 Mon Sep 17 00:00:00 2001
 From: dotansimha <dotansimha@gmail.com>
 Date: Wed, 28 Sep 2016 13:30:57 +0300
-Subject: [PATCH 276/276] Step 23.30: Define fonts.json
+Subject: [PATCH 277/277] Step 23.30: Define fonts.json
 
 ---
  fonts.json | 8 ++++++++

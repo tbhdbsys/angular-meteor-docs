@@ -61,13 +61,21 @@ So let's start with the parties list, and add some style (it's not that critical
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.9"}}
 
+> Note that we used the "colors.scss" import - don't worry - we will add it soon!
+
 And now let's add SASS file for the party details:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="18.10"}}
 
 Now let's add some styles and colors using SASS to the main file:
 
-{{> DiffBox tutorialName="meteor-angular2-socially" step="18.11"}}
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.11" filename="client/main.scss"}}
+
+And let's create the colors definition file we mentioned earlier:
+
+{{> DiffBox tutorialName="meteor-angular2-socially" step="18.11" filename="client/imports/app/colors.scss"}}
+
+> We defined our colors in this file, and we used it all across the our application - so it's easy to change and modify the whole theme!
 
 Now let's use Angular 2 Component styles, which bundles the styles into the Component, without effecting other Component's styles (you can red more about it [here](https://angular.io/docs/ts/latest/guide/component-styles.html))
 
