@@ -79,7 +79,7 @@ Router.map(function () {
   redirect('/tutorial/step_17', '/tutorials/socially/angular1/css-less-and-bootstrap');
   redirect('/tutorial/step_18', '/tutorials/socially/angular1/angular-material-and-custom-angular-auth-forms');
   redirect('/tutorial/step_19', '/tutorials/socially/angular1/3rd-party-libraries');
-  redirect('/tutorial/step_20', '/tutorials/socially/angular1/handling-files-with-collectionfs');
+  redirect('/tutorial/step_20', '/tutorials/socially/angular1/handling-files-with-uploadfs');
 
   // Redirecting old links to Socially Angular 1
   redirect('/tutorials/angular1', '/tutorials/socially/angular1');
@@ -104,7 +104,7 @@ Router.map(function () {
   redirect('/tutorials/angular1/css-less-and-bootstrap', '/tutorials/socially/angular1/css-less-and-bootstrap');
   redirect('/tutorials/angular1/angular-material-and-custom-angular-auth-forms', '/tutorials/socially/angular1/angular-material-and-custom-angular-auth-forms');
   redirect('/tutorials/angular1/3rd-party-libraries', '/tutorials/socially/angular1/3rd-party-libraries');
-  redirect('/tutorials/angular1/handling-files-with-collectionfs', '/tutorials/socially/angular1/handling-files-with-collectionfs');
+  redirect('/tutorials/angular1/handling-files-with-uploadfs', '/tutorials/socially/angular1/handling-files-with-uploadfs');
   redirect('/tutorials/angular1/mobile-support-and-packages-isolation', '/tutorials/socially/angular1/mobile-support-and-packages-isolation');
   redirect('/tutorials/angular1/ionic', '/tutorials/socially/angular1/ionic');
   redirect('/tutorials/angular1/next-steps', '/tutorials/socially/angular1/next-steps');
@@ -133,7 +133,7 @@ Router.map(function () {
   redirect('/tutorials/socially/angular2/css-less-and-bootstrap', '/tutorials/socially/angular2/css-sass-and-bootstrap');
   redirect('/tutorials/angular2/angular-material-and-custom-angular-auth-forms', '/tutorials/socially/angular2/angular-material-and-custom-angular-auth-forms');
   redirect('/tutorials/angular2/3rd-party-libraries', '/tutorials/socially/angular2/3rd-party-libraries');
-  redirect('/tutorials/angular2/handling-files-with-collectionfs', '/tutorials/socially/angular2/handling-files-with-collectionfs');
+  redirect('/tutorials/angular2/handling-files-with-uploadfs', '/tutorials/socially/angular2/handling-files-with-uploadfs');
   redirect('/tutorials/angular2/mobile-support-and-packages-isolation', '/tutorials/socially/angular2/mobile-support-and-packages-isolation');
   redirect('/tutorials/angular2/ionic', '/tutorials/socially/angular2/ionic');
   redirect('/tutorials/angular2/next-steps', '/tutorials/socially/angular2/next-steps');
