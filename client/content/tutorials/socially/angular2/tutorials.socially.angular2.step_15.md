@@ -46,7 +46,7 @@ Then, change the template to use the `hidden` attribute:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="16.2"}}
 
-Now run the app. Make sure you have added _barbatus:ng2-meteor-accounts_ for it to work.
+Now run the app.
 
 The "add party" form and "remove" buttons should disappear if you are not logged-in. Try to log in: everything should be visible again.
 
