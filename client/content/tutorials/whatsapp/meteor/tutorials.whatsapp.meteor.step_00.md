@@ -35,10 +35,10 @@ Next, we will replace `Blaze` (`Meteor`'s default templating engine) with `Angul
 We also need to make sure `Ionic` is installed along with its dependencies:
 
     $ meteor add dab0mb:ionic-assets
-    $ meteor npm install angular@^1.5.0 --save
-    $ meteor npm install angular-animate@^1.4.3 --save
-    $ meteor npm install angular-sanitize@^1.4.3 --save
-    $ meteor npm install angular-ui-router@^0.2.13 --save
+    $ meteor npm install angular@^1.5.8 --save
+    $ meteor npm install angular-animate@^1.5.8 --save
+    $ meteor npm install angular-sanitize@^1.5.8 --save
+    $ meteor npm install angular-ui-router@^0.3.1 --save
     $ meteor npm install ionic-scripts --save
 
 If you're an iOS user you might encounter some issues related to double tapping not being submitted correctly. This is caused due to a package automatically included by `Metoer` and it is called `mobile-experience` so we can have a more native feeling for our app once running on a mobile device, which is not always right across the board. This package is simply a cluster of the following packages:
