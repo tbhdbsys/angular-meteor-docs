@@ -13,7 +13,12 @@
           <div class="alert alert-danger" role="alert">Note: This API feature is deprecated since
             version {{ deprecated }} and will be removed in version {{ removedIn }}</div>
         {{/if }}
+        {{#if mdContent}}
         {{> Template.dynamic template=mdContent}}
+        {{/if }}
+        {{#if remoteMdContent}}
+        {{> remoteMarkdown options=remoteMdContent}}
+        {{/if }}
       </div>
     </div>
   </div>

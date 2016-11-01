@@ -6,7 +6,17 @@ Template.sidebarDesktopAPI.helpers({
 
 Template.sidebarDefaultAPI.events({
   'change #api-selector': function (event) {
-    Router.go('/api/' + event.target.value);
+    var route = Router.current().route.path(this);
+
+    if (route.indexOf('api/angular2') > -1) {
+      Router.go('/api/angular2/' + event.target.value);
+    }
+    else if (path.indexOf('api/meteor-rxjs') > -1) {
+      Router.go('/api/meteo-rxjs/' + event.target.value);
+    }
+    else {
+      Router.go('/api/' + event.target.value);
+    }
   }
 });
 
@@ -17,6 +27,10 @@ Template.sidebarDefaultAPI.helpers({
 
     if (route.indexOf('api/angular2') > -1) {
       apis = ANGULAR2_API_DEFINITION;
+    }
+
+    if (route.indexOf('api/meteor-rxjs') > -1) {
+      apis = METEOR_RXJS_API_DEFINITION;
     }
 
     return _.keys(apis);
@@ -32,6 +46,12 @@ Template.sidebarDefaultAPI.helpers({
 
 Template.apiSelector.helpers({
   angularVersions: function () {
+    var path = Router.current().route.path(this);
+
+    if (path.indexOf('api/meteor-rxjs') > -1) {
+      return [];
+    }
+
     return [PAGES[0], PAGES[1]];
   }
 });
@@ -43,6 +63,10 @@ Template.angularVersionLink.helpers({
 
     if (path.indexOf('api/angular2') > -1) {
       currentTutorial = "Angular 2";
+    }
+
+    if (path.indexOf('api/meteor-rxjs') > -1) {
+      currentTutorial = "Meteor-RxJS";
     }
 
     if (currentTutorial === this.title) {

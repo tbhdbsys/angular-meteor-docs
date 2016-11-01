@@ -61,6 +61,7 @@
       API Version:
       <select id="api-selector">
         {{#each apis}}
+          {{ this }}
           <option value="{{this}}" selected="{{currentApi this}}">{{this}}</option>
         {{/each}}
       </select>
