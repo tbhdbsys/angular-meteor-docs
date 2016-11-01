@@ -33,6 +33,12 @@ Router.map(function () {
     seoTitle: 'Angular 2 Meteor'
   });
 
+  self.route('meteor-rxjs', {
+    path: '/meteor-rxjs',
+    template: 'meteor-rxjs',
+    seoTitle: 'Meteor+RxJS'
+  });
+
   self.route('manifesto', {
     path: '/manifesto',
     template: 'manifesto',
@@ -187,6 +193,7 @@ Router.map(function () {
         routeName = routeName.slice(routeName.lastIndexOf('.') + 1);
         var redirectFrom = '/api/' + appendToLinks + routeName;
         var redirectTo = '/api/' + appendToLinks + apiKey + '/' + routeName;
+
         if (!_.contains(directedRouteNames, routeName)) {
           redirect(redirectFrom, redirectTo);
           directedRouteNames.push(routeName);
@@ -197,7 +204,7 @@ Router.map(function () {
 
       (function (routeUrl) {
         if (routeUrl) {
-          Router.route('/api/' + appendToLinks + apiKey, function () {
+          Router.route('/api/' + appendToLinks + "/" + apiKey, function () {
             this.redirect(routeUrl);
           });
         }
@@ -207,9 +214,11 @@ Router.map(function () {
 
   createApiRoutes(ANGULAR1_API_DEFINITION, '');
   createApiRoutes(ANGULAR2_API_DEFINITION, 'angular2');
+  createApiRoutes(METEOR_RXJS_API_DEFINITION, 'meteor-rxjs');
 
   redirect('/api', '/api/' + ANGULAR1_DEFAULT_API + '/helpers');
   redirect('/api/angular2', '/api/angular2/' + ANGULAR2_DEFAULT_API + '/meteorComponent');
+  redirect('/api/meteor-rxjs', '/api/meteor-rxjs/' + METEOR_RXJS_DEFAULT_API + '/meteor-observable');
 
   // -------------------------------------------------------------------------
   // Migration routes

@@ -42,6 +42,7 @@ createSubRoutes = function (content) {
   _.forEach(content.pages, function(page) {
     Router.map(function() {
       this.route(page.path, createRoute(page));
+      console.log("created route " + page.path + " with template: " + page.template);
     });
   });
 

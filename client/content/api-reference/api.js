@@ -9,6 +9,11 @@ Template.api.helpers({
       apis = ANGULAR2_API_DEFINITION;
     }
 
+    if (route.indexOf('api/meteor-rxjs') > -1) {
+      apiVersionIndex = 3;
+      apis = METEOR_RXJS_API_DEFINITION;
+    }
+
     var currentRoute = route.split('/');
     var currentAPI = currentRoute[apiVersionIndex];
 
