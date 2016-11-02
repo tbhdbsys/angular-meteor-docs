@@ -30,6 +30,4 @@ mdg:tutorial-diff-box
 mdg:tutorial-registry
 simple:markdown-templating@1.2.7
 mdg:tutorial-step-diff-compiler
-standard-minifier-css
-standard-minifier-js
 numtel:template-from-string
