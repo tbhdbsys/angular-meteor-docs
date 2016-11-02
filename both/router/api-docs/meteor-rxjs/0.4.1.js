@@ -1,4 +1,4 @@
-METEOR_RXJS_API_0_4_1 = function(version, reversion) {
+METEOR_RXJS_API = function(version, reversion) {
   var urlBase = '/api/meteor-rxjs/' + version + '/';
   var repo = "Urigo/meteor-rxjs";
   reversion = reversion || "59772fff59f4060db63c0cce969c2beaa98c1a35";
