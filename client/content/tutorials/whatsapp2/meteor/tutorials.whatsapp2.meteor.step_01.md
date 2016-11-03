@@ -159,6 +159,15 @@ We also need to add few meta tags:
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="1.11" }}
 
+Now, in order to get smooth mobile experience in Ionic 2, we need to make some modifications to Meteor's default packages. 
+
+Meteor comes with a mobile support package called `mobile-experience` which is a bundle for three packages: `fastclick`, `mobile-status-bar` and `launch-screen`, and we need to remove `fastclick` in order to get better result.
+
+So let's make those changes:
+
+    $ meteor remove mobile-experience
+    $ meteor add mobile-status-bar
+    $ meteor add launch-screen
 
 ### Web
 

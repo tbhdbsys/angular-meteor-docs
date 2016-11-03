@@ -1,7 +1,7 @@
-From bfdb04ee4bd9e99d990e16972dca6ba4cdc03bf2 Mon Sep 17 00:00:00 2001
+From 90823826b467b80d9b9be6c8c9f8028cda910b35 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:15:03 +0300
-Subject: [PATCH 001/127] Step 1.1: Remove boilerplate example files
+Subject: [PATCH 001/128] Step 1.1: Remove boilerplate example files
 
 ---
  both/collections/demo-collection.ts               |  4 -
@@ -427,13 +427,13 @@ index d4b1cda..ca6ff2f 100644
    }
  }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 7f10bedae16f8316b016f573c7b8c197ac5d0f5a Mon Sep 17 00:00:00 2001
+From 22875b8323f1c910c1c46e1302c5215e7d01fb80 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:15:33 +0300
-Subject: [PATCH 002/127] Step 1.2: Added Ionic 2 and it's dependencies
+Subject: [PATCH 002/128] Step 1.2: Added Ionic 2 and it's dependencies
 
 ---
  package.json | 4 ++++
@@ -461,13 +461,13 @@ index aabacb5..d858ee2 100644
      "meteor-rxjs": "0.2.3",
      "reflect-metadata": "0.1.8",
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From cfe3fd766d688a7f69ae802559312005c20c2127 Mon Sep 17 00:00:00 2001
+From 4fa89f2d2eef04e052226202370e7d523a75a5f8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:25:51 +0300
-Subject: [PATCH 003/127] Step 1.3: Updated the NgModule to use Ionic 2
+Subject: [PATCH 003/128] Step 1.3: Updated the NgModule to use Ionic 2
 
 ---
  client/imports/app/app.module.ts | 6 +++---
@@ -498,13 +498,13 @@ index 40a3119..a96f8e9 100644
  })
  export class AppModule {}
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From eb793481934debb04ded9d7f6628c3ec4206c0fc Mon Sep 17 00:00:00 2001
+From 92f2eeee4792e61ee27f2ef865d10040c2ebe26b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:26:12 +0300
-Subject: [PATCH 004/127] Step 1.4: Changed the root Component tag
+Subject: [PATCH 004/128] Step 1.4: Changed the root Component tag
 
 ---
  client/index.html | 2 +-
@@ -522,13 +522,13 @@ index d3675e5..2e01ea4 100644
 +  <ion-app>Loading...</ion-app>
  </body>
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From bfe099f0a6b375ef51d3caf18dadf8768ae223a3 Mon Sep 17 00:00:00 2001
+From a7699eeb4b3fd7608ffd7a318eb4bb1fdafd396e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:31:16 +0300
-Subject: [PATCH 005/127] Step 1.5: Added import for Ionic 2 stylesheet
+Subject: [PATCH 005/128] Step 1.5: Added import for Ionic 2 stylesheet
 
 ---
  client/styles/ionic.scss | 280 +++++++++++++++++++++++++++++++++++++++++++++++
@@ -822,13 +822,13 @@ index 0000000..186f82b
 +@import "{}/node_modules/ionic-angular/themes/ionic.theme.default.scss";
 +
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From f9f1a26835e1cc9ad45206e8887822b64df804f3 Mon Sep 17 00:00:00 2001
+From ae85cfdbb331cc8bf5422c8dde34c417bc85923c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:34:44 +0300
-Subject: [PATCH 006/127] Step 1.6: Added mys:fonts
+Subject: [PATCH 006/128] Step 1.6: Added mys:fonts
 
 ---
  .meteor/packages | 1 +
@@ -857,13 +857,13 @@ index 9886afc..7e1c968 100644
  observe-sequence@1.0.12
  ordered-dict@1.0.8
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 5dfc1b07056a41fa803ba21cdb7c86be3dc17496 Mon Sep 17 00:00:00 2001
+From ab32d2fb580f58f271f7d378b8b44c66ede2b5f2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:37:46 +0300
-Subject: [PATCH 007/127] Step 1.7: Added fonts file declaration
+Subject: [PATCH 007/128] Step 1.7: Added fonts file declaration
 
 ---
  fonts.json | 11 +++++++++++
@@ -889,13 +889,13 @@ index 0000000..f444c35
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 115c5298f54c33198c1e63fb2c34680701f85b1f Mon Sep 17 00:00:00 2001
+From e96518d8282b358b04e348db0b0cc12753fac964 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:42:15 +0300
-Subject: [PATCH 008/127] Step 1.8: Added ionic-native package
+Subject: [PATCH 008/128] Step 1.8: Added ionic-native package
 
 ---
  package.json | 1 +
@@ -914,13 +914,13 @@ index d858ee2..3929642 100644
      "meteor-rxjs": "0.2.3",
      "reflect-metadata": "0.1.8",
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 4fcd6d2d66389089853032204a37f3ede9181861 Mon Sep 17 00:00:00 2001
+From 881d5d759b5348d48193918c14cd6edef5024682 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:42:32 +0300
-Subject: [PATCH 009/127] Step 1.9: Basic native functionality added
+Subject: [PATCH 009/128] Step 1.9: Basic native functionality added
 
 ---
  client/imports/app/app.component.ts | 10 ++++++++--
@@ -952,13 +952,13 @@ index ca2fb29..5869be0 100644
    }
  }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 45b422b212e346d2e150543abc5e07a125bc526a Mon Sep 17 00:00:00 2001
+From 74cbdc737f4ce8816e609df1f5c58d5f83c7c786 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:57:08 +0300
-Subject: [PATCH 010/127] Step 1.10: Added iOS platform
+Subject: [PATCH 010/128] Step 1.10: Added iOS platform
 
 ---
  .meteor/platforms | 3 ++-
@@ -974,13 +974,13 @@ index efeba1b..81ae701 100644
 +ios
 +server
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From de3fa0e63c399e6f45bc69597cd5bb49e48ed0af Mon Sep 17 00:00:00 2001
+From 9d3a604ae94e7180468b67c1e0e04376a537b58c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:57:22 +0300
-Subject: [PATCH 011/127] Step 1.11: Added missing Ionic 2 meta tags
+Subject: [PATCH 011/128] Step 1.11: Added missing Ionic 2 meta tags
 
 ---
  client/index.html | 8 ++++++--
@@ -1004,13 +1004,66 @@ index 2e01ea4..1f9d258 100644
 +<ion-app>Loading...</ion-app>
  </body>
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 6f94b3419222843b5a68fa3162739d61596828da Mon Sep 17 00:00:00 2001
+From 57ce8431746ae964104426d42816edb10977d375 Mon Sep 17 00:00:00 2001
+From: Dotan Simha <dotansimha@gmail.com>
+Date: Thu, 3 Nov 2016 11:16:35 +0200
+Subject: [PATCH 012/128] Step 1.12: Removed mobile-experience and added
+ mobile-status-bar, launch-screen
+
+---
+ .meteor/packages | 3 ++-
+ .meteor/versions | 2 --
+ 2 files changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/.meteor/packages b/.meteor/packages
+index d4f74d0..c67b676 100644
+--- a/.meteor/packages
++++ b/.meteor/packages
+@@ -5,7 +5,6 @@
+ # but you can also edit it by hand.
+ 
+ meteor-base@1.0.4             # Packages every Meteor app needs to have
+-mobile-experience@1.0.4       # Packages for a great mobile UX
+ mongo@1.1.12                   # The database Meteor supports right now
+ reactive-var@1.0.10            # Reactive variable for tracker
+ jquery@1.11.9                  # Helpful client-side library
+@@ -24,3 +23,5 @@ hwillson:stub-collections
+ dispatch:mocha-phantomjs
+ shell-server
+ mys:fonts
++mobile-status-bar
++launch-screen
+diff --git a/.meteor/versions b/.meteor/versions
+index 7e1c968..563029a 100644
+--- a/.meteor/versions
++++ b/.meteor/versions
+@@ -31,7 +31,6 @@ ecmascript@0.5.8
+ ecmascript-runtime@0.3.14
+ ejson@1.0.12
+ es5-shim@4.6.14
+-fastclick@1.0.12
+ geojson-utils@1.0.9
+ hot-code-push@1.0.4
+ html-tools@1.0.11
+@@ -49,7 +48,6 @@ meteor-base@1.0.4
+ minifier-css@1.2.14
+ minifier-js@1.2.14
+ minimongo@1.0.17
+-mobile-experience@1.0.4
+ mobile-status-bar@1.0.12
+ modules@0.7.6
+ modules-runtime@0.7.6
+-- 
+2.9.3 (Apple Git-75)
+
+
+From 3ae247fdaa52e30c14566ddceaa01def553b976c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:44:01 +0200
-Subject: [PATCH 012/127] Step 1: Initial setup
+Subject: [PATCH 013/128] Step 1: Initial setup
 
 ---
  steps/step1.md | 0
@@ -1021,13 +1074,13 @@ diff --git a/steps/step1.md b/steps/step1.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 2a0c22d2d751df8575ef2e2c899a5e25d7dec93d Mon Sep 17 00:00:00 2001
+From 59f22c00f42d83b60f4f663c44dc6652ba78cb98 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:57:37 +0300
-Subject: [PATCH 013/127] Step 2.1: Added tabs container component
+Subject: [PATCH 014/128] Step 2.1: Added tabs container component
 
 ---
  .../pages/tabs-container/tabs-container.component.ts    | 17 +++++++++++++++++
@@ -1059,13 +1112,13 @@ index 0000000..1c13731
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 2e0dc0f7f82546f09ad46810db08004ff5bc4808 Mon Sep 17 00:00:00 2001
+From 1f742806dc71484419dc3de34d4c5555a688e5ed Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:57:56 +0300
-Subject: [PATCH 014/127] Step 2.2: Added the Component to the NgModule
+Subject: [PATCH 015/128] Step 2.2: Added the Component to the NgModule
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -1097,13 +1150,13 @@ index a96f8e9..e2721dd 100644
    // Providers
    providers: [
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 25a8ee7de50d292051555490882c702286d9433e Mon Sep 17 00:00:00 2001
+From aeed0bbc4f857be0189f0e5f0c6f502ad5488e31 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:58:19 +0300
-Subject: [PATCH 015/127] Step 2.3: Updated the main component to use Ionic
+Subject: [PATCH 016/128] Step 2.3: Updated the main component to use Ionic
  navigation
 
 ---
@@ -1121,13 +1174,13 @@ index 3c4adac..202644e 100644
 +<ion-nav [root]="rootPage"></ion-nav>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 22e1b2ee356498502497954ebe88645727517144 Mon Sep 17 00:00:00 2001
+From e75bc8adce86029cf24d0650d12e79dec8c14207 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:58:36 +0300
-Subject: [PATCH 016/127] Step 2.4: Added missing rootPage variable
+Subject: [PATCH 017/128] Step 2.4: Added missing rootPage variable
 
 ---
  client/imports/app/app.component.ts | 3 +++
@@ -1154,13 +1207,13 @@ index 5869be0..772cc90 100644
      platform.ready().then(() => {
        // Okay, so the platform is ready and our plugins are available.
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 2dfdf40eeb659d158d3bfb74645bbcb274a9aa57 Mon Sep 17 00:00:00 2001
+From f3fcbe8eb78da7ae9a1df1e5a1364c3d969928b4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:09:59 +0300
-Subject: [PATCH 017/127] Step 2.5: Added the chats page template
+Subject: [PATCH 018/128] Step 2.5: Added the chats page template
 
 ---
  client/imports/pages/chats/chats.component.html | 9 +++++++++
@@ -1184,13 +1237,13 @@ index 0000000..0c55ce6
 +</ion-content>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 686ae1a49e62ae5d4c0da467b1aeb73412d2bd93 Mon Sep 17 00:00:00 2001
+From 47eb504e3edf611c083ddb2062a94e376fc7b886 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:10:10 +0300
-Subject: [PATCH 018/127] Step 2.6: Added the chats page component
+Subject: [PATCH 019/128] Step 2.6: Added the chats page component
 
 ---
  client/imports/pages/chats/chats.component.ts | 12 ++++++++++++
@@ -1217,13 +1270,13 @@ index 0000000..b79d011
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 1f92a1960b17d91719e90fb0a273aa64e9cec549 Mon Sep 17 00:00:00 2001
+From fc17f71616b1a7f6f27812d85f32470387a06f6f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:10:32 +0300
-Subject: [PATCH 019/127] Step 2.7: Added the chats page to the NgModule
+Subject: [PATCH 020/128] Step 2.7: Added the chats page to the NgModule
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -1257,13 +1310,13 @@ index e2721dd..91af1b1 100644
    // Providers
    providers: [
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From b38af6e409a4a8471d217ede876515bb18687941 Mon Sep 17 00:00:00 2001
+From 1e963a38b4ddd24f2fb5544d591399be70a50073 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:11:22 +0300
-Subject: [PATCH 020/127] Step 2.8: Use the chats page component in ion-tabs
+Subject: [PATCH 021/128] Step 2.8: Use the chats page component in ion-tabs
 
 ---
  client/imports/pages/tabs-container/tabs-container.component.ts | 5 ++++-
@@ -1295,13 +1348,13 @@ index 1c13731..4a7160d 100644
  
    }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 6b5f57f58cefb94595aafda07924a9fccd2559e3 Mon Sep 17 00:00:00 2001
+From da3b06ad03902fc052eee8554009118316e24ba4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:53:01 +0300
-Subject: [PATCH 021/127] Step 2.9: Add whatsapp theme variable
+Subject: [PATCH 022/128] Step 2.9: Add whatsapp theme variable
 
 ---
  client/styles/ionic.scss | 3 ++-
@@ -1322,13 +1375,13 @@ index 186f82b..4022576 100644
  
  // Components
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 686a2c9b2c7e09e1dc217ac4d7b482bcfd8e0de4 Mon Sep 17 00:00:00 2001
+From 3ba096c8601d7c362b770598790954bfccfec30f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:53:26 +0300
-Subject: [PATCH 022/127] Step 2.10: Added theme usage for tabs component
+Subject: [PATCH 023/128] Step 2.10: Added theme usage for tabs component
 
 ---
  client/imports/pages/tabs-container/tabs-container.component.ts | 2 +-
@@ -1348,13 +1401,13 @@ index 4a7160d..bcaed58 100644
      <ion-tab tabTitle="Contacts" tabIcon="contacts"></ion-tab>
      <ion-tab tabTitle="Favorites" tabIcon="star"></ion-tab>
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 5ba445bcaba9500cd14df1feaebc719ccf6040f6 Mon Sep 17 00:00:00 2001
+From 58fd3d1a382ca279afbbb9c88342dead3304a235 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:59:36 +0300
-Subject: [PATCH 023/127] Step 2.11: Added message model
+Subject: [PATCH 024/128] Step 2.11: Added message model
 
 ---
  both/models/message.model.ts | 5 +++++
@@ -1374,13 +1427,13 @@ index 0000000..1165f7f
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 378cf248e71d433f3c18955d49e819035a315668 Mon Sep 17 00:00:00 2001
+From 795f4d0eae1e42bedb8ffd1e40a14078f6b62999 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:59:51 +0300
-Subject: [PATCH 024/127] Step 2.12: Added chat model
+Subject: [PATCH 025/128] Step 2.12: Added chat model
 
 ---
  both/models/chat.model.ts | 8 ++++++++
@@ -1403,13 +1456,13 @@ index 0000000..36e42ca
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 5e33ddd2fffa1a959f5f2fc0f60a108236eb6a6f Mon Sep 17 00:00:00 2001
+From 56a08584824cc37fcfdc235ab7a0d7e74414e330 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:01:22 +0300
-Subject: [PATCH 025/127] Step 2.13: Added moment
+Subject: [PATCH 026/128] Step 2.13: Added moment
 
 ---
  package.json | 3 ++-
@@ -1447,13 +1500,13 @@ index 4a62321..d1f10e1 100644
    }
  }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 88cb62760f6e2dda38670a7dd8a78b8eeaf0c305 Mon Sep 17 00:00:00 2001
+From 1ed70fec78fd6da66ba68ff2dca43c51dd7febf5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:15:02 +0300
-Subject: [PATCH 026/127] Step 2.14: Added list of stub chats
+Subject: [PATCH 027/128] Step 2.14: Added list of stub chats
 
 ---
  client/imports/pages/chats/chats.component.ts | 53 ++++++++++++++++++++++++++-
@@ -1530,13 +1583,13 @@ index b79d011..1d524c5 100644
  }
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 0299834782b86f78490f79f1106067e3042a6350 Mon Sep 17 00:00:00 2001
+From 4e75048e529c994448fd9e04ac8990c339f1d620 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:18:22 +0300
-Subject: [PATCH 027/127] Step 2.15: Added chats view layout
+Subject: [PATCH 028/128] Step 2.15: Added chats view layout
 
 ---
  client/imports/pages/chats/chats.component.html | 26 +++++++++++++++++++++----
@@ -1580,13 +1633,13 @@ index 0c55ce6..54c523c 100644
 +  </ion-list>
 +</ion-content>
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From d55ea2567feaada41decf45dc94278d9f0527f4c Mon Sep 17 00:00:00 2001
+From cae2126bfa0ce04997a20fbfbe46fa71a3e782b6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:18:38 +0300
-Subject: [PATCH 028/127] Step 2.16: Added some css styles to the chats list
+Subject: [PATCH 029/128] Step 2.16: Added some css styles to the chats list
 
 ---
  client/imports/pages/chats/chats.component.scss | 20 ++++++++++++++++++++
@@ -1621,13 +1674,13 @@ index 0000000..6470e09
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 3875e9591082fe8a1a3b427c45d58aff40cb5818 Mon Sep 17 00:00:00 2001
+From 025cb0e624ca47314a8342106c9f2906720b4889 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:18:56 +0300
-Subject: [PATCH 029/127] Step 2.17: Import the new styles into the Component
+Subject: [PATCH 030/128] Step 2.17: Import the new styles into the Component
 
 ---
  client/imports/pages/chats/chats.component.ts | 7 ++++++-
@@ -1655,13 +1708,13 @@ index 1d524c5..815d4b6 100644
  export class ChatsComponent {
    chats: Observable<Chat[]>;
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From f68accaff728879c7e0bb7129cc0627ff59490b8 Mon Sep 17 00:00:00 2001
+From 29b8e811704e5774052a81a2659614961322fcc4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:20:11 +0300
-Subject: [PATCH 030/127] Step 2.18: Added angular moment package
+Subject: [PATCH 031/128] Step 2.18: Added angular moment package
 
 ---
  package.json | 1 +
@@ -1680,13 +1733,13 @@ index 9bb4313..3b77adf 100644
      "ionic-native": "^2.0.3",
      "ionicons": "^3.0.0",
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 21c0618d406bf59382935d7a2de8c9ed37369799 Mon Sep 17 00:00:00 2001
+From a29f64263eb9debd9d593f72650e0e9c771bbd0a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:20:34 +0300
-Subject: [PATCH 031/127] Step 2.19: Added MomentModule to the NgModule
+Subject: [PATCH 032/128] Step 2.19: Added MomentModule to the NgModule
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -1715,13 +1768,13 @@ index 91af1b1..b915e99 100644
    // Main Component
    bootstrap: [ IonicApp ]
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 5f64ef5e99fd35936e6ab5b303064dee3cea0428 Mon Sep 17 00:00:00 2001
+From a42691cf9f469815ba2161ef59193544a4e029e1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:21:04 +0300
-Subject: [PATCH 032/127] Step 2.20: Use angular2-moment pipe
+Subject: [PATCH 033/128] Step 2.20: Use angular2-moment pipe
 
 ---
  client/imports/pages/chats/chats.component.html | 2 +-
@@ -1741,13 +1794,13 @@ index 54c523c..a2878fb 100644
        </div>
      </button>
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From cf9a90039b540e30374be470894595bbbb4d70a9 Mon Sep 17 00:00:00 2001
+From f96f9e445a4ea116bc8f36e08fb956c837402958 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 20:50:52 +0200
-Subject: [PATCH 033/127] Step 2.21: Add declaration for .scss files
+Subject: [PATCH 034/128] Step 2.21: Add declaration for .scss files
 
 ---
  typings.d.ts | 6 +++++-
@@ -1769,13 +1822,13 @@ index 1684801..b7c82f2 100644
 +  export const innerHTML: string;
 +}
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From ac2bfaf26a144c6ba62cdb7c0f8c17498558bb0e Mon Sep 17 00:00:00 2001
+From 2653adcb3e638cc7115d9804730b4210aaf57118 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:48:57 +0200
-Subject: [PATCH 034/127] Step 2: Chats page
+Subject: [PATCH 035/128] Step 2: Chats page
 
 ---
  steps/step2.md | 0
@@ -1786,13 +1839,13 @@ diff --git a/steps/step2.md b/steps/step2.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 925f5d62d0bcca73d7d944c0e6fee74f0c8b28cc Mon Sep 17 00:00:00 2001
+From 2a389c7ce5bf91335160c66594655cfac9f176e8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:23:19 +0300
-Subject: [PATCH 035/127] Step 3.1: Add the Chats collection
+Subject: [PATCH 036/128] Step 3.1: Add the Chats collection
 
 ---
  both/collections/chats.collection.ts | 4 ++++
@@ -1810,13 +1863,13 @@ index 0000000..0f46dc2
 +
 +export const Chats = new MongoObservable.Collection<Chat>('chats');
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 73ab717de7d18c704b075d2d621590301511e2ff Mon Sep 17 00:00:00 2001
+From e22bbef02221adeb9b488cdf1319627d5afb13ef Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:23:32 +0300
-Subject: [PATCH 036/127] Step 3.2: Add the Messages collection
+Subject: [PATCH 037/128] Step 3.2: Add the Messages collection
 
 ---
  both/collections/messages.collection.ts | 4 ++++
@@ -1834,13 +1887,13 @@ index 0000000..28e2eb6
 +
 +export const Messages = new MongoObservable.Collection<Message>('messages');
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 3ba572749dd54e4d9eca2b180de8803bf2a4d675 Mon Sep 17 00:00:00 2001
+From 88533aa86a57da635115fbc29f3277ddd9c414ac Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 12:13:08 +0300
-Subject: [PATCH 037/127] Step 3.3: Added the stub data to the server
+Subject: [PATCH 038/128] Step 3.3: Added the stub data to the server
 
 ---
  server/imports/server-main/main.ts | 61 ++++++++++++++++++++++++++++++++++++++
@@ -1918,13 +1971,13 @@ index ca6ff2f..e84b373 100644
    }
  }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From df6eb9143cec0cfce6e840d2a537cada12dce07b Mon Sep 17 00:00:00 2001
+From 542e43bd12e6cedd0bba6382c268fd0b006f069a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 12:13:24 +0300
-Subject: [PATCH 038/127] Step 3.4: Add 'chatId' property to message model
+Subject: [PATCH 039/128] Step 3.4: Add 'chatId' property to message model
 
 ---
  both/models/message.model.ts | 1 +
@@ -1943,13 +1996,13 @@ index 1165f7f..c30bc6f 100644
  }
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 09d223d11ee67cc04076afbc98f9ed61eb29e4ff Mon Sep 17 00:00:00 2001
+From 997a937c901305824384a17e3b6f6300be9eeded Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:07:34 +0300
-Subject: [PATCH 039/127] Step 3.5: Added the chats with the last message using
+Subject: [PATCH 040/128] Step 3.5: Added the chats with the last message using
  RxJS operators
 
 ---
@@ -2056,13 +2109,13 @@ index 815d4b6..1ce9032 100644
 \ No newline at end of file
 +}
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 495304e5d94a420cc597bf12a86fb4052dc228a1 Mon Sep 17 00:00:00 2001
+From 3c7bbe784586478ccb7acd285195e62c022400a1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:50:50 +0200
-Subject: [PATCH 040/127] Step 3: Realtime Meteor server
+Subject: [PATCH 041/128] Step 3: Realtime Meteor server
 
 ---
  steps/step3.md | 0
@@ -2073,13 +2126,13 @@ diff --git a/steps/step3.md b/steps/step3.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 150d2c0c68d96fa8d3d352a440afe019c206f815 Mon Sep 17 00:00:00 2001
+From 0d70625fda585cf54e40b4cf779d5721c5c09a4d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:10:33 +0300
-Subject: [PATCH 041/127] Step 4.1: Added showMessage method
+Subject: [PATCH 042/128] Step 4.1: Added showMessage method
 
 ---
  client/imports/pages/chats/chats.component.ts | 7 ++++++-
@@ -2116,13 +2169,13 @@ index 1ce9032..984e9dc 100644
 +  }
  }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 5c12b7cb6db641d246fd90fa598bce590536c8c5 Mon Sep 17 00:00:00 2001
+From bc321d44fe7da30ef0db03b491ac522bad0806e4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:10:54 +0300
-Subject: [PATCH 042/127] Step 4.2: Added the action to the button
+Subject: [PATCH 043/128] Step 4.2: Added the action to the button
 
 ---
  client/imports/pages/chats/chats.component.html | 2 +-
@@ -2142,13 +2195,13 @@ index a2878fb..e4df49a 100644
  
        <div class="chat-info">
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 47453c0019e3bd252ffcede4f8f0f684dbefda40 Mon Sep 17 00:00:00 2001
+From da4877472524512e74010f4b2ce3e6b8391f2202 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:38:38 +0300
-Subject: [PATCH 043/127] Step 4.3: Create a stub for the component
+Subject: [PATCH 044/128] Step 4.3: Create a stub for the component
 
 ---
  .../imports/pages/chat/messages-page.component.ts   | 21 +++++++++++++++++++++
@@ -2184,13 +2237,13 @@ index 0000000..5829e6f
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 00f03b1f3ecfe01871333392b902565ab6a10289 Mon Sep 17 00:00:00 2001
+From 506a7172e6b6ff20078343858a11824aa92fa393 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:38:51 +0300
-Subject: [PATCH 044/127] Step 4.4: Added the Component to the NgModule
+Subject: [PATCH 045/128] Step 4.4: Added the Component to the NgModule
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -2226,13 +2279,13 @@ index b915e99..2b2abe3 100644
    // Providers
    providers: [
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From ccd24717ea0af033cc1bd036adbaf2fec9117731 Mon Sep 17 00:00:00 2001
+From 792d7238190a11609679d45ce1fabb4d1e1eb01a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:39:02 +0300
-Subject: [PATCH 045/127] Step 4.5: Added the correct import
+Subject: [PATCH 046/128] Step 4.5: Added the correct import
 
 ---
  client/imports/pages/chats/chats.component.ts | 1 +
@@ -2251,13 +2304,13 @@ index 984e9dc..7f538c0 100644
  @Component({
    selector: "chats",
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From b014a39c7ea064afca49551c874bfb11bc4a5346 Mon Sep 17 00:00:00 2001
+From 7b9e1ec847cbbec034de7e7fa907527eab785f17 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:49:46 +0300
-Subject: [PATCH 046/127] Step 4.6: Add basic messages component
+Subject: [PATCH 047/128] Step 4.6: Add basic messages component
 
 ---
  .../imports/pages/chat/messages-page.component.ts  | 25 +++++++++++++++++++---
@@ -2313,13 +2366,13 @@ index 5829e6f..1da077c 100644
  }
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 8f21e11a4cf7ddf9ae165188d0bae9ac0f3acc89 Mon Sep 17 00:00:00 2001
+From a2edbc25843724bc0a4ccb22b03507e25c4c4629 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:49:58 +0300
-Subject: [PATCH 047/127] Step 4.7: Add 'ownership' property to message model
+Subject: [PATCH 048/128] Step 4.7: Add 'ownership' property to message model
 
 ---
  both/models/message.model.ts | 1 +
@@ -2338,13 +2391,13 @@ index c30bc6f..d4b4f99 100644
  }
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 90a0f77e51559c4ac625de6020bb2ad5ba1c01a2 Mon Sep 17 00:00:00 2001
+From f7a473611735435cc8daa2b7501a40d14ebf2614 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:50:10 +0300
-Subject: [PATCH 048/127] Step 4.8: Add basic messages view template
+Subject: [PATCH 049/128] Step 4.8: Add basic messages view template
 
 ---
  .../pages/chat/messages-page.component.html        | 25 ++++++++++++++++++++++
@@ -2384,13 +2437,13 @@ index 0000000..0ecb9a5
 +</ion-content>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 24cd941426ec4778f154ab0821aeb478bd6bb17e Mon Sep 17 00:00:00 2001
+From 82eae7bc99e42b69444146a3a6c3383ce80b6e65 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:51:08 +0300
-Subject: [PATCH 049/127] Step 4.9: Add basic messages stylesheet
+Subject: [PATCH 050/128] Step 4.9: Add basic messages stylesheet
 
 ---
  .../pages/chat/messages-page.component.scss        | 93 ++++++++++++++++++++++
@@ -2498,13 +2551,13 @@ index 0000000..c30e573
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 41f21807d29b340dfe1f47f668affd4fed59ee99 Mon Sep 17 00:00:00 2001
+From 81f5d84fcc195ddb2f32157461b762b4be26817c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:51:19 +0300
-Subject: [PATCH 050/127] Step 4.10: Load the stylesheet into the Component
+Subject: [PATCH 051/128] Step 4.10: Load the stylesheet into the Component
 
 ---
  client/imports/pages/chat/messages-page.component.ts | 6 +++++-
@@ -2531,13 +2584,13 @@ index 1da077c..14fcf7e 100644
  export class MessagesPage implements OnInit {
    private selectedChat: Chat;
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From e113c4ac3216ca9c41df7e133ac9b11ca956e261 Mon Sep 17 00:00:00 2001
+From afc2faf5dc8c75f268b6feb1410f9c51ca317feb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:55:26 +0300
-Subject: [PATCH 051/127] Step 4.11: Added missing assets
+Subject: [PATCH 052/128] Step 4.11: Added missing assets
 
 ---
  public/assets/chat-background.jpg | Bin 0 -> 29275 bytes
@@ -3155,13 +3208,13 @@ literal 0
 HcmV?d00001
 
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 5ad64e593cc84f7259486cc21d4a88260d6dd23c Mon Sep 17 00:00:00 2001
+From e0f39749f9d7879dc8304f49fb9f6582306d0287 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:59:51 +0300
-Subject: [PATCH 052/127] Step 4.12: Apply date format pipe to messages view
+Subject: [PATCH 053/128] Step 4.12: Apply date format pipe to messages view
  template
 
 ---
@@ -3182,13 +3235,13 @@ index 0ecb9a5..0c435de 100644
      </div>
    </ion-scroll>
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From ca3ca044c6923c0104b8a74ffc99f013a2ac59f6 Mon Sep 17 00:00:00 2001
+From 611bd1e597ed6aca5db3b14a72fad440037cdbf6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:07:05 +0300
-Subject: [PATCH 053/127] Step 4.13: Add message editor to messages view
+Subject: [PATCH 054/128] Step 4.13: Add message editor to messages view
  template
 
 ---
@@ -3224,13 +3277,13 @@ index 0c435de..9e6483e 100644
 +</ion-footer>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 3ac7651ff70d0c160112b555d29abca6dddbbac8 Mon Sep 17 00:00:00 2001
+From 7558f9001814c53c14ce5141c1a97534f7668d19 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:07:20 +0300
-Subject: [PATCH 054/127] Step 4.14: Add message-editor style to messages
+Subject: [PATCH 055/128] Step 4.14: Add message-editor style to messages
  stylesheet
 
 ---
@@ -3267,13 +3320,13 @@ index c30e573..cf66263 100644
  }
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From d4f0fa7e1ae7db96738ac844df02ea471dbf2318 Mon Sep 17 00:00:00 2001
+From 8917448d60fec0e2c3878c3c1a2f7b37e9ebc7f9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:07:42 +0300
-Subject: [PATCH 055/127] Step 4.15: Add 'sendMessage()' handler to messages
+Subject: [PATCH 056/128] Step 4.15: Add 'sendMessage()' handler to messages
  component
 
 ---
@@ -3319,13 +3372,13 @@ index 14fcf7e..f4fb96e 100644
  }
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From d8438b8d0c4c80b06836993818ded56a0ac4eae0 Mon Sep 17 00:00:00 2001
+From 6723b70b69e335ae132d20b8be99f529364ebb0a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:09:18 +0300
-Subject: [PATCH 056/127] Step 4.16: Add 'addMessage()' method to api
+Subject: [PATCH 057/128] Step 4.16: Add 'addMessage()' method to api
 
 ---
  server/imports/methods/methods.ts | 18 ++++++++++++++++++
@@ -3358,13 +3411,13 @@ index 0000000..0fce545
 +});
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From e01f4f7b5d68e4095b4f358dc046c0f08831a586 Mon Sep 17 00:00:00 2001
+From 0b123194b5c1d512ba97a7860c0c8eed064c14f7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:09:45 +0300
-Subject: [PATCH 057/127] Step 4.17: Added import for the methods file
+Subject: [PATCH 058/128] Step 4.17: Added import for the methods file
 
 ---
  server/main.ts | 1 +
@@ -3381,35 +3434,35 @@ index de5d825..ea027c1 100644
  const mainInstance = new Main();
  mainInstance.start();
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 8dd78ae4fa313e7df6036d975d34d0ecc338a755 Mon Sep 17 00:00:00 2001
+From c4c5a6edb3d71437200218f3db1c7078d796b24b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:10:47 +0300
-Subject: [PATCH 058/127] Step 4.18: Add check
+Subject: [PATCH 059/128] Step 4.18: Add check
 
 ---
  .meteor/packages | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index d4f74d0..a3d868c 100644
+index c67b676..cc2a450 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -24,3 +24,4 @@ hwillson:stub-collections
- dispatch:mocha-phantomjs
- shell-server
+@@ -25,3 +25,4 @@ shell-server
  mys:fonts
+ mobile-status-bar
+ launch-screen
 +check
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 0587428bd52537bf9bb12bd143288c59d4199678 Mon Sep 17 00:00:00 2001
+From 47fb94d799e2a6bb65c0cf0ead359e6933427b65 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:11:14 +0300
-Subject: [PATCH 059/127] Step 4.19: Add validations to 'addMessage()' method
+Subject: [PATCH 060/128] Step 4.19: Add validations to 'addMessage()' method
  in api
 
 ---
@@ -3440,13 +3493,13 @@ index 0fce545..89c378b 100644
  
      if (!chatExists) throw new Meteor.Error('chat-not-exists',
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 860fb93eb98681f861ba4e4b698061c5f2e6c97b Mon Sep 17 00:00:00 2001
+From 4b3943454de4896079d6f7f948fc51ff2f9413a0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:27:11 +0300
-Subject: [PATCH 060/127] Step 4.20: Add an auto scroller to messages component
+Subject: [PATCH 061/128] Step 4.20: Add an auto scroller to messages component
 
 ---
  .../imports/pages/chat/messages-page.component.ts  | 39 ++++++++++++++++++++--
@@ -3522,13 +3575,13 @@ index f4fb96e..8afa0b3 100644
  
    onInputKeypress({keyCode}: KeyboardEvent): void {
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 0556008b85ef312948ff62e51fceef4a3433a5c9 Mon Sep 17 00:00:00 2001
+From 441500ef1239da88fdb79158e3c58634d32db94c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:53:34 +0200
-Subject: [PATCH 061/127] Step 4: Messages page
+Subject: [PATCH 062/128] Step 4: Messages page
 
 ---
  steps/step4.md | 0
@@ -3539,13 +3592,13 @@ diff --git a/steps/step4.md b/steps/step4.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 41eefaf95a66725881b1855db3aca09db07d199c Mon Sep 17 00:00:00 2001
+From 0420a3f5f1b23055f03133f7001797148c49f65d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 8 Oct 2016 11:23:08 +0200
-Subject: [PATCH 062/127] Step 5.1: Added accounts packages
+Subject: [PATCH 063/128] Step 5.1: Added accounts packages
 
 ---
  .meteor/packages | 2 ++
@@ -3553,17 +3606,17 @@ Subject: [PATCH 062/127] Step 5.1: Added accounts packages
  2 files changed, 9 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index a3d868c..142cb40 100644
+index cc2a450..75bf691 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -25,3 +25,5 @@ dispatch:mocha-phantomjs
- shell-server
- mys:fonts
+@@ -26,3 +26,5 @@ mys:fonts
+ mobile-status-bar
+ launch-screen
  check
 +accounts-base
 +mys:accounts-phone
 diff --git a/.meteor/versions b/.meteor/versions
-index 7e1c968..dcb6fec 100644
+index 563029a..7042bef 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,3 +1,4 @@
@@ -3579,7 +3632,7 @@ index 7e1c968..dcb6fec 100644
  ddp-server@1.2.10
  deps@1.0.12
  diff-sequence@1.0.6
-@@ -43,6 +45,7 @@ insecure@1.0.7
+@@ -42,6 +44,7 @@ insecure@1.0.7
  jquery@1.11.9
  launch-screen@1.0.12
  livedata@1.0.18
@@ -3587,7 +3640,7 @@ index 7e1c968..dcb6fec 100644
  logging@1.1.15
  meteor@1.2.17
  meteor-base@1.0.4
-@@ -66,10 +69,12 @@ practicalmeteor:mocha-core@1.0.1
+@@ -64,10 +67,12 @@ practicalmeteor:mocha-core@1.0.1
  practicalmeteor:sinon@1.14.1_2
  promise@0.8.7
  random@1.0.10
@@ -3600,7 +3653,7 @@ index 7e1c968..dcb6fec 100644
  shell-server@0.2.1
  spacebars@1.0.13
  spacebars-compiler@1.0.13
-@@ -86,3 +91,5 @@ url@1.0.10
+@@ -84,3 +89,5 @@ url@1.0.10
  webapp@1.3.11
  webapp-hashing@1.0.9
  xolvio:cleaner@0.3.1
@@ -3608,13 +3661,13 @@ index 7e1c968..dcb6fec 100644
 +npm-bcrypt@0.9.1
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From ec82a335d570f9ec33c1e7514b387cc9dd29ee86 Mon Sep 17 00:00:00 2001
+From 52feacb7a01f3fca8e33869ed416b7beab636d15 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Sun, 9 Oct 2016 13:13:10 +0200
-Subject: [PATCH 063/127] Step 5.2: Add declarations
+Subject: [PATCH 064/128] Step 5.2: Add declarations
 
 ---
  typings.json | 1 +
@@ -3633,13 +3686,13 @@ index d1f10e1..d2599c3 100644
    }
  }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 1aad31b9fb8a7dc61fe33775d0dcdea4e5f06e69 Mon Sep 17 00:00:00 2001
+From 78fd16a5363307cc8a7198afd784d05936d1c9cc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Sun, 9 Oct 2016 13:17:57 +0200
-Subject: [PATCH 064/127] Step 5.3: Add authentication settings
+Subject: [PATCH 065/128] Step 5.3: Add authentication settings
 
 ---
  private/settings.json | 8 ++++++++
@@ -3662,13 +3715,13 @@ index 0000000..fde02be
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 341342caf67bf76cf7132bfd1866d50a572ea7a4 Mon Sep 17 00:00:00 2001
+From 9ec1e88ab575ae1095aa66db9f384467fffe13ef Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Sun, 9 Oct 2016 13:19:06 +0200
-Subject: [PATCH 065/127] Step 5.4: Run the App with settings
+Subject: [PATCH 066/128] Step 5.4: Run the App with settings
 
 ---
  package.json | 2 +-
@@ -3688,13 +3741,13 @@ index 3b77adf..87fb415 100644
      "test:ci": "meteor test --once --driver-package dispatch:mocha-phantomjs",
      "postinstall": "typings i",
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 589c336dccc022b81833d883b87ff23c9d881233 Mon Sep 17 00:00:00 2001
+From 7fe5124c547271d62c6d7c46139b83a0d5ec1402 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 11:48:35 +0200
-Subject: [PATCH 066/127] Step 5.5: Define SMS settings
+Subject: [PATCH 067/128] Step 5.5: Define SMS settings
 
 ---
  server/imports/api/sms.ts | 8 ++++++++
@@ -3717,13 +3770,13 @@ index 0000000..7885dd4
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 38e4eb44f5e15ea6b3345751a5205f2a364ad3cf Mon Sep 17 00:00:00 2001
+From cfd135c5cea74c30823639a12e34c5b448f4454d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 11:48:52 +0200
-Subject: [PATCH 067/127] Step 5.6: Import those settings
+Subject: [PATCH 068/128] Step 5.6: Import those settings
 
 ---
  server/main.ts | 1 +
@@ -3741,13 +3794,13 @@ index ea027c1..33fe19a 100644
  const mainInstance = new Main();
  mainInstance.start();
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 39cd73065a9fc921eeef3df1171af3cd0d11fd74 Mon Sep 17 00:00:00 2001
+From 4b75a42d004a106cf830b8b293d81a119c11d12f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:05:03 +0200
-Subject: [PATCH 068/127] Step 5.7: Wait for user if logging in
+Subject: [PATCH 069/128] Step 5.7: Wait for user if logging in
 
 ---
  client/main.ts | 11 ++++++++++-
@@ -3779,13 +3832,13 @@ index 2b50651..abdadfa 100644
 +  });
  });
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 1a538b03096a97bd7a5ce7ec3bb186811e0a56ef Mon Sep 17 00:00:00 2001
+From f142146bc9cf029eaba4b236ba605f228de885af Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:05:50 +0200
-Subject: [PATCH 069/127] Step 5.8: Use LoginComponent if user is not logged in
+Subject: [PATCH 070/128] Step 5.8: Use LoginComponent if user is not logged in
 
 ---
  client/imports/app/app.component.ts | 5 ++++-
@@ -3818,13 +3871,13 @@ index 772cc90..21bea68 100644
        // Okay, so the platform is ready and our plugins are available.
        // Here you can do any higher level native things you might need.
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 7b17c1e389ad92da7173d66ae356a3c5b8209c1e Mon Sep 17 00:00:00 2001
+From ca9b0c4e2a61d43c09fba5eb72db5bcf63b55cde Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:06:19 +0200
-Subject: [PATCH 070/127] Step 5.9: Create LoginComponent
+Subject: [PATCH 071/128] Step 5.9: Create LoginComponent
 
 ---
  client/imports/pages/auth/login.component.ts | 74 ++++++++++++++++++++++++++++
@@ -3913,13 +3966,13 @@ index 0000000..20f0bf1
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From fa8ae8eaec7ff22a074328a2403cfd30a2f1e113 Mon Sep 17 00:00:00 2001
+From ecceb217e80e726f3f3f6d526f4378ba91d9aceb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:06:39 +0200
-Subject: [PATCH 071/127] Step 5.10: Add a template
+Subject: [PATCH 072/128] Step 5.10: Add a template
 
 ---
  client/imports/pages/auth/login.component.html | 25 +++++++++++++++++++++++++
@@ -3959,13 +4012,13 @@ index 0000000..f5b7823
 +</ion-content>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 426e2c2acd805cbaf89496431f47530fa48b5b64 Mon Sep 17 00:00:00 2001
+From 49c426f62fbdb527b611db41a097475c7ac0d29f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:07:08 +0200
-Subject: [PATCH 072/127] Step 5.11: Define styles
+Subject: [PATCH 073/128] Step 5.11: Define styles
 
 ---
  client/imports/pages/auth/login.component.scss | 11 +++++++++++
@@ -3991,13 +4044,13 @@ index 0000000..ce2b50d
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 0010da743f966247881dfd142a0c8d0b6bd87132 Mon Sep 17 00:00:00 2001
+From 896e27412d89056b03d218791a1f4a5307241791 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:08:01 +0200
-Subject: [PATCH 073/127] Step 5.12: Register LoginComponent in the AppModule
+Subject: [PATCH 074/128] Step 5.12: Register LoginComponent in the AppModule
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -4035,13 +4088,13 @@ index 2b2abe3..977ace8 100644
    // Providers
    providers: [
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From fbfb6aba2ff06132ce2f616d4468b9251cda78bf Mon Sep 17 00:00:00 2001
+From a926da986137f9828d20525eb96586b12dfd1532 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:08:28 +0200
-Subject: [PATCH 074/127] Step 5.13: Add VerificationComponent
+Subject: [PATCH 075/128] Step 5.13: Add VerificationComponent
 
 ---
  .../imports/pages/auth/verification.component.ts   | 59 ++++++++++++++++++++++
@@ -4115,13 +4168,13 @@ index 0000000..07455b8
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 7e09fd97d71ac72613ca4d3c710fa1c331248da7 Mon Sep 17 00:00:00 2001
+From 87dc091dd8da489b414d1cb895c8f03589349dc9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:08:47 +0200
-Subject: [PATCH 075/127] Step 5.14: Create a template
+Subject: [PATCH 076/128] Step 5.14: Create a template
 
 ---
  .../imports/pages/auth/verification.component.html | 25 ++++++++++++++++++++++
@@ -4161,13 +4214,13 @@ index 0000000..099ce79
 +</ion-content>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 0188f3fc983ee7a2f34df5a9072cda2a806c7a7d Mon Sep 17 00:00:00 2001
+From ade6c8f6dde5c04c90fe5e69f69330aa5293d6b7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:09:04 +0200
-Subject: [PATCH 076/127] Step 5.15: Define styles
+Subject: [PATCH 077/128] Step 5.15: Define styles
 
 ---
  client/imports/pages/auth/verification.component.scss | 11 +++++++++++
@@ -4193,13 +4246,13 @@ index 0000000..ea09ad1
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 181a89e0fdb646c1884f32dfd82e6e3e08f67346 Mon Sep 17 00:00:00 2001
+From baf5dbd0069b070e8237a114bea20413f17643df Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:15:36 +0200
-Subject: [PATCH 077/127] Step 5.16: Register VerificationComponent
+Subject: [PATCH 078/128] Step 5.16: Register VerificationComponent
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -4238,13 +4291,13 @@ index 977ace8..fda49c9 100644
    // Providers
    providers: [
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From e13c8d5a5b20b79810d0521d3ab259099a6d7318 Mon Sep 17 00:00:00 2001
+From 0806a5dfc27d13be41a95efcdb27bf7aed51e9f7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:09:34 +0200
-Subject: [PATCH 078/127] Step 5.17: Add 'updateProfile' method
+Subject: [PATCH 079/128] Step 5.17: Add 'updateProfile' method
 
 ---
  server/imports/methods/methods.ts | 14 ++++++++++++++
@@ -4283,13 +4336,13 @@ index 89c378b..3f6d2c2 100644
      check(chatId, nonEmptyString);
      check(content, nonEmptyString);
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From d3539ba31cf7587c025d3eccca1881039f47632c Mon Sep 17 00:00:00 2001
+From b2f28e00dfc26cfaf8dd56e0eff3ed912b781726 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:09:54 +0200
-Subject: [PATCH 079/127] Step 5.18: Define Profile model
+Subject: [PATCH 080/128] Step 5.18: Define Profile model
 
 ---
  both/models/profile.model.ts | 4 ++++
@@ -4308,13 +4361,13 @@ index 0000000..dde3134
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From a0b67b50090281ac8df89e947ab6cee5e86e6032 Mon Sep 17 00:00:00 2001
+From a133fcb57abcc1650285d7d7ba8ad7158d52c67c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:10:19 +0200
-Subject: [PATCH 080/127] Step 5.19: Create ProfileComponent
+Subject: [PATCH 081/128] Step 5.19: Create ProfileComponent
 
 ---
  client/imports/pages/auth/profile.component.ts | 55 ++++++++++++++++++++++++++
@@ -4384,13 +4437,13 @@ index 0000000..ac09630
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From cdfe60cc69f00367eb75c98c93284ca310dc5501 Mon Sep 17 00:00:00 2001
+From a8a758faa1dcf7eee5b3ed5c0d20271d17084f6e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:10:54 +0200
-Subject: [PATCH 081/127] Step 5.20: Create a template for ProfileComponent
+Subject: [PATCH 082/128] Step 5.20: Create a template for ProfileComponent
 
 ---
  client/imports/pages/auth/profile.component.html | 21 +++++++++++++++++++++
@@ -4426,13 +4479,13 @@ index 0000000..013edbc
 +</ion-content>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From a8fa228bf2d6835bbf37c9b53964bbd4cc0f111a Mon Sep 17 00:00:00 2001
+From 6f9e0d0f210a103d064e10d265fb2811e1f85f05 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:11:26 +0200
-Subject: [PATCH 082/127] Step 5.21: Also the styles
+Subject: [PATCH 083/128] Step 5.21: Also the styles
 
 ---
  client/imports/pages/auth/profile.component.scss | 20 ++++++++++++++++++++
@@ -4467,13 +4520,13 @@ index 0000000..e055000
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From d0603a1e13176867fe857d9760e4539cf5cf3d91 Mon Sep 17 00:00:00 2001
+From 680ab9689707451b24838805cd71582fae1f272d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:18:00 +0200
-Subject: [PATCH 083/127] Step 5.22: Register ProfileComponent
+Subject: [PATCH 084/128] Step 5.22: Register ProfileComponent
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -4512,13 +4565,13 @@ index fda49c9..6261397 100644
    // Providers
    providers: [
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 5b71a929d9aab686f6e51ebe0b094956bdc7fe74 Mon Sep 17 00:00:00 2001
+From 68af028dba1f566880103e0f3311d6720c4d5146 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:20:00 +0200
-Subject: [PATCH 084/127] Step 5.23: Add senderId property to addMessage method
+Subject: [PATCH 085/128] Step 5.23: Add senderId property to addMessage method
 
 ---
  server/imports/methods/methods.ts | 4 ++++
@@ -4547,13 +4600,13 @@ index 3f6d2c2..1a75878 100644
        createdAt: new Date()
      });
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 7f9b4939924e172269a75b216a571645e4084485 Mon Sep 17 00:00:00 2001
+From 2cc4ef51a9c3ee30e914f70c2378caba0cd007ba Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:20:31 +0200
-Subject: [PATCH 085/127] Step 5.24: Add it also to the model
+Subject: [PATCH 086/128] Step 5.24: Add it also to the model
 
 ---
  both/models/message.model.ts | 1 +
@@ -4572,13 +4625,13 @@ index d4b4f99..fe99e76 100644
    ownership?: string;
    createdAt?: Date;
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From d0b66a2af36a27a4aa5b90e7a1552dac40ed5bbf Mon Sep 17 00:00:00 2001
+From b67867added0eb4ad8fea9005db3d9466a78363f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:26:21 +0200
-Subject: [PATCH 086/127] Step 5.25: Determine message ownership based on
+Subject: [PATCH 087/128] Step 5.25: Determine message ownership based on
  sender id
 
 ---
@@ -4626,13 +4679,13 @@ index 8afa0b3..062034a 100644
  
        return messages;
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From fa359f25a0a7e06aefd7d65ec1d6cc389ac4def7 Mon Sep 17 00:00:00 2001
+From 5c0ef6aba02a4ef8b4837a43f66b3c12e2635f60 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:53:02 +0200
-Subject: [PATCH 087/127] Step 5.26: Add options-popover to ChatsComponent
+Subject: [PATCH 088/128] Step 5.26: Add options-popover to ChatsComponent
 
 ---
  client/imports/pages/chats/chats.component.ts | 18 ++++++++++++++----
@@ -4683,13 +4736,13 @@ index 7f538c0..c6c6235 100644
      this.navCtrl.push(MessagesPage, {chat});
    }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From d32140d036460733bf2c71f19d0fdb5adb441faf Mon Sep 17 00:00:00 2001
+From 63a8cd0c7077776b3fa9b7c187309233676e8881 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:53:29 +0200
-Subject: [PATCH 088/127] Step 5.27: Bind showOptions
+Subject: [PATCH 089/128] Step 5.27: Bind showOptions
 
 ---
  client/imports/pages/chats/chats.component.html | 2 +-
@@ -4709,13 +4762,13 @@ index e4df49a..6b77651 100644
    </ion-navbar>
  </ion-header>
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 9213a804993b51f88509b5195370ca609474b594 Mon Sep 17 00:00:00 2001
+From c1b77f3da13100bc68c37f238b18959051d25817 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:53:59 +0200
-Subject: [PATCH 089/127] Step 5.28: Add ChatsOptionsComponent
+Subject: [PATCH 090/128] Step 5.28: Add ChatsOptionsComponent
 
 ---
  .../imports/pages/chats/chats-options.component.ts | 76 ++++++++++++++++++++++
@@ -4806,13 +4859,13 @@ index 0000000..bd4cd56
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 9baed2456dadda241a7923916991e958c7115cbb Mon Sep 17 00:00:00 2001
+From ecaedeec35a863a6ddb3e892d804cd581325fc22 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:54:21 +0200
-Subject: [PATCH 090/127] Step 5.29: Add the template
+Subject: [PATCH 091/128] Step 5.29: Add the template
 
 ---
  .../imports/pages/chats/chats-options.component.html   | 18 ++++++++++++++++++
@@ -4845,13 +4898,13 @@ index 0000000..9017eb9
 +</ion-content>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 2cf79bafdaaef463a1718fbe4bbda791e4e84ca8 Mon Sep 17 00:00:00 2001
+From 97b42a1fc7259b0cfb80fc1bc94d6d19f82cf62a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:54:43 +0200
-Subject: [PATCH 091/127] Step 5.30: Define styles
+Subject: [PATCH 092/128] Step 5.30: Define styles
 
 ---
  client/imports/pages/chats/chats-options.component.scss | 13 +++++++++++++
@@ -4879,13 +4932,13 @@ index 0000000..be30282
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From a4e0b17562650bbb5fae0d03e57385d77260a72d Mon Sep 17 00:00:00 2001
+From fedb4d8826a70928d589a89e8c7e83d6ff3eae9e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:55:02 +0200
-Subject: [PATCH 092/127] Step 5.31: Register ChatsOptionsComponent
+Subject: [PATCH 093/128] Step 5.31: Register ChatsOptionsComponent
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -4924,13 +4977,13 @@ index 6261397..cfc710c 100644
    // Providers
    providers: [
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 1f90090e119a7a496463f7847d0d02d299c1db43 Mon Sep 17 00:00:00 2001
+From eb7be77c6816d30d10be742a584978d301743517 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:55:33 +0200
-Subject: [PATCH 093/127] Step 5.32: Add options-popover style to chats
+Subject: [PATCH 094/128] Step 5.32: Add options-popover style to chats
  stylesheet
 
 ---
@@ -4960,13 +5013,13 @@ index 6470e09..227c12c 100644
  }
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 2283768e44a7faebfbc054d2499ec84750f8950d Mon Sep 17 00:00:00 2001
+From 8fda05e490ca10fe2c994b5e3877aedaff39f1d8 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:58:35 +0200
-Subject: [PATCH 094/127] Step 5: Authentication
+Subject: [PATCH 095/128] Step 5: Authentication
 
 ---
  steps/step5.md | 0
@@ -4977,13 +5030,13 @@ diff --git a/steps/step5.md b/steps/step5.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 3e1712b19d6b3146bf603755103769c7a4c571ab Mon Sep 17 00:00:00 2001
+From aaf512e477013e4f4e948f49235ef094debe1094 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:21:31 +0200
-Subject: [PATCH 095/127] Step 6.1: Add 'addChat' method to ChatsComponent
+Subject: [PATCH 096/128] Step 6.1: Add 'addChat' method to ChatsComponent
 
 ---
  client/imports/pages/chats/chats.component.ts | 11 +++++++++--
@@ -5028,13 +5081,13 @@ index c6c6235..a8a8c5e 100644
      const popover = this.popoverCtrl.create(ChatsOptionsComponent, {}, {
        cssClass: 'options-popover'
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From b40a3acea9aebaabc0d38f0d825dfcbd35e9b94f Mon Sep 17 00:00:00 2001
+From e175ffd5cce9cfbecd5873f725397f29bdd3e298 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:21:49 +0200
-Subject: [PATCH 096/127] Step 6.2: Bind that method
+Subject: [PATCH 097/128] Step 6.2: Bind that method
 
 ---
  client/imports/pages/chats/chats.component.html | 2 +-
@@ -5054,13 +5107,13 @@ index 6b77651..ca566d2 100644
      </ion-buttons>
    </ion-navbar>
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 5ac03810c95d67873e643d1421901b9e1e1ca92f Mon Sep 17 00:00:00 2001
+From 063c8a20eb9fe04c348827cca8282729e1fef76e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:22:27 +0200
-Subject: [PATCH 097/127] Step 6.3: Define 'addChat' Method
+Subject: [PATCH 098/128] Step 6.3: Define 'addChat' Method
 
 ---
  server/imports/methods/methods.ts | 22 ++++++++++++++++++++++
@@ -5100,13 +5153,13 @@ index 1a75878..601b7e8 100644
      if (!this.userId) throw new Meteor.Error('unauthorized',
        'User must be logged-in to create a new chat');
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From f3745a93775e82590e9584a32076a515502101a4 Mon Sep 17 00:00:00 2001
+From 5470e94fd455252f72fbf103ac66f28e7a31791b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:23:27 +0200
-Subject: [PATCH 098/127] Step 6.4: Add memberIds prop in Chat model
+Subject: [PATCH 099/128] Step 6.4: Add memberIds prop in Chat model
 
 ---
  both/models/chat.model.ts | 1 +
@@ -5125,13 +5178,13 @@ index 36e42ca..c4981f4 100644
    picture?: string;
    lastMessage?: Message;
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From c45642a28acf630b5ebc045b3c86ab1729ba464e Mon Sep 17 00:00:00 2001
+From c9aec979f4a7b92bb5caba8d3975ee91c59ae086 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:24:09 +0200
-Subject: [PATCH 099/127] Step 6.5: Create Observable collection from
+Subject: [PATCH 100/128] Step 6.5: Create Observable collection from
  Meteor.users
 
 ---
@@ -5151,13 +5204,13 @@ index 0000000..3da1168
 +
 +export const Users = MongoObservable.fromExisting<User>(Meteor.users);
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From efd774f4b08316eb1276c8bb2a8a50ea034084a8 Mon Sep 17 00:00:00 2001
+From 7abce83d3ed160dd8972aef95560f5f4141b74d4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:24:33 +0200
-Subject: [PATCH 100/127] Step 6.6: Create a User model
+Subject: [PATCH 101/128] Step 6.6: Create a User model
 
 ---
  both/models/user.model.ts | 7 +++++++
@@ -5178,13 +5231,13 @@ index 0000000..b15b28a
 +  profile?: Profile;
 +}
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 8f55654a72a4eac250f65d282ecb2595a0ebe507 Mon Sep 17 00:00:00 2001
+From db69dc97627e8c19d25faaf620ce851f0d03e27e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:25:01 +0200
-Subject: [PATCH 101/127] Step 6.7: Create NewChatComponent
+Subject: [PATCH 102/128] Step 6.7: Create NewChatComponent
 
 ---
  client/imports/pages/chats/new-chat.component.ts | 84 ++++++++++++++++++++++++
@@ -5283,13 +5336,13 @@ index 0000000..83f1c7a
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 42962c6bddfb401ad15d84a9a32446949fe93a97 Mon Sep 17 00:00:00 2001
+From ebac87421f673e133b01539c5fc543219a9c2381 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:25:49 +0200
-Subject: [PATCH 102/127] Step 6.8: Create also a template
+Subject: [PATCH 103/128] Step 6.8: Create also a template
 
 ---
  client/imports/pages/chats/new-chat.component.html | 18 ++++++++++++++++++
@@ -5322,13 +5375,13 @@ index 0000000..8d2238b
 +</ion-content>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 4315ef8b95f9c2157634827aaedee74a93682fa8 Mon Sep 17 00:00:00 2001
+From 7f4a783a4180429bd2829c116fd5017bc213dddf Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:26:07 +0200
-Subject: [PATCH 103/127] Step 6.9: Define some styles
+Subject: [PATCH 104/128] Step 6.9: Define some styles
 
 ---
  client/imports/pages/chats/new-chat.component.scss | 14 ++++++++++++++
@@ -5357,13 +5410,13 @@ index 0000000..a0698d8
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 5bec156ab212461d8cbaa4fc8de2bf886dd3d992 Mon Sep 17 00:00:00 2001
+From 89a55b4d582c0b412b805efbde998cf7c6a56844 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:26:29 +0200
-Subject: [PATCH 104/127] Step 6.10: Register that component
+Subject: [PATCH 105/128] Step 6.10: Register that component
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -5402,13 +5455,13 @@ index cfc710c..dd4b8d5 100644
    // Providers
    providers: [
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From a4950e1f17d101eb5ed1b519e37d21c139102edd Mon Sep 17 00:00:00 2001
+From 38348342ff92d0fe68aec79dfe1e05b30805be4f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:27:19 +0200
-Subject: [PATCH 105/127] Step 6.11: Replace chats fabrication with users
+Subject: [PATCH 106/128] Step 6.11: Replace chats fabrication with users
  fabrication
 
 ---
@@ -5523,13 +5576,13 @@ index e84b373..2f61ab9 100644
    }
  }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 3650506ac5a97427cf14058d85c3073529ce0977 Mon Sep 17 00:00:00 2001
+From 42313cbf830a044b00703c00543bf9eedf5241c2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 20:48:13 +0200
-Subject: [PATCH 106/127] Step 6.12: Add title and picture to chat
+Subject: [PATCH 107/128] Step 6.12: Add title and picture to chat
 
 ---
  client/imports/pages/chats/chats.component.ts | 14 +++++++++++++-
@@ -5582,13 +5635,13 @@ index a8a8c5e..6d4f05f 100644
  
    addChat(): void {
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 26f885944416c734ba8fb4332debae3bf0e3f4a6 Mon Sep 17 00:00:00 2001
+From 2f2b6ea340bf76410cb9b84a3232219e911e722c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 10:00:57 +0200
-Subject: [PATCH 107/127] Step 6: Chats creation and removal
+Subject: [PATCH 108/128] Step 6: Chats creation and removal
 
 ---
  steps/step6.md | 0
@@ -5599,13 +5652,13 @@ diff --git a/steps/step6.md b/steps/step6.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 211f8472626760e09e0a89af7f843a5c4ef897c5 Mon Sep 17 00:00:00 2001
+From b0ce88ec3c3024fa9fbce6f9adf781245e8d225e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 21:48:02 +0200
-Subject: [PATCH 108/127] Step 7.1: Remove 'insecure' package
+Subject: [PATCH 109/128] Step 7.1: Remove 'insecure' package
 
 ---
  .meteor/packages | 1 -
@@ -5613,10 +5666,10 @@ Subject: [PATCH 108/127] Step 7.1: Remove 'insecure' package
  2 files changed, 5 insertions(+), 4 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 142cb40..ffa9a83 100644
+index 75bf691..3f3aa96 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -16,7 +16,6 @@ standard-minifier-js@1.2.0    # JS minifier run for production mode
+@@ -15,7 +15,6 @@ standard-minifier-js@1.2.0    # JS minifier run for production mode
  es5-shim@4.6.14                # ECMAScript 5 compatibility for older browsers.
  
  autopublish@1.0.7             # Publish all data to the clients (for prototyping)
@@ -5625,7 +5678,7 @@ index 142cb40..ffa9a83 100644
  practicalmeteor:mocha
  xolvio:cleaner
 diff --git a/.meteor/versions b/.meteor/versions
-index dcb6fec..554273a 100644
+index 7042bef..61b0ecf 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -32,6 +32,7 @@ dispatch:phantomjs-tests@0.0.5
@@ -5634,9 +5687,9 @@ index dcb6fec..554273a 100644
  ejson@1.0.12
 +email@1.0.16
  es5-shim@4.6.14
- fastclick@1.0.12
  geojson-utils@1.0.9
-@@ -41,7 +42,6 @@ htmljs@1.0.11
+ hot-code-push@1.0.4
+@@ -40,7 +41,6 @@ htmljs@1.0.11
  http@1.1.8
  hwillson:stub-collections@1.0.1
  id-map@1.0.8
@@ -5644,7 +5697,7 @@ index dcb6fec..554273a 100644
  jquery@1.11.9
  launch-screen@1.0.12
  livedata@1.0.18
-@@ -58,7 +58,9 @@ modules@0.7.6
+@@ -56,7 +56,9 @@ modules@0.7.6
  modules-runtime@0.7.6
  mongo@1.1.12
  mongo-id@1.0.5
@@ -5654,7 +5707,7 @@ index dcb6fec..554273a 100644
  npm-mongo@1.5.49
  observe-sequence@1.0.12
  ordered-dict@1.0.8
-@@ -75,9 +77,11 @@ reload@1.1.10
+@@ -73,9 +75,11 @@ reload@1.1.10
  retry@1.0.8
  routepolicy@1.0.11
  service-configuration@1.0.10
@@ -5666,7 +5719,7 @@ index dcb6fec..554273a 100644
  standard-minifier-css@1.2.0
  standard-minifier-js@1.2.0
  templating@1.1.14
-@@ -91,5 +95,3 @@ url@1.0.10
+@@ -89,5 +93,3 @@ url@1.0.10
  webapp@1.3.11
  webapp-hashing@1.0.9
  xolvio:cleaner@0.3.1
@@ -5674,13 +5727,13 @@ index dcb6fec..554273a 100644
 -npm-bcrypt@0.9.1
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 786345f0b47b8a99b013829bed0a28396d645250 Mon Sep 17 00:00:00 2001
+From d99f48f6d011a848123b4ee25ad9a902f26efd3b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 21:49:30 +0200
-Subject: [PATCH 109/127] Step 7.2: Define 'removeChat' Method
+Subject: [PATCH 110/128] Step 7.2: Define 'removeChat' Method
 
 ---
  server/imports/methods/methods.ts | 14 ++++++++++++++
@@ -5712,13 +5765,13 @@ index 601b7e8..6a47ed3 100644
      if (!this.userId) throw new Meteor.Error('unauthorized',
        'User must be logged-in to create a new chat');
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 1a8267d57799206f7a638a1314046387c0ca7c5e Mon Sep 17 00:00:00 2001
+From b17fc823cf4798b4f17114b253638fc25ad7ca47 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:12:34 +0200
-Subject: [PATCH 110/127] Step 7.3: Create MessagesOptionsComponent
+Subject: [PATCH 111/128] Step 7.3: Create MessagesOptionsComponent
 
 ---
  .../pages/chat/messages-options.component.ts       | 80 ++++++++++++++++++++++
@@ -5813,13 +5866,13 @@ index 0000000..bcf3e7f
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From e5fcab7b9b5a1147c4ec03bb9a43a23bf2ee63f5 Mon Sep 17 00:00:00 2001
+From befc33fbfd1253a69bccdb61bec09923941f7b26 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:12:48 +0200
-Subject: [PATCH 111/127] Step 7.4: Create a template
+Subject: [PATCH 112/128] Step 7.4: Create a template
 
 ---
  client/imports/pages/chat/messages-options.component.html | 8 ++++++++
@@ -5842,13 +5895,13 @@ index 0000000..b5c4947
 +</ion-content>
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 12f018964bd9953595828649eb7813d39d7308b5 Mon Sep 17 00:00:00 2001
+From 726d42808f3f77031923f6d8a83754b5e7243bad Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:13:00 +0200
-Subject: [PATCH 112/127] Step 7.5: Add styles
+Subject: [PATCH 113/128] Step 7.5: Add styles
 
 ---
  client/imports/pages/chat/messages-options.component.scss | 13 +++++++++++++
@@ -5876,13 +5929,13 @@ index 0000000..be30282
 +}
 \ No newline at end of file
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From bed640e6ac7dfc7432610158da780a9ed51ba619 Mon Sep 17 00:00:00 2001
+From 7b433c4d605a4470e2cc39ebde476f788f605e6c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:13:19 +0200
-Subject: [PATCH 113/127] Step 7.6: Register the component
+Subject: [PATCH 114/128] Step 7.6: Register the component
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -5921,13 +5974,13 @@ index dd4b8d5..adb48c5 100644
    // Providers
    providers: [
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From d35c80fae197479af9555a3e3d566f423e8e3a2a Mon Sep 17 00:00:00 2001
+From 08cf39eb23bfde8d5949335bfd171e0d8933db16 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:13:52 +0200
-Subject: [PATCH 114/127] Step 7.7: Define component's method to open options
+Subject: [PATCH 115/128] Step 7.7: Define component's method to open options
 
 ---
  client/imports/pages/chat/messages-page.component.ts | 18 ++++++++++++++++--
@@ -5982,13 +6035,13 @@ index 062034a..5c5235f 100644
      if (this.autoScroller) {
        this.autoScroller.unsubscribe();
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 70cb33f8080c3d32cdd1aef35ba8bd3a409134d4 Mon Sep 17 00:00:00 2001
+From 10ce5832dd6bbcce5a283a3c6dcd6ff58ccc55db Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:14:04 +0200
-Subject: [PATCH 115/127] Step 7.8: Implement it in the view
+Subject: [PATCH 116/128] Step 7.8: Implement it in the view
 
 ---
  client/imports/pages/chat/messages-page.component.html | 2 +-
@@ -6008,13 +6061,13 @@ index 9e6483e..9f2d333 100644
    </ion-navbar>
  </ion-header>
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From fcc8c75629767b0850d011304dbcb7e4f2ec1849 Mon Sep 17 00:00:00 2001
+From 2833f144714643f6d2aa9d23aebd1b321c11428e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:15:40 +0200
-Subject: [PATCH 116/127] Step 7.9: Add 'autopublish' package
+Subject: [PATCH 117/128] Step 7.9: Add 'autopublish' package
 
 ---
  .meteor/packages | 1 -
@@ -6022,10 +6075,10 @@ Subject: [PATCH 116/127] Step 7.9: Add 'autopublish' package
  2 files changed, 2 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index ffa9a83..024b3bb 100644
+index 3f3aa96..42e095c 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -15,7 +15,6 @@ standard-minifier-css@1.2.0   # CSS minifier run for production mode
+@@ -14,7 +14,6 @@ standard-minifier-css@1.2.0   # CSS minifier run for production mode
  standard-minifier-js@1.2.0    # JS minifier run for production mode
  es5-shim@4.6.14                # ECMAScript 5 compatibility for older browsers.
  
@@ -6034,7 +6087,7 @@ index ffa9a83..024b3bb 100644
  practicalmeteor:mocha
  xolvio:cleaner
 diff --git a/.meteor/versions b/.meteor/versions
-index 554273a..0964295 100644
+index 61b0ecf..08a195e 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,7 +1,6 @@
@@ -6046,13 +6099,13 @@ index 554273a..0964295 100644
  babel-compiler@6.9.1
  babel-runtime@0.1.11
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 0e2ce66ec6d5f9bcb815e514e7c97766bb442c6b Mon Sep 17 00:00:00 2001
+From 3522028bc97cb36e346caa3203f67f0c8d07f549 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:18:00 +0200
-Subject: [PATCH 117/127] Step 7.10: Add 'reywood-publish-composite'
+Subject: [PATCH 118/128] Step 7.10: Add 'reywood-publish-composite'
 
 ---
  .meteor/packages | 1 +
@@ -6060,19 +6113,19 @@ Subject: [PATCH 117/127] Step 7.10: Add 'reywood-publish-composite'
  2 files changed, 2 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 024b3bb..8f305ba 100644
+index 42e095c..f35a466 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -25,3 +25,4 @@ mys:fonts
+@@ -26,3 +26,4 @@ launch-screen
  check
  accounts-base
  mys:accounts-phone
 +reywood:publish-composite
 diff --git a/.meteor/versions b/.meteor/versions
-index 0964295..e4cf273 100644
+index 08a195e..de8cf45 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -74,6 +74,7 @@ rate-limit@1.0.5
+@@ -72,6 +72,7 @@ rate-limit@1.0.5
  reactive-var@1.0.10
  reload@1.1.10
  retry@1.0.8
@@ -6081,13 +6134,13 @@ index 0964295..e4cf273 100644
  service-configuration@1.0.10
  sha@1.0.8
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From d7dcd7565f7cb9a76bda1df9ac30d07592b479de Mon Sep 17 00:00:00 2001
+From 108d5e55af6b35276725fef2814eade49dff7fbd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:19:32 +0200
-Subject: [PATCH 118/127] Step 7.11: Add typings for that package
+Subject: [PATCH 119/128] Step 7.11: Add typings for that package
 
 ---
  typings.json | 1 +
@@ -6106,13 +6159,13 @@ index d2599c3..0e36153 100644
    }
  }
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From cd2d89713745d3d1a94b10f709f87c68cb03110d Mon Sep 17 00:00:00 2001
+From d270e5a4f7b07eb3f0a838efe8017c70e8cc83b0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:22:12 +0200
-Subject: [PATCH 119/127] Step 7.12: Create publication for Users
+Subject: [PATCH 120/128] Step 7.12: Create publication for Users
 
 ---
  server/imports/publications/users.publication.ts | 15 +++++++++++++++
@@ -6141,13 +6194,13 @@ index 0000000..dd48870
 +  });
 +});
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 71664bc5a012902e002a649f9ea92dda372a351f Mon Sep 17 00:00:00 2001
+From e159f5ec7072c555c5c55a9aa44d39a2dc9c4335 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:25:41 +0200
-Subject: [PATCH 120/127] Step 7.13: Add publication for Chats
+Subject: [PATCH 121/128] Step 7.13: Add publication for Chats
 
 ---
  server/imports/publications/chats.publication.ts | 38 ++++++++++++++++++++++++
@@ -6199,13 +6252,13 @@ index 0000000..a440ac2
 +  };
 +});
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 804e078002ae42b10620a0308725b16bb319247a Mon Sep 17 00:00:00 2001
+From 144c74fda559c0a1c8c42e0763b85dc00ad3889e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:26:52 +0200
-Subject: [PATCH 121/127] Step 7.14: Add publication for Messages
+Subject: [PATCH 122/128] Step 7.14: Add publication for Messages
 
 ---
  server/imports/publications/messages.publication.ts | 12 ++++++++++++
@@ -6231,13 +6284,13 @@ index 0000000..1a50b55
 +  return Messages.collection.find({chatId});
 +});
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From bc5c343abf4f74ae41e8b978022ccec342bc465d Mon Sep 17 00:00:00 2001
+From a156ceb156e2c133494ce6ce0a85941ff6676ad0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:27:48 +0200
-Subject: [PATCH 122/127] Step 7.15: Expose publications
+Subject: [PATCH 123/128] Step 7.15: Expose publications
 
 ---
  server/main.ts | 3 +++
@@ -6257,13 +6310,13 @@ index 33fe19a..1ca747b 100644
  
  const mainInstance = new Main();
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From c0750615c6593dd8b21531b61ae7125735b4647f Mon Sep 17 00:00:00 2001
+From fabb0e3027bad0cff4a076ac852613ed793d645a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Tue, 11 Oct 2016 10:13:05 +0200
-Subject: [PATCH 123/127] Step 7.16: Subscribe to 'chats'
+Subject: [PATCH 124/128] Step 7.16: Subscribe to 'chats'
 
 ---
  client/imports/pages/chats/chats.component.ts | 52 +++++++++++++++------------
@@ -6342,13 +6395,13 @@ index 6d4f05f..4f97544 100644
  
    addChat(): void {
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From 2d4f82d38f0a1581b50525bf62e9e5b640b6cbfc Mon Sep 17 00:00:00 2001
+From f6594bfcc4bd3cdb7d80f83ada95c40b9f91b394 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Tue, 11 Oct 2016 10:13:23 +0200
-Subject: [PATCH 124/127] Step 7.17: Subscribe to 'users'
+Subject: [PATCH 125/128] Step 7.17: Subscribe to 'users'
 
 ---
  client/imports/pages/chats/new-chat.component.ts | 6 ++++--
@@ -6372,13 +6425,13 @@ index 83f1c7a..bf03180 100644
    }
   
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From a5c986731040fd0261bb71ca379fd7f28b33790c Mon Sep 17 00:00:00 2001
+From f8ac3b26d393790a51c6979ac7760686fb4b34b0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Tue, 11 Oct 2016 10:14:02 +0200
-Subject: [PATCH 125/127] Step 7.18: Subscribe to 'messages'
+Subject: [PATCH 126/128] Step 7.18: Subscribe to 'messages'
 
 ---
  client/imports/pages/chat/messages-page.component.ts | 20 ++++++++++++--------
@@ -6417,13 +6470,13 @@ index 5c5235f..f326f13 100644
  
      this.autoScroller = MeteorObservable.autorun().subscribe(() => {
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From e4ebb90ac608f3aadf5fd6e0ee820edccc0b09b4 Mon Sep 17 00:00:00 2001
+From be6401d8fa7f2664606c75ff41b92d40d7170c18 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 10:03:23 +0200
-Subject: [PATCH 126/127] Step 7: Privacy and security
+Subject: [PATCH 127/128] Step 7: Privacy and security
 
 ---
  steps/step7.md | 0
@@ -6434,13 +6487,13 @@ diff --git a/steps/step7.md b/steps/step7.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
 
-From b35fb29303a5eb233192de9138b82460554f1f27 Mon Sep 17 00:00:00 2001
+From 9277e6d818e326f7e6cfd7dbc4dbefbfff9ac105 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 10:03:35 +0200
-Subject: [PATCH 127/127] Step 8: Summary
+Subject: [PATCH 128/128] Step 8: Summary
 
 ---
  steps/step8.md | 0
@@ -6451,5 +6504,5 @@ diff --git a/steps/step8.md b/steps/step8.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.7.4
+2.9.3 (Apple Git-75)
 
