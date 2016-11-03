@@ -191,6 +191,19 @@ Now `roboto-regular.ttf` is available under `http://localhost:3000/fonts/roboto-
 
 And... You have an app that works with Ionic!
 
+### Events Troubleshoot
+
+Now, in order to get smooth mobile experience in Ionic 2, we need to make some modifications to Meteor's default packages. 
+
+Meteor comes with a mobile support package called `mobile-experience` which is a bundle for three packages: `fastclick`, `mobile-status-bar` and `launch-screen`, and we need to remove `fastclick` in order to get better result.
+
+So let's make those changes:
+
+    $ meteor remove mobile-experience
+    $ meteor add mobile-status-bar
+    $ meteor add launch-screen
+
+
 ## Summary
 
 In this tutorial we showed how to use Ionic and how to separate the whole view for both, web and mobile.
