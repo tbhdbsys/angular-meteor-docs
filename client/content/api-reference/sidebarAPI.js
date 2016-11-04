@@ -11,8 +11,8 @@ Template.sidebarDefaultAPI.events({
     if (route.indexOf('api/angular2') > -1) {
       Router.go('/api/angular2/' + event.target.value);
     }
-    else if (path.indexOf('api/meteor-rxjs') > -1) {
-      Router.go('/api/meteo-rxjs/' + event.target.value);
+    else if (route.indexOf('api/meteor-rxjs') > -1) {
+      Router.go('/api/meteor-rxjs/' + event.target.value);
     }
     else {
       Router.go('/api/' + event.target.value);
@@ -37,7 +37,7 @@ Template.sidebarDefaultAPI.helpers({
   },
   currentApi: function (api) {
     if (Router.current().data) {
-      var route = Router.current().data().route.replace('api.', '');
+      var route = Router.current().data().route.replace('api.', '').replace("meteor-rxjs.", "").replace("angular2.", "");
 
       return route.substr(0, route.lastIndexOf('.')) === api;
     }
