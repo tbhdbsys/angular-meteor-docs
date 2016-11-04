@@ -16,7 +16,7 @@ Since we wanna insert a new chat we need to create the corresponding method in t
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.3"}}
 
-As you can see, a chat is inserted with an additional `memberIds` feild. Let's update the chat model accordingly:
+As you can see, a chat is inserted with an additional `memberIds` field. Let's update the chat model accordingly:
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="6.4"}}
 
