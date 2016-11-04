@@ -16,33 +16,39 @@ Since we wanna insert a new chat we need to create the corresponding method in t
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.3"}}
 
-As you can see, a chat is inserted with an additional `memberIds` feild. Let's update the chat model accordingly:
+As you can see, a chat is inserted with an additional `memberIds` field. Let's update the chat model accordingly:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.4"}}
 
-Now that we have the method ready we can go ahead and implement the new chat dialog:
+Now, in order to have access to the Meteor's Collection of Users, we need to wrap it as a `MeteorObservable` Collection:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.5"}}
 
+> We take Meteor variable from `Package["meteor"].Meteor` because this file is loaded in both client and server, and this is the only way that works with both.
+
+And let's create a TypeScript interface for User objects:
+
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.6"}}
+
+Now that we have the method ready we can go ahead and implement the new chat dialog:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.7"}}
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.8"}}
 
-Thanks to our new-chat dialog, we can create chats dynamically with no need in initial fabrication. Let's replace the chats fabrication with users fabrication in the Meteor server:
-
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.9"}}
-
-Since we changed the data fabrication method, the chat's title and picture are not hardcoded anymore, therefore they should be calculated in the components themselves. Let's calculate those fields in the chats component:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.10"}}
 
+Thanks to our new-chat dialog, we can create chats dynamically with no need in initial fabrication. Let's replace the chats fabrication with users fabrication in the Meteor server:
+
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.11"}}
 
-And in the messages component as well for the active chat:
+And let's add the missing import inside the `ChatsPage`:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.12"}}
+Since we changed the data fabrication method, the chat's title and picture are not hardcoded anymore, therefore they should be calculated in the components themselves. Let's calculate those fields in the chats component:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="6.13"}}
 
 Now we want our changes to take effect. We will reset the database so next time we run our Meteor server the users will be fabricated. To reset the database, first make sure the Meteor server is stopped and then type the following command:
 

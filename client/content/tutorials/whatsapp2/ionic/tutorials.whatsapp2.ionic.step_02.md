@@ -1,68 +1,44 @@
 {{#template name="tutorials.whatsapp2.ionic.step_02.md"}}
 
+## First Ionic Component
+
 Now that we're finished with the initial setup, we can start building our app.
 
 An application created by Ionic's CLI will have a very clear methodology. The app is made out of pages, each page is made out of 3 files:
 
-- page.html - A view template file written in HTML based on Angular2's new [template engine](angular.io/docs/ts/latest/guide/template-syntax.html).
-- page.scss - A stylesheet file written in a CSS pre-process language called [SASS](sass-lang.com).
-- page.ts - A script file written in Typescript.
+- `.html` - A view template file written in HTML based on Angular2's new [template engine](angular.io/docs/ts/latest/guide/template-syntax.html).
+- `.scss` - A stylesheet file written in a CSS pre-process language called [SASS](sass-lang.com).
+- `.ts` - A script file written in Typescript.
 
 By default, the application will be created with 3 pages - `about`, `home` and `contact`. Since our app's flow doesn't contain any of them, we first gonna clean them up by running the following commands:
 
-    $ rm -rf pages/about
-    $ rm -rf pages/home
-    $ rm -rf pages/contact
+    $ rm -rf src/pages/about
+    $ rm -rf src/pages/home
+    $ rm -rf src/pages/contact
 
-Then we gonna clean some unnecessary SASS files importations of the pages we've just removed:
+And we need to remove their usage from the tabs container:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.2"}}
 
-Ionic2 provides us with a new theming system. The theme is determined thanks to SASS variables located in the file `app/theme/app.variables.scss`. By changing these variables our entire app's theme will be changed as well. Not only that, but you can also add new theming colors, and they should be available on the HTML as attributes, and the should affect the theming of most Ionic elements once we use them.
+And remove them from the module definition:
 
-Since we want our app to have a Whatsapp theme, we gonna define a new variable called `whatsapp`:
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.1" filename="src/app/app.module.ts"}}
+
+And let's change the actual tabs to show the tabs we want:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.3"}}
-
-Now whenever we will use it as an HTML attrubite we gonna have a greenish background, just like Whatsapp.
-
-Up next we gonna define the tabs which will be available in our application in its main view:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.4"}}
 
 We defined 4 tabs: `chats`, `contacts`, `favorites` and `recents`. In this tutorial we want to focus only on the messaging system, therefore we only gonna implement the chats tab, the rest is just for the layout.
 
 If you will take a closer look at the view template we've just defined, you can see that one of the tab's attributes is wrapped with \[square brackets\]. This is part of Angular2's new template syntax and what it means is that the property called `root` of the HTML element is bound to the `chatsTabRoot` property of the component.
 
-In this case, the component who's responsible for the tab is the app's main component located in `app/app.ts`. Let's edit it and reference the chats tab to the chats page which we will soon implement:
+Our next step is to implement the `chats` tab - first let's start by adding `moment` as a dependency - we will use it soon:
+
+    $ npm install --save moment
+
+Let's go ahead and implement the chats component, let's start with it's view (just a stub, we will later implement):
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.5"}}
-
-With that said, let's go ahead and implement the chats component:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.6"}}
-
-The logic is simple. Once the component is created we gonna define dummy chats just so we can test our view. As you can see we're using a package called [Moment](momentjs.com) to fabricate some date data. Let's install it:
-
-    $ npm install moment --save
-
-Since we're using Typescript, we also gonna need to define a custom data type for our chat model so the compiler can work properly. These custom data types are called [declerations](typescriptlang.org/docs/handbook/writing-declaration-files.html). Let's create an initial decleration file for our app's models located in `typings/models.d.ts`:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.8"}}
-
-And whenever we define a new decleration file we need to import it in the main decleration file located in `typings/index.d.ts`:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.9"}}
-
-Let's move on and create the chats view template and stylesheet:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.10"}}
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.11"}}
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.12"}}
-
-The view is pretty straight forward, it's just a list of chats and it has a Whatsapp-like style into it.
 
 Once creating an Ionic page it's recommended to use the following layout:
 
@@ -70,66 +46,109 @@ Once creating an Ionic page it's recommended to use the following layout:
 - &lt;ion-content&gt; - The content of the page. Will usually contain it's actual content like text.
 - &lt;ion-footer&gt; - The footer of the page. Will usutally contain content that should be bounded to the bottom like toolbars.
 
-The current view template contains an &lt;ion-header&gt; with a navigation bar containing the tab's title and an &lt;ion-content&gt; containing the list of the chats. The `*ngFor` attribute is used for iteration and is equivalent to Angular1's `ng-for` attribute. The '*' sign just tells us that this is a template directive we're dealing with (A directive that should eventually be rendered in the view). To prevent any misunderstandings, let's have a quick example for some of the notations in Angular2's template syntax that we gonna use in this tutorial:
+And now we will implement the actual Component:
 
-<table class="variables-matrix input-arguments">
-  <thead>
-  <tr>
-    <th><strong>Template syntax</strong></th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>&lt;input [value]="firstName"&gt;</td>
-    <td>Binds property `value` to the result of expression `firstName`.</td>
-  </tr>
-  <tr>
-    <td>&lt;button (click)="readRainbow($event)"&gt;</td>
-    <td>Calls method `readRainbow` when a click event is triggered on this button element (or its children) and passes in the event object.</td>
-  </tr>
-  <tr>
-    <td>&lt;div title="Hello &#123;&#123;ponyName&#125;&#125;"&gt;</td>
-    <td>Binds a property to an interpolated string, e.g. "Hello Seabiscuit". Equivalent to: &lt;div [title]="'Hello ' + ponyName"&gt;</td>
-  </tr>
-  <tr>
-    <td>&lt;my-cmp [(title)]="name"&gt;</td>
-    <td>Sets up two-way data binding. Equivalent to: &lt;my-cmp [title]="name" (titleChange)="name=$event"&gt;</td>
-  </tr>
-  <tr>
-    <td>&lt;p&gt;Card No.: &#123;&#123;cardNumber &#124; myCreditCardNumberFormatter&#125;&#125;&lt;/p&gt;</td>
-    <td>Transforms the current value of expression `cardNumber` via the pipe called `myCreditCardNumberFormatter`.</td>
-  </tr>
-  </tbody>
-</table>
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.6"}}
 
-> **NOTE:** Ionic elements will always have a prefix of `ion` and are self explanatory. Further information about Ionic's HTML elements can be found [here](ionicframework.com/docs/v2/component). It's very important to use these elemnts since they are the ones who provides us with the mobile-app look.
+The logic is simple. 
 
-As for now the chat items in our view contain a date of the recent message sent with a very messy and unclear format. Let's use a more user friendly format called a 'calendaric format'. For this we gonna need a help of a package called `angular2-moment`:
+Once the component is created we gonna define dummy chats just so we can test our view. As you can see we're using a package called [Moment](momentjs.com) to fabricate some date data. 
 
-    $ npm install angular2-moment --save
+We use `Observable.of` which is a shortcut for creating an Observable with a single value.
 
-Now that it is installed, before we go ahead and use a calendar pipe in our view, we first need to provide it in our component:
+Now let's add the new Component to the module definition so Angular 2 will know that the Component exists:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.7"}}
+
+And let's add it to the `TabsPage` which is the page that manages our tabs:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.8"}}
+
+And add the tab definition to the view, so the tab we create will be linked to the new Component:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.9"}}
+
+## TypeScript Interfaces
+
+Now, because we use TypeScript, we can defined our types and use then in our app, and in most of the IDEs you will get a better auto-complete and developing experience.
+
+So in our application, at the moment, we have two models: `Chat` and `Message`, so let's create the TypeScript definition for them.
+
+The file extension should be `.d.ts` - this is the way to tell TypeScript that the file does not contain any login - only interfaces.
+
+We will locate it under `/models/` directory, and later we will see how we can share those model definitions in both server side and client side.
+
+So let's create the definitions file:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.10"}}
+
+Note that we declared our interface inside a module called `api/models/whatsapp-models` - so we will be able to import the models from that path.
+
+And we need to add this definition to our TypeScript config (`tsconfig.json`), so it would be available in our code:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.11"}}
+
+Now, let's use our new model in the `ChatsPage`:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.12"}}
+
+## Ionic Themes
+ 
+Ionic provides use a theme engine in order to define style faster and more efficient. 
+
+The theme definition file is located in `src/theme/variable.scss`, and at the moment we will just add a new theme color, called `whatsapp`:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.13"}}
+
+And now we will be able to use the new color anywhere in any Ionic Component by adding `color="whatsapp"` to the Component.
+
+So let's add it to the view of the `ChatsPage`, and we will also use some more Ionic Components along with Angular 2 features:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.14"}}
 
-And now let's apply it:
+We use `ion-list` which Ionic translate into a list, and use `ion-item` for each one of the items in the list, and we also added to the view some images and text for each chat item.
+
+> We use `ngFor` along with the `async` Pipe because we will use RxJS and Observables in the tutorial!
+
+Now, in order to finish our theming and styling, let's create a stylesheet file for our Component:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.15"}}
 
-Pipes serves the same proposes as Angular1's filters and they share exactly the same sytanx, only they are called in a different name.
+> In Ionic 2, there is no need to load each specific style file - Ionic loads any style file under the `app` folder.
 
-Lastly for this step, we wanna have the ability to remove chats from our list. There are many methods to do so, in our case we want a 'remove' button to appear once we slide the chat item to the left. For this we gonna use a specialt element provided to us by Ionic called &lt;ion-item-sliding&gt; and inside of it we gonna define the buttons that should appear once we slide it using an element called &lt;ion-item-options&gt;. Let's update the view accordingly:
+## External Angular 2 Modules
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.16"}}
+Ionic 2 application works just like any other Angular 2 application, which means we can use any external packages that we need. 
 
-Note how we used the \(round brackets\) notation on the `click` event. These brackets are used to define events and they are part of Angular2's new template syntax.
+For example, we will add a usage with `angular2-moment` package, that adds useful Pipes we can use in our view, in order to manipulate the display of Date variables.
 
-Let's add a `removeChat()` method into our component, so the data will actually get updated once we click on the 'remove' button:
+So let's add this package first:
 
+    $ npm install --save angular2-moment
+    
+Now we need to tell our Angular 2 application to load that external module, so it would be available for use:
+    
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.17"}}
+    
+And let's use a Pipe from that package it in the view:
+    
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.18"}}
+    
+## Ionic Touch Events
+    
+Ionic provides us special Component's which handles touch events, for example: slide, tap and pinch. 
 
-This is how the chats tab should look like:
+We can use those in our view, let's add a sliding button that will show us more functionality for each chat.
+
+We add a remove button for each chat, so let's do it:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.19"}}
+
+And bind the event handler to the Component (we will implement the remove feature later): 
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.20"}}
+
+## Result
 
 > *android* {{tutorialImage 'whatsapp2' 'screenshot-1-md.png' 500}}
 

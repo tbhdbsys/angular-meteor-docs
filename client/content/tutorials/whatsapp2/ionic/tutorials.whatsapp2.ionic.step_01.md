@@ -2,13 +2,18 @@
 
 Both [Meteor](meteor.com) and [Ionic](ionicframework.com) took their platform to the next level in tooling.
 Both provide CLI interface instead of bringing a bunch of dependencies and configure build tools.
-There are also differences between those tools. in this post we will focus on the Ionic CLI.
+There are also differences between those tools. 
+
+In this post we will focus on the Ionic CLI - we will use it to serve the client side and build the Cordova project, and we will use 
+Meteor as a server side only, and load the Meteor collections in the client side externally. 
+
+First, start by making sure your Node & NPM are up to date, and Node's version it above 5 (you can check it using `node --version`).
 
 To begin with, we need to install Ionic using NPM:
 
-    $ npm install -g ionic@2.0.0-beta.32
+    $ npm install -g ionic cordova
 
-We will create our Whatsapp app using the following command:
+We will create our WhatsApp app using the following command:
 
     $ ionic start whatsapp --v2
 
@@ -23,51 +28,51 @@ Ionic2 apps are written using [Angular2](angular.io). Although Angular2 apps can
 - It prevents runtime errors.
 - Dependency injection is done automatically based on the provided data-types.
 
-In order to apply Typescript, Ionic's build system is built on top of a module bundler called [Browserify](browserify.org). In this tutorial we will use a custom build-config using [Webpack](webpack.github.io), hence we're gonna re-define our build system. Both module-bundlers are great solutions for building our app, but Webpack provides us with some extra features like aliases, which are missing in Browserify.
+In order to apply TypeScript, Ionic's build system is built on top of a module bundler and modules loader called [Rollup](http://rollupjs.org/). 
 
-Let's create our initial Webpack config:
+In this tutorial we will use a custom build-config using [Webpack](webpack.github.io), hence we're gonna re-define our build system. Both module-bundlers are great solutions for building our app, but Webpack provides us with some extra features like aliases, which are missing in Rollup.
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="1.2"}}
-
-Here is a brief overview for each of the properties defined by our config:
-
-- `entry` - Start bundling from `app/app.ts`.
-- `output` - Place bundling result at `www/app.bundle.js`.
-- `externals` - Defines `cordova` and its plugins as external modules, which means that they can be imported as modules, e.g. `import plugin from 'cordova/plugin'`.
-- `resolve.extensions` - Bundle files which have an extension of `.webpack.js`, `.web.js`, `.js` or `.ts`.
-- `module.loaders` - Files which have an extension of `.ts` should be compiled by Typescript.
-- `devtool` - Generate source-maps for the bundle.
-
-Once we specify the `--release` option, an additional extension should be added to our config:
-
-- `plugins` - Minify the generated undle.
-
-This option is used mostly for production. For full specifications of the Webpack config, see the following [reference](webpack.github.io/docs/configuration.html).
-
-Now we're gonna make some adjustments in our Typescript config so the 2 configs can co-operate and won't have any conflicts:
+Also, in order to load Meteor as external dependency without it's CLI, we need to use CommonJS modules loader (using Webpack) instead of ES2016 modules (using Rollup).
+ 
+## Ionic 2 + Webpack 
+ 
+So let's start by configuring our Webpack build, first we need to tell Ionic that we are using Webpack and use are using custom build file - this is done by adding `config` to our `package.json` file:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="1.3"}}
 
-We simply added more entry points for our Typescript compiler so it can be provided with declaration files (Which is explained in step 2.8) and excluded folders whose scripts shouldn't be compiled like `node_modules` and `www`.
-
-Ionic apps are created with tasks like linting and building which can be run whenever we want. These tasks are defined in a file called `gulpfile.js` and are performed by a toolkit called [Gulp](gulpjs.com).
-
-The 2 tasks which are responsible for building our app are:
-
-- `build` - Builds our app once. Mostly used for production.
-- `watch` - Builds our app whenever a change has been detected. Mostly used for development.
-
-As we said, by default our app is built using Browserify. Let's re-write the build tasks and replace Browserify with Webpack:
+Let's create our initial Webpack config - Ionic provides us a simple Webpack file that we can extend, it's located under `node_modules/@ionic/app-scripts/config/webpack.config.js`, so let's copy it and put in under `./config/webpack.config.js`:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="1.4"}}
 
-Our configurations are ready. Let's install the necessary NPM packages so they can function properly:
+Now we have the basic Webpack file, and if you will run `ionic serve` again, you will notice that it uses Webpack for bundling.
 
-    $ npm uninstall ionic-gulp-browserify-typescript --save-dev
-    $ npm install webpack --save-dev
-    $ npm install ts-loader --save-dev
-    $ npm install ionic-gulp-webpack --save-dev
-    $ npm install lodash.camelcase --save-dev
-    $ npm install lodash.upperfirst --save-dev
+Our next step is to add some custom config to our Webpack file, so let's do it:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="1.5"}}
+
+So let's understand what have we done here:
+
+- We first added a Webpack plugin called `ProvidePlugin` which provides globals for our app, and we use `typescript-extends` package as our `__extend` - this will give us the ability to load external TypeScript modules with any issues.
+- We created an alias for `api` - which means that any import that starts with "api" will be resolved into the directory we specified (`../api/` in our case - which we will later create there our server side using Meteor).
+
+We just need to add `typescript-extends` by installing it:
+
+    $ npm install --save-dev typescript-extends
+
+## TypeScript Configuration
+
+Now, we need to make some modifications for the TypeScript compiler in order to use CommonJS (we have to use CommonJS, otherwise we won't be able to load Meteor as external dependency), we will also need to change some flags in the config for that.
+
+So let's change `tsconfig.json` file:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="1.7"}}
+
+## Summary
+
+So in this step we installed Ionic and created a new project, and we changed the default bundler & modules loader - we use Webpack and CommonJS so we can load Meteor's dependencies.
+
+In this point, you should be able to run your app by running: 
+
+    $ ionic serve    
 
 {{/template}}

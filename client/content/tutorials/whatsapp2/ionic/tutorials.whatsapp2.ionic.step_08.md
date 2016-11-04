@@ -2,7 +2,7 @@
 
 Congratulations!
 
-You’ve created a Whatsapp clone!
+You’ve created a Whatsapp clone using Meteor and Ionic CLI!
 
 You are welcome to add more features and extend this tutorial by pull requesting [this repository](github.com/DAB0mB/ionic2-meteor-messenger).
 

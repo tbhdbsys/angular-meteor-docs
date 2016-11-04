@@ -1,5 +1,19 @@
 {{#template name="tutorials.whatsapp2.ionic.step_03.md"}}
 
+# Meteor Client Side package
+
+We want to have Meteor essentials available in our client so we can interface with our Meteor server. 
+
+We gonna install a package called `meteor-client-side` which gonna provide us with them:
+
+    $ npm install --save meteor-client-side
+
+And let's import it into our project, in the `src/app/main.dev.ts` file:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.2"}}
+    
+# Meteor Server
+
 Now that we have the initial chats layout and its component, we will take it a step further by providing the chats data from a server instead of having it locally. In this step we will be implementing the API server and we will do so using Meteor.
 
 First make sure that you have Meteor installed. If not, install it by typing the following command:
@@ -8,26 +22,11 @@ First make sure that you have Meteor installed. If not, install it by typing the
 
 We will start by creating the Meteor project which will be placed inside the `api` dir:
 
-    $ meteor create api --release 1.3.5.1
+    $ meteor create api
 
 > **NOTE:** Despite our decision to stick to Ionic's CLI, there is no other way to create a proper Meteor project except for using its CLI.
 
-Since we will be writing our app using Typescript and not Javascript, we will need to support it in our Meteor project as well, especially when the client and the server share some of the script files. To add this support let's add the following package to our Meteor project:
-
-    $ cd api
-    $ meteor add meteortypescript:compiler
-
-And let's link the necessary Typescript assets in both projects so they can have the same declerations and rules:
-
-    $ ln -s ../typings
-    $ ln -s ../tsconfig.json
-    $ ln -s ../tslint.json
-
-As you can probably see this is not a NodeJS package we're dealing with, rather than a Meteor package. All Meteor packages are defined in a package manager called [Atmosphere](atmospherejs.com). Normally we should use NPM since we don't want to be messing around with several package managers, but some functionalities are related exclusively to Meteor, in which case we gonna use Atmosphere.
-
-We also wanna have Meteor decleration Typescript files so we can have Meteor data-types available to us once we use Typescript. For this we gonna use a decleration files manager called [typings](). All of the decleration files we installed are gonna be available to us in the `typings.json` file. To add Meteor decleration files, type the following in the command line:
-
-    $ typings install registry:env/meteor --global --save
+Let's start by removing the client side from the base Meteor project.
 
 A Meteor project will contain the following dirs by default:
 
@@ -38,122 +37,217 @@ These scripts should be loaded automatically by their alphabetic order on their 
 
     $ rm -rf client
 
-We want our server and client to share the same resources, which means that once we install an NPM package in the Ionic project it's gonna be available in the Meteor project as well. To achieve that we gonna add a symbolic link to `node_modules` dir in our Meteor project:
+Now, since we will be writing our app using Typescript also in the server side, we will need to support it in our Meteor project as well, especially when the client and the server share some of the script files. To add this support let's add the following package to our Meteor project:
 
-    $ ln -s ../node_modules
+    $ cd api
+    $ meteor add barbatus:typescript
 
-Since they share the same packages we have no need to configure our Meteor project using `package.json`:
+And because we use TypeScript, let's change the main server file extension from `.js` to `.ts` (`api/server/main.ts`).
 
-    $ rm package.json
+And we need to add TypeScript config file also to the server side, so let's add it under `api/tsconfig.json`:
 
-And let's not forget to add the Meteor NPM dependencies to the Ionic project as well:
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.7"}}
 
-    $ npm install meteor-node-stubs --save
+Note that we declared a file called `typings.d.ts` which will load any external TypeScript types, so let's add the file with the required typings:
 
-Our API server is set! Now instead of fabricating the chats data in the chats component we can do so during the server initialization. We will start by creating a `chats` collection which will be used to insert new chat documents into the database:
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.8"}}
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.9"}}
+And we will also need to add some missing package for our server side, so run the following command inside `api` directory:
 
-This collection is actually a reference to a [MongoDB](mongodb.com) collection, and it is provided to us by a Meteor package called [Minimongo](meteor.com/mini-databases), and it shares almost the same API as a native MongoDB collection.
+    $ meteor npm install --save meteor-node-stubs zone.js meteor-rxjs meteor-typings
 
-Now we will go into the server's entry file located in `server/main.js` and we will use the chats collection we've just created to insert some chat documents. First we need to rename this file since we're using Typesript and we want it to have a `.ts` extension:
+Now, in order to have access to the TypeScript interface we created in the previous step also in the server side, let's move the `models` directory into the `api` directory.
 
-    $ cd server
-    $ mv main.js main.ts
+> Remember the alias we created in the first step, for `api` directory? this is why we created it! so we can share TypeScript file between the server and the client!
 
-And afterwards we can go ahead and write our code:
+And update the import path in the TypeScript config file of the client side, after moving the directory:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.10"}}
+
+## Collections
+
+In Meteor, we keep data inside `Mongo.Collections`.
+
+This collection is actually a reference to a [MongoDB](http://mongodb.com) collection, and it is provided to us by a Meteor package called [Minimongo](https://guide.meteor.com/collections.html), and it shares almost the same API as a native MongoDB collection.
+
+We can also wrap it with RxJS' `Observables` using [`meteor-rxjs`](http://npmjs.com/package/meteor-rxjs).
+
+That package has been already installed, we installed it earlier in the server side!
+
+Let's create a Collection of Chats and Messages:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.11"}}
 
-What we did is simple. Once the server is ready, we look for existing chats, if no chat exists we will proceed the method and create new ones.
+## Data fixtures
 
-We also need to update the message model decleration to contain a `chatId` field:
+Since we have Collections, we can now move on to fill them with data and later we will connect that data into the client side.
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.12"}}
+So first, let's add `moment` to the server side, run the following command inside `api` directory:
 
-Since Meteor's API requires us to share some of the code in both client and server, we gonna have to import some of the files in our Meteor project in our Ionic project, and we wanna make these files as easyily to access accessable as possible. Thanks to Webpack, we can define module aliases instead of writing a full relative path, e.g. instead of writing:
+    $ meteor npm install --save moment @types/moment
 
-```js
-import * as Collections from '../../api/server/collections';
-```
-
-We gonna write:
-
-```js
-import * as Collections from 'api/collections';
-```
-
-All it requires is a simple adjustment in our `webpack.config.js`:
+And let's create our data fixtures in the server side:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.13"}}
 
-Now we wanna have Meteor essentials available in our client so we can interface with our Meteor server. We gonna install a package called `meteor-client-side` which gonna provide us with them:
+Quick overview.
+We use `.collection` to get the actual `Mongo.Collection` instance, this way we avoid using Observables.
+At the beginning we check if Chats Collection is empty by using `.count()` operator.
+Then we provide few chats with one message each.
 
-    $ npm install meteor-client-side --save
+We also bundled Message with a Chat using `chatId` property.
 
-And we gonna need to import it so it will be a part of our bundle:
+Now, in order to use those Collection in the client side, we first need to make sure that we have `meteor-rxjs` support in the client side as well.
+
+Add it by running the following command in the root directory:
+
+    $ npm install --save meteor-rxjs
+
+## UI
+
+Since Meteor's API requires us to share some of the code in both client and server, we have to import all the collections on the client-side too.
+
+We also want to provide that data to the component:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.15"}}
 
-> *NOTE*: `meteor-client-side` will try to connect to `localhost:3000` by default. To change it, simply set a global object named `__meteor_runtime_config__` with a property called `DDP_DEFAULT_CONNECTION_URL` and set whatever server url you'd like to connect to.
+As you can see, we moved `chats` property initialization to `ngOnInit`,  one of the Angular's lifehooks.
+It's being called when Component is initalized.
 
-> *TIP*: You can have a static separate front end app that works with a `Meteor` server. you can use `Meteor` as a back end server to any front end app without changing anything in your app structure or build process.
+Here comes a quick lesson of RxJS.
 
-As for now, Meteor packages can be accessed in the client using the following syntax:
+Since `Chats.find()` returns an `Observable` we can take advantage of that and bundle it with `Messages.find()` to look for last messages of each chat. This way everything will work as a one body, one Observable.
 
-```js
-const {EJSON} = window.Package['ejson'];
-```
+So what's really going on there?
 
-But in the server the method is different:
+#### Find chats
 
-```js
-import {EJSON} from 'meteor/ejson';
-```
+First thing is to get all the chats by using `Chats.find({})`.
 
-Since we want this behavior to be consistent and identical, we gonna make the server's method for loading Meteor packages available in the client as well. Then again it only takes a simple configuration adjustment:
+The result of it will be an array of `Chat` objects.
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.16"}}
-
-Our Meteor configuration in the client is ready! Now we can use the chats collection in the chats component as well. Instead of using an array of chats, we will be using a [Mongo.Cursor](docs.meteor.com/api/collections.html#mongo_cursor) returned to us by queries we run on the chats collection:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.17"}}
-
-If you will look closely you will see that the component inherits from [MeteorComponent](angular-meteor.com/api/angular2/0.4.2/meteorComponent) which exposes Meteor's API on the component and binds subscriptions and computations to our component, which means that once our component is destroyed then our subsriptions and computations are gonna be destroyed as well.
-
-Since the messages are defined in a seperate collection and not as a nested object inside a chat document anymore, they need to be queried seperately. In addition, the last message of a chat can be changed, so we want it to be recomputated anytime the result of its query changes, therefore we wrapped its calculation insdie a [Computation](docs.meteor.com/api/tracker.html#Tracker-autorun). However, this method causes a memory leak issue since whenever a chat is being removed or replaced with another one, the computation is gonna keep running in the background until the entire component is destroyed. To solve it, we observed changes in the returned cursor using the [Mongo.Cursor.observe()](docs.meteor.com/api/collections.html#Mongo-Cursor-observe) method, and now whenever a chat is removed or chaned its belonging last message computation is gonna stop as well, thanks to a callbak we defined called `disposeChat()`.
-
-Inorder to be able to store a computation on a chat document we also need to update the chat model decleration to contain a `lastMessageComp` field:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.18"}}
-
-Since we're not dealing with an array anymore, we can't iterate it in the view. We need a way to iterate a Mongo.Cursor using the `*ngFor` directive. That's where [Angular2-Meteor](angular-meteor.com/angular2) kicks in. Let's install it:
-
-    $ npm install angular2-meteor@0.6.2 --save
-
-And we gonna apply its providers during bootstrap in our app's main component, which will actually give us the iteration abilities:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.20"}}
-
-Angular2-Meteor provides us with more abilities which will be revealed and explained further in this tutorial.
-
-The current version of angular2-meteor relies on Meteor packages called `check` and `ejson` to be global otherwise it breaks. Normally that's the way it should be, but since we're not using on a Meteor environment then we gonna have to explicitly define them inorder for angular2-meteor to properly work:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.21"}}
-
-Now all the clients can be synced with our server in real time!
-
-If you will go ahead and open another instance of the app, you can see that once you remove one of the chats in one instance, it will update the other instance's view as well.
-
-You can also update the chats collection directly from the database as well and see how the view re-renders. To do so, simply navigate to the `api` dir and type `meteor mongo` while our Meteor server is up.
-
-Once your'e connected to the database, simply type:
+Let's use `map` operator to make a space for adding the last messages.
 
 ```js
-  chat = db.chats.findOne({})
-  db.chats.remove({_id: chat._id})
+Chats.find({})
+    .map(chats => {
+        const chatsWithMessages = chats.map(chat => {
+            chat.lastMessage = undefined;
+            return chat;
+        });
+        
+        return chatsWithMessages;
+    })
 ```
 
-And see how the view updates.
+#### Look for the last message
+
+For each chat we need to find the last message.
+We can achieve this by calling `Messages.find` with proper selector and options.
+
+Let's go through each element of the `chats` property to call `Messages.find`.
+
+```js
+const chatsWithMessages = chats.map(chat => Chats.find(/* selector, options*/));
+```
+
+That returns an array of Observables.
+
+We need to create a selector.
+We have to look for a message that is a part of required chat:
+
+```js
+{
+    chatId: chat._id
+}
+```
+
+Okay, but we need only one, last message. Let's sort them by `createdAt`:
+
+```js
+{
+    sort: {
+        createdAt: -1
+    }
+}
+```
+
+This way we get them sorted from newest to oldest.
+
+We look for just one, so selector will look like this:
+
+```js
+{
+    sort: {
+        createdAt: -1
+    },
+    limit: 1
+}
+```
+
+Now we can add the last message to the chat.
+
+```js
+Messages.find(/*...*/)
+    .map(messages => {
+        if (messages) chat.lastMessage = messages[0];
+        return chat;
+    })
+```
+
+Great! But what if there are no messages? Wouldn't it emit a value at all?
+
+RxJS contains a operator called `startWith`. It allows to emit some value before Messages.find beings to emit messages.
+This way we avoid the waiting for non existing message.
+
+The result:
+
+```js
+const chatsWithMessages = chats.map(chat => {
+    return Messages.find(/*...*/)
+        .startWith(null)
+        .map(messages => {
+            if (messages) chat.lastMessage = messages[0];
+            return chat;
+        })
+})
+```
+
+#### Combine those two
+
+Last thing to do is to handle the array of Observables we created (`chatsWithMessages`).
+
+Yet again, RxJS comes with a rescue. We will use `combineLatest` which takes few Observables and combines them into one Observable.
+
+It works like this:
+
+```js
+const source1 = /* an Observable */
+const source2 = /* an Observable */
+
+Observable.combineLatest(source1, source2);
+```
+
+This combination returns an array of both results (`result`). So the first item of that array will come from `source1` (`result[0]`), second from `source2` (`result[1]`).
+
+Let's see how it applies to our example:
+
+```js
+Observable.combineLatest(...chatsWithMessages);
+```
+
+We used `...array` because `Observable.combineLatest` expects arguments, not a single one that with an array of Observables.
+
+To merge that observable into `Chats.find({})` we need to use `mergeMap` operator instead of `map`:
+
+```js
+Chats.find({})
+    .mergeMap(chats => Observable.combineLatest(...chatsWithMessages));
+```
+
+In Whatsapp we used `chats.map(/*...*/)` directly instead of creating another variables like we did with `chatsWithMessages`.
+
+With all this, we have now Chats with their last messages available in the UI view.
+
 
 {{/template}}

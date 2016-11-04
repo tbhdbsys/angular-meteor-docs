@@ -1,5 +1,6 @@
 {{#template name="tutorials.whatsapp2.ionic.step_07.md"}}
 
+
 In this step we gonna take care of the app's security and encapsulation, since we don't want the users to do whatever they want, and we don't want them to be able to see content which is unrelevant for them.
 
 We gonna start by removing a Meteor package named `insecure`.
@@ -12,54 +13,74 @@ So let's remove this package by running this command:
 
     $ meteor remove insecure
 
-Now that we don't have the ability to remove whatever document we want anymore, we need to update the logic for the `removeChat()` method in our chats component.
-
-First we need to implement the corresponding method in our server:
+With that we're able to add ability to remove chats:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.2"}}
 
-And now we need to call this method from the component:
+We have a Method, now we have to implement it in the UI.
+
+Each chat has two buttons, one for sending attachments and one to open options menu.
+
+Let's create that menu by creating a new component called `MessagesOptionsComponent`:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.3"}}
 
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.4"}}
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.5"}}
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.6"}}
+
+Great! Now we can define component's method to open the options:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.7"}}
+
+One thing missing, add this method to the view:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.8"}}
+
 Right now all the chats are published to all the clients which is not very good for privacy. Let's fix that.
 
-First thing we need to do inorder to stop all the automatic publication of information is to remove the `autopublish` package from the Meteor server:
+First thing we need to do in order to stop all the automatic publication of information is to remove the `autopublish` package from the Meteor server:
 
     $ meteor remove autopublish
+
+Now we need to explicitly define our publications. Let's start by sending the users' information:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.10"}}
+
+And add the messages:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.11"}}
 
 We will now add the [publish-composite](https://atmospherejs.com/reywood/publish-composite) package which will help us implement joined collection pubications.
 
     $ meteor add reywood:publish-composite
 
-And we will install its belonging typings as well
+Use `Meteor.publishComposite` from the package we installed and create a publication of `Chats`: 
 
-    $ typings install dt~meteor-publish-composite --save --global
-
-Now we need to explicitly define our publications. Let's start by sending the users' information.
-
-Create a file named `publications.ts` under the `api/server` dir with the following contents:
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.7"}}
-
-Let's have a brief overview for each of the publications and update the corresponding components to subscribe to them.
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.13"}}
 
 The chats publication is a composite publication which is made of several nodes. First we gonna find all the relevant chats for the current user logged in. After we have the chats, we gonna return the following cursor for each chat document we found. First we gonna return all the last messages, and second we gonna return all the users we're currently chatting with.
 
+Those publications are still not visible by server, we need to import and run the init method:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.14"}}
+
 Let's add the subscription for the chats publication in the chats component:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.8"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.15"}}
 
 The users publication publishes all the users' profiles, and we need to use it in the new chat dialog whenever we wanna create a new chat.
 
 Let's subscribe to the users publication in the new chat component:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.9"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.16"}}
 
-The messages publication is responsible for biringing all the relevant messages for a certain chat. This publication is actually parameterized and it requires us to pass a chat id during subscription.
+The messages publication is responsible for bringing all the relevant messages for a certain chat. This publication is actually parameterized and it requires us to pass a chat id during subscription.
 
 Let's subscribe to the messages publication in the messages component, and pass the current active chat id provided to us by the nav params:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.10"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="7.17"}}
 
 {{/template}}
