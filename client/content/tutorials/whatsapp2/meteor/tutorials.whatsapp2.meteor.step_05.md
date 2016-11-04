@@ -25,7 +25,7 @@ To make it simpler we can add `start` script to `package.json`:
 
 {{> DiffBox tutorialName="whatsapp2-meteor-tutorial" step="5.4"}}
 
-> *NOTE*: If you would like to test the verification with a real phone number, `accouts-phone` provides an easy access for [twilio's API](https://www.twilio.com/), for more information see [accounts-phone's repo](https://github.com/okland/accounts-phone).
+> *NOTE*: If you would like to test the verification with a real phone number, `accounts-phone` provides an easy access for [twilio's API](https://www.twilio.com/), for more information see [accounts-phone's repo](https://github.com/okland/accounts-phone).
 
 We will now apply the settings file we've just created so it can actually take effect:
 
