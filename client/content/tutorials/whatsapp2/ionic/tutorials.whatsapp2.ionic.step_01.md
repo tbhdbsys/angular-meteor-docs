@@ -57,7 +57,7 @@ So let's understand what have we done here:
 
 We just need to add `typescript-extends` by installing it:
 
-    $ npm install --save-dev typescript-extends
+    $ npm install --save-dev typescript-extends meteor-typings
 
 ## TypeScript Configuration
 
