@@ -65,7 +65,7 @@ Let's resize every file to 32x32:
 
 We used [`gm`](https://github.com/aheckmann/gm) module, let's install it:
 
-    $ meteor npm install gm --save
+    $ meteor npm install gm try-thread-sleep thread-sleep --save
 
 > Note: To use this module, you need download and install [GraphicsMagick](http://www.graphicsmagick.org/) or [ImageMagick](http://www.imagemagick.org/). In Mac OS X, you can use [Homebrew](http://brew.sh/) and do: `brew install graphicsmagick` or `brew install imagemagick`.
 
