@@ -87,7 +87,7 @@ Creating a pagination component is not a trivial task and not one of the primary
 so we are going to make use of an already existing package with Angular 2 pagination components.
 Run the following line to add this package:
 
-    $ meteor npm install ng2-pagination --save
+    $ meteor npm install ng2-pagination@0.5.1 --save
 
 > This package's pagination mark-up follows the structure of
 > the [Bootstrap pagination component](http://getbootstrap.com/components/#pagination),
