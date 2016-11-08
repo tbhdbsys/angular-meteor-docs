@@ -132,9 +132,9 @@ Template.downloadPreviousStep.helpers({
       case 'tutorials.socially.angular2':
         return 'https://github.com/Urigo/meteor-angular2.0-socially';
       case 'tutorials.whatsapp.ionic':
-        return 'https://github.com/Urigo/ionic-meteor-whatsapp';
+        return 'https://github.com/Urigo/IonicCLI-Meteor-WhatsApp';
       case 'tutorials.whatsapp.meteor':
-        return 'https://github.com/Urigo/angular-meteor-whatsapp';
+        return 'https://github.com/Urigo/Ionic-MeteorCLI-WhatsApp';
     }
   }
 });

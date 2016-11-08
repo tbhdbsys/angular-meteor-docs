@@ -11,7 +11,7 @@ Please also check out the `Meteor` version of the same blog which also includes 
 
 Compare the two solutions yourself and choose what’s best for you.
 
-You are welcome to add more features and extend this tutorial by pull requesting [this repository](https://github.com/Urigo/ionic-meteor-whatsapp).
+You are welcome to add more features and extend this tutorial by pull requesting [this repository](https://github.com/Urigo/IonicCLI-Meteor-WhatsApp).
 
 Creating a full stack real time mobile app has never been so fast and easy.
 
