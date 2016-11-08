@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp2.ionic.step_08.md"}}
+{{> downloadPreviousStep stepName="step_07"}}
 
 Congratulations!
 

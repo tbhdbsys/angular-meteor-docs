@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp2.ionic.step_05.md"}}
+{{> downloadPreviousStep stepName="step_04"}}
 
 ## Meteor Accounts (Server Side)
 

@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp2.meteor.step_06.md"}}
+{{> downloadPreviousStep stepName="step_05"}}
 
 Our next step is about adding the ability to create new chats. So far we had the chats list and the users feature, we just need to connect them.
 

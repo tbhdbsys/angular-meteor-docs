@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp2.ionic.step_07.md"}}
+{{> downloadPreviousStep stepName="step_06"}}
 
 
 In this step we gonna take care of the app's security and encapsulation, since we don't want the users to do whatever they want, and we don't want them to be able to see content which is unrelevant for them.

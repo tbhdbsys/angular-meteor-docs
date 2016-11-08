@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp2.meteor.step_04.md"}}
+{{> downloadPreviousStep stepName="step_03"}}
 
 In this step we will add the messages view and the ability to send messages.
 

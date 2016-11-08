@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp2.ionic.step_02.md"}}
+{{> downloadPreviousStep stepName="step_01"}}
 
 ## First Ionic Component
 

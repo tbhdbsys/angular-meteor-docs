@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp2.meteor.step_03.md"}}
+{{> downloadPreviousStep stepName="step_02"}}
 
 Now that we have the initial chats layout and its component, we will take it a step further by providing the chats data from a server instead of having it locally. In this step we will be implementing the API server and we will do so using Meteor with Mongo.
 

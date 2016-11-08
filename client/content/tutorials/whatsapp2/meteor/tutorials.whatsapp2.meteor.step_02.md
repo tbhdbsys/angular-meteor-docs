@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp2.meteor.step_02.md"}}
+{{> downloadPreviousStep stepName="step_01"}}
 
 Now that we're finished with the initial setup, we can start building our app.
 

@@ -110,12 +110,16 @@ Template.improveDoc.helpers({
       return 'migration/angular2';
     } else if (rData.parent && rData.parent.route == 'migration.angular1') {
       return 'migration/angular1';
-    } else if (rData.parent && rData.parent.route == 'tutorials.socially.angular2') {
-      return 'tutorials/socially/angular2';
     } else if (rData.parent && rData.parent.route == 'tutorials.whatsapp.ionic') {
       return 'tutorials/whatsapp/ionic'
     } else if (rData.parent && rData.parent.route == 'tutorials.whatsapp2.ionic') {
       return 'tutorials/whatsapp2/ionic';
+    } else if (rData.parent && rData.parent.route == 'tutorials.whatsapp.meteor') {
+      return 'tutorials/whatsapp/meteor'
+    } else if (rData.parent && rData.parent.route == 'tutorials.whatsapp2.meteor') {
+      return 'tutorials/whatsapp2/meteor';
+    } else if (rData.parent && rData.parent.route == 'tutorials.socially.angular2') {
+      return 'tutorials/socially/angular2';
     } else {
       return 'tutorials/socially/angular1';
     }
@@ -135,6 +139,10 @@ Template.downloadPreviousStep.helpers({
         return 'https://github.com/Urigo/IonicCLI-Meteor-WhatsApp';
       case 'tutorials.whatsapp.meteor':
         return 'https://github.com/Urigo/Ionic-MeteorCLI-WhatsApp';
+      case 'tutorials.whatsapp2.ionic':
+        return 'https://github.com/Urigo/Ionic2CLI-Meteor-WhatsApp';
+      case 'tutorials.whatsapp2.meteor':
+        return 'https://github.com/Urigo/Ionic2-MeteorCLI-WhatsApp';
     }
   }
 });

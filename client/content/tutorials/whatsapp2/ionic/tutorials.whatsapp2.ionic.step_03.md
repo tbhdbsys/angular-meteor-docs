@@ -1,4 +1,5 @@
 {{#template name="tutorials.whatsapp2.ionic.step_03.md"}}
+{{> downloadPreviousStep stepName="step_02"}}
 
 # Meteor Client Side package
 
