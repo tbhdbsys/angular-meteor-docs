@@ -45,7 +45,7 @@ Now that it is well functioning, let's polish our `Chats`'s looking by adding so
 
 {{> DiffBox tutorialName="ionic-tutorial" step="4.10"}}
 
-Also, this stylesheet uses some assets located in the `www/img` dir, so inorder for the stylesheet to work properly you'll need to copy the files located [here](https://github.com/DAB0mB/ionic-meteor-whatsapp/tree/master/www/img).
+Also, this stylesheet uses some assets located in the `www/img` dir, so inorder for the stylesheet to work properly you'll need to copy the files located [here](https://github.com/Urigo/ionic-meteor-whatsapp/tree/master/www/img).
 
 After doing so, our app should look like this:
 

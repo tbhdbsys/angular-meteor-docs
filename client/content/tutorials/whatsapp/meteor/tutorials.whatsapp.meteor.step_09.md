@@ -5,13 +5,13 @@ Congratulations!
 
 You’ve created a `Whatsapp` app!
 
-Thanks a lot to [Idan Wender](https://github.com/idanwe/), [Dotan Simha](https://github.com/dotansimha) and [Eytan Manor](https://github.com/DAB0mB) who helped me ([Urigo](https://github.com/urigo)) a lot with this post.
+Thanks a lot to [Idan Wender](https://github.com/idanwe/), [Dotan Simha](https://github.com/dotansimha) and [Eytan Manor](https://github.com/Urigo) who helped me ([Urigo](https://github.com/urigo)) a lot with this post.
 
 Please also check out the `Meteor` version of the same blog which also includes adding a profile picture and send a picture in the chat.
 
 Compare the two solutions yourself and choose what’s best for you.
 
-You are welcome to add more features and extend this tutorial by pull requesting [this repository](https://github.com/DAB0mB/angular-meteor-whatsapp).
+You are welcome to add more features and extend this tutorial by pull requesting [this repository](https://github.com/Urigo/angular-meteor-whatsapp).
 
 Creating a full stack real time mobile app has never been so fast and easy.
 
