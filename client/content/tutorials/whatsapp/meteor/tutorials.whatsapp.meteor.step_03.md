@@ -57,7 +57,7 @@ We also need to add some `Whatsapp` assets so it would look more similar.
 
 Note that the images are under `public/` folder so we can use them in the client side from the root directory (in the `css` file).
 
-You can copy them from [here](https://github.com/DAB0mB/angular-meteor-whatsapp/tree/master/public).
+You can copy them from [here](https://github.com/Urigo/angular-meteor-whatsapp/tree/master/public).
 
 And should be the result:
 
