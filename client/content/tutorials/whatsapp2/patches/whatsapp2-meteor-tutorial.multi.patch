@@ -1,7 +1,2930 @@
+From 7110d6f72ea9816d1fe1ddd8fac9b9d95f82852f Mon Sep 17 00:00:00 2001
+From: Dotan Simha <dotansimha@gmail.com>
+Date: Tue, 4 Oct 2016 21:02:02 +0300
+Subject: [PATCH 001/129] Create a new tortilla project
+
+---
+ .bithoundrc                                       |  26 ++
+ .gitignore                                        |   4 +
+ .meteor/.finished-upgraders                       |  16 ++
+ .meteor/.gitignore                                |   2 +
+ .meteor/.id                                       |   7 +
+ .meteor/packages                                  |  25 ++
+ .meteor/platforms                                 |   2 +
+ .meteor/release                                   |   1 +
+ .meteor/versions                                  |  87 +++++++
+ .tortilla/editor.js                               | 140 ++++++++++
+ .tortilla/git.js                                  |  67 +++++
+ .tortilla/hooks/commit-msg.js                     |  29 +++
+ .tortilla/hooks/pre-commit.js                     |  58 +++++
+ .tortilla/hooks/pre-push.js                       |  35 +++
+ .tortilla/hooks/pre-rebase.js                     |  10 +
+ .tortilla/hooks/prepare-commit-msg.js             |  31 +++
+ .tortilla/local-storage.js                        |  13 +
+ .tortilla/manual.js                               | 119 +++++++++
+ .tortilla/md-parser/index.js                      |  96 +++++++
+ .tortilla/md-parser/md-chunk.js                   |  29 +++
+ .tortilla/md-parser/md-chunks-collection.js       |  42 +++
+ .tortilla/md-parser/md-component.js               | 115 +++++++++
+ .tortilla/md-parser/md-helper-component.js        |  16 ++
+ .tortilla/md-parser/md-partial-component.js       |  14 +
+ .tortilla/md-renderer/diff-step-helper.js         | 128 ++++++++++
+ .tortilla/md-renderer/index.js                    |  94 +++++++
+ .tortilla/md-renderer/nav-step-helper.js          |  86 +++++++
+ .tortilla/paths.js                                |  72 ++++++
+ .tortilla/retagger.js                             |  44 ++++
+ .tortilla/reworder.js                             |  42 +++
+ .tortilla/step.js                                 | 296 ++++++++++++++++++++++
+ .tortilla/super-picker.js                         |  42 +++
+ .tortilla/templates/footer.md                     |   1 +
+ .tortilla/templates/header.md                     |   0
+ .tortilla/templates/nav-buttons-template.md       |   2 +
+ .tortilla/templates/next-button-template.md       |   2 +
+ .tortilla/templates/prev-button-template.md       |   2 +
+ .tortilla/utils.js                                | 183 +++++++++++++
+ README.md                                         |   7 +
+ both/collections/demo-collection.ts               |   4 +
+ both/models/demo-data-object.ts                   |   4 +
+ client/imports/app/app.component.html             |   4 +
+ client/imports/app/app.component.scss             |   5 +
+ client/imports/app/app.component.ts               |  12 +
+ client/imports/app/app.module.ts                  |  30 +++
+ client/imports/app/demo/demo-data.service.test.ts |  19 ++
+ client/imports/app/demo/demo-data.service.ts      |  18 ++
+ client/imports/app/demo/demo.component.html       |   8 +
+ client/imports/app/demo/demo.component.scss       |   3 +
+ client/imports/app/demo/demo.component.test.ts    |  95 +++++++
+ client/imports/app/demo/demo.component.ts         |  25 ++
+ client/imports/app/index.ts                       |   2 +
+ client/index.html                                 |   6 +
+ client/init.test.ts                               |  12 +
+ client/main.ts                                    |  12 +
+ package.json                                      |  45 ++++
+ server/imports/server-main/main.test.ts           |  40 +++
+ server/imports/server-main/main.ts                |  27 ++
+ server/main.ts                                    |   4 +
+ tsconfig.json                                     |  15 ++
+ typings.d.ts                                      |   4 +
+ typings.json                                      |  10 +
+ 62 files changed, 2389 insertions(+)
+ create mode 100644 .bithoundrc
+ create mode 100644 .gitignore
+ create mode 100644 .meteor/.finished-upgraders
+ create mode 100644 .meteor/.gitignore
+ create mode 100644 .meteor/.id
+ create mode 100644 .meteor/packages
+ create mode 100644 .meteor/platforms
+ create mode 100644 .meteor/release
+ create mode 100644 .meteor/versions
+ create mode 100644 .tortilla/editor.js
+ create mode 100644 .tortilla/git.js
+ create mode 100644 .tortilla/hooks/commit-msg.js
+ create mode 100644 .tortilla/hooks/pre-commit.js
+ create mode 100644 .tortilla/hooks/pre-push.js
+ create mode 100644 .tortilla/hooks/pre-rebase.js
+ create mode 100644 .tortilla/hooks/prepare-commit-msg.js
+ create mode 100644 .tortilla/local-storage.js
+ create mode 100644 .tortilla/manual.js
+ create mode 100644 .tortilla/md-parser/index.js
+ create mode 100644 .tortilla/md-parser/md-chunk.js
+ create mode 100644 .tortilla/md-parser/md-chunks-collection.js
+ create mode 100644 .tortilla/md-parser/md-component.js
+ create mode 100644 .tortilla/md-parser/md-helper-component.js
+ create mode 100644 .tortilla/md-parser/md-partial-component.js
+ create mode 100644 .tortilla/md-renderer/diff-step-helper.js
+ create mode 100644 .tortilla/md-renderer/index.js
+ create mode 100644 .tortilla/md-renderer/nav-step-helper.js
+ create mode 100644 .tortilla/paths.js
+ create mode 100644 .tortilla/retagger.js
+ create mode 100644 .tortilla/reworder.js
+ create mode 100644 .tortilla/step.js
+ create mode 100644 .tortilla/super-picker.js
+ create mode 100644 .tortilla/templates/footer.md
+ create mode 100644 .tortilla/templates/header.md
+ create mode 100644 .tortilla/templates/nav-buttons-template.md
+ create mode 100644 .tortilla/templates/next-button-template.md
+ create mode 100644 .tortilla/templates/prev-button-template.md
+ create mode 100644 .tortilla/utils.js
+ create mode 100644 README.md
+ create mode 100644 both/collections/demo-collection.ts
+ create mode 100644 both/models/demo-data-object.ts
+ create mode 100644 client/imports/app/app.component.html
+ create mode 100644 client/imports/app/app.component.scss
+ create mode 100644 client/imports/app/app.component.ts
+ create mode 100644 client/imports/app/app.module.ts
+ create mode 100644 client/imports/app/demo/demo-data.service.test.ts
+ create mode 100644 client/imports/app/demo/demo-data.service.ts
+ create mode 100644 client/imports/app/demo/demo.component.html
+ create mode 100644 client/imports/app/demo/demo.component.scss
+ create mode 100644 client/imports/app/demo/demo.component.test.ts
+ create mode 100644 client/imports/app/demo/demo.component.ts
+ create mode 100644 client/imports/app/index.ts
+ create mode 100644 client/index.html
+ create mode 100644 client/init.test.ts
+ create mode 100644 client/main.ts
+ create mode 100644 package.json
+ create mode 100644 server/imports/server-main/main.test.ts
+ create mode 100644 server/imports/server-main/main.ts
+ create mode 100644 server/main.ts
+ create mode 100644 tsconfig.json
+ create mode 100644 typings.d.ts
+ create mode 100644 typings.json
+
+diff --git a/.bithoundrc b/.bithoundrc
+new file mode 100644
+index 0000000..3e09453
+--- /dev/null
++++ b/.bithoundrc
+@@ -0,0 +1,26 @@
++{
++ "ignore": [
++    "**/node_modules/**"
++  ],
++  "critics": {
++    "lint": {"engine": "tslint"}
++  },
++    "dependencies": {
++      "mute": [
++        "rxjs"
++      ],
++      "unused-ignores": [
++	"moment",
++        "zone.js",
++        "try-thread-sleep",
++        "spawn-sync",
++        "reflect-metadata",
++        "meteor-typings",
++        "meteor-node-stubs",
++        "ionicons",
++        "angular2-meteor-tests-polyfills",
++        "angular2-meteor",
++        "@types/*"
++      ]
++    }
++}
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..86c9313
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,4 @@
++node_modules/
++.meteor/local
++npm-debug.log
++typings
+diff --git a/.meteor/.finished-upgraders b/.meteor/.finished-upgraders
+new file mode 100644
+index 0000000..a541808
+--- /dev/null
++++ b/.meteor/.finished-upgraders
+@@ -0,0 +1,16 @@
++# This file contains information which helps Meteor properly upgrade your
++# app when you run 'meteor update'. You should check it into version control
++# with your project.
++
++notices-for-0.9.0
++notices-for-0.9.1
++0.9.4-platform-file
++notices-for-facebook-graph-api-2
++1.2.0-standard-minifiers-package
++1.2.0-meteor-platform-split
++1.2.0-cordova-changes
++1.2.0-breaking-changes
++1.3.0-split-minifiers-package
++1.3.5-remove-old-dev-bundle-link
++1.4.0-remove-old-dev-bundle-link
++1.4.1-add-shell-server-package
+diff --git a/.meteor/.gitignore b/.meteor/.gitignore
+new file mode 100644
+index 0000000..501f92e
+--- /dev/null
++++ b/.meteor/.gitignore
+@@ -0,0 +1,2 @@
++dev_bundle
++local
+diff --git a/.meteor/.id b/.meteor/.id
+new file mode 100644
+index 0000000..0993940
+--- /dev/null
++++ b/.meteor/.id
+@@ -0,0 +1,7 @@
++# This file contains a token that is unique to your project.
++# Check it into your repository along with the rest of this directory.
++# It can be used for purposes such as:
++#   - ensuring you don't accidentally deploy one app on top of another
++#   - providing package authors with aggregated statistics
++
++a4kqps1d5y31214lew0l
+diff --git a/.meteor/packages b/.meteor/packages
+new file mode 100644
+index 0000000..cd12a6f
+--- /dev/null
++++ b/.meteor/packages
+@@ -0,0 +1,25 @@
++# Meteor packages used by this project, one per line.
++# Check this file (and the other files in this directory) into your repository.
++#
++# 'meteor add' and 'meteor remove' will edit this file for you,
++# but you can also edit it by hand.
++
++meteor-base@1.0.4             # Packages every Meteor app needs to have
++mobile-experience@1.0.4       # Packages for a great mobile UX
++mongo@1.1.12                   # The database Meteor supports right now
++reactive-var@1.0.10            # Reactive variable for tracker
++jquery@1.11.9                  # Helpful client-side library
++tracker@1.1.0                 # Meteor's client-side reactive programming library
++
++standard-minifier-css@1.2.0   # CSS minifier run for production mode
++standard-minifier-js@1.2.0    # JS minifier run for production mode
++es5-shim@4.6.14                # ECMAScript 5 compatibility for older browsers.
++
++autopublish@1.0.7             # Publish all data to the clients (for prototyping)
++insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
++angular2-compilers
++practicalmeteor:mocha
++xolvio:cleaner
++hwillson:stub-collections
++dispatch:mocha-phantomjs
++shell-server
+diff --git a/.meteor/platforms b/.meteor/platforms
+new file mode 100644
+index 0000000..efeba1b
+--- /dev/null
++++ b/.meteor/platforms
+@@ -0,0 +1,2 @@
++server
++browser
+diff --git a/.meteor/release b/.meteor/release
+new file mode 100644
+index 0000000..72980bc
+--- /dev/null
++++ b/.meteor/release
+@@ -0,0 +1 @@
++METEOR@1.4.1.1
+diff --git a/.meteor/versions b/.meteor/versions
+new file mode 100644
+index 0000000..9886afc
+--- /dev/null
++++ b/.meteor/versions
+@@ -0,0 +1,87 @@
++allow-deny@1.0.5
++angular2-compilers@0.6.1
++autopublish@1.0.7
++autoupdate@1.2.11
++babel-compiler@6.9.1
++babel-runtime@0.1.11
++barbatus:css-compiler@0.3.0
++barbatus:scss-compiler@3.8.1_1
++barbatus:typescript@0.4.1
++barbatus:typescript-compiler@0.7.1_1
++barbatus:typescript-runtime@0.1.2
++base64@1.0.9
++binary-heap@1.0.9
++blaze@2.1.9
++blaze-tools@1.0.10
++boilerplate-generator@1.0.10
++caching-compiler@1.0.6
++caching-html-compiler@1.0.6
++callback-hook@1.0.9
++check@1.2.3
++coffeescript@1.1.4
++ddp@1.2.5
++ddp-client@1.2.9
++ddp-common@1.2.6
++ddp-server@1.2.10
++deps@1.0.12
++diff-sequence@1.0.6
++dispatch:mocha-phantomjs@0.1.7
++dispatch:phantomjs-tests@0.0.5
++ecmascript@0.5.8
++ecmascript-runtime@0.3.14
++ejson@1.0.12
++es5-shim@4.6.14
++fastclick@1.0.12
++geojson-utils@1.0.9
++hot-code-push@1.0.4
++html-tools@1.0.11
++htmljs@1.0.11
++http@1.1.8
++hwillson:stub-collections@1.0.1
++id-map@1.0.8
++insecure@1.0.7
++jquery@1.11.9
++launch-screen@1.0.12
++livedata@1.0.18
++logging@1.1.15
++meteor@1.2.17
++meteor-base@1.0.4
++minifier-css@1.2.14
++minifier-js@1.2.14
++minimongo@1.0.17
++mobile-experience@1.0.4
++mobile-status-bar@1.0.12
++modules@0.7.6
++modules-runtime@0.7.6
++mongo@1.1.12
++mongo-id@1.0.5
++npm-mongo@1.5.49
++observe-sequence@1.0.12
++ordered-dict@1.0.8
++practicalmeteor:chai@2.1.0_1
++practicalmeteor:loglevel@1.2.0_2
++practicalmeteor:mocha@2.4.5_6
++practicalmeteor:mocha-core@1.0.1
++practicalmeteor:sinon@1.14.1_2
++promise@0.8.7
++random@1.0.10
++reactive-var@1.0.10
++reload@1.1.10
++retry@1.0.8
++routepolicy@1.0.11
++shell-server@0.2.1
++spacebars@1.0.13
++spacebars-compiler@1.0.13
++standard-minifier-css@1.2.0
++standard-minifier-js@1.2.0
++templating@1.1.14
++templating-tools@1.0.5
++tmeasday:test-reporter-helpers@0.2.1
++tracker@1.1.0
++ui@1.0.12
++underscore@1.0.9
++urigo:static-html-compiler@0.1.8
++url@1.0.10
++webapp@1.3.11
++webapp-hashing@1.0.9
++xolvio:cleaner@0.3.1
+diff --git a/.tortilla/editor.js b/.tortilla/editor.js
+new file mode 100644
+index 0000000..3cc06a6
+--- /dev/null
++++ b/.tortilla/editor.js
+@@ -0,0 +1,140 @@
++var Fs = require('fs');
++var Path = require('path');
++var Minimist = require('minimist');
++var Paths = require('./paths');
++var Step = require('./step');
++
++/*
++  This is the editor for interactive rebases and ammended commits. Instead of openning
++  an editing software like nano or vim, this module will edit the file by specified
++  methods we choose.
++ */
++
++function main() {
++  var argv = Minimist(process.argv.slice(2), {
++    string: ['_', 'message', 'm']
++  });
++
++  // The first argument will be the rebase file path provided to us by git
++  var method = argv._[0];
++  var rebaseFilePath = argv._[1];
++  var message = argv.message || argv.m;
++
++  var rebaseFileContent = Fs.readFileSync(rebaseFilePath, 'utf8');
++  // Convert to array of jsons so it would be more comfortable to word with
++  var operations = disassemblyOperations(rebaseFileContent);
++
++  // Automatically invoke a method by the provided arguments.
++  // The methods will manipulate the operations array.
++  switch (method) {
++    case 'edit': editStep(operations); break;
++    case 'reword': rewordStep(operations, message); break;
++    case 'convert': convertManuals(operations); break;
++  }
++
++  // Reset all tags
++  operations.push({
++    method: 'exec',
++    command: 'node ' + Paths.tortilla.retagger
++  });
++
++  // Put everything back together and rewrite the rebase file
++  var newRebaseFileContent = assemblyOperations(operations);
++  Fs.writeFileSync(rebaseFilePath, newRebaseFileContent);
++}
++
++// Edit the last step in the rebase file
++function editStep(operations) {
++  operations[0].method = 'edit';
++
++  var offset = 1;
++
++  // Creating a clone of the operations array otherwise splices couldn't be applied
++  // without aborting the itration. In addition we hold an offset variable to handle
++  // the changes that are made in the array's length
++  operations.slice(offset).forEach(function (operation, index) {
++    var isSuperStep = !!Step.superDescriptor(operation.message);
++
++    // If this is a super step, replace pick operation with the super pick
++    if (isSuperStep) operations.splice(index + offset, 1, {
++      method: 'exec',
++      command: 'node ' + Paths.tortilla.superPicker + ' ' + operation.hash
++    });
++
++    // Update commit's step number
++    operations.splice(index + ++offset, 0, {
++      method: 'exec',
++      command: 'GIT_EDITOR=true node ' + Paths.tortilla.reworder
++    });
++  });
++}
++
++// Reword the last step in the rebase file
++function rewordStep(operations, message) {
++  var argv = [Paths.tortilla.reworder];
++  if (message) argv.push('"' + message + '"');
++
++  // Replace original message with the provided message
++  operations.splice(1, 0, {
++    method: 'exec',
++    command: 'node ' + argv.join(' ')
++  });
++}
++
++// Convert all manuals since the beginning of history to the opposite format
++function convertManuals(operations) {
++  var path = Paths.readme;
++  var offset = 2;
++
++  // Convert README.md
++  operations.splice(1, 0, {
++    method: 'exec',
++    command: 'node ' + Paths.tortilla.manual + ' convert --root'
++  });
++
++  operations.slice(offset).forEach(function (operation, index) {
++    var stepDescriptor = Step.superDescriptor(operation.message);
++    if (!stepDescriptor) return;
++
++    var file = 'step' + stepDescriptor.number + '.md';
++    var path = Path.resolve(Paths.steps, file);
++
++    // Convert step manual file
++    operations.splice(index + ++offset, 0, {
++      method: 'exec',
++      command: 'node ' + Paths.tortilla.manual + ' convert ' + stepDescriptor.number
++    });
++
++    return offset;
++  });
++}
++
++// Convert rebase file content to operations array
++function disassemblyOperations(rebaseFileContent) {
++  var operations = rebaseFileContent.match(/^[a-z]+\s.{7}.*$/mg);
++  if (!operations) return;
++
++  return operations.map(function (line) {
++    var split = line.split(' ');
++
++    return {
++      method: split[0],
++      hash: split[1],
++      message: split.slice(2).join(' ')
++    };
++  });
++}
++
++// Convert operations array to rebase file content
++function assemblyOperations(operations) {
++  return operations
++    .map(function (operation) {
++      return Object.keys(operation)
++        .map(function (k) { return operation[k] })
++        .join(' ');
++    })
++    .join('\n') + '\n';
++}
++
++
++if (require.main === module) main();
+diff --git a/.tortilla/git.js b/.tortilla/git.js
+new file mode 100644
+index 0000000..1a5106f
+--- /dev/null
++++ b/.tortilla/git.js
+@@ -0,0 +1,67 @@
++var Path = require('path');
++var Paths = require('./paths');
++var Utils = require('./utils');
++
++/*
++  Contains general git utilities.
++ */
++
++var git = Utils.git;
++
++// Tells if rebasing or not
++function isRebasing() {
++  return Utils.exists(Paths.git.rebaseMerge) || Utils.exists(Paths.git.rebaseApply);
++}
++
++// Tells if cherry-picking or not
++function isCherryPicking() {
++  return Utils.exists(Paths.git.heads.cherryPick) || Utils.exists(Paths.git.heads.revert);
++}
++
++// Tells if going to amend or not
++function gonnaAmend() {
++  return Utils.runBy('git', ['commit', '--amend']);
++}
++
++// Tells if a tag exists or not
++function tagExists(tag) {
++  return Utils.exists(Path.resolve(Paths.git.refs.tags, tag));
++}
++
++// Get the recent commit by the provided arguments. An offset can be specified which
++// means that the recent commit from several times back can be fetched as well
++function getRecentCommit(offset, argv) {
++  if (offset instanceof Array) {
++    argv = offset;
++    offset = 0;
++  }
++  else {
++    argv = argv || [];
++    offset = offset || 0;
++  }
++
++  var hash = typeof offset == 'string' ? offset : ('HEAD~' + offset);
++
++  argv = ['log', hash, '-1'].concat(argv);
++  return git(argv);
++}
++
++// Gets a list of the modified files reported by git matching the provided pattern.
++// This includes untracked files, changed files and deleted files
++function getStagedFiles(pattern) {
++  var stagedFiles = git(['diff', '--name-only', '--cached'])
++    .split('\n')
++    .filter(Boolean);
++
++  return Utils.filterMatches(stagedFiles, pattern);
++}
++
++
++module.exports = Utils.extend(git.bind(null), git, {
++  rebasing: isRebasing,
++  cherryPicking: isCherryPicking,
++  gonnaAmend: gonnaAmend,
++  tagExists: tagExists,
++  recentCommit: getRecentCommit,
++  stagedFiles: getStagedFiles
++});
+\ No newline at end of file
+diff --git a/.tortilla/hooks/commit-msg.js b/.tortilla/hooks/commit-msg.js
+new file mode 100644
+index 0000000..f162f80
+--- /dev/null
++++ b/.tortilla/hooks/commit-msg.js
+@@ -0,0 +1,29 @@
++var Fs = require('fs');
++var Git = require('../git');
++var LocalStorage = require('../local-storage');
++var Paths = require('../paths');
++var Step = require('../step');
++
++/*
++  Commit-message git hook launches right after we wrote our commit message.
++  If an error was thrown the commit process will be aborted with the provided error
++  message.
++ */
++
++(function () {
++  // Amend is the only thing allowed by tortilla, the rest is irrelevant
++  if (!process.env.TORTILLA_CHILD_PROCESS && !Git.gonnaAmend()) return;
++
++  // If we're amending to the root commit then a step prefix is not needed
++  if (Git.gonnaAmend() && !LocalStorage.getItem('STEP')) return;
++
++  var commitMessage = Fs.readFileSync(Paths.git.messages.commit, 'utf8');
++  // Prepend a step prefix to the commit message
++  var step = LocalStorage.getItem('STEP') || Step.next(1);
++  var fixedcommitMessage = 'Step ' + step + ': ' + commitMessage
++  // Clearing storage to prevent conflicts with upcomming commits
++  LocalStorage.removeItem('STEP');
++
++  // Rewrite the commit with a step prefix
++  Fs.writeFileSync(Paths.git.messages.commit, fixedcommitMessage);
++})();
+\ No newline at end of file
+diff --git a/.tortilla/hooks/pre-commit.js b/.tortilla/hooks/pre-commit.js
+new file mode 100644
+index 0000000..3999bbc
+--- /dev/null
++++ b/.tortilla/hooks/pre-commit.js
+@@ -0,0 +1,58 @@
++var Git = require('../git');
++var Step = require('../step');
++
++/*
++  Pre-commit git hook launches right before we commit changes. If an error was thrown
++  the commit process will be aborted with the provided error message.
++ */
++
++(function () {
++  if (process.env.TORTILLA_CHILD_PROCESS) return;
++
++  // Prohibit regular commits
++  if (!Git.gonnaAmend()) throw Error(
++    'New commits are prohibited! Use `$ npm step -- push` instead'
++  );
++
++  if (!Git.rebasing()) throw Error([
++    'Changes are not allowed outside editing mode!',
++    'Use `$ npm step -- edit` and then make your changes'
++  ].join(' '));
++
++  var stepMessage = Step.recentCommit('%s');
++  var stepDescriptor = Step.descriptor(stepMessage);
++  var isSuperStep = stepDescriptor && !stepDescriptor.number.split('.')[1];
++
++  // If this is a super step only the appropriate manual file can be modified
++  if (isSuperStep) {
++    var tag = 'step' + stepDescriptor.number;
++    var manualFile = tag + '.md';
++    var errorMessage = '\'' + manualFile + '\' is the only file that can be modified';
++
++    // Files that don't start with 'steps/'
++    var stagedFiles = Git.stagedFiles(/^(?!steps\/)/);
++    if (stagedFiles.length) throw Error(errorMessage);
++
++    // '.md' files that start with 'steps/' e.g. steps/step1.md
++    var pattern = new RegExp('^steps/(?!' + tag + '\\.md)');
++    stagedFiles = Git.stagedFiles(pattern);
++    if (stagedFiles.length) throw Error(errorMessage);
++  }
++  // Else manual files can't be modifed
++  else {
++    var stagedFiles = Git.stagedFiles(/^steps\//);
++
++    if (stagedFiles.length) throw Error(
++      'Step manual files can\'t be modified'
++    );
++
++    // It means we're editing root
++    if (!stepDescriptor) return;
++
++    stagedFiles = Git.stagedFiles(/^README.md/);
++
++    if (stagedFiles.length) throw Error(
++      'README.md can\'t be modified'
++    );
++  }
++})();
+\ No newline at end of file
+diff --git a/.tortilla/hooks/pre-push.js b/.tortilla/hooks/pre-push.js
+new file mode 100644
+index 0000000..f88d192
+--- /dev/null
++++ b/.tortilla/hooks/pre-push.js
+@@ -0,0 +1,35 @@
++var Fs = require('fs');
++var Manual = require('../manual');
++var Utils = require('../utils');
++
++/*
++  Pre-push git hook launches right before we push our changes. If an error was thrown
++  the pushing process will be aborted with the provided error message.
++ */
++
++(function () {
++  // Get all manual files paths
++  var manualPaths = [];
++  var manualPath = Manual.path('root');
++  var step = 0;
++
++  do {
++    manualPaths.push(manualPath);
++    manualPath = Manual.path(++step);
++  } while (Utils.exists(manualPath));
++
++  manualPaths.forEach(function (manualPath, index) {
++    var manual = Fs.readFileSync(manualPath, 'utf8');
++    // If in production mode, move on to the next one
++    if (Manual.isProd(manual)) return;
++
++    var stepOption = index || '--root';
++
++    // If in development, throw an error which will abort the pushing process
++    throw Error([
++      '\'' + manualPath + '\' must be in production mode before pushing changes!',
++      'To fix this, run `$ npm run manual -- convert ' + stepOption + '` and then',
++      'try to push again.'
++    ].join(' '));
++  });
++})();
+\ No newline at end of file
+diff --git a/.tortilla/hooks/pre-rebase.js b/.tortilla/hooks/pre-rebase.js
+new file mode 100644
+index 0000000..553f232
+--- /dev/null
++++ b/.tortilla/hooks/pre-rebase.js
+@@ -0,0 +1,10 @@
++/*
++  Pre-rebase git hook launches right before we rebase a branch. If an error was thrown
++  the rebase process will be aborted with the provided error message.
++ */
++
++(function () {
++  if (!process.env.TORTILLA_CHILD_PROCESS) throw Error(
++    'Rebase mode is prohibited! Use `$ npm step -- edit` instead'
++  )
++})();
+\ No newline at end of file
+diff --git a/.tortilla/hooks/prepare-commit-msg.js b/.tortilla/hooks/prepare-commit-msg.js
+new file mode 100644
+index 0000000..797fa5f
+--- /dev/null
++++ b/.tortilla/hooks/prepare-commit-msg.js
+@@ -0,0 +1,31 @@
++var Fs = require('fs');
++var Git = require('../git');
++var LocalStorage = require('../local-storage');
++var Paths = require('../paths');
++var Step = require('../step');
++
++/*
++  Prepare-commit-message git hook launches right before we write our commit message.
++  If an error was thrown the commit process will be aborted with the provided error
++  message.
++ */
++
++(function () {
++  // Amend is the only thing allowed by tortilla, the rest is irrelevant
++  if (!process.env.TORTILLA_CHILD_PROCESS && !Git.gonnaAmend()) return;
++  // We don't wanna affect cherry-picks done by step editing
++  if (Git.cherryPicking()) return;
++
++  var commitMessage = Fs.readFileSync(Paths.git.messages.commit, 'utf8');
++  // The descriptor will contain the raw message with no step prefix
++  var stepDescriptor = Step.descriptor(commitMessage);
++  // If step not detected we're probably amending to the root commit
++  if (!stepDescriptor) return;
++
++  // If gonna amend then the step is already determined
++  if (Git.gonnaAmend() && !LocalStorage.getItem('STEP'))
++    LocalStorage.setItem('STEP', stepDescriptor.number);
++
++  // Rewrite the commit message with no step prefix
++  Fs.writeFileSync(Paths.git.messages.commit, stepDescriptor.message);
++})();
+\ No newline at end of file
+diff --git a/.tortilla/local-storage.js b/.tortilla/local-storage.js
+new file mode 100644
+index 0000000..3fe51f6
+--- /dev/null
++++ b/.tortilla/local-storage.js
+@@ -0,0 +1,13 @@
++var NodeLocalStorage = require('node-localstorage');
++var Paths = require('./paths');
++
++/*
++  A local-storage whos storage dir is git's internals dir. Comes in handy when we want
++  to share data between processes like git-hooks.
++ */
++
++var LocalStorage = NodeLocalStorage.LocalStorage;
++var localStorage = new LocalStorage(Paths.git._);
++
++
++module.exports = localStorage;
+\ No newline at end of file
+diff --git a/.tortilla/manual.js b/.tortilla/manual.js
+new file mode 100644
+index 0000000..9297c72
+--- /dev/null
++++ b/.tortilla/manual.js
+@@ -0,0 +1,119 @@
++var Fs = require('fs');
++var Minimist = require('minimist');
++var Path = require('path');
++var Git = require('./git');
++var Paths = require('./paths');
++var MDParser = require('./md-parser');
++var MDComponent = require('./md-parser/md-component');
++var MDRenderer = require('./md-renderer');
++
++/*
++  Contains manual related utilities.
++ */
++
++var prodFlag = '[__prod__]: #'
++
++
++function main() {
++  var argv = Minimist(process.argv.slice(2), {
++    string: ['_'],
++    boolean: ['all', 'a', 'root', 'r']
++  });
++
++  var method = argv._[0];
++  var step = argv._[1];
++  var all = argv.all || argv.a;
++  var root = argv.root || argv.r;
++
++  if (!step && all) step = 'all';
++  if (!step && root) step = 'root';
++
++  // Automatically invoke a method by the provided arguments
++  switch (method) {
++    case 'convert': return convertManual(step);
++  }
++}
++
++// Converts manual into the opposite format. If step is not provided then all
++// manuals since the beginning of history will be converted
++function convertManual(step) {
++  if (!step)
++    throw TypeError('A step must be provided');
++
++  // Convert all manuals since the beginning of history
++  if (step == 'all') return Git.print(['rebase', '-i', '--root', '--keep-empty'], {
++    GIT_SEQUENCE_EDITOR: 'node ' + Paths.tortilla.editor + ' convert'
++  });
++
++  // Fetch the current manual
++  var manualPath = getManualPath(step);
++  var manual = Fs.readFileSync(manualPath, 'utf8');
++  var newManual;
++
++  var scope = {
++    step: step,
++    manualPath: manualPath
++  };
++
++  var newManual;
++
++  // Get new manual
++  if (isManualProd(manual))
++    newManual = convertDevelopmentManual(manual, scope);
++  else
++    newManual = convertProductionManual(manual, scope);
++
++  // If no changes made, abort
++  if (newManual == null) return;
++
++  // Rewrite manual
++  Fs.writeFileSync(manualPath, newManual);
++
++  // Amend changes
++  Git(['add', manualPath]);
++
++  Git.print(['commit', '--amend'], {
++    GIT_EDITOR: true
++  });
++}
++
++// Converts manual content to production format
++function convertProductionManual(manual, scope) {
++  var header = MDRenderer.renderTemplateFile('header.md', scope)
++  var body = MDRenderer.renderTemplate(manual, scope);
++  var footer = MDRenderer.renderTemplateFile('footer.md', scope);
++
++  header = MDComponent.wrap('region', 'header', header);
++  body = MDComponent.wrap('region', 'body', body);
++  footer = MDComponent.wrap('region', 'footer', footer);
++
++  return [prodFlag, header, body, footer].join('\n');
++}
++
++// Converts manual content to development format
++function convertDevelopmentManual(manual) {
++  var chunks = MDParser.parse(manual, 1);
++  var body = chunks[2].chunks;
++
++  return body.toTemplate();
++}
++
++// Gets the manual belonging to the given step
++function getManualPath(step) {
++  if (step == 'root') return Path.resolve(Paths.readme)
++  return Path.resolve(Paths.steps, 'step' + step + '.md');
++}
++
++// Returns if manual is in production format or not
++function isManualProd(manual) {
++  return manual.split('\n')[0] == prodFlag;
++}
++
++
++module.exports = {
++  convert: convertManual,
++  path: getManualPath,
++  isProd: isManualProd
++};
++
++if (require.main === module) main();
+\ No newline at end of file
+diff --git a/.tortilla/md-parser/index.js b/.tortilla/md-parser/index.js
+new file mode 100644
+index 0000000..8c6deef
+--- /dev/null
++++ b/.tortilla/md-parser/index.js
+@@ -0,0 +1,96 @@
++var MDChunksCollection = require('./md-chunks-collection');
++var MDComponent = require('./md-component');
++var MDChunk = require('./md-chunk');
++
++/*
++  Markdown parser will parse a given markdown into a collection of chunks.
++ */
++
++ var Components = {};
++
++
++// Returns a chunks collection of the provided markdown string
++function parseMD(md, recursive) {
++  var chunks = new MDChunksCollection();
++  if (!md) return chunks;
++
++  var offset = 0;
++  var component = parseMDComponent(md, recursive);
++
++  // If component not found it means we finished a recursive operation
++  if (!component) {
++    var text = new MDChunk(md);
++    chunks.push(text);
++    return chunks;
++  }
++
++  if (component._start != 0) {
++    var text = new MDChunk(md.slice(0, component._start - 1));
++    chunks.push(text);
++  }
++
++  // As long as there is a component join them with a text component whos type and name are non
++  while (component) {
++    // Check the component is the first component in the recent markdown
++    if (offset) {
++      // If so, update the indices with the stored offset
++      component._start += offset;
++      component._end += offset;
++
++      // Generate a text component with the leftover
++      if (offset != component._start) {
++        var text = new MDChunk(md.slice(offset, component._start - 1));
++        chunks.push(text);
++      }
++    }
++
++    chunks.push(component);
++
++    // Add line skip
++    offset = component._end + 1;
++    // Generate next components from the current component's end index
++    component = parseMDComponent(md.substr(offset), recursive);
++  }
++
++  // Checks if there are leftovers and if so put it in a text component
++  if (offset <= md.length) {
++    var text = new MDChunk(md.slice(offset, md.length));
++    chunks.push(text);
++  }
++
++  return chunks;
++}
++
++function parseMDComponent(md, recursive) {
++  var match = md.match(/\[\{\]: <([^>]*)> \([^\)]*\)/);
++  if (!match) return;
++
++  var type = match[1];
++  var Component = Components[type] || MDComponent;
++  return new Component(md, recursive);
++}
++
++// Let's you define a custom component type which will be used in the parsing process
++function registerComponent(type, descriptors) {
++  // Create inheriting class dynamically
++  var Component = function () {
++    return MDComponent.apply(this, arguments);
++  }
++
++  Component.prototype = Object.create(MDComponent.prototype, descriptors);
++
++  // If everything went well, stash it
++  Components[type] = Component;
++  // Chainable
++  return module.exports;
++}
++
++
++module.exports = {
++  parse: parseMD,
++  registerComponent: registerComponent
++};
++
++// Built-in component types
++require('./md-helper-component');
++require('./md-partial-component');
+\ No newline at end of file
+diff --git a/.tortilla/md-parser/md-chunk.js b/.tortilla/md-parser/md-chunk.js
+new file mode 100644
+index 0000000..b962411
+--- /dev/null
++++ b/.tortilla/md-parser/md-chunk.js
+@@ -0,0 +1,29 @@
++/*
++  Represents a single chunk in a markdown being parsed.
++ */
++
++function MDChunk(md) {
++  this.content = md;
++}
++
++MDChunk.prototype = Object.create(Object.prototype, {
++  // This method should return a template that is renderable using md-renderer
++  toTemplate: {
++    value: function () {
++      return this.content;
++    }
++  },
++  toString: {
++    value: function () {
++      return this.content;
++    }
++  },
++  valueOf: {
++    value: function () {
++      return this.content;
++    }
++  }
++});
++
++
++module.exports = MDChunk;
+\ No newline at end of file
+diff --git a/.tortilla/md-parser/md-chunks-collection.js b/.tortilla/md-parser/md-chunks-collection.js
+new file mode 100644
+index 0000000..488ca90
+--- /dev/null
++++ b/.tortilla/md-parser/md-chunks-collection.js
+@@ -0,0 +1,42 @@
++/*
++  A collection of markdown chunks that should be returned by the md-parser.
++ */
++
++function MDChunksCollection() {
++  Array.apply(this, arguments);
++}
++
++// There shouldn't be any major issues when inheriting from an array on NodeJS platform
++MDChunksCollection.prototype = Object.create(Array.prototype, {
++  // Convert chunks to template string which can be handled by md-renderer
++  toTemplate: {
++    value: function() {
++      return this.map(function (chunk) {
++        return chunk.toTemplate();
++      }).join('\n');
++    }
++  },
++  // Join all md-chunk strings
++  toString: {
++    configurable: true,
++    writable: true,
++    value: function () {
++      return this.map(function (chunk) {
++        return chunk.toString();
++      }).join('\n');
++    }
++  },
++  // Join all md-chunk values
++  valueOf: {
++    configurable: true,
++    writable: true,
++    value: function () {
++      return this.map(function (chunk) {
++        return chunk.valueOf();
++      }).join('\n');
++    }
++  }
++});
++
++
++module.exports = MDChunksCollection;
+\ No newline at end of file
+diff --git a/.tortilla/md-parser/md-component.js b/.tortilla/md-parser/md-component.js
+new file mode 100644
+index 0000000..15215a8
+--- /dev/null
++++ b/.tortilla/md-parser/md-component.js
+@@ -0,0 +1,115 @@
++var MDChunk = require('./md-chunk');
++var MDParser;
++
++/*
++  Here is a sample of a component in a markdown file:
++
++  [{]: <type> (name ...params)
++  content
++  [}]: #
++
++  Here is the schema of the sample component:
++
++  {
++    type: String,
++    name: String,
++    params: [String],
++    content: String
++  }
++ */
++
++function MDComponent(md, recursive) {
++  // Prevent potential circular dependency
++  MDParser = require('.');
++
++  // Find open notation
++  var match = md.match(/\[\{\]: <([^>]*)> \(([^\)]*)\)/);
++  if (!match) throw Error('Markdown doesn\'t contain any components');
++
++  MDChunk.call(this, md);
++
++  this.type = match[1];
++  this.params = match[2].split(' ');
++  this.name = this.params.shift();
++  this._start = match.index;
++  this._end = match.index + match[0].length;
++
++  // Pattern to find open or close notations
++  var pattern = /\[(\{|\})\]: .+/;
++  // Number of components whos closure not found yet
++  var openComponents = 1;
++
++  // Try to find the matching closure of the current component
++  while (openComponents) {
++    match = md.substr(this._end).match(pattern);
++    if (!match) throw Error('Markdown doesn\'t contain any closure');
++
++    // Calculate with offset
++    this._end += match.index + match[0].length;
++
++    // Update the number of open components based on the pattern's result
++    switch (match[1]) {
++      case '{': ++openComponents; break;
++      case '}': --openComponents; break;
++    }
++  }
++
++  // Get the inner content without the notations
++  this.content = md
++    .slice(this._start, this._end)
++    .split('\n')
++    .slice(1)
++    .slice(0, -1)
++    .join('\n');
++
++  // If true recursion will continue forever
++  if (recursive === true) recursive = Infinity;
++  if (recursive > 0) this.chunks = MDParser.parse(this.content, --recursive);
++}
++
++// Returns content wrapped by component notations
++MDComponent.wrap = function (type, name, params, content) {
++  if (!content) {
++    content = params;
++    params = [];
++  }
++
++  // Building parameters string including name e.g. 'diff_step 1.1'
++  params = [name].concat(params).join(' ');
++
++  return [
++    '[{]: <' + type + '> (' + params + ')', content, '[}]: #'
++  ].join('\n');
++}
++
++MDComponent.prototype = Object.create(MDChunk.prototype, {
++  // Convert to template string which can be handled by md-renderer
++  toTemplate: {
++    value: function () {
++      var template = this.chunks ? this.chunks.toTemplate() : this.content;
++      // Convert recursively. Note that if this collection was not created in a recursive
++      // operation then the recursive conversion will seem like it doesn't take any
++      // affect
++      return MDComponent.wrap(this.type, this.name, this.params, template);
++    }
++  },
++  // Wrap content with component notations
++  toString: {
++    configurable: true,
++    writable: true,
++    value: function () {
++      return MDComponent.wrap(this.type, this.name, this.params, this.content);
++    }
++  },
++  // Wrap content with component notations
++  valueOf: {
++    configurable: true,
++    writable: true,
++    value: function () {
++      return MDComponent.wrap(this.type, this.name, this.params, this.content);
++    }
++  }
++});
++
++
++module.exports = MDComponent;
+\ No newline at end of file
+diff --git a/.tortilla/md-parser/md-helper-component.js b/.tortilla/md-parser/md-helper-component.js
+new file mode 100644
+index 0000000..d648c5d
+--- /dev/null
++++ b/.tortilla/md-parser/md-helper-component.js
+@@ -0,0 +1,16 @@
++var MDParser = require('.');
++
++/*
++  Represents a helper component in a markdown file.
++ */
++
++MDParser.registerComponent('helper', {
++  // {{{helper ...params}}}
++  toTemplate: {
++    value: function () {
++      // Full params string including name
++      var params = [this.name].concat(this.params).join(' ');
++      return '{{{' + params + '}}}';
++    }
++  }
++});
+\ No newline at end of file
+diff --git a/.tortilla/md-parser/md-partial-component.js b/.tortilla/md-parser/md-partial-component.js
+new file mode 100644
+index 0000000..000b52c
+--- /dev/null
++++ b/.tortilla/md-parser/md-partial-component.js
+@@ -0,0 +1,14 @@
++var MDParser = require('.');
++
++/*
++  Represents a partial component in a markdown file.
++ */
++
++MDParser.registerComponent('partial', {
++  // {{>partial}}
++  toTemplate: {
++    value: function () {
++      return '{{>' + this.name + '}}';
++    }
++  }
++});
+\ No newline at end of file
+diff --git a/.tortilla/md-renderer/diff-step-helper.js b/.tortilla/md-renderer/diff-step-helper.js
+new file mode 100644
+index 0000000..f0c6300
+--- /dev/null
++++ b/.tortilla/md-renderer/diff-step-helper.js
+@@ -0,0 +1,128 @@
++var ParseDiff = require('parse-diff');
++var MDRenderer = require('.');
++var Git = require('../git');
++var Utils = require('../utils');
++
++/*
++  Renders step diff in a pretty markdown format. For example {{{diff_step 1.1}}}
++  will render as:
++
++  [{]: <helper> (diff_step 1.1)
++  #### Step 1.1
++
++  ##### Changed /path/to/file.js
++  ```diff
++  @@ -1,3 +1,3 @@
++  +┊ ┊1┊foo
++  -┊1┊ ┊bar
++   ┊2┊2┊baz🚫↵
++  ```
++  [}]: #
++ */
++
++MDRenderer.registerHelper('diff_step', function(step) {
++  var stepData = Git.recentCommit([
++    '--grep=^Step ' + step, '--format=%h %s'
++  ]).split(' ')
++    .filter(Boolean);
++
++  // In case step doesn't exist just render the error message.
++  // It's better to have a silent error like this rather than a real one otherwise
++  // the rebase process will skrew up very easily and we don't want that
++  if (!stepData.length) return '#### Step ' + step + ': NOT FOUND!';
++
++  var stepHash = stepData[0];
++  var stepMessage = stepData.slice(1).join(' ');
++
++  var stepTitle = '#### ' + stepMessage;
++  var diff = Git(['diff', stepHash + '^', stepHash]);
++  // Convert diff string to json format
++  var files = ParseDiff(diff);
++
++  var mdDiffs = files
++    .map(getMdDiff)
++    .join('\n\n');
++
++  return stepTitle + '\n\n' + mdDiffs;
++});
++
++// Gets all diff chunks in a markdown format for a single file
++function getMdDiff(file) {
++  var fileTitle;
++
++  if (file.new)
++    fileTitle = '##### Added ' + file.to;
++  else if (file.deleted)
++    fileTitle = '##### Deleted ' + file.from;
++  else
++    fileTitle = '##### Changed ' + file.from;
++
++  var mdChunks = file.chunks
++    .map(getMdChunk)
++    .join('\n');
++
++  return fileTitle + '\n' + mdChunks;
++}
++
++// Gets diff in a markdown format for a single chunk
++function getMdChunk(chunk) {
++  // Grab chunk data since it's followed by unrelevant content
++  var chunkData = chunk.content.match(/^@@\s+\-(\d+),?(\d+)?\s+\+(\d+),?(\d+)?\s@@/)[0];
++  var padLength = getPadLength(chunk.changes);
++
++  var mdChanges = chunk.changes
++    .map(getMdChange.bind(null, padLength))
++    .join('\n')
++    // Replace EOF flag with a pretty format and append it to the recent line
++    .replace(/\n\\ No newline at end of file/g, '🚫↵');
++
++  // Wrap changes with markdown 'diff'
++  return ['```diff', chunkData, mdChanges, '```'].join('\n');
++}
++
++// Gets line in a markdown format for a single change
++function getMdChange(padLength, change) {
++  // No newline at end of file
++  if (change.content[0] == '\\') return change.content;
++
++  var addLineNum = '';
++  var delLineNum = '';
++  var sign = '';
++
++  switch (change.type) {
++    case 'add':
++      sign = '+';
++      addLineNum = change.ln;
++      break;
++
++    case 'del':
++      sign = '-';
++      delLineNum = change.ln;
++      break;
++
++    case 'normal':
++      sign = ' ';
++      addLineNum = change.ln2;
++      delLineNum = change.ln1;
++      break;
++  }
++
++  addLineNum = Utils.pad(addLineNum, padLength);
++  delLineNum = Utils.pad(delLineNum, padLength);
++
++  // Using content.slice(1) since we want to remove '-\+' prefixes
++  return [sign, delLineNum, addLineNum, change.content.slice(1)].join('┊');
++}
++
++// Gets the pad length by the length of the max line number in changes
++function getPadLength(changes) {
++  var maxLineNumber = changes.reduce(function (maxLineNumber, change) {
++    return Math.max(maxLineNumber,
++      change.ln || 0,
++      change.ln1 || 0,
++      change.ln2 || 0
++    );
++  }, 1);
++
++  return maxLineNumber.toString().length;
++}
+\ No newline at end of file
+diff --git a/.tortilla/md-renderer/index.js b/.tortilla/md-renderer/index.js
+new file mode 100644
+index 0000000..c5869b0
+--- /dev/null
++++ b/.tortilla/md-renderer/index.js
+@@ -0,0 +1,94 @@
++var Fs = require('fs');
++var Path = require('path');
++var Paths = require('../paths');
++var MDComponent = require('../md-parser/md-component');
++
++/*
++  A very simple renderer which shares the same syntax as handlebar's when it comes to
++  models, partials and helpers. Templates which are rendered using md-renderer will be
++  parsable by md-parser.
++ */
++
++var helpers = {};
++var partials = {};
++
++
++// Read the provided file, render it, and overwrite it. Use with caution!
++function overwriteTemplateFile(templatePath, scope) {
++  templatePath = Path.resolve(Paths.tortilla.templates, templatePath);
++  var view = renderTemplateFile(templatePath, scope);
++
++  return Fs.writeFileSync(templatePath, view);
++}
++
++// Read provided file and render its template. Note that the default path would
++// be tortilla's template dir, so specifying a file name would be ok as well
++function renderTemplateFile(templatePath, scope) {
++  templatePath = Path.resolve(Paths.tortilla.templates, templatePath);
++  var template = Fs.readFileSync(templatePath, 'utf8');
++
++  return renderTemplate(template, scope);
++}
++
++// Render provided tempalte
++function renderTemplate(template, scope) {
++  scope = scope || {};
++
++  // Replace notations with values. ORDER IS CRITIC!
++  return template
++    // Models
++    .replace(/\{\{([^\}]+)\}\}/g, function (match, modelName) {
++      var isModel = ['{', '>'].indexOf(modelName[0]) == -1;
++      return isModel ? scope[modelName] : match;
++    })
++    // Helpers
++    .replace(/\{\{\{([^\}]+)\}\}\}/g, function (match, params) {
++      params = params.split(' ');
++      var helperName = params.shift();
++      return helpers[helperName].apply(scope, params);
++    })
++    // Partials
++    .replace(/\{\{>([^\}]+)\}\}/g, function (match, partialName) {
++      return renderTemplate(partials[partialName], scope);
++    });
++}
++
++// Register a new helper. Registered helpers will be wrapped with a
++// [{]: <helper> (name ...params) [}]: #
++function registerHelper(name, helper) {
++  helpers[name] = function() {
++    var out = helper.apply(this, arguments);
++
++    if (typeof out != 'string') throw Error([
++      'Template helper', name, 'must return a string!',
++      'Instead it returned', out
++    ].join(' '));
++
++    var params = [].slice.call(arguments);
++    return MDComponent.wrap('helper', name, params, out);
++  }
++
++  // Chainable
++  return module.exports;
++}
++
++// Register a new partial. Registered partials will be wrapped with a
++// [{]: <partial> (name) [}]: #
++function registerPartial(name, partial) {
++  partials[name] = MDComponent.wrap('partial', name, partial);
++  // Chainable
++  return module.exports;
++}
++
++
++module.exports = {
++  overwriteTemplateFile: overwriteTemplateFile,
++  renderTemplateFile: renderTemplateFile,
++  renderTemplate: renderTemplate,
++  registerHelper: registerHelper,
++  registerPartial: registerPartial
++};
++
++// Built-in helpers and partials
++require('./diff-step-helper');
++require('./nav-step-helper');
+diff --git a/.tortilla/md-renderer/nav-step-helper.js b/.tortilla/md-renderer/nav-step-helper.js
+new file mode 100644
+index 0000000..c643969
+--- /dev/null
++++ b/.tortilla/md-renderer/nav-step-helper.js
+@@ -0,0 +1,86 @@
++var MDRenderer = require('.');
++var Git = require('../git');
++var Step = require('../step');
++
++/*
++  Provides a navigation bar between steps. The navigation bar should be rendered
++  dynamically based on the current step we're currently in.
++ */
++
++MDRenderer.registerHelper('nav_step', function() {
++  var step = this.step || getStep();
++  // If there is no belonging step, don't render anything
++  if (!step) return '';
++
++  // Editing root
++  if (step == 'root') {
++    var anySteps = !!Git(['tag', '-l', 'step1']);
++    // If there are no any steps yet, don't show nav bar
++    if (!anySteps) return '';
++
++    return MDRenderer.renderTemplateFile('next-button-template.md', {
++      text: 'Begin Tutorial',
++      ref: 'steps/step1.md'
++    });
++  }
++
++  // Convert to number just in case, so we can run arbitrary operations
++  var step = Number(step);
++
++  // Note that the tags will not necessarily be in the right order so it's
++  // important to sort them if we count on it
++  var stepTags = Git(['tag', '-l', 'step*'])
++    .split('\n')
++    .filter(Boolean)
++    .sort(compareTags);
++
++  // If this is the only step or there are no steps at all
++  if ((stepTags.length - 2) < 0) return '';
++
++  // If this is the first step
++  if (step == 1)
++    return MDRenderer.renderTemplateFile('nav-buttons-template.md', {
++      next_text: 'Next Step',
++      next_ref: 'step2.md',
++      prev_text: 'Intro',
++      prev_ref: '../README.md'
++    });
++
++  var currentTag = 'step' + step;
++  var recentTag = stepTags[stepTags.length - 1];
++
++  // If this is the last step
++  if (currentTag == recentTag)
++    return MDRenderer.renderTemplateFile('prev-button-template.md', {
++      text: 'Previous Step',
++      ref: 'step' + (step - 1) + '.md'
++    });
++
++  // Any other case
++  return MDRenderer.renderTemplateFile('nav-buttons-template.md', {
++    next_text: 'Next Step',
++    next_ref: 'step' + (step + 1) + '.md',
++    prev_text: 'Previous Step',
++    prev_ref: 'step' + (step - 1) + '.md'
++  });
++});
++
++function getStep() {
++  // If no steps found then we're at the root commit
++  var stepCommitMessage = Step.recentCommit('%s');
++  if (!stepCommitMessage) return 'root';
++
++  // Only super steps are allowed
++  var stepDescriptor = Step.superDescriptor(stepCommitMessage);
++  if (!stepDescriptor) return;
++
++  return stepDescriptor.number;
++}
++
++// Compares which tag has a bigger step
++function compareTags(tag1, tag2) {
++  var step1 = Number(tag1.split('step')[1]);
++  var step2 = Number(tag2.split('step')[1]);
++
++  return step1 > step2;
++}
+\ No newline at end of file
+diff --git a/.tortilla/paths.js b/.tortilla/paths.js
+new file mode 100644
+index 0000000..0791767
+--- /dev/null
++++ b/.tortilla/paths.js
+@@ -0,0 +1,72 @@
++var Path = require('path');
++
++/*
++  It is important to use absolute paths and not relative paths since some helpers
++  are distriuted over several processes whos execution path is not always the same,
++  therefore this module was created.
++ */
++
++var resolve = Path.resolve.bind(Path, __dirname, '..');
++
++
++var gitHeads = {
++  _: resolve('.git/HEAD'),
++  cherryPick: resolve('.git/CHERRY_PICK_HEAD'),
++  orig: resolve('.git/ORIG_HEAD'),
++  revert: resolve('.git/REVERT_HEAD')
++};
++
++var gitMessages = {
++  commit: resolve('.git/COMMIT_EDITMSG'),
++  merge: resolve('.git/MERGE_MSG'),
++  squash: resolve('.git/SQUASH_MSG')
++};
++
++var gitRefs = {
++  _: resolve('.git/refs'),
++  heads: resolve('.git/refs/heads'),
++  remotes: resolve('.git/refs/remotes'),
++  tags: resolve('.git/refs/tags')
++};
++
++var git = {
++  _: resolve('.git'),
++  ignore: resolve('.gitignore'),
++  rebaseMerge: resolve('.git/rebase-merge'),
++  rebaseApply: resolve('.git/rebase-apply'),
++  heads: gitHeads,
++  messages: gitMessages,
++  refs: gitRefs
++};
++
++var npm = {
++  ignore: resolve('.npmignore'),
++  package: resolve('package.json'),
++  modules: resolve('node_modules')
++};
++
++var tortilla = {
++  _: resolve('.tortilla'),
++  editor: resolve('.tortilla/editor.js'),
++  git: resolve('.tortilla/git.js'),
++  manual: resolve('.tortilla/manual.js'),
++  paths: resolve('.tortilla/paths.js'),
++  retagger: resolve('.tortilla/retagger.js'),
++  reworder: resolve('.tortilla/reworder.js'),
++  step: resolve('.tortilla/step.js'),
++  superPicker: resolve('.tortilla/super-picker.js'),
++  utils: resolve('.tortilla/utils.js'),
++  hooks: resolve('.tortilla/hooks'),
++  mdParser: resolve('.tortilla/md-parser'),
++  mdRenderer: resolve('.tortilla/md-renderer'),
++  templates: resolve('.tortilla/templates')
++};
++
++module.exports = {
++  _: resolve(),
++  readme: resolve('README.md'),
++  steps: resolve('steps'),
++  git: git,
++  npm: npm,
++  tortilla: tortilla
++};
+\ No newline at end of file
+diff --git a/.tortilla/retagger.js b/.tortilla/retagger.js
+new file mode 100644
+index 0000000..b16ed06
+--- /dev/null
++++ b/.tortilla/retagger.js
+@@ -0,0 +1,44 @@
++var Git = require('./git');
++var Step = require('./step');
++
++/*
++  The retagger is responsible for resetting all step tags.
++ */
++
++function main() {
++  var stepTags = Git(['tag', '-l', 'step*'])
++    .split('\n')
++    .filter(Boolean);
++
++  // Delete all tags to prevent conflicts
++  Git(['tag', '-d', 'root']);
++
++  stepTags.forEach(function (stepTag) {
++    Git(['tag', '-d', stepTag]);
++  });
++
++  // If any steps exist take the hash before the inital step, else take the recent hash
++  var stepsExist = Git.recentCommit(['--grep=^Step 1.1']);
++  var rootHash = stepsExist ? Step.base('1.1') : Git.recentCommit(['--format=%h']);
++
++  var stepCommits = Git(['log',
++    '--grep=^Step [0-9]\\+:',
++    '--format={ "hash": "%h", "message": "%s" }'
++  ]).split('\n')
++    .filter(Boolean)
++    .map(JSON.parse);
++
++  // Reset all tags
++  Git(['tag', 'root', rootHash]);
++
++  stepCommits.forEach(function (commit) {
++    var hash = commit.hash;
++    var message = commit.message;
++    var descriptor = Step.descriptor(commit.message);
++    var tag = 'step' + descriptor.number;
++
++    Git(['tag', tag, hash]);
++  });
++}
++
++if (require.main === module) main();
+\ No newline at end of file
+diff --git a/.tortilla/reworder.js b/.tortilla/reworder.js
+new file mode 100644
+index 0000000..046c6aa
+--- /dev/null
++++ b/.tortilla/reworder.js
+@@ -0,0 +1,42 @@
++var Minimist = require('minimist')
++var Git = require('./git');
++var LocalStorage = require('./local-storage');
++var Step = require('./step');
++
++/*
++  Responsible for editing the recent commit's message. It will also adjust the step's
++  number if needed.
++ */
++
++function main() {
++  var argv = Minimist(process.argv.slice(2), {
++    string: ['_']
++  });
++
++  var message = argv._[0];
++
++  // Calculate next step based on the current commit's message
++  var commitMessage = Git.recentCommit(['--format=%s']);
++  var stepDescriptor = Step.descriptor(commitMessage);
++  var nextStep = getNextStep(stepDescriptor);
++  // Open the editor by default
++  var argv = ['commit', '--amend', '--allow-empty'];
++  // If message provided skip editor
++  if (message) argv.push('-m', message);
++
++  // Specified step is gonna be used for when forming the commit message
++  LocalStorage.setItem('STEP', nextStep);
++  // commit, let git hooks do the rest
++  Git.print(argv);
++}
++
++// Calculate the next step dynamically based on its super flag
++function getNextStep(stepDescriptor) {
++  if (!stepDescriptor) return '';
++
++  var isSubStep = !!stepDescriptor.number.split('.')[1];
++  return isSubStep ? Step.next(1) : Step.nextSuper(1);
++}
++
++
++if (require.main === module) main();
+\ No newline at end of file
+diff --git a/.tortilla/step.js b/.tortilla/step.js
+new file mode 100644
+index 0000000..c1e332a
+--- /dev/null
++++ b/.tortilla/step.js
+@@ -0,0 +1,296 @@
++var Fs = require('fs');
++var Minimist = require('minimist');
++var Path = require('path');
++var Git = require('./git');
++var LocalStorage = require('./local-storage');
++var Paths = require('./paths');
++var Utils = require('./utils');
++
++/*
++  Contains step related utilities. Also the entry point for `npm step` commands.
++ */
++
++function main() {
++  var argv = Minimist(process.argv.slice(2), {
++    string: ['_', 'message', 'm'],
++    boolean: ['root', 'r', 'allow-empty']
++  });
++
++  var method = argv._[0];
++  var step = argv._[1];
++  var root = argv.root || argv.r;
++  var message = argv.message || argv.m;
++  var allowEmpty = argv['allow-empty'];
++
++  if (!step && root) step = 'root';
++
++  // Automatically invoke a method by the provided arguments
++  switch (method) {
++    case 'push': return pushStep(message, allowEmpty);
++    case 'pop': return popStep();
++    case 'tag': return tagStep(message);
++    case 'edit': return editStep(step);
++    case 'reword': return rewordStep(step, message);
++  }
++}
++
++// Push a new step with the provided message
++function pushStep(message, allowEmpty) {
++  var step = getNextStep();
++  commitStep(step, message, allowEmpty);
++}
++
++// Pop the last step
++function popStep() {
++  var headHash = Git(['rev-parse', 'HEAD']);
++  var rootHash = Git(['rev-parse', 'root']);
++
++  if (headHash == rootHash)
++    throw Error('Can\'t remove root')
++
++  var removedCommitMessage = Git.recentCommit(['--format=%s']);
++  var stepDescriptor = getStepDescriptor(removedCommitMessage);
++  Git.print(['reset', '--hard', 'HEAD~1']);
++
++  if (!stepDescriptor)
++    return console.warn('Removed commit was not a step');
++
++  // Tag removal should be done by the editor after continuing rebase in case
++  // of abortion otherwise we are skrewed
++  if (Git.rebasing()) return;
++
++  var isSuperStep = !!getSuperStepDescriptor(removedCommitMessage);
++  // If this is a super step, delete the tag of the popped commit
++  if (!isSuperStep) return;
++
++  var tag = 'step' + stepDescriptor.number;
++  if (Git.tagExists(tag)) return Git(['tag', '-d', tag]);
++
++  console.warn('Tag was not found');
++}
++
++// Finish the current with the provided message and tag it
++function tagStep(message) {
++  var step = getNextSuperStep();
++  var tag = 'step' + step;
++  var manualFile = tag + '.md';
++  var manualPath = Path.resolve(Paths.steps, manualFile);
++
++  if (!Utils.exists(Paths.steps)) Fs.mkdirSync(Paths.steps);
++  Fs.writeFileSync(manualPath, '');
++
++  Git(['add', manualPath]);
++  commitStep(step, message);
++
++  // If in the middle of rebase, don't add a tag since the process can be aborted.
++  // The tag will be added later on by the git editor
++  if (!Git.rebasing()) {
++    Git.print(['tag', tag]);
++  }
++}
++
++// Edit the provided step
++function editStep(step) {
++  if (step == null)
++    throw TypeError('A step must be provided');
++
++  var base = getStepBase(step);
++
++  Git.print(['rebase', '-i', base, '--keep-empty'], {
++    GIT_SEQUENCE_EDITOR: 'node ' + Paths.tortilla.editor + ' edit'
++  });
++}
++
++// Reword the provided step with the provided message
++function rewordStep(step, message) {
++  if (step == null)
++    throw TypeError('A step must be provided');
++
++  var base = getStepBase(step);
++  var argv = [Paths.tortilla.editor, 'reword'];
++  if (message) argv.push('-m', '"' + message + '"');
++
++  Git.print(['rebase', '-i', base, '--keep-empty'], {
++    GIT_SEQUENCE_EDITOR: 'node ' + argv.join(' ')
++  });
++}
++
++// Add a new commit of the provided step with the provided message
++function commitStep(step, message, allowEmpty) {
++  var argv = ['commit'];
++  if (message) argv.push('-m', message);
++  if (allowEmpty) argv.push('--allow-empty');
++
++  // Specified step is gonna be used for when forming the commit message
++  LocalStorage.setItem('STEP', step);
++  // commit
++  Git.print(argv);
++}
++
++// Get the current step
++function getCurrentStep() {
++  var recentStepCommit = getRecentStepCommit('%s');
++  return getStepDescriptor(recentStepCommit).number;
++}
++
++// Get the next step
++function getNextStep(offset) {
++  // Fetch data about recent step commit
++  var stepCommitMessage = getRecentStepCommit(offset, '%s');
++  var followedByStep = !!stepCommitMessage;
++
++  // If no previous steps found return the first one
++  if (!followedByStep) return '1.1';
++
++  // Fetch data about current step
++  var stepDescriptor = getStepDescriptor(stepCommitMessage);
++  var stepNumbers = stepDescriptor.number.split('.');
++  var superStepNumber = Number(stepNumbers[0]);
++  var subStepNumber = Number(stepNumbers[1]);
++  var isSuperStep = !subStepNumber;
++
++  if (!offset) {
++    // If this is a super step return the first sub step of a new step
++    if (isSuperStep) return (superStepNumber + 1) + '.' + 1;
++    // Else, return the next step as expected
++    return superStepNumber + '.' + (subStepNumber + 1);
++  }
++
++  // Fetch data about next step
++  var nextStepCommitMessage = getRecentStepCommit(offset - 1, '%s');
++  var nextStepDescriptor = getStepDescriptor(nextStepCommitMessage);
++  var nextStepNumbers = nextStepDescriptor.number.split('.');
++  var nextSuperStepNumber = Number(nextStepNumbers[0]);
++  var nextSubStepNumber = Number(nextStepNumbers[1]);
++  var isNextSuperStep = !nextSubStepNumber;
++
++  if (isNextSuperStep) {
++    // If this is a super step return the next super step right away
++    if (isSuperStep) return (superStepNumber + 1).toString();
++    // Else, return the current super step
++    return superStepNumber.toString();
++  }
++
++  // If this is a super step return the first sub step of the next step
++  if (isSuperStep) return (superStepNumber + 1) + '.' + 1;
++  // Else, return the next step as expected
++  return superStepNumber + '.' + (subStepNumber + 1);
++}
++
++// Get the next super step
++function getNextSuperStep(offset) {
++  return getNextStep(offset).split('.')[0];
++}
++
++// Get the hash of the step followed by ~1, mostly useful for a rebase
++function getStepBase(step) {
++  if (step == null)
++    throw TypeError('A step must be provided');
++
++  if (step == 'root') {
++    var stepRootHash = Git(['rev-parse', 'root']);
++    var nativeRootHash = Git(['rev-list', '--max-parents=0', 'HEAD']);
++    return stepRootHash == nativeRootHash ? '--root' : 'root~1';
++  }
++
++  var hash = Git.recentCommit([
++    '--grep=^Step ' + step,
++    '--format=%h'
++  ]);
++
++  if (!hash)
++    throw Error('Step not found');
++
++  return hash + '~1';
++}
++
++// Get the recent step commit
++function getRecentStepCommit(offset, format) {
++  return getRecentCommit(offset, format, '^Step [0-9]\\+');
++}
++
++// Get the recent super step commit
++function getRecentSuperStepCommit(offset, format) {
++  return getRecentCommit(offset, format, '^Step [0-9]\\+:');
++}
++
++// Get the recent sub step commit
++function getRecentSubStepCommit(offset, format) {
++  return getRecentCommit(offset, format, '^Step [0-9]\\+\\.[0-9]\\+:');
++}
++
++// Get recent commit by specified arguments
++function getRecentCommit(offset, format, grep) {
++  if (typeof offset == 'string') {
++    format = offset;
++    offset = 0;
++  }
++
++  var argv = ['--grep=' + grep];
++  if (format) argv.push('--format=' + format);
++
++  return Git.recentCommit(offset, argv);
++}
++
++// Extract step json from message
++function getStepDescriptor(message) {
++  if (message == null)
++    throw TypeError('A message must be provided');
++
++  var match = message.match(/^Step (\d+(?:\.\d+)?)\: ((?:.|\n)*)$/);
++
++  return match && {
++    number: match[1],
++    message: match[2]
++  };
++}
++
++// Extract super step json from message
++function getSuperStepDescriptor(message) {
++  if (message == null)
++    throw TypeError('A message must be provided');
++
++  var match = message.match(/^Step (\d+)\: ((?:.|\n)*)$/);
++
++  return match && {
++    number: Number(match[1]),
++    message: match[2]
++  };
++}
++
++// Extract sub step json from message
++function getSubStepDescriptor(message) {
++  if (message == null)
++    throw TypeError('A message must be provided');
++
++  var match = message.match(/^Step ((\d+)\.(\d+))\: ((?:.|\n)*)$/);
++
++  return match && {
++    number: match[1],
++    superNumber: Number(match[2]),
++    subNumber: Number(match[3]),
++    message: match[4]
++  };
++}
++
++
++module.exports = {
++  push: pushStep,
++  pop: popStep,
++  tag: tagStep,
++  edit: editStep,
++  reword: rewordStep,
++  commit: commitStep,
++  current: getCurrentStep,
++  next: getNextStep,
++  nextSuper: getNextSuperStep,
++  base: getStepBase,
++  recentCommit: getRecentStepCommit,
++  recentSuperCommit: getRecentSuperStepCommit,
++  recentSubCommit: getRecentSubStepCommit,
++  descriptor: getStepDescriptor,
++  superDescriptor: getSuperStepDescriptor,
++  subDescriptor: getSubStepDescriptor
++};
++
++if (require.main === module) main();
+\ No newline at end of file
+diff --git a/.tortilla/super-picker.js b/.tortilla/super-picker.js
+new file mode 100644
+index 0000000..e456de1
+--- /dev/null
++++ b/.tortilla/super-picker.js
+@@ -0,0 +1,42 @@
++var Minimist = require('minimist');
++var Git = require('./git');
++var Step = require('./step');
++
++/*
++  The super-picker is responsible for cherry-picking super steps and
++  rename their manual files.
++ */
++
++function main() {
++  // Disable the automatic invokation unless this is the main module of the node process
++  if (require.main !== module) return;
++
++  var argv = Minimist(process.argv.slice(2), {
++    string: ['_']
++  });
++
++  var hash = argv._[0];
++
++  var message = Git.recentCommit(hash, ['--format=%s']);
++
++  var oldStep = Step.descriptor(message).number;
++  var newStep = Step.nextSuper();
++
++  // Fetch patch data
++  var diff = newStep - oldStep;
++  var pattern = /step(\d+)\.md/g;
++  var patch = Git(['format-patch', '-1', hash, '--stdout']);
++
++  // Replace references for old manual files with new manual files
++  // so there would be no conflicts
++  var fixedPatch = patch.replace(pattern, function (file, step) {
++    step = Number(step) + diff;
++    return 'step' + step + '.md';
++  });
++
++  // Apply patch
++  Git(['am'], fixedPatch);
++}
++
++
++if (require.main === module) main();
+\ No newline at end of file
+diff --git a/.tortilla/templates/footer.md b/.tortilla/templates/footer.md
+new file mode 100644
+index 0000000..46db616
+--- /dev/null
++++ b/.tortilla/templates/footer.md
+@@ -0,0 +1 @@
++{{{nav_step}}}
+\ No newline at end of file
+diff --git a/.tortilla/templates/header.md b/.tortilla/templates/header.md
+new file mode 100644
+index 0000000..e69de29
+diff --git a/.tortilla/templates/nav-buttons-template.md b/.tortilla/templates/nav-buttons-template.md
+new file mode 100644
+index 0000000..e056891
+--- /dev/null
++++ b/.tortilla/templates/nav-buttons-template.md
+@@ -0,0 +1,2 @@
++| [< {{prev_text}}]({{prev_ref}}) | [{{next_text}} >]({{next_ref}}) |
++|:--------------------------------|--------------------------------:|
+\ No newline at end of file
+diff --git a/.tortilla/templates/next-button-template.md b/.tortilla/templates/next-button-template.md
+new file mode 100644
+index 0000000..8e7d8e1
+--- /dev/null
++++ b/.tortilla/templates/next-button-template.md
+@@ -0,0 +1,2 @@
++| [{{text}} >]({{ref}}) |
++|----------------------:|
+\ No newline at end of file
+diff --git a/.tortilla/templates/prev-button-template.md b/.tortilla/templates/prev-button-template.md
+new file mode 100644
+index 0000000..731cd09
+--- /dev/null
++++ b/.tortilla/templates/prev-button-template.md
+@@ -0,0 +1,2 @@
++| [< {{text}}]({{ref}}) |
++|:----------------------|
+\ No newline at end of file
+diff --git a/.tortilla/utils.js b/.tortilla/utils.js
+new file mode 100644
+index 0000000..160b5da
+--- /dev/null
++++ b/.tortilla/utils.js
+@@ -0,0 +1,183 @@
++var ChildProcess = require('child_process');
++var Fs = require('fs');
++var Paths = require('./paths');
++
++/*
++  Contains general utilities.
++ */
++
++var git = exec.bind(null, 'git');
++var gitPrint = execPrint.bind(null, 'git');
++var node = exec.bind(null, 'node');
++var nodePrint = execPrint.bind(null, 'node');
++var npm = exec.bind(null, 'npm');
++var npmPrint = execPrint.bind(null, 'npm');
++
++node.print = nodePrint;
++npm.print = npmPrint;
++git.print = gitPrint;
++exec.print = execPrint;
++
++
++// Checks if one of the parent processes launched by the provided file and has
++// the provided arguments
++function isRunBy(file, argv, offset) {
++  // There might be nested processes of the same file so we wanna go through all of them,
++  // This variable represents how much skips will be done anytime the file is found.
++  var trial = offset = offset || 0;
++
++  // The current process would be the node's
++  var currProcess = {
++    file: process.title,
++    pid: process.pid,
++    argv: process.argv
++  };
++
++  // Will abort once the file is found and there are no more skips left to be done
++  while (currProcess.file != file || trial--) {
++    // Get the parent process id
++    currProcess.pid = Number(getProcessData(currProcess.pid, 'ppid'));
++    // The root process'es id is 0 which means we've reached the limit
++    if (!currProcess.pid) return false;
++
++    currProcess.argv = getProcessData(currProcess.pid, 'command')
++      .split(' ')
++      .filter(Boolean);
++
++    // The first word in the command would be the file name
++    currProcess.file = currProcess.argv[0];
++    // The rest would be the arguments vector
++    currProcess.argv = currProcess.argv.slice(1);
++  }
++
++  // Make sure it has the provided arguments
++  var result = argv.every(function (arg) {
++    return currProcess.argv.indexOf(arg) != -1;
++  });
++
++  // If this is not the file we're looking for keep going up in the processes tree
++  return result || isRunBy(file, argv, ++offset);
++}
++
++// Gets process data using 'ps' formatting
++function getProcessData(pid, format) {
++  if (arguments.length == 1) {
++    format = pid;
++    pid = process.pid;
++  }
++
++  return exec('ps', ['--no-headers', '-p', pid, '-o', format]);
++}
++
++// Spawn new process and print result to the terminal
++function execPrint(file, argv, env, input) {
++  if (!(argv instanceof Array)) {
++    input = env;
++    env = argv;
++    argv = [];
++  }
++
++  if (!(env instanceof Object)) {
++    input = env;
++    env = {};
++  }
++
++  env = extend({
++    TORTILLA_CHILD_PROCESS: true
++  }, process.env, env);
++
++  return ChildProcess.spawnSync(file, argv, {
++    cwd: Paths._,
++    env: env,
++    input: input,
++    stdio: env.TORTILLA_STDIO || 'inherit'
++  });
++}
++
++// Execute file
++function exec(file, argv, env, input) {
++  if (!(argv instanceof Array)) {
++    input = env;
++    env = argv;
++    argv = [];
++  }
++
++  if (!(env instanceof Object)) {
++    input = env;
++    env = {};
++  }
++
++  env = extend({
++    TORTILLA_CHILD_PROCESS: true
++  }, process.env, env);
++
++  return ChildProcess.execFileSync(file, argv, {
++    cwd: Paths._,
++    env: env,
++    input: input,
++    stdio: 'pipe'
++  }).toString()
++    .trim();
++}
++
++// Tells if entity exists or not by an optional document type
++function exists(path, type) {
++  try {
++    var stats = Fs.lstatSync(path);
++
++    switch (type) {
++      case 'dir': return stats.isDirectory();
++      case 'file': return stats.isFile();
++      default: return true;
++    }
++  }
++  catch (err) {
++    return false;
++  }
++}
++
++// Filter all strings matching the provided pattern in an array
++function filterMatches(arr, pattern) {
++  pattern = pattern || '';
++
++  return arr.filter(function (str) {
++    return str.match(pattern);
++  });
++}
++
++// Extend destination object with provided sources
++function extend(destination) {
++  var sources = [].slice.call(arguments, 1);
++
++  sources.forEach(function (source) {
++    Object.keys(source).forEach(function (k) {
++      destination[k] = source[k];
++    });
++  });
++
++  return destination;
++}
++
++// Pad the provided string with the provided pad params from the left
++// '1' -> '00001'
++function pad(str, length, char) {
++  str = str.toString();
++  char = char || ' ';
++  var chars = Array(length + 1).join(char);
++
++  return chars.substr(0, chars.length - str.length) + str;
++}
++
++
++module.exports = {
++  runBy: isRunBy,
++  processData: getProcessData,
++  npm: npm,
++  node: node,
++  git: git,
++  exec: exec,
++  exists: exists,
++  filterMatches: filterMatches,
++  extend: extend,
++  pad: pad
++};
+\ No newline at end of file
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..b423aae
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,7 @@
++# WhatsApp clone with Meteor CLI & Ionic 2 
++
++[![bitHound Overall Score](https://www.bithound.io/github/Urigo/Ionic2-MeteorCLI-WhatsApp/badges/score.svg)](https://www.bithound.io/github/Urigo/Ionic2-MeteorCLI-WhatsApp) [![bitHound Dependencies](https://www.bithound.io/github/Urigo/Ionic2-MeteorCLI-WhatsApp/badges/dependencies.svg)](https://www.bithound.io/github/Urigo/Ionic2-MeteorCLI-WhatsApp/master/dependencies/npm)
++
++- [Start the tutorial @ angular-meteor.com](https://www.angular-meteor.com/tutorials/whatsapp2/meteor/setup)
++
++
+diff --git a/both/collections/demo-collection.ts b/both/collections/demo-collection.ts
+new file mode 100644
+index 0000000..371b609
+--- /dev/null
++++ b/both/collections/demo-collection.ts
+@@ -0,0 +1,4 @@
++import { MongoObservable } from 'meteor-rxjs';
++import { DemoDataObject } from '../models/demo-data-object';
++
++export const DemoCollection = new MongoObservable.Collection<DemoDataObject>('demo-collection');
+\ No newline at end of file
+diff --git a/both/models/demo-data-object.ts b/both/models/demo-data-object.ts
+new file mode 100644
+index 0000000..64846d7
+--- /dev/null
++++ b/both/models/demo-data-object.ts
+@@ -0,0 +1,4 @@
++export interface DemoDataObject {
++  name: string;
++  age: number;
++}
+\ No newline at end of file
+diff --git a/client/imports/app/app.component.html b/client/imports/app/app.component.html
+new file mode 100644
+index 0000000..1d40faa
+--- /dev/null
++++ b/client/imports/app/app.component.html
+@@ -0,0 +1,4 @@
++<div>
++    <h1>Hello Angular2-Meteor!</h1>
++    <demo></demo>
++</div>
+diff --git a/client/imports/app/app.component.scss b/client/imports/app/app.component.scss
+new file mode 100644
+index 0000000..4c02b72
+--- /dev/null
++++ b/client/imports/app/app.component.scss
+@@ -0,0 +1,5 @@
++body {
++
++}
++
++@import "./imports/demo/demo.component";
+diff --git a/client/imports/app/app.component.ts b/client/imports/app/app.component.ts
+new file mode 100644
+index 0000000..ca2fb29
+--- /dev/null
++++ b/client/imports/app/app.component.ts
+@@ -0,0 +1,12 @@
++import { Component } from '@angular/core';
++
++import template from './app.component.html';
++
++@Component({
++  selector: 'app',
++  template
++})
++export class AppComponent {
++  constructor() {
++  }
++}
+diff --git a/client/imports/app/app.module.ts b/client/imports/app/app.module.ts
+new file mode 100644
+index 0000000..81baa33
+--- /dev/null
++++ b/client/imports/app/app.module.ts
+@@ -0,0 +1,30 @@
++import { NgModule } from '@angular/core';
++import { BrowserModule } from '@angular/platform-browser';
++import { METEOR_PROVIDERS } from 'angular2-meteor';
++
++import { AppComponent } from './app.component';
++import { DemoComponent } from './demo/demo.component';
++import { DemoDataService } from './demo/demo-data.service';
++
++@NgModule({
++  // Components, Pipes, Directive
++  declarations: [
++    AppComponent,
++    DemoComponent
++  ],
++  // Entry Components
++  entryComponents: [
++    AppComponent
++  ],
++  // Providers
++  providers: [
++    DemoDataService
++  ],
++  // Modules
++  imports: [
++    BrowserModule
++  ],
++  // Main Component
++  bootstrap: [ AppComponent ]
++})
++export class AppModule {}
+diff --git a/client/imports/app/demo/demo-data.service.test.ts b/client/imports/app/demo/demo-data.service.test.ts
+new file mode 100644
+index 0000000..4320d63
+--- /dev/null
++++ b/client/imports/app/demo/demo-data.service.test.ts
+@@ -0,0 +1,19 @@
++// chai uses as asset library
++import { assert } from 'chai';
++import { Mongo } from 'meteor/mongo';
++
++// Project imports
++import { DemoDataService } from './demo-data.service';
++
++describe('DemoDataService', () => {
++  let demoDataService:DemoDataService;
++
++  beforeEach(() => {
++    // Create the service instance
++    demoDataService = new DemoDataService();
++  });
++
++  it('Should return MongoDB Cursor when requesting the data', () => {
++    assert.isTrue(demoDataService.getData() instanceof Mongo.Cursor);
++  });
++});
+diff --git a/client/imports/app/demo/demo-data.service.ts b/client/imports/app/demo/demo-data.service.ts
+new file mode 100644
+index 0000000..357aaf7
+--- /dev/null
++++ b/client/imports/app/demo/demo-data.service.ts
+@@ -0,0 +1,18 @@
++import { Injectable } from '@angular/core';
++import { ObservableCursor } from 'meteor-rxjs';
++
++import { DemoDataObject } from '../../../../both/models/demo-data-object';
++import { DemoCollection } from '../../../../both/collections/demo-collection';
++
++@Injectable()
++export class DemoDataService {
++  private data : ObservableCursor<DemoDataObject>;
++
++  constructor() {
++    this.data = DemoCollection.find({});
++  }
++
++  public getData() : ObservableCursor<DemoDataObject> {
++    return this.data;
++  }
++}
+diff --git a/client/imports/app/demo/demo.component.html b/client/imports/app/demo/demo.component.html
+new file mode 100644
+index 0000000..38180c6
+--- /dev/null
++++ b/client/imports/app/demo/demo.component.html
+@@ -0,0 +1,8 @@
++<h2>{{greeting}}</h2>
++
++This is the available data:
++<ul>
++    <li *ngFor="let item of data | async">
++        {{item.name}} ({{item.age}})
++    </li>
++</ul>
+diff --git a/client/imports/app/demo/demo.component.scss b/client/imports/app/demo/demo.component.scss
+new file mode 100644
+index 0000000..9e27489
+--- /dev/null
++++ b/client/imports/app/demo/demo.component.scss
+@@ -0,0 +1,3 @@
++demo {
++
++}
+diff --git a/client/imports/app/demo/demo.component.test.ts b/client/imports/app/demo/demo.component.test.ts
+new file mode 100644
+index 0000000..39221cd
+--- /dev/null
++++ b/client/imports/app/demo/demo.component.test.ts
+@@ -0,0 +1,95 @@
++// chai uses as asset library
++import { assert } from 'chai';
++
++// Angular 2 tests imports
++import { inject } from '@angular/core';
++import { provide } from '@angular/core';
++import { TestComponentBuilder } from '@angular/compiler';
++
++// Project imports
++import { DemoComponent } from './demo.component';
++import { DemoDataService } from './demo-data.service';
++import { DemoDataObject } from '../../../../both/models/demo-data-object';
++
++describe('DemoComponent', () => {
++  let demoComponentInstance:DemoComponent;
++  let demoComponentElement;
++  let componentFixture;
++
++  let mockDataArray = [
++    <DemoDataObject>{
++      name: 'Test',
++      age: 10
++    }
++  ];
++
++  let mockDataService = {
++    getData: () => mockDataArray
++  };
++
++  beforeEach(inject([TestComponentBuilder], (tcb:TestComponentBuilder) => {
++    // We inject TestComponentBuilder that provides use the ability to control the injections of the component
++    // Then we will request to get DemoComponent with a mock service instead of the real DemoDataService
++    // The fixture created contain the element and the instance of the Component class
++    // Finally, we need to save 'detectChanges' and call it to flush the changes into the view.
++    return tcb.overrideProviders(DemoComponent, [
++      provide(DemoDataService, {useValue: mockDataService})
++    ]).createAsync(DemoComponent).then((fixture) => {
++      componentFixture = fixture;
++
++      demoComponentInstance = componentFixture.componentInstance;
++      demoComponentElement = componentFixture.nativeElement;
++
++      componentFixture.detectChanges();
++    });
++  }));
++
++  describe('@Component instance', () => {
++    it('Should have a greeting string on the component', () => {
++      assert.typeOf(demoComponentInstance.greeting, 'string', 'Greeting should be a string!');
++    });
++
++    it('Should say hello to the component on the greeting string', () => {
++      assert.equal(demoComponentInstance.greeting, 'Hello Demo Component!');
++    });
++
++    it('Should have an array (from the mock) of the instance', () => {
++      assert.typeOf(demoComponentInstance.getData(), 'array');
++    });
++
++    it('Should have an items in the array', () => {
++      assert.typeOf(demoComponentInstance.getData(), 'array');
++      assert.equal((<Array>demoComponentInstance.getData()).length, 1);
++    });
++  });
++
++  describe('@Component view', () => {
++    it('Should print the greeting to the screen', () => {
++      assert.include(demoComponentElement.innerHTML, 'Hello Demo Component');
++    });
++
++    it('Should change the greeting when it changes', () => {
++      assert.include(demoComponentElement.innerHTML, 'Hello Demo Component');
++      demoComponentInstance.greeting = 'New Test Greeting';
++      componentFixture.detectChanges();
++      assert.include(demoComponentElement.innerHTML, 'New Test Greeting');
++    });
++
++    it('Should display a list of items in the screen', () => {
++      assert.isNotNull(demoComponentElement.querySelector('ul'));
++    });
++
++    it('Should add item to the list when modifying the data in the service', () => {
++      assert.equal(demoComponentElement.querySelectorAll('li').length, 1);
++
++      mockDataArray.push({
++        name: 'Dotan',
++        age: 20
++      });
++
++      componentFixture.detectChanges();
++
++      assert.equal(demoComponentElement.querySelectorAll('li').length, 2);
++    });
++  });
++});
+diff --git a/client/imports/app/demo/demo.component.ts b/client/imports/app/demo/demo.component.ts
+new file mode 100644
+index 0000000..9a4df43
+--- /dev/null
++++ b/client/imports/app/demo/demo.component.ts
+@@ -0,0 +1,25 @@
++import { Component, OnInit } from '@angular/core';
++import { ObservableCursor } from 'meteor-rxjs';
++import { Observable } from 'rxjs/Observable';
++
++import { DemoDataService } from './demo-data.service';
++import { DemoDataObject } from '../../../../both/models/demo-data-object';
++
++import template from './demo.component.html';
++
++@Component({
++  selector: 'demo',
++  template
++})
++export class DemoComponent implements OnInit {
++  greeting: string;
++  data: Observable<DemoDataObject[]>;
++
++  constructor(private demoDataService: DemoDataService) {
++    this.greeting = 'Hello Demo Component!';
++  }
++
++  ngOnInit() {
++    this.data = this.demoDataService.getData().zone();
++  }
++}
+diff --git a/client/imports/app/index.ts b/client/imports/app/index.ts
+new file mode 100644
+index 0000000..875bdb2
+--- /dev/null
++++ b/client/imports/app/index.ts
+@@ -0,0 +1,2 @@
++export * from './app.component';
++export * from './app.module';
+diff --git a/client/index.html b/client/index.html
+new file mode 100644
+index 0000000..d3675e5
+--- /dev/null
++++ b/client/index.html
+@@ -0,0 +1,6 @@
++<head>
++    <base href="/">
++</head>
++<body>
++  <app>Loading...</app>
++</body>
+diff --git a/client/init.test.ts b/client/init.test.ts
+new file mode 100644
+index 0000000..cd07c0b
+--- /dev/null
++++ b/client/init.test.ts
+@@ -0,0 +1,12 @@
++// angular2-meteor polyfills required for testing
++import 'angular2-meteor-tests-polyfills';
++
++// Angular 2 tests imports
++import { platformBrowserDynamicTesting, BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic';
++import { TestBed } from '@angular/core';
++
++// Init the test framework
++TestBed.initTestEnvironment(
++  BrowserDynamicTestingModule,
++  platformBrowserDynamicTesting()
++);
+diff --git a/client/main.ts b/client/main.ts
+new file mode 100644
+index 0000000..8f35a92
+--- /dev/null
++++ b/client/main.ts
+@@ -0,0 +1,12 @@
++import 'angular2-meteor-polyfills';
++
++import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
++import { enableProdMode } from '@angular/core';
++import { Meteor } from "meteor/meteor";
++import { AppModule } from './imports/app';
++
++enableProdMode();
++
++Meteor.startup(() => {
++   platformBrowserDynamic().bootstrapModule(AppModule);
++});
+diff --git a/package.json b/package.json
+new file mode 100644
+index 0000000..aabacb5
+--- /dev/null
++++ b/package.json
+@@ -0,0 +1,45 @@
++{
++  "name": "angular2-meteor-base",
++  "private": true,
++  "scripts": {
++    "start": "meteor run",
++    "test": "meteor test --driver-package practicalmeteor:mocha",
++    "test:ci": "meteor test --once --driver-package dispatch:mocha-phantomjs",
++    "postinstall": "typings i",
++    "precommit": "node .tortilla/hooks/pre-commit",
++    "preparecommitmsg": "node .tortilla/hooks/prepare-commit-msg",
++    "commitmsg": "node .tortilla/hooks/commit-msg",
++    "prepush": "node .tortilla/hooks/pre-push",
++    "prerebase": "node .tortilla/hooks/pre-rebase",
++    "manual": "node .tortilla/manual",
++    "step": "node .tortilla/step"
++  },
++  "devDependencies": {
++    "@types/chai": "^3.4.33",
++    "@types/mocha": "^2.2.32",
++    "chai": "3.5.0",
++    "chai-spies": "0.7.1",
++    "typings": "^1.3.3",
++    "husky": "^0.11.8",
++    "minimist": "^1.2.0",
++    "node-localstorage": "^1.3.0",
++    "parse-diff": "0.4.0"
++  },
++  "dependencies": {
++    "@angular/common": "2.0.1",
++    "@angular/compiler": "2.0.1",
++    "@angular/core": "2.0.1",
++    "@angular/forms": "2.0.1",
++    "@angular/platform-browser": "2.0.1",
++    "@angular/platform-browser-dynamic": "2.0.1",
++    "@angular/router": "3.0.1",
++    "angular2-meteor": "0.7.0",
++    "angular2-meteor-polyfills": "0.1.1",
++    "angular2-meteor-tests-polyfills": "0.0.2",
++    "meteor-node-stubs": "0.2.3",
++    "meteor-rxjs": "0.2.3",
++    "reflect-metadata": "0.1.8",
++    "rxjs": "5.0.0-beta.12",
++    "zone.js": "0.6.21"
++  }
++}
+diff --git a/server/imports/server-main/main.test.ts b/server/imports/server-main/main.test.ts
+new file mode 100644
+index 0000000..e050427
+--- /dev/null
++++ b/server/imports/server-main/main.test.ts
+@@ -0,0 +1,40 @@
++// chai uses as asset library
++import * as chai from 'chai';
++import * as spies from 'chai-spies';
++import StubCollections from 'meteor/hwillson:stub-collections';
++
++import { DemoCollection } from '../../../both/collections/demo-collection';
++import { Main } from './main';
++
++chai.use(spies);
++
++describe('Server Main', () => {
++  let mainInstance : Main;
++
++  beforeEach(() => {
++    // Creating database mock
++    StubCollections.stub(DemoCollection);
++
++    // Create instance of main class
++    mainInstance = new Main();
++  });
++
++  afterEach(() => {
++    // Restore database
++    StubCollections.restore();
++  });
++
++  it('Should call initFakeData on startup', () => {
++    mainInstance.initFakeData = chai.spy();
++    mainInstance.start();
++
++    chai.expect(mainInstance.initFakeData).to.have.been.called();
++  });
++
++  it('Should call insert 3 times when init fake data', () => {
++    DemoCollection.insert = chai.spy();
++    mainInstance.initFakeData();
++
++    chai.expect(DemoCollection.insert).to.have.been.called.exactly(3);
++  });
++});
+diff --git a/server/imports/server-main/main.ts b/server/imports/server-main/main.ts
+new file mode 100644
+index 0000000..d4b1cda
+--- /dev/null
++++ b/server/imports/server-main/main.ts
+@@ -0,0 +1,27 @@
++import { DemoCollection } from '../../../both/collections/demo-collection';
++import { DemoDataObject } from '../../../both/models/demo-data-object';
++
++export class Main {
++  start(): void {
++    this.initFakeData();
++  }
++
++  initFakeData(): void {
++    if (DemoCollection.find({}).cursor.count() === 0) {
++      const data: DemoDataObject[] = [{
++        name: 'Dotan',
++        age: 25
++      }, {
++        name: 'Liran',
++        age: 26
++      }, {
++        name: 'Uri',
++        age: 30
++      }];
++      
++      data.forEach((obj: DemoDataObject) => {
++        DemoCollection.insert(obj);
++      });
++    }
++  }
++}
+diff --git a/server/main.ts b/server/main.ts
+new file mode 100644
+index 0000000..de5d825
+--- /dev/null
++++ b/server/main.ts
+@@ -0,0 +1,4 @@
++import { Main } from './imports/server-main/main';
++
++const mainInstance = new Main();
++mainInstance.start();
+diff --git a/tsconfig.json b/tsconfig.json
+new file mode 100644
+index 0000000..ae9c5a8
+--- /dev/null
++++ b/tsconfig.json
+@@ -0,0 +1,15 @@
++{
++  "compilerOptions": {
++    "target": "es5",
++    "lib": ["es6", "dom"],
++    "module": "commonjs",
++    "moduleResolution": "node",
++    "experimentalDecorators": true,
++    "emitDecoratorMetadata": true,
++    "sourceMap": true
++  },
++  "exclude": [
++    "node_modules"
++  ],
++  "compileOnSave": false
++}
+diff --git a/typings.d.ts b/typings.d.ts
+new file mode 100644
+index 0000000..1684801
+--- /dev/null
++++ b/typings.d.ts
+@@ -0,0 +1,4 @@
++declare module '*.html' {
++  const template: string;
++  export default template;
++}
+\ No newline at end of file
+diff --git a/typings.json b/typings.json
+new file mode 100644
+index 0000000..4a62321
+--- /dev/null
++++ b/typings.json
+@@ -0,0 +1,10 @@
++{
++  "name": "angular2-meteor-base",
++  "version": false,
++  "dependencies": {
++    "chai-spies": "registry:npm/chai-spies#0.7.1+20160614064916"
++  },
++  "globalDependencies": {
++    "meteor": "github:meteor-typings/meteor/1.3#955b89a4e2af892d1736bc570b490a97e860d5b7"
++  }
++}
+-- 
+2.7.4
+
+
 From 90823826b467b80d9b9be6c8c9f8028cda910b35 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:15:03 +0300
-Subject: [PATCH 001/128] Step 1.1: Remove boilerplate example files
+Subject: [PATCH 002/129] Step 1.1: Remove boilerplate example files
 
 ---
  both/collections/demo-collection.ts               |  4 -
@@ -427,13 +3350,13 @@ index d4b1cda..ca6ff2f 100644
    }
  }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 22875b8323f1c910c1c46e1302c5215e7d01fb80 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:15:33 +0300
-Subject: [PATCH 002/128] Step 1.2: Added Ionic 2 and it's dependencies
+Subject: [PATCH 003/129] Step 1.2: Added Ionic 2 and it's dependencies
 
 ---
  package.json | 4 ++++
@@ -461,13 +3384,13 @@ index aabacb5..d858ee2 100644
      "meteor-rxjs": "0.2.3",
      "reflect-metadata": "0.1.8",
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 4fa89f2d2eef04e052226202370e7d523a75a5f8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:25:51 +0300
-Subject: [PATCH 003/128] Step 1.3: Updated the NgModule to use Ionic 2
+Subject: [PATCH 004/129] Step 1.3: Updated the NgModule to use Ionic 2
 
 ---
  client/imports/app/app.module.ts | 6 +++---
@@ -498,13 +3421,13 @@ index 40a3119..a96f8e9 100644
  })
  export class AppModule {}
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 92f2eeee4792e61ee27f2ef865d10040c2ebe26b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:26:12 +0300
-Subject: [PATCH 004/128] Step 1.4: Changed the root Component tag
+Subject: [PATCH 005/129] Step 1.4: Changed the root Component tag
 
 ---
  client/index.html | 2 +-
@@ -522,13 +3445,13 @@ index d3675e5..2e01ea4 100644
 +  <ion-app>Loading...</ion-app>
  </body>
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From a7699eeb4b3fd7608ffd7a318eb4bb1fdafd396e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:31:16 +0300
-Subject: [PATCH 005/128] Step 1.5: Added import for Ionic 2 stylesheet
+Subject: [PATCH 006/129] Step 1.5: Added import for Ionic 2 stylesheet
 
 ---
  client/styles/ionic.scss | 280 +++++++++++++++++++++++++++++++++++++++++++++++
@@ -822,13 +3745,13 @@ index 0000000..186f82b
 +@import "{}/node_modules/ionic-angular/themes/ionic.theme.default.scss";
 +
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From ae85cfdbb331cc8bf5422c8dde34c417bc85923c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:34:44 +0300
-Subject: [PATCH 006/128] Step 1.6: Added mys:fonts
+Subject: [PATCH 007/129] Step 1.6: Added mys:fonts
 
 ---
  .meteor/packages | 1 +
@@ -857,13 +3780,13 @@ index 9886afc..7e1c968 100644
  observe-sequence@1.0.12
  ordered-dict@1.0.8
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From ab32d2fb580f58f271f7d378b8b44c66ede2b5f2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:37:46 +0300
-Subject: [PATCH 007/128] Step 1.7: Added fonts file declaration
+Subject: [PATCH 008/129] Step 1.7: Added fonts file declaration
 
 ---
  fonts.json | 11 +++++++++++
@@ -889,13 +3812,13 @@ index 0000000..f444c35
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From e96518d8282b358b04e348db0b0cc12753fac964 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:42:15 +0300
-Subject: [PATCH 008/128] Step 1.8: Added ionic-native package
+Subject: [PATCH 009/129] Step 1.8: Added ionic-native package
 
 ---
  package.json | 1 +
@@ -914,13 +3837,13 @@ index d858ee2..3929642 100644
      "meteor-rxjs": "0.2.3",
      "reflect-metadata": "0.1.8",
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 881d5d759b5348d48193918c14cd6edef5024682 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:42:32 +0300
-Subject: [PATCH 009/128] Step 1.9: Basic native functionality added
+Subject: [PATCH 010/129] Step 1.9: Basic native functionality added
 
 ---
  client/imports/app/app.component.ts | 10 ++++++++--
@@ -952,13 +3875,13 @@ index ca2fb29..5869be0 100644
    }
  }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 74cbdc737f4ce8816e609df1f5c58d5f83c7c786 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:57:08 +0300
-Subject: [PATCH 010/128] Step 1.10: Added iOS platform
+Subject: [PATCH 011/129] Step 1.10: Added iOS platform
 
 ---
  .meteor/platforms | 3 ++-
@@ -974,13 +3897,13 @@ index efeba1b..81ae701 100644
 +ios
 +server
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 9d3a604ae94e7180468b67c1e0e04376a537b58c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:57:22 +0300
-Subject: [PATCH 011/128] Step 1.11: Added missing Ionic 2 meta tags
+Subject: [PATCH 012/129] Step 1.11: Added missing Ionic 2 meta tags
 
 ---
  client/index.html | 8 ++++++--
@@ -1004,13 +3927,13 @@ index 2e01ea4..1f9d258 100644
 +<ion-app>Loading...</ion-app>
  </body>
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 57ce8431746ae964104426d42816edb10977d375 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 11:16:35 +0200
-Subject: [PATCH 012/128] Step 1.12: Removed mobile-experience and added
+Subject: [PATCH 013/129] Step 1.12: Removed mobile-experience and added
  mobile-status-bar, launch-screen
 
 ---
@@ -1057,13 +3980,13 @@ index 7e1c968..563029a 100644
  modules@0.7.6
  modules-runtime@0.7.6
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 3ae247fdaa52e30c14566ddceaa01def553b976c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:44:01 +0200
-Subject: [PATCH 013/128] Step 1: Initial setup
+Subject: [PATCH 014/129] Step 1: Initial setup
 
 ---
  steps/step1.md | 0
@@ -1074,13 +3997,13 @@ diff --git a/steps/step1.md b/steps/step1.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 59f22c00f42d83b60f4f663c44dc6652ba78cb98 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:57:37 +0300
-Subject: [PATCH 014/128] Step 2.1: Added tabs container component
+Subject: [PATCH 015/129] Step 2.1: Added tabs container component
 
 ---
  .../pages/tabs-container/tabs-container.component.ts    | 17 +++++++++++++++++
@@ -1112,13 +4035,13 @@ index 0000000..1c13731
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 1f742806dc71484419dc3de34d4c5555a688e5ed Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:57:56 +0300
-Subject: [PATCH 015/128] Step 2.2: Added the Component to the NgModule
+Subject: [PATCH 016/129] Step 2.2: Added the Component to the NgModule
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -1150,13 +4073,13 @@ index a96f8e9..e2721dd 100644
    // Providers
    providers: [
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From aeed0bbc4f857be0189f0e5f0c6f502ad5488e31 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:58:19 +0300
-Subject: [PATCH 016/128] Step 2.3: Updated the main component to use Ionic
+Subject: [PATCH 017/129] Step 2.3: Updated the main component to use Ionic
  navigation
 
 ---
@@ -1174,13 +4097,13 @@ index 3c4adac..202644e 100644
 +<ion-nav [root]="rootPage"></ion-nav>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From e75bc8adce86029cf24d0650d12e79dec8c14207 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Tue, 4 Oct 2016 21:58:36 +0300
-Subject: [PATCH 017/128] Step 2.4: Added missing rootPage variable
+Subject: [PATCH 018/129] Step 2.4: Added missing rootPage variable
 
 ---
  client/imports/app/app.component.ts | 3 +++
@@ -1207,13 +4130,13 @@ index 5869be0..772cc90 100644
      platform.ready().then(() => {
        // Okay, so the platform is ready and our plugins are available.
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From f3fcbe8eb78da7ae9a1df1e5a1364c3d969928b4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:09:59 +0300
-Subject: [PATCH 018/128] Step 2.5: Added the chats page template
+Subject: [PATCH 019/129] Step 2.5: Added the chats page template
 
 ---
  client/imports/pages/chats/chats.component.html | 9 +++++++++
@@ -1237,13 +4160,13 @@ index 0000000..0c55ce6
 +</ion-content>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 47eb504e3edf611c083ddb2062a94e376fc7b886 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:10:10 +0300
-Subject: [PATCH 019/128] Step 2.6: Added the chats page component
+Subject: [PATCH 020/129] Step 2.6: Added the chats page component
 
 ---
  client/imports/pages/chats/chats.component.ts | 12 ++++++++++++
@@ -1270,13 +4193,13 @@ index 0000000..b79d011
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From fc17f71616b1a7f6f27812d85f32470387a06f6f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:10:32 +0300
-Subject: [PATCH 020/128] Step 2.7: Added the chats page to the NgModule
+Subject: [PATCH 021/129] Step 2.7: Added the chats page to the NgModule
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -1310,13 +4233,13 @@ index e2721dd..91af1b1 100644
    // Providers
    providers: [
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 1e963a38b4ddd24f2fb5544d591399be70a50073 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:11:22 +0300
-Subject: [PATCH 021/128] Step 2.8: Use the chats page component in ion-tabs
+Subject: [PATCH 022/129] Step 2.8: Use the chats page component in ion-tabs
 
 ---
  client/imports/pages/tabs-container/tabs-container.component.ts | 5 ++++-
@@ -1348,13 +4271,13 @@ index 1c13731..4a7160d 100644
  
    }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From da3b06ad03902fc052eee8554009118316e24ba4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:53:01 +0300
-Subject: [PATCH 022/128] Step 2.9: Add whatsapp theme variable
+Subject: [PATCH 023/129] Step 2.9: Add whatsapp theme variable
 
 ---
  client/styles/ionic.scss | 3 ++-
@@ -1375,13 +4298,13 @@ index 186f82b..4022576 100644
  
  // Components
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 3ba096c8601d7c362b770598790954bfccfec30f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:53:26 +0300
-Subject: [PATCH 023/128] Step 2.10: Added theme usage for tabs component
+Subject: [PATCH 024/129] Step 2.10: Added theme usage for tabs component
 
 ---
  client/imports/pages/tabs-container/tabs-container.component.ts | 2 +-
@@ -1401,13 +4324,13 @@ index 4a7160d..bcaed58 100644
      <ion-tab tabTitle="Contacts" tabIcon="contacts"></ion-tab>
      <ion-tab tabTitle="Favorites" tabIcon="star"></ion-tab>
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 58fd3d1a382ca279afbbb9c88342dead3304a235 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:59:36 +0300
-Subject: [PATCH 024/128] Step 2.11: Added message model
+Subject: [PATCH 025/129] Step 2.11: Added message model
 
 ---
  both/models/message.model.ts | 5 +++++
@@ -1427,13 +4350,13 @@ index 0000000..1165f7f
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 795f4d0eae1e42bedb8ffd1e40a14078f6b62999 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 14:59:51 +0300
-Subject: [PATCH 025/128] Step 2.12: Added chat model
+Subject: [PATCH 026/129] Step 2.12: Added chat model
 
 ---
  both/models/chat.model.ts | 8 ++++++++
@@ -1456,13 +4379,13 @@ index 0000000..36e42ca
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 56a08584824cc37fcfdc235ab7a0d7e74414e330 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:01:22 +0300
-Subject: [PATCH 026/128] Step 2.13: Added moment
+Subject: [PATCH 027/129] Step 2.13: Added moment
 
 ---
  package.json | 3 ++-
@@ -1500,13 +4423,13 @@ index 4a62321..d1f10e1 100644
    }
  }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 1ed70fec78fd6da66ba68ff2dca43c51dd7febf5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:15:02 +0300
-Subject: [PATCH 027/128] Step 2.14: Added list of stub chats
+Subject: [PATCH 028/129] Step 2.14: Added list of stub chats
 
 ---
  client/imports/pages/chats/chats.component.ts | 53 ++++++++++++++++++++++++++-
@@ -1583,13 +4506,13 @@ index b79d011..1d524c5 100644
  }
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 4e75048e529c994448fd9e04ac8990c339f1d620 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:18:22 +0300
-Subject: [PATCH 028/128] Step 2.15: Added chats view layout
+Subject: [PATCH 029/129] Step 2.15: Added chats view layout
 
 ---
  client/imports/pages/chats/chats.component.html | 26 +++++++++++++++++++++----
@@ -1633,13 +4556,13 @@ index 0c55ce6..54c523c 100644
 +  </ion-list>
 +</ion-content>
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From cae2126bfa0ce04997a20fbfbe46fa71a3e782b6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:18:38 +0300
-Subject: [PATCH 029/128] Step 2.16: Added some css styles to the chats list
+Subject: [PATCH 030/129] Step 2.16: Added some css styles to the chats list
 
 ---
  client/imports/pages/chats/chats.component.scss | 20 ++++++++++++++++++++
@@ -1674,13 +4597,13 @@ index 0000000..6470e09
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 025cb0e624ca47314a8342106c9f2906720b4889 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:18:56 +0300
-Subject: [PATCH 030/128] Step 2.17: Import the new styles into the Component
+Subject: [PATCH 031/129] Step 2.17: Import the new styles into the Component
 
 ---
  client/imports/pages/chats/chats.component.ts | 7 ++++++-
@@ -1708,13 +4631,13 @@ index 1d524c5..815d4b6 100644
  export class ChatsComponent {
    chats: Observable<Chat[]>;
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 29b8e811704e5774052a81a2659614961322fcc4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:20:11 +0300
-Subject: [PATCH 031/128] Step 2.18: Added angular moment package
+Subject: [PATCH 032/129] Step 2.18: Added angular moment package
 
 ---
  package.json | 1 +
@@ -1733,13 +4656,13 @@ index 9bb4313..3b77adf 100644
      "ionic-native": "^2.0.3",
      "ionicons": "^3.0.0",
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From a29f64263eb9debd9d593f72650e0e9c771bbd0a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:20:34 +0300
-Subject: [PATCH 032/128] Step 2.19: Added MomentModule to the NgModule
+Subject: [PATCH 033/129] Step 2.19: Added MomentModule to the NgModule
 
 ---
  client/imports/app/app.module.ts | 4 +++-
@@ -1768,13 +4691,13 @@ index 91af1b1..b915e99 100644
    // Main Component
    bootstrap: [ IonicApp ]
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From a42691cf9f469815ba2161ef59193544a4e029e1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:21:04 +0300
-Subject: [PATCH 033/128] Step 2.20: Use angular2-moment pipe
+Subject: [PATCH 034/129] Step 2.20: Use angular2-moment pipe
 
 ---
  client/imports/pages/chats/chats.component.html | 2 +-
@@ -1794,13 +4717,13 @@ index 54c523c..a2878fb 100644
        </div>
      </button>
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From f96f9e445a4ea116bc8f36e08fb956c837402958 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 20:50:52 +0200
-Subject: [PATCH 034/128] Step 2.21: Add declaration for .scss files
+Subject: [PATCH 035/129] Step 2.21: Add declaration for .scss files
 
 ---
  typings.d.ts | 6 +++++-
@@ -1822,13 +4745,13 @@ index 1684801..b7c82f2 100644
 +  export const innerHTML: string;
 +}
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 2653adcb3e638cc7115d9804730b4210aaf57118 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:48:57 +0200
-Subject: [PATCH 035/128] Step 2: Chats page
+Subject: [PATCH 036/129] Step 2: Chats page
 
 ---
  steps/step2.md | 0
@@ -1839,13 +4762,13 @@ diff --git a/steps/step2.md b/steps/step2.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 2a389c7ce5bf91335160c66594655cfac9f176e8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:23:19 +0300
-Subject: [PATCH 036/128] Step 3.1: Add the Chats collection
+Subject: [PATCH 037/129] Step 3.1: Add the Chats collection
 
 ---
  both/collections/chats.collection.ts | 4 ++++
@@ -1863,13 +4786,13 @@ index 0000000..0f46dc2
 +
 +export const Chats = new MongoObservable.Collection<Chat>('chats');
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From e22bbef02221adeb9b488cdf1319627d5afb13ef Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Wed, 5 Oct 2016 15:23:32 +0300
-Subject: [PATCH 037/128] Step 3.2: Add the Messages collection
+Subject: [PATCH 038/129] Step 3.2: Add the Messages collection
 
 ---
  both/collections/messages.collection.ts | 4 ++++
@@ -1887,13 +4810,13 @@ index 0000000..28e2eb6
 +
 +export const Messages = new MongoObservable.Collection<Message>('messages');
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 88533aa86a57da635115fbc29f3277ddd9c414ac Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 12:13:08 +0300
-Subject: [PATCH 038/128] Step 3.3: Added the stub data to the server
+Subject: [PATCH 039/129] Step 3.3: Added the stub data to the server
 
 ---
  server/imports/server-main/main.ts | 61 ++++++++++++++++++++++++++++++++++++++
@@ -1971,13 +4894,13 @@ index ca6ff2f..e84b373 100644
    }
  }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 542e43bd12e6cedd0bba6382c268fd0b006f069a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 12:13:24 +0300
-Subject: [PATCH 039/128] Step 3.4: Add 'chatId' property to message model
+Subject: [PATCH 040/129] Step 3.4: Add 'chatId' property to message model
 
 ---
  both/models/message.model.ts | 1 +
@@ -1996,13 +4919,13 @@ index 1165f7f..c30bc6f 100644
  }
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 997a937c901305824384a17e3b6f6300be9eeded Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:07:34 +0300
-Subject: [PATCH 040/128] Step 3.5: Added the chats with the last message using
+Subject: [PATCH 041/129] Step 3.5: Added the chats with the last message using
  RxJS operators
 
 ---
@@ -2109,13 +5032,13 @@ index 815d4b6..1ce9032 100644
 \ No newline at end of file
 +}
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 3c7bbe784586478ccb7acd285195e62c022400a1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:50:50 +0200
-Subject: [PATCH 041/128] Step 3: Realtime Meteor server
+Subject: [PATCH 042/129] Step 3: Realtime Meteor server
 
 ---
  steps/step3.md | 0
@@ -2126,13 +5049,13 @@ diff --git a/steps/step3.md b/steps/step3.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 0d70625fda585cf54e40b4cf779d5721c5c09a4d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:10:33 +0300
-Subject: [PATCH 042/128] Step 4.1: Added showMessage method
+Subject: [PATCH 043/129] Step 4.1: Added showMessage method
 
 ---
  client/imports/pages/chats/chats.component.ts | 7 ++++++-
@@ -2169,13 +5092,13 @@ index 1ce9032..984e9dc 100644
 +  }
  }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From bc321d44fe7da30ef0db03b491ac522bad0806e4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:10:54 +0300
-Subject: [PATCH 043/128] Step 4.2: Added the action to the button
+Subject: [PATCH 044/129] Step 4.2: Added the action to the button
 
 ---
  client/imports/pages/chats/chats.component.html | 2 +-
@@ -2195,13 +5118,13 @@ index a2878fb..e4df49a 100644
  
        <div class="chat-info">
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From da4877472524512e74010f4b2ce3e6b8391f2202 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:38:38 +0300
-Subject: [PATCH 044/128] Step 4.3: Create a stub for the component
+Subject: [PATCH 045/129] Step 4.3: Create a stub for the component
 
 ---
  .../imports/pages/chat/messages-page.component.ts   | 21 +++++++++++++++++++++
@@ -2237,13 +5160,13 @@ index 0000000..5829e6f
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 506a7172e6b6ff20078343858a11824aa92fa393 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:38:51 +0300
-Subject: [PATCH 045/128] Step 4.4: Added the Component to the NgModule
+Subject: [PATCH 046/129] Step 4.4: Added the Component to the NgModule
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -2279,13 +5202,13 @@ index b915e99..2b2abe3 100644
    // Providers
    providers: [
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 792d7238190a11609679d45ce1fabb4d1e1eb01a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:39:02 +0300
-Subject: [PATCH 046/128] Step 4.5: Added the correct import
+Subject: [PATCH 047/129] Step 4.5: Added the correct import
 
 ---
  client/imports/pages/chats/chats.component.ts | 1 +
@@ -2304,13 +5227,13 @@ index 984e9dc..7f538c0 100644
  @Component({
    selector: "chats",
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 7b9e1ec847cbbec034de7e7fa907527eab785f17 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:49:46 +0300
-Subject: [PATCH 047/128] Step 4.6: Add basic messages component
+Subject: [PATCH 048/129] Step 4.6: Add basic messages component
 
 ---
  .../imports/pages/chat/messages-page.component.ts  | 25 +++++++++++++++++++---
@@ -2366,13 +5289,13 @@ index 5829e6f..1da077c 100644
  }
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From a2edbc25843724bc0a4ccb22b03507e25c4c4629 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:49:58 +0300
-Subject: [PATCH 048/128] Step 4.7: Add 'ownership' property to message model
+Subject: [PATCH 049/129] Step 4.7: Add 'ownership' property to message model
 
 ---
  both/models/message.model.ts | 1 +
@@ -2391,13 +5314,13 @@ index c30bc6f..d4b4f99 100644
  }
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From f7a473611735435cc8daa2b7501a40d14ebf2614 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:50:10 +0300
-Subject: [PATCH 049/128] Step 4.8: Add basic messages view template
+Subject: [PATCH 050/129] Step 4.8: Add basic messages view template
 
 ---
  .../pages/chat/messages-page.component.html        | 25 ++++++++++++++++++++++
@@ -2437,13 +5360,13 @@ index 0000000..0ecb9a5
 +</ion-content>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 82eae7bc99e42b69444146a3a6c3383ce80b6e65 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:51:08 +0300
-Subject: [PATCH 050/128] Step 4.9: Add basic messages stylesheet
+Subject: [PATCH 051/129] Step 4.9: Add basic messages stylesheet
 
 ---
  .../pages/chat/messages-page.component.scss        | 93 ++++++++++++++++++++++
@@ -2551,13 +5474,13 @@ index 0000000..c30e573
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 81f5d84fcc195ddb2f32157461b762b4be26817c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:51:19 +0300
-Subject: [PATCH 051/128] Step 4.10: Load the stylesheet into the Component
+Subject: [PATCH 052/129] Step 4.10: Load the stylesheet into the Component
 
 ---
  client/imports/pages/chat/messages-page.component.ts | 6 +++++-
@@ -2584,13 +5507,13 @@ index 1da077c..14fcf7e 100644
  export class MessagesPage implements OnInit {
    private selectedChat: Chat;
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From afc2faf5dc8c75f268b6feb1410f9c51ca317feb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:55:26 +0300
-Subject: [PATCH 052/128] Step 4.11: Added missing assets
+Subject: [PATCH 053/129] Step 4.11: Added missing assets
 
 ---
  public/assets/chat-background.jpg | Bin 0 -> 29275 bytes
@@ -3208,13 +6131,13 @@ literal 0
 HcmV?d00001
 
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From e0f39749f9d7879dc8304f49fb9f6582306d0287 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 14:59:51 +0300
-Subject: [PATCH 053/128] Step 4.12: Apply date format pipe to messages view
+Subject: [PATCH 054/129] Step 4.12: Apply date format pipe to messages view
  template
 
 ---
@@ -3235,13 +6158,13 @@ index 0ecb9a5..0c435de 100644
      </div>
    </ion-scroll>
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 611bd1e597ed6aca5db3b14a72fad440037cdbf6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:07:05 +0300
-Subject: [PATCH 054/128] Step 4.13: Add message editor to messages view
+Subject: [PATCH 055/129] Step 4.13: Add message editor to messages view
  template
 
 ---
@@ -3277,13 +6200,13 @@ index 0c435de..9e6483e 100644
 +</ion-footer>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 7558f9001814c53c14ce5141c1a97534f7668d19 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:07:20 +0300
-Subject: [PATCH 055/128] Step 4.14: Add message-editor style to messages
+Subject: [PATCH 056/129] Step 4.14: Add message-editor style to messages
  stylesheet
 
 ---
@@ -3320,13 +6243,13 @@ index c30e573..cf66263 100644
  }
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 8917448d60fec0e2c3878c3c1a2f7b37e9ebc7f9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:07:42 +0300
-Subject: [PATCH 056/128] Step 4.15: Add 'sendMessage()' handler to messages
+Subject: [PATCH 057/129] Step 4.15: Add 'sendMessage()' handler to messages
  component
 
 ---
@@ -3372,13 +6295,13 @@ index 14fcf7e..f4fb96e 100644
  }
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 6723b70b69e335ae132d20b8be99f529364ebb0a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:09:18 +0300
-Subject: [PATCH 057/128] Step 4.16: Add 'addMessage()' method to api
+Subject: [PATCH 058/129] Step 4.16: Add 'addMessage()' method to api
 
 ---
  server/imports/methods/methods.ts | 18 ++++++++++++++++++
@@ -3411,13 +6334,13 @@ index 0000000..0fce545
 +});
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 0b123194b5c1d512ba97a7860c0c8eed064c14f7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:09:45 +0300
-Subject: [PATCH 058/128] Step 4.17: Added import for the methods file
+Subject: [PATCH 059/129] Step 4.17: Added import for the methods file
 
 ---
  server/main.ts | 1 +
@@ -3434,13 +6357,13 @@ index de5d825..ea027c1 100644
  const mainInstance = new Main();
  mainInstance.start();
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From c4c5a6edb3d71437200218f3db1c7078d796b24b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:10:47 +0300
-Subject: [PATCH 059/128] Step 4.18: Add check
+Subject: [PATCH 060/129] Step 4.18: Add check
 
 ---
  .meteor/packages | 1 +
@@ -3456,13 +6379,13 @@ index c67b676..cc2a450 100644
  launch-screen
 +check
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 47fb94d799e2a6bb65c0cf0ead359e6933427b65 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:11:14 +0300
-Subject: [PATCH 060/128] Step 4.19: Add validations to 'addMessage()' method
+Subject: [PATCH 061/129] Step 4.19: Add validations to 'addMessage()' method
  in api
 
 ---
@@ -3493,13 +6416,13 @@ index 0fce545..89c378b 100644
  
      if (!chatExists) throw new Meteor.Error('chat-not-exists',
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 4b3943454de4896079d6f7f948fc51ff2f9413a0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 6 Oct 2016 15:27:11 +0300
-Subject: [PATCH 061/128] Step 4.20: Add an auto scroller to messages component
+Subject: [PATCH 062/129] Step 4.20: Add an auto scroller to messages component
 
 ---
  .../imports/pages/chat/messages-page.component.ts  | 39 ++++++++++++++++++++--
@@ -3575,13 +6498,13 @@ index f4fb96e..8afa0b3 100644
  
    onInputKeypress({keyCode}: KeyboardEvent): void {
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
 From 441500ef1239da88fdb79158e3c58634d32db94c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:53:34 +0200
-Subject: [PATCH 062/128] Step 4: Messages page
+Subject: [PATCH 063/129] Step 4: Messages page
 
 ---
  steps/step4.md | 0
@@ -3592,31 +6515,32 @@ diff --git a/steps/step4.md b/steps/step4.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 0420a3f5f1b23055f03133f7001797148c49f65d Mon Sep 17 00:00:00 2001
+From bc361ea4257b67775b2c18ae81e683304a813ea4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Sat, 8 Oct 2016 11:23:08 +0200
-Subject: [PATCH 063/128] Step 5.1: Added accounts packages
+Subject: [PATCH 064/129] Step 5.1: Added accounts packages
 
 ---
- .meteor/packages | 2 ++
- .meteor/versions | 7 +++++++
- 2 files changed, 9 insertions(+)
+ .meteor/packages |  3 +++
+ .meteor/versions | 10 ++++++++++
+ 2 files changed, 13 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index cc2a450..75bf691 100644
+index cc2a450..0ae7a4c 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -26,3 +26,5 @@ mys:fonts
+@@ -26,3 +26,6 @@ mys:fonts
  mobile-status-bar
  launch-screen
  check
 +accounts-base
 +mys:accounts-phone
++npm-bcrypt
 diff --git a/.meteor/versions b/.meteor/versions
-index 563029a..7042bef 100644
+index 563029a..0048c20 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
 @@ -1,3 +1,4 @@
@@ -3632,7 +6556,15 @@ index 563029a..7042bef 100644
  ddp-server@1.2.10
  deps@1.0.12
  diff-sequence@1.0.6
-@@ -42,6 +44,7 @@ insecure@1.0.7
+@@ -30,6 +32,7 @@ dispatch:phantomjs-tests@0.0.5
+ ecmascript@0.5.8
+ ecmascript-runtime@0.3.14
+ ejson@1.0.12
++email@1.0.16
+ es5-shim@4.6.14
+ geojson-utils@1.0.9
+ hot-code-push@1.0.4
+@@ -42,6 +45,7 @@ insecure@1.0.7
  jquery@1.11.9
  launch-screen@1.0.12
  livedata@1.0.18
@@ -3640,7 +6572,17 @@ index 563029a..7042bef 100644
  logging@1.1.15
  meteor@1.2.17
  meteor-base@1.0.4
-@@ -64,10 +67,12 @@ practicalmeteor:mocha-core@1.0.1
+@@ -53,7 +57,9 @@ modules@0.7.6
+ modules-runtime@0.7.6
+ mongo@1.1.12
+ mongo-id@1.0.5
++mys:accounts-phone@0.0.21
+ mys:fonts@0.0.2
++npm-bcrypt@0.9.1
+ npm-mongo@1.5.49
+ observe-sequence@1.0.12
+ ordered-dict@1.0.8
+@@ -64,13 +70,17 @@ practicalmeteor:mocha-core@1.0.1
  practicalmeteor:sinon@1.14.1_2
  promise@0.8.7
  random@1.0.10
@@ -3650,24 +6592,22 @@ index 563029a..7042bef 100644
  retry@1.0.8
  routepolicy@1.0.11
 +service-configuration@1.0.10
++sha@1.0.8
  shell-server@0.2.1
  spacebars@1.0.13
  spacebars-compiler@1.0.13
-@@ -84,3 +89,5 @@ url@1.0.10
- webapp@1.3.11
- webapp-hashing@1.0.9
- xolvio:cleaner@0.3.1
-+mys:accounts-phone@0.0.21
-+npm-bcrypt@0.9.1
-\ No newline at end of file
++srp@1.0.9
+ standard-minifier-css@1.2.0
+ standard-minifier-js@1.2.0
+ templating@1.1.14
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 52feacb7a01f3fca8e33869ed416b7beab636d15 Mon Sep 17 00:00:00 2001
+From 155b4228d4d88eaa1b8e2d4fa3db489e64ef50e9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Sun, 9 Oct 2016 13:13:10 +0200
-Subject: [PATCH 064/128] Step 5.2: Add declarations
+Subject: [PATCH 065/129] Step 5.2: Add declarations
 
 ---
  typings.json | 1 +
@@ -3686,13 +6626,13 @@ index d1f10e1..d2599c3 100644
    }
  }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 78fd16a5363307cc8a7198afd784d05936d1c9cc Mon Sep 17 00:00:00 2001
+From 7959e946d74e3799a4ad89195db1743f48cb8bda Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Sun, 9 Oct 2016 13:17:57 +0200
-Subject: [PATCH 065/128] Step 5.3: Add authentication settings
+Subject: [PATCH 066/129] Step 5.3: Add authentication settings
 
 ---
  private/settings.json | 8 ++++++++
@@ -3715,13 +6655,13 @@ index 0000000..fde02be
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 9ec1e88ab575ae1095aa66db9f384467fffe13ef Mon Sep 17 00:00:00 2001
+From c49f628ae3ed9f0f9553ccf1a8af32aadb1eeeee Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Sun, 9 Oct 2016 13:19:06 +0200
-Subject: [PATCH 066/128] Step 5.4: Run the App with settings
+Subject: [PATCH 067/129] Step 5.4: Run the App with settings
 
 ---
  package.json | 2 +-
@@ -3741,13 +6681,13 @@ index 3b77adf..87fb415 100644
      "test:ci": "meteor test --once --driver-package dispatch:mocha-phantomjs",
      "postinstall": "typings i",
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 7fe5124c547271d62c6d7c46139b83a0d5ec1402 Mon Sep 17 00:00:00 2001
+From 039593de4817aee7aa306df24f0cc848499af170 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 11:48:35 +0200
-Subject: [PATCH 067/128] Step 5.5: Define SMS settings
+Subject: [PATCH 068/129] Step 5.5: Define SMS settings
 
 ---
  server/imports/api/sms.ts | 8 ++++++++
@@ -3770,13 +6710,13 @@ index 0000000..7885dd4
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From cfd135c5cea74c30823639a12e34c5b448f4454d Mon Sep 17 00:00:00 2001
+From 4f159e3234402cfff913a46c8cd4a1ef37f5d337 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 11:48:52 +0200
-Subject: [PATCH 068/128] Step 5.6: Import those settings
+Subject: [PATCH 069/129] Step 5.6: Import those settings
 
 ---
  server/main.ts | 1 +
@@ -3794,13 +6734,13 @@ index ea027c1..33fe19a 100644
  const mainInstance = new Main();
  mainInstance.start();
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 4b75a42d004a106cf830b8b293d81a119c11d12f Mon Sep 17 00:00:00 2001
+From 9ab50009b7a4bee16c816e6f53dea81ed98b2dfa Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:05:03 +0200
-Subject: [PATCH 069/128] Step 5.7: Wait for user if logging in
+Subject: [PATCH 070/129] Step 5.7: Wait for user if logging in
 
 ---
  client/main.ts | 11 ++++++++++-
@@ -3832,13 +6772,13 @@ index 2b50651..abdadfa 100644
 +  });
  });
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From f142146bc9cf029eaba4b236ba605f228de885af Mon Sep 17 00:00:00 2001
+From 11fc81ff0f45d1f4ed98b205570167b94b17776a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:05:50 +0200
-Subject: [PATCH 070/128] Step 5.8: Use LoginComponent if user is not logged in
+Subject: [PATCH 071/129] Step 5.8: Use LoginComponent if user is not logged in
 
 ---
  client/imports/app/app.component.ts | 5 ++++-
@@ -3871,13 +6811,13 @@ index 772cc90..21bea68 100644
        // Okay, so the platform is ready and our plugins are available.
        // Here you can do any higher level native things you might need.
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From ca9b0c4e2a61d43c09fba5eb72db5bcf63b55cde Mon Sep 17 00:00:00 2001
+From d8032a27ecddaca45110d18ba9f33d50f79eae44 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:06:19 +0200
-Subject: [PATCH 071/128] Step 5.9: Create LoginComponent
+Subject: [PATCH 072/129] Step 5.9: Create LoginComponent
 
 ---
  client/imports/pages/auth/login.component.ts | 74 ++++++++++++++++++++++++++++
@@ -3966,13 +6906,13 @@ index 0000000..20f0bf1
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From ecceb217e80e726f3f3f6d526f4378ba91d9aceb Mon Sep 17 00:00:00 2001
+From f9df7fdd08a2035f6760705ef174a1dd5d7bade2 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:06:39 +0200
-Subject: [PATCH 072/128] Step 5.10: Add a template
+Subject: [PATCH 073/129] Step 5.10: Add a template
 
 ---
  client/imports/pages/auth/login.component.html | 25 +++++++++++++++++++++++++
@@ -4012,13 +6952,13 @@ index 0000000..f5b7823
 +</ion-content>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 49c426f62fbdb527b611db41a097475c7ac0d29f Mon Sep 17 00:00:00 2001
+From 4a6ed3529dfa1324d9417c4a5601d1a398c9604f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:07:08 +0200
-Subject: [PATCH 073/128] Step 5.11: Define styles
+Subject: [PATCH 074/129] Step 5.11: Define styles
 
 ---
  client/imports/pages/auth/login.component.scss | 11 +++++++++++
@@ -4044,13 +6984,13 @@ index 0000000..ce2b50d
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 896e27412d89056b03d218791a1f4a5307241791 Mon Sep 17 00:00:00 2001
+From 6aad216019eb27b616ed348d6a86f58e210ceb68 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:08:01 +0200
-Subject: [PATCH 074/128] Step 5.12: Register LoginComponent in the AppModule
+Subject: [PATCH 075/129] Step 5.12: Register LoginComponent in the AppModule
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -4088,13 +7028,13 @@ index 2b2abe3..977ace8 100644
    // Providers
    providers: [
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From a926da986137f9828d20525eb96586b12dfd1532 Mon Sep 17 00:00:00 2001
+From dd8a048fdd77375f618d1fb75c851437c24fc1e4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:08:28 +0200
-Subject: [PATCH 075/128] Step 5.13: Add VerificationComponent
+Subject: [PATCH 076/129] Step 5.13: Add VerificationComponent
 
 ---
  .../imports/pages/auth/verification.component.ts   | 59 ++++++++++++++++++++++
@@ -4168,13 +7108,13 @@ index 0000000..07455b8
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 87dc091dd8da489b414d1cb895c8f03589349dc9 Mon Sep 17 00:00:00 2001
+From c6fc2b65ac8308f2895b5ce3c3d748c217d6c64a Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:08:47 +0200
-Subject: [PATCH 076/128] Step 5.14: Create a template
+Subject: [PATCH 077/129] Step 5.14: Create a template
 
 ---
  .../imports/pages/auth/verification.component.html | 25 ++++++++++++++++++++++
@@ -4214,13 +7154,13 @@ index 0000000..099ce79
 +</ion-content>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From ade6c8f6dde5c04c90fe5e69f69330aa5293d6b7 Mon Sep 17 00:00:00 2001
+From ed5b8cdd9a35da31602568f53890b9fc46441a6d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:09:04 +0200
-Subject: [PATCH 077/128] Step 5.15: Define styles
+Subject: [PATCH 078/129] Step 5.15: Define styles
 
 ---
  client/imports/pages/auth/verification.component.scss | 11 +++++++++++
@@ -4246,13 +7186,13 @@ index 0000000..ea09ad1
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From baf5dbd0069b070e8237a114bea20413f17643df Mon Sep 17 00:00:00 2001
+From 735203dbbff74ebd498a77fb9983f22c1ccb6bde Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:15:36 +0200
-Subject: [PATCH 078/128] Step 5.16: Register VerificationComponent
+Subject: [PATCH 079/129] Step 5.16: Register VerificationComponent
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -4291,13 +7231,13 @@ index 977ace8..fda49c9 100644
    // Providers
    providers: [
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 0806a5dfc27d13be41a95efcdb27bf7aed51e9f7 Mon Sep 17 00:00:00 2001
+From 271d8c3271a810d2bcd1d367195d57a2c6454970 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:09:34 +0200
-Subject: [PATCH 079/128] Step 5.17: Add 'updateProfile' method
+Subject: [PATCH 080/129] Step 5.17: Add 'updateProfile' method
 
 ---
  server/imports/methods/methods.ts | 14 ++++++++++++++
@@ -4336,13 +7276,13 @@ index 89c378b..3f6d2c2 100644
      check(chatId, nonEmptyString);
      check(content, nonEmptyString);
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From b2f28e00dfc26cfaf8dd56e0eff3ed912b781726 Mon Sep 17 00:00:00 2001
+From 5fd142522551731d08d4e2e9ba764a80c2849609 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:09:54 +0200
-Subject: [PATCH 080/128] Step 5.18: Define Profile model
+Subject: [PATCH 081/129] Step 5.18: Define Profile model
 
 ---
  both/models/profile.model.ts | 4 ++++
@@ -4361,13 +7301,13 @@ index 0000000..dde3134
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From a133fcb57abcc1650285d7d7ba8ad7158d52c67c Mon Sep 17 00:00:00 2001
+From c7e9fabe609453ccadb662b191a7ec5ca1544b9b Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:10:19 +0200
-Subject: [PATCH 081/128] Step 5.19: Create ProfileComponent
+Subject: [PATCH 082/129] Step 5.19: Create ProfileComponent
 
 ---
  client/imports/pages/auth/profile.component.ts | 55 ++++++++++++++++++++++++++
@@ -4437,13 +7377,13 @@ index 0000000..ac09630
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From a8a758faa1dcf7eee5b3ed5c0d20271d17084f6e Mon Sep 17 00:00:00 2001
+From eb2ba5fc0a737aff31a8e304d1f320b1ed46ce10 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:10:54 +0200
-Subject: [PATCH 082/128] Step 5.20: Create a template for ProfileComponent
+Subject: [PATCH 083/129] Step 5.20: Create a template for ProfileComponent
 
 ---
  client/imports/pages/auth/profile.component.html | 21 +++++++++++++++++++++
@@ -4479,13 +7419,13 @@ index 0000000..013edbc
 +</ion-content>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 6f9e0d0f210a103d064e10d265fb2811e1f85f05 Mon Sep 17 00:00:00 2001
+From 140ac7d4eae82162e7b0bc41d7612d276078086d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:11:26 +0200
-Subject: [PATCH 083/128] Step 5.21: Also the styles
+Subject: [PATCH 084/129] Step 5.21: Also the styles
 
 ---
  client/imports/pages/auth/profile.component.scss | 20 ++++++++++++++++++++
@@ -4520,13 +7460,13 @@ index 0000000..e055000
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 680ab9689707451b24838805cd71582fae1f272d Mon Sep 17 00:00:00 2001
+From 7d40a5a822d548e40b1e9ca1b036d5267c5f1953 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:18:00 +0200
-Subject: [PATCH 084/128] Step 5.22: Register ProfileComponent
+Subject: [PATCH 085/129] Step 5.22: Register ProfileComponent
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -4565,13 +7505,13 @@ index fda49c9..6261397 100644
    // Providers
    providers: [
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 68af028dba1f566880103e0f3311d6720c4d5146 Mon Sep 17 00:00:00 2001
+From 2becf67c815290e0b732b6a0221d572f96b01e8e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:20:00 +0200
-Subject: [PATCH 085/128] Step 5.23: Add senderId property to addMessage method
+Subject: [PATCH 086/129] Step 5.23: Add senderId property to addMessage method
 
 ---
  server/imports/methods/methods.ts | 4 ++++
@@ -4600,13 +7540,13 @@ index 3f6d2c2..1a75878 100644
        createdAt: new Date()
      });
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 2cc4ef51a9c3ee30e914f70c2378caba0cd007ba Mon Sep 17 00:00:00 2001
+From 47fd6c309f7e058c71eb1472669b6095d22bd4ba Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:20:31 +0200
-Subject: [PATCH 086/128] Step 5.24: Add it also to the model
+Subject: [PATCH 087/129] Step 5.24: Add it also to the model
 
 ---
  both/models/message.model.ts | 1 +
@@ -4625,13 +7565,13 @@ index d4b4f99..fe99e76 100644
    ownership?: string;
    createdAt?: Date;
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From b67867added0eb4ad8fea9005db3d9466a78363f Mon Sep 17 00:00:00 2001
+From 9b73b89b56da53fb74c767e27f5a6d807e86ab57 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:26:21 +0200
-Subject: [PATCH 087/128] Step 5.25: Determine message ownership based on
+Subject: [PATCH 088/129] Step 5.25: Determine message ownership based on
  sender id
 
 ---
@@ -4679,13 +7619,13 @@ index 8afa0b3..062034a 100644
  
        return messages;
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 5c0ef6aba02a4ef8b4837a43f66b3c12e2635f60 Mon Sep 17 00:00:00 2001
+From 1535894e5a885234ac4a16f5f55361b32be38dd5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:53:02 +0200
-Subject: [PATCH 088/128] Step 5.26: Add options-popover to ChatsComponent
+Subject: [PATCH 089/129] Step 5.26: Add options-popover to ChatsComponent
 
 ---
  client/imports/pages/chats/chats.component.ts | 18 ++++++++++++++----
@@ -4736,13 +7676,13 @@ index 7f538c0..c6c6235 100644
      this.navCtrl.push(MessagesPage, {chat});
    }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 63a8cd0c7077776b3fa9b7c187309233676e8881 Mon Sep 17 00:00:00 2001
+From 27e23ad994534c500f3cb5fb0020f7c4a3154aa9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:53:29 +0200
-Subject: [PATCH 089/128] Step 5.27: Bind showOptions
+Subject: [PATCH 090/129] Step 5.27: Bind showOptions
 
 ---
  client/imports/pages/chats/chats.component.html | 2 +-
@@ -4762,13 +7702,13 @@ index e4df49a..6b77651 100644
    </ion-navbar>
  </ion-header>
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From c1b77f3da13100bc68c37f238b18959051d25817 Mon Sep 17 00:00:00 2001
+From d9af52c439dfb15f768c7afb04d90a1b7300ce59 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:53:59 +0200
-Subject: [PATCH 090/128] Step 5.28: Add ChatsOptionsComponent
+Subject: [PATCH 091/129] Step 5.28: Add ChatsOptionsComponent
 
 ---
  .../imports/pages/chats/chats-options.component.ts | 76 ++++++++++++++++++++++
@@ -4859,13 +7799,13 @@ index 0000000..bd4cd56
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From ecaedeec35a863a6ddb3e892d804cd581325fc22 Mon Sep 17 00:00:00 2001
+From 80cf05d77652fa66e59ca25650834e7f6f601f1e Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:54:21 +0200
-Subject: [PATCH 091/128] Step 5.29: Add the template
+Subject: [PATCH 092/129] Step 5.29: Add the template
 
 ---
  .../imports/pages/chats/chats-options.component.html   | 18 ++++++++++++++++++
@@ -4898,13 +7838,13 @@ index 0000000..9017eb9
 +</ion-content>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 97b42a1fc7259b0cfb80fc1bc94d6d19f82cf62a Mon Sep 17 00:00:00 2001
+From e44ee3630f52a218b117e19be7e32b995682efb4 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:54:43 +0200
-Subject: [PATCH 092/128] Step 5.30: Define styles
+Subject: [PATCH 093/129] Step 5.30: Define styles
 
 ---
  client/imports/pages/chats/chats-options.component.scss | 13 +++++++++++++
@@ -4932,13 +7872,13 @@ index 0000000..be30282
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From fedb4d8826a70928d589a89e8c7e83d6ff3eae9e Mon Sep 17 00:00:00 2001
+From 310dca3157772fd98af26497e84b47ef23fba8bd Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:55:02 +0200
-Subject: [PATCH 093/128] Step 5.31: Register ChatsOptionsComponent
+Subject: [PATCH 094/129] Step 5.31: Register ChatsOptionsComponent
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -4977,13 +7917,13 @@ index 6261397..cfc710c 100644
    // Providers
    providers: [
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From eb7be77c6816d30d10be742a584978d301743517 Mon Sep 17 00:00:00 2001
+From 8c3f4cd5cebc3f05e47f947cdf32adf484638574 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 13:55:33 +0200
-Subject: [PATCH 094/128] Step 5.32: Add options-popover style to chats
+Subject: [PATCH 095/129] Step 5.32: Add options-popover style to chats
  stylesheet
 
 ---
@@ -5013,13 +7953,13 @@ index 6470e09..227c12c 100644
  }
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 8fda05e490ca10fe2c994b5e3877aedaff39f1d8 Mon Sep 17 00:00:00 2001
+From 2a5ab3e15e8b7dff83553239d1bb0587a9bbb0be Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 09:58:35 +0200
-Subject: [PATCH 095/128] Step 5: Authentication
+Subject: [PATCH 096/129] Step 5: Authentication
 
 ---
  steps/step5.md | 0
@@ -5030,13 +7970,13 @@ diff --git a/steps/step5.md b/steps/step5.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From aaf512e477013e4f4e948f49235ef094debe1094 Mon Sep 17 00:00:00 2001
+From b64fe06147089277fc5f8a982fa6f0bcef94ee7d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:21:31 +0200
-Subject: [PATCH 096/128] Step 6.1: Add 'addChat' method to ChatsComponent
+Subject: [PATCH 097/129] Step 6.1: Add 'addChat' method to ChatsComponent
 
 ---
  client/imports/pages/chats/chats.component.ts | 11 +++++++++--
@@ -5081,13 +8021,13 @@ index c6c6235..a8a8c5e 100644
      const popover = this.popoverCtrl.create(ChatsOptionsComponent, {}, {
        cssClass: 'options-popover'
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From e175ffd5cce9cfbecd5873f725397f29bdd3e298 Mon Sep 17 00:00:00 2001
+From fb2359e85a8899a5c9c33ba3a03b5749df294231 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:21:49 +0200
-Subject: [PATCH 097/128] Step 6.2: Bind that method
+Subject: [PATCH 098/129] Step 6.2: Bind that method
 
 ---
  client/imports/pages/chats/chats.component.html | 2 +-
@@ -5107,13 +8047,13 @@ index 6b77651..ca566d2 100644
      </ion-buttons>
    </ion-navbar>
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 063c8a20eb9fe04c348827cca8282729e1fef76e Mon Sep 17 00:00:00 2001
+From 64f5980cdf770968cecd2d574310660bb51ee0ec Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:22:27 +0200
-Subject: [PATCH 098/128] Step 6.3: Define 'addChat' Method
+Subject: [PATCH 099/129] Step 6.3: Define 'addChat' Method
 
 ---
  server/imports/methods/methods.ts | 22 ++++++++++++++++++++++
@@ -5153,13 +8093,13 @@ index 1a75878..601b7e8 100644
      if (!this.userId) throw new Meteor.Error('unauthorized',
        'User must be logged-in to create a new chat');
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 5470e94fd455252f72fbf103ac66f28e7a31791b Mon Sep 17 00:00:00 2001
+From 6383844f9337ca192c21ea8a3a6d42939ee374ee Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:23:27 +0200
-Subject: [PATCH 099/128] Step 6.4: Add memberIds prop in Chat model
+Subject: [PATCH 100/129] Step 6.4: Add memberIds prop in Chat model
 
 ---
  both/models/chat.model.ts | 1 +
@@ -5178,13 +8118,13 @@ index 36e42ca..c4981f4 100644
    picture?: string;
    lastMessage?: Message;
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From c9aec979f4a7b92bb5caba8d3975ee91c59ae086 Mon Sep 17 00:00:00 2001
+From 4937fbac77c6e5accd9490f9c19fb1613628cafb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:24:09 +0200
-Subject: [PATCH 100/128] Step 6.5: Create Observable collection from
+Subject: [PATCH 101/129] Step 6.5: Create Observable collection from
  Meteor.users
 
 ---
@@ -5204,13 +8144,13 @@ index 0000000..3da1168
 +
 +export const Users = MongoObservable.fromExisting<User>(Meteor.users);
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 7abce83d3ed160dd8972aef95560f5f4141b74d4 Mon Sep 17 00:00:00 2001
+From 9c46f506c84bb84bbe00b40a178c70d913079f55 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:24:33 +0200
-Subject: [PATCH 101/128] Step 6.6: Create a User model
+Subject: [PATCH 102/129] Step 6.6: Create a User model
 
 ---
  both/models/user.model.ts | 7 +++++++
@@ -5231,13 +8171,13 @@ index 0000000..b15b28a
 +  profile?: Profile;
 +}
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From db69dc97627e8c19d25faaf620ce851f0d03e27e Mon Sep 17 00:00:00 2001
+From e5c79542f8a2682d2a8a897a57e1bfab1a8b0be0 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:25:01 +0200
-Subject: [PATCH 102/128] Step 6.7: Create NewChatComponent
+Subject: [PATCH 103/129] Step 6.7: Create NewChatComponent
 
 ---
  client/imports/pages/chats/new-chat.component.ts | 84 ++++++++++++++++++++++++
@@ -5336,13 +8276,13 @@ index 0000000..83f1c7a
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From ebac87421f673e133b01539c5fc543219a9c2381 Mon Sep 17 00:00:00 2001
+From 6413b3969b9e17babc38cb008358f2ecac38410d Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:25:49 +0200
-Subject: [PATCH 103/128] Step 6.8: Create also a template
+Subject: [PATCH 104/129] Step 6.8: Create also a template
 
 ---
  client/imports/pages/chats/new-chat.component.html | 18 ++++++++++++++++++
@@ -5375,13 +8315,13 @@ index 0000000..8d2238b
 +</ion-content>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 7f4a783a4180429bd2829c116fd5017bc213dddf Mon Sep 17 00:00:00 2001
+From 96973210389886fb543b7e6a51c839645df269ab Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:26:07 +0200
-Subject: [PATCH 104/128] Step 6.9: Define some styles
+Subject: [PATCH 105/129] Step 6.9: Define some styles
 
 ---
  client/imports/pages/chats/new-chat.component.scss | 14 ++++++++++++++
@@ -5410,13 +8350,13 @@ index 0000000..a0698d8
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 89a55b4d582c0b412b805efbde998cf7c6a56844 Mon Sep 17 00:00:00 2001
+From d23f45a298ec05a7a1f7893d78589fa63c54f8f1 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:26:29 +0200
-Subject: [PATCH 105/128] Step 6.10: Register that component
+Subject: [PATCH 106/129] Step 6.10: Register that component
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -5455,13 +8395,13 @@ index cfc710c..dd4b8d5 100644
    // Providers
    providers: [
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 38348342ff92d0fe68aec79dfe1e05b30805be4f Mon Sep 17 00:00:00 2001
+From f8223f88e75d2da815de3810edd4aee1752ff9f5 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 17:27:19 +0200
-Subject: [PATCH 106/128] Step 6.11: Replace chats fabrication with users
+Subject: [PATCH 107/129] Step 6.11: Replace chats fabrication with users
  fabrication
 
 ---
@@ -5576,13 +8516,13 @@ index e84b373..2f61ab9 100644
    }
  }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 42313cbf830a044b00703c00543bf9eedf5241c2 Mon Sep 17 00:00:00 2001
+From 0f3ff595f893eb4d9c83a963e10b9ab8a6f32c10 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 20:48:13 +0200
-Subject: [PATCH 107/128] Step 6.12: Add title and picture to chat
+Subject: [PATCH 108/129] Step 6.12: Add title and picture to chat
 
 ---
  client/imports/pages/chats/chats.component.ts | 14 +++++++++++++-
@@ -5635,13 +8575,13 @@ index a8a8c5e..6d4f05f 100644
  
    addChat(): void {
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 2f2b6ea340bf76410cb9b84a3232219e911e722c Mon Sep 17 00:00:00 2001
+From 6fc5f78085f4c8f663e7a91e6e0623f2e7c66dd7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 10:00:57 +0200
-Subject: [PATCH 108/128] Step 6: Chats creation and removal
+Subject: [PATCH 109/129] Step 6: Chats creation and removal
 
 ---
  steps/step6.md | 0
@@ -5652,21 +8592,21 @@ diff --git a/steps/step6.md b/steps/step6.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From b0ce88ec3c3024fa9fbce6f9adf781245e8d225e Mon Sep 17 00:00:00 2001
+From 5235d8daf0cef6dafac7cc3e65e92b4ed79a76cb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 21:48:02 +0200
-Subject: [PATCH 109/128] Step 7.1: Remove 'insecure' package
+Subject: [PATCH 110/129] Step 7.1: Remove 'insecure' package
 
 ---
  .meteor/packages | 1 -
- .meteor/versions | 8 +++++---
- 2 files changed, 5 insertions(+), 4 deletions(-)
+ .meteor/versions | 1 -
+ 2 files changed, 2 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 75bf691..3f3aa96 100644
+index 0ae7a4c..24fbefa 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
 @@ -15,7 +15,6 @@ standard-minifier-js@1.2.0    # JS minifier run for production mode
@@ -5678,18 +8618,10 @@ index 75bf691..3f3aa96 100644
  practicalmeteor:mocha
  xolvio:cleaner
 diff --git a/.meteor/versions b/.meteor/versions
-index 7042bef..61b0ecf 100644
+index 0048c20..61b0ecf 100644
 --- a/.meteor/versions
 +++ b/.meteor/versions
-@@ -32,6 +32,7 @@ dispatch:phantomjs-tests@0.0.5
- ecmascript@0.5.8
- ecmascript-runtime@0.3.14
- ejson@1.0.12
-+email@1.0.16
- es5-shim@4.6.14
- geojson-utils@1.0.9
- hot-code-push@1.0.4
-@@ -40,7 +41,6 @@ htmljs@1.0.11
+@@ -41,7 +41,6 @@ htmljs@1.0.11
  http@1.1.8
  hwillson:stub-collections@1.0.1
  id-map@1.0.8
@@ -5697,43 +8629,14 @@ index 7042bef..61b0ecf 100644
  jquery@1.11.9
  launch-screen@1.0.12
  livedata@1.0.18
-@@ -56,7 +56,9 @@ modules@0.7.6
- modules-runtime@0.7.6
- mongo@1.1.12
- mongo-id@1.0.5
-+mys:accounts-phone@0.0.21
- mys:fonts@0.0.2
-+npm-bcrypt@0.9.1
- npm-mongo@1.5.49
- observe-sequence@1.0.12
- ordered-dict@1.0.8
-@@ -73,9 +75,11 @@ reload@1.1.10
- retry@1.0.8
- routepolicy@1.0.11
- service-configuration@1.0.10
-+sha@1.0.8
- shell-server@0.2.1
- spacebars@1.0.13
- spacebars-compiler@1.0.13
-+srp@1.0.9
- standard-minifier-css@1.2.0
- standard-minifier-js@1.2.0
- templating@1.1.14
-@@ -89,5 +93,3 @@ url@1.0.10
- webapp@1.3.11
- webapp-hashing@1.0.9
- xolvio:cleaner@0.3.1
--mys:accounts-phone@0.0.21
--npm-bcrypt@0.9.1
-\ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From d99f48f6d011a848123b4ee25ad9a902f26efd3b Mon Sep 17 00:00:00 2001
+From af1dfc1169de08c9055a94759c9d942971ba3c5f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 21:49:30 +0200
-Subject: [PATCH 110/128] Step 7.2: Define 'removeChat' Method
+Subject: [PATCH 111/129] Step 7.2: Define 'removeChat' Method
 
 ---
  server/imports/methods/methods.ts | 14 ++++++++++++++
@@ -5765,13 +8668,13 @@ index 601b7e8..6a47ed3 100644
      if (!this.userId) throw new Meteor.Error('unauthorized',
        'User must be logged-in to create a new chat');
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From b17fc823cf4798b4f17114b253638fc25ad7ca47 Mon Sep 17 00:00:00 2001
+From 01aba421fe61ec8da1c5d692dd5d75e79deaa57c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:12:34 +0200
-Subject: [PATCH 111/128] Step 7.3: Create MessagesOptionsComponent
+Subject: [PATCH 112/129] Step 7.3: Create MessagesOptionsComponent
 
 ---
  .../pages/chat/messages-options.component.ts       | 80 ++++++++++++++++++++++
@@ -5866,13 +8769,13 @@ index 0000000..bcf3e7f
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From befc33fbfd1253a69bccdb61bec09923941f7b26 Mon Sep 17 00:00:00 2001
+From cf28bcffb43da46590059d6345018ddade5576cb Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:12:48 +0200
-Subject: [PATCH 112/128] Step 7.4: Create a template
+Subject: [PATCH 113/129] Step 7.4: Create a template
 
 ---
  client/imports/pages/chat/messages-options.component.html | 8 ++++++++
@@ -5895,13 +8798,13 @@ index 0000000..b5c4947
 +</ion-content>
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 726d42808f3f77031923f6d8a83754b5e7243bad Mon Sep 17 00:00:00 2001
+From 1f6c8047e63e5fee9e5c31899de1dc98afa34178 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:13:00 +0200
-Subject: [PATCH 113/128] Step 7.5: Add styles
+Subject: [PATCH 114/129] Step 7.5: Add styles
 
 ---
  client/imports/pages/chat/messages-options.component.scss | 13 +++++++++++++
@@ -5929,13 +8832,13 @@ index 0000000..be30282
 +}
 \ No newline at end of file
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 7b433c4d605a4470e2cc39ebde476f788f605e6c Mon Sep 17 00:00:00 2001
+From 9972337949cc6267e4f30086fec181d33c2d7179 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:13:19 +0200
-Subject: [PATCH 114/128] Step 7.6: Register the component
+Subject: [PATCH 115/129] Step 7.6: Register the component
 
 ---
  client/imports/app/app.module.ts | 7 +++++--
@@ -5974,13 +8877,13 @@ index dd4b8d5..adb48c5 100644
    // Providers
    providers: [
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 08cf39eb23bfde8d5949335bfd171e0d8933db16 Mon Sep 17 00:00:00 2001
+From 5aff6b22535e8efa5ce769419d5391ff44a948dc Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:13:52 +0200
-Subject: [PATCH 115/128] Step 7.7: Define component's method to open options
+Subject: [PATCH 116/129] Step 7.7: Define component's method to open options
 
 ---
  client/imports/pages/chat/messages-page.component.ts | 18 ++++++++++++++++--
@@ -6035,13 +8938,13 @@ index 062034a..5c5235f 100644
      if (this.autoScroller) {
        this.autoScroller.unsubscribe();
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 10ce5832dd6bbcce5a283a3c6dcd6ff58ccc55db Mon Sep 17 00:00:00 2001
+From 3befb2522bd724899c9d2fb66face389c17ad653 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:14:04 +0200
-Subject: [PATCH 116/128] Step 7.8: Implement it in the view
+Subject: [PATCH 117/129] Step 7.8: Implement it in the view
 
 ---
  client/imports/pages/chat/messages-page.component.html | 2 +-
@@ -6061,13 +8964,13 @@ index 9e6483e..9f2d333 100644
    </ion-navbar>
  </ion-header>
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 2833f144714643f6d2aa9d23aebd1b321c11428e Mon Sep 17 00:00:00 2001
+From 483e8bdd82971d9820753c66c31e2146cd426c6f Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:15:40 +0200
-Subject: [PATCH 117/128] Step 7.9: Add 'autopublish' package
+Subject: [PATCH 118/129] Step 7.9: Add 'autopublish' package
 
 ---
  .meteor/packages | 1 -
@@ -6075,7 +8978,7 @@ Subject: [PATCH 117/128] Step 7.9: Add 'autopublish' package
  2 files changed, 2 deletions(-)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 3f3aa96..42e095c 100644
+index 24fbefa..ea004db 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
 @@ -14,7 +14,6 @@ standard-minifier-css@1.2.0   # CSS minifier run for production mode
@@ -6099,13 +9002,13 @@ index 61b0ecf..08a195e 100644
  babel-compiler@6.9.1
  babel-runtime@0.1.11
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 3522028bc97cb36e346caa3203f67f0c8d07f549 Mon Sep 17 00:00:00 2001
+From b009ae6dbc47e0228f96a30111cb95f0280fb075 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:18:00 +0200
-Subject: [PATCH 118/128] Step 7.10: Add 'reywood-publish-composite'
+Subject: [PATCH 119/129] Step 7.10: Add 'reywood-publish-composite'
 
 ---
  .meteor/packages | 1 +
@@ -6113,13 +9016,13 @@ Subject: [PATCH 118/128] Step 7.10: Add 'reywood-publish-composite'
  2 files changed, 2 insertions(+)
 
 diff --git a/.meteor/packages b/.meteor/packages
-index 42e095c..f35a466 100644
+index ea004db..1645bfe 100644
 --- a/.meteor/packages
 +++ b/.meteor/packages
-@@ -26,3 +26,4 @@ launch-screen
- check
+@@ -27,3 +27,4 @@ check
  accounts-base
  mys:accounts-phone
+ npm-bcrypt
 +reywood:publish-composite
 diff --git a/.meteor/versions b/.meteor/versions
 index 08a195e..de8cf45 100644
@@ -6134,13 +9037,13 @@ index 08a195e..de8cf45 100644
  service-configuration@1.0.10
  sha@1.0.8
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 108d5e55af6b35276725fef2814eade49dff7fbd Mon Sep 17 00:00:00 2001
+From 1e722e2e975ba6f42dcf98b512536fba67f4293c Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:19:32 +0200
-Subject: [PATCH 119/128] Step 7.11: Add typings for that package
+Subject: [PATCH 120/129] Step 7.11: Add typings for that package
 
 ---
  typings.json | 1 +
@@ -6159,13 +9062,13 @@ index d2599c3..0e36153 100644
    }
  }
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From d270e5a4f7b07eb3f0a838efe8017c70e8cc83b0 Mon Sep 17 00:00:00 2001
+From 16bd185c7bd2a2ddb393b2442286cef29ad424a9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:22:12 +0200
-Subject: [PATCH 120/128] Step 7.12: Create publication for Users
+Subject: [PATCH 121/129] Step 7.12: Create publication for Users
 
 ---
  server/imports/publications/users.publication.ts | 15 +++++++++++++++
@@ -6194,13 +9097,13 @@ index 0000000..dd48870
 +  });
 +});
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From e159f5ec7072c555c5c55a9aa44d39a2dc9c4335 Mon Sep 17 00:00:00 2001
+From 03a408cb85883529c9b3f8903045f970432f7b37 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:25:41 +0200
-Subject: [PATCH 121/128] Step 7.13: Add publication for Chats
+Subject: [PATCH 122/129] Step 7.13: Add publication for Chats
 
 ---
  server/imports/publications/chats.publication.ts | 38 ++++++++++++++++++++++++
@@ -6252,13 +9155,13 @@ index 0000000..a440ac2
 +  };
 +});
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 144c74fda559c0a1c8c42e0763b85dc00ad3889e Mon Sep 17 00:00:00 2001
+From e091ba5b2b6788dd5b79ce8d4ce833282f9af317 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:26:52 +0200
-Subject: [PATCH 122/128] Step 7.14: Add publication for Messages
+Subject: [PATCH 123/129] Step 7.14: Add publication for Messages
 
 ---
  server/imports/publications/messages.publication.ts | 12 ++++++++++++
@@ -6284,13 +9187,13 @@ index 0000000..1a50b55
 +  return Messages.collection.find({chatId});
 +});
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From a156ceb156e2c133494ce6ce0a85941ff6676ad0 Mon Sep 17 00:00:00 2001
+From a6662ddc19cfdc1b9b8d440786e7af0f86009ab9 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Mon, 10 Oct 2016 22:27:48 +0200
-Subject: [PATCH 123/128] Step 7.15: Expose publications
+Subject: [PATCH 124/129] Step 7.15: Expose publications
 
 ---
  server/main.ts | 3 +++
@@ -6310,13 +9213,13 @@ index 33fe19a..1ca747b 100644
  
  const mainInstance = new Main();
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From fabb0e3027bad0cff4a076ac852613ed793d645a Mon Sep 17 00:00:00 2001
+From 9f52ba386b9dd14549ddb08c739dda6f9c6bf902 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Tue, 11 Oct 2016 10:13:05 +0200
-Subject: [PATCH 124/128] Step 7.16: Subscribe to 'chats'
+Subject: [PATCH 125/129] Step 7.16: Subscribe to 'chats'
 
 ---
  client/imports/pages/chats/chats.component.ts | 52 +++++++++++++++------------
@@ -6395,13 +9298,13 @@ index 6d4f05f..4f97544 100644
  
    addChat(): void {
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From f6594bfcc4bd3cdb7d80f83ada95c40b9f91b394 Mon Sep 17 00:00:00 2001
+From 6d1c6c0119c36be34cc308205a14acc07b878c81 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Tue, 11 Oct 2016 10:13:23 +0200
-Subject: [PATCH 125/128] Step 7.17: Subscribe to 'users'
+Subject: [PATCH 126/129] Step 7.17: Subscribe to 'users'
 
 ---
  client/imports/pages/chats/new-chat.component.ts | 6 ++++--
@@ -6425,13 +9328,13 @@ index 83f1c7a..bf03180 100644
    }
   
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From f8ac3b26d393790a51c6979ac7760686fb4b34b0 Mon Sep 17 00:00:00 2001
+From 593105e0c33434f5e8cb63ec645cfed9ba0f8749 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Tue, 11 Oct 2016 10:14:02 +0200
-Subject: [PATCH 126/128] Step 7.18: Subscribe to 'messages'
+Subject: [PATCH 127/129] Step 7.18: Subscribe to 'messages'
 
 ---
  client/imports/pages/chat/messages-page.component.ts | 20 ++++++++++++--------
@@ -6470,13 +9373,13 @@ index 5c5235f..f326f13 100644
  
      this.autoScroller = MeteorObservable.autorun().subscribe(() => {
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From be6401d8fa7f2664606c75ff41b92d40d7170c18 Mon Sep 17 00:00:00 2001
+From 8c214c39fe2feaf229084b840f8f1107e01d6e11 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 10:03:23 +0200
-Subject: [PATCH 127/128] Step 7: Privacy and security
+Subject: [PATCH 128/129] Step 7: Privacy and security
 
 ---
  steps/step7.md | 0
@@ -6487,13 +9390,13 @@ diff --git a/steps/step7.md b/steps/step7.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 
 
-From 9277e6d818e326f7e6cfd7dbc4dbefbfff9ac105 Mon Sep 17 00:00:00 2001
+From 4f1494c3e28ffa29d0300cd0966a2fbdae86cac7 Mon Sep 17 00:00:00 2001
 From: Kamil Kisiela <kamil.kisiela@gmail.com>
 Date: Fri, 14 Oct 2016 10:03:35 +0200
-Subject: [PATCH 128/128] Step 8: Summary
+Subject: [PATCH 129/129] Step 8: Summary
 
 ---
  steps/step8.md | 0
@@ -6504,5 +9407,5 @@ diff --git a/steps/step8.md b/steps/step8.md
 new file mode 100644
 index 0000000..e69de29
 -- 
-2.9.3 (Apple Git-75)
+2.7.4
 

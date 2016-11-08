@@ -7,6 +7,7 @@ Before we go ahead and start extending our app, we will add a few packages which
 
 Firt we will update our Meteor server and add few Meteor packages called `accounts-base` and `accounts-phone` which will give us the ability to verify a user using an SMS code:
 
+    $ meteor add npm-bcrypt
     $ meteor add accounts-base
     $ meteor add mys:accounts-phone
 
