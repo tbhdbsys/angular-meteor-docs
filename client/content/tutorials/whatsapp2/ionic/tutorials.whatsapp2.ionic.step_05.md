@@ -133,21 +133,29 @@ And let's create the `ProfileComponent`:
 
 The logic is simple, call `updateProfile` (we will implement it soon!) and redirect to `TabsPage` which is our main view if the action succeed.
 
-There's no component without a view:
+If you'll take a look at the constructor's logic we set the default profile picture to be one of ionicon's svgs. We need to make sure there is an access point available through the network to that asset. If we'd like to serve files as-is we simply gonna add them to the `www` dir. But first we'll need to update our `.gitignore` file to contain the upcoming changes:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.20"}}
 
-And styles:
+And now that git can recognize our changes, let's add a symlink to `ionicons` in the `www` dir:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.21"}}
 
-And add it to the NgModule:
+There's no component without a view:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.22"}}
 
-And let's use it in the `VerificationComponent`:
+And styles:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.23"}}
+
+And add it to the NgModule:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.24"}}
+
+And let's use it in the `VerificationComponent`:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.25"}}
 
 This is how the profile view should look like:
 
@@ -159,13 +167,13 @@ Our authentication flow is complete! However there are some few adjustments we n
 
 For the messaging system, each message should have an owner. If a user is logged-in a message document should be inserted with an additional `senderId` field:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.24"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.26"}}
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.25"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.27"}}
 
 We can determine message ownership inside the component:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.26"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.28"}}
 
 Now we're going to add the abilities to log-out and edit our profile as well, which are going to be presented to us using a popover. 
 
@@ -173,33 +181,33 @@ Let's show a popover any time we press on the options icon in the top right corn
 
 Let's start by adding the actual Component that will open on the popover:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.27"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.29"}}
 
 > It uses popover functionality from Ionic ([see documentation](http://ionicframework.com/docs/v2/components/#popovers)).
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.28"}}
-
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.29"}}
-
-And add it to the NgModule:
-
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.30"}}
-
-Now let's use it inside the `ChatsPage`:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.31"}}
 
-And let's add an event handler in the view:
+And add it to the NgModule:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.32"}}
 
-As for now, once you click on the options icon in the chats view, the popover should appear in the middle of the screen. To fix it, we simply gonna edit the `scss` file of the chats page:
+Now let's use it inside the `ChatsPage`:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.33"}}
 
-And last, let's implement the server side method (`updateProfile`):
+And let's add an event handler in the view:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.34"}}
+
+As for now, once you click on the options icon in the chats view, the popover should appear in the middle of the screen. To fix it, we simply gonna edit the `scss` file of the chats page:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.35"}}
+
+And last, let's implement the server side method (`updateProfile`):
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.36"}}
 
 This should be the final result of the popover:
 
