@@ -86,7 +86,7 @@ So let's remove it by running:
 
 Now let's add the Angular 1 package to Meteor, back in the command line, launch this command:
 
-    $ meteor npm install --save angular angular-meteor
+    $ meteor npm install --save angular angular-meteor babel-runtime
     $ meteor add angular-templates pbastowski:angular-babel
 
 That's it! Now we can use Angular 1's power in our Meteor app.

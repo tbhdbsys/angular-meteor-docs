@@ -46,7 +46,7 @@ So now our application is capable to use both Angular 2 and Blaze at the same ti
 
 We will add Angular2-Meteor and Angular 2 core from NPM:
 
-    meteor npm install --save angular2-meteor @angular/core @angular/compiler @angular/common @angular/router @angular/platform-browser @angular/platform-browser-dynamic @angular/forms meteor-rxjs reflect-metadata rxjs zone.js
+    meteor npm install --save angular2-meteor babel-runtime @angular/core @angular/compiler @angular/common @angular/router @angular/platform-browser @angular/platform-browser-dynamic @angular/forms meteor-rxjs reflect-metadata rxjs zone.js
 
 > This will install Angular2-Meteor, Angular 2 core, Angular 2 router and polyfills that required to run Angular2-Meteor.
 

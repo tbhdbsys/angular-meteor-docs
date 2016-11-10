@@ -55,7 +55,7 @@ Note that we declared a file called `typings.d.ts` which will load any external 
 
 And we will also need to add some missing package for our server side, so run the following command inside `api` directory:
 
-    $ meteor npm install --save meteor-node-stubs zone.js meteor-rxjs meteor-typings
+    $ meteor npm install --save meteor-node-stubs zone.js meteor-rxjs meteor-typings babel-runtime
 
 Now, in order to have access to the TypeScript interface we created in the previous step also in the server side, let's move the `models` directory into the `api` directory.
 

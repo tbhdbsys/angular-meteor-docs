@@ -26,7 +26,7 @@ Now let's create our app — write this in the command line:
     
 > Alternatively, use your web browser to access the link:
 >
->    https://github.com/bsliran/angular2-meteor-base
+>    https://github.com/urigo/angular2-meteor-base
 >    
 > Download the template application, and unzip the files inside. Rename the folder to "socially" and place it into the default directory.
 
@@ -90,37 +90,9 @@ Don't worry if you're not familiar with TypeScript. Valid ES6 or ES5 JavaScript 
 
 > If you'd like to deep dive into TypeScript, we recommend the [official tutorial](http://www.typescriptlang.org/Tutorial).
 
-To start, we need to make sure our `tsconfig.json` file (in our root directory) has the basic configurations below which are required to run an Angular 2.0 Meteor app.  
+TypeScript has it's own compiler, and it's own configuration file (called `tsconfig.json`) that needed to be configured in order to combine Angular 2 and Meteor.
 
-```json
-{
-  "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "sourceMap": true
-  },
-  "exclude": [
-    "node_modules"
-  ],
-  "files": [
-    "typings.d.ts"
-  ],
-  "compileOnSave": false,
-  "angularCompilerOptions": {
-    "genDir": "aot",
-    "skipMetadataEmit": true
-  }
-}
-```
-
-To learn more about Typescript compiler options, [click here](http://www.typescriptlang.org/docs/handbook/compiler-options.html).
+Angular2-Meteor boilerplate contains a ready-to-use TypeScript configuration file (`tsconfig.json`), and if you want to learn more about Typescript compiler options, [click here](http://www.typescriptlang.org/docs/handbook/compiler-options.html).
 
 ### @types
 
