@@ -20,9 +20,7 @@ We should also remove dependency from the main.js file:
 
 Now we have to add the angular-material Meteor package:
 
-    meteor npm install angular-material --save
-    
-    meteor npm install angular-aria --save
+    meteor npm install angular-aria angular-animate angular-material --save
 
 We still need file with styles:
 
