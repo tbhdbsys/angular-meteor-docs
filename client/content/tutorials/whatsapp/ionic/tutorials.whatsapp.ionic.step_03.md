@@ -33,7 +33,7 @@ We will acheive that by symbolic linking the `node_modules` dir:
 
 Don't forget to reinstall `Meteor`'s node dependencies after we deleted the `node_modules` dir:
 
-    $ npm install meteor-node-stubs --save
+    $ npm install meteor-node-stubs babel-runtime --save
 
 Our `package.json` should look like this:
 
