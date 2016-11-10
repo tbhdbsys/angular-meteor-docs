@@ -103,9 +103,11 @@ The theme definition file is located in `src/theme/variable.scss`, and at the mo
 
 And now we will be able to use the new color anywhere in any Ionic Component by adding `color="whatsapp"` to the Component.
 
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.14"}}
+
 So let's add it to the view of the `ChatsPage`, and we will also use some more Ionic Components along with Angular 2 features:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.14"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.15"}}
 
 We use `ion-list` which Ionic translate into a list, and use `ion-item` for each one of the items in the list, and we also added to the view some images and text for each chat item.
 
@@ -113,7 +115,7 @@ We use `ion-list` which Ionic translate into a list, and use `ion-item` for each
 
 Now, in order to finish our theming and styling, let's create a stylesheet file for our Component:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.15"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.16"}}
 
 > In Ionic 2, there is no need to load each specific style file - Ionic loads any style file under the `app` folder.
 
@@ -129,11 +131,11 @@ So let's add this package first:
     
 Now we need to tell our Angular 2 application to load that external module, so it would be available for use:
     
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.17"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.18"}}
     
 And let's use a Pipe from that package it in the view:
     
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.18"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.19"}}
     
 ## Ionic Touch Events
     
@@ -143,11 +145,11 @@ We can use those in our view, let's add a sliding button that will show us more 
 
 We add a remove button for each chat, so let's do it:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.19"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.20"}}
 
 And bind the event handler to the Component (we will implement the remove feature later): 
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.20"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="2.21"}}
 
 ## Result
 
