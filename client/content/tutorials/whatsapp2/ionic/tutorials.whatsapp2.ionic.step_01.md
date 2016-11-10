@@ -55,9 +55,9 @@ So let's understand what have we done here:
 - We first added a Webpack plugin called `ProvidePlugin` which provides globals for our app, and we use `typescript-extends` package as our `__extend` - this will give us the ability to load external TypeScript modules with any issues.
 - We created an alias for `api` - which means that any import that starts with "api" will be resolved into the directory we specified (`../api/` in our case - which we will later create there our server side using Meteor).
 
-We just need to add `typescript-extends` by installing it:
+We just need to add `typescript-extends` and `awesome-typescript-loader` by installing it:
 
-    $ npm install --save-dev typescript-extends meteor-typings
+    $ npm install --save-dev typescript-extends awesome-typescript-loader meteor-typings
 
 ## TypeScript Configuration
 
