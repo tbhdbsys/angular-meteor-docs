@@ -1,4 +1,4 @@
-From 4c77ad77708e6ace5a13f9f8bebc0f8ded150d3d Mon Sep 17 00:00:00 2001
+From 565ee1fa641428ca45364b387e5c785a38bce1bf Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 14:36:00 +0200
 Subject: [PATCH 001/124] Step 1.1: Create initial project
@@ -8,7 +8,7 @@ Subject: [PATCH 001/124] Step 1.1: Create initial project
  .gitignore                                         |  34 +++++++++
  config.xml                                         |  39 ++++++++++
  ionic.config.json                                  |   6 ++
- package.json                                       |  53 ++++++++++++++
+ package.json                                       |  54 ++++++++++++++
  resources/android/icon/drawable-hdpi-icon.png      | Bin 0 -> 2875 bytes
  resources/android/icon/drawable-ldpi-icon.png      | Bin 0 -> 1155 bytes
  resources/android/icon/drawable-mdpi-icon.png      | Bin 0 -> 1802 bytes
@@ -79,7 +79,7 @@ Subject: [PATCH 001/124] Step 1.1: Create initial project
  src/theme/variables.scss                           |  71 ++++++++++++++++++
  tsconfig.json                                      |  26 +++++++
  tslint.json                                        |  11 +++
- 75 files changed, 609 insertions(+)
+ 75 files changed, 610 insertions(+)
  create mode 100644 .editorconfig
  create mode 100644 .gitignore
  create mode 100644 config.xml
@@ -280,10 +280,10 @@ index 0000000..54a6f6d
 +}
 diff --git a/package.json b/package.json
 new file mode 100644
-index 0000000..e38f7f9
+index 0000000..1a7491c
 --- /dev/null
 +++ b/package.json
-@@ -0,0 +1,53 @@
+@@ -0,0 +1,54 @@
 +{
 +  "name": "ionic-hello-world",
 +  "author": "Ionic Framework",
@@ -299,25 +299,26 @@ index 0000000..e38f7f9
 +    "run:before": "build"
 +  },
 +  "dependencies": {
-+    "@angular/common": "2.0.0",
-+    "@angular/compiler": "2.0.0",
-+    "@angular/compiler-cli": "0.6.2",
-+    "@angular/core": "2.0.0",
-+    "@angular/forms": "2.0.0",
-+    "@angular/http": "2.0.0",
-+    "@angular/platform-browser": "2.0.0",
-+    "@angular/platform-browser-dynamic": "2.0.0",
-+    "@angular/platform-server": "2.0.0",
++    "@angular/common": "2.1.1",
++    "@angular/compiler": "2.1.1",
++    "@angular/compiler-cli": "2.1.1",
++    "@angular/core": "2.1.1",
++    "@angular/forms": "2.1.1",
++    "@angular/http": "2.1.1",
++    "@angular/platform-browser": "2.1.1",
++    "@angular/platform-browser-dynamic": "2.1.1",
++    "@angular/platform-server": "2.1.1",
 +    "@ionic/storage": "1.1.6",
-+    "ionic-angular": "2.0.0-rc.1",
-+    "ionic-native": "2.2.3",
++    "ionic-angular": "2.0.0-rc.2",
++    "ionic-native": "2.2.6",
 +    "ionicons": "3.0.0",
-+    "rxjs": "5.0.0-beta.12",
-+    "zone.js": "0.6.21"
++    "rxjs": "5.0.0-rc.2",
++    "zone.js": "0.6.26"
 +  },
 +  "devDependencies": {
-+    "@ionic/app-scripts": "0.0.38",
-+    "typescript": "2.0.6"
++    "@ionic/app-scripts": "0.0.39",
++    "@types/chai": "^3.4.34",
++    "typescript": "2.0.8"
 +  },
 +  "cordovaPlugins": [
 +    "cordova-plugin-device",
@@ -21073,7 +21074,7 @@ index 0000000..dd8e8d8
 2.7.4
 
 
-From 724e652a8a6501f86e22bb24c42577ceab02f3a9 Mon Sep 17 00:00:00 2001
+From 9e4a1cabd71a10657dabdb036cda3fdceb3f86c6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 14:42:10 +0200
 Subject: [PATCH 002/124] Step 1.3: Added build configuration for Ionic app
@@ -21084,10 +21085,10 @@ Subject: [PATCH 002/124] Step 1.3: Added build configuration for Ionic app
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/package.json b/package.json
-index e38f7f9..7e219c3 100644
+index 1a7491c..8738af9 100644
 --- a/package.json
 +++ b/package.json
-@@ -49,5 +49,8 @@
+@@ -50,5 +50,8 @@
        "locator": "ios"
      }
    ],
@@ -21101,7 +21102,7 @@ index e38f7f9..7e219c3 100644
 2.7.4
 
 
-From 2749c8db41fdd17cb7cafc974def402547f7b200 Mon Sep 17 00:00:00 2001
+From ed90fe7c2f136834e770fd6a71aa181a12138da6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 14:43:38 +0200
 Subject: [PATCH 003/124] Step 1.4: Added webpack base file
@@ -21179,7 +21180,7 @@ index 0000000..ae0468b
 2.7.4
 
 
-From e2f7fd1acc00db33c5e8188283d8154dad5f5f66 Mon Sep 17 00:00:00 2001
+From 6ff45883e85359d6e26eb64f2d1447daf2937e5e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 17:39:11 +0200
 Subject: [PATCH 004/124] Step 1.5: Updated webpack file
@@ -21242,7 +21243,7 @@ index ae0468b..bcea9d4 100644
 2.7.4
 
 
-From 7e675df8b5063abcd4b82ed74b12888f5f4bcaf6 Mon Sep 17 00:00:00 2001
+From f333aff1a321777e3535bdcfe4a89805091f78f3 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 17:39:59 +0200
 Subject: [PATCH 005/124] Step 1.6: Added typescript-extends and
@@ -21253,22 +21254,23 @@ Subject: [PATCH 005/124] Step 1.6: Added typescript-extends and
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/package.json b/package.json
-index 7e219c3..3b006f4 100644
+index 8738af9..5e37e98 100644
 --- a/package.json
 +++ b/package.json
-@@ -26,12 +26,15 @@
-     "ionic-angular": "2.0.0-rc.1",
-     "ionic-native": "2.2.3",
+@@ -26,13 +26,16 @@
+     "ionic-angular": "2.0.0-rc.2",
+     "ionic-native": "2.2.6",
      "ionicons": "3.0.0",
 +    "meteor-typings": "^1.3.1",
-     "rxjs": "5.0.0-beta.12",
-     "zone.js": "0.6.21"
+     "rxjs": "5.0.0-rc.2",
+     "zone.js": "0.6.26"
    },
    "devDependencies": {
-     "@ionic/app-scripts": "0.0.38",
--    "typescript": "2.0.6"
+     "@ionic/app-scripts": "0.0.39",
+     "@types/chai": "^3.4.34",
+-    "typescript": "2.0.8"
 +    "awesome-typescript-loader": "^2.2.4",
-+    "typescript": "2.0.6",
++    "typescript": "2.0.8",
 +    "typescript-extends": "^1.0.1"
    },
    "cordovaPlugins": [
@@ -21277,7 +21279,7 @@ index 7e219c3..3b006f4 100644
 2.7.4
 
 
-From 209a73faaeb6ea5a77a25b8e67c056a2d0f6baf5 Mon Sep 17 00:00:00 2001
+From d8ae3d11b38170541cfeff55ba5455c8acfb40ee Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 17:40:24 +0200
 Subject: [PATCH 006/124] Step 1.7: Updated typscript compiler config
@@ -21329,7 +21331,7 @@ index 2e450f9..715dd97 100644
 2.7.4
 
 
-From 2685e5e04636cc5cb9d0b767f5cac0fe8d64c9fa Mon Sep 17 00:00:00 2001
+From 7e88c0d350027313428a9c6316da03a14a6c7e93 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 14:49:55 +0200
 Subject: [PATCH 007/124] Step 2.1: Remove irrelevant pages
@@ -21545,7 +21547,7 @@ index e9f7e6a..0000000
 2.7.4
 
 
-From 800421f802e36841c3b87902842ef8fcb2392131 Mon Sep 17 00:00:00 2001
+From 94f82f2a0e88dc1adf8391183ddab6414fe72aae Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 14:50:46 +0200
 Subject: [PATCH 008/124] Step 2.2: Removed tabs from the Component
@@ -21582,7 +21584,7 @@ index a95cdf4..5d241c9 100644
 2.7.4
 
 
-From 09b9dc1f6c2f35c5d03e1be18fa9ba2deede3402 Mon Sep 17 00:00:00 2001
+From 1118c65ba8038a8c0b685c73a04f165d41fef294 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 14:50:53 +0200
 Subject: [PATCH 009/124] Step 2.3: Edit tabs template to contain the necessary
@@ -21610,7 +21612,7 @@ index fa3921a..bca6a7e 100644
 2.7.4
 
 
-From 0659ecd089d839bc2be63b00cb6cb7cef0c5a03f Mon Sep 17 00:00:00 2001
+From ebcc7025ce0006151115c2b703e5e850ac990258 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:02:01 +0200
 Subject: [PATCH 010/124] Step 2.4: Added moment
@@ -21620,22 +21622,22 @@ Subject: [PATCH 010/124] Step 2.4: Added moment
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 3b006f4..9d7e606 100644
+index 5e37e98..4ef47c1 100644
 --- a/package.json
 +++ b/package.json
 @@ -27,6 +27,7 @@
-     "ionic-native": "2.2.3",
+     "ionic-native": "2.2.6",
      "ionicons": "3.0.0",
      "meteor-typings": "^1.3.1",
 +    "moment": "^2.15.2",
-     "rxjs": "5.0.0-beta.12",
-     "zone.js": "0.6.21"
+     "rxjs": "5.0.0-rc.2",
+     "zone.js": "0.6.26"
    },
 -- 
 2.7.4
 
 
-From 83334f4acfa695de9dc8c3134cad86b181dc6857 Mon Sep 17 00:00:00 2001
+From 023ee8c384f8319b004bf5ca86f06a58c16c74aa Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:02:20 +0200
 Subject: [PATCH 011/124] Step 2.5: Added ChatsPage view
@@ -21666,7 +21668,7 @@ index 0000000..ca3c3ec
 2.7.4
 
 
-From be590faff8495200a83336483de0893d0aa73c76 Mon Sep 17 00:00:00 2001
+From 9386facfb93c31681e24d855fd521355e4a49688 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:02:30 +0200
 Subject: [PATCH 012/124] Step 2.6: Added ChatsPage Component
@@ -21750,7 +21752,7 @@ index 0000000..8744db8
 2.7.4
 
 
-From fa2d010c519d5621eec1f8fa690bf98c6d767fc0 Mon Sep 17 00:00:00 2001
+From 902da7de9f0f6dfe276bd76e280708d16d3da1c1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:02:47 +0200
 Subject: [PATCH 013/124] Step 2.7: Added ChatsPage to the module definition
@@ -21788,7 +21790,7 @@ index c4c5356..4d5217f 100644
 2.7.4
 
 
-From 8b47462cc2fe0d0aa676bc7bdb27b02c6e6c0922 Mon Sep 17 00:00:00 2001
+From 25ad5589e084c2d5cd44e7eecea490833403941f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:03:11 +0200
 Subject: [PATCH 014/124] Step 2.8: Added chats tab root
@@ -21818,7 +21820,7 @@ index 5d241c9..ce05bbe 100644
 2.7.4
 
 
-From 8855b92a9fa197c8681f6d8a40b4a0a7bee0f91b Mon Sep 17 00:00:00 2001
+From bfcce99566bd1eeb3868bab15c4ccadde3b3a40d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:03:34 +0200
 Subject: [PATCH 015/124] Step 2.9: Added root to the tab element
@@ -21842,7 +21844,7 @@ index bca6a7e..c361256 100644
 2.7.4
 
 
-From 58aa8a0baa88835958ed93c9a18bd672b41d2af6 Mon Sep 17 00:00:00 2001
+From d2f8172cbe6fa6ad5bb93913b2ca93878c83540d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:09:36 +0200
 Subject: [PATCH 016/124] Step 2.10: Added chat and message models
@@ -21877,7 +21879,7 @@ index 0000000..2f4b40f
 2.7.4
 
 
-From 55eb7f0c3941208c6c336b2ea80672de313e2971 Mon Sep 17 00:00:00 2001
+From a7cb882a13f041fbfc091e88f256c5c8eaa55eb6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 17:49:33 +0200
 Subject: [PATCH 017/124] Step 2.11: Added models typings into the config
@@ -21901,7 +21903,7 @@ index 423e2f1..dc16990 100644
 2.7.4
 
 
-From 56bb0104076e43faa47511203632641cb1a4200e Mon Sep 17 00:00:00 2001
+From 097a1da5ac3b33572ea5c7a5918dcde8f5dafb52 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:10:24 +0200
 Subject: [PATCH 018/124] Step 2.12: Use Chat model in ChatsPage
@@ -21940,7 +21942,7 @@ index 8744db8..ddf9164 100644
 2.7.4
 
 
-From 243ba1d0d204ca0449f4466176e611f46dab1fc2 Mon Sep 17 00:00:00 2001
+From 798abad0ce29ec92e19a7d4469cbf02ef57325c4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:20:40 +0200
 Subject: [PATCH 019/124] Step 2.13: Added theme color definition
@@ -21967,7 +21969,7 @@ index 49e7c6b..b9e42a3 100644
 2.7.4
 
 
-From 57d4cf0beeaeb318b6715a1b6c50cc7c5f7fae7e Mon Sep 17 00:00:00 2001
+From 51401b499c59c08cf3f9faccfc0bc56543e25976 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:21:10 +0200
 Subject: [PATCH 020/124] Step 2.14: Added chats page view with a list of chats
@@ -22020,7 +22022,7 @@ index ca3c3ec..baa7c5d 100644
 2.7.4
 
 
-From fb2e516da2b8bce8948399dfbb1a05fc62133e8a Mon Sep 17 00:00:00 2001
+From 39de465bd8066bb00a4b8870278bc0570958e1d5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:21:19 +0200
 Subject: [PATCH 021/124] Step 2.15: Added some styles
@@ -22060,7 +22062,7 @@ index 0000000..7b6878c
 2.7.4
 
 
-From cec2ea9846625667bc3701ef34df14fd3a38fbf3 Mon Sep 17 00:00:00 2001
+From 4f7945d0c6ce131b65016aef69b2c26e94a8d2f1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:39:29 +0200
 Subject: [PATCH 022/124] Step 2.16: Added angular2-moment package
@@ -22070,22 +22072,22 @@ Subject: [PATCH 022/124] Step 2.16: Added angular2-moment package
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 9d7e606..2c46cf7 100644
+index 4ef47c1..2af007f 100644
 --- a/package.json
 +++ b/package.json
 @@ -23,6 +23,7 @@
-     "@angular/platform-browser-dynamic": "2.0.0",
-     "@angular/platform-server": "2.0.0",
+     "@angular/platform-browser-dynamic": "2.1.1",
+     "@angular/platform-server": "2.1.1",
      "@ionic/storage": "1.1.6",
 +    "angular2-moment": "^1.0.0-beta.6",
-     "ionic-angular": "2.0.0-rc.1",
-     "ionic-native": "2.2.3",
+     "ionic-angular": "2.0.0-rc.2",
+     "ionic-native": "2.2.6",
      "ionicons": "3.0.0",
 -- 
 2.7.4
 
 
-From 450c89f6ae9cf13d5f5a2e74df788aa4ffe29228 Mon Sep 17 00:00:00 2001
+From 0c7029dc4ad31d1eb808fa0859ce265473f6bb8a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:40:09 +0200
 Subject: [PATCH 023/124] Step 2.17: Import MomentModule into the module
@@ -22121,7 +22123,7 @@ index 4d5217f..f0f2cb5 100644
 2.7.4
 
 
-From 580c3bcb405f0bdfc91b497b5e783d93ac6d2e1f Mon Sep 17 00:00:00 2001
+From 1ab1b20788fe5233e9bdf4037d460f65e589b586 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:40:55 +0200
 Subject: [PATCH 024/124] Step 2.18: Apply calendar pipe to chats view template
@@ -22147,7 +22149,7 @@ index baa7c5d..a24f7bd 100644
 2.7.4
 
 
-From 9f56b37aa71021d96f2864a58a8a6b5297fa7f07 Mon Sep 17 00:00:00 2001
+From 327a34b59f8d93d27075780e7c8932340825a0a0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:42:47 +0200
 Subject: [PATCH 025/124] Step 2.19: Add chat removal button to view template
@@ -22197,7 +22199,7 @@ index a24f7bd..1c48151 100644
 2.7.4
 
 
-From ab5da23300fe3d309196b22df4ee61973cd8edf8 Mon Sep 17 00:00:00 2001
+From d51f630785f8ced22efff50dc193ebe5dd793178 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:43:06 +0200
 Subject: [PATCH 026/124] Step 2.20: Add chat removal stub method to chats
@@ -22224,7 +22226,7 @@ index ddf9164..1901c10 100644
 2.7.4
 
 
-From 77dce00b6af9d6674bbdfbe70871db2fbf637ea4 Mon Sep 17 00:00:00 2001
+From 7485f802f35ca02c0d0651dd87666de6e75546e0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:49:42 +0200
 Subject: [PATCH 027/124] Step 3.1: Added meteor-clint-side
@@ -22234,22 +22236,22 @@ Subject: [PATCH 027/124] Step 3.1: Added meteor-clint-side
  1 file changed, 1 insertion(+)
 
 diff --git a/package.json b/package.json
-index 2c46cf7..dfaf65f 100644
+index 2af007f..bbd86f0 100644
 --- a/package.json
 +++ b/package.json
 @@ -28,6 +28,7 @@
-     "ionic-native": "2.2.3",
+     "ionic-native": "2.2.6",
      "ionicons": "3.0.0",
      "meteor-typings": "^1.3.1",
 +    "meteor-client-side": "^1.3.4",
      "moment": "^2.15.2",
-     "rxjs": "5.0.0-beta.12",
-     "zone.js": "0.6.21"
+     "rxjs": "5.0.0-rc.2",
+     "zone.js": "0.6.26"
 -- 
 2.7.4
 
 
-From c21fa27ae6dc570253652e828a1f6a2d3400d736 Mon Sep 17 00:00:00 2001
+From 507a7c9ee5b7db33fc3e19fe81f629cdf08115df Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 15:49:56 +0200
 Subject: [PATCH 028/124] Step 3.2: Import meteor client side into the project
@@ -22272,7 +22274,7 @@ index 6af7a5b..f2f553b 100644
 2.7.4
 
 
-From 1471685c3c980b32b77ae8df17364a567961b9ae Mon Sep 17 00:00:00 2001
+From ded4b450482f6b2d3c06414ae169fe715fe4a025 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:25:04 +0200
 Subject: [PATCH 029/124] Step 3.3: Create Meteor server side
@@ -22572,7 +22574,7 @@ index 0000000..31a9e0e
 2.7.4
 
 
-From 6237de0f14a6e7d7371390d42dbd5f1fc1eae92c Mon Sep 17 00:00:00 2001
+From ffc9aa4400970c682d8a0f248a21e54e2c20145c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:26:24 +0200
 Subject: [PATCH 030/124] Step 3.4: Removed Meteor client side
@@ -22656,7 +22658,7 @@ index ecb3282..0000000
 2.7.4
 
 
-From 6ac1e05ab0563394b36ad7c12cba9fb831dbfa83 Mon Sep 17 00:00:00 2001
+From 00f8ca3219312ab5dfc07c73c25a8ad9d2b42cfc Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:26:37 +0200
 Subject: [PATCH 031/124] Step 3.5: Added TypeScript compiler
@@ -22693,7 +22695,7 @@ index 67c3899..3a0a89c 100644
 2.7.4
 
 
-From 7372de19f57a311bf6958a5464746f449586c585 Mon Sep 17 00:00:00 2001
+From e17b405af3d9bf37e19a5bde4beb9a0a796cba4a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:27:15 +0200
 Subject: [PATCH 032/124] Step 3.6: Changed the extension of the server main
@@ -22732,7 +22734,7 @@ index 0000000..31a9e0e
 2.7.4
 
 
-From 07eaebe34d23546ccb8600a1bcf14907347f4f8e Mon Sep 17 00:00:00 2001
+From b00092b72383755d9e67c313a4536fe2ec37155e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:29:15 +0200
 Subject: [PATCH 033/124] Step 3.7: Created tsconfig.json
@@ -22777,7 +22779,7 @@ index 0000000..59f7332
 2.7.4
 
 
-From 75c9309c70ac32a73a7afe42090bf6cab2ed3dbc Mon Sep 17 00:00:00 2001
+From 7682f7f680599f778ca029ffdad09ed72127d3b6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:29:26 +0200
 Subject: [PATCH 034/124] Step 3.8: Created TypeScript typings file
@@ -22799,7 +22801,7 @@ index 0000000..3b63072
 2.7.4
 
 
-From aa6a030ab213b4adaf0237cf29f0da05b1ceab4a Mon Sep 17 00:00:00 2001
+From edae6a584d72bf6df36749e79da14ff84c90e8f9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:30:05 +0200
 Subject: [PATCH 035/124] Step 3.9: Added missing server packages
@@ -22873,7 +22875,7 @@ index 2f4b40f..0000000
 2.7.4
 
 
-From c7b8d0958e3931e9d26f1ae5a7ddd99843a11419 Mon Sep 17 00:00:00 2001
+From 0d0f48a5c524957c90beb4390a1882786852d536 Mon Sep 17 00:00:00 2001
 From: DAB0mB <emanor6@gmail.com>
 Date: Thu, 10 Nov 2016 13:49:11 -0200
 Subject: [PATCH 036/124] Step 3.10: Updated import path
@@ -22898,7 +22900,7 @@ index dc16990..c5d4468 100644
 2.7.4
 
 
-From 0a59e05649fe95cd83cb580f9ea808f812acf8fe Mon Sep 17 00:00:00 2001
+From 58a991a3d07c3599568f6419f294cf7b2aa4c01d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:35:32 +0200
 Subject: [PATCH 037/124] Step 3.11: Created Collections
@@ -22922,7 +22924,7 @@ index 0000000..64c113e
 2.7.4
 
 
-From b3a38f33172a2c9712c37e13a46a84449f5ef2c8 Mon Sep 17 00:00:00 2001
+From 515b3f510ced28415dae7daf2eefe3be3bbaf7c7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:37:23 +0200
 Subject: [PATCH 038/124] Step 3.12: Added moment to the server side
@@ -22960,7 +22962,7 @@ index 3b63072..cf77f5a 100644
 2.7.4
 
 
-From e8352b6e583c6b475a18ac7224a948c93fd22439 Mon Sep 17 00:00:00 2001
+From 214162d174cb8ac322c741650744a6e5283ced3b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:37:43 +0200
 Subject: [PATCH 039/124] Step 3.13: Added stub data to the collection in the
@@ -23044,7 +23046,7 @@ index 31a9e0e..51b7c0c 100644
 2.7.4
 
 
-From 3590675816ab019860bee8db1329b9bacf5302c6 Mon Sep 17 00:00:00 2001
+From f50f70b6f97df42d2eb77894e147b21e123a708d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 16:38:32 +0200
 Subject: [PATCH 040/124] Step 3.14: Added meteor-rxjs to the client side
@@ -23055,7 +23057,7 @@ Subject: [PATCH 040/124] Step 3.14: Added meteor-rxjs to the client side
  2 files changed, 2 insertions(+)
 
 diff --git a/package.json b/package.json
-index dfaf65f..4bd46a4 100644
+index bbd86f0..8d7258a 100644
 --- a/package.json
 +++ b/package.json
 @@ -29,6 +29,7 @@
@@ -23064,8 +23066,8 @@ index dfaf65f..4bd46a4 100644
      "meteor-client-side": "^1.3.4",
 +    "meteor-rxjs": "^0.4.3",
      "moment": "^2.15.2",
-     "rxjs": "5.0.0-beta.12",
-     "zone.js": "0.6.21"
+     "rxjs": "5.0.0-rc.2",
+     "zone.js": "0.6.26"
 diff --git a/src/app/main.dev.ts b/src/app/main.dev.ts
 index f2f553b..7872830 100644
 --- a/src/app/main.dev.ts
@@ -23079,7 +23081,7 @@ index f2f553b..7872830 100644
 2.7.4
 
 
-From e039dfb914f8b43517c89ec44fa571cbdb4950a2 Mon Sep 17 00:00:00 2001
+From 955aafc1517348a7de25e891e5f318639fcaa56e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:15:15 +0200
 Subject: [PATCH 041/124] Step 3.15: Added the chats with the last message
@@ -23185,7 +23187,7 @@ index 1901c10..3c8d372 100644
 2.7.4
 
 
-From b76177622b5b2957820e839a8d38187465e71ca9 Mon Sep 17 00:00:00 2001
+From 0aacf93628fc216e130bbb0bd2e489dd564ef544 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:40:15 +0200
 Subject: [PATCH 042/124] Step 4.1: Added showMessage method
@@ -23230,7 +23232,7 @@ index 3c8d372..54204c5 100644
 2.7.4
 
 
-From 9a564c6751b90748bf485a26ce85a8bd11339f5b Mon Sep 17 00:00:00 2001
+From 2b0d6cd2fb6e976d7a795395e933c365b736f1a4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:41:07 +0200
 Subject: [PATCH 043/124] Step 4.2: Added the action to the button
@@ -23256,7 +23258,7 @@ index 1c48151..d5d8eaf 100644
 2.7.4
 
 
-From 952e9d8927147d16553d674fe83e8bd91e29dc68 Mon Sep 17 00:00:00 2001
+From 07975c7c60e290b117ddb79f8ffbabfde23269e4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:42:32 +0200
 Subject: [PATCH 044/124] Step 4.3: Create a stub for the component
@@ -23297,7 +23299,7 @@ index 0000000..2e2bbb8
 2.7.4
 
 
-From 770d4ec19eed9d715574810127309052dd4359e5 Mon Sep 17 00:00:00 2001
+From bc15133388726e61fe31b825bbd9374333358ef8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:43:04 +0200
 Subject: [PATCH 045/124] Step 4.4: Added the Component to the NgModule
@@ -23340,7 +23342,7 @@ index f0f2cb5..0db4be3 100644
 2.7.4
 
 
-From 785a6427619c7b3950a92396f7b75820c8b7e620 Mon Sep 17 00:00:00 2001
+From cf551559102e5296fe8a09cdb93ef32a19d2fb74 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:43:34 +0200
 Subject: [PATCH 046/124] Step 4.5: Added the correct import
@@ -23365,7 +23367,7 @@ index 54204c5..ca5ba6e 100644
 2.7.4
 
 
-From 67ff5280a730deaafb586f6bf8b358b1b1509bb6 Mon Sep 17 00:00:00 2001
+From f7c502b942a6a180363e21362bf8669c39b77254 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:46:46 +0200
 Subject: [PATCH 047/124] Step 4.6: Add basic messages component
@@ -23426,7 +23428,7 @@ index 2e2bbb8..a0f8b57 100644
 2.7.4
 
 
-From 0ce06456314579ac1cfb1c30ef8a33c7ace7515b Mon Sep 17 00:00:00 2001
+From f24edbb09e75ed999ed1517ea7288a93a8ac17c1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:47:04 +0200
 Subject: [PATCH 048/124] Step 4.7: Add 'ownership' property to message model
@@ -23450,7 +23452,7 @@ index 2f4b40f..51c5991 100644
 2.7.4
 
 
-From e2fa1605d24c355dfefab51bac5687be19c4aa6c Mon Sep 17 00:00:00 2001
+From d880b4fa90ef73d398159979021bd440017121b0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:52:18 +0200
 Subject: [PATCH 049/124] Step 4.8: Add basic messages view template
@@ -23495,7 +23497,7 @@ index 0000000..d12798d
 2.7.4
 
 
-From a323e32957ac3bc12bfa1bfe9e6401dcf3998ab7 Mon Sep 17 00:00:00 2001
+From 41919b066e54ac981f000b2e12cc4bc64e74122b Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:52:27 +0200
 Subject: [PATCH 050/124] Step 4.9: Add basic messages stylesheet
@@ -23608,7 +23610,7 @@ index 0000000..33c2b3a
 2.7.4
 
 
-From a3bb4986e984cf0d0f29744a44b61b3f72cc72dd Mon Sep 17 00:00:00 2001
+From 96358ec749b0260c1eea54e814cf0a869cc08034 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:52:50 +0200
 Subject: [PATCH 051/124] Step 4.10: Added images
@@ -24232,7 +24234,7 @@ HcmV?d00001
 2.7.4
 
 
-From c572874671bbd22d2478df7554fa3732fe57b5c5 Mon Sep 17 00:00:00 2001
+From 0b460e9e01bf7e46365d72415672f8eafb1c6a37 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:53:09 +0200
 Subject: [PATCH 052/124] Step 4.11: Apply date format pipe to messages view
@@ -24259,7 +24261,7 @@ index d12798d..0a7c0fa 100644
 2.7.4
 
 
-From ac2dbf45318094c8ee7a1a5b2f379542f7c73813 Mon Sep 17 00:00:00 2001
+From d7a7ce95cb462982d3104ce0a477b41469207aa0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:54:34 +0200
 Subject: [PATCH 053/124] Step 4.12: Add message editor to messages view
@@ -24297,7 +24299,7 @@ index 0a7c0fa..7975a18 100644
 2.7.4
 
 
-From f6e0d1c5aa9b1bac844b1c1808f95f18cf810052 Mon Sep 17 00:00:00 2001
+From 5c57f9d838282407358b3650dfc69a482923328d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:54:43 +0200
 Subject: [PATCH 054/124] Step 4.13: Add message-editor style to messages
@@ -24338,7 +24340,7 @@ index 33c2b3a..863ecdc 100644
 2.7.4
 
 
-From bec67221ca9968ff64a20d16624c43d3ef384ca4 Mon Sep 17 00:00:00 2001
+From f135352c6e27fd038be8219789426b17588e14d8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 18:55:40 +0200
 Subject: [PATCH 055/124] Step 4.14: Add 'sendMessage()' handler to messages
@@ -24390,7 +24392,7 @@ index a0f8b57..00830bf 100644
 2.7.4
 
 
-From 4bb1de432896d879095b9b3b9e7271e3bf1a32c7 Mon Sep 17 00:00:00 2001
+From 7e642ee888c08bf6ce3f249e2c680b756719be45 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:02:50 +0200
 Subject: [PATCH 056/124] Step 4.15: Add 'addMessage()' method to api
@@ -24431,7 +24433,7 @@ index 0000000..2c103f0
 2.7.4
 
 
-From 525c1e0ff943dcd36bc1bc9a23defba00912ec79 Mon Sep 17 00:00:00 2001
+From 4ff7f880629c2eaef242b87a39a5cb7da7b8bf80 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:03:12 +0200
 Subject: [PATCH 057/124] Step 4.16: Init methods in the server side
@@ -24460,7 +24462,7 @@ index 51b7c0c..ffb2997 100644
 2.7.4
 
 
-From c9406775753599a6f138d4a8f4604fa5c3e910be Mon Sep 17 00:00:00 2001
+From 77cc462347789bb44c7e734f0620b9d7aa555e58 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:05:04 +0200
 Subject: [PATCH 058/124] Step 4.17: Added check in the server side
@@ -24482,7 +24484,7 @@ index c6e3dac..07f406d 100644
 2.7.4
 
 
-From 049ebcea787de4af0879bc34580348770cee9e4d Mon Sep 17 00:00:00 2001
+From df8930313019abb0995dc6c9791e15b8635ba837 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:05:55 +0200
 Subject: [PATCH 059/124] Step 4.18: Add validations to 'addMessage()' method
@@ -24520,7 +24522,7 @@ index 2c103f0..3b76d86 100644
 2.7.4
 
 
-From 737dbd2ed03e90a229c5ecb5960555ff8f2d6d21 Mon Sep 17 00:00:00 2001
+From c18903f2ac59d3727562dc6377afc4f99044305e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:11:50 +0200
 Subject: [PATCH 060/124] Step 4.19: Add an auto scroller to messages component
@@ -24609,7 +24611,7 @@ index 00830bf..d47ba4d 100644
 2.7.4
 
 
-From 202b29fdfa5c6da15d425879b5b3e7dfcdc7ec54 Mon Sep 17 00:00:00 2001
+From a86a108ae0f6c6ad3173b6cf12b249a4dd833b9c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:22:57 +0200
 Subject: [PATCH 061/124] Step 5.1: Added server packages
@@ -24691,7 +24693,7 @@ index 3a0a89c..769c63e 100644
 2.7.4
 
 
-From ba25d823fde4391a2a05e61bf298a11c95ca58c7 Mon Sep 17 00:00:00 2001
+From 44aa8fc418223577acf555eabbc942127c54c0a7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:23:07 +0200
 Subject: [PATCH 062/124] Step 5.2: Added settings file
@@ -24719,7 +24721,7 @@ index 0000000..070dbe1
 2.7.4
 
 
-From 4af5f390397fdb2cddca4794fefea493ce41fffc Mon Sep 17 00:00:00 2001
+From b37928fccbcbe2df21b9a44054a236d17320d8b9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:23:29 +0200
 Subject: [PATCH 063/124] Step 5.3: Updated NPM script
@@ -24745,7 +24747,7 @@ index c618752..4e9418d 100644
 2.7.4
 
 
-From 5a79e59a53e7d9c7ed81314e1956422f49116f22 Mon Sep 17 00:00:00 2001
+From 80775464822aeeae90a436560231d2dcf05da0c3 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:26:21 +0200
 Subject: [PATCH 064/124] Step 5.4: Define SMS settings
@@ -24781,7 +24783,7 @@ index ffb2997..dcd79c4 100644
 2.7.4
 
 
-From eaaf780deb07bb8a18977c2b448b8857923abfa8 Mon Sep 17 00:00:00 2001
+From d872ae418c85205e2fb6796cfa34b5560c46e2e6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:28:10 +0200
 Subject: [PATCH 065/124] Step 5.5: Added accounts packages to client side
@@ -24791,23 +24793,23 @@ Subject: [PATCH 065/124] Step 5.5: Added accounts packages to client side
  1 file changed, 2 insertions(+)
 
 diff --git a/package.json b/package.json
-index 4bd46a4..2ecb650 100644
+index 8d7258a..29bd109 100644
 --- a/package.json
 +++ b/package.json
 @@ -23,6 +23,8 @@
-     "@angular/platform-browser-dynamic": "2.0.0",
-     "@angular/platform-server": "2.0.0",
+     "@angular/platform-browser-dynamic": "2.1.1",
+     "@angular/platform-server": "2.1.1",
      "@ionic/storage": "1.1.6",
 +    "accounts-base-client-side": "^0.1.1",
 +    "accounts-phone": "0.0.1",
      "angular2-moment": "^1.0.0-beta.6",
-     "ionic-angular": "2.0.0-rc.1",
-     "ionic-native": "2.2.3",
+     "ionic-angular": "2.0.0-rc.2",
+     "ionic-native": "2.2.6",
 -- 
 2.7.4
 
 
-From d83e17772e8aa1f65067a77b24255ea2953d09ab Mon Sep 17 00:00:00 2001
+From 9bacd3bb632e1ff312aa81e96b5cf84ed90936e5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:28:20 +0200
 Subject: [PATCH 066/124] Step 5.6: Import accounts packages in client side
@@ -24832,7 +24834,7 @@ index 7872830..11ddf38 100644
 2.7.4
 
 
-From cbc1e12b997654f627409ec211f12c9d86da01f5 Mon Sep 17 00:00:00 2001
+From f7bb6592626e354189316dc11b43c3878f800f58 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:31:16 +0200
 Subject: [PATCH 067/124] Step 5.7: Wait for user if logging in
@@ -24871,7 +24873,7 @@ index 11ddf38..61372ec 100644
 2.7.4
 
 
-From e0ae2e3c051aa84617f55b1427f0434661bab293 Mon Sep 17 00:00:00 2001
+From b3dc17ebe45b771e217a2f38452586808edbdef4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:38:13 +0200
 Subject: [PATCH 068/124] Step 5.8: Create login component
@@ -24960,7 +24962,7 @@ index 0000000..025fe73
 2.7.4
 
 
-From 510eed6fe19fef9f95d92aafb228088bd6cf89ba Mon Sep 17 00:00:00 2001
+From 1e93e0bf2471a42df0fec9222fa687f78dcc4a7e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:38:28 +0200
 Subject: [PATCH 069/124] Step 5.9: Create login component view
@@ -25005,7 +25007,7 @@ index 0000000..4f1054d
 2.7.4
 
 
-From 26ebeb2607b8f4a6cdd6d2cd4babf1f1e542aed8 Mon Sep 17 00:00:00 2001
+From 5834ae995768e8e7b09c5ab0fad38e3b3f0cf511 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:38:38 +0200
 Subject: [PATCH 070/124] Step 5.10: Add login component view style
@@ -25036,7 +25038,7 @@ index 0000000..3b24972
 2.7.4
 
 
-From 471e7d048a5c51b160ff8f38e7287863ac5714c6 Mon Sep 17 00:00:00 2001
+From 7285daad8dc6804862cff65c8ade24e377323eb9 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:38:55 +0200
 Subject: [PATCH 071/124] Step 5.11: Add login component to NgModule
@@ -25080,7 +25082,7 @@ index 0db4be3..587a2b4 100644
 2.7.4
 
 
-From b5776a500513029673cf337a1aa55e46bc3b89ca Mon Sep 17 00:00:00 2001
+From 04d8cb7e67b470d901cfe29756af7581ca544487 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:39:12 +0200
 Subject: [PATCH 072/124] Step 5.12: Add user identifiation in app's main
@@ -25121,7 +25123,7 @@ index 218886a..14102be 100644
 2.7.4
 
 
-From d6372f1bad2d5064576579546246c37ff3772bb5 Mon Sep 17 00:00:00 2001
+From df22174c12818163f2171b9f46e83542a070b981 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:41:21 +0200
 Subject: [PATCH 073/124] Step 5.13: Add verification component
@@ -25195,7 +25197,7 @@ index 0000000..965dfa0
 2.7.4
 
 
-From f0be3f172b6e8be152503a054436424cc1ca6db9 Mon Sep 17 00:00:00 2001
+From 038585a05e06e9e7c211fb00f2644376a3eb4d6a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:41:32 +0200
 Subject: [PATCH 074/124] Step 5.14: Add verification component view
@@ -25240,7 +25242,7 @@ index 0000000..da46cd2
 2.7.4
 
 
-From be29a2a890886140a3b572632cec6e590742741d Mon Sep 17 00:00:00 2001
+From d0a742fc68a64792e06627528cf0db2b513f36f6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:41:43 +0200
 Subject: [PATCH 075/124] Step 5.15: Add verification component styles
@@ -25271,7 +25273,7 @@ index 0000000..03d46ba
 2.7.4
 
 
-From e58c0aa2569c37d91f549e99eadcc87529cf6eb0 Mon Sep 17 00:00:00 2001
+From fcf2f28dee0c31c7cfcba85760ebfdd5096d0c33 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:42:51 +0200
 Subject: [PATCH 076/124] Step 5.16: Add VerificationComponent to NgModule
@@ -25316,7 +25318,7 @@ index 587a2b4..11592ac 100644
 2.7.4
 
 
-From ff94dda9b6f3b9214c13b3e844c8db753d1d0c0e Mon Sep 17 00:00:00 2001
+From f64af4605628489d392795e2b9e507f389424bf2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:43:26 +0200
 Subject: [PATCH 077/124] Step 5.17: Add navigation to verification page from
@@ -25354,7 +25356,7 @@ index 025fe73..829e3ff 100644
 2.7.4
 
 
-From 95dbe075a34f7f6d42dd83e1ffcfec7a7951f510 Mon Sep 17 00:00:00 2001
+From 7e6e30df444d13e8692347330f2e688d944617f1 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:53:40 +0200
 Subject: [PATCH 078/124] Step 5.18: Add profile model decleration
@@ -25381,7 +25383,7 @@ index 51c5991..2a3fadf 100644
 2.7.4
 
 
-From 896a475bf077979956383d4b9e66cea385794d69 Mon Sep 17 00:00:00 2001
+From 850b1e07e3f906ce29ea5509df6935609bb0c8c4 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:55:52 +0200
 Subject: [PATCH 079/124] Step 5.19: Add profile component
@@ -25451,7 +25453,7 @@ index 0000000..a17fe40
 2.7.4
 
 
-From 082d8207344a4947789edac84fcc546b3b49e907 Mon Sep 17 00:00:00 2001
+From 9a9bc1d327d97449ecd8f16d6b74f8ba0f9a65f2 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:56:12 +0200
 Subject: [PATCH 080/124] Step 5.20: Add profile component view
@@ -25492,7 +25494,7 @@ index 0000000..185fd03
 2.7.4
 
 
-From 7fd476341b08922b788ed18df6bacd41b88584c8 Mon Sep 17 00:00:00 2001
+From 9bf04b0749864cabde94663fd0fc2893d94e3166 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:56:19 +0200
 Subject: [PATCH 081/124] Step 5.21: Add profile component view style
@@ -25532,7 +25534,7 @@ index 0000000..2309800
 2.7.4
 
 
-From 55951cfe77a03acfa73b8c062e4b14b3a91e48bf Mon Sep 17 00:00:00 2001
+From a5da2b738370e0a5bd2e8d14e3110bece3fe2198 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:56:44 +0200
 Subject: [PATCH 082/124] Step 5.22: Add profile component to NgModule
@@ -25577,7 +25579,7 @@ index 11592ac..d06c2f7 100644
 2.7.4
 
 
-From 04062b13d783c3f0398ab2d2913e7d2d09e87903 Mon Sep 17 00:00:00 2001
+From d72fa7ae7e8d38805c9a2e6eb4e575fff7bf6a15 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:57:11 +0200
 Subject: [PATCH 083/124] Step 5.23: Add profile component to verification
@@ -25615,7 +25617,7 @@ index 965dfa0..6e4329a 100644
 2.7.4
 
 
-From 5c8228dcf04d2b14a45ab2d0f5220309aefed21d Mon Sep 17 00:00:00 2001
+From 093d58466b57494e1ed1c53c7ff93aeb44fd0c02 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:57:54 +0200
 Subject: [PATCH 084/124] Step 5.24: Add senderId property to addMessage method
@@ -25650,7 +25652,7 @@ index 3b76d86..974c0e7 100644
 2.7.4
 
 
-From 734c857e3c9c2501061d37af656db72ac037299b Mon Sep 17 00:00:00 2001
+From 2ee4a6ea95227f03560c7e7d734445943173ad25 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:58:14 +0200
 Subject: [PATCH 085/124] Step 5.25: Add it also to the model
@@ -25674,7 +25676,7 @@ index 2a3fadf..3cd220e 100644
 2.7.4
 
 
-From ca4d603bb2a7244c16b3790ae672ffb3e179860c Mon Sep 17 00:00:00 2001
+From 190c01fc02d3ab10178feb3dbe0423dd5a5a1805 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 19:59:27 +0200
 Subject: [PATCH 086/124] Step 5.26: Determine message ownership based on
@@ -25724,7 +25726,7 @@ index d47ba4d..d14755a 100644
 2.7.4
 
 
-From aeff3b239238e2857c352df7873c305049d38447 Mon Sep 17 00:00:00 2001
+From 029600f910881dea07688cb1d582007cf618a8ed Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:05:38 +0200
 Subject: [PATCH 087/124] Step 5.27: Add chats-options component
@@ -25816,7 +25818,7 @@ index 0000000..8d368d9
 2.7.4
 
 
-From fdcf8b0a3cd87b825312119e45dc1d1281850d52 Mon Sep 17 00:00:00 2001
+From a6f3a843dbbaefb76665129993b83a642e064aae Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:05:47 +0200
 Subject: [PATCH 088/124] Step 5.28: Add chats-options component view
@@ -25854,7 +25856,7 @@ index 0000000..1afa074
 2.7.4
 
 
-From 892cfb86c39b2b08e7c58a0ddfb6829c29118389 Mon Sep 17 00:00:00 2001
+From 9a7c5a10e51d4e74254dc61b4ef72f5679fa0822 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:05:56 +0200
 Subject: [PATCH 089/124] Step 5.29: Add chats-options component view style
@@ -25887,7 +25889,7 @@ index 0000000..0e4d0ee
 2.7.4
 
 
-From d68a09968c2ab2061a43dd8a90ca961bb34c38c9 Mon Sep 17 00:00:00 2001
+From 75089ea553239fdb4a1f6b28d3b995084072fb33 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:06:09 +0200
 Subject: [PATCH 090/124] Step 5.30: Add chats-options component to the module
@@ -25933,7 +25935,7 @@ index d06c2f7..2780d17 100644
 2.7.4
 
 
-From 89ccce3c8b121d748f9b89bf893b3a8a1ba78824 Mon Sep 17 00:00:00 2001
+From 1b85daaa38c225fa494251bd7c979b443e49d879 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:06:24 +0200
 Subject: [PATCH 091/124] Step 5.31: Use the popover component
@@ -25985,7 +25987,7 @@ index ca5ba6e..ffb8f96 100644
 2.7.4
 
 
-From d899943da6145ed8780c30a859a5d126a26a0d82 Mon Sep 17 00:00:00 2001
+From e8bad8f58a5f568c9ffbf36a05b4e23a828021d7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:06:33 +0200
 Subject: [PATCH 092/124] Step 5.32: Added event handler
@@ -26011,7 +26013,7 @@ index d5d8eaf..0ca46ab 100644
 2.7.4
 
 
-From 16ae25eded4c9e5735b624defcdf1a6d70139583 Mon Sep 17 00:00:00 2001
+From c2ab855a5203b394ed60c2a9948a4c3f82115c46 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:06:45 +0200
 Subject: [PATCH 093/124] Step 5.33: Add options-popover style to chats
@@ -26045,7 +26047,7 @@ index 7b6878c..2ca3f69 100644
 2.7.4
 
 
-From fc9c69ed70274da2c1ff8c3d49393367e380d4d7 Mon Sep 17 00:00:00 2001
+From 0757807b0c16d3681288e3b8f36fe699ae3d75df Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:11:35 +0200
 Subject: [PATCH 094/124] Step 5.34: Added updateProfile method
@@ -26090,7 +26092,7 @@ index 974c0e7..8b177b4 100644
 2.7.4
 
 
-From cf8d0e6e95cde5f25f0b2a643ef1a17ca4284d47 Mon Sep 17 00:00:00 2001
+From 3e938cf73249f7a1612e71855ac2e10919b8acf8 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:21:03 +0200
 Subject: [PATCH 095/124] Step 6.1: Add 'addChat' method to ChatsComponent
@@ -26143,7 +26145,7 @@ index ffb8f96..50d1e5f 100644
 2.7.4
 
 
-From e717ae6230bcad33252d5eee697e364c4e1ac5d5 Mon Sep 17 00:00:00 2001
+From bf8a32e49f08bd608365318102464d90d26f9552 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:21:27 +0200
 Subject: [PATCH 096/124] Step 6.2: Bind that method
@@ -26169,7 +26171,7 @@ index 0ca46ab..c5f878f 100644
 2.7.4
 
 
-From a765baa23da54014b4a925f1d2a58ea17416c52e Mon Sep 17 00:00:00 2001
+From 24788077667634260f7e7f0f05fe952b3901687f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:22:14 +0200
 Subject: [PATCH 097/124] Step 6.3: Define 'addChat' Method
@@ -26215,7 +26217,7 @@ index 8b177b4..530042e 100644
 2.7.4
 
 
-From 190de044e6e4d836485e7720ef60a4cb9d1eaf38 Mon Sep 17 00:00:00 2001
+From 913c117cf413163380110f56b0efca1b43c42874 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:22:44 +0200
 Subject: [PATCH 098/124] Step 6.4: Add memberIds prop in Chat model
@@ -26240,7 +26242,7 @@ index 3cd220e..200ec88 100644
 2.7.4
 
 
-From c71bafb97bea9bc74f55e26d85a3978568fd35a4 Mon Sep 17 00:00:00 2001
+From 44cc34b9dbb5d49d98434d0414f942ac6f6dad50 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:22:58 +0200
 Subject: [PATCH 099/124] Step 6.5: Create Observable collection from
@@ -26266,7 +26268,7 @@ index 64c113e..ea4dd70 100644
 2.7.4
 
 
-From a36f002eafb6716c2bd788452cc55ea5fd708678 Mon Sep 17 00:00:00 2001
+From 2f670c7468924e84ee17a6df3269d5c10935591f Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:23:26 +0200
 Subject: [PATCH 100/124] Step 6.6: Create a User model
@@ -26292,7 +26294,7 @@ index 200ec88..01dd1b4 100644
 2.7.4
 
 
-From e52d2456bbe63e0139a5c81b63a0c561f882eba5 Mon Sep 17 00:00:00 2001
+From 66184950a1528d181c1db7aeee8c92aac3c73994 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:23:40 +0200
 Subject: [PATCH 101/124] Step 6.7: Create NewChatComponent
@@ -26389,7 +26391,7 @@ index 0000000..6d09041
 2.7.4
 
 
-From ce3e49d50973aa6d2c95d1c5cef0650928938b2a Mon Sep 17 00:00:00 2001
+From deac8fa6a0d9294a7cfa12ce73a9e157fddfc367 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:24:00 +0200
 Subject: [PATCH 102/124] Step 6.8: Create NewChatComponent view
@@ -26427,7 +26429,7 @@ index 0000000..06679da
 2.7.4
 
 
-From b82482868e2e84d502418363ce7fe35359afb097 Mon Sep 17 00:00:00 2001
+From 7a6320c0ab54504476fe07898b8c76e86b99ea54 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:24:06 +0200
 Subject: [PATCH 103/124] Step 6.9: Create NewChatComponent view style
@@ -26461,7 +26463,7 @@ index 0000000..17056a4
 2.7.4
 
 
-From d28ff2535ed47637544d510e8a20b67ecc469d98 Mon Sep 17 00:00:00 2001
+From 233fa51ca026d42890846af701d67bd5dbcd6724 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:25:44 +0200
 Subject: [PATCH 104/124] Step 6.10: Register that component
@@ -26506,7 +26508,7 @@ index 2780d17..648b670 100644
 2.7.4
 
 
-From 6f5c825e42a30460a12330697c65002932bebb27 Mon Sep 17 00:00:00 2001
+From 97cd8eb7006336a266c284ad5a03bb3a2ba8e082 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:26:53 +0200
 Subject: [PATCH 105/124] Step 6.11: Replace chats fabrication with users
@@ -26624,7 +26626,7 @@ index dcd79c4..209145d 100644
 2.7.4
 
 
-From 8203082b54e11c32c93a74feff7acae13d17580e Mon Sep 17 00:00:00 2001
+From d761b4435a0af4db2ea4b2c642e66d55ef8e93d5 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:27:54 +0200
 Subject: [PATCH 106/124] Step 6.12: Added missing import
@@ -26649,7 +26651,7 @@ index 50d1e5f..05553bb 100644
 2.7.4
 
 
-From c7bae7b206d0fba702c642a352aee41ed5eb34ec Mon Sep 17 00:00:00 2001
+From 84e25cfd6f64af51fcdf4e37ed28e8921a3d7ded Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:46:24 +0200
 Subject: [PATCH 107/124] Step 6.13: Add title and picture to chat
@@ -26715,7 +26717,7 @@ index 05553bb..44860dc 100644
 2.7.4
 
 
-From 9ff7cb9cf79f9f2d56c6bbd75e36e760047c5282 Mon Sep 17 00:00:00 2001
+From 6ac17beebcf9cad7f39e5737dc33ba21fc533e79 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:47:27 +0200
 Subject: [PATCH 108/124] Step 7.1: Remove insecure
@@ -26753,7 +26755,7 @@ index 769c63e..214c097 100644
 2.7.4
 
 
-From ad0b052949f7bf3560236f7b9a729eaff0305fff Mon Sep 17 00:00:00 2001
+From c6400b36bc5518df5f0db34ffc5a359846ccbc26 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:48:11 +0200
 Subject: [PATCH 109/124] Step 7.2: Define 'removeChat' Method
@@ -26791,7 +26793,7 @@ index 530042e..d754969 100644
 2.7.4
 
 
-From 45e36ae9075161f0efd5f7a8b3d2454ac8a62bc0 Mon Sep 17 00:00:00 2001
+From b608db7b06aaaa0c0d250fdbd8f0b0b84c6d6fb7 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:51:02 +0200
 Subject: [PATCH 110/124] Step 7.3: Create MessagesOptionsComponent
@@ -26885,7 +26887,7 @@ index 0000000..748c131
 2.7.4
 
 
-From ca502aace6998f4db8e5ff73f130c961b88f185d Mon Sep 17 00:00:00 2001
+From 48d7cc4c0584abac1e7408075a98a6e43418b8bb Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:51:32 +0200
 Subject: [PATCH 111/124] Step 7.4: Create MessagesOptionsComponent view
@@ -26913,7 +26915,7 @@ index 0000000..3c87eb4
 2.7.4
 
 
-From d4c64dacab9c6067095cfe84e5c8fb9fed0a290b Mon Sep 17 00:00:00 2001
+From 50d26b8dfe28ff431b62a74aa81aa09f5741658e Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:51:39 +0200
 Subject: [PATCH 112/124] Step 7.5: Create MessagesOptionsComponent view style
@@ -26946,7 +26948,7 @@ index 0000000..0e4d0ee
 2.7.4
 
 
-From 7daad788d8c0ec598354d7ae1d53c398b46b183c Mon Sep 17 00:00:00 2001
+From e195acd24a70035cc7a3c0b6b42fb988b30236c6 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:52:07 +0200
 Subject: [PATCH 113/124] Step 7.6: Register the component
@@ -26989,7 +26991,7 @@ index 648b670..5e0025e 100644
 2.7.4
 
 
-From 0d15d7eb7a4fad109558e0876bba3c92263e834c Mon Sep 17 00:00:00 2001
+From 70fa74eded6c6bb692d673b7109dda5bc2ed9cad Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:54:09 +0200
 Subject: [PATCH 114/124] Step 7.7: Define component's method to open options
@@ -27044,7 +27046,7 @@ index d14755a..58b71dc 100644
 2.7.4
 
 
-From f2d016eea103e176bdb36262819a4ddbba6ff97c Mon Sep 17 00:00:00 2001
+From 524e86b17b3fad11a512cb6e3fc753aacc94fb1a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:55:47 +0200
 Subject: [PATCH 115/124] Step 7.8: Implement it in the view
@@ -27070,7 +27072,7 @@ index 7975a18..0d2d120 100644
 2.7.4
 
 
-From 2d085bfec229021ab84dde1eea318818804119fb Mon Sep 17 00:00:00 2001
+From 1674d8da08d29ac911b2329c171266ff22b4306a Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 20:56:54 +0200
 Subject: [PATCH 116/124] Step 7.9: Remove autopublish
@@ -27107,7 +27109,7 @@ index 214c097..564f30e 100644
 2.7.4
 
 
-From a694df93036ead3ec8192cfe0fa5d6cb218006d3 Mon Sep 17 00:00:00 2001
+From e3528c17b8e02b17ce9a90b3488543219b6ecd6d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 21:01:34 +0200
 Subject: [PATCH 117/124] Step 7.10: Added users publication
@@ -27144,7 +27146,7 @@ index 0000000..fac896b
 2.7.4
 
 
-From d544a9564115f7e7e2f200298396ab7f332ea936 Mon Sep 17 00:00:00 2001
+From 8879c6f730b9e0ee4cb26f59243ef656f668b979 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 21:02:06 +0200
 Subject: [PATCH 118/124] Step 7.11: Added messages publication
@@ -27173,7 +27175,7 @@ index fac896b..4daccb1 100644
 2.7.4
 
 
-From ac40748652d71f6afcdf1d1cd08446fcd45ecb65 Mon Sep 17 00:00:00 2001
+From 4bea131b5915cc99a8225b32208aa0d05dbdcd6c Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 21:04:22 +0200
 Subject: [PATCH 119/124] Step 7.12: Added reywood:publish-composite
@@ -27208,7 +27210,7 @@ index 564f30e..af0352d 100644
 2.7.4
 
 
-From 1c14f5b52df2079c721841c3f0e4926051d7b710 Mon Sep 17 00:00:00 2001
+From 2119363590670aff2576072606d1af8de8060498 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 21:02:14 +0200
 Subject: [PATCH 120/124] Step 7.13: Added chats publication
@@ -27259,7 +27261,7 @@ index 4daccb1..f865b4c 100644
 2.7.4
 
 
-From 0ed9f9862a5583bbf112c37e4551f6caa8ce20e5 Mon Sep 17 00:00:00 2001
+From 438be02c8b1d9cea998747c6be0ffdc8526a4658 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 21:02:36 +0200
 Subject: [PATCH 121/124] Step 7.14: Init publication on server start
@@ -27290,7 +27292,7 @@ index 209145d..bba4876 100644
 2.7.4
 
 
-From 01900ad2c4af8815e385e0c4060244c20e40cc5c Mon Sep 17 00:00:00 2001
+From 444f1f18c65f0bf91a76652aa4c9589e5ac3e139 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 21:07:03 +0200
 Subject: [PATCH 122/124] Step 7.15: Subscribe to 'chats'
@@ -27377,7 +27379,7 @@ index 44860dc..2fa0f8b 100644
 2.7.4
 
 
-From 247fe4e01fda8f68a0110d97620a3f3774563c60 Mon Sep 17 00:00:00 2001
+From f92205556499b31189a6e85209f6167d3371b6f0 Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 21:07:34 +0200
 Subject: [PATCH 123/124] Step 7.16: Subscribe to 'users'
@@ -27407,7 +27409,7 @@ index 6d09041..5b3330d 100644
 2.7.4
 
 
-From 8facfa3ebf8c9ee5bc5a6a3241401de942a817ed Mon Sep 17 00:00:00 2001
+From 706e60f4c0d0f8aec28a483ac256624e0fe36c8d Mon Sep 17 00:00:00 2001
 From: Dotan Simha <dotansimha@gmail.com>
 Date: Thu, 3 Nov 2016 21:08:36 +0200
 Subject: [PATCH 124/124] Step 7.17: Subscribe to 'messages'
