@@ -250,5 +250,8 @@ In Whatsapp we used `chats.map(/*...*/)` directly instead of creating another va
 
 With all this, we have now Chats with their last messages available in the UI view.
 
+Run the following command in the api directory before running ionic serve:
+
+    $ meteor
 
 {{/template}}
