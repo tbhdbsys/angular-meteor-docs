@@ -58,7 +58,7 @@ We've just created a module, as you already know, one necessary thing is left â€
 
 [Meteor.subscribe](http://docs.meteor.com/#/full/meteor_subscribe) is the receiving end of Meteor.publish on the client.
 
-:et's add the following line to subscribe to the `parties` publications:
+Let's add the following line to subscribe to the `parties` publications:
 
     MeteorObservable.subscribe('parties').subscribe();
 
