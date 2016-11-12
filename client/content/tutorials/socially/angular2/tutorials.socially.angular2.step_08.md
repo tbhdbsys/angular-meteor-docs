@@ -89,7 +89,7 @@ Now, change it to save the user ID as well:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.7"}}
 
-Notice that you'll need to update the Party interface in the `party.interface.ts` definition file with the optional new property: `owner?: string`:
+Notice that you'll need to update the Party interface in the `party.model.ts` definition file with the optional new property: `owner?: string`:
 
 {{> DiffBox tutorialName="meteor-angular2-socially" step="9.8"}}
 
