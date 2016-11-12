@@ -187,7 +187,7 @@ In order to use flex and layout that defined in Material, we need to add a bug C
 
 You can find the CSS file content [here](https://github.com/Urigo/meteor-angular2.0-socially/blob/246f008895980e63ab19f19c6b184f4eb632723c/client/imports/material-layout.scss).
 
-So let's copy it's content and add it to `meteor-angular2.0-socially/client/imports/material-layout.scss`.
+So let's copy it's content and add it to `client/imports/material-layout.scss`.
 
 Now let's add it to the main SCSS file imports:
 
