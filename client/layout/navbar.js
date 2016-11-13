@@ -20,7 +20,14 @@ Template.navbar.helpers({
   },
   sociallyLinks: function() {
     return SOCIALLY_ANGULAR2;
-  }
+  },
+  isSupportPage: function () {
+    if (Router.current().route.getName().startsWith("support")) {
+      return "support-link hidden-badge";
+    }
+
+    return "support-link";
+  },
 });
 
 Template.navbar.events({
