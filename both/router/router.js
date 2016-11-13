@@ -39,6 +39,24 @@ Router.map(function () {
     seoTitle: 'Meteor+RxJS'
   });
 
+  self.route('training', {
+    path: '/training',
+    template: 'training',
+    seoTitle: 'Training'
+  });
+
+  self.route('support', {
+    path: '/support',
+    template: 'support',
+    seoTitle: 'support'
+  });
+
+  self.route('consulting', {
+    path: '/consulting',
+    template: 'consulting',
+    seoTitle: 'consulting'
+  });
+
   self.route('manifesto', {
     path: '/manifesto',
     template: 'manifesto',
