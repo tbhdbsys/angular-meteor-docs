@@ -12,7 +12,11 @@ We gonna install a package called `meteor-client-side` which gonna provide us wi
 And let's import it into our project, in the `src/app/main.dev.ts` file:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.2"}}
-    
+
+And `src/app/main.prod.ts`
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.3"}}
+
 # Meteor Server
 
 Now that we have the initial chats layout and its component, we will take it a step further by providing the chats data from a server instead of having it locally. In this step we will be implementing the API server and we will do so using Meteor.
@@ -47,11 +51,11 @@ And because we use TypeScript, let's change the main server file extension from 
 
 And we need to add TypeScript config file also to the server side, so let's add it under `api/tsconfig.json`:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.7"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.8"}}
 
 Note that we declared a file called `typings.d.ts` which will load any external TypeScript types, so let's add the file with the required typings:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.8"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.9"}}
 
 And we will also need to add some missing package for our server side, so run the following command inside `api` directory:
 
@@ -63,7 +67,7 @@ Now, in order to have access to the TypeScript interface we created in the previ
 
 And update the import path in the TypeScript config file of the client side, after moving the directory:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.10"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.11"}}
 
 ## Collections
 
@@ -77,7 +81,7 @@ That package has been already installed, we installed it earlier in the server s
 
 Let's create a Collection of Chats and Messages:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.11"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.12"}}
 
 ## Data fixtures
 
@@ -89,7 +93,7 @@ So first, let's add `moment` to the server side, run the following command insid
 
 And let's create our data fixtures in the server side:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.13"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.14"}}
 
 Quick overview.
 We use `.collection` to get the actual `Mongo.Collection` instance, this way we avoid using Observables.
@@ -110,7 +114,7 @@ Since Meteor's API requires us to share some of the code in both client and serv
 
 We also want to provide that data to the component:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.15"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="3.16"}}
 
 As you can see, we moved `chats` property initialization to `ngOnInit`,  one of the Angular's lifehooks.
 It's being called when Component is initalized.

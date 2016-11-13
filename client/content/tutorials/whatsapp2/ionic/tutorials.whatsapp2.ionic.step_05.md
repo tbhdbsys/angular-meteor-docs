@@ -56,13 +56,17 @@ Let's apply this feature to our app's NgModule bootstrap:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.7"}}
 
+And to production mode's entry point as well:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.8"}}
+
 Great, now that we're set, let's start implementing the views we mentioned earlier.
 
 Let's start by creating the `LoginComponent`:
 
 In this component we will request an SMS verification right after a phone number has been entered:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.8"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.9"}}
 
 Few things to be explained:
 
@@ -73,19 +77,19 @@ Few things to be explained:
 
 Okay, the logic is clear. Let's move to the template:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.9"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.10"}}
 
 And let's add some styles:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.10"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.11"}}
 
 And add the Login Component to the NgModule definition:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.11"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.12"}}
 
 Now let's add the ability to identify whih page should be loaded - the main or login:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.12"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.13"}}
 
 This is how the login view should look like:
 
@@ -97,23 +101,23 @@ That's great, everything is set up. We can now move to verification page.
 
 Let's create a component called `VerificationComponent`:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.13"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.14"}}
 
 Logic is pretty much the same as in LoginComponent. When verification succeed we redirect user to the `ProfileComponent` (this code is in comment, we will later remove the comment, after we add the actual component):
 
 So let's add the view and the styles:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.14"}}
-
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.15"}}
-
-And add it to the NgModule:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.16"}}
 
-And now that we have the `VerificationComponent` we can use it inside the `LoginComponent`:
+And add it to the NgModule:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.17"}}
+
+And now that we have the `VerificationComponent` we can use it inside the `LoginComponent`:
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.18"}}
 
 This is how the verification view should look like:
 
@@ -125,37 +129,37 @@ Last step of our authentication pattern is to pickup a name.
 
 Let's add a `Profile` interface, we will use it soon:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.18"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.19"}}
 
 And let's create the `ProfileComponent`:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.19"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.20"}}
 
 The logic is simple, call `updateProfile` (we will implement it soon!) and redirect to `TabsPage` which is our main view if the action succeed.
 
 If you'll take a look at the constructor's logic we set the default profile picture to be one of ionicon's svgs. We need to make sure there is an access point available through the network to that asset. If we'd like to serve files as-is we simply gonna add them to the `www` dir. But first we'll need to update our `.gitignore` file to contain the upcoming changes:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.20"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.21"}}
 
 And now that git can recognize our changes, let's add a symlink to `ionicons` in the `www` dir:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.21"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.22"}}
 
 There's no component without a view:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.22"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.23"}}
 
 And styles:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.23"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.24"}}
 
 And add it to the NgModule:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.24"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.25"}}
 
 And let's use it in the `VerificationComponent`:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.25"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.26"}}
 
 This is how the profile view should look like:
 
@@ -167,13 +171,13 @@ Our authentication flow is complete! However there are some few adjustments we n
 
 For the messaging system, each message should have an owner. If a user is logged-in a message document should be inserted with an additional `senderId` field:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.26"}}
-
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.27"}}
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.28"}}
 
 We can determine message ownership inside the component:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.28"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.29"}}
 
 Now we're going to add the abilities to log-out and edit our profile as well, which are going to be presented to us using a popover. 
 
@@ -181,33 +185,33 @@ Let's show a popover any time we press on the options icon in the top right corn
 
 Let's start by adding the actual Component that will open on the popover:
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.29"}}
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.30"}}
 
 > It uses popover functionality from Ionic ([see documentation](http://ionicframework.com/docs/v2/components/#popovers)).
 
-{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.30"}}
-
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.31"}}
-
-And add it to the NgModule:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.32"}}
 
-Now let's use it inside the `ChatsPage`:
+And add it to the NgModule:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.33"}}
 
-And let's add an event handler in the view:
+Now let's use it inside the `ChatsPage`:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.34"}}
 
-As for now, once you click on the options icon in the chats view, the popover should appear in the middle of the screen. To fix it, we simply gonna edit the `scss` file of the chats page:
+And let's add an event handler in the view:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.35"}}
 
-And last, let's implement the server side method (`updateProfile`):
+As for now, once you click on the options icon in the chats view, the popover should appear in the middle of the screen. To fix it, we simply gonna edit the `scss` file of the chats page:
 
 {{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.36"}}
+
+And last, let's implement the server side method (`updateProfile`):
+
+{{> DiffBox tutorialName="whatsapp2-ionic-tutorial" step="5.37"}}
 
 This should be the final result of the popover:
 
