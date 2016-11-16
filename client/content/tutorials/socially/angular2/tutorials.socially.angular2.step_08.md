@@ -171,7 +171,7 @@ It could be done inside of a component using `canActivate` method.
 Let's add a `canActivate` method and `CanActivate` interface, where we get the current route's `partyId` parameter
 and check if the corresponding party's owner is the same as the currently logged-in user.
 
-  __`client/imports/parties/party-details.component.ts`__:
+  __`client/imports/app/parties/party-details.component.ts`__:
   
     import { CanActivate } from '@angular/router';
     import template from './party-details.component.html';

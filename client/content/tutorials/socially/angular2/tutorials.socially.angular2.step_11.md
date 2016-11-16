@@ -20,7 +20,7 @@ You can find more information about Cordova integration with Meteor [here](https
 
 ### Running on Android Emulator
 
-Follow this [instruction](https://github.com/meteor/meteor/wiki/Mobile-Development-Install:-Android-on-Mac) to install all of the necessary tools to build an Android app from your project.
+Follow this [instruction](https://guide.meteor.com/mobile.html#installing-prerequisites-android) to install all of the necessary tools to build an Android app from your project.
 
 When you are done installing everything, type:
 
